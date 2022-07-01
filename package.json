@@ -1,0 +1,19 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "repository": "git@github.com:Localitos/design-system.git",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "5.1.0",
+    "nx": "14.2.0"
+  },
+  "dependencies": {}
+}
