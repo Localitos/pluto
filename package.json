@@ -4,7 +4,10 @@
   "repository": "git@github.com:Localitos/design-system.git",
   "license": "MIT",
   "private": true,
-  "scripts": {
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {    
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
