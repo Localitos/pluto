@@ -4,6 +4,4 @@ type Props = {
   label: string
 }
 
-export const Sample = ({ label }: Props) => {
-  return <button>{label}</button>;
-};
+export const Sample = ({ label }: Props) => <button>{label} button</button>;
