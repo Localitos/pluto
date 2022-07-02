@@ -1,6 +1,6 @@
 {
   "name": "@localitos/sample",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "main": "index.ts",
   "license": "MIT",
   "publishConfig": {
