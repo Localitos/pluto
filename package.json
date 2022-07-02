@@ -7,11 +7,11 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "scripts": {    
+  "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-static-webapp":"expo build:web",
-    "publish-packages": "lerna publish --conventional-commits"
+    "build-static-webapp": "expo build:web",
+    "publish-packages": "lerna publish --conventional-commits -m 'chore: publish packages'"
   },
   "workspaces": [
     "packages/*"
