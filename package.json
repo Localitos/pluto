@@ -9,7 +9,9 @@
   },
   "scripts": {    
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build-static-webapp":"expo build:web",
+    "publish-packages": "lerna publish --conventional-commits"
   },
   "workspaces": [
     "packages/*"

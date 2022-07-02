@@ -4,4 +4,4 @@ type Props = {
   label: string;
 };
 
-export const Sample = ({ label }: Props) => <button>{label}</button>;
+export const Sample = ({ label }: Props) => <h1>{label}</h1>;
