@@ -1,6 +1,6 @@
 {
   "name": "@localitos/test",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "index.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

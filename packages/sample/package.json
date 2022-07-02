@@ -1,6 +1,6 @@
 {
-  "name": "example",
-  "version": "1.0.0",
+  "name": "@localitos/sample",
+  "version": "0.0.17",
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
