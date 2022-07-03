@@ -4,7 +4,6 @@
   "repository": "git@github.com:Localitos/design-system.git",
   "license": "MIT",
   "private": true,
-  "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
