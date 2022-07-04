@@ -10,7 +10,4 @@ export default {
 const Template = (args) => <Sample {...args} />;
 
 export const Simple = Template.bind({});
-Simple.args = {
-  label: 'label',
-};
-
+Simple.args = {};
