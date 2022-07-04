@@ -1,19 +1,3 @@
-// module.exports = {
-//   "stories": [
-//     "../stories/**/*.stories.mdx",
-//     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
-//   ],
-//   "addons": [
-//     "@storybook/addon-links",
-//     "@storybook/addon-essentials",
-//     "@storybook/addon-interactions"
-//   ],
-//   "framework": "@storybook/react",
-//   "core": {
-//     "builder": "@storybook/builder-webpack5"
-//   }
-// }
-
 const path = require("path");
 
 module.exports = {
@@ -23,6 +7,8 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "@storybook/addon-a11y",
+    "@storybook/addon-viewport",
     {
       name: "@storybook/addon-postcss",
       options: {

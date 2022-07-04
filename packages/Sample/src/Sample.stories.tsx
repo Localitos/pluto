@@ -10,4 +10,6 @@ export default {
 const Template = (args) => <Sample {...args} />;
 
 export const Simple = Template.bind({});
-Simple.args = {};
+Simple.args = {
+  label: 'This is a sample component',
+};
