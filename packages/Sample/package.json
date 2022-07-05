@@ -6,7 +6,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "repository": "git@github.com:Localitos/design-system.git",
+  "repository": "git@github.com:Localitos/pluto.git",
   "scripts": {
     "build": "rm -rf dist && rollup --config",
     "test": "jest",

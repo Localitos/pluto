@@ -1,7 +1,7 @@
 {
-  "name": "design-system",
+  "name": "pluto",
   "version": "1.0.0",
-  "repository": "git@github.com:Localitos/design-system.git",
+  "repository": "git@github.com:Localitos/pluto.git",
   "license": "MIT",
   "private": true,
   "publishConfig": {
