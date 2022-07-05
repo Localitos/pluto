@@ -12,7 +12,7 @@
     "bootstrap": "lerna bootstrap",
     "build-storybook": "build-storybook",
     "build-static-webapp": "expo build:web",
-    "publish-packages": "lerna publish --conventional-commits -m 'chore: publish packages'",
+    "create-version": "lerna version --conventional-commits -m 'chore: create packages version'",
     "storybook": "start-storybook -p 6006"
   },
   "workspaces": [
