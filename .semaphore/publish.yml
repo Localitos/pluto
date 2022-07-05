@@ -1,14 +1,14 @@
 version: v1.0
-name: Pipeline 2
+name: Publish
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: 'Block #1'
+  - name: Publish
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Github Packages
           commands:
             - checkout
             - 'echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > .npmrc'

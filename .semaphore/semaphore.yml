@@ -14,6 +14,8 @@ blocks:
             - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME'
             - npx lerna bootstrap
             - 'npx lerna exec -- cache store node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
+      secrets:
+        - name: Github Packages
   - name: Tests
     task:
       prologue:
