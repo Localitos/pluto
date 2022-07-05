@@ -1,0 +1,38 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Install
+    task:
+      jobs:
+        - name: Bootstrap
+          commands:
+            - checkout
+            - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME'
+            - npx lerna bootstrap
+            - 'npx lerna exec -- cache store node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
+  - name: Tests
+    task:
+      prologue:
+        commands:
+          - checkout
+          - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME'
+          - npx lerna bootstrap
+      jobs:
+        - name: Lint
+          commands:
+            - npx lerna run lint
+        - name: Unit tests
+          commands:
+            - npx lerna run test
+        - name: Prettier
+          commands:
+            - npx lerna run prettier-check
+promotions:
+  - name: Publish packages
+    pipeline_file: pipeline_2.yml
+    auto_promote:
+      when: tag =~ '.*' AND result = 'passed'

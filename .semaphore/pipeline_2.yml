@@ -1,0 +1,18 @@
+version: v1.0
+name: Pipeline 2
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: 'Block #1'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - checkout
+            - 'echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > .npmrc'
+            - 'echo "@localitos:registry=https://npm.pkg.github.com" > .npmrc'
+            - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
+            - npx lerna bootstrap
+            - npx lerna publish from-git --no-git-tag-version --no-push --yes
