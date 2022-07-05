@@ -33,6 +33,6 @@ blocks:
             - npx lerna run prettier-check
 promotions:
   - name: Publish packages
-    pipeline_file: pipeline_2.yml
+    pipeline_file: publish.yml
     auto_promote:
       when: tag =~ '.*' AND result = 'passed'
