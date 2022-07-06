@@ -1,4 +1,9 @@
 # Pluto
+![Pluto](https://github.com/Localitos/pluto/blob/main/public/pluto.webp?raw=true)
+
+
+[![Build Status](https://localyze.semaphoreci.com/badges/pluto/branches/master.svg?style=shields&key=dc880f3b-ca8b-4a1e-8559-fef18208dfe2)](https://localyze.semaphoreci.com/projects/pluto)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b05a949c-18c2-42e3-84e1-9c4779b7ccb3/deploy-status)](https://app.netlify.com/sites/pluto-design-system/deploys)
 
 ## Setting up Github Packages
 1. Create a [Github Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) with packages permissions.
