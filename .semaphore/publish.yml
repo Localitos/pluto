@@ -14,7 +14,7 @@ blocks:
             - npx lerna publish from-git --yes
       secrets:
         - name: Github Packages
-        - name: Github Pluto Write Access
+        - name: pluto
       prologue:
         commands:
           - checkout
