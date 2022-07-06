@@ -21,6 +21,8 @@ blocks:
           - 'npm set "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN"'
           - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
           - npx lerna bootstrap
+          - git config --global user.email "tech@localyzeapp.com"
+          - git config --global user.name "Localyze"
     dependencies: []
   - name: Deploy
     task:

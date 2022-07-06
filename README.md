@@ -1,5 +1,5 @@
 # Pluto
-![Pluto](https://github.com/Localitos/pluto/blob/main/public/pluto.png?raw=true)
+![Pluto](https://github.com/Localitos/pluto/blob/main/public/pluto.webp?raw=true)
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b05a949c-18c2-42e3-84e1-9c4779b7ccb3/deploy-status)](https://app.netlify.com/sites/pluto-design-system/deploys)
