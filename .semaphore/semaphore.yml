@@ -37,4 +37,4 @@ promotions:
   - name: Publish & Deploy
     pipeline_file: publish.yml
     auto_promote:
-      when: branch = 'main' AND tag =~ '.*' AND result = 'passed'
+      when: branch = 'main' AND result = 'passed'
