@@ -14,6 +14,7 @@ blocks:
             - npx lerna publish from-git --yes
       secrets:
         - name: Github Packages
+        - name: Github Pluto Write Access
       prologue:
         commands:
           - checkout
@@ -23,6 +24,8 @@ blocks:
           - npx lerna bootstrap
           - git config --global user.email "tech@localyzeapp.com"
           - git config --global user.name "Localyze"
+          - chmod 600 ~/.ssh/id_rsa_git_deploy
+          - ssh-add ~/.ssh/id_rsa_git_deploy
     dependencies: []
   - name: Deploy
     task:
@@ -37,7 +40,5 @@ blocks:
           commands:
             - cache restore storybook-static
             - npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static
-      secrets:
-        - name: Github Pluto Write Access
     dependencies:
       - Publish
