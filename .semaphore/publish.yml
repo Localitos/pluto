@@ -1,5 +1,5 @@
 version: v1.0
-name: Publish
+name: Publish & Deploy
 agent:
   machine:
     type: e1-standard-2
@@ -8,32 +8,33 @@ blocks:
   - name: Publish
     task:
       jobs:
-        - name: Github Packages
+        - name: Publish on Github Packages
           commands:
-            - checkout
-            - npm set @localitos:registry=https://npm.pkg.github.com/pluto
-            - npm set "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN"
-            - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
-            - npx lerna bootstrap
             - npx lerna version --conventional-commits --conventional-graduate --yes
             - npx lerna publish from-git --yes
-- name: 🏁 Deploy
-    task:
-      # Mount a secret which defines /home/semaphore/.netlify/config.json and
-      # /home/semaphore/.netlify/state.json.
-      # For info on creating secrets, see:
-      # https://docs.semaphoreci.com/essentials/using-secrets/
       secrets:
-        - name: netlify-authentication
-
+        - name: Github Packages
       prologue:
         commands:
           - checkout
-          - yarn build-storybook
+          - 'npm set @localitos:registry=https://npm.pkg.github.com/pluto'
+          - 'npm set "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN"'
+          - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
+          - npx lerna bootstrap
+    dependencies: []
+  - name: Deploy
+    task:
+      prologue:
+        commands:
+          - checkout
+          - yarn
+          - yarn run build-storybook
           - cache store $SEMAPHORE_GIT_BRANCH-storybook-static storybook-static
       jobs:
-        - name: Netlify
+        - name: Deploy on Netlify
           commands:
             - yarn add netlify-cli -g
             - cache restore storybook-static
             - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static
+    dependencies:
+      - Publish
