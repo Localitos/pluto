@@ -11,7 +11,7 @@ blocks:
         - name: Publish on Github Packages
           commands:
             - npx lerna version --conventional-commits --conventional-graduate --yes
-            - 'npx lerna publish from-git --yes -m "chore: publish [skip ci]"'
+            - 'npx lerna publish from-git --yes --message "build: publish [skip ci]"'
       secrets:
         - name: Github Packages
         - name: pluto-git-deploy
