@@ -11,8 +11,29 @@ blocks:
         - name: Github Packages
           commands:
             - checkout
-            - 'echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > .npmrc'
-            - 'echo "@localitos:registry=https://npm.pkg.github.com" > .npmrc'
+            - npm set @localitos:registry=https://npm.pkg.github.com/pluto
+            - npm set "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN"
             - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
             - npx lerna bootstrap
-            - npx lerna publish from-git --no-git-tag-version --no-push --yes
+            - npx lerna version --conventional-commits --conventional-graduate --yes
+            - npx lerna publish from-git --yes
+- name: 🏁 Deploy
+    task:
+      # Mount a secret which defines /home/semaphore/.netlify/config.json and
+      # /home/semaphore/.netlify/state.json.
+      # For info on creating secrets, see:
+      # https://docs.semaphoreci.com/essentials/using-secrets/
+      secrets:
+        - name: netlify-authentication
+
+      prologue:
+        commands:
+          - checkout
+          - yarn build-storybook
+          - cache store $SEMAPHORE_GIT_BRANCH-storybook-static storybook-static
+      jobs:
+        - name: Netlify
+          commands:
+            - yarn add netlify-cli -g
+            - cache restore storybook-static
+            - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static
