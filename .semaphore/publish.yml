@@ -33,7 +33,7 @@ blocks:
       jobs:
         - name: Deploy on Netlify
           commands:
-            - yarn add netlify-cli -g
+            - yarn add netlify-cli -g -W
             - cache restore storybook-static
             - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static
     dependencies:
