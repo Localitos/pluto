@@ -4,3 +4,7 @@
 packages/**/dist/
 
 .npmrc
+
+/storybook-static
+# Local Netlify folder
+.netlify

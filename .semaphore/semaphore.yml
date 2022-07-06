@@ -34,7 +34,7 @@ blocks:
           commands:
             - npx lerna run prettier-check
 promotions:
-  - name: Publish packages
+  - name: Publish & Deploy
     pipeline_file: publish.yml
     auto_promote:
-      when: tag =~ '.*' AND result = 'passed'
+      when: branch = 'main' AND tag =~ '.*' AND result = 'passed'

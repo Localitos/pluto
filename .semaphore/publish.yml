@@ -1,5 +1,5 @@
 version: v1.0
-name: Publish
+name: Publish & Deploy
 agent:
   machine:
     type: e1-standard-2
@@ -8,11 +8,40 @@ blocks:
   - name: Publish
     task:
       jobs:
-        - name: Github Packages
+        - name: Publish on Github Packages
           commands:
-            - checkout
-            - 'echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > .npmrc'
-            - 'echo "@localitos:registry=https://npm.pkg.github.com" > .npmrc'
-            - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
-            - npx lerna bootstrap
-            - npx lerna publish from-git --no-git-tag-version --no-push --yes
+            - npx lerna version --conventional-commits --conventional-graduate --yes
+            - 'npx lerna publish from-git --yes -m "chore: publish [skip ci]"'
+      secrets:
+        - name: Github Packages
+        - name: pluto-git-deploy
+      prologue:
+        commands:
+          - checkout
+          - 'npm set @localitos:registry=https://npm.pkg.github.com'
+          - 'npm set "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN"'
+          - 'npx lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
+          - npx lerna bootstrap
+          - git config --global user.email "tech@localyzeapp.com"
+          - git config --global user.name "Localyze"
+          - chmod 600 ~/.ssh/id_rsa_git_deploy
+          - ssh-add ~/.ssh/id_rsa_git_deploy
+    dependencies: []
+  - name: Deploy
+    task:
+      prologue:
+        commands:
+          - checkout
+          - yarn
+          - yarn run build-storybook
+          - cache store $SEMAPHORE_GIT_BRANCH-storybook-static storybook-static
+      jobs:
+        - name: Deploy on Netlify
+          commands:
+            - cache restore storybook-static
+            - 'npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static'
+      secrets:
+        - name: Netlify
+        - name: pluto-netlify-deploy
+    dependencies:
+      - Publish
