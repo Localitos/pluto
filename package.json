@@ -21,7 +21,7 @@
     "release": "turbo run build && changeset publish"
   },
   "workspaces": [
-    "packages/*"
+    "packages/**"
   ],
   "devDependencies": {
     "@changesets/changelog-github": "0.4.5",
