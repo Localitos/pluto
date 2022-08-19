@@ -46,3 +46,10 @@ jobs:
 
       - name: Build packages
         run: yarn build
+
+      - name: Store build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled-js-and-types
+          path: |
+            packages/**/dist/**/*
