@@ -1,24 +1,33 @@
 {
   "name": "@localitos/sample",
   "version": "0.0.25",
-  "main": "index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "repository": "git@github.com:Localitos/pluto.git",
   "scripts": {
-    "build": "rm -rf dist && rollup --config",
     "test": "jest",
     "prettier-check": "prettier --check package.json tsconfig.json \"./src/**/*.{tsx,ts,json}\"",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx"
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.5",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.4",
     "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.4",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -30,18 +39,14 @@
     "eslint-plugin-testing-library": "^5.5.1",
     "jest": "^28.1.2",
     "jest-dom": "^4.0.0",
+    "jest-environment-jsdom": "^28.1.2",
     "jest-watch-typeahead": "^0.6.5",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
-    "rollup": "^2.75.7",
-    "rollup-plugin-typescript2": "^0.32.1",
+    "react": "^18.1.0",
     "ts-jest": "^28.0.5",
-    "tslib": "^2.4.0"
-  },
-  "dependencies": {
-    "jest-environment-jsdom": "^28.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^4.7.4"
+    "tslib": "^2.4.0",
+    "tsup": "^5.10.1",
+    "typescript": "^4.5.3"
   }
 }

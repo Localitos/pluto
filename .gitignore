@@ -1,8 +1,13 @@
 .vscode/
 /**/node_modules
 
-packages/**/dist/
-
 .npmrc
 
 /storybook-static
+
+# Turborepo
+.turbo
+
+#build artifacts
+**/build/**
+**/dist/**
