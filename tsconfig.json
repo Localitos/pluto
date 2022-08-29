@@ -1,5 +1,5 @@
 {
   "extends": "tsconfig-pluto/base.json",
-  "include": ["."],
+  "include": [".", ".jest/jest-setup.ts", ".jest/jest.config.js"],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -11,3 +11,7 @@
 # Build artifacts
 **/build/**
 **/dist/**
+
+# Jest
+.jest-coverage
+.jest-cache
