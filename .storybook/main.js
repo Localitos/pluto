@@ -5,18 +5,11 @@ module.exports = {
   /** Expose public folder to storybook as static */
   staticDirs: ["../public"],
   addons: [
+    "@storybook/addon-docs",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
-    {
-      name: "@storybook/addon-postcss",
-      options: {
-        postcssLoaderOptions: {
-          implementation: require("postcss"),
-        },
-      },
-    },
   ],
   core: {
     builder: "webpack5",
