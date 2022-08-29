@@ -102,7 +102,7 @@ jobs:
       - name: Run type checker
         run: yarn type-check
 
-  eslint:
+  eslint_prettier:
     name: Lint repository
     needs: build
     runs-on: ubuntu-latest
@@ -146,5 +146,9 @@ jobs:
           name: compiled-js-and-types
           path: packages/
 
-      - name: Run eslint
-        run: yarn lint
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true
+          eslint_extensions: ts

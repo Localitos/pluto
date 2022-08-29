@@ -1,13 +1,9 @@
-.vscode/
-/**/node_modules
-
-.npmrc
-
-/storybook-static
-
 # Turborepo
 .turbo
 
 # Build artifacts
 **/build/**
 **/dist/**
+
+# Plop Templates
+.plop-templates/*
