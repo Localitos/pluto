@@ -1,6 +1,6 @@
 ## Description of the change
 
-Write out a good description of the change. A screenshot or screenshot will also be helpful.
+Write out a good description of the change. A screenshot or video will also be helpful.
 
 Linear task: {URL Here}
 
