@@ -5,7 +5,5 @@ export type SampleProps = {
 };
 
 export const Sample = ({ label }: SampleProps): JSX.Element => (
-  <div className="tw-bg-[#fceeaa] tw-text-white tw-p-4 tw-rounded-md">
-    {label}
-  </div>
+  <div>{label}</div>
 );
