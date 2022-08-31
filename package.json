@@ -17,7 +17,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "release": "turbo run build && changeset publish",
-    "storybook": "start-storybook -p 6006",
+    "start": "start-storybook -p 6006",
     "test": "jest",
     "test:ci": "jest --ci",
     "test:coverage": "jest --runInBand --coverage",
