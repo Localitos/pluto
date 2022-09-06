@@ -1,6 +1,7 @@
 {
-  "name": "@localitos/pluto-components",
+  "name": "@localyze/pluto-components",
   "version": "0.0.0",
+  "description": "Pluto Design System Components",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

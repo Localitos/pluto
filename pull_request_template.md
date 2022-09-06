@@ -2,8 +2,6 @@
 
 Write out a good description of the change. A screenshot or video will also be helpful.
 
-Linear task: {URL Here}
-
 ## Testing the change
 
 - [ ] Write your testing instructions here
