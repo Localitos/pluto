@@ -1,8 +1,17 @@
 .vscode/
 /**/node_modules
 
-packages/**/dist/
-
 .npmrc
 
 /storybook-static
+
+# Turborepo
+.turbo
+
+# Build artifacts
+**/build/**
+**/dist/**
+
+# Jest
+.jest-coverage
+.jest-cache

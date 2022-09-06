@@ -1,0 +1,12 @@
+{
+  "name": "tsconfig-pluto",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "base.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

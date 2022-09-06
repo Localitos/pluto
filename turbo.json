@@ -1,0 +1,25 @@
+{
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": []
+    },
+    "lint": {
+      "outputs": []
+    },
+    "tsc": {
+      "outputs": ["dist/**"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
