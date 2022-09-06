@@ -26,7 +26,7 @@ npm install --save react react-dom
 Install the following packages so you can consume Pluto's tokens and themes to build custom page sections.
 
 ```bash npm2yarn
-npm install --save @localitos/pluto-theme @localitos/pluto-icons @localitos/pluto-components
+npm install --save @localyze/pluto-theme @localyze/pluto-icons @localyze/pluto-components
 ```
 
 ### 3. Build some cool stuff.
