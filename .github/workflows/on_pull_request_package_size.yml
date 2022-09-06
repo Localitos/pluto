@@ -1,26 +1,24 @@
-# name: Package size
+name: Package size
 
-# Add this after we merge the initial infrastructure branch
+on: pull_request
 
-# on: pull_request
+jobs:
+  package-size:
+    name: Check package sizes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
 
-# jobs:
-#   package-size:
-#     name: Check package sizes
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout Repo
-#         uses: actions/checkout@v2
+      - name: Setup Node.js 16.13
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.13.x
 
-#       - name: Setup Node.js 16.13
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: 16.13.x
-
-#       - uses: preactjs/compressed-size-action@v2
-#         with:
-#           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-#           build-script: "build"
-#           # only do common js files, no need to double count files
-#           pattern: "{**/dist/**/*.js}"
-#           exclude: "{**/*.map,**/node_modules/**,**/*.mjs}"
+      - uses: preactjs/compressed-size-action@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          build-script: "build"
+          # only do common js files, no need to double count files
+          pattern: "{**/dist/**/*.js}"
+          exclude: "{**/*.map,**/node_modules/**,**/*.mjs}"
