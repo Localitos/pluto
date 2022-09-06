@@ -20,5 +20,5 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           build-script: "build"
           # only do common js files, no need to double count files
-          pattern: "{**/dist/*.js}"
+          pattern: "{**/dist/**/*.js, ./packages/**/dist/*.js}"
           exclude: "{**/*.map,**/node_modules/**,**/*.mjs}"
