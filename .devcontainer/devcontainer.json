@@ -1,0 +1,49 @@
+{
+	"name": "Pluto",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
+		// Append -bullseye or -buster to pin to an OS version.
+		// Use -bullseye variants on local on arm64/Apple Silicon.
+		"args": { 
+			"VARIANT": "16-bullseye"
+		}
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+                "GitHub.vscode-pull-request-github",
+                "eamodio.gitlens",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "EditorConfig.EditorConfig"
+			],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "eslint.packageManager": "yarn",
+                "npm.packageManager": "yarn",
+                "editor.codeActionsOnSave": {
+                  "source.fixAll.eslint": true
+                }
+              }
+		}
+	},
+
+	"portsAttributes": {
+        "6006": {
+            "label": "Storybook",
+            "onAutoForward": "silent"
+        }
+    },
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "yarn install && yarn build",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
+}
