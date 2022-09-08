@@ -1,5 +1,4 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module",
@@ -20,65 +19,65 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:eslint-comments/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "plugin:jsdoc/recommended",
   ],
   rules: {
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-explicit-any": ["error"],
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
-    ],
     // PropTypes are unnecessary with TypeScript.
     "react/prop-types": "off",
     "react/jsx-sort-props": ["warn"],
+    "sort-keys": ["error"],
+    "no-console": ["error"],
+    "prefer-template": ["error"],
+    "no-use-before-define": ["error"],
+    "capitalized-comments": ["error"],
+    "no-magic-numbers": [
+      "error",
+      {
+        ignoreDefaultValues: true,
+        enforceConst: true,
+        ignoreArrayIndexes: true,
+      },
+    ],
   },
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        project: ["./tsconfig.json"],
+      },
+      extends: [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript",
+      ],
       rules: {
+        "@typescript-eslint/no-explicit-any": ["error"],
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+        ],
         "@typescript-eslint/explicit-module-boundary-types": ["error"],
-        "sort-keys": ["error"],
         "sort-imports": [
           "warn",
           {
             allowSeparatedGroups: true,
           },
         ],
-        "no-extra-parens": "off",
         "@typescript-eslint/no-extra-parens": ["error", "functions"],
         "@typescript-eslint/no-unsafe-return": ["error"],
-        "no-magic-numbers": [
-          "error",
-          {
-            ignoreDefaultValues: true,
-            enforceConst: true,
-            ignoreArrayIndexes: true,
-          },
-        ],
-        "no-use-before-define": ["error"],
         "@typescript-eslint/sort-type-union-intersection-members": ["error"],
-        "prefer-template": ["error"],
         "@typescript-eslint/restrict-plus-operands": ["error"],
         "@typescript-eslint/no-unnecessary-condition": ["error"],
-        "no-console": ["error"],
-        "capitalized-comments": ["error"],
         "@typescript-eslint/no-unsafe-assignment": ["error"],
         // jsdoc types are redundant with typescript
         "jsdoc/no-types": ["error", { contexts: ["any"] }],
         "jsdoc/require-returns-type": "off",
         "jsdoc/require-param-type": "off",
         "jsdoc/require-property-type": "off",
-      },
-      parserOptions: {
-        project: ["./tsconfig.json"],
       },
     },
     {
