@@ -33,6 +33,21 @@ module.exports = {
     "prefer-template": ["error"],
     "no-use-before-define": ["error"],
     "capitalized-comments": ["error"],
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "error",
+    "import/order": [
+      "warn",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+        ],
+      },
+    ],
   },
   overrides: [
     {
@@ -52,12 +67,6 @@ module.exports = {
           { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
         ],
         "@typescript-eslint/explicit-module-boundary-types": ["error"],
-        "sort-imports": [
-          "warn",
-          {
-            allowSeparatedGroups: true,
-          },
-        ],
         "@typescript-eslint/no-extra-parens": ["error", "functions"],
         "@typescript-eslint/no-unsafe-return": ["error"],
         "@typescript-eslint/sort-type-union-intersection-members": ["error"],
@@ -74,8 +83,6 @@ module.exports = {
     {
       files: ["*.{test,spec,stories}.{ts,tsx,js,jsx}"],
       rules: {
-        "@typescript-eslint/no-empty-function": "off",
-        "import/no-default-export": "off",
         "react/display-name": "off",
       },
     },
@@ -96,6 +103,9 @@ module.exports = {
     {
       files: ["*.stories.{ts,tsx,js,jsx}"],
       extends: ["plugin:storybook/recommended"],
+      rules: {
+        "import/no-default-export": "off",
+      },
     },
     // Ensure that the prettier plugin is last so that it may overwrite any conflicting rules enabled above.
     {
