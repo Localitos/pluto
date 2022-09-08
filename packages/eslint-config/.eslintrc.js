@@ -24,8 +24,16 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:jsdoc/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended",
   ],
   rules: {
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/no-null": "off",
+    "unicorn/no-array-reduce": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/no-useless-undefined": "off",
     // PropTypes are unnecessary with TypeScript.
     "react/prop-types": "off",
     "react/jsx-sort-props": ["warn"],
