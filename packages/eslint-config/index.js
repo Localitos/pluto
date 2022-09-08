@@ -26,6 +26,7 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
+    "plugin:jsdoc/recommended",
   ],
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -70,6 +71,11 @@ module.exports = {
         "no-console": ["error"],
         "capitalized-comments": ["error"],
         "@typescript-eslint/no-unsafe-assignment": ["error"],
+        // jsdoc types are redundant with typescript
+        "jsdoc/no-types": ["error", { contexts: ["any"] }],
+        "jsdoc/require-returns-type": "off",
+        "jsdoc/require-param-type": "off",
+        "jsdoc/require-property-type": "off",
       },
       parserOptions: {
         project: ["./tsconfig.json"],
