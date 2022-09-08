@@ -10,7 +10,7 @@ module.exports = {
     "import/resolver": {
       node: {
         paths: ["src"],
-        // adding .d.ts is a temporary fix for bug in eslint-plugin-import
+        // Adding .d.ts is a temporary fix for bug in eslint-plugin-import
         extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
       },
     },
@@ -29,19 +29,10 @@ module.exports = {
     // PropTypes are unnecessary with TypeScript.
     "react/prop-types": "off",
     "react/jsx-sort-props": ["warn"],
-    "sort-keys": ["error"],
     "no-console": ["error"],
     "prefer-template": ["error"],
     "no-use-before-define": ["error"],
     "capitalized-comments": ["error"],
-    "no-magic-numbers": [
-      "error",
-      {
-        ignoreDefaultValues: true,
-        enforceConst: true,
-        ignoreArrayIndexes: true,
-      },
-    ],
   },
   overrides: [
     {
@@ -73,7 +64,7 @@ module.exports = {
         "@typescript-eslint/restrict-plus-operands": ["error"],
         "@typescript-eslint/no-unnecessary-condition": ["error"],
         "@typescript-eslint/no-unsafe-assignment": ["error"],
-        // jsdoc types are redundant with typescript
+        // JSDoc types are redundant with typescript
         "jsdoc/no-types": ["error", { contexts: ["any"] }],
         "jsdoc/require-returns-type": "off",
         "jsdoc/require-param-type": "off",
@@ -83,7 +74,9 @@ module.exports = {
     {
       files: ["*.{test,spec,stories}.{ts,tsx,js,jsx}"],
       rules: {
-        "no-magic-numbers": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "import/no-default-export": "off",
+        "react/display-name": "off",
       },
     },
     {
