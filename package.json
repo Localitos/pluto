@@ -54,6 +54,7 @@
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^28.1.2",
     "jest-watch-typeahead": "^0.6.5",
+    "lint-staged": "^13.0.3",
     "plop": "^3.1.1",
     "prettier": "^2.5.1",
     "react": "^18.1.0",
@@ -63,5 +64,10 @@
   },
   "resolutions": {
     "webpack": "^5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,md}": [
+      "prettier --write", "eslint --fix"
+    ]
   }
 }
