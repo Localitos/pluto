@@ -81,15 +81,28 @@ module.exports = {
       },
     },
     {
-      files: ["*.test.ts", "*.test.tsx", "*.spec.tsx", "*.stories.tsx"],
+      files: ["*.{test,spec,stories}.{ts,tsx,js,jsx}"],
       rules: {
         "no-magic-numbers": "off",
-        "max-len": "off",
       },
     },
     {
-      files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-      extends: ["plugin:testing-library/react"],
+      files: ["*.test.{ts,tsx,js,jsx}"],
+      extends: [
+        "plugin:testing-library/react",
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:jest-dom/recommended",
+        "plugin:jest-formatting/recommended",
+      ],
+    },
+    {
+      files: ["*.spec.{ts,tsx,js,jsx}"],
+      extends: ["plugin:cypress/recommended"],
+    },
+    {
+      files: ["*.stories.{ts,tsx,js,jsx}"],
+      extends: ["plugin:storybook/recommended"],
     },
     // Ensure that the prettier plugin is last so that it may overwrite any conflicting rules enabled above.
     {

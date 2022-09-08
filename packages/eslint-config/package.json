@@ -4,17 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-turbo": "latest",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^26.4.6",
+    "eslint-plugin-jest": "^27.0.2",
+    "eslint-plugin-jest-dom": "^4.0.2",
+    "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-testing-library": "^5.5.1",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1"
+    "eslint-plugin-storybook": "^0.6.4",
+    "eslint-plugin-testing-library": "^5.5.1"
   },
   "publishConfig": {
     "access": "public"
