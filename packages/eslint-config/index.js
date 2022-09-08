@@ -23,8 +23,8 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
   ],
-  plugins: ["jest", "testing-library", "jsx-a11y"],
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "off",
@@ -33,21 +33,15 @@ module.exports = {
       "error",
       { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
     ],
+    // PropTypes are unnecessary with TypeScript.
     "react/prop-types": "off",
-    "react/self-closing-comp": [
-      "error",
-      {
-        component: true,
-        html: true,
-      },
-    ],
+    "react/jsx-sort-props": ["warn"],
   },
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
       rules: {
         "@typescript-eslint/explicit-module-boundary-types": ["error"],
-        "react/jsx-sort-props": ["error"],
         "sort-keys": ["error"],
         "sort-imports": [
           "warn",
@@ -66,7 +60,6 @@ module.exports = {
             ignoreArrayIndexes: true,
           },
         ],
-        "react/self-closing-comp": ["error"],
         "no-use-before-define": ["error"],
         "@typescript-eslint/sort-type-union-intersection-members": ["error"],
         "prefer-template": ["error"],
