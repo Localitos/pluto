@@ -18,6 +18,8 @@ module.exports = {
   },
   ignorePatterns: ["*.css", "*.scss", "*.pdf", "*.svg"],
   extends: [
+    "eslint:recommended",
+    "plugin:eslint-comments/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
