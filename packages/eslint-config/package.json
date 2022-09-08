@@ -1,7 +1,7 @@
 {
-  "name": "eslint-config-pluto",
+  "name": "@localyze/eslint-config-pluto",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": ".eslintrc.js",
   "license": "MIT",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.33.1",
