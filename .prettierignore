@@ -7,3 +7,9 @@
 
 # Plop Templates
 .plop-templates/*
+
+# Storybook build
+storybook-static/*
+
+# Jest coverage
+.jest-coverage/*
