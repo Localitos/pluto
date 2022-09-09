@@ -6607,11 +6607,6 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-pluto@*:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-pluto/-/eslint-config-pluto-2.0.0.tgz#6d532c423398f640cc3aa7a6498fb26a2c2d46b0"
-  integrity sha512-9OyhbXjJN8dj9DPUILMp8hJYsq288rwmQm48mFsL2mptT9pf+8umE7zmTItmwcUddh48AkIaFszkgzdb53ivmQ==
-
 eslint-config-prettier@^8.3.0:
   version "8.5.0"
   resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz"

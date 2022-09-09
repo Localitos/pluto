@@ -37,7 +37,7 @@
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.4",
     "eslint": "^8.16.0",
-    "eslint-config-pluto": "*",
+    "@localyze/eslint-config-pluto": "*",
     "jest": "^28.1.2",
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^28.1.2",
