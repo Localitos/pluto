@@ -1,0 +1,12 @@
+{
+  "name": "@localyze/browserslist-config-pluto",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
