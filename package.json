@@ -70,5 +70,8 @@
       "prettier --write",
       "eslint --fix"
     ]
-  }
+  },
+  "browserslist": [
+    "extends @localyze/browserslist-config-pluto"
+  ]
 }
