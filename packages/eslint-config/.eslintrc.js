@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    node: true,
+  },
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module",
@@ -26,6 +29,7 @@ module.exports = {
     "plugin:jsdoc/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/recommended",
+    "plugin:lodash/recommended",
   ],
   rules: {
     "unicorn/prevent-abbreviations": "off",
