@@ -5,16 +5,39 @@ export const { styled, css, theme, keyframes, getCssText } = createStitches({
   theme: {
     borderWidths: {},
     colors: {
-      background: "#F7F9FF", // Used as page background colour across the app
-      border: "#E2E8F0", // Used for dividers and outlines of containers
-      primary: "#102EE9", // Used for CTAs, links, focus states, selection controls, progress bars
-      primaryHover: "#0B1F9C", // Used mainly for hover states
-      secondary: "#76FAC1", // Used as image background for Case Manager profile photos
-      text: "#0F172A", // Used as primary text colour
-      textError: "#EF4444", // Used to show that an error occurred
-      textSuccess: "#10B981", // Used to give success feedback to user
-      textWarning: "#F59E0B", // Used to display a warning for the user
-      textWeak: "#64748B", // Used as supporting text colour
+      colorTextDarkest: "#0F172A",
+      colorTextDark: "#334155",
+      colorTextLight: "#64748B",
+      colorTextError: "#B91C1C",
+      colorTextWarning: "#B45309",
+      colorTextSuccess: "#047857",
+      colorTextInverse: "#FFFFFF",
+      colorTextLink: "#102EE9",
+      colorTextLinkDarker: "#0B1F9C",
+      colorBackground: "#FFFFFF",
+      colorBackgroundLightest: "#F8FAFC",
+      colorBackgroundLighter: "#F7F9FF",
+      colorBackgroundLight: "#F1F5F9",
+      colorBackgroundInfo: "#EBEDFF",
+      colorBackgroundSuccess: "#F0FFF8",
+      colorBackgroundWarning: "#FFFBEB",
+      colorBackgroundError: "#FEF2F2",
+      colorBackgroundBody: "#F7F9FF",
+      colorBackgroundGradientPink:
+        "linear-gradient(177.5deg, #FF9788 -9.4%, #3440DF 64.04%, #102EE9 97.66%)",
+      colorBackgroundGradientCyan:
+        "linear-gradient(175.85deg, #9FFED5 4.23%, #3767E4 53.02%, #234AE6 70.91%, #102EE9 96.37%);",
+      colorBorder: "#64748B",
+      colorBorderLightest: "#E2E8F0",
+      colorBorderLight: "#CBD5E1",
+      colorBorderError: "#DC2626",
+      colorIconError: "#DC2626",
+      colorIconWarning: "#D97706",
+      colorIconSuccess: "#059669",
+      colorIconInfo: "#102EE9",
+      colorIconLightest: "#94A3B8",
+      colorIconDark: "#1E293B",
+      colorIconDarker: "#0F172A",
     },
     fontSizes: {
       12: "0.75rem", // 12px
@@ -34,7 +57,7 @@ export const { styled, css, theme, keyframes, getCssText } = createStitches({
       normal: "400",
     },
     fonts: {
-      inter: '"Moderat", sans-serif',
+      moderat: '"Moderat", sans-serif',
     },
     lineHeights: {
       12: "0.75rem", // 12px
