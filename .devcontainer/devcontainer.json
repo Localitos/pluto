@@ -20,7 +20,8 @@
         "eamodio.gitlens",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "streetsidesoftware.code-spell-checker"
       ],
       "settings": {
         "editor.formatOnSave": true,
