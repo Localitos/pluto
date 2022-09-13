@@ -5,71 +5,83 @@ export const { styled, css, theme, keyframes, getCssText } = createStitches({
   theme: {
     borderWidths: {},
     colors: {
-      colorTextDarkest: "#0F172A",
-      colorTextDark: "#334155",
-      colorTextLight: "#64748B",
+      colorTextStrongest: "#0F172A",
+      colorTextStronger: "#334155",
+      colorText: "#64748B",
       colorTextError: "#B91C1C",
       colorTextWarning: "#B45309",
       colorTextSuccess: "#047857",
       colorTextInverse: "#FFFFFF",
       colorTextLink: "#102EE9",
-      colorTextLinkDarker: "#0B1F9C",
+      colorTextLinkStrong: "#0B1F9C",
+      colorTextHeading: "#041162",
       colorBackground: "#FFFFFF",
-      colorBackgroundLightest: "#F8FAFC",
-      colorBackgroundLighter: "#F7F9FF",
-      colorBackgroundLight: "#F1F5F9",
+      colorBackgroundWeakest: "#F8FAFC",
+      colorBackgroundWeaker: "#F7F9FF",
+      colorBackgroundWeak: "#F1F5F9",
+      colorBackgroundStrong: "#CBD5E1",
+      colorBackgroundPrimary: "#102EE9",
+      colorBackgroundPrimaryStrong: "#0B1F9C",
+      colorBackgroundPrimaryStrongest: "#041162",
+      colorBackgroundDestructive: "#DC2626",
+      colorBackgroundDestructiveStrong: "#B91C1C",
       colorBackgroundInfo: "#EBEDFF",
-      colorBackgroundSuccess: "#F0FFF8",
+      colorBackgroundSuccess: "#ECFDF5",
       colorBackgroundWarning: "#FFFBEB",
       colorBackgroundError: "#FEF2F2",
       colorBackgroundBody: "#F7F9FF",
-      colorBackgroundGradientPink:
+      colorBackgroundGradientTasks:
         "linear-gradient(177.5deg, #FF9788 -9.4%, #3440DF 64.04%, #102EE9 97.66%)",
-      colorBackgroundGradientCyan:
-        "linear-gradient(175.85deg, #9FFED5 4.23%, #3767E4 53.02%, #234AE6 70.91%, #102EE9 96.37%);",
+      colorBackgroundGradientProcesses:
+        "linear-gradient(175.85deg, #9FFED5 4.23%, #3767E4 53.02%, #234AE6 70.91%, #102EE9 96.37%)",
+      colorBorderWeakest: "#E2E8F0",
+      colorBorderWeaker: "#CBD5E1",
       colorBorder: "#64748B",
-      colorBorderLightest: "#E2E8F0",
-      colorBorderLight: "#CBD5E1",
-      colorBorderError: "#DC2626",
+      colorBorderStrongest: "#0F172A",
+      colorBorderError: "#EF4444",
+      colorBorderWarning: "#D97706",
+      colorBorderSuccess: "#059669",
+      colorBorderPrimary: "#102EE9",
       colorIconError: "#DC2626",
       colorIconWarning: "#D97706",
       colorIconSuccess: "#059669",
       colorIconInfo: "#102EE9",
-      colorIconLightest: "#94A3B8",
-      colorIconDark: "#1E293B",
-      colorIconDarker: "#0F172A",
+      colorIconWeaker: "#94A3B8",
+      colorIconWeak: "#64748B",
+      colorIconStrong: "#334155",
+      colorIconStronger: "#0F172A",
     },
     fontSizes: {
-      12: "0.75rem", // 12px
-      14: "0.875rem", // 14px
-      16: "1rem", // 16px
-      18: "1.125rem", // 18px
-      20: "1.25rem", // 20px
-      24: "1.5rem", // 24px
-      36: "2.25rem", // 36px
-      48: "3rem", // 48px
-      60: "3.75rem", // 60px
+      fontSize10: "0.75rem", // 12px
+      fontSize20: "0.875rem", // 14px
+      fontSize30: "1rem", // 16px
+      fontSize40: "1.125rem", // 18px
+      fontSize50: "1.25rem", // 20px
+      fontSize60: "1.5rem", // 24px
+      fontSize70: "2.25rem", // 36px
+      fontSize80: "3rem", // 48px
+      fontSize90: "3.75rem", // 60px
     },
     fontWeights: {
-      black: "900",
-      bold: "700",
-      medium: "500",
-      normal: "400",
+      fontWeightBlack: "900",
+      fontWeightBold: "700",
+      fontWeightMedium: "500",
+      fontWeightNormal: "400",
     },
     fonts: {
       moderat: '"Moderat", sans-serif',
     },
     lineHeights: {
-      12: "0.75rem", // 12px
-      14: "0.875rem", // 14px
-      16: "1rem", // 16px
-      20: "1.25rem", // 20px
-      24: "1.5rem", // 24px
-      28: "1.75rem", // 28px
-      32: "2rem", // 32px
-      40: "2.5rem", // 40px
-      48: "3rem", // 48px
-      60: "3.75rem", // 60px
+      lineHeight10: "0.75rem", // 12px
+      lineHeight20: "0.875rem", // 14px
+      lineHeight30: "1rem", // 16px
+      lineHeight40: "1.25rem", // 20px
+      lineHeight50: "1.5rem", // 24px
+      lineHeight60: "1.75rem", // 28px
+      lineHeight70: "2rem", // 32px
+      lineHeight80: "2.5rem", // 40px
+      lineHeight90: "3rem", // 48px
+      lineHeight100: "3.75rem", // 60px
     },
     radii: {},
     space: {

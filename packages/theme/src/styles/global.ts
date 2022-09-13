@@ -10,7 +10,10 @@ export const globalStyles = globalCss({
     fontSize: "100%",
   },
   body: {
-    margin: theme.space[0],
+    fontFamily: "$moderat",
+    fontWeight: "$fontWeightNormal",
+    "-webkit-font-smoothing": "antialiased",
+    "-moz-osx-font-smoothing": "grayscale",
   },
   "*, *::after, *::before": {
     boxSizing: "border-box",
