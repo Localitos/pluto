@@ -95,16 +95,16 @@ export const { styled, css, theme, keyframes, getCssText } = createStitches({
       borderRadiusPill: "100px",
     },
     shadows: {
-      shadowWeakest: "0px 1px 2px rgba(0, 0, 0, 0.05)",
+      shadowWeakest: "0px 1px 2px rgba(15, 23, 42, 0.05)",
       shadowWeaker:
-        "0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)",
+        "0px 1px 3px rgba(15, 23, 42, 0.1), 0px 1px 2px rgba(15, 23, 42, 0.06)",
       shadowWeak:
-        "0px 4px 16px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.08)",
+        "0px 4px 16px -1px rgba(15, 23, 42, 0.08), 0px 2px 4px -1px rgba(15, 23, 42, 0.08)",
+      shadow:
+        "0px 10px 15px -3px rgba(15, 23, 42, 0.1), 0px 4px 6px -2px rgba(15, 23, 42, 0.05)",
       shadowStrong:
-        "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)",
-      shadowStronger:
-        "0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      shadowStrongest: " 0px 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        "0px 20px 25px -5px rgba(15, 23, 42, 0.1), 0px 10px 10px -5px rgba(15, 23, 42, 0.04)",
+      shadowStronger: "0px 25px 50px -12px rgba(15, 23, 42, 0.25)",
       shadowFocus:
         "0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #102EE9",
     },
