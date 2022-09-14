@@ -19,7 +19,8 @@
     "*.lock",
     "cspell.json",
     ".gitignore",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "CODEOWNERS"
   ],
   "overrides": [
     {
