@@ -11,5 +11,5 @@ const Template: ComponentStory<typeof Sample> = (args) => <Sample {...args} />;
 
 export const Simple = Template.bind({});
 Simple.args = {
-  label: "This is a sample component",
+  label: "This is a component",
 };
