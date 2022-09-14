@@ -3,7 +3,11 @@ import { createStitches } from "@stitches/react";
 export const { styled, css, theme, keyframes, getCssText } = createStitches({
   prefix: "pluto",
   theme: {
-    borderWidths: {},
+    borderWidths: {
+      borderWidth0: "0px",
+      borderWidth10: "1px",
+      borderWidth20: "2px",
+    },
     colors: {
       colorTextStrongest: "#0F172A",
       colorTextStronger: "#334155",
@@ -55,35 +59,55 @@ export const { styled, css, theme, keyframes, getCssText } = createStitches({
       fontSize10: "0.75rem", // 12px
       fontSize20: "0.875rem", // 14px
       fontSize30: "1rem", // 16px
-      fontSize40: "1.125rem", // 18px
-      fontSize50: "1.25rem", // 20px
-      fontSize60: "1.5rem", // 24px
-      fontSize70: "2.25rem", // 36px
-      fontSize80: "3rem", // 48px
-      fontSize90: "3.75rem", // 60px
+      fontSize40: "1.25rem", // 20px
+      fontSize50: "1.5rem", // 24px
+      fontSize60: "2rem", // 32px
+      fontSize70: "2.5rem", // 40px
+      fontSize80: "3.375rem", // 54px
     },
     fontWeights: {
-      fontWeightBlack: "900",
-      fontWeightBold: "700",
+      fontWeightLight: "300",
+      fontWeightRegular: "400",
       fontWeightMedium: "500",
-      fontWeightNormal: "400",
+      fontWeightBold: "700",
     },
     fonts: {
-      moderat: '"Moderat", sans-serif',
+      moderat: '"Moderat", "Inter", sans-serif',
     },
     lineHeights: {
-      lineHeight10: "0.75rem", // 12px
-      lineHeight20: "0.875rem", // 14px
-      lineHeight30: "1rem", // 16px
-      lineHeight40: "1.25rem", // 20px
-      lineHeight50: "1.5rem", // 24px
-      lineHeight60: "1.75rem", // 28px
-      lineHeight70: "2rem", // 32px
-      lineHeight80: "2.5rem", // 40px
-      lineHeight90: "3rem", // 48px
-      lineHeight100: "3.75rem", // 60px
+      lineHeight10: "1rem", // 16px
+      lineHeight20: "1.125rem", // 18px
+      lineHeight30: "1.25rem", // 20px
+      lineHeight40: "1.5rem", // 24px
+      lineHeight50: "1.75rem", // 28px
+      lineHeight60: "2rem", // 32px
+      lineHeight70: "2.5rem", // 40px
+      lineHeight80: "3.375rem", // 54px
+      lineHeight90: "4rem", // 64px
     },
-    radii: {},
+    radii: {
+      borderRadius10: "4px",
+      borderRadius20: "6px",
+      borderRadius30: "8px",
+      borderRadius40: "16px",
+      borderRadius50: "24px",
+      borderRadiusCircle: "50%",
+      borderRadiusPill: "100px",
+    },
+    shadows: {
+      shadowWeakest: "0px 1px 2px rgba(0, 0, 0, 0.05)",
+      shadowWeaker:
+        "0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)",
+      shadowWeak:
+        "0px 4px 16px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.08)",
+      shadowStrong:
+        "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      shadowStronger:
+        "0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      shadowStrongest: " 0px 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      shadowFocus:
+        "0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #102EE9",
+    },
     space: {
       0: "0rem", // 0px
       1: "0.063rem", // 1px
@@ -121,6 +145,5 @@ export const { styled, css, theme, keyframes, getCssText } = createStitches({
       80: "5rem", // 80px
       96: "6rem", // 96px
     },
-    zIndices: {},
   },
 });
