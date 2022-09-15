@@ -23,7 +23,7 @@ yarn build
 Run Storybook.
 
 ```shell
-yarn storybook
+yarn start
 ```
 
 ## Generators
