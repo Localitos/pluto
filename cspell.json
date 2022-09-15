@@ -9,7 +9,8 @@
     "preactjs",
     "sonarjs",
     "tsup",
-    "moderat"
+    "moderat",
+    "npmrc"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
