@@ -10,7 +10,8 @@
     "sonarjs",
     "tsup",
     "moderat",
-    "npmrc"
+    "npmrc",
+    "rgba"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,

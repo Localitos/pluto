@@ -2,6 +2,14 @@
 
 exports[`Theme matches the default theme 1`] = `
 Object {
+  "borderStyles": Object {
+    "borderSolid": F {
+      "prefix": "pluto",
+      "scale": "borderStyles",
+      "token": "borderSolid",
+      "value": "solid",
+    },
+  },
   "borderWidths": Object {
     "borderWidth0": F {
       "prefix": "pluto",
@@ -22,7 +30,7 @@ Object {
       "value": "2px",
     },
   },
-  "className": "pluto-t-gGmQlN",
+  "className": "pluto-t-cbWxlH",
   "colors": Object {
     "colorBackground": F {
       "prefix": "pluto",
@@ -467,7 +475,7 @@ Object {
       "value": "100px",
     },
   },
-  "selector": ".pluto-t-gGmQlN",
+  "selector": ".pluto-t-cbWxlH",
   "shadows": Object {
     "shadow": F {
       "prefix": "pluto",

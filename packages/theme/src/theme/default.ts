@@ -4,6 +4,9 @@ export const { styled, css, theme, keyframes, getCssText, config } =
   createStitches({
     prefix: "pluto",
     theme: {
+      borderStyles: {
+        borderSolid: "solid",
+      },
       borderWidths: {
         borderWidth0: "0px",
         borderWidth10: "1px",
