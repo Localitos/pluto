@@ -24,13 +24,14 @@
     "tsc": "tsc"
   },
   "devDependencies": {
+    "@localyze/eslint-config-pluto": "*",
+    "@localyze/tsconfig-pluto": "*",
     "@testing-library/jest-dom": "^5.14.5",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.4",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.4",
     "eslint": "^8.16.0",
-    "@localyze/eslint-config-pluto": "*",
     "jest": "^28.1.2",
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^28.1.2",
@@ -40,7 +41,6 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "ts-jest": "^28.0.5",
-    "tsconfig-pluto": "*",
     "tslib": "^2.4.0",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3"
