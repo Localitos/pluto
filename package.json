@@ -4,9 +4,6 @@
   "repository": "git@github.com:Localitos/pluto.git",
   "license": "MIT",
   "private": true,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "add-component": "plop",
     "build": "turbo run build",
