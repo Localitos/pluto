@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": ["localyze", "localitos"],
+  "ignoreWords": [
+    "eamodio",
+    "dbaeumer",
+    "esbenp",
+    "preactjs",
+    "sonarjs",
+    "tsup"
+  ],
+  "flagWords": ["hte"],
+  "allowCompoundWords": true,
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "*.svg",
+    "*.lock",
+    "cspell.json",
+    ".gitignore",
+    "CHANGELOG.md",
+    "CODEOWNERS"
+  ],
+  "overrides": [
+    {
+      "filename": "**/{stories,spec,test}.{ts,tsx,js,jsx}",
+      "dictionaries": ["lorem-ipsum"]
+    }
+  ]
+}
