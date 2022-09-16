@@ -1,5 +1,5 @@
 {
-  "name": "@localyze/eslint-config-pluto",
+  "name": "@localyze-pluto/eslint-config",
   "version": "0.0.0",
   "main": ".eslintrc.js",
   "license": "MIT",

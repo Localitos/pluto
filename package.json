@@ -70,6 +70,6 @@
     ]
   },
   "browserslist": [
-    "extends @localyze/browserslist-config-pluto"
+    "extends @localyze-pluto/browserslist-config"
   ]
 }

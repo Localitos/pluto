@@ -1,5 +1,5 @@
 {
-  "name": "@localyze/pluto-components",
+  "name": "@localyze-pluto/components",
   "version": "0.0.0",
   "description": "Pluto Design System Components",
   "main": "./dist/index.js",
@@ -28,8 +28,8 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@localyze/eslint-config-pluto": "*",
-    "@localyze/tsconfig-pluto": "*",
+    "@localyze-pluto/eslint-config": "*",
+    "@localyze-pluto/tsconfig": "*",
     "@testing-library/jest-dom": "^5.14.5",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.4",
@@ -50,6 +50,6 @@
     "typescript": "^4.5.3"
   },
   "browserslist": [
-    "extends @localyze/browserslist-config-pluto"
+    "extends @localyze-pluto/browserslist-config"
   ]
 }

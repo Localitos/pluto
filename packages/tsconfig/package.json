@@ -1,5 +1,5 @@
 {
-  "name": "@localyze/tsconfig-pluto",
+  "name": "@localyze-pluto/tsconfig",
   "version": "0.0.0",
   "license": "MIT",
   "main": "tsconfig.json",
