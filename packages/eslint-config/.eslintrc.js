@@ -18,7 +18,7 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: ["*.css", "*.scss", "*.pdf", "*.svg"],
+  ignorePatterns: ["*.css", "*.scss", "*.pdf", "*.svg", "**/dist/**"],
   extends: [
     "eslint:recommended",
     "plugin:eslint-comments/recommended",
