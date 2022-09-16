@@ -23,15 +23,18 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      # - name: Create Release Pull Request or Publish to npm
-      #   id: changesets
-      #   uses: changesets/action@v1
-      #   with:
-      #     # This expects you to have a script called release which does a build for your packages and calls changeset publish
-      #     publish: yarn release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Setup CI Git User
+        run: |
+          git config --global user.email "alpacatron@localyzeapp.com"
+          git config --global user.name "alpacatron"
+
+      - name: "Creates Pull Request or Publish to npm"
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_BOT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # - name: Send a Slack notification if a publish happens
       #   if: steps.changesets.outputs.published == 'true'
