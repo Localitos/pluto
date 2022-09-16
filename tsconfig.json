@@ -1,5 +1,5 @@
 {
-  "extends": "@localyze/tsconfig-pluto",
+  "extends": "@localyze-pluto/tsconfig",
   "include": [
     ".",
     ".jest/jest-setup.ts",
