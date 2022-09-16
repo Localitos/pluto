@@ -4,7 +4,12 @@ export default function (plop) {
       {
         type: "input",
         name: "name",
-        message: "Component name:",
+        message: "What do you want to name this component?",
+      },
+      {
+        type: "input",
+        name: "description",
+        message: "What is the description for this component?",
       },
       {
         type: "list",

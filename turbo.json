@@ -1,8 +1,9 @@
 {
   "pipeline": {
     "build": {
+      "dependsOn": ["^build"],
       "outputs": ["dist/**"],
-      "dependsOn": ["^build"]
+      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     },
     "test": {
       "outputs": ["coverage/**"],

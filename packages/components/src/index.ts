@@ -1,1 +1,1 @@
-export * from "./components/Sample";
+export * from "./primitives/Box";
