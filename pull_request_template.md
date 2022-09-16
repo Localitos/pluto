@@ -21,4 +21,3 @@ Write out a good description of the change. A screenshot or video will also be h
 ### Code review
 
 - [ ] This pull request has a descriptive title and information useful to a reviewer. There may be a screenshot or screencast attached.
-- [ ] Issue from Linear has a link to this pull request

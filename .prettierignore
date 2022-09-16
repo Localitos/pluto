@@ -6,7 +6,7 @@
 **/dist/**
 
 # Plop Templates
-.plop-templates/*
+template/*
 
 # Storybook build
 storybook-static/*

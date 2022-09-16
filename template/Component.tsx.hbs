@@ -1,5 +1,14 @@
 import React from 'react';
 
-export type {{pascalCase name}}Props = {};
+type {{pascalCase name}}Props = {
+  /** Add a description comment for each prop. */
+};
 
-export const {{pascalCase name}} = ({ ...props }: {{pascalCase name}}Props): JSX.Element => <div />;
+/** {{sentenceCase description}} */
+const {{pascalCase name}} = React.forwardRef<HTMLDivElement, {{pascalCase name}}Props>(({}, ref) => {
+  return <div ref={ref}>Hello World</div>;
+});
+
+{{pascalCase name}}.displayName = "{{pascalCase name}}";
+
+export { {{pascalCase name}} };
