@@ -40,9 +40,9 @@ body:
   - type: "input"
     id: "pluto-version"
     attributes:
-      label: "Pluto Version"
-      description: "The version of Pluto you use."
-      placeholder: "1.0.0"
+      label: "Pluto Package and Version"
+      description: "The Pluto package and version you are using."
+      placeholder: "@localyze/pluto-components@1.0.0"
     validations:
       required: true
   - type: "input"
