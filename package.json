@@ -4,9 +4,6 @@
   "repository": "git@github.com:Localitos/pluto.git",
   "license": "MIT",
   "private": true,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "add-component": "plop",
     "build": "turbo run build",
@@ -67,12 +64,12 @@
     "webpack": "^5"
   },
   "lint-staged": {
-    "*.{ts,tsx,md}": [
-      "prettier --write",
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{ts,tsx}": [
       "eslint --fix"
     ]
   },
   "browserslist": [
-    "extends @localyze/browserslist-config-pluto"
+    "extends @localyze-pluto/browserslist-config"
   ]
 }

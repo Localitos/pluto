@@ -1,7 +1,7 @@
 {
-  "name": "@localyze-pluto/components",
+  "name": "@localyze-pluto/theme",
   "version": "0.0.0",
-  "description": "Pluto Design System Components",
+  "description": "Pluto Design System Theme",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -16,7 +16,7 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:Localitos/pluto.git",
-    "directory": "packages/components"
+    "directory": "packages/theme"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --external react",
@@ -26,6 +26,9 @@
     "prettier-check": "prettier --check package.json tsconfig.json \"./src/**/*.{tsx,ts,json}\"",
     "test": "jest",
     "tsc": "tsc"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.8"
   },
   "devDependencies": {
     "@localyze-pluto/eslint-config": "*",
@@ -48,8 +51,5 @@
     "tslib": "^2.4.0",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3"
-  },
-  "browserslist": [
-    "extends @localyze-pluto/browserslist-config"
-  ]
+  }
 }

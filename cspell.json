@@ -8,7 +8,10 @@
     "esbenp",
     "preactjs",
     "sonarjs",
-    "tsup"
+    "tsup",
+    "moderat",
+    "npmrc",
+    "rgba"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
