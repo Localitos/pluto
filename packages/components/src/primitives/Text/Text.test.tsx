@@ -30,7 +30,12 @@ describe("<Text />", () => {
 
   it("should render as an anchor with an href", () => {
     render(
-      <Text as="a" href="https://localyzeapp.com">
+      <Text
+        as="a"
+        href="https://localyzeapp.com"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
         This is an anchor
       </Text>
     );
@@ -38,6 +43,14 @@ describe("<Text />", () => {
     expect(renderedText).toHaveAttribute(
       "href",
       expect.stringContaining("https://localyzeapp.com")
+    );
+    expect(renderedText).toHaveAttribute(
+      "rel",
+      expect.stringContaining("noreferrer noopener")
+    );
+    expect(renderedText).toHaveAttribute(
+      "target",
+      expect.stringContaining("_blank")
     );
   });
 });
