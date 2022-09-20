@@ -5,7 +5,7 @@ export interface BaseBoxProps
   extends React.HTMLAttributes<HTMLElement>,
     CSSProp {
   /** Changes which HTML tag a component renders. */
-  as?: React.ReactNode;
+  as: keyof JSX.IntrinsicElements;
   /** The contents of the container. Any valid HTML. */
   children?: React.ReactNode;
   /** Boolean to set the aria-hidden prop of the container. */
