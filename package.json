@@ -19,8 +19,7 @@
     "test": "jest",
     "test:ci": "jest --ci",
     "test:coverage": "jest --runInBand --coverage",
-    "type-check": "turbo run tsc",
-    "version-packages": "changeset version"
+    "type-check": "turbo run tsc"
   },
   "workspaces": [
     "packages/**"
