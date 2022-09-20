@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/theme",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pluto Design System Theme",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
