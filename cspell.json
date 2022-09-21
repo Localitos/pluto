@@ -12,7 +12,8 @@
     "moderat",
     "npmrc",
     "rgba",
-    "testid"
+    "testid",
+    "webp"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,

@@ -1,4 +1,4 @@
-import { styled } from "@localyze-pluto/theme";
+import { styled } from "@pluto/theme";
 import { getVariants } from "../../utils/get-variants";
 import { BaseBox } from "./BaseBox";
 import type { BaseBoxProps } from "./BaseBox";

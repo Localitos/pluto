@@ -1,5 +1,5 @@
 import type Stitches from "@stitches/react";
-import { config } from "@localyze-pluto/theme";
+import { config } from "@pluto/theme";
 
 export type CSS = Stitches.CSS<typeof config>;
 

@@ -1,4 +1,4 @@
-import { config } from "@localyze-pluto/theme";
+import { config } from "@pluto/theme";
 import keys from "lodash/keys";
 import reduce from "lodash/reduce";
 import type { CSS } from "../types";

@@ -42,7 +42,7 @@ body:
     attributes:
       label: "Pluto Package and Version"
       description: "The Pluto package and version you are using."
-      placeholder: "@localyze/pluto-components@1.0.0"
+      placeholder: "@pluto/components@1.0.0"
     validations:
       required: true
   - type: "input"

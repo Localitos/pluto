@@ -1,5 +1,5 @@
 {
-  "extends": "@localyze-pluto/tsconfig",
+  "extends": "@pluto/tsconfig",
   "compilerOptions": {
     "outDir": "dist/"
   },
