@@ -31,6 +31,7 @@ jobs:
           git config --global user.name "alpacatron"
 
       - name: "Creates Pull Request or Publish to npm"
+        id: changesets
         uses: changesets/action@v1
         with:
           publish: yarn release
@@ -39,7 +40,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN_BOT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      # - name: Send a Slack notification if a publish happens
-      #   if: steps.changesets.outputs.published == 'true'
-      #   # You can do something when a publish happens.
-      #   run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
+      - name: Notify success to Slack
+        if: steps.changesets.outputs.published == 'true'
+        uses: slackapi/slack-github-action@v1.22.0
+        with:
+          payload: |
+            {
+              "message": "✅ Successfully published Pluto to NPM. Published packages:",
+              "publishedPackages": ${{ toJson(steps.changesets.outputs.publishedPackages) }}
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Notify failure to Slack
+        if: failure() && steps.changesets.outcome == 'failure'
+        uses: slackapi/slack-github-action@v1.22.0
+        with:
+          payload: |
+            {
+              "message": "❌ Something went wrong publishing Pluto to NPM",
+              "publishedPackages": "No packages were published"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
