@@ -13,7 +13,8 @@
     "npmrc",
     "rgba",
     "testid",
-    "keyof"
+    "keyof",
+    "toshimaru"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
