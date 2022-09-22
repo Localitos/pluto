@@ -6,20 +6,20 @@
   "private": true,
   "scripts": {
     "add-component": "plop",
-    "build": "turbo run build",
+    "build": "turbo build",
     "build-storybook": "build-storybook",
     "changeset": "changeset",
-    "clean": "turbo run clean && rm -rf node_modules",
-    "dev": "turbo run dev --no-cache --parallel --continue",
+    "clean": "turbo clean && rm -rf node_modules",
+    "dev": "turbo dev --no-cache --parallel --continue",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo run lint",
+    "lint": "turbo lint",
     "prepare": "husky install",
-    "release": "turbo run build && changeset publish",
+    "release": "turbo build && changeset publish",
     "start": "start-storybook -p 6006",
     "test": "jest",
     "test:ci": "jest --ci",
     "test:coverage": "jest --runInBand --coverage",
-    "type-check": "turbo run tsc"
+    "type-check": "turbo tsc"
   },
   "workspaces": [
     "packages/**"
