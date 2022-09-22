@@ -26,8 +26,12 @@ npm install --save react react-dom
 Install the following packages so you can consume Pluto's tokens and themes to build custom page sections.
 
 ```bash npm2yarn
-npm install --save @localyze/pluto-theme @localyze/pluto-icons @localyze/pluto-components
+npm install --save @localyze-pluto/theme @localyze-pluto/components
 ```
+
+#### Fonts
+
+Currently we only offer have one font family (Moderat) for use within Localyze applications. The Moderat font files must be loaded in the Localyze application because of licensing. We're open to the idea of offering an open source font with Pluto. If you have any ideas on which fonts to offer, please open a [discussion](https://github.com/Localitos/pluto/discussions/new).
 
 ### 3. Build some cool stuff.
 

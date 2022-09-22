@@ -14,7 +14,8 @@
     "rgba",
     "testid",
     "keyof",
-    "toshimaru"
+    "toshimaru",
+    "webp"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
