@@ -14,13 +14,11 @@ export interface BaseBoxProps
 
 /** The BaseBox is the basis for Box. It handles the ref forwarding and other baseline props. */
 const BaseBox = React.forwardRef<HTMLDivElement, BaseBoxProps>(
-  ({ children, decorative, ...props }, ref) => {
-    return (
-      <div aria-hidden={decorative ? true : undefined} ref={ref} {...props}>
-        {children}
-      </div>
-    );
-  }
+  ({ children, decorative, ...props }, ref) => (
+    <div aria-hidden={decorative ? true : undefined} ref={ref} {...props}>
+      {children}
+    </div>
+  )
 );
 
 BaseBox.displayName = "BaseBox";
