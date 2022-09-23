@@ -1,7 +1,10 @@
 {
   "name": "pluto",
   "version": "1.0.0",
-  "repository": "git@github.com:Localitos/pluto.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Localitos/pluto.git"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -68,5 +71,11 @@
   },
   "browserslist": [
     "extends @localyze-pluto/browserslist-config"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/Localitos/pluto/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/Localitos/pluto#readme",
+  "_id": "pluto@1.0.0"
 }

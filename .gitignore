@@ -15,3 +15,6 @@
 # Jest
 .jest-coverage
 .jest-cache
+
+# Design system storybook build
+/docs

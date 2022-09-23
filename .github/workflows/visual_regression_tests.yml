@@ -1,0 +1,56 @@
+name: "Visual Tests"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    paths:
+      - "packages/**"
+    branches:
+      - main
+
+jobs:
+  install-cache:
+    name: Install and cache dependencies
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v2
+      - name: Cache yarn dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-v1
+      - name: Install dependencies if cache invalid
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+  visual-tests:
+    name: Run visual tests with Chromatic
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    needs: install-cache
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Required to retrieve git history
+      - name: Restore yarn dependencies
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-v1
+
+      - name: Build packages
+        run: yarn build
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: "main"
+          exitOnceUploaded: true
