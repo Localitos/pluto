@@ -201,3 +201,8 @@ jobs:
 
       - name: Run tests
         run: yarn test:ci
+
+      - name: Danger
+        uses: danger/danger-js@9.1.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
