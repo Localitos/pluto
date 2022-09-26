@@ -10,10 +10,6 @@ const packageFileTests = danger.git.fileMatch(
   "packages/**/*.test.tsx"
 );
 
-warn(JSON.stringify(changeset));
-warn(JSON.stringify(packageFiles));
-warn(JSON.stringify(packageFileTests));
-
 if (
   (packageFiles.modified || packageFileTests.modified) &&
   !changeset.created
