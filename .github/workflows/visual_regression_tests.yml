@@ -2,8 +2,6 @@ name: "Visual Tests"
 
 on:
   pull_request:
-    branches-ignore:
-      - "dependabot/**"
     types: [opened, synchronize, reopened, ready_for_review]
   push:
     paths:
@@ -15,7 +13,7 @@ jobs:
   install-cache:
     name: Install and cache dependencies
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+    if: ${{ (github.actor != 'dependabot[bot]') || github.event.pull_request.draft == false }}
     steps:
       - name: Checkout Commit
         uses: actions/checkout@v2
@@ -33,7 +31,7 @@ jobs:
   visual-tests:
     name: Run visual tests with Chromatic
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+    if: ${{ (github.actor != 'dependabot[bot]') || github.event.pull_request.draft == false }}
     needs: install-cache
     steps:
       - uses: actions/checkout@v2
