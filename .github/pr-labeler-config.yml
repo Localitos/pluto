@@ -1,6 +1,6 @@
 feature: [feature/*, "feat/*"]
 bug: "fix/*"
-chore: "chore/*"
+chore: "chore/chr*"
 documentation: ["docs/*", "documentation/*"]
 enhancement: ["perf/*", "refactor/*", "ci/*", "build/*"]
 skip-changelog: ["release/*"]
