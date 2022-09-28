@@ -1,4 +1,4 @@
-import { danger, warn } from "danger";
+import { danger } from "danger";
 
 const changeset = danger.git.fileMatch(".changeset/*.md");
 const packageFiles = danger.git.fileMatch(
@@ -15,6 +15,4 @@ if (
   !changeset.created
 ) {
   fail("You don't have a changeset file for your modifications.");
-} else if (!changeset.created) {
-  warn("You don't have a changeset file for your modifications.");
 }
