@@ -4,8 +4,6 @@
 
 Pluto is a design system used to build accessible, consistent, and high quality public-facing experiences at Localyze.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b05a949c-18c2-42e3-84e1-9c4779b7ccb3/deploy-status)](https://app.netlify.com/sites/pluto-design-system/deploys)
-
 ## Getting Started
 
 👋 Hi. Follow the steps below to begin building with Pluto
