@@ -2,6 +2,8 @@ name: "Visual Tests"
 
 on:
   pull_request:
+    branches-ignore:
+      - "dependabot**"
     types: [opened, synchronize, reopened, ready_for_review]
   push:
     paths:
