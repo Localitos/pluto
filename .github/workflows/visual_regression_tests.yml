@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.triggering_actor }}
-      - uses: actions/checkout@v2
+      - name: Checkout Commit
+        uses: actions/checkout@v2
       - name: Cache yarn dependencies
         uses: actions/cache@v3
         id: yarn-cache
