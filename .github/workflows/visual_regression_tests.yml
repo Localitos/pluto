@@ -12,7 +12,7 @@ on:
 jobs:
   install-cache:
     name: Install and cache dependencies
-    if: ${{ github.triggering_actor != 'dependabot[bot]' || contains(github.event.pull_request.draft, false) }}
+    if: ${{ github.triggering_actor != 'dependabot[bot]' && contains(github.event.pull_request.draft, false) }}
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.triggering_actor }}
