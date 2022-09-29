@@ -203,6 +203,7 @@ jobs:
         run: yarn test:ci
 
       - name: Danger
+        if: ${{ github.triggering_actor != 'dependabot[bot]' && contains(github.event.pull_request.draft, false) }}
         uses: danger/danger-js@9.1.6
         env:
           GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
