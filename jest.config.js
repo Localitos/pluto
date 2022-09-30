@@ -1,3 +1,5 @@
+const TestTheme = require("./.jest/globals/TestTheme");
+
 module.exports = {
   verbose: true,
   roots: ["<rootDir>/packages"],
@@ -27,6 +29,7 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/.jest/jest-setup.ts"],
   transformIgnorePatterns: ["node_modules/"],
   globals: {
+    TestTheme,
     "ts-jest": {
       isolatedModules: true,
     },

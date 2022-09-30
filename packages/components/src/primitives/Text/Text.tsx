@@ -1,110 +1,81 @@
-import { styled } from "@localyze-pluto/theme";
-import { getVariants } from "../../utils/get-variants";
-import { BaseText } from "./BaseText";
-import type { BaseTextProps } from "./BaseText";
+import React from "react";
+import styled from "@emotion/styled";
+import {
+  boxShadow,
+  compose,
+  display,
+  overflow,
+  position,
+  space,
+  typography,
+  verticalAlign,
+} from "styled-system";
+import {
+  createShouldForwardProp,
+  props as stylingProps,
+} from "@styled-system/should-forward-prop";
+import type { StyledComponent } from "@emotion/styled";
+import keys from "lodash/keys";
+import type { TextProps, StyledTextProps } from "./types";
+import { getPseudoStyles, PlutoStyleProps } from "./utils/style-functions";
+import { customStyleProps } from "./utils/custom-style-props";
+import { PseudoPropStyles } from "./utils/pseudo-prop-styles";
 
-export type TextProps = BaseTextProps;
+const shouldForwardProp = createShouldForwardProp([
+  ...stylingProps,
+  ...keys({ ...customStyleProps, ...PseudoPropStyles }),
+]);
 
-/** A primitive component that can be used to create all text styles in Pluto. */
-const Text = styled(BaseText, {
-  color: "$colorText",
-  fontFamily: "$moderat",
-  fontWeight: "$fontWeightRegular",
-  fontSize: "$fontSize10",
-  lineHeight: "$lineHeight10",
-  margin: "$space0",
-  padding: "$space0",
-  variants: {
-    color: {
-      colorTextStrongest: {
-        color: "$colorTextStrongest",
-      },
-      colorTextStronger: {
-        colorTextStronger: "$colorTextStronger",
-      },
-      colorText: {
-        color: "$colorText",
-      },
-      colorTextError: {
-        color: "$colorTextError",
-      },
-      colorTextWarning: {
-        color: "$colorTextWarning",
-      },
-      colorTextSuccess: {
-        color: "$colorTextSuccess",
-      },
-      colorTextInverse: {
-        color: "$colorTextInverse",
-      },
-      colorTextLink: {
-        color: "$colorTextLink",
-      },
-      colorTextLinkStrong: {
-        color: "$colorTextLinkStrong",
-      },
-      colorTextHeading: {
-        color: "$colorTextHeading",
-      },
-    },
-    cursor: {
-      notAllowed: {
-        cursor: "not-allowed",
-      },
-      pointer: {
-        cursor: "pointer",
-      },
-      wait: {
-        cursor: "wait",
-      },
-    },
-    display: {
-      block: {
-        display: "block",
-      },
-      inline: {
-        display: "inline",
-      },
-      inlineBlock: {
-        display: "inline-block",
-      },
-    },
-    lineHeight: getVariants("lineHeights", (tokenValue) => ({
-      lineHeight: tokenValue,
-    })),
-    fontFamily: getVariants("fonts", (tokenValue) => ({
-      fontFamily: tokenValue,
-    })),
-    fontSize: getVariants("fontSizes", (tokenValue) => ({
-      fontSize: tokenValue,
-    })),
-    fontWeight: getVariants("fontWeights", (tokenValue) => ({
-      fontWeight: tokenValue,
-    })),
-    textDecoration: {
-      none: {
-        textDecoration: "none",
-      },
-      underline: {
-        textDecoration: "underline",
-      },
-    },
-    textTransform: {
-      none: {
-        textTransform: "none",
-      },
-      uppercase: {
-        textTransform: "uppercase",
-      },
-      lowercase: {
-        textTransform: "lowercase",
-      },
-      capitalize: {
-        textTransform: "capitalize",
-      },
-    },
+// @ts-expect-error can't work out how to stop the styled div color prop from emotion clashing with our color style prop in TextProps
+export const StyledText = styled<StyledTextProps>("div", { shouldForwardProp })(
+  {
+    margin: 0,
+    padding: 0,
   },
-});
+  compose(
+    boxShadow,
+    display,
+    overflow,
+    position,
+    space,
+    typography,
+    verticalAlign,
+    PlutoStyleProps
+  ),
+  getPseudoStyles
+) as StyledComponent<
+  Omit<
+    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
+    "color"
+  >,
+  TextProps,
+  Record<string, unknown>
+>;
+
+const Text = React.forwardRef<HTMLElement, TextProps>(
+  (
+    {
+      children,
+      color = "colorText",
+      fontSize = "fontSize30",
+      lineHeight = "lineHeight30",
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <StyledText
+        color={color}
+        fontSize={fontSize}
+        lineHeight={lineHeight}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </StyledText>
+    );
+  }
+);
 
 Text.displayName = "Text";
 

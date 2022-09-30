@@ -4,6 +4,7 @@
     ".",
     ".jest/jest-setup.ts",
     ".jest/jest.config.js",
+    ".jest/@types/index.d.ts",
     "packages/eslint-config/.eslintrc.js"
   ],
   "exclude": ["dist", "build", "node_modules"]

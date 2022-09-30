@@ -16,7 +16,8 @@
     "keyof",
     "toshimaru",
     "webp",
-    "chromaui"
+    "chromaui",
+    "nums"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,

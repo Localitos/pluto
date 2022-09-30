@@ -1,0 +1,17 @@
+export const TYPOGRAPHY_PROPS = [
+  "fontFamily",
+  "fontSize",
+  "fontStyle",
+  "fontWeight",
+  "letterSpacing",
+  "lineHeight",
+  "textAlign",
+  "color",
+  "textDecoration",
+  "textOverflow",
+  "textTransform",
+  "whiteSpace",
+  "wordBreak",
+  "wordWrap",
+  "overflowWrap",
+];

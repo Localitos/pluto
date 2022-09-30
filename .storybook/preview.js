@@ -1,14 +1,13 @@
 import React from "react";
 import { Title, Description, ArgsTable, Stories } from "@storybook/addon-docs";
-import { globalStyles } from "../packages/theme";
+import { Theme } from "../packages/theme";
 
 export const decorators = [
   (Story) => {
-    globalStyles();
     return (
-      <>
+      <Theme.Provider>
         <Story />
-      </>
+      </Theme.Provider>
     );
   },
 ];
