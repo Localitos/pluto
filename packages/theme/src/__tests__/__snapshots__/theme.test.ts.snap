@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default theme should match the snapshot 1`] = `
+Array [
+  "borderWidths",
+  "breakpoints",
+  "colors",
+  "fontSizes",
+  "fontWeights",
+  "fonts",
+  "lineHeights",
+  "radii",
+  "shadows",
+  "space",
+  "zIndices",
+]
+`;

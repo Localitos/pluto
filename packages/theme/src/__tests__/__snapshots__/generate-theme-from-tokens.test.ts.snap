@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateThemeFromTokens should generate a theme in the desired shape based on design tokens provided 1`] = `
+Object {
+  "borderWidths": Object {
+    "borderWidth0": "10px",
+  },
+  "breakpoints": Array [
+    "25rem",
+    "64rem",
+    "77rem",
+  ],
+  "colors": Object {
+    "colorText": "black",
+  },
+  "fontSizes": Object {
+    "fontSize30": "300px",
+  },
+  "fontWeights": Object {
+    "fontWeightBold": "800",
+  },
+  "fonts": Object {
+    "fontFamilyModerat": "arial",
+  },
+  "lineHeights": Object {
+    "lineHeight30": "20px",
+  },
+  "radii": Object {
+    "borderRadius10": "20px",
+  },
+  "shadows": Object {
+    "shadow": "grey",
+  },
+  "space": Object {
+    "space10": "28px",
+  },
+  "zIndices": Object {
+    "zIndex0": "-20",
+  },
+}
+`;

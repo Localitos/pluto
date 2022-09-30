@@ -1,22 +1,15 @@
-import { globalCss } from "@stitches/react";
+import { css } from "@styled-system/css";
 
-export const globalStyles = globalCss({
+export const plutoGlobalStyles = css({
   html: {
     fontSize: "100%",
+    fontFamily: "fontFamilyModerat",
   },
   body: {
-    "-webkit-font-smoothing": "antialiased",
-    "-moz-osx-font-smoothing": "grayscale",
+    margin: 0,
+    fontSize: "fontSize30",
   },
   "*, *::after, *::before": {
     boxSizing: "border-box",
-  },
-  "@media (prefers-reduced-motion: reduce)": {
-    "*": {
-      animationDuration: "0 !important",
-      animationIterationCount: "1 !important",
-      transitionDuration: "0 !important",
-      scrollBehavior: "auto !important",
-    },
   },
 });
