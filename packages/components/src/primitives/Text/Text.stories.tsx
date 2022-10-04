@@ -1,48 +1,40 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { ComponentMeta } from "@storybook/react";
 import React from "react";
 import { Text } from "./Text";
 
 export default {
-  component: Text,
+  component: Text.span,
   title: "Primitives/Text",
-} as ComponentMeta<typeof Text>;
+} as ComponentMeta<typeof Text.span>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
+export const Default = (): JSX.Element => (
+  <Text.span>This is the text component.</Text.span>
+);
 
-export const Default = Template.bind({});
-Default.args = {
-  children: "This is the text component.",
-};
+export const Heading = (): JSX.Element => (
+  <Text.h2
+    fontSize="fontSize50"
+    fontWeight="fontWeightMedium"
+    lineHeight="lineHeight60"
+  >
+    This is the text component as a heading.
+  </Text.h2>
+);
 
-export const Heading = Template.bind({});
-Heading.args = {
-  as: "h2",
-  children: "This is the text component as a heading.",
-  fontWeight: "fontWeightMedium",
-  fontSize: "fontSize50",
-  lineHeight: "lineHeight60",
-};
+export const Paragraph = (): JSX.Element => (
+  <Text.p>This is the text component as a paragraph.</Text.p>
+);
 
-export const Paragraph = Template.bind({});
-Paragraph.args = {
-  as: "p",
-  children: "This is the text component as a paragraph.",
-};
+export const ErrorText = (): JSX.Element => (
+  <Text.span color="colorTextError">
+    This is the text component as an error message.
+  </Text.span>
+);
 
-export const ErrorText = Template.bind({});
-ErrorText.args = {
-  children: "This is the text component as an error message.",
-  color: "colorTextError",
-};
+export const Underlined = (): JSX.Element => (
+  <Text.span textDecoration="underline">This is underlined text.</Text.span>
+);
 
-export const Underlined = Template.bind({});
-Underlined.args = {
-  children: "This is underlined text.",
-  textDecoration: "underline",
-};
-
-export const Uppercase = Template.bind({});
-Uppercase.args = {
-  children: "This is uppercase text.",
-  textTransform: "uppercase",
-};
+export const Uppercase = (): JSX.Element => (
+  <Text.span textTransform="uppercase">This is uppercase text.</Text.span>
+);

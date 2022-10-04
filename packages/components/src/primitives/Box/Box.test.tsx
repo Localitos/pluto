@@ -1,41 +1,40 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
 import React from "react";
-import { Box } from "./Box";
+import { Box } from "./";
 
 const childString = "This is a div";
 
 describe("<Box />", () => {
   it("should render a Box as a div", () => {
-    render(<Box>{childString}</Box>);
+    render(<Box.div>{childString}</Box.div>);
     const renderedBox = screen.getByText(childString);
     expect(renderedBox).toBeInTheDocument();
   });
 
   it("should render a Box as a button", () => {
-    render(<Box as="button">This is a button</Box>);
+    render(<Box.button>This is a button</Box.button>);
     const renderedBox = screen.getByRole("button");
     expect(renderedBox).toBeInTheDocument();
   });
 
-  it("should render with a background color class", () => {
-    render(<Box backgroundColor="colorBackground">{childString}</Box>);
+  it("should render with a display none prop", () => {
+    render(<Box.div display="none">{childString}</Box.div>);
     const renderedBox = screen.getByText(childString);
-    // Using toHaveAttribute here because the Stitches classNames are dynamic. We just want part of the className.
-    // eslint-disable-next-line jest-dom/prefer-to-have-class
-    expect(renderedBox).toHaveAttribute(
-      "class",
-      expect.stringContaining("backgroundColor-colorBackground")
-    );
+    expect(renderedBox).not.toBeVisible();
   });
 
-  it("should render with a css class", () => {
-    render(<Box css={{ display: "flex" }}>{childString}</Box>);
-    const renderedBox = screen.getByText(childString);
-    // Using toHaveAttribute here because the Stitches classNames are dynamic. We just want part of the className.
-    // eslint-disable-next-line jest-dom/prefer-to-have-class
-    expect(renderedBox).toHaveAttribute(
-      "class",
-      expect.stringContaining("css")
-    );
+  it("should render as an button with an onClick", async () => {
+    const onClickMock: jest.Mock = jest.fn();
+
+    const user = userEvent.setup() as UserEvent;
+
+    render(<Box.button onClick={onClickMock}>This is a button</Box.button>);
+    const renderedBox = screen.getByRole("button");
+    expect(renderedBox).toBeInTheDocument();
+
+    await user.click(renderedBox);
+    expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,69 +1,62 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { ComponentMeta } from "@storybook/react";
 import React from "react";
 import { Box } from "./Box";
 
 export default {
-  component: Box,
+  component: Box.div,
   title: "Primitives/Box",
-} as ComponentMeta<typeof Box>;
+} as ComponentMeta<typeof Box.div>;
 
-const Template: ComponentStory<typeof Box> = (args) => <Box {...args} />;
+export const Default = (): JSX.Element => (
+  <Box.div
+    backgroundColor="colorBackgroundInfo"
+    borderColor="colorBorderPrimary"
+    borderRadius="borderRadius20"
+    borderStyle="borderSolid"
+    borderWidth="borderWidth10"
+    color="colorTextStronger"
+    padding="space40"
+  >
+    I&apos;m some text in a box.
+  </Box.div>
+);
 
-export const Default = Template.bind({});
-Default.args = {
-  children: "I'm some text in a box.",
-  backgroundColor: "colorBackgroundInfo",
-  color: "colorTextStronger",
-  padding: "space30",
-  borderStyle: "borderSolid",
-  borderWidth: "borderWidth10",
-  borderColor: "colorBorderPrimary",
-  borderRadius: "borderRadius20",
-};
+export const Responsive = (): JSX.Element => (
+  <Box.div
+    backgroundColor={{ _: "colorBackgroundWeak", md: "colorBackgroundInfo" }}
+    fontSize={{ _: "fontSize30", md: "fontSize60" }}
+    padding="space60"
+  >
+    The background color and text size will change on smaller screens.
+  </Box.div>
+);
 
-export const Responsive = Template.bind({});
-Responsive.args = {
-  children:
-    "The background color and text size will change on smaller screens.",
-  backgroundColor: {
-    "@initial": "colorBackgroundWeak",
-    "@media (min-width: 800px)": "colorBackgroundInfo",
-  },
-  fontSize: {
-    "@initial": "fontSize30",
-    "@media (min-width: 800px)": "fontSize60",
-  },
-  padding: "space60",
-};
-
-export const AsHeading = Template.bind({});
-AsHeading.args = {
-  as: "h2",
-  children: "This is an H2 element",
-};
+export const AsHeading = (): JSX.Element => (
+  <Box.h2>This is an H2 element</Box.h2>
+);
 
 export const ProcessesCard = (): JSX.Element => (
-  <Box css={{ maxWidth: "450px" }}>
-    <Box
-      background="colorBackgroundGradientProcesses"
+  <Box.div>
+    <Box.div
+      alignItems="center"
+      background="linear-gradient(175.85deg, #9FFED5 4.23%, #3767E4 53.02%, #234AE6 70.91%, #102EE9 96.37%)"
       borderRadius="borderRadius40"
+      boxShadow={{ hover: "shadowStrong" }}
       color="colorTextInverse"
-      css={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        "&:hover": {
-          cursor: "pointer",
-          boxShadow: "$shadowStrong",
-        },
-      }}
-      fontFamily="moderat"
+      cursor={{ hover: "pointer" }}
+      display="flex"
+      flexDirection="column"
+      fontFamily="fontFamilyModerat"
       padding="space70"
     >
-      <Box fontSize="fontSize80" fontWeight="fontWeightBold">
+      <Box.div
+        fontSize="fontSize80"
+        fontWeight="fontWeightBold"
+        lineHeight="lineHeight90"
+      >
         9
-      </Box>
-      <Box fontSize="fontSize30">My Processes</Box>
-    </Box>
-  </Box>
+      </Box.div>
+      <Box.div fontSize="fontSize30">My Processes</Box.div>
+    </Box.div>
+  </Box.div>
 );
