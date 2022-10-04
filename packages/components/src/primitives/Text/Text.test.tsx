@@ -6,40 +6,35 @@ const childString = "This is a span";
 
 describe("<Text />", () => {
   it("should render a Text as a div", () => {
-    render(<Text>{childString}</Text>);
+    render(<Text.span>{childString}</Text.span>);
     const renderedText = screen.getByText(childString);
     expect(renderedText).toBeInTheDocument();
   });
 
   it("should render a Text as a heading", () => {
-    render(<Text as="h2">This is a heading</Text>);
+    render(<Text.h2>This is a heading</Text.h2>);
     const renderedText = screen.getByRole("heading", { level: 2 });
     expect(renderedText).toBeInTheDocument();
   });
 
-  it("should render with a background color class", () => {
-    render(<Text color="colorTextLink">{childString}</Text>);
+  it("should render with a display none prop", () => {
+    render(<Text.span display="none">{childString}</Text.span>);
     const renderedText = screen.getByText(childString);
-    // Using toHaveAttribute here because the Stitches classNames are dynamic. We just want part of the className.
-    // eslint-disable-next-line jest-dom/prefer-to-have-class
-    expect(renderedText).toHaveAttribute(
-      "class",
-      expect.stringContaining("color-colorTextLink")
-    );
+    expect(renderedText).not.toBeVisible();
   });
 
   it("should render as an anchor with an href", () => {
     render(
-      <Text
-        as="a"
+      <Text.a
         href="https://localyzeapp.com"
         rel="noreferrer noopener"
         target="_blank"
       >
         This is an anchor
-      </Text>
+      </Text.a>
     );
     const renderedText = screen.getByRole("link");
+    expect(renderedText).toBeInTheDocument();
     expect(renderedText).toHaveAttribute(
       "href",
       expect.stringContaining("https://localyzeapp.com")

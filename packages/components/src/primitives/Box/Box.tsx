@@ -1,131 +1,55 @@
-import { styled } from "@localyze-pluto/theme";
-import { getVariants } from "../../utils/get-variants";
-import { BaseBox } from "./BaseBox";
-import type { BaseBoxProps } from "./BaseBox";
+import { createCss, system, compose } from "@xstyled/styled-components";
+import type {
+  SystemProp,
+  SystemProps,
+  Theme,
+} from "@xstyled/styled-components";
 
-export type BoxProps = BaseBoxProps;
+export interface BoxProps extends SystemProps {
+  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderTopColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderRightColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderBottomColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderLeftColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
+  borderTopStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
+  borderRightStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
+  borderBottomStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
+  borderLeftStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
+  borderWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
+  borderTopWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
+  borderRightWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
+  borderBottonWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
+  borderLeftWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
+  borderRadius?: SystemProp<keyof Theme["radii"], Theme>;
+  borderTopRightRadius?: SystemProp<keyof Theme["radii"], Theme>;
+  borderTopLeftRadius?: SystemProp<keyof Theme["radii"], Theme>;
+  borderBottomRightRadius?: SystemProp<keyof Theme["radii"], Theme>;
+  borderBottomLeftRadius?: SystemProp<keyof Theme["radii"], Theme>;
+  boxShadow?: SystemProp<keyof Theme["shadows"], Theme>;
+  color?: SystemProp<keyof Theme["colors"], Theme>;
+  fontFamily?: SystemProp<keyof Theme["fonts"], Theme>;
+  fontSize?: SystemProp<keyof Theme["fontSizes"], Theme>;
+  fontWeight?: SystemProp<keyof Theme["fontWeights"], Theme>;
+  gap?: SystemProp<keyof Theme["space"], Theme>;
+  gridGap?: SystemProp<keyof Theme["space"], Theme>;
+  gridRowGap?: SystemProp<keyof Theme["space"], Theme>;
+  gridColumnGap?: SystemProp<keyof Theme["space"], Theme>;
+  lineHeight?: SystemProp<keyof Theme["lineHeights"], Theme>;
+  margin?: SystemProp<keyof Theme["space"], Theme>;
+  marginTop?: SystemProp<keyof Theme["space"], Theme>;
+  marginRight?: SystemProp<keyof Theme["space"], Theme>;
+  marginBottom?: SystemProp<keyof Theme["space"], Theme>;
+  marginLeft?: SystemProp<keyof Theme["space"], Theme>;
+  padding?: SystemProp<keyof Theme["space"], Theme>;
+  paddingTop?: SystemProp<keyof Theme["space"], Theme>;
+  paddingRight?: SystemProp<keyof Theme["space"], Theme>;
+  paddingBottom?: SystemProp<keyof Theme["space"], Theme>;
+  paddingLeft?: SystemProp<keyof Theme["space"], Theme>;
+  zIndex?: SystemProp<keyof Theme["zIndices"], Theme>;
+}
 
-/** A primitive component that can be used to create all block level styles in Pluto */
-const Box = styled(BaseBox, {
-  boxSizing: "border-box",
-  variants: {
-    background: getVariants("colors", (tokenValue) => ({
-      background: tokenValue,
-    })),
-    backgroundColor: getVariants("colors", (tokenValue) => ({
-      backgroundColor: tokenValue,
-    })),
-    borderWidth: getVariants("borderWidths", (tokenValue) => ({
-      borderWidth: tokenValue,
-    })),
-    borderTopWidth: getVariants("borderWidths", (tokenValue) => ({
-      borderTopWidth: tokenValue,
-    })),
-    borderRightWidth: getVariants("borderWidths", (tokenValue) => ({
-      borderRightWidth: tokenValue,
-    })),
-    borderBottomWidth: getVariants("borderWidths", (tokenValue) => ({
-      borderBottomWidth: tokenValue,
-    })),
-    borderLeftWidth: getVariants("borderWidths", (tokenValue) => ({
-      borderLeftWidth: tokenValue,
-    })),
-    borderColor: getVariants("colors", (tokenValue) => ({
-      borderColor: tokenValue,
-    })),
-    borderTopColor: getVariants("colors", (tokenValue) => ({
-      borderTopColor: tokenValue,
-    })),
-    borderRightColor: getVariants("colors", (tokenValue) => ({
-      borderRightColor: tokenValue,
-    })),
-    borderBottomColor: getVariants("colors", (tokenValue) => ({
-      borderBottomColor: tokenValue,
-    })),
-    borderLeftColor: getVariants("colors", (tokenValue) => ({
-      borderLeftColor: tokenValue,
-    })),
-    borderRadius: getVariants("radii", (tokenValue) => ({
-      borderRadius: tokenValue,
-    })),
-    borderTopRightRadius: getVariants("radii", (tokenValue) => ({
-      borderTopRightRadius: tokenValue,
-    })),
-    borderTopLeftRadius: getVariants("radii", (tokenValue) => ({
-      borderTopLeftRadius: tokenValue,
-    })),
-    borderBottomRightRadius: getVariants("radii", (tokenValue) => ({
-      borderBottomRightRadius: tokenValue,
-    })),
-    borderBottomLeftRadius: getVariants("radii", (tokenValue) => ({
-      borderBottomLeftRadius: tokenValue,
-    })),
-    borderStyle: getVariants("borderStyles", (tokenValue) => ({
-      borderStyle: tokenValue,
-    })),
-    borderTopStyle: getVariants("borderStyles", (tokenValue) => ({
-      borderTopStyle: tokenValue,
-    })),
-    borderRightStyle: getVariants("borderStyles", (tokenValue) => ({
-      borderRightStyle: tokenValue,
-    })),
-    borderBottomStyle: getVariants("borderStyles", (tokenValue) => ({
-      borderBottomStyle: tokenValue,
-    })),
-    borderLeftStyle: getVariants("borderStyles", (tokenValue) => ({
-      borderLeftStyle: tokenValue,
-    })),
-    boxShadow: getVariants("shadows", (tokenValue) => ({
-      boxShadow: tokenValue,
-    })),
-    color: getVariants("colors", (tokenValue) => ({
-      color: tokenValue,
-    })),
-    fontFamily: getVariants("fonts", (tokenValue) => ({
-      fontFamily: tokenValue,
-    })),
-    fontSize: getVariants("fontSizes", (tokenValue) => ({
-      fontSize: tokenValue,
-    })),
-    fontWeight: getVariants("fontWeights", (tokenValue) => ({
-      fontWeight: tokenValue,
-    })),
-    lineHeight: getVariants("lineHeights", (tokenValue) => ({
-      lineHeight: tokenValue,
-    })),
-    margin: getVariants("space", (tokenValue) => ({
-      margin: tokenValue,
-    })),
-    marginTop: getVariants("space", (tokenValue) => ({
-      marginTop: tokenValue,
-    })),
-    marginRight: getVariants("space", (tokenValue) => ({
-      marginRight: tokenValue,
-    })),
-    marginBottom: getVariants("space", (tokenValue) => ({
-      marginBottom: tokenValue,
-    })),
-    marginLeft: getVariants("space", (tokenValue) => ({
-      marginLeft: tokenValue,
-    })),
-    padding: getVariants("space", (tokenValue) => ({
-      padding: tokenValue,
-    })),
-    paddingTop: getVariants("space", (tokenValue) => ({
-      paddingTop: tokenValue,
-    })),
-    paddingRight: getVariants("space", (tokenValue) => ({
-      paddingRight: tokenValue,
-    })),
-    paddingBottom: getVariants("space", (tokenValue) => ({
-      paddingBottom: tokenValue,
-    })),
-    paddingLeft: getVariants("space", (tokenValue) => ({
-      paddingLeft: tokenValue,
-    })),
-  },
-});
+const { x } = createCss(compose<BoxProps>(system));
 
-Box.displayName = "Box";
-
-export { Box };
+export { x as Box };

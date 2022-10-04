@@ -29,20 +29,21 @@
   },
   "dependencies": {
     "@localyze-pluto/theme": "^0.0.2",
-    "@stitches/react": "^1.2.8",
-    "lodash": "^4.17.21"
+    "@xstyled/styled-components": "^3.6.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@localyze-pluto/eslint-config": "^1.0.1",
     "@localyze-pluto/tsconfig": "^1.0.0",
     "@testing-library/jest-dom": "^5.14.5",
     "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.4",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.4",
+    "@types/styled-components": "^5.1.26",
     "eslint": "^8.24.0",
     "jest": "^28.1.2",
-    "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^29.1.2",
     "jest-watch-typeahead": "^2.2.0",
     "prettier": "^2.7.1",
