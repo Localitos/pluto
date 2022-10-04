@@ -16,7 +16,10 @@
     "keyof",
     "toshimaru",
     "webp",
-    "chromaui"
+    "chromaui",
+    "xstyled",
+    "nums",
+    "bezier"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
