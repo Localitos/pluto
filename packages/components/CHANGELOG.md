@@ -1,5 +1,24 @@
 # @localyze-pluto/components
 
+## 2.0.0
+
+### Major Changes
+
+- [#63](https://github.com/Localitos/pluto/pull/63) [`ea6081c`](https://github.com/Localitos/pluto/commit/ea6081ca0520fffcabfd99a38abd0d1b83399ec3) Thanks [@richbachman](https://github.com/richbachman)! - BREAKING CHANGE
+
+  [Box]: Box is now a utility component based on the `x` component from xStyled. It comes with all available style props.
+
+  - The `css` has been removed. Any styles contained within the `css` prop will need to be replaced with style props.
+
+  [Text]: Text is now a utility component based on the `x` component from xStyled, but with only typography and display style props
+
+  - The `css` has been removed. Any styles contained within the `css` prop will need to be replaced with style props.
+
+### Patch Changes
+
+- Updated dependencies [[`01d4fc5`](https://github.com/Localitos/pluto/commit/01d4fc50b5e05b536a8cb8bb7a62e16d646ef037)]:
+  - @localyze-pluto/theme@1.0.0
+
 ## 1.0.0
 
 ### Major Changes
