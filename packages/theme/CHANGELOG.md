@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.0.1
+
+### Patch Changes
+
+- [#77](https://github.com/Localitos/pluto/pull/77) [`aeb5073`](https://github.com/Localitos/pluto/commit/aeb50730641de651bb30de3df64a08a854b61495) Thanks [@richbachman](https://github.com/richbachman)! - Export `createGlobalStyle` from xStyled so it can be used in other applications.
+
 ## 1.0.0
 
 ### Major Changes
