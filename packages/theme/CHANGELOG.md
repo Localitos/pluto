@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.0.2
+
+### Patch Changes
+
+- [#79](https://github.com/Localitos/pluto/pull/79) [`00756eb`](https://github.com/Localitos/pluto/commit/00756eb8624f331701e61ca9904e3b9cf55b65ea) Thanks [@richbachman](https://github.com/richbachman)! - Exporting the correct types and added correct peerDependencies.
+
 ## 1.0.1
 
 ### Patch Changes

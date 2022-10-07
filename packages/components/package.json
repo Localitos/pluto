@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/components",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Pluto Design System Components",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -28,12 +28,12 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@localyze-pluto/theme": "^1.0.0",
+    "@localyze-pluto/theme": "^1.0.2",
     "@xstyled/styled-components": "^3.6.0",
     "styled-components": "^5.3.6"
   },
   "peerDependencies": {
-    "@localyze-pluto/theme": "^1.0.0",
+    "@localyze-pluto/theme": "^1.0.2",
     "@xstyled/styled-components": "^3.6.0",
     "styled-components": "^5.3.6"
   },
