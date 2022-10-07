@@ -32,6 +32,11 @@
     "@xstyled/styled-components": "^3.6.0",
     "styled-components": "^5.3.6"
   },
+  "peerDependencies": {
+    "@localyze-pluto/theme": "^1.0.0",
+    "@xstyled/styled-components": "^3.6.0",
+    "styled-components": "^5.3.6"
+  },
   "devDependencies": {
     "@localyze-pluto/eslint-config": "^1.0.1",
     "@localyze-pluto/tsconfig": "^1.0.0",
