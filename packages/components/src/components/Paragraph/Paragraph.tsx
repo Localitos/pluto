@@ -2,7 +2,7 @@ import React from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Text } from "../../primitives/Text";
 
-type ParagraphMarginOptions = "space0" | "space40";
+type ParagraphMarginOptions = "space0" | "space70";
 type ParagraphSizeOptions = "large" | "medium" | "small";
 
 export interface ParagraphProps {
@@ -43,8 +43,8 @@ const getParagraphStyles = (
 };
 
 /** A Paragraph is a block of text. */
-const Paragraph = React.forwardRef<HTMLDivElement, ParagraphProps>(
-  ({ children, marginBottom = "space40", size = "medium" }, ref) => {
+const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
+  ({ children, marginBottom = "space70", size = "medium", ...props }, ref) => {
     return (
       <Text.p
         fontFamily="fontFamilyModerat"
@@ -52,6 +52,7 @@ const Paragraph = React.forwardRef<HTMLDivElement, ParagraphProps>(
         marginBottom={marginBottom}
         ref={ref}
         {...getParagraphStyles(size)}
+        {...props}
       >
         {children}
       </Text.p>
