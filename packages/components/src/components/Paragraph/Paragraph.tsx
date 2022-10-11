@@ -5,7 +5,8 @@ import { Text } from "../../primitives/Text";
 type ParagraphMarginOptions = "space0" | "space70";
 type ParagraphSizeOptions = "large" | "medium" | "small";
 
-export interface ParagraphProps {
+export interface ParagraphProps
+  extends Omit<React.HTMLAttributes<HTMLParagraphElement>, "color"> {
   /** The contents of the paragraph. Can be text or valid text related HTML, i.e. anchor and strong elements. */
   children: NonNullable<React.ReactNode>;
   /** Sets the bottom margin of the Paragraph. */
