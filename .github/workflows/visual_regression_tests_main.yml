@@ -1,4 +1,4 @@
-name: "Visual Tests"
+name: "Visual Tests Main"
 
 on:
   push:
