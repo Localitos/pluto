@@ -1,17 +1,17 @@
 name: "Visual Tests"
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
   push:
     paths:
       - "packages/**"
+    branches:
+      - main
 
 jobs:
   install-cache:
     name: Install and cache dependencies
-    if: ${{ github.triggering_actor != 'dependabot[bot]' && contains(github.event.pull_request.draft, false) }}
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'chore(release): version packages')"
     steps:
       - run: echo ${{ github.triggering_actor }}
       - name: Checkout Commit
@@ -28,9 +28,9 @@ jobs:
         run: yarn
 
   visual-tests:
-    name: Run visual tests with Chromatic
+    name: Run visual tests with Chromatic on Main
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.draft, false)
+    if: "!contains(github.event.head_commit.message, 'chore(release): version packages')"
     needs: install-cache
     steps:
       - uses: actions/checkout@v2
