@@ -216,6 +216,7 @@ Object {
     "focusWithin": "&:focus-within",
     "hover": "&:hover",
     "last": "&:last-child",
+    "loading": "&[aria-busy=\\"true\\"]",
     "motionReduce": "@media (prefers-reduced-motion: reduce)",
     "motionSafe": "@media (prefers-reduced-motion: no-preference)",
     "odd": "&:odd",

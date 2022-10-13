@@ -147,6 +147,10 @@ export const theme = {
     spaceNegative180: "-6rem", // -96px
     spaceNegative190: "-6.25rem", // -100px
   },
+  states: {
+    ...defaultTheme.states,
+    loading: '&[aria-busy="true"]',
+  },
   zIndices: {
     zIndex0: 0,
     zIndex10: 10,
