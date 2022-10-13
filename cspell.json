@@ -19,7 +19,10 @@
     "chromaui",
     "xstyled",
     "nums",
-    "bezier"
+    "bezier",
+    "xlarge",
+    "xsmall",
+    "unhover"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
