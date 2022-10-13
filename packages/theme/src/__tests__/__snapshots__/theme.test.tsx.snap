@@ -77,7 +77,8 @@ Object {
     "fontSize50": "1.5rem",
     "fontSize60": "2rem",
     "fontSize70": "2.5rem",
-    "fontSize80": "3.375rem",
+    "fontSize80": "3rem",
+    "fontSize90": "3.375rem",
   },
   "fontWeights": Object {
     "fontWeightBold": "700",
@@ -120,14 +121,15 @@ Object {
   },
   "lineHeights": Object {
     "lineHeight10": "1rem",
+    "lineHeight100": "3.75rem",
     "lineHeight20": "1.125rem",
     "lineHeight30": "1.25rem",
     "lineHeight40": "1.5rem",
     "lineHeight50": "1.75rem",
     "lineHeight60": "2rem",
     "lineHeight70": "2.5rem",
-    "lineHeight80": "3.375rem",
-    "lineHeight90": "4rem",
+    "lineHeight80": "3rem",
+    "lineHeight90": "3.375rem",
   },
   "radii": Object {
     "borderRadius10": "4px",

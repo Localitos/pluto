@@ -61,7 +61,8 @@ export const theme = {
     fontSize50: "1.5rem", // 24px
     fontSize60: "2rem", // 32px
     fontSize70: "2.5rem", // 40px
-    fontSize80: "3.375rem", // 54px
+    fontSize80: "3rem", // 48px
+    fontSize90: "3.375rem", // 54px
   },
   fontWeights: {
     fontWeightLight: "300",
@@ -80,8 +81,9 @@ export const theme = {
     lineHeight50: "1.75rem", // 28px
     lineHeight60: "2rem", // 32px
     lineHeight70: "2.5rem", // 40px
-    lineHeight80: "3.375rem", // 54px
-    lineHeight90: "4rem", // 64px
+    lineHeight80: "3rem", // 48px
+    lineHeight90: "3.375rem", // 54px
+    lineHeight100: "3.75rem", // 60px
   },
   radii: {
     borderRadius10: "4px",
