@@ -54,6 +54,7 @@ export const theme = {
     colorIconWeak: "#64748B",
     colorIconStrong: "#334155",
     colorIconStronger: "#0F172A",
+    colorAvatarInitials: "#4A63FC",
   },
   fontSizes: {
     fontSize10: "0.75rem", // 12px
