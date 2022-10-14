@@ -27,9 +27,40 @@ Install the following packages so you can consume Pluto's tokens and themes to b
 npm install --save @localyze-pluto/theme @localyze-pluto/components
 ```
 
+### 3. Setup the ThemeProvider
+
+The ThemeProvider needs to be set so the Pluto components receive the correct styles. You should wrap your whole application with this provider.
+
+```js
+import { ThemeProvider, theme } from "@localyze-pluto/theme";
+
+<Theme.Provider theme={theme}>
+  <App />
+</Theme.Provider>;
+```
+
+We also offer some reset, global, and base styles you can use to make styling a little easier.
+
+```js
+import {
+  ThemeProvider,
+  theme,
+  GlobalStyles,
+  BaseStyles,
+  Preflight,
+} from "@localyze-pluto/theme";
+
+<Theme.Provider theme={theme}>
+  <Preflight />
+  <GlobalStyles />
+  <BaseStyles />
+  <App />
+</Theme.Provider>;
+```
+
 #### Fonts
 
-Currently we only offer have one font family (Moderat) for use within Localyze applications. The Moderat font files must be loaded in the Localyze application because of licensing. We're open to the idea of offering an open source font with Pluto. If you have any ideas on which fonts to offer, please open a [discussion](https://github.com/Localitos/pluto/discussions/new).
+Currently we only offer have one font family (Moderat) for use within Localyze applications. The Moderat font files must be loaded in the Localyze application because of licensing. [Here's how we're loading the fonts in Storybook](https://github.com/Localitos/pluto/blob/main/.storybook/preview-head.html). We're open to the idea of offering an open source font with Pluto. If you have any ideas on which fonts to offer, please open a [discussion](https://github.com/Localitos/pluto/discussions/new).
 
 ### 3. Build some cool stuff.
 
