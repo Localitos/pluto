@@ -100,6 +100,12 @@ export const theme = {
     shadowFocus:
       "0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #102EE9",
   },
+  sizes: {
+    sizeIcon10: "0.75rem", // 12px
+    sizeIcon20: "1rem", // 16px
+    sizeIcon30: "1.25rem", // 20px
+    sizeIcon40: "1.5rem", // 24px
+  },
   space: {
     space0: "0rem", // 0px
     space10: "0.125rem", // 2px
