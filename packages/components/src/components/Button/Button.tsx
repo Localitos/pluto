@@ -10,7 +10,7 @@ export interface ButtonProps
   /** Sets the render element of the component. Either 'a' or 'button'.*/
   as?: "a" | "button";
   /** Add a description comment for each prop. */
-  children?: NonNullable<React.ReactNode>;
+  children: NonNullable<React.ReactNode>;
   /** If used as an 'a', the href is url that the link point to. */
   href?: string;
   /** Sets the button to be disabled. */

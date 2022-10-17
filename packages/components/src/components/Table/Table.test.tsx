@@ -4,6 +4,9 @@ import { Default } from "./Table.stories";
 
 describe("<Table />", () => {
   it("should render", async () => {
+    // Ignoring this error because the story has children.
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     render(<Default {...Default.args} />);
 
     const rowHeaders = screen.getAllByRole("columnheader");

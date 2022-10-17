@@ -4,7 +4,7 @@ import { Box } from "../../primitives/Box";
 export interface TableProps
   extends Omit<React.TableHTMLAttributes<HTMLTableElement>, "color"> {
   /** The valid HTML contents of the table. */
-  children?: NonNullable<React.ReactNode>;
+  children: NonNullable<React.ReactNode>;
   /** Determines how to layout the cells, rows, and columns. */
   tableLayout?: "auto" | "fixed";
 }

@@ -4,7 +4,7 @@ import { Box } from "../../primitives/Box";
 export interface TBodyProps
   extends Omit<React.TableHTMLAttributes<HTMLTableSectionElement>, "color"> {
   /** The valid HTML contents of the table body. */
-  children?: NonNullable<React.ReactNode>;
+  children: NonNullable<React.ReactNode>;
 }
 
 /** Used to group the body content in a table */

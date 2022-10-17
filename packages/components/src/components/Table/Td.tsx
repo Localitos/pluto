@@ -4,7 +4,7 @@ import { Box } from "../../primitives/Box";
 export interface TdProps
   extends Omit<React.TdHTMLAttributes<HTMLTableCellElement>, "color"> {
   /** The valid HTML contents of the table cell. */
-  children?: NonNullable<React.ReactNode>;
+  children?: React.ReactNode;
   /** Used to make a cell span over multiple columns. */
   colSpan?: number;
   /** Used to make a cell span over multiple rows. */
