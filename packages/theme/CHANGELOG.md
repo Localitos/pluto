@@ -1,5 +1,26 @@
 # @localyze-pluto/theme
 
+## 1.0.3
+
+### Patch Changes
+
+- [#94](https://github.com/Localitos/pluto/pull/94) [`885ee97`](https://github.com/Localitos/pluto/commit/885ee97b93c59e09a17da6ecf1982bbe1f168c9b) Thanks [@richbachman](https://github.com/richbachman)! - Added icon sizes to the theme, and removes the default sizes.
+
+- [#82](https://github.com/Localitos/pluto/pull/82) [`e8c93a7`](https://github.com/Localitos/pluto/commit/e8c93a771d562b11b5e3996b2bebf371ea36cfbe) Thanks [@richbachman](https://github.com/richbachman)! - This includes a few minor fontSize and lineHeight changes.
+
+  fontSizes
+
+  - Changed `fontSize80` to 48px
+  - Added `fontSize90`
+
+  lineHeights
+
+  - Changed `lineHeight80` to 48px
+  - Changed `lineHeight90` to 54px
+  - Added `lineHeight100`
+
+- [#92](https://github.com/Localitos/pluto/pull/92) [`6d599a2`](https://github.com/Localitos/pluto/commit/6d599a214f70dab69ec93cee7591cc107672e2cb) Thanks [@richbachman](https://github.com/richbachman)! - Added the `loading` custom state to the theme. This can be used to style `aria-busy` elements.
+
 ## 1.0.2
 
 ### Patch Changes
