@@ -1,5 +1,22 @@
 # @localyze-pluto/components
 
+## 2.1.0
+
+### Minor Changes
+
+- [#94](https://github.com/Localitos/pluto/pull/94) [`adea19a`](https://github.com/Localitos/pluto/commit/adea19a8140c45bbcf9ba8b2b47aa9e935c9e4ad) Thanks [@richbachman](https://github.com/richbachman)! - [Icon]: Adds the Icon component, which can be used to render any icon from the Hero Icons library.
+
+- [#81](https://github.com/Localitos/pluto/pull/81) [`69f68ec`](https://github.com/Localitos/pluto/commit/69f68ec12af85552671495768ecbb06613d731af) Thanks [@richbachman](https://github.com/richbachman)! - [Paragraph]: Added the Paragraph component. It includes three sizes: small, medium (default), and large. Paragraph also includes a default bottom margin, which can be overridden to have no bottom margin.
+
+- [#92](https://github.com/Localitos/pluto/pull/92) [`9d9eee6`](https://github.com/Localitos/pluto/commit/9d9eee659cb41185d51dd975b763fb1c11649485) Thanks [@richbachman](https://github.com/richbachman)! - [Button]: Added the Button component with one variant, primary. Button also has two sizes (small and large).
+
+- [#82](https://github.com/Localitos/pluto/pull/82) [`bb61ec6`](https://github.com/Localitos/pluto/commit/bb61ec6fe29986908e55f0ff3623b798bf1e3f63) Thanks [@richbachman](https://github.com/richbachman)! - [Heading]: Added the Heading component. It can be multiple sizes, and render as any valid heading element. Heading also includes a default bottom margin, which can be overridden to have no bottom margin.
+
+### Patch Changes
+
+- Updated dependencies [[`885ee97`](https://github.com/Localitos/pluto/commit/885ee97b93c59e09a17da6ecf1982bbe1f168c9b), [`e8c93a7`](https://github.com/Localitos/pluto/commit/e8c93a771d562b11b5e3996b2bebf371ea36cfbe), [`6d599a2`](https://github.com/Localitos/pluto/commit/6d599a214f70dab69ec93cee7591cc107672e2cb)]:
+  - @localyze-pluto/theme@1.0.3
+
 ## 2.0.1
 
 ### Patch Changes
