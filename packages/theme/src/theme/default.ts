@@ -14,6 +14,7 @@ export const theme = {
     colorTextStrongest: "#0F172A",
     colorTextStronger: "#334155",
     colorText: "#64748B",
+    colorTextInfo: "#0B1F9C",
     colorTextError: "#B91C1C",
     colorTextWarning: "#B45309",
     colorTextSuccess: "#047857",
