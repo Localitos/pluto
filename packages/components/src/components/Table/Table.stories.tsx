@@ -1,3 +1,5 @@
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import {
@@ -5,6 +7,8 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
+  getSortedRowModel,
+  SortingState,
 } from "@tanstack/react-table";
 import map from "lodash/map";
 import { Table, THead, TBody, Tr, Th, Td } from "./index";
@@ -46,6 +50,8 @@ Default.parameters = {
 };
 
 export const ReactTable = (): JSX.Element => {
+  const [sorting, setSorting] = React.useState<SortingState>([]);
+
   type Talent = {
     firstName: string;
     lastName: string;
@@ -107,7 +113,12 @@ export const ReactTable = (): JSX.Element => {
   const table = useReactTable({
     data,
     columns,
+    state: {
+      sorting,
+    },
+    onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -117,10 +128,20 @@ export const ReactTable = (): JSX.Element => {
           <Tr key={headerGroup.id}>
             {map(headerGroup.headers, (header) => (
               <Th key={header.id}>
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
+                <div
+                  {...{
+                    onClick: header.column.getToggleSortingHandler(),
+                  }}
+                >
+                  {flexRender(
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+                  {{
+                    asc: " 🔼",
+                    desc: " 🔽",
+                  }[header.column.getIsSorted() as string] ?? null}
+                </div>
               </Th>
             ))}
           </Tr>
@@ -139,4 +160,10 @@ export const ReactTable = (): JSX.Element => {
       </TBody>
     </Table>
   );
+};
+ReactTable.parameters = {
+  docs: {
+    storyDescription:
+      "The table elements can be used with a headless table libray like Tanstack Table, formerly React Table. This allows you to build a datagrid on with the Pluto table elements.",
+  },
 };
