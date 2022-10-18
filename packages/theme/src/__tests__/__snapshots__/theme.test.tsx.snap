@@ -54,6 +54,7 @@ Object {
     "colorText": "#64748B",
     "colorTextError": "#B91C1C",
     "colorTextHeading": "#041162",
+    "colorTextInfo": "#0B1F9C",
     "colorTextInverse": "#FFFFFF",
     "colorTextLink": "#102EE9",
     "colorTextLinkStrong": "#0B1F9C",
