@@ -1,9 +1,13 @@
 import React from "react";
+import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
+import { Icon } from "../Icon";
 
 type ButtonSizeOptions = "large" | "small";
 type ButtonVariantOptions = "primary";
+
+type IconNames = keyof typeof HeroOutlineIcons;
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,6 +19,10 @@ export interface ButtonProps
   href?: string;
   /** Sets the button to be disabled. */
   isDisabled?: boolean;
+  /** Icon to be added on the left of the content. */
+  leadingIcon?: IconNames;
+  /** Icon to be added on the right of the content. */
+  trailingIcon?: IconNames;
   /** Sets the button state to loading. */
   loading?: boolean;
   /** Used with React Router or NextJS to set the route the anchor links to. */
@@ -47,6 +55,13 @@ const getButtonVariantStyles = (
   };
 };
 
+const getIcon = (iconName: IconNames, size: ButtonSizeOptions) => {
+  const iconProps = (size: ButtonSizeOptions) =>
+    size === "small" ? "sizeIcon10" : "sizeIcon40";
+
+  return <Icon decorative icon={iconName} size={iconProps(size)} />;
+};
+
 /** A button is a clickable element which communicates that users can trigger an action. */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -54,6 +69,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       isDisabled,
       loading,
+      leadingIcon,
+      trailingIcon,
       size = "small",
       variant = "primary",
       ...props
@@ -62,6 +79,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     return (
       <Box.button
+        alignItems="center"
         appearance="none"
         aria-busy={loading ? "true" : "false"}
         background="none"
@@ -76,10 +94,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           loading: "wait",
         }}
         disabled={isDisabled}
-        display="inline-block"
+        display="inline-flex"
         fontFamily="fontFamilyModerat"
         fontSize={size === "large" ? "fontSize30" : "fontSize10"}
         fontWeight="fontWeightMedium"
+        gap="space30"
         lineHeight={size === "large" ? "lineHeight40" : "lineHeight10"}
         outlineColor={{ focus: "colorBorderPrimary" }}
         outlineOffset={{ focus: "borderWidth20" }}
@@ -95,7 +114,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...getButtonVariantStyles(variant)}
         {...props}
       >
+        {leadingIcon && getIcon(leadingIcon, size)}
         {children}
+        {trailingIcon && getIcon(trailingIcon, size)}
       </Box.button>
     );
   }
