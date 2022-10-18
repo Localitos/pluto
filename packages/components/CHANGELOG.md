@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 2.2.0
+
+### Minor Changes
+
+- [#96](https://github.com/Localitos/pluto/pull/96) [`29778b8`](https://github.com/Localitos/pluto/commit/29778b8e66694fcb0672c7120b558d59fc15a155) Thanks [@nyan07](https://github.com/nyan07)! - [Callout] Added the Callout component with four variants: information, warning, error, and success.
+
+### Patch Changes
+
+- Updated dependencies [[`29778b8`](https://github.com/Localitos/pluto/commit/29778b8e66694fcb0672c7120b558d59fc15a155)]:
+  - @localyze-pluto/theme@1.0.4
+
 ## 2.1.0
 
 ### Minor Changes
