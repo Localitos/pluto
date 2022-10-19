@@ -134,7 +134,6 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
           <Icon
             size="sizeIcon20"
             {...getIconVariantProps(variant)}
-            data-testId="callout-icon"
             decorative
           />
         </Box.span>

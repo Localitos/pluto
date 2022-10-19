@@ -9,12 +9,6 @@ describe("<Callout />", () => {
     expect(screen.getByText("Message here")).toBeInTheDocument();
   });
 
-  it("should render the icon", () => {
-    render(<Callout>Message here</Callout>);
-
-    expect(screen.getByTestId("callout-icon")).toBeInTheDocument();
-  });
-
   it("should allow for global html Attributes", () => {
     render(
       <Callout aria-label="foo" data-testid="bar">
