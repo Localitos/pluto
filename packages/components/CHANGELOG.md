@@ -1,5 +1,19 @@
 # @localyze-pluto/components
 
+## 2.3.0
+
+### Minor Changes
+
+- [#97](https://github.com/Localitos/pluto/pull/97) [`77fe23e`](https://github.com/Localitos/pluto/commit/77fe23efc4ac1ed54f7786916f2a6f5eb8ef6ed6) Thanks [@richbachman](https://github.com/richbachman)! - - [Table]: Added un-styled table component and the composable parts.
+
+  - [Button]: Fixes the `children` prop to actually not include `undefined`.
+
+- [#100](https://github.com/Localitos/pluto/pull/100) [`09a2cca`](https://github.com/Localitos/pluto/commit/09a2cca6ffe00a7aaf8c2c0cddec080d9ee4de12) Thanks [@apvale](https://github.com/apvale)! - Add leading and trailing icons to the Primary button
+
+### Patch Changes
+
+- [#100](https://github.com/Localitos/pluto/pull/100) [`09a2cca`](https://github.com/Localitos/pluto/commit/09a2cca6ffe00a7aaf8c2c0cddec080d9ee4de12) Thanks [@apvale](https://github.com/apvale)! - Export Callout component
+
 ## 2.2.0
 
 ### Minor Changes
