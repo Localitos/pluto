@@ -38,3 +38,17 @@ AsLink.args = {
   children: "Link button",
   href: "#",
 };
+
+export const WithLeadingIcon = Template.bind({});
+WithLeadingIcon.args = {
+  children: "Small primary button",
+  size: "small",
+  leadingIcon: "ArrowTopRightOnSquareIcon",
+};
+
+export const WithTrailingIcon = Template.bind({});
+WithTrailingIcon.args = {
+  children: "Large primary button",
+  size: "large",
+  trailingIcon: "ArrowTopRightOnSquareIcon",
+};

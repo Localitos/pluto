@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+
 import userEvent from "@testing-library/user-event";
 import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
 import React from "react";
@@ -39,7 +40,7 @@ describe("Button", () => {
         </Button>
       );
       const renderedButton = screen.getByRole("button");
-      expect(renderedButton.getAttribute("aria-busy")).toBeTruthy();
+      expect(renderedButton).toHaveAttribute("aria-busy");
     });
   });
 
