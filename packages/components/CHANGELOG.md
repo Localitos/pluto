@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 2.3.3
+
+### Patch Changes
+
+- [#114](https://github.com/Localitos/pluto/pull/114) [`d71ec2a`](https://github.com/Localitos/pluto/commit/d71ec2a758e901ce5c13b6e5ea8b756fd9c6b06f) Thanks [@apvale](https://github.com/apvale)! - Updates react peer dependencies version to fix an issue on repos that use react 18
+
 ## 2.3.2
 
 ### Patch Changes
