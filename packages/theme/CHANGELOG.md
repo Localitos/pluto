@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.0.5
+
+### Patch Changes
+
+- [#110](https://github.com/Localitos/pluto/pull/110) [`62dc0ba`](https://github.com/Localitos/pluto/commit/62dc0ba72a5e94d20c808c4156f81bd43b62b420) Thanks [@richbachman](https://github.com/richbachman)! - Changes the React and React-Dom deps to use 17 instead of 18. This opens the door for Pluto to be used in a wider variety of applications.
+
 ## 1.0.4
 
 ### Patch Changes
