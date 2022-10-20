@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.0.6
+
+### Patch Changes
+
+- [#112](https://github.com/Localitos/pluto/pull/112) [`06a9780`](https://github.com/Localitos/pluto/commit/06a97801262a94f077cf1b936efc93c667a154ac) Thanks [@richbachman](https://github.com/richbachman)! - Moved package dependencies to peer and dev dependencies.
+
 ## 1.0.5
 
 ### Patch Changes
