@@ -27,12 +27,10 @@
     "test": "jest",
     "tsc": "tsc"
   },
-  "dependencies": {
-    "@xstyled/styled-components": "^3.6.0",
-    "styled-components": "^5.3.6"
-  },
   "peerDependencies": {
     "@xstyled/styled-components": "^3.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
@@ -45,6 +43,7 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
     "@types/styled-components": "^5.1.26",
+    "@xstyled/styled-components": "^3.6.0",
     "eslint": "^8.25.0",
     "jest": "^28.1.2",
     "jest-dom": "^4.0.0",
@@ -54,6 +53,7 @@
     "pretty-quick": "^3.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "styled-components": "^5.3.6",
     "ts-jest": "^28.0.5",
     "tslib": "^2.4.0",
     "tsup": "^6.3.0",
