@@ -1,7 +1,12 @@
 {
   "extends": "@localyze-pluto/tsconfig",
   "compilerOptions": {
-    "outDir": "dist/"
+    "outDir": "dist/",
+    "jsx": "react-jsx",
+    "lib": ["es2017", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "es6"
   },
   "include": ["**/*.ts", "**/*.tsx", "../theme/xstyled.d.ts"],
   "exclude": ["dist", "build", "node_modules"]
