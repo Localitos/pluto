@@ -9,10 +9,10 @@ import { getInitials } from "./getInitials";
 export type AvatarSizeOptions = "large" | "medium" | "small" | "xsmall";
 
 export type AvatarProps = {
-  /** The image source to be used for the avatar. */
-  src?: string;
   /** The name of the entity being represented. */
   name: string;
+  /** The image source to be used for the avatar. */
+  src?: string;
   /** The size of the avatar. */
   size?: AvatarSizeOptions;
   /** Set `true` to show the name of the entity to the right of the avatar. */
