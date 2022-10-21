@@ -67,5 +67,8 @@
   },
   "browserslist": [
     "extends @localyze-pluto/browserslist-config"
-  ]
+  ],
+  "dependencies": {
+    "html-react-parser": "^3.0.4"
+  }
 }
