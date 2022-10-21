@@ -1,0 +1,46 @@
+import React from "react";
+import { Text } from "../../primitives/Text";
+
+export interface AnchorProps
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "color"> {
+  /** The contents of the anchor. Can be text or valid text related HTML, i.e. strong elements. */
+  children: NonNullable<React.ReactNode>;
+  /** Sets target to "_blank" and rel to "noreferrer noopener". */
+  isExternal?: boolean;
+}
+
+/** An anchor is text that navigates the user from one webpage to another */
+const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
+  ({ children, isExternal, ...props }, ref) => {
+    const externalProps = isExternal
+      ? {
+          target: "_blank",
+          rel: "noreferrer noopener",
+        }
+      : {};
+
+    return (
+      <Text.a
+        color={{
+          _: "colorTextLink",
+          hover: "colorTextLinkStrong",
+          visited: "colorTextLinkVisited",
+        }}
+        ref={ref}
+        textDecoration={{
+          _: "none",
+          hover: "underline",
+          focus: "underline",
+        }}
+        {...props}
+        {...externalProps}
+      >
+        {children}
+      </Text.a>
+    );
+  }
+);
+
+Anchor.displayName = "Anchor";
+
+export { Anchor };
