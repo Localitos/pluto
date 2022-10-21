@@ -58,6 +58,7 @@ Object {
     "colorTextInverse": "#FFFFFF",
     "colorTextLink": "#102EE9",
     "colorTextLinkStrong": "#0B1F9C",
+    "colorTextLinkVisited": "#950FFF",
     "colorTextStronger": "#334155",
     "colorTextStrongest": "#0F172A",
     "colorTextSuccess": "#047857",

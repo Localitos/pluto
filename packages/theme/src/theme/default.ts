@@ -21,6 +21,7 @@ export const theme = {
     colorTextInverse: "#FFFFFF",
     colorTextLink: "#102EE9",
     colorTextLinkStrong: "#0B1F9C",
+    colorTextLinkVisited: "#950FFF",
     colorTextHeading: "#041162",
     colorBackground: "#FFFFFF",
     colorBackgroundWeakest: "#F8FAFC",
