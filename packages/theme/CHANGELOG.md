@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.0.9
+
+### Patch Changes
+
+- [#93](https://github.com/Localitos/pluto/pull/93) [`bda117c`](https://github.com/Localitos/pluto/commit/bda117c0a327aaae7c6bfe30e754e479a2e53a68) Thanks [@nyan07](https://github.com/nyan07)! - Add token for avatar initials color
+
 ## 1.0.8
 
 ### Patch Changes

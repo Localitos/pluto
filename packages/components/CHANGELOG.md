@@ -1,5 +1,18 @@
 # @localyze-pluto/components
 
+## 2.5.0
+
+### Minor Changes
+
+- [#93](https://github.com/Localitos/pluto/pull/93) [`bda117c`](https://github.com/Localitos/pluto/commit/bda117c0a327aaae7c6bfe30e754e479a2e53a68) Thanks [@nyan07](https://github.com/nyan07)! - Add avatar
+
+- [#119](https://github.com/Localitos/pluto/pull/119) [`9d7b07e`](https://github.com/Localitos/pluto/commit/9d7b07ee427d23ec05d4c16dcc5c30cc73276147) Thanks [@apvale](https://github.com/apvale)! - [RichText] Added the RichText component. It includes an externalAnchors prop that if true, add external target and rel attributes to anchor tags.
+
+### Patch Changes
+
+- Updated dependencies [[`bda117c`](https://github.com/Localitos/pluto/commit/bda117c0a327aaae7c6bfe30e754e479a2e53a68)]:
+  - @localyze-pluto/theme@1.0.9
+
 ## 2.4.0
 
 ### Minor Changes
