@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 2.4.0
+
+### Minor Changes
+
+- [#118](https://github.com/Localitos/pluto/pull/118) [`6b314a9`](https://github.com/Localitos/pluto/commit/6b314a98014a64d6f0ef4b9c49acc0768ebc460d) Thanks [@nyan07](https://github.com/nyan07)! - Add anchor component
+
+### Patch Changes
+
+- Updated dependencies [[`6b314a9`](https://github.com/Localitos/pluto/commit/6b314a98014a64d6f0ef4b9c49acc0768ebc460d)]:
+  - @localyze-pluto/theme@1.0.8
+
 ## 2.3.3
 
 ### Patch Changes
