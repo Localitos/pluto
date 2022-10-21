@@ -20,6 +20,7 @@ Object {
     "default": "1px solid transparent",
   },
   "colors": Object {
+    "colorAvatarInitials": "#4A63FC",
     "colorBackground": "#FFFFFF",
     "colorBackgroundBody": "#F7F9FF",
     "colorBackgroundDestructive": "#DC2626",
