@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.0.7
+
+### Patch Changes
+
+- [#116](https://github.com/Localitos/pluto/pull/116) [`19f07a5`](https://github.com/Localitos/pluto/commit/19f07a5d77c30e310315e8383cae8ab1762e1fd8) Thanks [@apvale](https://github.com/apvale)! - Updates react version on theme package in order to fix an issue on repos that use react 18
+
 ## 1.0.6
 
 ### Patch Changes
