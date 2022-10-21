@@ -4,6 +4,7 @@ export * from "./components/Avatar";
 export * from "./components/Heading";
 export * from "./components/Icon";
 export * from "./components/Paragraph";
+export * from "./components/RichText";
 export * from "./components/Table";
 export * from "./primitives/Box";
 export * from "./primitives/Text";
