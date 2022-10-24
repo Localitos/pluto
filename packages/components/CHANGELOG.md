@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 2.5.1
+
+### Patch Changes
+
+- [#122](https://github.com/Localitos/pluto/pull/122) [`6f7074b`](https://github.com/Localitos/pluto/commit/6f7074b7f5808146a67115a7ee7a9f56c8082bdc) Thanks [@nyan07](https://github.com/nyan07)! - Make Anchor component public
+
+- [#123](https://github.com/Localitos/pluto/pull/123) [`5973db9`](https://github.com/Localitos/pluto/commit/5973db959ed97b0192c1c65cef64509f026bc1ed) Thanks [@nyan07](https://github.com/nyan07)! - Fix Callout types and remove role
+
+- Updated dependencies [[`1836ab3`](https://github.com/Localitos/pluto/commit/1836ab3de869332662b30bf3bd97b3bf2c7bc1d7)]:
+  - @localyze-pluto/theme@1.1.0
+
 ## 2.5.0
 
 ### Minor Changes
