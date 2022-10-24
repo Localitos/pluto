@@ -28,6 +28,7 @@ export const theme = {
     colorBackgroundWeaker: "#F7F9FF",
     colorBackgroundWeak: "#F1F5F9",
     colorBackgroundStrong: "#CBD5E1",
+    colorBackgroundPrimaryWeak: "#4A63FC",
     colorBackgroundPrimary: "#102EE9",
     colorBackgroundPrimaryStrong: "#0B1F9C",
     colorBackgroundPrimaryStrongest: "#041162",
@@ -38,6 +39,12 @@ export const theme = {
     colorBackgroundWarning: "#FFFBEB",
     colorBackgroundError: "#FEF2F2",
     colorBackgroundBody: "#F7F9FF",
+    colorBackgroundTodo:
+      "linear-gradient(360deg, rgba(16, 37, 233, 0.08) 0%, rgba(36, 63, 235, 0.0733333) 49.48%, rgba(255, 255, 255, 0) 100%)",
+    colorBackgroundComplete:
+      "linear-gradient(360deg, rgba(82, 244, 174, 0.12) 0%, rgba(131, 247, 197, 0.0575) 57.81%, rgba(255, 255, 255, 0) 100%)",
+    colorBackgroundPreview:
+      "linear-gradient(360deg, rgba(71, 94, 105, 0.08) 6.19%, rgba(71, 94, 105, 0.0504167) 57.3%, rgba(255, 255, 255, 0) 93.81%)",
     colorBorderWeakest: "#E2E8F0",
     colorBorderWeaker: "#CBD5E1",
     colorBorder: "#64748B",
