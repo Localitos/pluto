@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.1.0
+
+### Minor Changes
+
+- [#125](https://github.com/Localitos/pluto/pull/125) [`1836ab3`](https://github.com/Localitos/pluto/commit/1836ab3de869332662b30bf3bd97b3bf2c7bc1d7) Thanks [@nyan07](https://github.com/nyan07)! - Add new tokens: colorBackgroundPrimaryWeak, colorBackgroundTodo, colorBackgroundComplete, colorBackgroundPreview
+
 ## 1.0.9
 
 ### Patch Changes
