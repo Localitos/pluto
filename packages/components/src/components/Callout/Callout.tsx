@@ -5,7 +5,8 @@ import { Icon, IconProps } from "../Icon";
 
 type CalloutVariantOptions = "error" | "information" | "success" | "warning";
 
-type CalloutProps = {
+interface CalloutProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
   /** The content of the callout. It can be text or valid text related HTML, i.e. anchor and strong elements. */
   children: React.ReactNode;
 
@@ -14,7 +15,7 @@ type CalloutProps = {
 
   /** Show or hide the callout background */
   withoutBackground?: boolean;
-};
+}
 
 const getVariantProps = (
   variant: CalloutVariantOptions,
@@ -126,7 +127,6 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
         gap="space40"
         padding="space50"
         ref={ref}
-        role="alert"
         {...getVariantProps(variant, withoutBackground)}
         {...props}
       >
