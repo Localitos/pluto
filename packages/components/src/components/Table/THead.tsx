@@ -6,9 +6,9 @@ export interface THeadProps
   /** The valid HTML contents of the table header. */
   children: NonNullable<React.ReactNode>;
   /** Makes the table head stick to the top of the window as the user scrolls a long table. */
-  stickyHeader?: boolean;
+  isSticky?: boolean;
   /** Allows manual control of the top offset, used in conjunction with `stickyHeader`. */
-  top?: number | string;
+  stickyTopOffset?: number | string;
 }
 
 /** Used to group header content in a table */
@@ -16,17 +16,17 @@ const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
   (
     {
       children,
-      stickyHeader,
-      top = stickyHeader ? "-1px" : undefined,
+      isSticky,
+      stickyTopOffset = isSticky ? "-1px" : undefined,
       ...props
     },
     ref
   ) => {
     return (
       <Box.thead
-        position={stickyHeader ? "sticky" : undefined}
+        position={isSticky ? "sticky" : undefined}
         ref={ref}
-        top={top}
+        top={stickyTopOffset}
         {...props}
       >
         {children}

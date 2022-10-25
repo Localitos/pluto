@@ -52,7 +52,7 @@ Default.parameters = {
 export const StickyHeaders = (): JSX.Element => {
   return (
     <Table>
-      <THead stickyHeader>
+      <THead isSticky>
         <Tr>
           <Th>Column 1</Th>
           <Th>Column 2</Th>
