@@ -24,7 +24,7 @@ describe("Checkbox", () => {
 
     it("should render with check indicator", () => {
       render(
-        <Root Icon={CheckIndicator} checked>
+        <Root CheckboxIcon={CheckIndicator} checked>
           Checkbox with check
         </Root>
       );
@@ -34,7 +34,7 @@ describe("Checkbox", () => {
 
     it("should render with indeterminate indicator", () => {
       render(
-        <Root Icon={IndeterminateIndicator} checked>
+        <Root CheckboxIcon={IndeterminateIndicator} checked>
           Indeterminate checkbox
         </Root>
       );
