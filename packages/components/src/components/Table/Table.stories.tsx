@@ -11,7 +11,6 @@ import {
   SortingState,
 } from "@tanstack/react-table";
 import map from "lodash/map";
-import { Box } from "../../primitives/Box";
 import { Table, THead, TBody, Tr, Th, Td } from "./index";
 
 export default {
@@ -80,49 +79,6 @@ export const StickyHeaders = (): JSX.Element => {
 
 StickyHeaders.story = {
   name: "Sticky headers",
-};
-
-export const StickyFirstColumn = (): JSX.Element => {
-  return (
-    <Box.div h="500px" overflowX="auto" w="500px">
-      <Table>
-        <THead stickyHeader>
-          <Tr>
-            <Th stickyColumn>Column 1</Th>
-            <Th>Column 2</Th>
-            <Th>Column 3</Th>
-            <Th>Column 4</Th>
-            <Th>Column 5</Th>
-            <Th>Column 6</Th>
-            <Th>Column 7</Th>
-            <Th>Column 8</Th>
-            <Th>Column 9</Th>
-            <Th>Column 10</Th>
-          </Tr>
-        </THead>
-        <TBody>
-          {map([...Array.from({ length: 100 }).keys()], (index) => (
-            <Tr key={index}>
-              <Th stickyColumn>Content</Th>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-            </Tr>
-          ))}
-        </TBody>
-      </Table>
-    </Box.div>
-  );
-};
-
-StickyFirstColumn.story = {
-  name: "Sticky first column",
 };
 
 export const ReactTable = (): JSX.Element => {

@@ -5,8 +5,6 @@ export interface THeadProps
   extends Omit<React.TableHTMLAttributes<HTMLTableSectionElement>, "color"> {
   /** The valid HTML contents of the table header. */
   children: NonNullable<React.ReactNode>;
-  /** Allows manual control of the left offset, used in conjunction with `stickyHeader`. */
-  left?: number | string;
   /** Makes the table head stick to the top of the window as the user scrolls a long table. */
   stickyHeader?: boolean;
   /** Allows manual control of the top offset, used in conjunction with `stickyHeader`. */
@@ -19,7 +17,6 @@ const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
     {
       children,
       stickyHeader,
-      left = stickyHeader ? "-1px" : undefined,
       top = stickyHeader ? "-1px" : undefined,
       ...props
     },
@@ -27,7 +24,6 @@ const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
   ) => {
     return (
       <Box.thead
-        left={left}
         position={stickyHeader ? "sticky" : undefined}
         ref={ref}
         top={top}
