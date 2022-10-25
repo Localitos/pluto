@@ -6,20 +6,22 @@ describe("Checkbox", () => {
   describe("Render", () => {
     it("should render a checkbox", () => {
       render(<Root>Checkbox</Root>);
-      const renderedCheckbox = screen.getByRole("button");
-      expect(renderedCheckbox).toBeInTheDocument();
+      const renderedCheckbox = screen.getByTestId("checkbox");
+      expect(renderedCheckbox).toHaveAttribute("data-state");
     });
 
-    it("should render wrapped", () => {
+    it("should render wrapped", async () => {
       render(<Root wrapped={true}>Wrapped checkbox</Root>);
-      const renderedButton = screen.getByText("Wrapped checkbox");
-      expect(renderedButton).toBeInTheDocument();
+      expect(await screen.findByTestId("checkbox-container")).toHaveStyle(
+        "padding: 0.75rem"
+      );
     });
 
-    it("should render with error", () => {
+    it("should render with error", async () => {
       render(<Root error={true}>Checkbox with error</Root>);
-      const renderedButton = screen.getByRole("button");
-      expect(renderedButton).toBeDisabled();
+      expect(await screen.findByTestId("checkbox-label")).toHaveStyle(
+        "color: #B91C1C"
+      );
     });
 
     it("should render with check indicator", () => {
@@ -28,8 +30,6 @@ describe("Checkbox", () => {
           Checkbox with check
         </Root>
       );
-      const renderedButton = screen.getByRole("button");
-      expect(renderedButton.getAttribute("aria-busy")).toBeTruthy();
     });
 
     it("should render with indeterminate indicator", () => {
@@ -38,8 +38,6 @@ describe("Checkbox", () => {
           Indeterminate checkbox
         </Root>
       );
-      const renderedButton = screen.getByRole("button");
-      expect(renderedButton.getAttribute("aria-busy")).toBeTruthy();
     });
   });
 });

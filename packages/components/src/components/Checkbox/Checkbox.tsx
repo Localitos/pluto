@@ -141,15 +141,23 @@ export const Root = React.forwardRef<HTMLButtonElement, CheckboxRootProps>(
       <Box.div
         alignItems="center"
         borderRadius="borderRadius20"
+        data-testid="checkbox-container"
         display="flex"
         {...getCheckboxStyles(wrapped)}
       >
-        <StyledCheckboxRoot as={RadixRoot} error={error} ref={ref} {...props}>
+        <StyledCheckboxRoot
+          as={RadixRoot}
+          data-testid="checkbox"
+          error={error}
+          ref={ref}
+          {...props}
+        >
           <CheckboxIcon />
         </StyledCheckboxRoot>
         <Box.div
           color={error ? "colorTextError" : "colorTextStronger"}
-          fontSize="sm"
+          data-testid="checkbox-label"
+          fontSize="fontSize20"
           marginBottom="space10"
         >
           {children}
