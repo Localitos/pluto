@@ -51,7 +51,7 @@ export const IndeterminateIndicator = (): React.ReactElement => {
 export interface CheckboxRootProps extends RadixCheckboxProps {
   wrapped?: boolean;
   error?: boolean;
-  Icon?: React.ElementType;
+  CheckboxIcon?: React.FunctionComponent;
   children: NonNullable<React.ReactNode>;
 }
 
@@ -131,7 +131,7 @@ export const Root = React.forwardRef<HTMLButtonElement, CheckboxRootProps>(
     {
       wrapped = false,
       error = false,
-      Icon = CheckIndicator,
+      CheckboxIcon = CheckIndicator,
       children,
       ...props
     },
@@ -145,7 +145,7 @@ export const Root = React.forwardRef<HTMLButtonElement, CheckboxRootProps>(
         {...getCheckboxStyles(wrapped)}
       >
         <StyledCheckboxRoot as={RadixRoot} error={error} ref={ref} {...props}>
-          <Icon />
+          <CheckboxIcon />
         </StyledCheckboxRoot>
         <Box.div
           color={error ? "colorTextError" : "colorTextStronger"}

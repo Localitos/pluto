@@ -71,7 +71,7 @@ export const Controlled = (): React.ReactElement => {
   return (
     <form>
       <Root
-        Icon={getIcon()}
+        CheckboxIcon={getIcon()}
         checked={checked}
         onCheckedChange={(checkState) => setChecked(checkState)}
       >
