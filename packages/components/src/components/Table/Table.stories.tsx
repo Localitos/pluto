@@ -11,6 +11,7 @@ import {
   SortingState,
 } from "@tanstack/react-table";
 import map from "lodash/map";
+import { Box } from "../../primitives/Box";
 import { Table, THead, TBody, Tr, Th, Td } from "./index";
 
 export default {
@@ -47,6 +48,40 @@ Default.parameters = {
     storyDescription:
       "You can use the various table elements to make up your table without having to worry about the styling.",
   },
+};
+
+export const StickyHeaders = (): JSX.Element => {
+  return (
+    <Box.div h="500px">
+      <Table>
+        <THead isSticky>
+          <Tr>
+            <Th>Column 1</Th>
+            <Th>Column 2</Th>
+            <Th>Column 3</Th>
+          </Tr>
+          <Tr>
+            <Th>Column 1</Th>
+            <Th>Column 2</Th>
+            <Th>Column 3</Th>
+          </Tr>
+        </THead>
+        <TBody>
+          {map([...Array.from({ length: 100 }).keys()], (index) => (
+            <Tr key={index}>
+              <Td>Content</Td>
+              <Td>Content</Td>
+              <Td>Content</Td>
+            </Tr>
+          ))}
+        </TBody>
+      </Table>
+    </Box.div>
+  );
+};
+
+StickyHeaders.story = {
+  name: "Sticky headers",
 };
 
 export const ReactTable = (): JSX.Element => {

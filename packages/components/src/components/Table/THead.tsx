@@ -5,13 +5,30 @@ export interface THeadProps
   extends Omit<React.TableHTMLAttributes<HTMLTableSectionElement>, "color"> {
   /** The valid HTML contents of the table header. */
   children: NonNullable<React.ReactNode>;
+  /** Makes the table head stick to the top of the window as the user scrolls a long table. */
+  isSticky?: boolean;
+  /** Allows manual control of the top offset, used in conjunction with `stickyHeader`. */
+  stickyTopOffset?: number | string;
 }
 
 /** Used to group header content in a table */
 const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
-  ({ children, ...props }, ref) => {
+  (
+    {
+      children,
+      isSticky,
+      stickyTopOffset = isSticky ? "-1px" : undefined,
+      ...props
+    },
+    ref
+  ) => {
     return (
-      <Box.thead ref={ref} {...props}>
+      <Box.thead
+        position={isSticky ? "sticky" : undefined}
+        ref={ref}
+        top={stickyTopOffset}
+        {...props}
+      >
         {children}
       </Box.thead>
     );
