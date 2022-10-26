@@ -1,43 +1,53 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import { Root, IndeterminateIndicator, CheckIndicator } from "./Checkbox";
+import { CheckboxRoot } from "./Checkbox";
 
 describe("Checkbox", () => {
   describe("Render", () => {
     it("should render a checkbox", () => {
-      render(<Root>Checkbox</Root>);
+      render(<CheckboxRoot checkboxId="checkbox">Checkbox</CheckboxRoot>);
       const renderedCheckbox = screen.getByTestId("checkbox");
-      expect(renderedCheckbox).toHaveAttribute("data-state");
+      // eslint-disable-next-line sonarjs/no-duplicate-string
+      expect(renderedCheckbox).toHaveAttribute("data-state", "unchecked");
     });
 
-    it("should render wrapped", async () => {
-      render(<Root wrapped={true}>Wrapped checkbox</Root>);
-      expect(await screen.findByTestId("checkbox-container")).toHaveStyle(
-        "padding: 0.75rem"
+    it("should render a disabled checkbox", () => {
+      render(
+        <CheckboxRoot checkboxId="checkbox-disabled" disabled>
+          Checkbox
+        </CheckboxRoot>
       );
-    });
-
-    it("should render with error", async () => {
-      render(<Root error={true}>Checkbox with error</Root>);
-      expect(await screen.findByTestId("checkbox-label")).toHaveStyle(
-        "color: #B91C1C"
-      );
+      const renderedCheckbox = screen.getByTestId("checkbox");
+      expect(renderedCheckbox).toHaveAttribute("data-disabled");
     });
 
     it("should render with check indicator", () => {
       render(
-        <Root CheckboxIcon={CheckIndicator} checked>
+        <CheckboxRoot checkboxId="checkbox-check" checked>
           Checkbox with check
-        </Root>
+        </CheckboxRoot>
       );
+      const renderedCheckbox = screen.getByTestId("checkbox");
+      const renderedCheckboxIndicator = screen.getByTestId("checkbox-check");
+      expect(renderedCheckboxIndicator).toBeInTheDocument();
+      expect(renderedCheckbox).toHaveAttribute("data-state", "checked");
     });
 
     it("should render with indeterminate indicator", () => {
       render(
-        <Root CheckboxIcon={IndeterminateIndicator} checked>
+        <CheckboxRoot
+          checkboxId="checkbox-indeterminate"
+          checked="indeterminate"
+        >
           Indeterminate checkbox
-        </Root>
+        </CheckboxRoot>
       );
+      const renderedCheckbox = screen.getByTestId("checkbox");
+      const renderedCheckboxIndicator = screen.getByTestId(
+        "checkbox-indeterminate"
+      );
+      expect(renderedCheckboxIndicator).toBeInTheDocument();
+      expect(renderedCheckbox).toHaveAttribute("data-state", "indeterminate");
     });
   });
 });
