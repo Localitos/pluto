@@ -51,7 +51,7 @@ export const theme = {
     colorBorderWeaker: "#CBD5E1",
     colorBorder: "#64748B",
     colorBorderStrongest: "#0F172A",
-    colorBorderError: "#EF4444",
+    colorBorderError: "#DC2626",
     colorBorderWarning: "#D97706",
     colorBorderSuccess: "#059669",
     colorBorderPrimary: "#102EE9",
@@ -162,6 +162,7 @@ export const theme = {
   },
   states: {
     ...defaultTheme.states,
+    hidden: '&[data-hidden="true"]',
     loading: '&[aria-busy="true"]',
   },
   zIndices: {
