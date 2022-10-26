@@ -1,5 +1,8 @@
 import React from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
+import toPairs from "lodash/toPairs";
+import isObject from "lodash/isObject";
+import forEach from "lodash/forEach";
 import { Text } from "../../primitives/Text";
 
 type HeadingLevelOptions = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -11,6 +14,14 @@ type HeadingSizeOptions =
   | "heading40"
   | "heading50"
   | "heading60";
+
+type ScreenSizes = keyof Theme["screens"];
+
+type HeadingSizeBreakpoints = {
+  [key in ScreenSizes]?: HeadingSizeOptions;
+};
+
+type HeadingSizeOptionsProp = HeadingSizeBreakpoints | HeadingSizeOptions;
 
 type HeadingFontColors =
   | "colorTextHeading"
@@ -25,14 +36,20 @@ export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /** Changes the bottom margin of the heading.  */
   marginBottom?: HeadingMarginOptions;
   /** Changes the size of the heading. */
-  size?: HeadingSizeOptions;
+  size?: HeadingSizeOptionsProp;
 
   /** Changes the font color of the heading */
   color?: HeadingFontColors;
 }
 
+const isBreakpointObject = (
+  size: HeadingSizeOptionsProp
+): size is HeadingSizeBreakpoints => {
+  return isObject(size);
+};
+
 const getHeadingStyles = (
-  size: HeadingSizeOptions
+  size: HeadingSizeOptionsProp
 ): {
   fontSize: SystemProp<keyof Theme["fontSizes"], Theme>;
   lineHeight: SystemProp<keyof Theme["lineHeights"], Theme>;
@@ -77,6 +94,29 @@ const getHeadingStyles = (
   }
 };
 
+const getHeadingSizes = (size: HeadingSizeOptionsProp) => {
+  if (isBreakpointObject(size)) {
+    let headingSizes = { fontSize: {}, lineHeight: {} };
+    forEach(toPairs(size), ([key, value]) => {
+      const { fontSize, lineHeight } = getHeadingStyles(value);
+      headingSizes = {
+        ...headingSizes,
+        fontSize: {
+          ...headingSizes.fontSize,
+          [key]: fontSize,
+        },
+        lineHeight: {
+          ...headingSizes.lineHeight,
+          [key]: lineHeight,
+        },
+      };
+    });
+    return headingSizes;
+  }
+
+  return getHeadingStyles(size);
+};
+
 /** A heading is text that gives hierarchical structure to a page */
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
   (
@@ -98,7 +138,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         fontWeight="fontWeightBold"
         marginBottom={marginBottom}
         ref={ref}
-        {...getHeadingStyles(size)}
+        {...getHeadingSizes(size)}
         {...props}
       >
         {children}
