@@ -12,6 +12,11 @@ type HeadingSizeOptions =
   | "heading50"
   | "heading60";
 
+type HeadingFontColors =
+  | "colorTextHeading"
+  | "colorTextHeadingStrong"
+  | "colorTextHeadingStronger";
+
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /** Sets the HTML element on render. */
   as?: HeadingLevelOptions;
@@ -21,6 +26,9 @@ export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   marginBottom?: HeadingMarginOptions;
   /** Changes the size of the heading. */
   size?: HeadingSizeOptions;
+
+  /** Changes the font color of the heading */
+  color?: HeadingFontColors;
 }
 
 const getHeadingStyles = (
@@ -72,12 +80,20 @@ const getHeadingStyles = (
 /** A heading is text that gives hierarchical structure to a page */
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
   (
-    { as, children, marginBottom = "space70", size = "heading20", ...props },
+    {
+      as,
+      children,
+      marginBottom = "space70",
+      size = "heading20",
+      color = "colorTextHeadingStronger",
+      ...props
+    },
     ref
   ) => {
     return (
       <Text.h2
         as={as}
+        color={color}
         fontFamily="fontFamilyModerat"
         fontWeight="fontWeightBold"
         marginBottom={marginBottom}
