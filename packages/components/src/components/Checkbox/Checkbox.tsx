@@ -7,6 +7,7 @@ import {
 import { styled, theme } from "@localyze-pluto/theme";
 import { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
+import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 
 const StyledCheckboxIndicator = styled.span`
@@ -24,7 +25,7 @@ const StyledCheckboxIndicator = styled.span`
 
 export const CheckIndicator = (): React.ReactElement => {
   return (
-    <StyledCheckboxIndicator as={RadixIndicator}>
+    <StyledCheckboxIndicator as={RadixIndicator} data-testid="checkbox-check">
       <Icon
         color="colorBackground"
         decorative={true}
@@ -37,7 +38,10 @@ export const CheckIndicator = (): React.ReactElement => {
 
 export const IndeterminateIndicator = (): React.ReactElement => {
   return (
-    <StyledCheckboxIndicator as={RadixIndicator}>
+    <StyledCheckboxIndicator
+      as={RadixIndicator}
+      data-testid="checkbox-indeterminate"
+    >
       <Icon
         color="colorBackground"
         decorative={true}
@@ -51,6 +55,7 @@ export const IndeterminateIndicator = (): React.ReactElement => {
 export interface CheckboxRootProps extends RadixCheckboxProps {
   wrapped?: boolean;
   error?: boolean;
+  checkboxId: string;
   CheckboxIcon?: React.FunctionComponent;
   children: NonNullable<React.ReactNode>;
 }
@@ -126,15 +131,12 @@ const StyledCheckboxRoot = styled.input`
   },
 `;
 
-export const Root = React.forwardRef<HTMLButtonElement, CheckboxRootProps>(
+export const CheckboxRoot = React.forwardRef<
+  HTMLButtonElement,
+  CheckboxRootProps
+>(
   (
-    {
-      wrapped = false,
-      error = false,
-      CheckboxIcon = CheckIndicator,
-      children,
-      ...props
-    },
+    { wrapped = false, error = false, checkboxId, checked, children, ...props },
     ref
   ) => {
     return (
@@ -147,21 +149,28 @@ export const Root = React.forwardRef<HTMLButtonElement, CheckboxRootProps>(
       >
         <StyledCheckboxRoot
           as={RadixRoot}
+          checked={checked}
           data-testid="checkbox"
           error={error}
+          id={checkboxId}
           ref={ref}
           {...props}
         >
-          <CheckboxIcon />
+          {checked === "indeterminate" ? (
+            <IndeterminateIndicator />
+          ) : (
+            <CheckIndicator />
+          )}
         </StyledCheckboxRoot>
-        <Box.div
+        <Text.label
           color={error ? "colorTextError" : "colorTextStronger"}
           data-testid="checkbox-label"
           fontSize="fontSize20"
+          htmlFor={checkboxId}
           marginBottom="space10"
         >
           {children}
-        </Box.div>
+        </Text.label>
       </Box.div>
     );
   }
@@ -169,4 +178,4 @@ export const Root = React.forwardRef<HTMLButtonElement, CheckboxRootProps>(
 
 export type CheckedState = boolean | "indeterminate";
 
-Root.displayName = "Checkbox";
+CheckboxRoot.displayName = "Checkbox";

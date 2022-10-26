@@ -1,38 +1,37 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState, useRef } from "react";
-import {
-  Root,
-  CheckIndicator,
-  IndeterminateIndicator,
-  CheckedState,
-} from "./Checkbox";
+import { CheckboxRoot, CheckedState } from "./Checkbox";
 
 export default {
-  component: Root,
+  component: CheckboxRoot,
   title: "Components/Checkbox",
-} as ComponentMeta<typeof Root>;
+} as ComponentMeta<typeof CheckboxRoot>;
 
-const Template: ComponentStory<typeof Root> = (args) => (
+const Template: ComponentStory<typeof CheckboxRoot> = (args) => (
   <form>
-    <Root {...args} />
+    <CheckboxRoot {...args} />
   </form>
 );
 
 export const Default = Template.bind({});
 Default.args = {
   children: "Checkbox",
+  checkboxId: "checkbox-1",
+  disabled: true,
 };
 
 export const Wrapped = Template.bind({});
 Wrapped.args = {
   children: "Wrapped checkbox",
   wrapped: true,
+  checkboxId: "checkbox-2",
 };
 
 export const WithError = Template.bind({});
 WithError.args = {
   children: "Checkbox with error",
   error: true,
+  checkboxId: "checkbox-3",
 };
 
 export const Uncontrolled = (): React.ReactElement => {
@@ -47,7 +46,7 @@ export const Uncontrolled = (): React.ReactElement => {
 
   return (
     <form>
-      <Root ref={checkboxRef}>
+      <CheckboxRoot checkboxId="checkbox-4" ref={checkboxRef}>
         <span>Uncontrolled with ref</span>
         <br />
         <span>State: {checked}</span>
@@ -55,7 +54,7 @@ export const Uncontrolled = (): React.ReactElement => {
         <button onClick={getStateFromRef} type="button">
           Get state
         </button>
-      </Root>
+      </CheckboxRoot>
     </form>
   );
 };
@@ -63,15 +62,10 @@ export const Uncontrolled = (): React.ReactElement => {
 export const Controlled = (): React.ReactElement => {
   const [checked, setChecked] = React.useState<CheckedState>("indeterminate");
 
-  const getIcon = () => {
-    if (checked === "indeterminate") return IndeterminateIndicator;
-    return CheckIndicator;
-  };
-
   return (
     <form>
-      <Root
-        CheckboxIcon={getIcon()}
+      <CheckboxRoot
+        checkboxId="checkbox-5"
         checked={checked}
         onCheckedChange={(checkState) => setChecked(checkState)}
       >
@@ -89,7 +83,7 @@ export const Controlled = (): React.ReactElement => {
         >
           Toggle indeterminate
         </button>
-      </Root>
+      </CheckboxRoot>
     </form>
   );
 };
