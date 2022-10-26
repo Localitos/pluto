@@ -1,37 +1,57 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState, useRef } from "react";
-import { CheckboxRoot, CheckedState } from "./Checkbox";
+import { Checkbox, CheckedState } from "./Checkbox";
 
 export default {
-  component: CheckboxRoot,
+  component: Checkbox,
   title: "Components/Checkbox",
-} as ComponentMeta<typeof CheckboxRoot>;
+} as ComponentMeta<typeof Checkbox>;
 
-const Template: ComponentStory<typeof CheckboxRoot> = (args) => (
+const Template: ComponentStory<typeof Checkbox> = (args) => (
   <form>
-    <CheckboxRoot {...args} />
+    <Checkbox {...args} />
   </form>
 );
 
 export const Default = Template.bind({});
 Default.args = {
   children: "Checkbox",
-  checkboxId: "checkbox-1",
+  checkboxId: "checkbox-default",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: "Checkbox",
+  checkboxId: "checkbox-disabled",
   disabled: true,
+};
+
+export const DisabledAndChecked = (): React.ReactElement => {
+  return (
+    <>
+      <Checkbox
+        checkboxId="checkbox-disabled-and-checked"
+        checked={true}
+        disabled
+      >
+        <span>Disabled and checked</span>
+      </Checkbox>
+    </>
+  );
 };
 
 export const Wrapped = Template.bind({});
 Wrapped.args = {
   children: "Wrapped checkbox",
   wrapped: true,
-  checkboxId: "checkbox-2",
+  checkboxId: "checkbox-wrapped",
 };
 
 export const WithError = Template.bind({});
 WithError.args = {
   children: "Checkbox with error",
   error: true,
-  checkboxId: "checkbox-3",
+  checkboxId: "checkbox-with-error",
 };
 
 export const Uncontrolled = (): React.ReactElement => {
@@ -46,7 +66,7 @@ export const Uncontrolled = (): React.ReactElement => {
 
   return (
     <form>
-      <CheckboxRoot checkboxId="checkbox-4" ref={checkboxRef}>
+      <Checkbox checkboxId="checkbox-uncontrolled" ref={checkboxRef}>
         <span>Uncontrolled with ref</span>
         <br />
         <span>State: {checked}</span>
@@ -54,7 +74,7 @@ export const Uncontrolled = (): React.ReactElement => {
         <button onClick={getStateFromRef} type="button">
           Get state
         </button>
-      </CheckboxRoot>
+      </Checkbox>
     </form>
   );
 };
@@ -64,8 +84,8 @@ export const Controlled = (): React.ReactElement => {
 
   return (
     <form>
-      <CheckboxRoot
-        checkboxId="checkbox-5"
+      <Checkbox
+        checkboxId="checkbox-controlled"
         checked={checked}
         onCheckedChange={(checkState) => setChecked(checkState)}
       >
@@ -83,7 +103,7 @@ export const Controlled = (): React.ReactElement => {
         >
           Toggle indeterminate
         </button>
-      </CheckboxRoot>
+      </Checkbox>
     </form>
   );
 };

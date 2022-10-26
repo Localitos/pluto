@@ -1,33 +1,33 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import { CheckboxRoot } from "./Checkbox";
+import { Checkbox } from "./Checkbox";
 
 describe("Checkbox", () => {
   describe("Render", () => {
     it("should render a checkbox", () => {
-      render(<CheckboxRoot checkboxId="checkbox">Checkbox</CheckboxRoot>);
-      const renderedCheckbox = screen.getByTestId("checkbox");
+      render(<Checkbox checkboxId="checkbox">Checkbox</Checkbox>);
+      const renderedCheckbox = screen.getByRole("checkbox");
       // eslint-disable-next-line sonarjs/no-duplicate-string
       expect(renderedCheckbox).toHaveAttribute("data-state", "unchecked");
     });
 
     it("should render a disabled checkbox", () => {
       render(
-        <CheckboxRoot checkboxId="checkbox-disabled" disabled>
+        <Checkbox checkboxId="checkbox-disabled" disabled>
           Checkbox
-        </CheckboxRoot>
+        </Checkbox>
       );
-      const renderedCheckbox = screen.getByTestId("checkbox");
+      const renderedCheckbox = screen.getByRole("checkbox");
       expect(renderedCheckbox).toHaveAttribute("data-disabled");
     });
 
     it("should render with check indicator", () => {
       render(
-        <CheckboxRoot checkboxId="checkbox-check" checked>
+        <Checkbox checkboxId="checkbox-check" checked>
           Checkbox with check
-        </CheckboxRoot>
+        </Checkbox>
       );
-      const renderedCheckbox = screen.getByTestId("checkbox");
+      const renderedCheckbox = screen.getByRole("checkbox");
       const renderedCheckboxIndicator = screen.getByTestId("checkbox-check");
       expect(renderedCheckboxIndicator).toBeInTheDocument();
       expect(renderedCheckbox).toHaveAttribute("data-state", "checked");
@@ -35,14 +35,11 @@ describe("Checkbox", () => {
 
     it("should render with indeterminate indicator", () => {
       render(
-        <CheckboxRoot
-          checkboxId="checkbox-indeterminate"
-          checked="indeterminate"
-        >
+        <Checkbox checkboxId="checkbox-indeterminate" checked="indeterminate">
           Indeterminate checkbox
-        </CheckboxRoot>
+        </Checkbox>
       );
-      const renderedCheckbox = screen.getByTestId("checkbox");
+      const renderedCheckbox = screen.getByRole("checkbox");
       const renderedCheckboxIndicator = screen.getByTestId(
         "checkbox-indeterminate"
       );

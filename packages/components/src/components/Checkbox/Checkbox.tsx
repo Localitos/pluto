@@ -52,11 +52,10 @@ export const IndeterminateIndicator = (): React.ReactElement => {
   );
 };
 
-export interface CheckboxRootProps extends RadixCheckboxProps {
+export interface CheckboxProps extends RadixCheckboxProps {
   wrapped?: boolean;
   error?: boolean;
   checkboxId: string;
-  CheckboxIcon?: React.FunctionComponent;
   children: NonNullable<React.ReactNode>;
 }
 
@@ -69,7 +68,7 @@ const getCheckboxStyles = (
   if (wrapped) {
     return {
       backgroundColor: "colorBackgroundWeak",
-      padding: "space40",
+      padding: "space50",
     };
   }
   return {
@@ -78,7 +77,7 @@ const getCheckboxStyles = (
   };
 };
 
-const StyledCheckboxRoot = styled.input`
+const StyledCheckbox = styled.input`
   width: 16px;
   height: 16px;
   border-radius: 4px;
@@ -109,7 +108,7 @@ const StyledCheckboxRoot = styled.input`
     background-color: ${theme.colors.colorBackgroundPrimary};
     border: 1px solid ${theme.colors.colorBackgroundPrimary};
 
-    &[data-disabled=true] {
+    &[data-disabled] {
       background-color: ${theme.colors.colorBackgroundStrong};
       border: 1px solid ${theme.colors.colorBackgroundStrong};
     }
@@ -120,7 +119,7 @@ const StyledCheckboxRoot = styled.input`
     },
   },
   
-  &[data-disabled=true] {
+  &[data-disabled] {
     background-color: ${theme.colors.colorBackground};
     border: 1px solid ${theme.colors.colorBackgroundStrong};  
   
@@ -131,10 +130,7 @@ const StyledCheckboxRoot = styled.input`
   },
 `;
 
-export const CheckboxRoot = React.forwardRef<
-  HTMLButtonElement,
-  CheckboxRootProps
->(
+export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
   (
     { wrapped = false, error = false, checkboxId, checked, children, ...props },
     ref
@@ -142,12 +138,13 @@ export const CheckboxRoot = React.forwardRef<
     return (
       <Box.div
         alignItems="center"
-        borderRadius="borderRadius20"
+        borderRadius="borderRadius30"
         data-testid="checkbox-container"
         display="flex"
+        flexDirection="row"
         {...getCheckboxStyles(wrapped)}
       >
-        <StyledCheckboxRoot
+        <StyledCheckbox
           as={RadixRoot}
           checked={checked}
           data-testid="checkbox"
@@ -161,12 +158,13 @@ export const CheckboxRoot = React.forwardRef<
           ) : (
             <CheckIndicator />
           )}
-        </StyledCheckboxRoot>
+        </StyledCheckbox>
         <Text.label
           color={error ? "colorTextError" : "colorTextStronger"}
           data-testid="checkbox-label"
           fontSize="fontSize20"
           htmlFor={checkboxId}
+          lineHeight="lineHeight20"
           marginBottom="space10"
         >
           {children}
@@ -178,4 +176,4 @@ export const CheckboxRoot = React.forwardRef<
 
 export type CheckedState = boolean | "indeterminate";
 
-CheckboxRoot.displayName = "Checkbox";
+Checkbox.displayName = "Checkbox";
