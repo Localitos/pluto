@@ -6,7 +6,7 @@ import type {
 } from "@xstyled/styled-components";
 
 export interface BoxProps extends SystemProps {
-  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+  backgroundColor?: SystemProp<keyof Theme["colors"], Theme> | "transparent";
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderTopColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderRightColor?: SystemProp<keyof Theme["colors"], Theme>;
@@ -27,16 +27,16 @@ export interface BoxProps extends SystemProps {
   borderTopLeftRadius?: SystemProp<keyof Theme["radii"], Theme>;
   borderBottomRightRadius?: SystemProp<keyof Theme["radii"], Theme>;
   borderBottomLeftRadius?: SystemProp<keyof Theme["radii"], Theme>;
-  boxShadow?: SystemProp<keyof Theme["shadows"], Theme>;
-  color?: SystemProp<keyof Theme["colors"], Theme>;
-  fontFamily?: SystemProp<keyof Theme["fonts"], Theme>;
-  fontSize?: SystemProp<keyof Theme["fontSizes"], Theme>;
-  fontWeight?: SystemProp<keyof Theme["fontWeights"], Theme>;
+  boxShadow?: SystemProp<keyof Theme["shadows"], Theme> | "none";
+  color?: SystemProp<keyof Theme["colors"], Theme> | "currentColor" | "inherit";
+  fontFamily?: SystemProp<keyof Theme["fonts"], Theme> | "inherit";
+  fontSize?: SystemProp<keyof Theme["fontSizes"], Theme> | "inherit";
+  fontWeight?: SystemProp<keyof Theme["fontWeights"], Theme> | "inherit";
   gap?: SystemProp<keyof Theme["space"], Theme>;
   gridGap?: SystemProp<keyof Theme["space"], Theme>;
   gridRowGap?: SystemProp<keyof Theme["space"], Theme>;
   gridColumnGap?: SystemProp<keyof Theme["space"], Theme>;
-  lineHeight?: SystemProp<keyof Theme["lineHeights"], Theme>;
+  lineHeight?: SystemProp<keyof Theme["lineHeights"], Theme> | "inherit";
   margin?: SystemProp<keyof Theme["space"], Theme>;
   marginTop?: SystemProp<keyof Theme["space"], Theme>;
   marginRight?: SystemProp<keyof Theme["space"], Theme>;
