@@ -53,9 +53,13 @@ export const IndeterminateIndicator = (): React.ReactElement => {
 };
 
 export interface CheckboxProps extends RadixCheckboxProps {
+  /** Wrap or leave checkbox as is. */
   wrapped?: boolean;
+  /** Provide error state of the checkbox */
   error?: boolean;
+  /** Checkbox id is required for proper functioning of htmlFor attribute on label. */
   checkboxId: string;
+  /** The contents of the anchor. Can be text or valid text related HTML, i.e. strong elements. */
   children: NonNullable<React.ReactNode>;
 }
 
