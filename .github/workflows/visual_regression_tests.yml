@@ -1,11 +1,11 @@
 name: "Visual Tests"
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
   push:
     paths:
       - "packages/**"
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   install-cache:
@@ -51,5 +51,6 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          autoAcceptChanges: "main"
           exitOnceUploaded: true
+          onlyChanged: true
+          traceChanged: true
