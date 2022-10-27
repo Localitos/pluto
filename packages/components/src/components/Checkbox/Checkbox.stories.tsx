@@ -29,7 +29,7 @@ Disabled.args = {
 export const DisabledAndChecked = (): React.ReactElement => {
   return (
     <>
-      <Checkbox checked={true} disabled id="checkbox-disabled-and-checked">
+      <Checkbox checked disabled id="checkbox-disabled-and-checked">
         <span>Disabled and checked</span>
       </Checkbox>
     </>
