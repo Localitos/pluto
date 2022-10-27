@@ -1,4 +1,5 @@
 export * from "./components/Anchor";
+export * from "./components/Badge";
 export * from "./components/Button";
 export * from "./components/Callout";
 export * from "./components/Avatar";

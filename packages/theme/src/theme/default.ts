@@ -122,6 +122,7 @@ export const theme = {
     space0: "0rem", // 0px
     space10: "0.125rem", // 2px
     space20: "0.25rem", // 4px
+    space25: "0.4rem", // 6px
     space30: "0.5rem", // 8px
     space40: "0.75rem", // 12px
     space50: "1rem", // 16px
