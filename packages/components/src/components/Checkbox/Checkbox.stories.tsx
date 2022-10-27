@@ -1,5 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState, useRef } from "react";
+import { Button } from "../Button";
+import { Text } from "../../primitives/Text";
 import { Checkbox, CheckedState } from "./Checkbox";
 
 export default {
@@ -30,7 +32,7 @@ export const DisabledAndChecked = (): React.ReactElement => {
   return (
     <>
       <Checkbox checked disabled id="checkbox-disabled-and-checked">
-        <span>Checked and disabled</span>
+        <Text.span>Checked and disabled</Text.span>
       </Checkbox>
     </>
   );
@@ -63,20 +65,25 @@ export const Uncontrolled = (): React.ReactElement => {
   return (
     <form>
       <Checkbox id="checkbox-uncontrolled" ref={checkboxRef}>
-        <span>Uncontrolled with ref</span>
+        <Text.span>Uncontrolled with ref</Text.span>
         <br />
-        <span>State: {checked}</span>
+        <Text.span>State: {checked}</Text.span>
         <br />
-        <button onClick={getStateFromRef} type="button">
+        <Button
+          onClick={getStateFromRef}
+          size="small"
+          type="button"
+          variant="primary"
+        >
           Get state
-        </button>
+        </Button>
       </Checkbox>
     </form>
   );
 };
 
 export const Controlled = (): React.ReactElement => {
-  const [checked, setChecked] = React.useState<CheckedState>("indeterminate");
+  const [checked, setChecked] = useState<CheckedState>("indeterminate");
 
   return (
     <form>
@@ -85,20 +92,22 @@ export const Controlled = (): React.ReactElement => {
         id="checkbox-controlled"
         onCheckedChange={(checkState) => setChecked(checkState)}
       >
-        <span>Controlled</span>
+        <Text.span>Controlled</Text.span>
         <br />
-        <span>State: {checked.toString()}</span>
+        <Text.span>State: {checked.toString()}</Text.span>
         <br />
-        <button
+        <Button
           onClick={() =>
             setChecked((prevIsChecked) =>
               prevIsChecked === "indeterminate" ? false : "indeterminate"
             )
           }
+          size="small"
           type="button"
+          variant="primary"
         >
           Toggle indeterminate
-        </button>
+        </Button>
       </Checkbox>
     </form>
   );
