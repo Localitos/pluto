@@ -16,24 +16,20 @@ const Template: ComponentStory<typeof Checkbox> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   children: "Checkbox",
-  checkboxId: "checkbox-default",
+  id: "checkbox-default",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: "Checkbox",
-  checkboxId: "checkbox-disabled",
+  id: "checkbox-disabled",
   disabled: true,
 };
 
 export const DisabledAndChecked = (): React.ReactElement => {
   return (
     <>
-      <Checkbox
-        checkboxId="checkbox-disabled-and-checked"
-        checked={true}
-        disabled
-      >
+      <Checkbox checked={true} disabled id="checkbox-disabled-and-checked">
         <span>Disabled and checked</span>
       </Checkbox>
     </>
@@ -44,14 +40,14 @@ export const Wrapped = Template.bind({});
 Wrapped.args = {
   children: "Wrapped checkbox",
   wrapped: true,
-  checkboxId: "checkbox-wrapped",
+  id: "checkbox-wrapped",
 };
 
 export const WithError = Template.bind({});
 WithError.args = {
   children: "Checkbox with error",
   error: true,
-  checkboxId: "checkbox-with-error",
+  id: "checkbox-with-error",
 };
 
 export const Uncontrolled = (): React.ReactElement => {
@@ -66,7 +62,7 @@ export const Uncontrolled = (): React.ReactElement => {
 
   return (
     <form>
-      <Checkbox checkboxId="checkbox-uncontrolled" ref={checkboxRef}>
+      <Checkbox id="checkbox-uncontrolled" ref={checkboxRef}>
         <span>Uncontrolled with ref</span>
         <br />
         <span>State: {checked}</span>
@@ -85,8 +81,8 @@ export const Controlled = (): React.ReactElement => {
   return (
     <form>
       <Checkbox
-        checkboxId="checkbox-controlled"
         checked={checked}
+        id="checkbox-controlled"
         onCheckedChange={(checkState) => setChecked(checkState)}
       >
         <span>Controlled</span>

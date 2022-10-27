@@ -5,7 +5,7 @@ import { Checkbox } from "./Checkbox";
 describe("Checkbox", () => {
   describe("Render", () => {
     it("should render a checkbox", () => {
-      render(<Checkbox checkboxId="checkbox">Checkbox</Checkbox>);
+      render(<Checkbox id="checkbox">Checkbox</Checkbox>);
       const renderedCheckbox = screen.getByRole("checkbox");
       // eslint-disable-next-line sonarjs/no-duplicate-string
       expect(renderedCheckbox).toHaveAttribute("data-state", "unchecked");
@@ -13,7 +13,7 @@ describe("Checkbox", () => {
 
     it("should render a disabled checkbox", () => {
       render(
-        <Checkbox checkboxId="checkbox-disabled" disabled>
+        <Checkbox disabled id="checkbox-disabled">
           Checkbox
         </Checkbox>
       );
@@ -23,27 +23,21 @@ describe("Checkbox", () => {
 
     it("should render with check indicator", () => {
       render(
-        <Checkbox checkboxId="checkbox-check" checked>
+        <Checkbox checked id="checkbox-check">
           Checkbox with check
         </Checkbox>
       );
       const renderedCheckbox = screen.getByRole("checkbox");
-      const renderedCheckboxIndicator = screen.getByTestId("checkbox-check");
-      expect(renderedCheckboxIndicator).toBeInTheDocument();
       expect(renderedCheckbox).toHaveAttribute("data-state", "checked");
     });
 
     it("should render with indeterminate indicator", () => {
       render(
-        <Checkbox checkboxId="checkbox-indeterminate" checked="indeterminate">
+        <Checkbox checked="indeterminate" id="checkbox-indeterminate">
           Indeterminate checkbox
         </Checkbox>
       );
       const renderedCheckbox = screen.getByRole("checkbox");
-      const renderedCheckboxIndicator = screen.getByTestId(
-        "checkbox-indeterminate"
-      );
-      expect(renderedCheckboxIndicator).toBeInTheDocument();
       expect(renderedCheckbox).toHaveAttribute("data-state", "indeterminate");
     });
   });

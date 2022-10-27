@@ -25,7 +25,7 @@ const StyledCheckboxIndicator = styled.span`
 
 export const CheckIndicator = (): React.ReactElement => {
   return (
-    <StyledCheckboxIndicator as={RadixIndicator} data-testid="checkbox-check">
+    <StyledCheckboxIndicator as={RadixIndicator}>
       <Icon
         color="colorBackground"
         decorative={true}
@@ -38,10 +38,7 @@ export const CheckIndicator = (): React.ReactElement => {
 
 export const IndeterminateIndicator = (): React.ReactElement => {
   return (
-    <StyledCheckboxIndicator
-      as={RadixIndicator}
-      data-testid="checkbox-indeterminate"
-    >
+    <StyledCheckboxIndicator as={RadixIndicator}>
       <Icon
         color="colorBackground"
         decorative={true}
@@ -52,9 +49,9 @@ export const IndeterminateIndicator = (): React.ReactElement => {
   );
 };
 
-export interface CheckboxProps extends RadixCheckboxProps {
+export interface CheckboxProps extends Omit<RadixCheckboxProps, "id"> {
   /** Checkbox id is required for proper functioning of htmlFor attribute on label. */
-  checkboxId: string;
+  id: string;
   /** The contents of the anchor. Can be text or valid text related HTML, i.e. strong elements. */
   children: NonNullable<React.ReactNode>;
   /** Wrap or leave checkbox as is. */
@@ -136,7 +133,7 @@ const StyledCheckbox = styled.input`
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
   (
-    { wrapped = false, error = false, checkboxId, checked, children, ...props },
+    { wrapped = false, error = false, id, checked, children, ...props },
     ref
   ) => {
     return (
@@ -151,7 +148,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
           as={RadixRoot}
           checked={checked}
           error={error}
-          id={checkboxId}
+          id={id}
           ref={ref}
           {...props}
         >
@@ -164,7 +161,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
         <Text.label
           color={error ? "colorTextError" : "colorTextStronger"}
           fontSize="fontSize20"
-          htmlFor={checkboxId}
+          htmlFor={id}
           lineHeight="lineHeight20"
         >
           {children}
