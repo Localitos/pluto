@@ -1,5 +1,13 @@
 # @localyze-pluto/theme
 
+## 1.2.0
+
+### Minor Changes
+
+- [#148](https://github.com/Localitos/pluto/pull/148) [`730caf7`](https://github.com/Localitos/pluto/commit/730caf784c345c878a3cbe004899e72ded61fbd7) Thanks [@nyan07](https://github.com/nyan07)! - Add heading colors
+
+- [#126](https://github.com/Localitos/pluto/pull/126) [`3a0459b`](https://github.com/Localitos/pluto/commit/3a0459bf5110233f1274a51ac6381b24c69a8b63) Thanks [@blumaa](https://github.com/blumaa)! - Added 6px space token
+
 ## 1.1.0
 
 ### Minor Changes

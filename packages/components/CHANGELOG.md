@@ -1,5 +1,26 @@
 # @localyze-pluto/components
 
+## 3.0.0
+
+### Minor Changes
+
+- [#150](https://github.com/Localitos/pluto/pull/150) [`6bdd415`](https://github.com/Localitos/pluto/commit/6bdd415f5d22115c1b96e61806849badd73b3122) Thanks [@nyan07](https://github.com/nyan07)! - Allow breakpoints in Heading size
+
+- [#147](https://github.com/Localitos/pluto/pull/147) [`7d61295`](https://github.com/Localitos/pluto/commit/7d61295c1fa403b3719fce8efbea5991547f4dce) Thanks [@nyan07](https://github.com/nyan07)! - Add OrderedList and UnorderedList components
+
+- [#126](https://github.com/Localitos/pluto/pull/126) [`3a0459b`](https://github.com/Localitos/pluto/commit/3a0459bf5110233f1274a51ac6381b24c69a8b63) Thanks [@blumaa](https://github.com/blumaa)! - Adding Badge component
+
+### Patch Changes
+
+- [#148](https://github.com/Localitos/pluto/pull/148) [`730caf7`](https://github.com/Localitos/pluto/commit/730caf784c345c878a3cbe004899e72ded61fbd7) Thanks [@nyan07](https://github.com/nyan07)! - Add color property to heading
+
+- [#129](https://github.com/Localitos/pluto/pull/129) [`b7d7197`](https://github.com/Localitos/pluto/commit/b7d7197ec5ed7043ec055dfde98592cfba578146) Thanks [@richbachman](https://github.com/richbachman)! - [Table]: Added `stickyHeader` and `top` props so the table header rows can stick to the top of a container or page.
+
+- [#152](https://github.com/Localitos/pluto/pull/152) [`b1676ca`](https://github.com/Localitos/pluto/commit/b1676cae90f83085c21aabbcd8ecd1a297ac072b) Thanks [@nyan07](https://github.com/nyan07)! - Fix the padding of the Callout without background
+
+- Updated dependencies [[`730caf7`](https://github.com/Localitos/pluto/commit/730caf784c345c878a3cbe004899e72ded61fbd7), [`3a0459b`](https://github.com/Localitos/pluto/commit/3a0459bf5110233f1274a51ac6381b24c69a8b63)]:
+  - @localyze-pluto/theme@1.2.0
+
 ## 2.5.1
 
 ### Patch Changes
