@@ -9,5 +9,6 @@ export * from "./components/Icon";
 export * from "./components/Paragraph";
 export * from "./components/RichText";
 export * from "./components/Table";
+export * from "./components/Checkbox";
 export * from "./primitives/Box";
 export * from "./primitives/Text";

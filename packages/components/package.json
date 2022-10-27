@@ -69,6 +69,7 @@
     "extends @localyze-pluto/browserslist-config"
   ],
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.1",
     "html-react-parser": "^3.0.4"
   }
 }
