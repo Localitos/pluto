@@ -5,7 +5,7 @@ import { Icon, IconProps } from "../Icon";
 
 type CalloutVariantOptions = "error" | "information" | "success" | "warning";
 
-interface CalloutProps
+export interface CalloutProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
   /** The content of the callout. It can be text or valid text related HTML, i.e. anchor and strong elements. */
   children: React.ReactNode;

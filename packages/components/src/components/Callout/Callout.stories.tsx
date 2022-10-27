@@ -2,6 +2,8 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
+import { Anchor } from "../Anchor";
+import { ListItem, UnorderedList } from "../List";
 import { Callout } from "./Callout";
 
 export default {
@@ -18,9 +20,13 @@ Default.args = {
   children: (
     <Box.div>
       <Text.p>This is a default message.</Text.p>
-      <Text.a color="colorTextInfo" href="#">
-        Text Link
-      </Text.a>
+      <Box.div color="colorTextLink">
+        <UnorderedList>
+          <ListItem>
+            <Anchor href="https://www.localyze.com">localyze.com</Anchor>
+          </ListItem>
+        </UnorderedList>
+      </Box.div>
     </Box.div>
   ),
 };
