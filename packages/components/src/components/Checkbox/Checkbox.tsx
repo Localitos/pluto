@@ -53,14 +53,14 @@ export const IndeterminateIndicator = (): React.ReactElement => {
 };
 
 export interface CheckboxProps extends RadixCheckboxProps {
-  /** Wrap or leave checkbox as is. */
-  wrapped?: boolean;
-  /** Provide error state of the checkbox. */
-  error?: boolean;
   /** Checkbox id is required for proper functioning of htmlFor attribute on label. */
   checkboxId: string;
   /** The contents of the anchor. Can be text or valid text related HTML, i.e. strong elements. */
   children: NonNullable<React.ReactNode>;
+  /** Wrap or leave checkbox as is. */
+  wrapped?: boolean;
+  /** Provide error state of the checkbox. */
+  error?: boolean;
 }
 
 const getCheckboxStyles = (
@@ -143,7 +143,6 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
       <Box.div
         alignItems="center"
         borderRadius="borderRadius30"
-        data-testid="checkbox-container"
         display="flex"
         flexDirection="row"
         {...getCheckboxStyles(wrapped)}
@@ -151,7 +150,6 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
         <StyledCheckbox
           as={RadixRoot}
           checked={checked}
-          data-testid="checkbox"
           error={error}
           id={checkboxId}
           ref={ref}
@@ -165,7 +163,6 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
         </StyledCheckbox>
         <Text.label
           color={error ? "colorTextError" : "colorTextStronger"}
-          data-testid="checkbox-label"
           fontSize="fontSize20"
           htmlFor={checkboxId}
           lineHeight="lineHeight20"
