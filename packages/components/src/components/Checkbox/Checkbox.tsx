@@ -102,7 +102,14 @@ const StyledCheckbox = styled.input`
     &:hover {
       background-color: ${theme.colors.colorBackgroundStrong};
       border: 1px solid ${theme.colors.colorBorder};
-    },
+    }
+  
+    &[data-disabled] {
+      &:hover {
+        background-color: ${theme.colors.colorBackground};
+        border: 1px solid ${theme.colors.colorBackgroundStrong};
+      }
+    }
   },
   
   &[data-state=checked], &[data-state=indeterminate] {
@@ -117,17 +124,17 @@ const StyledCheckbox = styled.input`
     &:hover {
       background-color: ${theme.colors.colorBackgroundPrimaryStrong};
       border: 1px solid ${theme.colors.colorBackgroundPrimaryStrong};
-    },
+    }
   },
   
   &[data-disabled] {
     background-color: ${theme.colors.colorBackground};
-    border: 1px solid ${theme.colors.colorBackgroundStrong};  
+    border: 1px solid ${theme.colors.colorBackgroundStrong};
   
     &:hover {
       background-color: ${theme.colors.colorBackgroundStrong};
       border: 1px solid ${theme.colors.colorBackgroundStrong};
-    },
+    }
   },
 `;
 
