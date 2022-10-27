@@ -55,7 +55,7 @@ export const IndeterminateIndicator = (): React.ReactElement => {
 export interface CheckboxProps extends RadixCheckboxProps {
   /** Wrap or leave checkbox as is. */
   wrapped?: boolean;
-  /** Provide error state of the checkbox */
+  /** Provide error state of the checkbox. */
   error?: boolean;
   /** Checkbox id is required for proper functioning of htmlFor attribute on label. */
   checkboxId: string;
@@ -169,7 +169,6 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
           fontSize="fontSize20"
           htmlFor={checkboxId}
           lineHeight="lineHeight20"
-          marginBottom="space10"
         >
           {children}
         </Text.label>
