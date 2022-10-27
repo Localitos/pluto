@@ -22,29 +22,36 @@ const getVariantProps = (
   withoutBackground: boolean
 ): {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+  padding?: SystemProp<keyof Theme["space"], Theme>;
 } => {
   if (withoutBackground) {
     return {};
   }
 
+  const padding = "space50";
+
   switch (variant) {
     case "error": {
       return {
+        padding,
         backgroundColor: "colorBackgroundError",
       };
     }
     case "warning": {
       return {
+        padding,
         backgroundColor: "colorBackgroundWarning",
       };
     }
     case "success": {
       return {
+        padding,
         backgroundColor: "colorBackgroundSuccess",
       };
     }
     default: {
       return {
+        padding,
         backgroundColor: "colorBackgroundInfo",
       };
     }
@@ -125,7 +132,6 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
         borderRadius="borderRadius20"
         display="flex"
         gap="space40"
-        padding="space50"
         ref={ref}
         {...getVariantProps(variant, withoutBackground)}
         {...props}
