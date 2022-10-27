@@ -52,6 +52,13 @@ Heading60.args = {
   size: "heading60",
 };
 
+export const WithBreakpoints = Template.bind({});
+WithBreakpoints.args = {
+  children: "I'm a h2 element rendered with different sizes.",
+  marginBottom: "space0",
+  size: { _: "heading60", md: "heading10" },
+};
+
 export const NoMargin = Template.bind({});
 NoMargin.args = {
   children: "I'm a h2 element with no bottom margin.",
