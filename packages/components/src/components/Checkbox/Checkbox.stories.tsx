@@ -30,7 +30,7 @@ export const DisabledAndChecked = (): React.ReactElement => {
   return (
     <>
       <Checkbox checked disabled id="checkbox-disabled-and-checked">
-        <span>Disabled and checked</span>
+        <span>Checked and disabled</span>
       </Checkbox>
     </>
   );

@@ -28,7 +28,7 @@ export const CheckIndicator = (): React.ReactElement => {
     <StyledCheckboxIndicator as={RadixIndicator}>
       <Icon
         color="colorBackground"
-        decorative={true}
+        decorative
         icon="CheckIcon"
         size="sizeIcon30"
       />
@@ -41,7 +41,7 @@ export const IndeterminateIndicator = (): React.ReactElement => {
     <StyledCheckboxIndicator as={RadixIndicator}>
       <Icon
         color="colorBackground"
-        decorative={true}
+        decorative
         icon="MinusSmallIcon"
         size="sizeIcon30"
       />
