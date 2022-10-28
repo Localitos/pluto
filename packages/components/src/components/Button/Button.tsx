@@ -57,7 +57,7 @@ const getButtonVariantStyles = (
 
 const getIcon = (iconName: IconNames, size: ButtonSizeOptions) => {
   const iconProps = (size: ButtonSizeOptions) =>
-    size === "small" ? "sizeIcon10" : "sizeIcon40";
+    size === "small" ? "sizeIcon30" : "sizeIcon40";
 
   return <Icon decorative icon={iconName} size={iconProps(size)} />;
 };
@@ -96,10 +96,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isDisabled}
         display="inline-flex"
         fontFamily="fontFamilyModerat"
-        fontSize={size === "large" ? "fontSize30" : "fontSize10"}
+        fontSize={size === "large" ? "fontSize30" : "fontSize20"}
         fontWeight="fontWeightMedium"
         gap="space30"
-        lineHeight={size === "large" ? "lineHeight40" : "lineHeight10"}
+        lineHeight={size === "large" ? "lineHeight40" : "lineHeight30"}
         outlineColor={{ focus: "colorBorderPrimary" }}
         outlineOffset={{ focus: "borderWidth20" }}
         outlineStyle={{ focus: "solid" }}
