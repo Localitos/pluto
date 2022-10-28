@@ -1,0 +1,25 @@
+{
+  "border-radius": {
+    "10": {
+      "value": "4px"
+    },
+    "20": {
+      "value": "6px"
+    },
+    "30": {
+      "value": "8px"
+    },
+    "40": {
+      "value": "16px"
+    },
+    "50": {
+      "value": "24px"
+    },
+    "circle": {
+      "value": "50%"
+    },
+    "pill": {
+      "value": "100px"
+    }
+  }
+}

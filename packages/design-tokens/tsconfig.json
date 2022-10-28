@@ -1,0 +1,8 @@
+{
+  "extends": "@localyze-pluto/tsconfig",
+  "compilerOptions": {
+    "outDir": "dist/"
+  },
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}
