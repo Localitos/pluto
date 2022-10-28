@@ -11,6 +11,7 @@ export * from "./components/Icon";
 export * from "./components/Input";
 export * from "./components/InputBox";
 export * from "./components/Label";
+export * from "./components/ProgressBar";
 export * from "./components/Paragraph";
 export * from "./components/RichText";
 export * from "./components/Search";
