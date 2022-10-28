@@ -1,7 +1,6 @@
 import React from "react";
 import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
-import { styled, theme } from "@localyze-pluto/theme";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
 
@@ -87,33 +86,6 @@ const getIcon = (iconName: IconNames, size: ButtonSizeOptions) => {
   return <Icon decorative icon={iconName} size={iconProps(size)} />;
 };
 
-const getTextColor = (
-  variant: ButtonVariantOptions
-): Record<string, string> => {
-  if (variant === "text") {
-    return {
-      active: theme.colors.colorTextLink,
-      hover: theme.colors.colorTextLinkStrong,
-      disabled: theme.colors.colorText,
-    };
-  }
-
-  return {
-    active: theme.colors.colorTextInverse,
-  };
-};
-
-const InnerButton = styled(Box.button)`
-  color: ${({ variant }: ButtonProps) => getTextColor(variant).active};
-
-  &::hover {
-    color: ${({ variant }: ButtonProps) => getTextColor(variant).hover};
-  }
-  &::disabled {
-    color: ${({ variant }: ButtonProps) => getTextColor(variant).disabled};
-  }
-`;
-
 /** A button is a clickable element which communicates that users can trigger an action. */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -130,40 +102,51 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     return (
-      <Box.button
-        alignItems="center"
-        appearance="none"
-        aria-busy={loading ? "true" : "false"}
-        background="none"
-        borderRadius="borderRadius20"
-        borderStyle="borderSolid"
-        cursor={{
-          _: "default",
-          hover: "pointer",
-          disabled: "not-allowed",
-          loading: "wait",
-        }}
-        disabled={disabled}
-        display="inline-flex"
-        fontFamily="fontFamilyModerat"
-        fontSize={size === "large" ? "fontSize30" : "fontSize20"}
-        fontWeight="fontWeightMedium"
-        gap="space30"
-        lineHeight={size === "large" ? "lineHeight40" : "lineHeight30"}
-        paddingBottom={size === "large" ? "space40" : "space30"}
-        paddingLeft={size === "large" ? "space50" : "space40"}
-        paddingRight={size === "large" ? "space50" : "space40"}
-        paddingTop={size === "large" ? "space40" : "space30"}
-        ref={ref}
-        textDecoration="none"
-        transition="background-color 100ms ease-in, border-color 100ms ease-in"
-        {...getButtonVariantStyles(variant)}
-        {...props}
-      >
-        {leadingIcon && getIcon(leadingIcon, size)}
-        {children}
-        {trailingIcon && getIcon(trailingIcon, size)}
-      </Box.button>
+      <>
+        {/**
+          * When we use the `as` prop with xstyled, styled-components
+          * changes the component type to `StyledComponentPropsWithAs`.
+          * This type has a string `color` attribute, which causes
+          * a type conflict with the `color`attribute from xstyled
+          * components.
+          */}
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore-next-line */}
+        <Box.button
+          alignItems="center"
+          appearance="none"
+          aria-busy={loading ? "true" : "false"}
+          background="none"
+          borderRadius="borderRadius20"
+          borderStyle="borderSolid"
+          cursor={{
+            _: "default",
+            hover: "pointer",
+            disabled: "not-allowed",
+            loading: "wait",
+          }}
+          disabled={disabled}
+          display="inline-flex"
+          fontFamily="fontFamilyModerat"
+          fontSize={size === "large" ? "fontSize30" : "fontSize20"}
+          fontWeight="fontWeightMedium"
+          gap="space30"
+          lineHeight={size === "large" ? "lineHeight40" : "lineHeight30"}
+          paddingBottom={size === "large" ? "space40" : "space30"}
+          paddingLeft={size === "large" ? "space50" : "space40"}
+          paddingRight={size === "large" ? "space50" : "space40"}
+          paddingTop={size === "large" ? "space40" : "space30"}
+          ref={ref}
+          textDecoration="none"
+          transition="background-color 100ms ease-in, border-color 100ms ease-in"
+          {...getButtonVariantStyles(variant)}
+          {...props}
+        >
+          {leadingIcon && getIcon(leadingIcon, size)}
+          {children}
+          {trailingIcon && getIcon(trailingIcon, size)}
+        </Box.button>
+      </>
     );
   }
 );
