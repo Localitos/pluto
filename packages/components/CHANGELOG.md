@@ -1,5 +1,23 @@
 # @localyze-pluto/components
 
+## 3.1.0
+
+### Minor Changes
+
+- [#151](https://github.com/Localitos/pluto/pull/151) [`8938fd8`](https://github.com/Localitos/pluto/commit/8938fd83e37d724c08b236312f59c274742b964c) Thanks [@richbachman](https://github.com/richbachman)! - [HelpText]: Initial release of the HelpText component.
+  [Input]: Initial release of the Input component.
+  [InputBox]: Initial release of the InputBox component. This will be used to wrap form elements.
+  [Label]: Initial release of the Label component.
+
+- [#127](https://github.com/Localitos/pluto/pull/127) [`49e10b7`](https://github.com/Localitos/pluto/commit/49e10b78015778101eadcaf0d286ef1a782ac738) Thanks [@alinurr1](https://github.com/alinurr1)! - Add checkbox component, Radix UI based
+
+### Patch Changes
+
+- [#156](https://github.com/Localitos/pluto/pull/156) [`fcc8b5d`](https://github.com/Localitos/pluto/commit/fcc8b5d2b81593528e7a628f86c48be37ee8c18d) Thanks [@nyan07](https://github.com/nyan07)! - Change small button size
+
+- Updated dependencies [[`c9b7c77`](https://github.com/Localitos/pluto/commit/c9b7c7733e1bdcba9b99c5a2e89b8a7def972263)]:
+  - @localyze-pluto/theme@1.2.1
+
 ## 3.0.0
 
 ### Minor Changes

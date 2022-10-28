@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.2.1
+
+### Patch Changes
+
+- [#151](https://github.com/Localitos/pluto/pull/151) [`c9b7c77`](https://github.com/Localitos/pluto/commit/c9b7c7733e1bdcba9b99c5a2e89b8a7def972263) Thanks [@richbachman](https://github.com/richbachman)! - Added the `hidden` state to the theme. This allows us to target elements with `data-hidden="true"`.
+
 ## 1.2.0
 
 ### Minor Changes
