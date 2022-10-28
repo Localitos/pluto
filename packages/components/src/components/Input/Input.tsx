@@ -1,6 +1,8 @@
 import React from "react";
+import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import { InputBox } from "../InputBox";
 import { Box } from "../../primitives/Box";
+import { Icon } from "../Icon";
 
 export type InputTypes =
   | "date"
@@ -20,6 +22,8 @@ export interface InputTypeProps {
   pattern?: string;
 }
 
+type IconNames = keyof typeof HeroOutlineIcons;
+
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "color" | "size"> {
   disabled?: boolean;
@@ -27,6 +31,10 @@ export interface InputProps
   hasError?: boolean;
   /** The `id` of the input. */
   id?: string;
+  /** Icon to be added on the left of the input. */
+  leadingIcon?: IconNames;
+  /** Icon to be added on the right of the input. */
+  trailingIcon?: IconNames;
   /** The `name` of the input. */
   name?: string;
   /** The text to be used for the input placeholder. */
@@ -43,6 +51,28 @@ export interface InputProps
   size?: "large" | "small";
 }
 
+const getInputIcon = (
+  iconName: IconNames,
+  size?: "large" | "small",
+  isLeadingIcon?: boolean,
+  isTrailingIcon?: boolean
+) => {
+  return (
+    <Box.div
+      display="inline-flex"
+      marginLeft={isLeadingIcon ? "space40" : undefined}
+      marginRight={isTrailingIcon ? "space40" : undefined}
+    >
+      <Icon
+        color="colorIconStrong"
+        decorative
+        icon={iconName}
+        size={size === "large" ? "sizeIcon30" : "sizeIcon20"}
+      />
+    </Box.div>
+  );
+};
+
 /** An input is a form element that lets users enter one of various types of text on a single line. */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
@@ -54,7 +84,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       placeholder,
       readOnly,
       required,
+      leadingIcon,
       size = "small",
+      trailingIcon,
       type,
       value,
       ...props
@@ -71,6 +103,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         readOnly={readOnly}
         type={type}
       >
+        {leadingIcon && getInputIcon(leadingIcon, size, true)}
         <Box.input
           appearance="none"
           aria-invalid={hasError}
@@ -110,6 +143,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           value={value}
           {...props}
         />
+        {trailingIcon && getInputIcon(trailingIcon, size, undefined, true)}
       </InputBox>
     );
   }

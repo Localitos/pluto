@@ -10,7 +10,7 @@ export default {
   title: "Components/Input",
 } as ComponentMeta<typeof Input>;
 
-export const Default: React.FC = () => {
+export const Default = (): JSX.Element => {
   const inputID = useUID();
   const helpTextID = useUID();
   return (
@@ -22,7 +22,7 @@ export const Default: React.FC = () => {
   );
 };
 
-export const Large: React.FC = () => {
+export const Large = (): JSX.Element => {
   const inputID = useUID();
   return (
     <>
@@ -38,7 +38,7 @@ export const Large: React.FC = () => {
   );
 };
 
-export const Placeholder: React.FC = () => {
+export const Placeholder = (): JSX.Element => {
   const inputID = useUID();
   return (
     <>
@@ -53,7 +53,7 @@ export const Placeholder: React.FC = () => {
   );
 };
 
-export const Required: React.FC = () => {
+export const Required = (): JSX.Element => {
   const inputID = useUID();
   return (
     <>
@@ -71,7 +71,7 @@ export const Required: React.FC = () => {
   );
 };
 
-export const ReadOnly: React.FC = () => {
+export const ReadOnly = (): JSX.Element => {
   const inputID = useUID();
   return (
     <>
@@ -87,7 +87,7 @@ export const ReadOnly: React.FC = () => {
   );
 };
 
-export const Disabled: React.FC = () => {
+export const Disabled = (): JSX.Element => {
   const inputID = useUID();
   return (
     <>
@@ -103,7 +103,7 @@ export const Disabled: React.FC = () => {
   );
 };
 
-export const Error: React.FC = () => {
+export const Error = (): JSX.Element => {
   const inputID = useUID();
   const helpTextID = useUID();
   return (
@@ -124,14 +124,14 @@ export const Error: React.FC = () => {
   );
 };
 
-export const Hidden: React.FC = () => {
+export const Hidden = (): JSX.Element => {
   const inputID = useUID();
   return (
     <Input id={inputID} name="input-hidden" type="hidden" value="Hidden text" />
   );
 };
 
-export const Number: React.FC = () => {
+export const Number = (): JSX.Element => {
   const inputID = useUID();
   return (
     <>
@@ -141,7 +141,7 @@ export const Number: React.FC = () => {
   );
 };
 
-export const NumberError: React.FC = () => {
+export const NumberError = (): JSX.Element => {
   const inputID = useUID();
   const helpTextID = useUID();
   return (
@@ -157,6 +157,119 @@ export const NumberError: React.FC = () => {
       <HelpText hasError id={helpTextID}>
         Number type inputs should only contain numbers.
       </HelpText>
+    </>
+  );
+};
+
+export const LeadingIcon = (): JSX.Element => {
+  const inputID = useUID();
+  const helpTextID = useUID();
+  return (
+    <>
+      <Label htmlFor={inputID}>Text Input</Label>
+      <Input
+        id={inputID}
+        leadingIcon="InformationCircleIcon"
+        name="input"
+        type="text"
+        value="Text input"
+      />
+      <HelpText id={helpTextID}>Please enter some text.</HelpText>
+    </>
+  );
+};
+
+export const TrailingIcon = (): JSX.Element => {
+  const inputID = useUID();
+  const helpTextID = useUID();
+  return (
+    <>
+      <Label htmlFor={inputID}>Text Input</Label>
+      <Input
+        id={inputID}
+        name="input"
+        trailingIcon="MagnifyingGlassIcon"
+        type="text"
+        value="Text input"
+      />
+      <HelpText id={helpTextID}>Please enter some text.</HelpText>
+    </>
+  );
+};
+
+export const LeadingIconAndTrailingIcon = (): JSX.Element => {
+  const inputID = useUID();
+  const helpTextID = useUID();
+  return (
+    <>
+      <Label htmlFor={inputID}>Text Input</Label>
+      <Input
+        id={inputID}
+        leadingIcon="InformationCircleIcon"
+        name="input"
+        trailingIcon="MagnifyingGlassIcon"
+        type="text"
+        value="Text input"
+      />
+      <HelpText id={helpTextID}>Please enter some text.</HelpText>
+    </>
+  );
+};
+
+export const LargeLeadingIcon = (): JSX.Element => {
+  const inputID = useUID();
+  const helpTextID = useUID();
+  return (
+    <>
+      <Label htmlFor={inputID}>Text Input</Label>
+      <Input
+        id={inputID}
+        leadingIcon="InformationCircleIcon"
+        name="input"
+        size="large"
+        type="text"
+        value="Text input"
+      />
+      <HelpText id={helpTextID}>Please enter some text.</HelpText>
+    </>
+  );
+};
+
+export const LargeTrailingIcon = (): JSX.Element => {
+  const inputID = useUID();
+  const helpTextID = useUID();
+  return (
+    <>
+      <Label htmlFor={inputID}>Text Input</Label>
+      <Input
+        id={inputID}
+        name="input"
+        size="large"
+        trailingIcon="MagnifyingGlassIcon"
+        type="text"
+        value="Text input"
+      />
+      <HelpText id={helpTextID}>Please enter some text.</HelpText>
+    </>
+  );
+};
+
+export const LargeLeadingIconAndTrailingIcon = (): JSX.Element => {
+  const inputID = useUID();
+  const helpTextID = useUID();
+  return (
+    <>
+      <Label htmlFor={inputID}>Text Input</Label>
+      <Input
+        id={inputID}
+        leadingIcon="InformationCircleIcon"
+        name="input"
+        size="large"
+        trailingIcon="MagnifyingGlassIcon"
+        type="text"
+        value="Text input"
+      />
+      <HelpText id={helpTextID}>Please enter some text.</HelpText>
     </>
   );
 };
