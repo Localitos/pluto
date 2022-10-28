@@ -13,13 +13,13 @@ type IconNames = keyof typeof HeroOutlineIcons;
 export interface ButtonProps
   extends Omit<React.HTMLAttributes<HTMLButtonElement>, "color"> {
   /** Sets the render element of the component. Either 'a' or 'button'.*/
-  as?: "a" | "button";
+  as?: keyof JSX.IntrinsicElements;
   /** Add a description comment for each prop. */
   children: NonNullable<React.ReactNode>;
   /** If used as an 'a', the href is url that the link point to. */
   href?: string;
   /** Sets the button to be disabled. */
-  isDisabled?: boolean;
+  disabled?: boolean;
   /** Icon to be added on the left of the content. */
   leadingIcon?: IconNames;
   /** Icon to be added on the right of the content. */
@@ -37,6 +37,7 @@ export interface ButtonProps
 const getButtonVariantStyles = (
   variant: ButtonVariantOptions
 ): {
+  color?: SystemProp<keyof Theme["colors"], Theme>;
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
@@ -47,6 +48,12 @@ const getButtonVariantStyles = (
 } => {
   if (variant === "text") {
     return {
+      color: {
+        _: "colorTextLink",
+        active: "colorTextLink",
+        hover: "colorTextLinkStrong",
+        disabled: "colorText",
+      },
       borderWidth: "borderWidth0",
       outlineWidth: { focus: "borderWidth0" },
       outlineOffset: { focus: "borderWidth0" },
@@ -55,6 +62,7 @@ const getButtonVariantStyles = (
 
   return {
     borderWidth: "borderWidth10",
+    color: "colorTextInverse",
     outlineColor: { focus: "colorBorderPrimary" },
     outlineOffset: { focus: "borderWidth20" },
     outlineStyle: { focus: "borderSolid" },
@@ -111,7 +119,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
-      isDisabled,
+      disabled,
       loading,
       leadingIcon,
       trailingIcon,
@@ -122,7 +130,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     return (
-      <InnerButton
+      <Box.button
         alignItems="center"
         appearance="none"
         aria-busy={loading ? "true" : "false"}
@@ -135,7 +143,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           disabled: "not-allowed",
           loading: "wait",
         }}
-        disabled={isDisabled}
+        disabled={disabled}
         display="inline-flex"
         fontFamily="fontFamilyModerat"
         fontSize={size === "large" ? "fontSize30" : "fontSize20"}
@@ -149,14 +157,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         textDecoration="none"
         transition="background-color 100ms ease-in, border-color 100ms ease-in"
-        variant={variant}
         {...getButtonVariantStyles(variant)}
         {...props}
       >
         {leadingIcon && getIcon(leadingIcon, size)}
         {children}
         {trailingIcon && getIcon(trailingIcon, size)}
-      </InnerButton>
+      </Box.button>
     );
   }
 );
