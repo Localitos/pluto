@@ -1,0 +1,145 @@
+{
+  "color": {
+    "text-strongest": {
+      "value": "#0F172A"
+    },
+    "text-stronger": {
+      "value": "#334155"
+    },
+    "text": {
+      "value": "#64748B"
+    },
+    "text-info": {
+      "value": "#0B1F9C"
+    },
+    "text-error": {
+      "value": "#B91C1C"
+    },
+    "text-warning": {
+      "value": "#B45309"
+    },
+    "text-success": {
+      "value": "#047857"
+    },
+    "text-inverse": {
+      "value": "#FFFFFF"
+    },
+    "text-link": {
+      "value": "#102EE9"
+    },
+    "text-link-strong": {
+      "value": "#0B1F9C"
+    },
+    "text-link-visited": {
+      "value": "#950FFF"
+    },
+    "text-heading-stronger": {
+      "value": "#041162"
+    },
+    "text-heading-strong": {
+      "value": "#102EE9"
+    },
+    "text-heading": {
+      "value": "#334155"
+    },
+    "background": {
+      "value": "#FFFFFF"
+    },
+    "background-weakest": {
+      "value": "#F8FAFC"
+    },
+    "background-weaker": {
+      "value": "#F7F9FF"
+    },
+    "background-weak": {
+      "value": "#F1F5F9"
+    },
+    "background-strong": {
+      "value": "#CBD5E1"
+    },
+    "background-primary-weak": {
+      "value": "#4A63FC"
+    },
+    "background-primary": {
+      "value": "#102EE9"
+    },
+    "background-primary-strong": {
+      "value": "#0B1F9C"
+    },
+    "background-primary-strongest": {
+      "value": "#041162"
+    },
+    "background-destructive": {
+      "value": "#DC2626"
+    },
+    "background-destructive-strong": {
+      "value": "#B91C1C"
+    },
+    "background-info": {
+      "value": "#EBEDFF"
+    },
+    "background-success": {
+      "value": "#ECFDF5"
+    },
+    "background-warning": {
+      "value": "#FFFBEB"
+    },
+    "background-error": {
+      "value": "#FEF2F2"
+    },
+    "background-body": {
+      "value": "#F7F9FF"
+    },
+    "border-weakest": {
+      "value": "#E2E8F0"
+    },
+    "border-weaker": {
+      "value": "#CBD5E1"
+    },
+    "border": {
+      "value": "#64748B"
+    },
+    "border-strongest": {
+      "value": "#0F172A"
+    },
+    "border-error": {
+      "value": "#EF4444"
+    },
+    "border-warning": {
+      "value": "#D97706"
+    },
+    "border-success": {
+      "value": "#059669"
+    },
+    "border-primary": {
+      "value": "#102EE9"
+    },
+    "icon-error": {
+      "value": "#DC2626"
+    },
+    "icon-warning": {
+      "value": "#D97706"
+    },
+    "icon-success": {
+      "value": "#059669"
+    },
+    "icon-info": {
+      "value": "#102EE9"
+    },
+    "icon-weaker": {
+      "value": "#94A3B8"
+    },
+    "icon-weak": {
+      "value": "#64748B"
+    },
+    "icon-strong": {
+      "value": "#334155"
+    },
+    "icon-stronger": {
+      "value": "#0F172A"
+    },
+    "avatar-initials": {
+      "value": "#4A63FC"
+    }
+  }
+}

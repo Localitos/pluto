@@ -1,0 +1,20 @@
+{
+  "size": {
+    "icon-10": {
+      "value": "0.75rem",
+      "comment": "12px"
+    },
+    "icon-20": {
+      "value": "1rem",
+      "comment": "16px"
+    },
+    "icon-30": {
+      "value": "1.25rem",
+      "comment": "20px"
+    },
+    "icon-40": {
+      "value": "1.5rem",
+      "comment": "24px"
+    }
+  }
+}
