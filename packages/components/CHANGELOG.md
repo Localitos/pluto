@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 3.2.0
+
+### Minor Changes
+
+- [#155](https://github.com/Localitos/pluto/pull/155) [`27acdac`](https://github.com/Localitos/pluto/commit/27acdac9a0c5e9ab588031c112df00ad8debaeca) Thanks [@nyan07](https://github.com/nyan07)! - Add text variant to Button component
+
+### Patch Changes
+
+- [#161](https://github.com/Localitos/pluto/pull/161) [`205716b`](https://github.com/Localitos/pluto/commit/205716bd14e3a1afb31ed7521a1a9ef88255b01c) Thanks [@nyan07](https://github.com/nyan07)! - Allow type datetime-local on Input component
+
 ## 3.1.0
 
 ### Minor Changes
