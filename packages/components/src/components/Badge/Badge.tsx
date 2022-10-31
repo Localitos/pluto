@@ -99,6 +99,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         display="inline-flex"
         fontWeight="fontWeightBold"
         gap="space20"
+        lineHeight="lineHeight30"
         ref={ref}
         {...getSizeProps(size)}
         {...getColorProps(color)}
