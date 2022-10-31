@@ -32,6 +32,14 @@ Loading.args = {
   loading: true,
 };
 
+export const Text = Template.bind({});
+Text.args = {
+  leadingIcon: "ArrowLongLeftIcon",
+  size: "large",
+  children: "Text",
+  variant: "text",
+};
+
 export const AsLink = Template.bind({});
 AsLink.args = {
   as: "a",
