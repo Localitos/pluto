@@ -76,6 +76,7 @@ const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
   ({ children, disabled, hasError, readOnly, type, ...props }, ref) => {
     return (
       <Box.div
+        alignItems="center"
         borderRadius="borderRadius20"
         borderStyle="borderSolid"
         cursor={disabled ? "not-allowed" : "auto"}
@@ -83,6 +84,7 @@ const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
         data-has-error={hasError}
         data-hidden={type === "hidden" ? true : null}
         data-read-only={readOnly}
+        display="flex"
         outlineColor={{ focusWithin: "colorBorderPrimary" }}
         outlineStyle={{ focusWithin: "solid" }}
         outlineWidth={{ focusWithin: "borderWidth20" }}
