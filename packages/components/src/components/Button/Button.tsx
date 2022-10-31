@@ -10,9 +10,9 @@ type ButtonVariantOptions = "primary" | "text";
 type IconNames = keyof typeof HeroOutlineIcons;
 
 export interface ButtonProps
-  extends Omit<React.HTMLAttributes<HTMLButtonElement>, "color"> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> {
   /** Sets the render element of the component. Either 'a' or 'button'.*/
-  as?: keyof JSX.IntrinsicElements;
+  as?: "a" | "button";
   /** Add a description comment for each prop. */
   children: NonNullable<React.ReactNode>;
   /** If used as an 'a', the href is url that the link point to. */

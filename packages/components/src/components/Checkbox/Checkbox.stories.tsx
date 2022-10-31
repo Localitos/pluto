@@ -69,7 +69,12 @@ export const Uncontrolled = (): React.ReactElement => {
         <br />
         <Text.span>State: {checked}</Text.span>
         <br />
-        <Button onClick={getStateFromRef} size="small" variant="primary">
+        <Button
+          onClick={getStateFromRef}
+          size="small"
+          type="button"
+          variant="primary"
+        >
           Get state
         </Button>
       </Checkbox>
@@ -98,6 +103,7 @@ export const Controlled = (): React.ReactElement => {
             )
           }
           size="small"
+          type="button"
           variant="primary"
         >
           Toggle indeterminate
