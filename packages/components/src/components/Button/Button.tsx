@@ -101,15 +101,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    /**
+     * When we use the as prop with xstyled, styled-components
+     * changes the component type to StyledComponentPropsWithAs.
+     * This type has a string color attribute, which causes
+     * a type conflict with the color attribute from xstyled
+     * components
+     */
     return (
       <>
-        {/**
-          * When we use the `as` prop with xstyled, styled-components
-          * changes the component type to `StyledComponentPropsWithAs`.
-          * This type has a string `color` attribute, which causes
-          * a type conflict with the `color`attribute from xstyled
-          * components.
-          */}
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/* @ts-ignore-next-line */}
         <Box.button
