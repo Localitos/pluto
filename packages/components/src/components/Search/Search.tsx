@@ -5,7 +5,16 @@ import { Input } from "../Input";
 import type { InputProps } from "../Input";
 import { Label } from "../Label";
 
-type SearchProps = Omit<InputProps, "type">;
+type SearchProps = Omit<
+  InputProps,
+  | "disabled"
+  | "hasError"
+  | "leadingIcon"
+  | "readOnly"
+  | "required"
+  | "trailingIcon"
+  | "type"
+>;
 
 /** The Search component is a text field that allows a user to enter search queries. */
 const Search = React.forwardRef<HTMLInputElement, SearchProps>(

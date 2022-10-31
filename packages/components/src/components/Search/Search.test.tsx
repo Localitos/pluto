@@ -22,19 +22,6 @@ describe("<Search />", () => {
     expect(SearchElement).toBeInTheDocument();
   });
 
-  it("should render a required search", () => {
-    expect(SearchElement).toHaveAttribute("required", "");
-  });
-
-  it("should render a disabled search", () => {
-    expect(SearchElement).toHaveAttribute("disabled", "");
-  });
-
-  it("should render a readonly search", () => {
-    expect(SearchElement).toHaveAttribute("aria-readonly", "true");
-    expect(SearchElement).toHaveAttribute("readonly", "");
-  });
-
   it("should render a search value", () => {
     expect(SearchElement).toHaveValue("value");
   });
