@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 3.3.0
+
+### Minor Changes
+
+- [#165](https://github.com/Localitos/pluto/pull/165) [`a50599d`](https://github.com/Localitos/pluto/commit/a50599d915ea9966394466712b01889d1a6ce4b6) Thanks [@richbachman](https://github.com/richbachman)! - [Search]: Added the Search component, which is an Input with the type set to `search`. This also comes with the accessible hidden label.
+
+### Patch Changes
+
+- [#159](https://github.com/Localitos/pluto/pull/159) [`e9992a5`](https://github.com/Localitos/pluto/commit/e9992a5fdc6125eb9dd4516bd9f7afdddff4445f) Thanks [@richbachman](https://github.com/richbachman)! - [Input]: Adds the `leadingIcon` and `trailingIcon` props to Input. These will render an icon on either the left or right side of the Input.
+
 ## 3.2.0
 
 ### Minor Changes
