@@ -4,6 +4,7 @@ import { Box } from "../../primitives/Box";
 
 export type InputTypes =
   | "date"
+  | "datetime-local"
   | "email"
   | "hidden"
   | "number"
