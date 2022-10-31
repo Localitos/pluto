@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 3.3.1
+
+### Patch Changes
+
+- [#168](https://github.com/Localitos/pluto/pull/168) [`751c11f`](https://github.com/Localitos/pluto/commit/751c11fa40679513ad05cafc1c8c8984ad056e02) Thanks [@richbachman](https://github.com/richbachman)! - [Badge]: Added a specific line-height to Badge so it won't inherit the line-height from its parent container.
+
 ## 3.3.0
 
 ### Minor Changes
