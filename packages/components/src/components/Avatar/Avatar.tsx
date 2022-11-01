@@ -6,9 +6,19 @@ import { useGetImageOrientation } from "./useGetImageOrientation";
 import { Orientation } from "./getImageOrientation";
 import { getInitials } from "./getInitials";
 
+export type AvatarColorOptions =
+  | "blue"
+  | "green"
+  | "light blue"
+  | "orange"
+  | "pink"
+  | "yellow";
+
 export type AvatarSizeOptions = "large" | "medium" | "small" | "xsmall";
 
 export type AvatarProps = {
+  /** The color used for the avatar background. */
+  color?: AvatarColorOptions;
   /** The name of the entity being represented. */
   name: string;
   /** The image source to be used for the avatar. */
@@ -124,9 +134,48 @@ const getImageSizes = (
   return { h: "auto", w };
 };
 
+const getAvatarColorStyles = (
+  color: AvatarColorOptions
+): {
+  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+} => {
+  switch (color) {
+    case "green": {
+      return {
+        backgroundColor: "colorAvatarBackgroundGreen",
+      };
+    }
+    case "light blue": {
+      return {
+        backgroundColor: "colorAvatarBackgroundLightBlue",
+      };
+    }
+    case "orange": {
+      return {
+        backgroundColor: "colorAvatarBackgroundOrange",
+      };
+    }
+    case "pink": {
+      return {
+        backgroundColor: "colorAvatarBackgroundPink",
+      };
+    }
+    case "yellow": {
+      return {
+        backgroundColor: "colorAvatarBackgroundYellow",
+      };
+    }
+    default: {
+      return {
+        backgroundColor: "colorAvatarBackgroundBlue",
+      };
+    }
+  }
+};
+
 /** An avatar is an element that uses text or images to represent users visually. */
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
-  ({ src, name, showName, size = "medium", ...props }, ref) => {
+  ({ color = "blue", src, name, showName, size = "medium", ...props }, ref) => {
     const { orientation, hasError } = useGetImageOrientation(src);
     const shouldRenderImage = src && !hasError;
     const shouldRenderInitials = (!src && name) || (hasError && name);
@@ -138,13 +187,13 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       <Box.div alignItems="center" display="flex" gap="space30">
         <Box.div
           alignItems="center"
-          backgroundColor="colorBackgroundWeak"
           borderRadius="borderRadiusCircle"
           display="flex"
           justifyContent="center"
           overflow="hidden"
           ref={ref}
           {...ariaProps}
+          {...getAvatarColorStyles(color)}
           {...getAvatarSizes(size)}
           {...props}
         >
@@ -159,7 +208,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
           {shouldRenderInitials && (
             <Box.span
               aria-hidden={true}
-              color="colorAvatarInitials"
+              color="colorTextStronger"
               {...getInitialsSizes(size)}
             >
               {getInitials(name)}
