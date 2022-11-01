@@ -31,6 +31,8 @@ export interface ButtonProps
   size?: ButtonSizeOptions;
   /** Sets the variant of the button. */
   variant: ButtonVariantOptions;
+  /** True to have a full width button, false otherwise. */
+  fullWidth?: boolean;
 }
 
 const getButtonVariantStyles = (
@@ -116,6 +118,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       loading,
       leadingIcon,
       trailingIcon,
+      fullWidth,
       size = "small",
       variant = "primary",
       ...props
@@ -152,6 +155,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           fontSize={size === "large" ? "fontSize30" : "fontSize20"}
           fontWeight="fontWeightMedium"
           gap="space30"
+          justifyContent="center"
           lineHeight={size === "large" ? "lineHeight40" : "lineHeight30"}
           paddingBottom={size === "large" ? "space40" : "space30"}
           paddingLeft={size === "large" ? "space50" : "space40"}
@@ -160,6 +164,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ref={ref}
           textDecoration="none"
           transition="background-color 100ms ease-in, border-color 100ms ease-in"
+          w={fullWidth ? "100%" : "auto"}
           {...getButtonVariantStyles(variant)}
           {...props}
         >
