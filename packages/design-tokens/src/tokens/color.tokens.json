@@ -138,8 +138,23 @@
     "icon-stronger": {
       "value": "#0F172A"
     },
-    "avatar-initials": {
-      "value": "#4A63FC"
+    "avatar-background-blue": {
+      "value": "#B8C2FF"
+    },
+    "avatar-background-green": {
+      "value": "#8AFECC"
+    },
+    "avatar-background-orange": {
+      "value": "#FBBF24"
+    },
+    "avatar-background-yellow": {
+      "value": "#FDE68A"
+    },
+    "avatar-background-light-blue": {
+      "value": "#A9EBE8"
+    },
+    "avatar-background-pink": {
+      "value": "#A9EBE8"
     }
   }
 }
