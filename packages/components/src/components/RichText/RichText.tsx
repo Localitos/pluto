@@ -1,9 +1,6 @@
 import * as React from "react";
-import parse, {
-  Element,
-  HTMLReactParserOptions,
-  domToReact,
-} from "html-react-parser";
+import parse, { HTMLReactParserOptions, domToReact } from "html-react-parser";
+import type { Element } from "html-react-parser";
 import toUpper from "lodash/toUpper";
 import { Heading } from "../Heading";
 import { Paragraph } from "../Paragraph";
