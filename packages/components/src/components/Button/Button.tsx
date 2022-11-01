@@ -5,7 +5,7 @@ import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
 
 type ButtonSizeOptions = "large" | "small";
-type ButtonVariantOptions = "primary" | "text";
+type ButtonVariantOptions = "primary" | "secondary" | "text";
 
 type IconNames = keyof typeof HeroOutlineIcons;
 
@@ -45,38 +45,59 @@ const getButtonVariantStyles = (
   outlineStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
   outlineWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
 } => {
-  if (variant === "text") {
-    return {
-      color: {
-        _: "colorTextLink",
-        active: "colorTextLink",
-        hover: "colorTextLinkStrong",
-        disabled: "colorText",
-      },
-      borderWidth: "borderWidth0",
-      outlineWidth: { focus: "borderWidth0" },
-      outlineOffset: { focus: "borderWidth0" },
-    };
+  switch (variant) {
+    case "text": {
+      return {
+        color: {
+          _: "colorTextLink",
+          active: "colorTextLink",
+          hover: "colorTextLinkStrong",
+          disabled: "colorText",
+        },
+        borderWidth: "borderWidth0",
+        outlineWidth: { focus: "borderWidth0" },
+        outlineOffset: { focus: "borderWidth0" },
+      };
+    }
+    case "secondary": {
+      return {
+        color: {
+          _: "colorTextLink",
+          disabled: "colorText",
+        },
+        borderWidth: "borderWidth10",
+        borderColor: "colorBorderPrimary",
+        outlineColor: { focus: "colorBorderPrimary" },
+        outlineOffset: { focus: "borderWidth20" },
+        outlineStyle: { focus: "borderSolid" },
+        outlineWidth: { focus: "borderWidth20" },
+        backgroundColor: {
+          _: "colorBackground",
+          hover: "colorBackgroundInfo",
+        },
+      };
+    }
+    default: {
+      return {
+        borderWidth: "borderWidth10",
+        color: "colorTextInverse",
+        outlineColor: { focus: "colorBorderPrimary" },
+        outlineOffset: { focus: "borderWidth20" },
+        outlineStyle: { focus: "borderSolid" },
+        outlineWidth: { focus: "borderWidth20" },
+        backgroundColor: {
+          _: "colorBackgroundPrimary",
+          hover: "colorBackgroundPrimaryStrong",
+          disabled: "colorIconWeak",
+        },
+        borderColor: {
+          _: "colorBorderPrimary",
+          hover: "colorBorderPrimary",
+          disabled: "colorIconWeak",
+        },
+      };
+    }
   }
-
-  return {
-    borderWidth: "borderWidth10",
-    color: "colorTextInverse",
-    outlineColor: { focus: "colorBorderPrimary" },
-    outlineOffset: { focus: "borderWidth20" },
-    outlineStyle: { focus: "borderSolid" },
-    outlineWidth: { focus: "borderWidth20" },
-    backgroundColor: {
-      _: "colorBackgroundPrimary",
-      hover: "colorBackgroundPrimaryStrong",
-      disabled: "colorIconWeak",
-    },
-    borderColor: {
-      _: "colorBorderPrimary",
-      hover: "colorBorderPrimary",
-      disabled: "colorIconWeak",
-    },
-  };
 };
 
 const getIcon = (iconName: IconNames, size: ButtonSizeOptions) => {

@@ -32,6 +32,14 @@ Loading.args = {
   loading: true,
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  leadingIcon: "SunIcon",
+  size: "large",
+  children: "Secondary button",
+  variant: "secondary",
+};
+
 export const Text = Template.bind({});
 Text.args = {
   leadingIcon: "ArrowLongLeftIcon",
