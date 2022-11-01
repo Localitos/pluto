@@ -63,7 +63,12 @@ export const theme = {
     colorIconWeak: "#64748B",
     colorIconStrong: "#334155",
     colorIconStronger: "#0F172A",
-    colorAvatarInitials: "#4A63FC",
+    colorAvatarBackgroundBlue: "#B8C2FF",
+    colorAvatarBackgroundGreen: "#8AFECC",
+    colorAvatarBackgroundOrange: "#FBBF24",
+    colorAvatarBackgroundYellow: "#FDE68A",
+    colorAvatarBackgroundLightBlue: "#A9EBE8",
+    colorAvatarBackgroundPink: "#A9EBE8",
   },
   fontSizes: {
     fontSize10: "0.75rem", // 12px
