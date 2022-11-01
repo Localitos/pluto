@@ -55,6 +55,13 @@ AsLink.args = {
   href: "#",
 };
 
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  children: "Full width button",
+  fullWidth: true,
+  leadingIcon: "ArrowTopRightOnSquareIcon",
+};
+
 export const WithLeadingIcon = Template.bind({});
 WithLeadingIcon.args = {
   children: "Small primary button",
