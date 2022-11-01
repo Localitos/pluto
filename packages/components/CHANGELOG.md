@@ -1,5 +1,20 @@
 # @localyze-pluto/components
 
+## 3.4.0
+
+### Minor Changes
+
+- [#171](https://github.com/Localitos/pluto/pull/171) [`ec2b75c`](https://github.com/Localitos/pluto/commit/ec2b75c70da53e5b0a5079574fcd7ffe0286a794) Thanks [@nyan07](https://github.com/nyan07)! - Allow buttons to have full width
+
+- [#170](https://github.com/Localitos/pluto/pull/170) [`0f5179f`](https://github.com/Localitos/pluto/commit/0f5179f5d56394d37f9da3426b78496c916b9cc5) Thanks [@nyan07](https://github.com/nyan07)! - Add Secondary Button variant
+
+### Patch Changes
+
+- [#173](https://github.com/Localitos/pluto/pull/173) [`f496585`](https://github.com/Localitos/pluto/commit/f49658596c769145ce5e1ed02abfa332369992f6) Thanks [@richbachman](https://github.com/richbachman)! - [Avatar] Add `getAvatarColor` function that generates a random background color. Styles of the default Avatar have also changed.
+
+- Updated dependencies [[`15bc069`](https://github.com/Localitos/pluto/commit/15bc0694d84d5eb6faf8fd25e9af2edd1f229793)]:
+  - @localyze-pluto/theme@1.2.2
+
 ## 3.3.1
 
 ### Patch Changes

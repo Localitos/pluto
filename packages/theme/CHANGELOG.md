@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.2.2
+
+### Patch Changes
+
+- [#173](https://github.com/Localitos/pluto/pull/173) [`15bc069`](https://github.com/Localitos/pluto/commit/15bc0694d84d5eb6faf8fd25e9af2edd1f229793) Thanks [@richbachman](https://github.com/richbachman)! - Added theme colors for new Avatar background colors.
+
 ## 1.2.1
 
 ### Patch Changes
