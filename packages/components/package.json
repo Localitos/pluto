@@ -30,7 +30,10 @@
   "peerDependencies": {
     "@heroicons/react": "^2.0.12",
     "@localyze-pluto/theme": "^1.2.2",
+    "@radix-ui/react-checkbox": "^1.0.1",
+    "@radix-ui/react-progress": "^1.0.1",
     "@xstyled/styled-components": "^3.6.0",
+    "html-react-parser": "^3.0.4",
     "lodash": "^4.17.21",
     "react": "^17.0.2 || ^18.2.0",
     "react-dom": "^17.0.2 || ^18.2.0",
@@ -42,6 +45,8 @@
     "@localyze-pluto/eslint-config": "^1.0.1",
     "@localyze-pluto/theme": "^1.2.2",
     "@localyze-pluto/tsconfig": "^1.0.0",
+    "@radix-ui/react-checkbox": "^1.0.1",
+    "@radix-ui/react-progress": "^1.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
@@ -52,6 +57,7 @@
     "@types/styled-components": "^5.1.26",
     "@xstyled/styled-components": "^3.6.0",
     "eslint": "^8.25.0",
+    "html-react-parser": "^3.0.4",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^29.2.2",
     "jest-watch-typeahead": "^2.2.0",
@@ -69,9 +75,5 @@
   },
   "browserslist": [
     "extends @localyze-pluto/browserslist-config"
-  ],
-  "dependencies": {
-    "@radix-ui/react-checkbox": "^1.0.1",
-    "html-react-parser": "^3.0.4"
-  }
+  ]
 }
