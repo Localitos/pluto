@@ -87,6 +87,9 @@
     "background-error": {
       "value": "#FEF2F2"
     },
+    "background-link-visited": {
+      "value": "#F5EEFA"
+    },
     "background-body": {
       "value": "#F7F9FF"
     },
