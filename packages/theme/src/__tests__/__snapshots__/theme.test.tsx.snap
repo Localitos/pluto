@@ -33,6 +33,7 @@ Object {
     "colorBackgroundDestructiveStrong": "#B91C1C",
     "colorBackgroundError": "#FEF2F2",
     "colorBackgroundInfo": "#EBEDFF",
+    "colorBackgroundLinkVisited": "#F5EEFA",
     "colorBackgroundPreview": "linear-gradient(360deg, rgba(71, 94, 105, 0.08) 6.19%, rgba(71, 94, 105, 0.0504167) 57.3%, rgba(255, 255, 255, 0) 93.81%)",
     "colorBackgroundPrimary": "#102EE9",
     "colorBackgroundPrimaryStrong": "#0B1F9C",
