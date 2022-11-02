@@ -11,6 +11,8 @@ type IconNames = keyof typeof HeroOutlineIcons;
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> {
+  /** Sets the variant of the button. */
+  variant: ButtonVariantOptions;
   /** Sets the render element of the component. Either 'a' or 'button'.*/
   as?: "a" | "button" | "label";
   /** Button content */
@@ -29,11 +31,9 @@ export interface ButtonProps
   to?: string;
   /** Sets the size of the button. */
   size?: ButtonSizeOptions;
-  /** Sets the variant of the button. */
-  variant: ButtonVariantOptions;
   /** True to have a full width button, false otherwise. */
   fullWidth?: boolean;
-
+  /** True to use icon only version, false otherwise. */
   iconOnly?: boolean;
 }
 
