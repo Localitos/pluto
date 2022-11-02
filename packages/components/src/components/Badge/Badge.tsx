@@ -7,7 +7,7 @@ import { Icon } from "../Icon";
 type IconNames = keyof typeof HeroOutlineIcons;
 
 type BadgeSizeOptions = "large" | "small";
-type BadgeColorOptions = "blue" | "gray" | "green" | "yellow";
+type BadgeColorOptions = "blue" | "gray" | "green" | "purple" | "yellow";
 
 export interface BadgeProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
@@ -44,6 +44,12 @@ const getColorProps = (
       return {
         backgroundColor: "colorBackgroundWarning",
         color: "colorTextWarning",
+      };
+    }
+    case "purple": {
+      return {
+        backgroundColor: "colorBackgroundLinkVisited",
+        color: "colorTextLinkVisited",
       };
     }
     default: {

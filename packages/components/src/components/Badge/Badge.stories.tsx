@@ -32,6 +32,12 @@ Green.args = {
   color: "green",
 };
 
+export const Purple = Template.bind({});
+Purple.args = {
+  children: "Purple badge",
+  color: "purple",
+};
+
 export const Yellow = Template.bind({});
 Yellow.args = {
   children: "Yellow badge",
