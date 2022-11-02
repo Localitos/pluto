@@ -1,5 +1,18 @@
 # @localyze-pluto/components
 
+## 3.5.0
+
+### Minor Changes
+
+- [#157](https://github.com/Localitos/pluto/pull/157) [`4d0bba7`](https://github.com/Localitos/pluto/commit/4d0bba73442d15d4ec729be90afc5fb886c2c19a) Thanks [@apvale](https://github.com/apvale)! - Add ProgressBar component
+
+### Patch Changes
+
+- [#185](https://github.com/Localitos/pluto/pull/185) [`83c868f`](https://github.com/Localitos/pluto/commit/83c868ff4535578eee53b44b70efab4f5abfa3b8) Thanks [@richbachman](https://github.com/richbachman)! - [Badge]: Added a purple variant and related story.
+
+- Updated dependencies [[`c23ef92`](https://github.com/Localitos/pluto/commit/c23ef929646f64d016b163307571b84986724d23)]:
+  - @localyze-pluto/theme@1.2.3
+
 ## 3.4.0
 
 ### Minor Changes
