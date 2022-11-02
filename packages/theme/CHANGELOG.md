@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.2.3
+
+### Patch Changes
+
+- [#185](https://github.com/Localitos/pluto/pull/185) [`c23ef92`](https://github.com/Localitos/pluto/commit/c23ef929646f64d016b163307571b84986724d23) Thanks [@richbachman](https://github.com/richbachman)! - Added `colorBackgroundLinkVisited` token.
+
 ## 1.2.2
 
 ### Patch Changes
