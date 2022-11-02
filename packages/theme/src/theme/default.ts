@@ -40,6 +40,7 @@ export const theme = {
     colorBackgroundSuccess: "#ECFDF5",
     colorBackgroundWarning: "#FFFBEB",
     colorBackgroundError: "#FEF2F2",
+    colorBackgroundLinkVisited: "#F5EEFA",
     colorBackgroundBody: "#F7F9FF",
     colorBackgroundTodo:
       "linear-gradient(360deg, rgba(16, 37, 233, 0.08) 0%, rgba(36, 63, 235, 0.0733333) 49.48%, rgba(255, 255, 255, 0) 100%)",
