@@ -28,7 +28,7 @@
     "packages/**"
   ],
   "dependencies": {
-    "@tanstack/react-table": "^8.5.15"
+    "@tanstack/react-table": "^8.5.22"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.4.7",
