@@ -17,5 +17,6 @@ export * from "./components/Paragraph";
 export * from "./components/RichText";
 export * from "./components/Search";
 export * from "./components/Table";
+export * from "./components/FileUploader";
 export * from "./primitives/Box";
 export * from "./primitives/Text";

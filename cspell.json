@@ -22,7 +22,8 @@
     "bezier",
     "xlarge",
     "xsmall",
-    "unhover"
+    "unhover",
+    "uppy"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
