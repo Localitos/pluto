@@ -157,6 +157,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    if (iconOnly && props["aria-label"] === undefined) {
+      throw new Error(`Missing a aria-label for icon only button.`);
+    }
+
     /**
      * When we use the as prop with xstyled, styled-components
      * changes the component type to StyledComponentPropsWithAs.
