@@ -43,7 +43,7 @@ describe("Button", () => {
       expect(renderedButton).toHaveAttribute("aria-busy");
     });
 
-    it("should throw an expection when iconOnly is true and there is no aria-label", () => {
+    it("should throw an exception when iconOnly is true and there is no aria-label", () => {
       const renderWrapper = () =>
         render(
           <Button iconOnly leadingIcon="AcademicCapIcon" variant="primary" />

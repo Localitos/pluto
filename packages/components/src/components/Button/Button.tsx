@@ -184,7 +184,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     if (iconOnly && props["aria-label"] === undefined) {
-      throw new Error(`Missing a aria-label for icon only button.`);
+      throw new Error("Missing a aria-label for icon only button.");
     }
 
     /**
