@@ -47,8 +47,8 @@ const getInputBoxStyles = (
   if (hasError) {
     return {
       backgroundColor: {
-        _: "colorBackgroundWeakest",
-        hover: "colorBackgroundWeak",
+        _: "colorBackground",
+        hover: "colorBackgroundWeakest",
       },
       borderColor: "colorBorderError",
       borderWidth: "borderWidth10",
@@ -63,10 +63,10 @@ const getInputBoxStyles = (
   }
   return {
     backgroundColor: {
-      _: "colorBackgroundWeakest",
-      hover: "colorBackgroundWeak",
+      _: "colorBackground",
+      hover: "colorBackgroundWeakest",
     },
-    borderColor: "colorBorder",
+    borderColor: "colorBorderWeaker",
     borderWidth: "borderWidth10",
   };
 };
