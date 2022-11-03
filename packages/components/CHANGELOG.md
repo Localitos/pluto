@@ -1,5 +1,20 @@
 # @localyze-pluto/components
 
+## 3.6.0
+
+### Minor Changes
+
+- [#184](https://github.com/Localitos/pluto/pull/184) [`768f73e`](https://github.com/Localitos/pluto/commit/768f73eeb586e580823847044d586caacd0de197) Thanks [@nyan07](https://github.com/nyan07)! - - Add Button ghost variant
+  - Fix Button active and focus states
+
+### Patch Changes
+
+- [#188](https://github.com/Localitos/pluto/pull/188) [`4254072`](https://github.com/Localitos/pluto/commit/4254072a52d72630d090398c5ee8c1db51c14867) Thanks [@richbachman](https://github.com/richbachman)! - [InputBox]: Changed color of background and borders due to design feedback.
+
+  - Background: `colorBackgroundWeakest` changed to `colorBackground`
+  - Background hover: `colorBackgroundWeak` changed to `colorBackgroundWeakest`
+  - Border: `colorBorder` changed to `colorBorderWeakest`
+
 ## 3.5.0
 
 ### Minor Changes
