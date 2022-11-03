@@ -1,15 +1,16 @@
 import { SystemProp, Theme, useDown } from "@localyze-pluto/theme";
 import isEmpty from "lodash/isEmpty";
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import { Box } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
 import { Anchor } from "../Anchor";
-import { Button, ButtonProps } from "../Button";
 import { Icon } from "../Icon";
 import { HelpText } from "../HelpText";
 import { ProgressBar } from "../ProgressBar";
 import { FileUploaderButtonProps } from "./FileUploaderButton";
+import { RemoveButton } from "./RemoveButton";
+import { CancelUploadButton } from "./CancelUploadButton";
 
 export interface FileUploaderProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -36,6 +37,12 @@ export interface FileUploaderProps
 
   /** The call to action button */
   children: ReactElement<ButtonProps | FileUploaderButtonProps>;
+
+  /** Handles cancel upload  */
+  onCancel?: () => void;
+
+  /** Handles remove file */
+  onRemove?: () => void;
 }
 
 type FileUploaderStatus = "error" | "loading" | "success" | "waiting";
@@ -88,49 +95,6 @@ const getStatus = (
   return "waiting";
 };
 
-const CancelUploadButton = (props: Partial<ButtonProps>): ReactElement => {
-  const isMobile = useDown("md");
-
-  if (isMobile) {
-    return (
-      <Button {...props} variant="secondary">
-        Cancel upload
-      </Button>
-    );
-  }
-
-  return (
-    <Button
-      {...props}
-      aria-label="Cancel upload"
-      iconOnly
-      trailingIcon="XMarkIcon"
-      variant="ghost"
-    />
-  );
-};
-
-const RemoveButton = (props: Partial<ButtonProps>): ReactElement => {
-  const isMobile = useDown("md");
-
-  if (isMobile) {
-    return (
-      <Button {...props} aria-label="Remove file" variant="secondary">
-        Remove
-      </Button>
-    );
-  }
-
-  return (
-    <Button
-      aria-label="Remove file"
-      iconOnly
-      trailingIcon="TrashIcon"
-      variant="ghost"
-    />
-  );
-};
-
 const getFileTitle = (label: string, fileUrl?: string): React.ReactElement => {
   if (fileUrl) {
     return (
@@ -145,20 +109,28 @@ const getFileTitle = (label: string, fileUrl?: string): React.ReactElement => {
 const getFileDescription = (
   status: FileUploaderStatus,
   { fileName, fileSize, maxFileSize }: Partial<FileUploaderProps>
-): string | null => {
+): ReactNode => {
+  const wrapTextInComponent = (value: string) => (
+    <Text.span fontSize="fontSize10">{value}</Text.span>
+  );
+
   if (status === "loading") {
     return fileName || "";
   }
 
-  const name = fileName || "No file uploaded";
+  const name = fileName || (status !== "success" && "No file uploaded");
   const size =
     fileSize || (maxFileSize && `Max. file size ${maxFileSize}`) || null;
 
-  if (size) {
-    return `${name} • ${size}`;
+  if (name && size) {
+    return wrapTextInComponent(`${name} • ${size}`);
   }
 
-  return size;
+  if (name) {
+    return wrapTextInComponent(name);
+  }
+
+  return null;
 };
 
 /** Visual component to display status of a file upload */
@@ -173,6 +145,8 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       label,
       children,
       progress = 0,
+      onCancel,
+      onRemove,
     },
     ref
   ) => {
@@ -216,7 +190,12 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
               />
             </Box.div>
 
-            <Box.div display="flex" flexDirection="column" flexGrow={1}>
+            <Box.div
+              display="flex"
+              flexDirection="column"
+              flexGrow={1}
+              justifyContent="center"
+            >
               {getFileTitle(label, fileUrl)}
               <Box.div
                 alignItems={{ _: "left", md: "center" }}
@@ -229,20 +208,21 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
                     <ProgressBar value={progress} />
                   </Box.span>
                 )}
-                <Text.span fontSize="fontSize10">
-                  {getFileDescription(status, {
-                    fileName,
-                    fileSize,
-                    maxFileSize,
-                  })}
-                </Text.span>
+
+                {getFileDescription(status, {
+                  fileName,
+                  fileSize,
+                  maxFileSize,
+                })}
               </Box.div>
             </Box.div>
           </Box.div>
           {status === "waiting" &&
             React.cloneElement(children, { fullWidth: isMobile })}
-          {(status === "error" || status === "success") && <RemoveButton />}
-          {status === "loading" && <CancelUploadButton />}
+          {(status === "error" || status === "success") && (
+            <RemoveButton onClick={onRemove} />
+          )}
+          {status === "loading" && <CancelUploadButton onClick={onCancel} />}
         </Box.div>
         {errorMessage && (
           <HelpText hasError role="alert">

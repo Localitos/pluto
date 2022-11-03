@@ -39,8 +39,19 @@ Loading.args = {
 export const Success = Template.bind({});
 Success.args = {
   label: "Passport scan",
-  fileName: "employment_contract_v2.pdf",
   fileSize: "2MB",
+  fileName: "my_passport_scap.pdf",
+  fileUrl: "http://file-path/file.pdf",
+  children: (
+    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+      Upload
+    </FileUploaderButton>
+  ),
+};
+
+export const SuccessWithoutFileInfo = Template.bind({});
+SuccessWithoutFileInfo.args = {
+  label: "Passport scan",
   fileUrl: "http://file-path/file.pdf",
   children: (
     <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">

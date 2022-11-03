@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import React from "react";
 import { FileUploader, FileUploaderProps } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";
+
+const FILE_URL = "http://file-url/my_visa_file_name.pdf";
 
 const renderFileUploader = ({
   label = "Label",
@@ -26,38 +29,102 @@ describe("<FileUploader />", () => {
     expect(screen.getByLabelText("Upload")).toBeInTheDocument();
   });
 
-  it("renders loading state", () => {
-    renderFileUploader({
-      label: "Passport scan",
-      maxFileSize: "2MB",
-      fileName: "my_file_name.pdf",
-      fileSize: "1MB",
-      progress: 50,
+  describe("when state is loading", () => {
+    const FILE_LABEL = "Passport scan";
+    const FILE_NAME = "my_file_name";
+
+    it("renders correctly", () => {
+      renderFileUploader({
+        label: FILE_LABEL,
+        maxFileSize: "2MB",
+        fileName: FILE_NAME,
+        fileSize: "1MB",
+        progress: 50,
+      });
+
+      expect(screen.getByText("Passport scan")).toBeInTheDocument();
+      expect(screen.getByText("my_file_name.pdf")).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Cancel upload" })
+      ).toBeInTheDocument();
+      expect(screen.getByRole("progressbar")).toBeInTheDocument();
     });
 
-    expect(screen.getByText("Passport scan")).toBeInTheDocument();
-    expect(screen.getByText("my_file_name.pdf")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "Cancel upload" })
-    ).toBeInTheDocument();
-    expect(screen.getByRole("progressbar")).toBeInTheDocument();
+    it("calls onCancel when Cancel button is clicked", async () => {
+      const mockOnCancel = jest.fn();
+      renderFileUploader({
+        label: FILE_LABEL,
+        maxFileSize: "2MB",
+        fileName: FILE_NAME,
+        fileSize: "1MB",
+        progress: 50,
+        onCancel: mockOnCancel,
+      });
+
+      const cancelButton = await screen.findByRole("button", {
+        name: "Cancel upload",
+      });
+      await userEvent.click(cancelButton);
+
+      expect(mockOnCancel).toHaveBeenCalled();
+    });
   });
 
-  it("renders success state", () => {
-    renderFileUploader({
-      label: "Visa",
-      maxFileSize: "2MB",
-      fileName: "another_file_name.pdf",
-      fileUrl: "http://file-url/my_file_name.pdf",
-      fileSize: "1MB",
-      progress: 100,
+  describe("when state is success", () => {
+    it("renders correctly", () => {
+      renderFileUploader({
+        label: "Visa",
+        maxFileSize: "2MB",
+        fileName: "my_visa_file.pdf",
+        fileUrl: FILE_URL,
+        fileSize: "1MB",
+        progress: 100,
+      });
+
+      expect(screen.getByRole("link", { name: "Visa" })).toBeInTheDocument();
+      expect(screen.getByText("my_visa_file.pdf • 1MB")).toBeInTheDocument();
+      expect(
+        // eslint-disable-next-line sonarjs/no-duplicate-string
+        screen.getByRole("button", { name: "Remove file" })
+      ).toBeInTheDocument();
     });
 
-    expect(screen.getByRole("link", { name: "Visa" })).toBeInTheDocument();
-    expect(screen.getByText("another_file_name.pdf • 1MB")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "Remove file" })
-    ).toBeInTheDocument();
+    it("does not render file information if a file name was not provided", () => {
+      renderFileUploader({
+        label: "Visa",
+        maxFileSize: "2MB",
+        fileUrl: FILE_URL,
+        fileSize: "1MB",
+        progress: 100,
+      });
+
+      expect(screen.getByRole("link", { name: "Visa" })).toBeInTheDocument();
+      expect(
+        screen.queryByText("No file uploaded • 1MB")
+      ).not.toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Remove file" })
+      ).toBeInTheDocument();
+    });
+
+    it("calls onRemove when Remove button is clicked", async () => {
+      const mockOnRemove = jest.fn();
+      renderFileUploader({
+        label: "Visa",
+        maxFileSize: "2MB",
+        fileUrl: FILE_URL,
+        fileSize: "1MB",
+        progress: 100,
+        onRemove: mockOnRemove,
+      });
+
+      const removeButton = await screen.findByRole("button", {
+        name: "Remove file",
+      });
+      await userEvent.click(removeButton);
+
+      expect(mockOnRemove).toHaveBeenCalled();
+    });
   });
 
   it("renders error state", () => {
@@ -65,7 +132,7 @@ describe("<FileUploader />", () => {
       label: "Registration confirmation",
       maxFileSize: "2MB",
       fileName: "registration_confirmarion_v2.pdf",
-      fileUrl: "http://file-url/my_file_name.pdf",
+      fileUrl: FILE_URL,
       fileSize: "1MB",
       progress: 100,
       errorMessage: "File is too large.",
