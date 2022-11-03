@@ -5,16 +5,18 @@ import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
 
 type ButtonSizeOptions = "large" | "small";
-type ButtonVariantOptions = "primary" | "secondary" | "text";
+type ButtonVariantOptions = "ghost" | "primary" | "secondary";
 
 type IconNames = keyof typeof HeroOutlineIcons;
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> {
+  /** Sets the variant of the button. */
+  variant: ButtonVariantOptions;
   /** Sets the render element of the component. Either 'a' or 'button'.*/
-  as?: "a" | "button";
-  /** Add a description comment for each prop. */
-  children: NonNullable<React.ReactNode>;
+  as?: "a" | "button" | "label";
+  /** Button content */
+  children?: React.ReactNode;
   /** If used as an 'a', the href is url that the link point to. */
   href?: string;
   /** Sets the button to be disabled. */
@@ -29,26 +31,36 @@ export interface ButtonProps
   to?: string;
   /** Sets the size of the button. */
   size?: ButtonSizeOptions;
-  /** Sets the variant of the button. */
-  variant: ButtonVariantOptions;
   /** True to have a full width button, false otherwise. */
   fullWidth?: boolean;
+  /** True to use icon only version, false otherwise. */
+  iconOnly?: boolean;
 }
 
 const getButtonVariantStyles = (
-  variant: ButtonVariantOptions
+  variant: ButtonVariantOptions,
+  iconOnly: boolean
 ): {
   color?: SystemProp<keyof Theme["colors"], Theme>;
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
-  outlineColor?: SystemProp<keyof Theme["colors"], Theme>;
-  outlineOffset?: SystemProp<keyof Theme["borderWidths"], Theme>;
-  outlineStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
-  outlineWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
 } => {
   switch (variant) {
-    case "text": {
+    case "ghost": {
+      if (iconOnly) {
+        return {
+          color: {
+            _: "colorIconWeak",
+            disabled: "colorIconWeaker",
+          },
+          backgroundColor: {
+            hover: "colorBackgroundInfo",
+            focus: "colorBackground",
+          },
+          borderWidth: "borderWidth0",
+        };
+      }
       return {
         color: {
           _: "colorTextLink",
@@ -57,8 +69,6 @@ const getButtonVariantStyles = (
           disabled: "colorText",
         },
         borderWidth: "borderWidth0",
-        outlineWidth: { focus: "borderWidth0" },
-        outlineOffset: { focus: "borderWidth0" },
       };
     }
     case "secondary": {
@@ -68,13 +78,11 @@ const getButtonVariantStyles = (
           disabled: "colorText",
         },
         borderWidth: "borderWidth10",
-        borderColor: "colorBorderPrimary",
-        outlineColor: { focus: "colorBorderPrimary" },
-        outlineOffset: { focus: "borderWidth20" },
-        outlineStyle: { focus: "borderSolid" },
-        outlineWidth: { focus: "borderWidth20" },
+        borderColor: { _: "colorBorderPrimary", disabled: "colorBorder" },
         backgroundColor: {
           _: "colorBackground",
+          disabled: "colorBackground",
+          active: "colorBackground",
           hover: "colorBackgroundInfo",
         },
       };
@@ -83,17 +91,15 @@ const getButtonVariantStyles = (
       return {
         borderWidth: "borderWidth10",
         color: "colorTextInverse",
-        outlineColor: { focus: "colorBorderPrimary" },
-        outlineOffset: { focus: "borderWidth20" },
-        outlineStyle: { focus: "borderSolid" },
-        outlineWidth: { focus: "borderWidth20" },
         backgroundColor: {
           _: "colorBackgroundPrimary",
+          active: "colorBackgroundPrimary",
           hover: "colorBackgroundPrimaryStrong",
           disabled: "colorIconWeak",
         },
         borderColor: {
           _: "colorBorderPrimary",
+          active: "colorBorderPrimary",
           hover: "colorBorderPrimary",
           disabled: "colorIconWeak",
         },
@@ -109,6 +115,57 @@ const getIcon = (iconName: IconNames, size: ButtonSizeOptions) => {
   return <Icon decorative icon={iconName} size={iconProps(size)} />;
 };
 
+const getButtonPadding = (
+  size: ButtonSizeOptions,
+  iconOnly: boolean,
+  hasLeadingIcon: boolean,
+  hasTrailingIcon: boolean
+): {
+  paddingBottom: SystemProp<keyof Theme["space"], Theme>;
+  paddingLeft: SystemProp<keyof Theme["space"], Theme>;
+  paddingRight: SystemProp<keyof Theme["space"], Theme>;
+  paddingTop: SystemProp<keyof Theme["space"], Theme>;
+} => {
+  const getDefaultPadding = (
+    size: ButtonSizeOptions
+  ): SystemProp<keyof Theme["space"], Theme> =>
+    size === "large" ? "space40" : "space30";
+
+  if (iconOnly) {
+    return {
+      paddingBottom: getDefaultPadding(size),
+      paddingTop: getDefaultPadding(size),
+      paddingLeft: getDefaultPadding(size),
+      paddingRight: getDefaultPadding(size),
+    };
+  }
+
+  if (!hasLeadingIcon && !hasTrailingIcon) {
+    return {
+      paddingBottom: getDefaultPadding(size),
+      paddingTop: getDefaultPadding(size),
+      paddingLeft: size === "large" ? "space50" : "space40",
+      paddingRight: size === "large" ? "space50" : "space40",
+    };
+  }
+
+  if (hasLeadingIcon) {
+    return {
+      paddingBottom: getDefaultPadding(size),
+      paddingTop: getDefaultPadding(size),
+      paddingLeft: getDefaultPadding(size),
+      paddingRight: size === "large" ? "space50" : "space40",
+    };
+  }
+
+  return {
+    paddingBottom: getDefaultPadding(size),
+    paddingTop: getDefaultPadding(size),
+    paddingLeft: size === "large" ? "space50" : "space40",
+    paddingRight: getDefaultPadding(size),
+  };
+};
+
 /** A button is a clickable element which communicates that users can trigger an action. */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -120,11 +177,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       trailingIcon,
       fullWidth,
       size = "small",
+      iconOnly = false,
       variant = "primary",
       ...props
     },
     ref
   ) => {
+    if (iconOnly && props["aria-label"] === undefined) {
+      throw new Error("Missing a aria-label for icon only button.");
+    }
+
     /**
      * When we use the as prop with xstyled, styled-components
      * changes the component type to StyledComponentPropsWithAs.
@@ -157,19 +219,20 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           gap="space30"
           justifyContent="center"
           lineHeight={size === "large" ? "lineHeight40" : "lineHeight30"}
-          paddingBottom={size === "large" ? "space40" : "space30"}
-          paddingLeft={size === "large" ? "space50" : "space40"}
-          paddingRight={size === "large" ? "space50" : "space40"}
-          paddingTop={size === "large" ? "space40" : "space30"}
+          outlineColor={{ focus: "colorBorderPrimary" }}
+          outlineOffset={{ focus: "borderWidth20" }}
+          outlineStyle={{ focus: "borderSolid" }}
+          outlineWidth={{ active: "borderWidth0", focus: "borderWidth20" }}
           ref={ref}
           textDecoration="none"
           transition="background-color 100ms ease-in, border-color 100ms ease-in"
           w={fullWidth ? "100%" : "auto"}
-          {...getButtonVariantStyles(variant)}
+          {...getButtonPadding(size, iconOnly, !!leadingIcon, !!trailingIcon)}
+          {...getButtonVariantStyles(variant, iconOnly)}
           {...props}
         >
           {leadingIcon && getIcon(leadingIcon, size)}
-          {children}
+          {!iconOnly && children}
           {trailingIcon && getIcon(trailingIcon, size)}
         </Box.button>
       </>

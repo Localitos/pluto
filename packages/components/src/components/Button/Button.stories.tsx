@@ -1,28 +1,42 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import map from "lodash/map";
 import React from "react";
-import { Button } from "./Button";
+import { Box } from "../../primitives/Box";
+import { Button, ButtonProps } from "./Button";
 
 export default {
   component: Button,
   title: "Components/Button",
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const variants = ["primary", "secondary", "ghost"];
+
+const Template: ComponentStory<typeof Button> = (args) => (
+  <Box.div alignItems="center" display="flex" gap="space30">
+    {map(variants, (variant: ButtonProps["variant"]) => {
+      return (
+        <Box.div padding="space60">
+          <Button {...args} variant={variant} />
+        </Box.div>
+      );
+    })}
+  </Box.div>
+);
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "Primary button",
+  children: "Default button",
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  children: "Large primary button",
+  children: "Large button",
   size: "large",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  children: "Primary disabled button",
+  children: "Disabled button",
   disabled: true,
 };
 
@@ -32,20 +46,18 @@ Loading.args = {
   loading: true,
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  leadingIcon: "SunIcon",
-  size: "large",
-  children: "Secondary button",
-  variant: "secondary",
+export const WithLeadingIcon = Template.bind({});
+WithLeadingIcon.args = {
+  children: "Button with icon",
+  size: "small",
+  leadingIcon: "ArrowTopRightOnSquareIcon",
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  leadingIcon: "ArrowLongLeftIcon",
+export const WithTrailingIcon = Template.bind({});
+WithTrailingIcon.args = {
+  children: "Button with icon",
   size: "large",
-  children: "Text",
-  variant: "text",
+  trailingIcon: "ArrowTopRightOnSquareIcon",
 };
 
 export const AsLink = Template.bind({});
@@ -55,23 +67,37 @@ AsLink.args = {
   href: "#",
 };
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
-  children: "Full width button",
-  fullWidth: true,
-  leadingIcon: "ArrowTopRightOnSquareIcon",
+export const AsLabel = Template.bind({});
+AsLabel.args = {
+  as: "label",
+  children: "Label button",
 };
 
-export const WithLeadingIcon = Template.bind({});
-WithLeadingIcon.args = {
-  children: "Small primary button",
-  size: "small",
-  leadingIcon: "ArrowTopRightOnSquareIcon",
-};
+export const FullWidth: React.FC = () => (
+  <Box.div
+    alignItems="center"
+    display="flex"
+    flexDirection="column"
+    gap="space60"
+  >
+    {map(variants, (variant: ButtonProps["variant"]) => {
+      return (
+        <Button
+          fullWidth
+          leadingIcon="ArrowTopRightOnSquareIcon"
+          variant={variant}
+        >
+          Full width button
+        </Button>
+      );
+    })}
+  </Box.div>
+);
 
-export const WithTrailingIcon = Template.bind({});
-WithTrailingIcon.args = {
-  children: "Large primary button",
+export const IconOnly = Template.bind({});
+IconOnly.args = {
+  leadingIcon: "TrashIcon",
+  iconOnly: true,
   size: "large",
-  trailingIcon: "ArrowTopRightOnSquareIcon",
+  "aria-label": "Delete",
 };

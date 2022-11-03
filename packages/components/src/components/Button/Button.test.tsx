@@ -42,6 +42,17 @@ describe("Button", () => {
       const renderedButton = screen.getByRole("button");
       expect(renderedButton).toHaveAttribute("aria-busy");
     });
+
+    it("should throw an exception when iconOnly is true and there is no aria-label", () => {
+      const renderWrapper = () =>
+        render(
+          <Button iconOnly leadingIcon="AcademicCapIcon" variant="primary" />
+        );
+
+      expect(renderWrapper).toThrowSilently(
+        "Missing a aria-label for icon only button."
+      );
+    });
   });
 
   describe("Event handlers", () => {
