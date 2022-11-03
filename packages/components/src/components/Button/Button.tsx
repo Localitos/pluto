@@ -117,26 +117,52 @@ const getIcon = (iconName: IconNames, size: ButtonSizeOptions) => {
 
 const getButtonPadding = (
   size: ButtonSizeOptions,
-  iconOnly: boolean
+  iconOnly: boolean,
+  hasLeadingIcon: boolean,
+  hasTrailingIcon: boolean
 ): {
   paddingBottom: SystemProp<keyof Theme["space"], Theme>;
   paddingLeft: SystemProp<keyof Theme["space"], Theme>;
   paddingRight: SystemProp<keyof Theme["space"], Theme>;
   paddingTop: SystemProp<keyof Theme["space"], Theme>;
 } => {
+  const getDefaultPadding = (
+    size: ButtonSizeOptions
+  ): SystemProp<keyof Theme["space"], Theme> =>
+    size === "large" ? "space40" : "space30";
+
   if (iconOnly) {
     return {
-      paddingBottom: size === "large" ? "space40" : "space30",
-      paddingTop: size === "large" ? "space40" : "space30",
-      paddingLeft: size === "large" ? "space40" : "space30",
-      paddingRight: size === "large" ? "space40" : "space30",
+      paddingBottom: getDefaultPadding(size),
+      paddingTop: getDefaultPadding(size),
+      paddingLeft: getDefaultPadding(size),
+      paddingRight: getDefaultPadding(size),
     };
   }
+
+  if (!hasLeadingIcon && !hasTrailingIcon) {
+    return {
+      paddingBottom: getDefaultPadding(size),
+      paddingTop: getDefaultPadding(size),
+      paddingLeft: size === "large" ? "space50" : "space40",
+      paddingRight: size === "large" ? "space50" : "space40",
+    };
+  }
+
+  if (hasLeadingIcon) {
+    return {
+      paddingBottom: getDefaultPadding(size),
+      paddingTop: getDefaultPadding(size),
+      paddingLeft: getDefaultPadding(size),
+      paddingRight: size === "large" ? "space50" : "space40",
+    };
+  }
+
   return {
-    paddingBottom: size === "large" ? "space40" : "space30",
-    paddingTop: size === "large" ? "space40" : "space30",
+    paddingBottom: getDefaultPadding(size),
+    paddingTop: getDefaultPadding(size),
     paddingLeft: size === "large" ? "space50" : "space40",
-    paddingRight: size === "large" ? "space50" : "space40",
+    paddingRight: getDefaultPadding(size),
   };
 };
 
@@ -201,12 +227,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           textDecoration="none"
           transition="background-color 100ms ease-in, border-color 100ms ease-in"
           w={fullWidth ? "100%" : "auto"}
-          {...getButtonPadding(size, iconOnly)}
+          {...getButtonPadding(size, iconOnly, !!leadingIcon, !!trailingIcon)}
           {...getButtonVariantStyles(variant, iconOnly)}
           {...props}
         >
           {leadingIcon && getIcon(leadingIcon, size)}
-          {children}
+          {!iconOnly && children}
           {trailingIcon && getIcon(trailingIcon, size)}
         </Box.button>
       </>
