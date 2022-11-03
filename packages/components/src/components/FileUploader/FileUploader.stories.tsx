@@ -24,6 +24,10 @@ Default.args = {
   ),
 };
 
+Default.parameters = {
+  chromatic: { viewports: [320, 1200] },
+};
+
 export const Loading = Template.bind({});
 Loading.args = {
   label: "Visa",
@@ -34,6 +38,10 @@ Loading.args = {
       Upload
     </FileUploaderButton>
   ),
+};
+
+Loading.parameters = {
+  chromatic: { viewports: [320, 1200] },
 };
 
 export const Success = Template.bind({});
@@ -49,6 +57,10 @@ Success.args = {
   ),
 };
 
+Success.parameters = {
+  chromatic: { viewports: [320, 1200] },
+};
+
 export const SuccessWithoutFileInfo = Template.bind({});
 SuccessWithoutFileInfo.args = {
   label: "Passport scan",
@@ -58,6 +70,10 @@ SuccessWithoutFileInfo.args = {
       Upload
     </FileUploaderButton>
   ),
+};
+
+SuccessWithoutFileInfo.parameters = {
+  chromatic: { viewports: [320, 1200] },
 };
 
 export const WithError = Template.bind({});
@@ -71,6 +87,10 @@ WithError.args = {
       Upload
     </FileUploaderButton>
   ),
+};
+
+WithError.parameters = {
+  chromatic: { viewports: [320, 1200] },
 };
 
 export const WithUppy = (): React.ReactElement => {

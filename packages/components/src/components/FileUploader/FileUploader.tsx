@@ -17,6 +17,9 @@ export interface FileUploaderProps
   /** The title of the file */
   label: string;
 
+  /** The call to action button */
+  children: ReactElement<ButtonProps | FileUploaderButtonProps>;
+
   /** The max size of a file */
   maxFileSize?: string;
 
@@ -34,9 +37,6 @@ export interface FileUploaderProps
 
   /** The upload progress */
   progress?: number;
-
-  /** The call to action button */
-  children: ReactElement<ButtonProps | FileUploaderButtonProps>;
 
   /** Handles cancel upload  */
   onCancel?: () => void;
