@@ -145,7 +145,7 @@ const getFileTitle = (label: string, fileUrl?: string): React.ReactElement => {
 const getFileDescription = (
   status: FileUploaderStatus,
   { fileName, fileSize, maxFileSize }: Partial<FileUploaderProps>
-): string => {
+): string | null => {
   if (status === "loading") {
     return fileName || "";
   }
