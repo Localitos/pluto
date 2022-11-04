@@ -172,6 +172,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
             flexDirection="row"
             flexGrow={1}
             gap="space70"
+            style={{ wordBreak: "break-word" }}
           >
             <Box.div
               alignItems="center"
