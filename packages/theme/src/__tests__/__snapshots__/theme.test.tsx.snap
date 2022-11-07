@@ -223,6 +223,7 @@ Object {
   "states": Object {
     "_": null,
     "active": "&:active",
+    "backdrop": "&[data-backdrop]",
     "checked": "&:checked",
     "disabled": "&:disabled, &[aria-disabled=true]",
     "even": "&:even",
