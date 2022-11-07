@@ -13,8 +13,8 @@ export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> {
   /** Sets the variant of the button. */
   variant: ButtonVariantOptions;
-  /** Sets the render element of the component. Either 'a' or 'button'.*/
-  as?: "a" | "button" | "label";
+  /** Sets the render element of the component. */
+  as?: keyof JSX.IntrinsicElements;
   /** Button content */
   children?: React.ReactNode;
   /** If used as an 'a', the href is url that the link point to. */
