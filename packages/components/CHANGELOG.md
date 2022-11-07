@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 3.7.0
+
+### Minor Changes
+
+- [#191](https://github.com/Localitos/pluto/pull/191) [`ec597f6`](https://github.com/Localitos/pluto/commit/ec597f6e28797fea81c3106779392174d3ca7560) Thanks [@alinurr1](https://github.com/alinurr1)! - fixes 'error' attribute warning and remove default styling from checkbox wrapper
+
 ## 3.6.0
 
 ### Minor Changes
