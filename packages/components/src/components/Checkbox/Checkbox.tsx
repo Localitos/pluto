@@ -62,20 +62,19 @@ export interface CheckboxProps extends Omit<RadixCheckboxProps, "id"> {
 
 const getCheckboxStyles = (
   wrapped: boolean
-): {
-  backgroundColor: SystemProp<keyof Theme["colors"], Theme>;
-  padding: SystemProp<keyof Theme["space"], Theme>;
-} => {
+):
+  | Record<string, never>
+  | {
+      backgroundColor: SystemProp<keyof Theme["colors"], Theme>;
+      padding: SystemProp<keyof Theme["space"], Theme>;
+    } => {
   if (wrapped) {
     return {
       backgroundColor: "colorBackgroundWeak",
       padding: "space50",
     };
   }
-  return {
-    backgroundColor: "colorBackground",
-    padding: "space0",
-  };
+  return {};
 };
 
 const StyledCheckbox = styled.input`
