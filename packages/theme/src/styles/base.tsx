@@ -9,4 +9,8 @@ export const BaseStyles = createGlobalStyle`
     font-variant-numeric: tabular-nums;
     line-height: lineHeight30;
   }
+
+  [data-backdrop] {
+    background-color: rgba(100, 116, 139, 0.75);
+  }
 `;

@@ -168,6 +168,7 @@ export const theme = {
   },
   states: {
     ...defaultTheme.states,
+    backdrop: "&[data-backdrop]",
     hidden: '&[data-hidden="true"]',
     loading: '&[aria-busy="true"]',
   },
