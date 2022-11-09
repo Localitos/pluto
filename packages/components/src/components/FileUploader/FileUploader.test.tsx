@@ -31,7 +31,7 @@ describe("<FileUploader />", () => {
 
   describe("when state is loading", () => {
     const FILE_LABEL = "Passport scan";
-    const FILE_NAME = "my_file_name";
+    const FILE_NAME = "my_file_name.pdf";
 
     it("renders correctly", () => {
       renderFileUploader({
