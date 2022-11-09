@@ -18,7 +18,11 @@ Default.args = {
   label: "Employment contract",
   maxFileSize: "2MB",
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton
+      accept=".pdf,.docx"
+      trailingIcon="ArrowUpTrayIcon"
+      variant="secondary"
+    >
       Upload
     </FileUploaderButton>
   ),

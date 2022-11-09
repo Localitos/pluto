@@ -29,4 +29,19 @@ describe("<FileUploaderButton />", () => {
     );
     expect((input as HTMLInputElement).files).toHaveLength(1);
   });
+
+  it("passes accept file extensions to inner input element", () => {
+    render(
+      <FileUploaderButton
+        accept=".pdf,.xls"
+        id="file-uploader"
+        variant="primary"
+      >
+        Upload
+      </FileUploaderButton>
+    );
+
+    const input = screen.getByLabelText("Upload");
+    expect(input).toHaveAttribute("accept", ".pdf,.xls");
+  });
 });
