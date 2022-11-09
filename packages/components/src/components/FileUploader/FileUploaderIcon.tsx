@@ -17,6 +17,9 @@ const getIconContainerProps = (
     case "error": {
       return { backgroundColor: "colorBackgroundError" };
     }
+    case "disabled": {
+      return { backgroundColor: "colorBackgroundWeak" };
+    }
     default: {
       return { backgroundColor: "colorBackgroundInfo" };
     }
@@ -35,6 +38,9 @@ const getIconProps = (
     }
     case "error": {
       return { icon: "XCircleIcon", color: "colorTextError" };
+    }
+    case "disabled": {
+      return { icon: "CloudArrowUpIcon", color: "colorTextStronger" };
     }
     default: {
       return { icon: "CloudArrowUpIcon", color: "colorTextLink" };

@@ -43,6 +43,9 @@ export interface FileUploaderProps
 
   /** Handles remove file */
   onRemove?: () => void;
+
+  /** Disables the file uploader */
+  disabled?: boolean;
 }
 
 /** Visual component to display status of a file upload */
@@ -59,11 +62,12 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       progress = 0,
       onCancel,
       onRemove,
+      disabled = false,
     },
     ref
   ) => {
     const isMobile = useDown("md");
-    const status = getStatus(progress, fileUrl, errorMessage);
+    const status = getStatus({ disabled, progress, fileUrl, errorMessage });
     const isMobileUploading = isMobile && status === "loading";
 
     return (
@@ -118,8 +122,8 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
           {isMobileUploading && (
             <FileUploaderProgressBar fileName={fileName} progress={progress} />
           )}
-          {status === "waiting" &&
-            React.cloneElement(children, { fullWidth: isMobile })}
+          {(status === "waiting" || status === "disabled") &&
+            React.cloneElement(children, { fullWidth: isMobile, disabled })}
           {(status === "error" || status === "success") && (
             <RemoveButton onClick={onRemove} />
           )}

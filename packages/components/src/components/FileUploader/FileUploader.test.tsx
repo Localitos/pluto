@@ -26,10 +26,10 @@ describe("<FileUploader />", () => {
     expect(
       screen.getByText("No file uploaded • Max. file size 2MB")
     ).toBeInTheDocument();
-    expect(screen.getByLabelText("Upload")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Upload" })).toBeInTheDocument();
   });
 
-  describe("when state is loading", () => {
+  describe('when state is "loading"', () => {
     const FILE_LABEL = "Passport scan";
     const FILE_NAME = "my_file_name.pdf";
 
@@ -70,7 +70,7 @@ describe("<FileUploader />", () => {
     });
   });
 
-  describe("when state is success", () => {
+  describe('when state is "success"', () => {
     it("renders correctly", () => {
       renderFileUploader({
         label: "Visa",
@@ -127,24 +127,40 @@ describe("<FileUploader />", () => {
     });
   });
 
-  it("renders error state", () => {
+  it('renders correctly when state is "error"', () => {
     renderFileUploader({
-      label: "Registration confirmation",
+      label: "Visa Confirmation",
       maxFileSize: "2MB",
-      fileName: "registration_confirmarion_v2.pdf",
+      fileName: "visa_v2.pdf",
       fileUrl: FILE_URL,
       fileSize: "1MB",
       progress: 100,
       errorMessage: "File is too large.",
     });
 
-    expect(screen.getByText("Registration confirmation")).toBeInTheDocument();
-    expect(
-      screen.getByText("registration_confirmarion_v2.pdf • 1MB")
-    ).toBeInTheDocument();
+    expect(screen.getByText("Visa Confirmation")).toBeInTheDocument();
+    expect(screen.getByText("visa_v2.pdf • 1MB")).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "Remove file" })
     ).toBeInTheDocument();
     expect(screen.getByRole("alert")).toHaveTextContent("File is too large.");
+  });
+
+  it('renders correctly when state is "disabled"', () => {
+    renderFileUploader({
+      label: "Registration confirmation",
+      maxFileSize: "2MB",
+      progress: 0,
+      disabled: true,
+    });
+
+    expect(screen.getByText("Registration confirmation")).toBeInTheDocument();
+    expect(
+      screen.getByText("No file uploaded • Max. file size 2MB")
+    ).toBeInTheDocument();
+
+    const uploadButton = screen.getByRole("button", { name: "Upload" });
+    expect(uploadButton).toBeInTheDocument();
+    expect(uploadButton).toBeDisabled();
   });
 });

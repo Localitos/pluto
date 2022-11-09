@@ -1,1 +1,6 @@
-export type FileUploaderStatus = "error" | "loading" | "success" | "waiting";
+export type FileUploaderStatus =
+  | "disabled"
+  | "error"
+  | "loading"
+  | "success"
+  | "waiting";

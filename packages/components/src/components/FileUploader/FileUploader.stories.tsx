@@ -97,6 +97,26 @@ WithError.parameters = {
   chromatic: { viewports: [320, 1200] },
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: "Employment Contract",
+  maxFileSize: "3MB",
+  disabled: true,
+  children: (
+    <FileUploaderButton
+      disabled={true}
+      trailingIcon="ArrowUpTrayIcon"
+      variant="secondary"
+    >
+      Upload
+    </FileUploaderButton>
+  ),
+};
+
+Disabled.parameters = {
+  chromatic: { viewports: [320, 1200] },
+};
+
 export const WithUppy = (): React.ReactElement => {
   const uppy = new Uppy();
   const [fileInformation, setFileInformation] = useState<{
