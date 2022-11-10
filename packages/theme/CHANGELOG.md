@@ -1,5 +1,12 @@
 # @localyze-pluto/theme
 
+## 1.2.4
+
+### Patch Changes
+
+- [#193](https://github.com/Localitos/pluto/pull/193) [`de30bd6`](https://github.com/Localitos/pluto/commit/de30bd69b89bcb475d947e3d1c4e859ed1cf9cec) Thanks [@richbachman](https://github.com/richbachman)! - - Added a backdrop state to the theme for future use.
+  - Added initial modal backdrop styles to the base styles.
+
 ## 1.2.3
 
 ### Patch Changes
