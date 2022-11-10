@@ -15,7 +15,6 @@ const HelpText = React.forwardRef<HTMLSpanElement, HelpTextProps>(
   ({ children, hasError, ...props }, ref) => {
     return (
       <Box.span
-        alignItems="center"
         color={hasError ? "colorTextError" : "colorTextStronger"}
         display="flex"
         fontFamily="fontFamilyModerat"
