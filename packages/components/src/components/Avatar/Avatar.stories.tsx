@@ -1,5 +1,6 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import map from "lodash/map";
+import dropRight from "lodash/dropRight";
 import React from "react";
 import { Box } from "../../primitives/Box";
 import { Avatar, AvatarSizeOptions } from "./Avatar";
@@ -11,7 +12,13 @@ export default {
   title: "Components/Avatar",
 } as ComponentMeta<typeof Avatar>;
 
-const sizes: AvatarSizeOptions[] = ["xsmall", "small", "medium", "large"];
+const sizes: AvatarSizeOptions[] = [
+  "xsmall",
+  "small",
+  "medium",
+  "large",
+  "xlarge",
+];
 
 const Template: ComponentStory<typeof Avatar> = (args) => (
   <Box.div alignItems="center" display="flex" gap="space30" maxWidth="680px">
@@ -38,11 +45,17 @@ Initials.args = {
   name: "Liza Wang",
 };
 
-export const WithName = Template.bind({});
-WithName.args = {
-  ...defaultArgs,
-  showName: true,
-};
+export const WithName = (): JSX.Element => (
+  <Box.div alignItems="center" display="flex" gap="space30" maxWidth="680px">
+    {map(dropRight(sizes), (size: AvatarSizeOptions) => {
+      return (
+        <Box.div padding="space60">
+          <Avatar size={size} {...defaultArgs} showName />
+        </Box.div>
+      );
+    })}
+  </Box.div>
+);
 
 export const InitialsAndBackgroundColors: ComponentStory<
   typeof Avatar
