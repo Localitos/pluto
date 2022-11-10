@@ -117,7 +117,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             disabled: "colorText",
             placeholder: "colorText",
           }}
-          cursor="auto"
+          cursor={disabled ? "not-allowed" : "auto"}
           disabled={disabled}
           display="block"
           fontFamily="inherit"
