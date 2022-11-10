@@ -14,7 +14,12 @@ export type AvatarColorOptions =
   | "pink"
   | "yellow";
 
-export type AvatarSizeOptions = "large" | "medium" | "small" | "xsmall";
+export type AvatarSizeOptions =
+  | "large"
+  | "medium"
+  | "small"
+  | "xlarge"
+  | "xsmall";
 
 export type AvatarProps = {
   /** The color used for the avatar background. */
@@ -54,6 +59,12 @@ const getAvatarSizes = (
         h: "40px",
       };
     }
+    case "xlarge": {
+      return {
+        w: "120px",
+        h: "120px",
+      };
+    }
     default: {
       return {
         w: "32px",
@@ -63,10 +74,11 @@ const getAvatarSizes = (
   }
 };
 
-const getInitialsSizes = (
+const getInitialsStyles = (
   size: AvatarSizeOptions
 ): {
   fontSize?: SystemProp<keyof Theme["fontSizes"], Theme>;
+  fontWeight?: SystemProp<keyof Theme["fontWeights"], Theme>;
   style?: React.CSSProperties;
 } => {
   switch (size) {
@@ -83,6 +95,12 @@ const getInitialsSizes = (
     case "large": {
       return {
         fontSize: "fontSize30",
+      };
+    }
+    case "xlarge": {
+      return {
+        fontSize: "fontSize70",
+        fontWeight: "fontWeightBold",
       };
     }
     default: {
@@ -209,7 +227,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
             <Box.span
               aria-hidden={true}
               color="colorTextStronger"
-              {...getInitialsSizes(size)}
+              {...getInitialsStyles(size)}
             >
               {getInitials(name)}
             </Box.span>
