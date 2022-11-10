@@ -1,5 +1,21 @@
 # @localyze-pluto/components
 
+## 3.8.0
+
+### Minor Changes
+
+- [#186](https://github.com/Localitos/pluto/pull/186) [`ab753d7`](https://github.com/Localitos/pluto/commit/ab753d7a742c5063c36601eeba6b6fb8bfaed7e2) Thanks [@nyan07](https://github.com/nyan07)! - Add FileUploader component
+
+- [#193](https://github.com/Localitos/pluto/pull/193) [`de30bd6`](https://github.com/Localitos/pluto/commit/de30bd69b89bcb475d947e3d1c4e859ed1cf9cec) Thanks [@richbachman](https://github.com/richbachman)! - [Modal]: Inital release of the modal component
+  [Button]: Changed the as prop to `keyof JSX.IntrinsicElements` to support rendering the Button as another component.
+
+### Patch Changes
+
+- [#206](https://github.com/Localitos/pluto/pull/206) [`a35f84a`](https://github.com/Localitos/pluto/commit/a35f84a5b1de335ddeec2b5c5f6b2774afd14123) Thanks [@apvale](https://github.com/apvale)! - [Avatar]: Add xlarge size to Avatar and updated fontWeight of initials
+
+- Updated dependencies [[`de30bd6`](https://github.com/Localitos/pluto/commit/de30bd69b89bcb475d947e3d1c4e859ed1cf9cec)]:
+  - @localyze-pluto/theme@1.2.4
+
 ## 3.7.0
 
 ### Minor Changes
