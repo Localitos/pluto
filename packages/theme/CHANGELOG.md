@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 1.2.5
+
+### Patch Changes
+
+- [#213](https://github.com/Localitos/pluto/pull/213) [`ddc3683`](https://github.com/Localitos/pluto/commit/ddc3683106d39b3f454dc9c6e70893468472d392) Thanks [@apvale](https://github.com/apvale)! - [Default theme] Add new colorBackgroundBodyStrong color
+
 ## 1.2.4
 
 ### Patch Changes
