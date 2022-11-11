@@ -28,6 +28,7 @@ Object {
     "colorAvatarBackgroundYellow": "#FDE68A",
     "colorBackground": "#FFFFFF",
     "colorBackgroundBody": "#F7F9FF",
+    "colorBackgroundBodyStrong": "#1E293B",
     "colorBackgroundComplete": "linear-gradient(360deg, rgba(82, 244, 174, 0.12) 0%, rgba(131, 247, 197, 0.0575) 57.81%, rgba(255, 255, 255, 0) 100%)",
     "colorBackgroundDestructive": "#DC2626",
     "colorBackgroundDestructiveStrong": "#B91C1C",
