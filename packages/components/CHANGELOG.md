@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 3.8.1
+
+### Patch Changes
+
+- [#208](https://github.com/Localitos/pluto/pull/208) [`025fedf`](https://github.com/Localitos/pluto/commit/025fedf1f352fb2e6c66c6a7616db8ebc5396146) Thanks [@nyan07](https://github.com/nyan07)! - Calls onClick function when clicking on FileUploaderButton
+
+- [#211](https://github.com/Localitos/pluto/pull/211) [`2dec7c3`](https://github.com/Localitos/pluto/commit/2dec7c369e7ba3a7dc14ef904a811a95a02d93e0) Thanks [@nyan07](https://github.com/nyan07)! - Renders lists and bold on RichText component
+
 ## 3.8.0
 
 ### Minor Changes
