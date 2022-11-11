@@ -3,9 +3,13 @@ import React, { useRef } from "react";
 import { Box } from "../../primitives/Box";
 import { Button, ButtonProps } from "../Button";
 
-export interface FileUploaderButtonProps extends Omit<ButtonProps, "onChange"> {
+export interface FileUploaderButtonProps
+  extends Omit<ButtonProps, "onChange" | "onClick"> {
   /** It is called when user selects a file */
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+
+  /** It is called when user clicks on the button */
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 
   /** The acceptable file types/extensions */
   accept?: string;
@@ -15,9 +19,14 @@ export interface FileUploaderButtonProps extends Omit<ButtonProps, "onChange"> {
 const FileUploaderButton = React.forwardRef<
   HTMLButtonElement,
   FileUploaderButtonProps
->(({ id, onChange, accept, disabled, ...props }, ref) => {
+>(({ id, onChange, onClick, accept, disabled, ...props }, ref) => {
   const inputRef = useRef(null);
-  const clickInput = () => invoke(inputRef.current, "click") as void;
+  const clickInput = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    invoke(inputRef.current, "click") as void;
+    if (onClick) onClick(event);
+  };
   return (
     <>
       <Button

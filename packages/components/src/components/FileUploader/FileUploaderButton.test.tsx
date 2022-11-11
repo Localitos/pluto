@@ -30,6 +30,25 @@ describe("<FileUploaderButton />", () => {
     expect((input as HTMLInputElement).files).toHaveLength(1);
   });
 
+  it("calls onClick", async () => {
+    const mockOnClick = jest.fn();
+
+    render(
+      <FileUploaderButton
+        id="file-uploader"
+        onChange={jest.fn()}
+        onClick={mockOnClick}
+        variant="primary"
+      >
+        Upload
+      </FileUploaderButton>
+    );
+
+    await userEvent.click(screen.getByRole("button"));
+
+    expect(mockOnClick).toHaveBeenCalled();
+  });
+
   it("passes accept file extensions to inner input element", () => {
     render(
       <FileUploaderButton
