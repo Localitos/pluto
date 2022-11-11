@@ -8,7 +8,7 @@ export default {
 } as ComponentMeta<typeof RichText>;
 
 const textString =
-  "<h2>Sweets<h2> <h4>Cupcake</h4> <p>I love cake chocolate gingerbread tiramisu I love soufflé halvah soufflé. Croissant brownie wafer carrot cake sweet roll.</p> <h4>Chocolate</h4> <p>bar cookie bear claw pudding candy tiramisu. Fruitcake macaroon marshmallow biscuit toffee I love. Donut caramels pastry pudding bonbon bear claw jelly beans I love sweet roll. Sugar plum sweet tootsie roll toffee soufflé I love biscuit wafer pie.</p>";
+  "<h2>Sweets<h2> <h4>Cupcake</h4> <p>I love cake chocolate gingerbread tiramisu I love soufflé halvah soufflé. Croissant brownie wafer carrot cake sweet roll.</p> <h4>Chocolate</h4> <p>bar cookie bear claw pudding candy tiramisu. Fruitcake macaroon marshmallow biscuit toffee I love. Donut caramels pastry pudding bonbon bear claw jelly beans I love sweet roll. Sugar plum sweet tootsie roll toffee soufflé I love biscuit wafer pie.</p><ul><li>I love cake chocolate gingerbread <b>tiramisu</b> I love soufflé halvah soufflé.</li><li>Sugar plum sweet tootsie roll toffee soufflé I love biscuit wafer pie.</li></ul>";
 
 const Template: ComponentStory<typeof RichText> = (args) => (
   <RichText {...args} />

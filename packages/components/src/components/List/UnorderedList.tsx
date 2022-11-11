@@ -1,12 +1,11 @@
 import styled from "@xstyled/styled-components";
-import React, { ReactElement } from "react";
+import React from "react";
 import { Box } from "../../primitives/Box";
-import { ListItemProps } from "./ListItem";
 
 export interface UnorderedListProps
   extends Omit<React.HTMLAttributes<HTMLUListElement>, "color"> {
   /** The list items */
-  children: ReactElement<ListItemProps> | ReactElement<ListItemProps>[];
+  children: NonNullable<React.ReactNode>;
 }
 
 /** A list of items with bullet points */

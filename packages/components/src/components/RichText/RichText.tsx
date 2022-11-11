@@ -5,6 +5,7 @@ import toUpper from "lodash/toUpper";
 import { Heading } from "../Heading";
 import { Paragraph } from "../Paragraph";
 import { Anchor } from "../Anchor";
+import { ListItem, OrderedList, UnorderedList } from "../List";
 
 export interface RichTextProps {
   /** The string of content to be rendered. */
@@ -85,13 +86,18 @@ const RichText = ({
             return <Paragraph>{domToReact(children, options)}</Paragraph>;
           }
           case "OL": {
-            return <ol>{domToReact(children, options)}</ol>;
+            return <OrderedList>{domToReact(children, options)}</OrderedList>;
           }
           case "UL": {
-            return <ul>{domToReact(children, options)}</ul>;
+            return (
+              <UnorderedList>{domToReact(children, options)}</UnorderedList>
+            );
           }
           case "LI": {
-            return <li>{domToReact(children, options)}</li>;
+            return <ListItem>{domToReact(children, options)}</ListItem>;
+          }
+          case "B": {
+            return <strong>{domToReact(children, options)}</strong>;
           }
           default: {
             return <span>{domToReact(children, options)}</span>;
