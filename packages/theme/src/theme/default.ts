@@ -34,6 +34,8 @@ export const theme = {
     colorBackgroundPrimary: "#102EE9",
     colorBackgroundPrimaryStrong: "#0B1F9C",
     colorBackgroundPrimaryStrongest: "#041162",
+    colorBackgroundDecorativeWeak: "#FFF1DB",
+    colorBackgroundDecorativeStrong: "#C8F0EF",
     colorBackgroundDestructive: "#DC2626",
     colorBackgroundDestructiveStrong: "#B91C1C",
     colorBackgroundInfo: "#EBEDFF",
