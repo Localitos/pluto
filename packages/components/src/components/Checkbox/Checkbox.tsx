@@ -79,6 +79,7 @@ const getCheckboxStyles = (
 
 const StyledCheckbox = styled.input`
   width: 16px;
+  min-width: 16px;
   height: 16px;
   border-radius: 4px;
   margin-right: ${theme.space.space30};
