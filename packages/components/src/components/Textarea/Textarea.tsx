@@ -62,6 +62,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           id={id}
           lineHeight="inherit"
           margin="space0"
+          minHeight="100px"
           name={name}
           outline="none"
           paddingBottom="space30"
