@@ -19,5 +19,6 @@ export * from "./components/RichText";
 export * from "./components/Search";
 export * from "./components/Table";
 export * from "./components/Textarea";
+export * from "./components/Tooltip";
 export * from "./primitives/Box";
 export * from "./primitives/Text";
