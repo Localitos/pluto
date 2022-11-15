@@ -19,6 +19,10 @@ export interface ButtonProps
   children?: React.ReactNode;
   /** If used as an 'a', the href is url that the link point to. */
   href?: string;
+  /** If used as an 'a', the target attribute tells the browser where the linked document should be loaded. */
+  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>["target"];
+  /** If used as an 'a', the rel attribute defines the relationship between a linked resource and the current document. */
+  rel?: React.AnchorHTMLAttributes<HTMLAnchorElement>["rel"];
   /** Sets the button to be disabled. */
   disabled?: boolean;
   /** Icon to be added on the left of the content. */
