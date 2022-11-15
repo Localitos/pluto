@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 4.1.0
+
+### Minor Changes
+
+- [#207](https://github.com/Localitos/pluto/pull/207) [`49f9f6f`](https://github.com/Localitos/pluto/commit/49f9f6fc406948b7f1342b138a33e744923b1bf3) Thanks [@richbachman](https://github.com/richbachman)! - - [TextArea] Added the TextArea component, stories, and tests.
+
+  - [Input] Fixed the disabled cursor style.
+
+- [#219](https://github.com/Localitos/pluto/pull/219) [`f7e7237`](https://github.com/Localitos/pluto/commit/f7e7237cf5d90f9ce282b09e61da7cbf2f5f0612) Thanks [@apvale](https://github.com/apvale)! - [Button] Add a new "outline" variant for buttons
+
 ## 4.0.0
 
 ### Patch Changes
