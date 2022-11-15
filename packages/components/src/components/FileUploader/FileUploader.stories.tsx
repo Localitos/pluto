@@ -65,6 +65,22 @@ Success.parameters = {
   chromatic: { viewports: [320, 1200] },
 };
 
+export const Multiline = Template.bind({});
+Multiline.args = {
+  label:
+    "Certificate of valid health insurance (travel health insurance with minimum coverage of 30.000 € and valid during visa timeframe)",
+  fileSize: "2MB",
+  children: (
+    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+      Upload
+    </FileUploaderButton>
+  ),
+};
+
+Multiline.parameters = {
+  chromatic: { viewports: [320, 1200] },
+};
+
 export const SuccessWithoutFileInfo = Template.bind({});
 SuccessWithoutFileInfo.args = {
   label: "Passport scan",

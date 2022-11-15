@@ -123,7 +123,11 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
             <FileUploaderProgressBar fileName={fileName} progress={progress} />
           )}
           {(status === "waiting" || status === "disabled") &&
-            React.cloneElement(children, { fullWidth: isMobile, disabled })}
+            React.cloneElement(children, {
+              fullWidth: isMobile,
+              disabled,
+              style: { alignSelf: "start" },
+            })}
           {(status === "error" || status === "success") && (
             <RemoveButton onClick={onRemove} />
           )}
