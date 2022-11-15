@@ -84,7 +84,7 @@ const StyledCheckbox = styled.input`
   border-radius: 4px;
   margin-right: ${theme.space.space30};
   padding: 4px 0 0;
-  margin-top: 1px;
+  margin-top: 1.5px;
   align-self: start;
 
   &:focus {
