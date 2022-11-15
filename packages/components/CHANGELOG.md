@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 4.1.1
+
+### Patch Changes
+
+- [#225](https://github.com/Localitos/pluto/pull/225) [`87aa3c3`](https://github.com/Localitos/pluto/commit/87aa3c318c397d69ced2757c1315a3b4fda65737) Thanks [@nyan07](https://github.com/nyan07)! - Fix button height on FileUploader when label has more than one line
+
 ## 4.1.0
 
 ### Minor Changes
