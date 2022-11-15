@@ -69,6 +69,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
     const isMobile = useDown("md");
     const status = getStatus({ disabled, progress, fileUrl, errorMessage });
     const isMobileUploading = isMobile && status === "loading";
+    const isUploadedWithoutName = status === "success" && !fileName;
 
     return (
       <Box.div display="flex" flexDirection="column" gap="space25">
@@ -108,7 +109,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
                 {!isMobile && status === "loading" && (
                   <FileUploaderProgressBar progress={progress} />
                 )}
-                {!isMobileUploading && (
+                {!isMobileUploading && !isUploadedWithoutName && (
                   <FileUploaderDescription
                     fileName={fileName}
                     fileSize={fileSize}

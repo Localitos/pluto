@@ -99,9 +99,9 @@ describe("<FileUploader />", () => {
       });
 
       expect(screen.getByRole("link", { name: "Visa" })).toBeInTheDocument();
-      expect(
-        screen.queryByText("No file uploaded • 1MB")
-      ).not.toBeInTheDocument();
+      expect(screen.queryByText(/no file uploaded/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/1mb/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/2mb/i)).not.toBeInTheDocument();
       expect(
         screen.getByRole("button", { name: "Remove file" })
       ).toBeInTheDocument();
