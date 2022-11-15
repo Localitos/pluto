@@ -65,7 +65,7 @@
     "@uppy/core": "^3.0.4",
     "@xstyled/styled-components": "^3.6.0",
     "chromatic": "^6.11.4",
-    "eslint": "^8.25.0",
+    "eslint": "^8.27.0",
     "html-react-parser": "^3.0.4",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^29.2.2",
