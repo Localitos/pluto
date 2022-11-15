@@ -5,7 +5,7 @@ import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
 
 type ButtonSizeOptions = "large" | "small";
-type ButtonVariantOptions = "ghost" | "primary" | "secondary";
+type ButtonVariantOptions = "ghost" | "outline" | "primary" | "secondary";
 
 type IconNames = keyof typeof HeroOutlineIcons;
 
@@ -82,6 +82,20 @@ const getButtonVariantStyles = (
         backgroundColor: {
           _: "colorBackground",
           disabled: "colorBackground",
+          active: "colorBackground",
+          hover: "colorBackgroundInfo",
+        },
+      };
+    }
+    case "outline": {
+      return {
+        color: {
+          _: "colorTextLink",
+          disabled: "colorText",
+        },
+        borderWidth: "borderWidth10",
+        borderColor: { _: "colorBorderPrimary", disabled: "colorBorder" },
+        backgroundColor: {
           active: "colorBackground",
           hover: "colorBackgroundInfo",
         },

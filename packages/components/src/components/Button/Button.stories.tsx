@@ -1,6 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import map from "lodash/map";
-import React from "react";
+import React, { ReactElement } from "react";
+import dropRight from "lodash/dropRight";
 import { Box } from "../../primitives/Box";
 import { Button, ButtonProps } from "./Button";
 
@@ -9,11 +10,11 @@ export default {
   title: "Components/Button",
 } as ComponentMeta<typeof Button>;
 
-const variants = ["primary", "secondary", "ghost"];
+const variants = ["primary", "secondary", "ghost", "outline"];
 
 const Template: ComponentStory<typeof Button> = (args) => (
   <Box.div alignItems="center" display="flex" gap="space30">
-    {map(variants, (variant: ButtonProps["variant"]) => {
+    {map(dropRight(variants), (variant: ButtonProps["variant"]) => {
       return (
         <Box.div padding="space60">
           <Button {...args} variant={variant} />
@@ -27,6 +28,22 @@ export const Default = Template.bind({});
 Default.args = {
   children: "Default button",
 };
+
+export const Outline = (): ReactElement => (
+  <Box.div
+    alignItems="flex-start"
+    backgroundColor="colorBackgroundDecorativeStrong"
+    display="flex"
+    flexDirection="column"
+    gap="space30"
+    padding="space60"
+  >
+    <Button variant="outline">Default button</Button>
+    <Button size="large" variant="outline">
+      Large button
+    </Button>
+  </Box.div>
+);
 
 export const Large = Template.bind({});
 Large.args = {
@@ -80,7 +97,7 @@ export const FullWidth: React.FC = () => (
     flexDirection="column"
     gap="space60"
   >
-    {map(variants, (variant: ButtonProps["variant"]) => {
+    {map(dropRight(variants), (variant: ButtonProps["variant"]) => {
       return (
         <Button
           fullWidth
