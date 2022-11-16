@@ -17,6 +17,9 @@ import {
 export default {
   component: Modal,
   title: "Components/Modal",
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
 } as ComponentMeta<typeof Modal>;
 
 export const Default = (): JSX.Element => {
