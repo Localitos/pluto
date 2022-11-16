@@ -1,25 +1,27 @@
 import React from "react";
-/* Import { SystemProp, Theme } from "@xstyled/styled-components"; */
-/* Import type { SystemProp, Theme } from "@xstyled/styled-components"; */
-import { useDropzone } from "react-dropzone";
+import { FileWithPath, useDropzone } from "react-dropzone";
 import { styled, theme } from "@localyze-pluto/theme";
-/* Import * as HeroOutlineIcons from "@heroicons/react/24/outline"; */
+import { Text } from "../../primitives/Text";
 import { ProgressBar } from "../ProgressBar";
-
 import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
-import { Text } from "../../primitives/Text";
+import { CancelUploadButton } from "./CancelUploadButton";
 
 type DropzoneProps = {
-  /** The file types allowed. In the format of an object. */
-  fileTypes: Record<string, never>;
   // FileSize
   /** The maximum amount allowed for file size. In the format of number?. */
   // MaxFileSize: number;
   /** Are multiple file uploads allowed? Boolean */
   // MultipleFiles: boolean;
   /** This is the function that gets triggered when a file is dropped */
-  onSuccess: () => void;
+  sendDocument: (
+    file: FileWithPath,
+    progress: (progress: number) => void
+  ) => Promise<string>;
+  /** This is the function that gets triggered when a file is dropped */
+  cancelDocumentUpload: () => void;
+  /** The file types allowed. In the format of an object. */
+  fileTypes?: Record<string, never>;
 };
 
 const getBorderColors = ({ status, isDragAccept, isDragReject, isFocused }) => {
@@ -29,7 +31,7 @@ const getBorderColors = ({ status, isDragAccept, isDragReject, isFocused }) => {
   if (isDragAccept) {
     return `${theme.colors.colorBorderPrimary}`;
   }
-  if (isDragReject || status === "error") {
+  if (isDragReject || status === "error" || status === "uploadError") {
     return `${theme.colors.colorBorderError}`;
   }
   if (isFocused) {
@@ -44,13 +46,16 @@ const getBackgroundColors = ({
   isDragReject,
   isFocused,
 }) => {
+  if (status === "loading") {
+    return `${theme.colors.colorBackgroundInfo}`;
+  }
   if (status === "success") {
     return `${theme.colors.colorBackgroundSuccess}`;
   }
   if (isDragAccept) {
     return `${theme.colors.colorBackgroundInfo}`;
   }
-  if (isDragReject || status === "error") {
+  if (isDragReject || status === "error" || status === "uploadError") {
     return `${theme.colors.colorBackgroundError}`;
   }
   if (isFocused) {
@@ -70,7 +75,7 @@ const getIcon = (status: string, isDragActive, isDragAccept, isDragReject) => {
     icon = "CloudArrowUpIcon";
     iconColor = "colorIconInfo";
   }
-  if (isDragReject || status === "error") {
+  if (isDragReject || status === "error" || status === "uploadError") {
     icon = "ExclamationTriangleIcon";
     iconColor = "colorIconError";
   }
@@ -101,7 +106,15 @@ const DropZone = styled(Box.div)`
 }
 
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
-  ({ fileTypes = { "application/pdf": [".pdf"] }, onSuccess }, ref) => {
+  (
+    {
+      fileTypes = { "application/pdf": [".pdf"] },
+      cancelDocumentUpload,
+      sendDocument,
+    },
+    ref
+  ) => {
+    /* Const status = getStatus({ disabled, progress, fileUrl, errorMessage }); */
     const [status, setStatus] = React.useState("default");
     const [progress, setProgress] = React.useState(0);
 
@@ -109,7 +122,6 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
       acceptedFiles,
       getRootProps,
       getInputProps,
-      isFocused,
       isDragActive,
       isDragAccept,
       isDragReject,
@@ -120,50 +132,59 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         ...fileTypes,
       },
       onDropAccepted: () => {
-        setStatus("loading");
-        onSuccess(acceptedFiles[0], setProgress);
-        setTimeout(() => {
-          setStatus("success");
-          setTimeout(() => {
-            setStatus("default");
-          }, 2000);
-        }, 5000);
+        sendDocument(acceptedFiles[0], (progress) => {
+          setProgress(progress);
+        })
+          .then(() => setStatus("success"))
+          .catch(() => {
+            setStatus("uploadError");
+          });
       },
       onDropRejected: () => {
-        setTimeout(() => {
-          setStatus("default");
-        }, 5000);
         setStatus("error");
       },
     });
 
     React.useEffect(() => {
-      if (status === "loading") {
-        const timer = setTimeout(() => setProgress(100), 500);
-        () => clearTimeout(timer);
+      if (isDragActive) {
+        setStatus("default");
       }
-    }, [status]);
+    }, [isDragActive]);
 
     return (
       <>
         <DropZone
-          {...getRootProps({ status, isFocused, isDragAccept, isDragReject })}
+          {...getRootProps({
+            status,
+            isDragActive,
+            isDragAccept,
+            isDragReject,
+          })}
           ref={ref}
         >
           <input {...getInputProps()} />
           {getIcon(status, isDragActive, isDragAccept, isDragReject)}
           {status === "loading" && (
-            <Box.div display="flex" flexDirection="column" gap="space40">
-              <ProgressBar value={progress} />
-            </Box.div>
+            <>
+              <Box.div marginTop="space40" maxWidth="280px" w="100%">
+                <ProgressBar value={progress} />
+              </Box.div>
+              <CancelUploadButton
+                onClick={() => {
+                  cancelDocumentUpload();
+                }}
+              />
+            </>
           )}
-          {(isDragReject || status === "error") && (
+          {(isDragReject || status === "error" || status === "uploadError") && (
             <Text.span
               color="colorTextStronger"
               fontSize={"fontSize30"}
               fontWeight="fontWeightRegular"
             >
-              Wrong file type. PDF format only.
+              {status === "uploadError"
+                ? "The file failed to upload, please try again."
+                : "Wrong file type. PDF format only."}
             </Text.span>
           )}
           {((!isDragActive && status === "default") || isDragAccept) && (
