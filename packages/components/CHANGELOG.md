@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 4.1.2
+
+### Patch Changes
+
+- [#227](https://github.com/Localitos/pluto/pull/227) [`925b050`](https://github.com/Localitos/pluto/commit/925b0509278c56d6c9d4728da030f8e0ac7eda4f) Thanks [@nyan07](https://github.com/nyan07)! - Add target and rel as prop on the Button component
+
 ## 4.1.1
 
 ### Patch Changes
