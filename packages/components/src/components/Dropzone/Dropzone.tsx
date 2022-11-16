@@ -8,54 +8,47 @@ import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
 import { CancelUploadButton } from "./CancelUploadButton";
 
-const MAX_FILE_SIZE = 50 * 1024 * 1024;
+const MAX_FILE_SIZE = 52_428_800;
 
-type DropzoneProps = {
-  /* These props are being saved for V2 */
-  /** The maximum amount allowed for file size. In the format of number?. */
-  // MaxFileSize: number;
-  /** Are multiple file uploads allowed? Boolean */
-  // MultipleFiles: boolean;
+export type DropzoneProps = {
   /** This is the function that gets triggered when a file is dropped */
-  sendDocument: (
-    file: FileWithPath,
-    onProgress?: (progressPercentage: number) => void
-  ) => Promise<unknown>;
-  /** This is the function that gets triggered when a file is dropped */
-  cancelDocumentUpload: (name: string) => Promise<unknown>;
-  /** The file types allowed. In the format of an object. */
+  onDrop: (files: FileWithPath[]) => void;
+  /** This is the function that gets triggered when the cancel button is clicked */
+  onCancel: (files: FileWithPath[]) => void;
+  /** This is an error if there is one. string */
+  error?: string;
+  /** The file types allowed. In the format of an object.{ "application/pdf": [".pdf"] } */
   fileTypes?: Record<string, string[]>;
+  /** The max file size allowed. Default is 50mb. Number of bytes*/
+  maxFileSize?: number;
+  /** This is the progress of the file upload. */
+  progress?: number;
 };
-/**/
 
-const getVariants = (
-  status: string,
+const getColors = (
+  errorState: string | undefined,
+  isLoading: boolean,
+  successState: boolean,
+  isFocused: boolean,
   isDragAccept: boolean,
-  isDragReject: boolean,
-  isFocused: boolean
+  isDragReject: boolean
 ): {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
 } => {
-  if (status === "loading") {
+  if (isLoading || isDragAccept) {
     return {
       backgroundColor: "colorBackgroundInfo",
       borderColor: "colorBorderPrimary",
     };
   }
-  if (status === "success") {
+  if (successState) {
     return {
       backgroundColor: "colorBackgroundSuccess",
       borderColor: "colorBorderSuccess",
     };
   }
-  if (isDragAccept) {
-    return {
-      backgroundColor: "colorBackgroundInfo",
-      borderColor: "colorBorderPrimary",
-    };
-  }
-  if (isDragReject || status === "error" || status === "uploadError") {
+  if (errorState || isDragReject) {
     return {
       backgroundColor: "colorBackgroundError",
       borderColor: "colorBorderError",
@@ -74,22 +67,17 @@ const getVariants = (
 };
 
 const getIcon = (
-  status: string,
-  isDragActive: boolean,
-  isDragAccept: boolean,
+  errorState: string | undefined,
+  successState: boolean,
   isDragReject: boolean
 ) => {
   let icon: IconProps["icon"] = "CloudArrowUpIcon";
   let iconColor: IconProps["color"] = "colorIconInfo";
-  if ((!isDragActive && !isDragReject) || status === "success") {
+  if (successState) {
     icon = "CheckCircleIcon";
     iconColor = "colorIconSuccess";
   }
-  if (isDragAccept || status === "default" || status === "loading") {
-    icon = "CloudArrowUpIcon";
-    iconColor = "colorIconInfo";
-  }
-  if (isDragReject || status === "error" || status === "uploadError") {
+  if (isDragReject || errorState) {
     icon = "ExclamationTriangleIcon";
     iconColor = "colorIconError";
   }
@@ -100,89 +88,87 @@ const getIcon = (
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
   (
     {
+      error,
       fileTypes = { "application/pdf": [".pdf"] },
-      cancelDocumentUpload,
-      sendDocument,
+      maxFileSize = MAX_FILE_SIZE,
+      onCancel,
+      onDrop,
+      progress,
     },
     ref
   ) => {
-    const [status, setStatus] = useState("default");
-    const [progress, setProgress] = useState(0);
-    const [errors, setErrors] = useState("");
+    const [dropZoneErrors, setDropZoneErrors] = useState(error);
+    const defaultState = !dropZoneErrors && !progress;
+    const errorState = dropZoneErrors;
+    const isLoading = !!progress && progress > 0 && progress < 100;
+    const successState = progress === 100 && !dropZoneErrors;
+
     const {
       acceptedFiles,
       getRootProps,
       getInputProps,
-      isDragActive,
       isDragAccept,
       isDragReject,
       isFocused,
     } = useDropzone({
       maxFiles: 1,
-      maxSize: MAX_FILE_SIZE,
+      maxSize: maxFileSize,
       multiple: false,
       accept: {
         ...fileTypes,
       },
       onDropAccepted: () => {
-        setStatus("loading");
-        sendDocument(acceptedFiles[0], (progress) => {
-          setProgress(progress);
-        })
-          .then(() => {
-            setProgress(0);
-            setStatus("success");
-          })
-          .catch(() => {
-            setStatus("uploadError");
-          });
+        onDrop(acceptedFiles);
       },
       onDropRejected: (fileRejections) => {
-        setStatus("error");
         forEach(fileRejections, (file) => {
           forEach(file.errors, (err) => {
             if (err.code === "file-too-large") {
-              setErrors("File must be less than 50mb.");
+              setDropZoneErrors("File must be less than 50mb.");
             }
             if (err.code === "file-invalid-type") {
-              setErrors("Wrong file type. PDF format only.");
+              setDropZoneErrors("Wrong file type. PDF format only.");
             }
           });
         });
       },
     });
 
-    React.useEffect(() => {
-      if (isDragActive) {
-        setStatus("default");
-      }
-    }, [isDragActive]);
-
     return (
       <>
+        {/*  // Ignoring this ts-error because getRootProps is typed as
+        // DropzoneRootProps which has a conflicting color prop. DropzoneRootProps
+        // comes directly from React-Dropzone so we have no control over it.
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        @ts-ignore */}
         <Box.div
-          {...getVariants(status, isDragAccept, isDragReject, isFocused)}
+          {...getColors(
+            errorState,
+            isLoading,
+            successState,
+            isFocused,
+            isDragAccept,
+            isDragReject
+          )}
           alignItems="center"
-          borderRadius={"borderRadius30"}
-          borderStyle={"borderDashed"}
-          borderWidth={"borderWidth10"}
+          borderRadius="borderRadius30"
+          borderStyle="borderDashed"
+          borderWidth="borderWidth10"
           display="flex"
           flexDirection="column"
-          padding={"space70"}
-          {...getRootProps({
-            status,
-            isDragActive,
-            isDragAccept,
-            isDragReject,
-          })}
+          padding="space70"
+          {...getRootProps()}
           ref={ref}
         >
-          <input {...getInputProps()} />
-          {getIcon(status, isDragActive, isDragAccept, isDragReject)}
-
-          {!isDragActive && status === "loading" && (
+          <input
+            {...getInputProps()}
+            aria-label="upload-file-input"
+            role="textbox"
+          />
+          {getIcon(errorState, successState, isDragReject)}
+          {isLoading && (
             <>
-              {acceptedFiles[0].name}
+              {acceptedFiles.join(", ")}
               <Box.div
                 alignItems="center"
                 display="flex"
@@ -196,47 +182,37 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
                 <CancelUploadButton
                   onClick={(event) => {
                     event.stopPropagation();
-                    cancelDocumentUpload(acceptedFiles[0].name).then(() =>
-                      setStatus("default")
-                    );
+                    onCancel(acceptedFiles);
+                    console.log("inside cancel button cancel");
                   }}
                 />
               </Box.div>
             </>
           )}
-          {!isDragActive && status === "uploadError" && (
+          {successState && (
+            <Text.span color="colorTextStronger" fontSize="fontSize20">
+              {acceptedFiles.join(", ")}
+            </Text.span>
+          )}
+          {errorState && (
             <Text.span
               color="colorTextStronger"
-              fontSize={"fontSize30"}
+              fontSize="fontSize30"
               fontWeight="fontWeightRegular"
             >
-              The file failed to upload, please try again.
+              {dropZoneErrors}
             </Text.span>
           )}
-          {!isDragActive && status === "success" && (
-            <Text.span color="colorTextStronger" fontSize={"fontSize20"}>
-              {acceptedFiles[0].name}
-            </Text.span>
-          )}
-          {(isDragReject || status === "error") && (
-            <Text.span
-              color="colorTextStronger"
-              fontSize={"fontSize30"}
-              fontWeight="fontWeightRegular"
-            >
-              {errors || "Wrong file type. PDF format only."}
-            </Text.span>
-          )}
-          {status == "default" && !isDragReject && (
+          {defaultState && (
             <>
               <Text.span
                 color="colorTextStronger"
-                fontSize={"fontSize30"}
+                fontSize="fontSize30"
                 fontWeight="fontWeightRegular"
               >
                 Drag and drop or browse
               </Text.span>
-              <Text.span color="colorText" fontSize={"fontSize20"}>
+              <Text.span color="colorText" fontSize="fontSize20">
                 File must be PDF format and no larger than 50MB
               </Text.span>
             </>

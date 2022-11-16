@@ -9,6 +9,7 @@ Object {
     "spin": "x-spin 1s linear infinite",
   },
   "borderStyles": Object {
+    "borderDashed": "dashed",
     "borderSolid": "solid",
   },
   "borderWidths": Object {
