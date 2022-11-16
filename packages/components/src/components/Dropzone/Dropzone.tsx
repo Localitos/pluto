@@ -1,11 +1,21 @@
 import React from "react";
+import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { FileWithPath, useDropzone } from "react-dropzone";
+import type { DropzoneState } from "react-dropzone";
 import { styled, theme } from "@localyze-pluto/theme";
 import { Text } from "../../primitives/Text";
 import { ProgressBar } from "../ProgressBar";
 import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
 import { CancelUploadButton } from "./CancelUploadButton";
+
+// interface SomeProps
+//   extends Pick<
+//     DropzoneState,
+//     "isDragAccept" | "isDragReject" | "isFocused" | "isDragActive"
+//   > {
+//   status: string;
+// }
 
 type DropzoneProps = {
   // FileSize
@@ -15,56 +25,67 @@ type DropzoneProps = {
   // MultipleFiles: boolean;
   /** This is the function that gets triggered when a file is dropped */
   sendDocument: (
-    file: FileWithPath,
-    progress: (progress: number) => void
-  ) => Promise<string>;
+    file: File,
+    onProgress?: ((progressPercentage: number) => void) | undefined
+  ) => Promise<unknown>;
   /** This is the function that gets triggered when a file is dropped */
-  cancelDocumentUpload: () => void;
+  cancelDocumentUpload: () => Promise<unknown>;
   /** The file types allowed. In the format of an object. */
   fileTypes?: Record<string, never>;
 };
+/**/
 
-const getBorderColors = ({ status, isDragAccept, isDragReject, isFocused }) => {
-  if (status === "success") {
-    return `${theme.colors.colorBorderSuccess}`;
-  }
-  if (isDragAccept) {
-    return `${theme.colors.colorBorderPrimary}`;
-  }
-  if (isDragReject || status === "error" || status === "uploadError") {
-    return `${theme.colors.colorBorderError}`;
-  }
-  if (isFocused) {
-    return `${theme.colors.colorBorderPrimary}`;
-  }
-  return `${theme.colors.colorBorder}`;
-};
-
-const getBackgroundColors = ({
-  status,
-  isDragAccept,
-  isDragReject,
-  isFocused,
-}) => {
+const getVariants = (
+  status: string,
+  isDragAccept: boolean,
+  isDragReject: boolean,
+  isFocused: boolean
+): {
+  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderColor?: SystemProp<keyof Theme["colors"], Theme>;
+} => {
   if (status === "loading") {
-    return `${theme.colors.colorBackgroundInfo}`;
+    return {
+      backgroundColor: "colorBackgroundInfo",
+      borderColor: "colorBorderPrimary",
+    };
   }
   if (status === "success") {
-    return `${theme.colors.colorBackgroundSuccess}`;
+    return {
+      backgroundColor: "colorBackgroundSuccess",
+      borderColor: "colorBorderSuccess",
+    };
   }
   if (isDragAccept) {
-    return `${theme.colors.colorBackgroundInfo}`;
+    return {
+      backgroundColor: "colorBackgroundInfo",
+      borderColor: "colorBorderPrimary",
+    };
   }
   if (isDragReject || status === "error" || status === "uploadError") {
-    return `${theme.colors.colorBackgroundError}`;
+    return {
+      backgroundColor: "colorBackgroundError",
+      borderColor: "colorBorderError",
+    };
   }
   if (isFocused) {
-    return `${theme.colors.colorBackground}`;
+    return {
+      backgroundColor: "colorBackground",
+      borderColor: "colorBorderPrimary",
+    };
   }
-  return `${theme.colors.colorBackgroundWeakest}`;
+  return {
+    backgroundColor: "colorBackgroundWeakest",
+    borderColor: "colorBorderPrimary",
+  };
 };
 
-const getIcon = (status: string, isDragActive, isDragAccept, isDragReject) => {
+const getIcon = (
+  status: string,
+  isDragAccept: boolean,
+  isDragReject: boolean,
+  isDragActive: boolean
+) => {
   let icon: IconProps["icon"] = "CloudArrowUpIcon";
   let iconColor: IconProps["color"] = "colorIconInfo";
   if (!isDragActive && status === "success") {
@@ -83,28 +104,6 @@ const getIcon = (status: string, isDragActive, isDragAccept, isDragReject) => {
   return <Icon color={iconColor} decorative icon={icon} size={"sizeIcon40"} />;
 };
 
-const DropZone = styled(Box.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: ${theme.space.space70};
-  border-width: 2px;
-  border-radius: ${theme.radii.borderRadius30};
-  border-color: ${(props) => getBorderColors(props)};
-  border-style: dashed;
-  background-color: ${(props) => getBackgroundColors(props)};
-  outline: none;
-  transition: border 0.24s ease-in-out;
-  &:focus {
-    outline: none;
-    border-color: red;
-  }
-`;
-/* This is what the dropzone should look like when used in a component */
-{
-  /* <Dropzone fileType="foo" onSuccess={() => console.log('yay')} /> */
-}
-
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
   (
     {
@@ -114,10 +113,8 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     },
     ref
   ) => {
-    /* Const status = getStatus({ disabled, progress, fileUrl, errorMessage }); */
     const [status, setStatus] = React.useState("default");
     const [progress, setProgress] = React.useState(0);
-
     const {
       acceptedFiles,
       getRootProps,
@@ -125,6 +122,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
       isDragActive,
       isDragAccept,
       isDragReject,
+      isFocused,
     } = useDropzone({
       maxFiles: 1,
       multiple: false,
@@ -132,6 +130,8 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         ...fileTypes,
       },
       onDropAccepted: () => {
+        setStatus("loading");
+        console.log("sendDocument", sendDocument);
         sendDocument(acceptedFiles[0], (progress) => {
           setProgress(progress);
         })
@@ -153,7 +153,14 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
 
     return (
       <>
-        <DropZone
+        <Box.div
+          {...getVariants(status, isDragAccept, isDragReject, isFocused)}
+          alignItems="center"
+          borderRadius={"borderRadius30"}
+          borderWidth={"borderWidth10"}
+          display="flex"
+          flexDirection="column"
+          padding={"space70"}
           {...getRootProps({
             status,
             isDragActive,
@@ -165,16 +172,16 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           <input {...getInputProps()} />
           {getIcon(status, isDragActive, isDragAccept, isDragReject)}
           {status === "loading" && (
-            <>
+            <Box.div maxWidth="300px" w="100%">
               <Box.div marginTop="space40" maxWidth="280px" w="100%">
                 <ProgressBar value={progress} />
               </Box.div>
               <CancelUploadButton
                 onClick={() => {
-                  cancelDocumentUpload();
+                  cancelDocumentUpload().then(() => setStatus("default"));
                 }}
               />
-            </>
+            </Box.div>
           )}
           {(isDragReject || status === "error" || status === "uploadError") && (
             <Text.span
@@ -206,7 +213,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               {acceptedFiles[0].name}
             </Text.span>
           )}
-        </DropZone>
+        </Box.div>
       </>
     );
   }

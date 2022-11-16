@@ -1,6 +1,60 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
+import React, { useState } from "react";
+import Uppy from "@uppy/core";
 import { Dropzone } from "./Dropzone";
+
+const resolveAfter2Seconds = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("resolved");
+    }, 2000);
+  });
+}
+
+const sendDocument = async (
+  file: File,
+  onProgress?: (progressPercentage: number) => void
+) => {
+  console.log("calling");
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  return result;
+};
+
+// const sendDocument = async (
+//   file: File,
+//   onProgress?: (progressPercentage: number) => void
+// ) => {
+//   // let count = 0;
+
+//   // setTimeout(() => {
+//   //   const intervalID = setInterval(() => {
+//   //     if (count === 100) {
+//   //       clearInterval(intervalID);
+//   //     } else {
+//   //       count++;
+//   //     }
+//   //   }, 100);
+//   // }, 2000);
+
+//   // if (onProgress !== undefined) {
+//   //   onProgress(count);
+//   // }
+
+//   return new Promise(function (resolve, reject) {
+//     setTimeout(() => {
+//       return reject(new Error("It broke"));
+//     }, 5000);
+//   });
+// };
+
+const cancelDocumentUpload = () => {
+  return new Promise(function (resolve, reject) {
+    setTimeout(() => {
+      return reject(new Error("It broke"));
+    }, 1000);
+  });
+};
 
 export default {
   component: Dropzone,
@@ -10,28 +64,13 @@ export default {
 const Template: ComponentStory<typeof Dropzone> = (args) => (
   <Dropzone {...args} />
 );
-{
-  /* <Dropzone fileType="foo" onSuccess={() => console.log('yay')} /> */
-}
 
-export const Simple = Template.bind({});
-Simple.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-// User
-
-/* Potential props */
-/* FileTypes */
-/* OnSuccess */
-// This is the function that will send the file to an endpoint
-
-// Notes on Dropzone
-
-// Question about the icons? How do I Type them?
-
-// How do we get a loading state?
-
-// How do I combine the getBackgroundColors and getBorderColors functions?
-
-// How do I get the progress bar displaying?
-
-// What exactly is the focus and what do I need from the input?
+export const WithDocumentUpload = (): React.ReactElement => (
+  <Dropzone
+    cancelDocumentUpload={cancelDocumentUpload}
+    sendDocument={sendDocument}
+  />
+);
