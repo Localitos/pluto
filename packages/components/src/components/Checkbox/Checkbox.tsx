@@ -84,8 +84,6 @@ const StyledCheckbox = styled.input`
   border-radius: 4px;
   margin-right: ${theme.space.space30};
   padding: 4px 0 0;
-  margin-top: 1.5px;
-  align-self: start;
 
   &:focus {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 2px ${
@@ -147,7 +145,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
   ) => {
     return (
       <Box.div
-        alignItems="center"
+        alignItems="start"
         borderRadius="borderRadius30"
         display="flex"
         flexDirection="row"
