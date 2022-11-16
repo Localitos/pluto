@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 4.1.3
+
+### Patch Changes
+
+- [#230](https://github.com/Localitos/pluto/pull/230) [`1e64298`](https://github.com/Localitos/pluto/commit/1e6429869934ddc4f5e06a2643474a72f1e69d1d) Thanks [@padulafacundo](https://github.com/padulafacundo)! - Don't show file information on FileUploader if a file was updated but there is no `fileName`
+
 ## 4.1.2
 
 ### Patch Changes
