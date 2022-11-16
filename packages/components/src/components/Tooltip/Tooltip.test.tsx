@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
-import { Default } from "./Tooltip.stories";
+import { Default as TooltipContainer } from "./Tooltip.stories";
 
 const OPEN_TOOLTIP_TEXT = "Hover or focus on me";
 
