@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 4.2.0
+
+### Minor Changes
+
+- [#221](https://github.com/Localitos/pluto/pull/221) [`4ef2a10`](https://github.com/Localitos/pluto/commit/4ef2a10687a65d378a0e6a86c26c2f556adbf799) Thanks [@richbachman](https://github.com/richbachman)! - [Tooltip]: Initial release of the tooltip component.
+
 ## 4.1.3
 
 ### Patch Changes
