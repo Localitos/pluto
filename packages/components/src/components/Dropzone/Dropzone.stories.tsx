@@ -1,57 +1,44 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
-import React, { useState } from "react";
-import Uppy from "@uppy/core";
+import React from "react";
+import { FileWithPath } from "react-dropzone";
 import { Dropzone } from "./Dropzone";
 
 const resolveAfter2Seconds = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve("resolved");
+      resolve("Document uploaded successfully");
     }, 2000);
   });
-}
-
-const sendDocument = async (
-  file: File,
-  onProgress?: (progressPercentage: number) => void
-) => {
-  console.log("calling");
-  const result = await resolveAfter2Seconds();
-  console.log(result);
-  return result;
 };
 
-// const sendDocument = async (
-//   file: File,
-//   onProgress?: (progressPercentage: number) => void
-// ) => {
-//   // let count = 0;
+const sendDocument = async (
+  file: FileWithPath,
+  onProgress?: (progressPercentage: number) => void
+) => {
+  let current = 0;
+  let interval = null;
 
-//   // setTimeout(() => {
-//   //   const intervalID = setInterval(() => {
-//   //     if (count === 100) {
-//   //       clearInterval(intervalID);
-//   //     } else {
-//   //       count++;
-//   //     }
-//   //   }, 100);
-//   // }, 2000);
+  const useCallback = () => {
+    if (onProgress !== undefined) {
+      onProgress(current);
+    }
+    const nextCount = current++;
+    if (nextCount === 100) {
+      clearInterval(interval);
+    }
+  };
 
-//   // if (onProgress !== undefined) {
-//   //   onProgress(count);
-//   // }
+  interval = setInterval(useCallback, 10);
 
-//   return new Promise(function (resolve, reject) {
-//     setTimeout(() => {
-//       return reject(new Error("It broke"));
-//     }, 5000);
-//   });
-// };
+  if (current < 100) {
+    return await resolveAfter2Seconds();
+  }
+};
 
-const cancelDocumentUpload = () => {
+const cancelDocumentUpload = (name: string) => {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
-      return reject(new Error("It broke"));
+      return reject(new Error(`${name} failed to upload`));
     }, 1000);
   });
 };
@@ -62,13 +49,16 @@ export default {
 } as ComponentMeta<typeof Dropzone>;
 
 const Template: ComponentStory<typeof Dropzone> = (args) => (
-  <Dropzone {...args} />
+  <Dropzone
+    {...args}
+    cancelDocumentUpload={cancelDocumentUpload}
+    sendDocument={sendDocument}
+  />
 );
 
 export const Default = Template.bind({});
-Default.args = {};
 
-export const WithDocumentUpload = (): React.ReactElement => (
+export const WithDocumentUploadSuccess = (): React.ReactElement => (
   <Dropzone
     cancelDocumentUpload={cancelDocumentUpload}
     sendDocument={sendDocument}

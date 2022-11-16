@@ -4,6 +4,7 @@ export const theme = {
   ...defaultTheme,
   borderStyles: {
     borderSolid: "solid",
+    borderDashed: "dashed",
   },
   borderWidths: {
     borderWidth0: "0px",
