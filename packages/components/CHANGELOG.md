@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 4.2.1
+
+### Patch Changes
+
+- [#234](https://github.com/Localitos/pluto/pull/234) [`6e60427`](https://github.com/Localitos/pluto/commit/6e60427644b68f75ab37cbe5f0cae63888cb7077) Thanks [@apvale](https://github.com/apvale)! - [FileUploader] Add colorText color to FileUploaderDescription
+
+- [#216](https://github.com/Localitos/pluto/pull/216) [`7f438a2`](https://github.com/Localitos/pluto/commit/7f438a2cf2be67170fbd30470e28e27661eebc44) Thanks [@alinurr1](https://github.com/alinurr1)! - fix checkbox width with long labels
+
 ## 4.2.0
 
 ### Minor Changes
