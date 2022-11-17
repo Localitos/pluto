@@ -80,9 +80,6 @@ describe("<Dropzone />", () => {
     expect(input).toBeInTheDocument();
     await userEvent.upload(input, file);
 
-    /* Expect(input.files[0]).toBe(file); */
-    /* Expect(input.files.item(0)).toBe(file); */
-    /* Expect(input.files).toHaveLength(1); */
     expect(mockOnDrop).toHaveBeenCalled();
   });
 
@@ -92,5 +89,13 @@ describe("<Dropzone />", () => {
       onCancel: NOOP,
       onDrop: NOOP,
     });
+    expect(
+      screen.queryByRole("button", {
+        name: /cancel upload/i,
+      })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("File must be PDF format and no larger than 50MB")
+    ).not.toBeInTheDocument();
   });
 });
