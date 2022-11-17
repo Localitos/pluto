@@ -7,8 +7,10 @@ import { ProgressBar } from "../ProgressBar";
 import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
 import { CancelUploadButton } from "./CancelUploadButton";
+import { drop } from "lodash";
 
 const MAX_FILE_SIZE = 52_428_800;
+const FileTypeErrorMessage = "Wrong file type. PDF format only."
 
 export type DropzoneProps = {
   /** This is the function that gets triggered when a file is dropped */
@@ -69,15 +71,21 @@ const getColors = (
 const getIcon = (
   errorState: string | undefined,
   successState: boolean,
-  isDragReject: boolean
+  isDragAccept: boolean,
+  isDragReject: boolean,
+  isDragActive: boolean
 ) => {
   let icon: IconProps["icon"] = "CloudArrowUpIcon";
   let iconColor: IconProps["color"] = "colorIconInfo";
-  if (successState) {
+  if (isDragAccept) {
+    icon = "CloudArrowUpIcon";
+    iconColor = "colorIconInfo";
+  }
+  if (successState && !isDragActive) {
     icon = "CheckCircleIcon";
     iconColor = "colorIconSuccess";
   }
-  if (isDragReject || errorState) {
+  if (isDragReject || (errorState && !isDragActive)) {
     icon = "ExclamationTriangleIcon";
     iconColor = "colorIconError";
   }
@@ -102,11 +110,12 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     const errorState = dropZoneErrors;
     const isLoading = !!progress && progress > 0 && progress < 100;
     const successState = progress === 100 && !dropZoneErrors;
-
+    
     const {
       acceptedFiles,
       getRootProps,
       getInputProps,
+      isDragActive,
       isDragAccept,
       isDragReject,
       isFocused,
@@ -121,13 +130,14 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         onDrop(acceptedFiles);
       },
       onDropRejected: (fileRejections) => {
+        console.log("fileRejections", fileRejections);
         forEach(fileRejections, (file) => {
           forEach(file.errors, (err) => {
             if (err.code === "file-too-large") {
               setDropZoneErrors("File must be less than 50mb.");
             }
             if (err.code === "file-invalid-type") {
-              setDropZoneErrors("Wrong file type. PDF format only.");
+              setDropZoneErrors(FileTypeErrorMessage);
             }
           });
         });
@@ -160,12 +170,13 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           {...getRootProps()}
           ref={ref}
         >
+          {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
           <input
             {...getInputProps()}
             aria-label="upload-file-input"
             role="textbox"
           />
-          {getIcon(errorState, successState, isDragReject)}
+          {getIcon(errorState, successState, isDragAccept, isDragReject, isDragActive)}
           {isLoading && (
             <>
               {acceptedFiles.join(", ")}
@@ -183,7 +194,6 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
                   onClick={(event) => {
                     event.stopPropagation();
                     onCancel(acceptedFiles);
-                    console.log("inside cancel button cancel");
                   }}
                 />
               </Box.div>
@@ -194,16 +204,17 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               {acceptedFiles.join(", ")}
             </Text.span>
           )}
-          {errorState && (
+          {(isDragReject || errorState) && (
             <Text.span
               color="colorTextStronger"
               fontSize="fontSize30"
               fontWeight="fontWeightRegular"
             >
-              {dropZoneErrors}
+              {!isDragReject && dropZoneErrors}
+              {isDragReject && FileTypeErrorMessage}
             </Text.span>
           )}
-          {defaultState && (
+          {(!isDragReject && defaultState) && (
             <>
               <Text.span
                 color="colorTextStronger"
