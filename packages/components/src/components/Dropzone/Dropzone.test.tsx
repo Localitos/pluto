@@ -1,18 +1,22 @@
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import { Dropzone, DropzoneProps } from "./Dropzone";
 
+// Disabling the overzealous rules.
+// eslint-disable-next-line lodash/prefer-noop, @typescript-eslint/no-empty-function
+const NOOP = (): void => {};
+
 const renderDropZone = ({
-  onCancel = () => {},
-  onDrop = () => {},
+  onCancel = NOOP,
+  onDrop = NOOP,
   ...props
 }: DropzoneProps) =>
   render(<Dropzone onCancel={onCancel} onDrop={onDrop} {...props} />);
 
 describe("<Dropzone />", () => {
   it("renders default state", () => {
-    renderDropZone({ onCancel: () => {}, onDrop: () => {} });
+    renderDropZone({ onCancel: NOOP, onDrop: NOOP });
 
     expect(screen.getByText("Drag and drop or browse")).toBeInTheDocument();
     expect(
@@ -23,8 +27,8 @@ describe("<Dropzone />", () => {
   it("renders error state", () => {
     renderDropZone({
       error: "File must be less than 50mb.",
-      onCancel: () => {},
-      onDrop: () => {},
+      onCancel: NOOP,
+      onDrop: NOOP,
     });
     expect(
       screen.getByText("File must be less than 50mb.")
@@ -34,8 +38,8 @@ describe("<Dropzone />", () => {
   it("renders loading state", async () => {
     renderDropZone({
       progress: 33,
-      onCancel: () => {},
-      onDrop: () => {},
+      onCancel: NOOP,
+      onDrop: NOOP,
     });
 
     const cancelButton = await screen.findByRole("button", {
@@ -49,7 +53,7 @@ describe("<Dropzone />", () => {
     renderDropZone({
       progress: 33,
       onCancel: mockOnCancel,
-      onDrop: () => {},
+      onDrop: NOOP,
     });
 
     const cancelButton = await screen.findByRole("button", {
@@ -67,7 +71,7 @@ describe("<Dropzone />", () => {
       type: "application/pdf",
     });
     renderDropZone({
-      onCancel: () => {},
+      onCancel: NOOP,
       onDrop: mockOnDrop,
     });
 
@@ -76,17 +80,17 @@ describe("<Dropzone />", () => {
     expect(input).toBeInTheDocument();
     await userEvent.upload(input, file);
 
-    /* expect(input.files[0]).toBe(file); */
-    /* expect(input.files.item(0)).toBe(file); */
-    /* expect(input.files).toHaveLength(1); */
+    /* Expect(input.files[0]).toBe(file); */
+    /* Expect(input.files.item(0)).toBe(file); */
+    /* Expect(input.files).toHaveLength(1); */
     expect(mockOnDrop).toHaveBeenCalled();
   });
 
   it("renders success state when progress is 100", async () => {
     renderDropZone({
       progress: 100,
-      onCancel: () => {},
-      onDrop: () => {},
+      onCancel: NOOP,
+      onDrop: NOOP,
     });
   });
 });

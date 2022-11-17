@@ -6,11 +6,10 @@ import { Text } from "../../primitives/Text";
 import { ProgressBar } from "../ProgressBar";
 import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
-import { CancelUploadButton } from "./CancelUploadButton";
-import { drop } from "lodash";
+import { DropzoneCancelUploadButton } from "./DropzoneCancelUploadButton";
 
 const MAX_FILE_SIZE = 52_428_800;
-const FileTypeErrorMessage = "Wrong file type. PDF format only."
+const FileTypeErrorMessage = "Wrong file type. PDF format only.";
 
 export type DropzoneProps = {
   /** This is the function that gets triggered when a file is dropped */
@@ -110,7 +109,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     const errorState = dropZoneErrors;
     const isLoading = !!progress && progress > 0 && progress < 100;
     const successState = progress === 100 && !dropZoneErrors;
-    
+
     const {
       acceptedFiles,
       getRootProps,
@@ -130,7 +129,6 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         onDrop(acceptedFiles);
       },
       onDropRejected: (fileRejections) => {
-        console.log("fileRejections", fileRejections);
         forEach(fileRejections, (file) => {
           forEach(file.errors, (err) => {
             if (err.code === "file-too-large") {
@@ -176,7 +174,13 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
             aria-label="upload-file-input"
             role="textbox"
           />
-          {getIcon(errorState, successState, isDragAccept, isDragReject, isDragActive)}
+          {getIcon(
+            errorState,
+            successState,
+            isDragAccept,
+            isDragReject,
+            isDragActive
+          )}
           {isLoading && (
             <>
               {acceptedFiles.join(", ")}
@@ -190,7 +194,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
                 <Box.div maxWidth="280px" w="100%">
                   <ProgressBar value={progress} />
                 </Box.div>
-                <CancelUploadButton
+                <DropzoneCancelUploadButton
                   onClick={(event) => {
                     event.stopPropagation();
                     onCancel(acceptedFiles);
@@ -214,7 +218,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               {isDragReject && FileTypeErrorMessage}
             </Text.span>
           )}
-          {(!isDragReject && defaultState) && (
+          {!isDragReject && defaultState && (
             <>
               <Text.span
                 color="colorTextStronger"
