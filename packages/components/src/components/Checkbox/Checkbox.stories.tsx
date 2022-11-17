@@ -21,6 +21,13 @@ Default.args = {
   id: "checkbox-default",
 };
 
+export const LongText = Template.bind({});
+LongText.args = {
+  children:
+    "Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text Checkbox with a long text ",
+  id: "checkbox-long-text",
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: "Checkbox",
