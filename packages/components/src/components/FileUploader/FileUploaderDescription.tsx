@@ -19,5 +19,9 @@ export const FileUploaderDescription = ({
     fileSize || (maxFileSize && `Max. file size ${maxFileSize}`) || null;
   const text = size && status !== "loading" ? `${name} • ${size}` : name;
 
-  return <Text.span fontSize="fontSize10">{text}</Text.span>;
+  return (
+    <Text.span color="colorText" fontSize="fontSize10">
+      {text}
+    </Text.span>
+  );
 };
