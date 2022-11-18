@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
+import map from "lodash/map";
 import { FileWithPath, useDropzone } from "react-dropzone";
 import forEach from "lodash/forEach";
 import { Text } from "../../primitives/Text";
@@ -43,7 +44,7 @@ const getColors = (
       borderColor: "colorBorderPrimary",
     };
   }
-  if (successState) {
+  if (!isDragReject && successState) {
     return {
       backgroundColor: "colorBackgroundSuccess",
       borderColor: "colorBorderSuccess",
@@ -57,7 +58,7 @@ const getColors = (
   }
   if (isFocused) {
     return {
-      backgroundColor: "colorBackground",
+      backgroundColor: "colorBackgroundWeakest",
       borderColor: "colorBorderPrimary",
     };
   }
@@ -69,6 +70,7 @@ const getColors = (
 
 const getIcon = (
   errorState: string | undefined,
+  isLoading: boolean,
   successState: boolean,
   isDragAccept: boolean,
   isDragReject: boolean,
@@ -76,7 +78,7 @@ const getIcon = (
 ) => {
   let icon: IconProps["icon"] = "CloudArrowUpIcon";
   let iconColor: IconProps["color"] = "colorIconInfo";
-  if (isDragAccept) {
+  if (isLoading || isDragAccept) {
     icon = "CloudArrowUpIcon";
     iconColor = "colorIconInfo";
   }
@@ -89,7 +91,11 @@ const getIcon = (
     iconColor = "colorIconError";
   }
 
-  return <Icon color={iconColor} decorative icon={icon} size={"sizeIcon40"} />;
+  return (
+    <Box.div paddingBottom="space20">
+      <Icon color={iconColor} decorative icon={icon} size={"sizeIcon40"} />
+    </Box.div>
+  );
 };
 
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
@@ -125,7 +131,8 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
       accept: {
         ...fileTypes,
       },
-      onDropAccepted: () => {
+      onDropAccepted: (acceptedFiles) => {
+        setDropZoneErrors(undefined);
         onDrop(acceptedFiles);
       },
       onDropRejected: (fileRejections) => {
@@ -164,10 +171,13 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           borderWidth="borderWidth10"
           display="flex"
           flexDirection="column"
+          justifyContent="center"
+          minHeight="142.5px"
           padding="space70"
           {...getRootProps()}
           ref={ref}
         >
+          {/* //react-dropzone is overwriting the aria-role and we need to add it back in to be accessible. */}
           {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
           <input
             {...getInputProps()}
@@ -176,6 +186,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           />
           {getIcon(
             errorState,
+            isLoading,
             successState,
             isDragAccept,
             isDragReject,
@@ -183,11 +194,12 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           )}
           {isLoading && (
             <>
-              {acceptedFiles.join(", ")}
+              <Text.span color="colorTextStronger" fontSize="fontSize20">
+                {map(acceptedFiles, ({ name }) => name).join(", ")}
+              </Text.span>
               <Box.div
                 alignItems="center"
                 display="flex"
-                marginTop="space40"
                 maxWidth="300px"
                 w="100%"
               >
@@ -203,9 +215,9 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               </Box.div>
             </>
           )}
-          {successState && (
+          {successState && !isDragAccept && !isDragReject && (
             <Text.span color="colorTextStronger" fontSize="fontSize20">
-              {acceptedFiles.join(", ")}
+              {map(acceptedFiles, ({ name }) => name).join(", ")}
             </Text.span>
           )}
           {(isDragReject || errorState) && (
@@ -218,14 +230,15 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               {isDragReject && FileTypeErrorMessage}
             </Text.span>
           )}
-          {!isDragReject && defaultState && (
+          {((!isDragReject && defaultState) ||
+            (isDragAccept && progress === 100)) && (
             <>
               <Text.span
                 color="colorTextStronger"
                 fontSize="fontSize30"
                 fontWeight="fontWeightRegular"
               >
-                Drag and drop or browse
+                Drag and drop or click to select a file
               </Text.span>
               <Text.span color="colorText" fontSize="fontSize20">
                 File must be PDF format and no larger than 50MB

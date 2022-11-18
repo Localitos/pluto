@@ -18,7 +18,9 @@ describe("<Dropzone />", () => {
   it("renders default state", () => {
     renderDropZone({ onCancel: NOOP, onDrop: NOOP });
 
-    expect(screen.getByText("Drag and drop or browse")).toBeInTheDocument();
+    expect(
+      screen.getByText("Drag and drop or click to select a file")
+    ).toBeInTheDocument();
     expect(
       screen.getByText("File must be PDF format and no larger than 50MB")
     ).toBeInTheDocument();

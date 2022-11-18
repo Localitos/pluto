@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Dropzone } from "./Dropzone";
 
 // Disabling the overzealous rules.
@@ -29,4 +29,34 @@ Loading.args = {
 export const Success = Template.bind({});
 Success.args = {
   progress: 100,
+};
+
+export const WithMockedSuccess = (): React.ReactElement => {
+  const [progress, setProgress] = useState<number>(0);
+
+  const [isUploading, setIsUploading] = useState(false);
+  const [cancelClick, setCancelClick] = useState(false);
+
+  useEffect(() => {
+    if (isUploading && progress < 100) {
+      setTimeout(() => {
+        setProgress((progress) => progress + 10);
+      }, 500);
+    }
+    if (cancelClick) {
+      setIsUploading(false);
+      setProgress(0);
+      setCancelClick(false);
+    }
+  }, [isUploading, cancelClick, progress]);
+
+  const onDrop = () => {
+    setProgress(0);
+    setIsUploading(true);
+  };
+  const onCancel = () => {
+    setCancelClick(true);
+  };
+
+  return <Dropzone onCancel={onCancel} onDrop={onDrop} progress={progress} />;
 };
