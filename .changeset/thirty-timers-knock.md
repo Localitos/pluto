@@ -2,4 +2,4 @@
 "@localyze-pluto/components": patch
 ---
 
-add br tag support to RichText
+Add br tag support to RichText
