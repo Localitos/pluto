@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 5.0.1
+
+### Patch Changes
+
+- [#239](https://github.com/Localitos/pluto/pull/239) [`11a1a91`](https://github.com/Localitos/pluto/commit/11a1a9123cfcd4cf27a6a7e60894b00748498856) Thanks [@richbachman](https://github.com/richbachman)! - [Dropzone]: Fix the component export to include Dropzone.
+
 ## 5.0.0
 
 ### Minor Changes
