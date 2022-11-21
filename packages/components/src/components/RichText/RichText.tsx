@@ -99,6 +99,9 @@ const RichText = ({
           case "B": {
             return <strong>{domToReact(children, options)}</strong>;
           }
+          case "BR": {
+            return <br />;
+          }
           default: {
             return <span>{domToReact(children, options)}</span>;
           }
