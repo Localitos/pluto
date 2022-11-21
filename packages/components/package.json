@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/components",
-  "version": "4.2.2",
+  "version": "5.0.0",
   "description": "Pluto Design System Components",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "@heroicons/react": "^2.0.12",
-    "@localyze-pluto/theme": "^1.3.0",
+    "@localyze-pluto/theme": "^1.4.0",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-progress": "^1.0.1",
     "@xstyled/styled-components": "^3.6.0",
@@ -50,7 +50,7 @@
   "devDependencies": {
     "@heroicons/react": "^2.0.12",
     "@localyze-pluto/eslint-config": "^1.0.1",
-    "@localyze-pluto/theme": "^1.3.0",
+    "@localyze-pluto/theme": "^1.4.0",
     "@localyze-pluto/tsconfig": "^1.0.0",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-progress": "^1.0.1",
