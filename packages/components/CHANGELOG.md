@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 4.2.2
+
+### Patch Changes
+
+- [#235](https://github.com/Localitos/pluto/pull/235) [`e722239`](https://github.com/Localitos/pluto/commit/e722239252a3f941e2eb3b99bba1744c8fad1574) Thanks [@alinurr1](https://github.com/alinurr1)! - Add br tag support to RichText
+
 ## 4.2.1
 
 ### Patch Changes
