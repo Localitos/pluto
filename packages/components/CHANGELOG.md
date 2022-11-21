@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 5.0.0
+
+### Minor Changes
+
+- [#205](https://github.com/Localitos/pluto/pull/205) [`8105f45`](https://github.com/Localitos/pluto/commit/8105f45531e62b7356c25cb0caf90610c1914115) Thanks [@blumaa](https://github.com/blumaa)! - added a dropzone for file upload and dashed border
+
+### Patch Changes
+
+- Updated dependencies [[`8105f45`](https://github.com/Localitos/pluto/commit/8105f45531e62b7356c25cb0caf90610c1914115)]:
+  - @localyze-pluto/theme@1.4.0
+
 ## 4.2.2
 
 ### Patch Changes
