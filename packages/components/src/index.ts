@@ -4,6 +4,7 @@ export * from "./components/Badge";
 export * from "./components/Button";
 export * from "./components/Callout";
 export * from "./components/Checkbox";
+export * from "./components/Drawer";
 export * from "./components/Dropzone";
 export * from "./components/FileUploader";
 export * from "./components/Heading";
