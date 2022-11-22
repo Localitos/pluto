@@ -3,7 +3,7 @@ import { Tooltip as TooltipPrimitive, TooltipArrow } from "ariakit";
 import type { TooltipProps as TooltipPrimitiveProps } from "ariakit";
 import { Box } from "../../primitives/Box";
 
-export interface TooltipProps extends TooltipPrimitiveProps {
+export interface TooltipProps extends Omit<TooltipPrimitiveProps, "noonce"> {
   /** The contents of the tooltip. */
   children: NonNullable<React.ReactNode>;
 }

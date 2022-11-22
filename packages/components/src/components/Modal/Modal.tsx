@@ -3,7 +3,7 @@ import { Dialog } from "ariakit/dialog";
 import type { DialogProps } from "ariakit";
 import { Box } from "../../primitives/Box";
 
-export interface ModalProps extends DialogProps {
+export interface ModalProps extends Omit<DialogProps, "noonce"> {
   /** The contents of the modal. */
   children: NonNullable<React.ReactNode>;
 }
@@ -21,6 +21,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         left="50%"
         maxHeight="90vh"
         maxWidth="47.75rem"
+        nonce={undefined}
         position="fixed"
         ref={ref}
         top="50%"
