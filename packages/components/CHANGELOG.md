@@ -1,5 +1,12 @@
 # @localyze-pluto/components
 
+## 5.0.2
+
+### Patch Changes
+
+- [#241](https://github.com/Localitos/pluto/pull/241) [`3cfd865`](https://github.com/Localitos/pluto/commit/3cfd865e4d4b8940a920309f2492668d3f108ec6) Thanks [@richbachman](https://github.com/richbachman)! - - [Modal]: Omit `noonce` from ModalProps to fix bug in compiled application.
+  - [Tooltip]: Omit `noonce` from TooltipProps to fix bug in compiled application.
+
 ## 5.0.1
 
 ### Patch Changes
