@@ -3,7 +3,7 @@ import { Dialog } from "ariakit/dialog";
 import type { DialogProps } from "ariakit";
 import { Box } from "../../primitives/Box";
 
-export interface ModalProps extends DialogProps {
+export interface ModalProps extends Omit<DialogProps, "noonce"> {
   /** The contents of the modal. */
   children: NonNullable<React.ReactNode>;
 }

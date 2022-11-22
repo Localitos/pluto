@@ -17,9 +17,6 @@ import {
 export default {
   component: Modal,
   title: "Components/Modal",
-  parameters: {
-    chromatic: { delay: 1000 },
-  },
 } as ComponentMeta<typeof Modal>;
 
 export const Default = (): JSX.Element => {
@@ -60,6 +57,10 @@ export const Default = (): JSX.Element => {
   );
 };
 
+Default.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
+};
+
 export const NoPaddingOnBody = (): React.ReactNode => {
   const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
   return (
@@ -97,6 +98,10 @@ export const NoPaddingOnBody = (): React.ReactNode => {
       </Modal>
     </Box.div>
   );
+};
+
+NoPaddingOnBody.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
 };
 
 export const OverflowBodyContent = (): React.ReactNode => {
@@ -174,6 +179,10 @@ export const OverflowBodyContent = (): React.ReactNode => {
   );
 };
 
+OverflowBodyContent.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
+};
+
 export const ReallyLongHeader = (): React.ReactNode => {
   const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
   return (
@@ -216,6 +225,10 @@ export const ReallyLongHeader = (): React.ReactNode => {
   );
 };
 
+ReallyLongHeader.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
+};
+
 export const InitialFocus = (): JSX.Element => {
   const buttonRef = React.createRef<HTMLButtonElement>();
   const modal = useModalState({
@@ -256,4 +269,8 @@ export const InitialFocus = (): JSX.Element => {
       </Modal>
     </Box.div>
   );
+};
+
+InitialFocus.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
 };

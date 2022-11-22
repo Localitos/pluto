@@ -23,7 +23,8 @@
     "xlarge",
     "xsmall",
     "unhover",
-    "uppy"
+    "uppy",
+    "noonce"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
