@@ -21,7 +21,6 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         left="50%"
         maxHeight="90vh"
         maxWidth="47.75rem"
-        nonce={undefined}
         position="fixed"
         ref={ref}
         top="50%"
