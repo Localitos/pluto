@@ -7,13 +7,20 @@ export interface ModalBodyProps
   children: NonNullable<React.ReactNode>;
   /** Sets the padding of the modal body. */
   padding?: "space0" | "space60";
+  /** Disables the overflowY for situations where the modal includes a dropdown. */
+  disableOverflow?: boolean;
 }
 
 /** The body content area of the modal. */
 const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>(
-  ({ children, padding = "space60", ...props }, ref) => {
+  ({ children, disableOverflow, padding = "space60", ...props }, ref) => {
     return (
-      <Box.div overflowY="auto" padding={padding} ref={ref} {...props}>
+      <Box.div
+        overflowY={!disableOverflow ? "auto" : undefined}
+        padding={padding}
+        ref={ref}
+        {...props}
+      >
         {children}
       </Box.div>
     );
