@@ -183,6 +183,85 @@ OverflowBodyContent.parameters = {
   chromatic: { delay: 1000, pauseAnimationAtEnd: true },
 };
 
+export const OverflowBodyDisabled = (): React.ReactNode => {
+  const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
+  return (
+    <Box.div h="1000px" w="1350px">
+      <Button onClick={modal.toggle} variant="primary">
+        Open modal
+      </Button>
+      <Modal state={modal}>
+        <ModalHeader>
+          <ModalHeading>This is the heading</ModalHeading>
+          <ModalSubHeading>This is the sub heading</ModalSubHeading>
+        </ModalHeader>
+        <ModalBody disableOverflow>
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph marginBottom="space0">
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph marginBottom="space0">
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph marginBottom="space0">
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph marginBottom="space0">
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+        </ModalBody>
+        <ModalFooter>
+          <Button onClick={modal.toggle} variant="secondary">
+            Back
+          </Button>
+          <Button onClick={modal.toggle} variant="primary">
+            Done
+          </Button>
+        </ModalFooter>
+      </Modal>
+    </Box.div>
+  );
+};
+
+OverflowBodyDisabled.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
+};
+
 export const ReallyLongHeader = (): React.ReactNode => {
   const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
   return (
