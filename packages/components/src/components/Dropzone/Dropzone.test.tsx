@@ -21,8 +21,31 @@ describe("<Dropzone />", () => {
     expect(
       screen.getByText("Drag and drop or click to select a file")
     ).toBeInTheDocument();
+
     expect(
-      screen.getByText("File must be PDF format and no larger than 50MB")
+      screen.queryByText("File must be PDF format and no larger than 50MB")
+    ).not.toBeInTheDocument();
+  });
+
+  it("renders file restriction text", () => {
+    renderDropZone({
+      onCancel: NOOP,
+      onDrop: NOOP,
+      fileTypes: {
+        "image/jpeg": [".jpg", ".jpeg"],
+        "application/pdf": [".pdf"],
+      },
+      maxFileSize: 12 * 1024 * 1024,
+    });
+
+    expect(
+      screen.getByText("Drag and drop or click to select a file")
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText(
+        "File must be JPG, JPEG, PDF format and no larger than 12MB"
+      )
     ).toBeInTheDocument();
   });
 

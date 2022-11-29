@@ -17,6 +17,15 @@ const Template: ComponentStory<typeof Dropzone> = (args) => (
 
 export const Default = Template.bind({});
 
+export const WithFileRestrictions = Template.bind({});
+WithFileRestrictions.args = {
+  fileTypes: {
+    "image/jpeg": [".jpg", ".jpeg"],
+    "application/pdf": [".pdf"],
+  },
+  maxFileSize: 12 * 1024 * 1024,
+};
+
 export const Error = Template.bind({});
 Error.args = {
   error: "The document failed to upload",

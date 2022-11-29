@@ -7,10 +7,14 @@ import { Text } from "../../primitives/Text";
 import { ProgressBar } from "../ProgressBar";
 import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
+import {
+  fileSizeInMb,
+  getFileExtensions,
+  getFileRestrictionText,
+} from "./getFileRestrictionText";
 import { DropzoneCancelUploadButton } from "./DropzoneCancelUploadButton";
 
-const MAX_FILE_SIZE = 52_428_800;
-const FileTypeErrorMessage = "Wrong file type. PDF format only.";
+export type FileTypes = Record<string, string[]>;
 
 export type DropzoneProps = {
   /** This is the function that gets triggered when a file is dropped */
@@ -20,7 +24,7 @@ export type DropzoneProps = {
   /** This is an error if there is one. string */
   error?: string;
   /** The file types allowed. In the format of an object.{ "application/pdf": [".pdf"] } */
-  fileTypes?: Record<string, string[]>;
+  fileTypes?: FileTypes;
   /** The max file size allowed. Default is 50mb. Number of bytes*/
   maxFileSize?: number;
   /** This is the progress of the file upload. */
@@ -98,12 +102,15 @@ const getIcon = (
   );
 };
 
+const getFileTypeErrorMessage = (fileTypes: FileTypes) =>
+  `Wrong file type. ${getFileExtensions(fileTypes)} format only.`;
+
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
   (
     {
       error,
-      fileTypes = { "application/pdf": [".pdf"] },
-      maxFileSize = MAX_FILE_SIZE,
+      fileTypes = {},
+      maxFileSize = undefined,
       onCancel,
       onDrop,
       progress,
@@ -113,8 +120,10 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     const [dropZoneErrors, setDropZoneErrors] = useState(error);
     const defaultState = !dropZoneErrors && !progress;
     const errorState = dropZoneErrors;
+
     const isLoading = !!progress && progress > 0 && progress < 100;
     const successState = progress === 100 && !dropZoneErrors;
+    const fileRestrictionText = getFileRestrictionText(fileTypes, maxFileSize);
 
     const {
       acceptedFiles,
@@ -138,11 +147,13 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
       onDropRejected: (fileRejections) => {
         forEach(fileRejections, (file) => {
           forEach(file.errors, (err) => {
-            if (err.code === "file-too-large") {
-              setDropZoneErrors("File must be less than 50mb.");
+            if (err.code === "file-too-large" && maxFileSize) {
+              setDropZoneErrors(
+                `File must be less than ${fileSizeInMb(maxFileSize)}MB.`
+              );
             }
             if (err.code === "file-invalid-type") {
-              setDropZoneErrors(FileTypeErrorMessage);
+              setDropZoneErrors(getFileTypeErrorMessage(fileTypes));
             }
           });
         });
@@ -227,7 +238,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               fontWeight="fontWeightRegular"
             >
               {!isDragReject && dropZoneErrors}
-              {isDragReject && FileTypeErrorMessage}
+              {isDragReject && getFileTypeErrorMessage(fileTypes)}
             </Text.span>
           )}
           {((!isDragReject && defaultState) ||
@@ -240,9 +251,11 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               >
                 Drag and drop or click to select a file
               </Text.span>
-              <Text.span color="colorText" fontSize="fontSize20">
-                File must be PDF format and no larger than 50MB
-              </Text.span>
+              {fileRestrictionText && (
+                <Text.span color="colorText" fontSize="fontSize20">
+                  {fileRestrictionText}
+                </Text.span>
+              )}
             </>
           )}
         </Box.div>
