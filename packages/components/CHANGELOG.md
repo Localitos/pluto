@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 5.1.0
+
+### Minor Changes
+
+- [#237](https://github.com/Localitos/pluto/pull/237) [`45faf14`](https://github.com/Localitos/pluto/commit/45faf14e9c944b490d57faa2441388bbe9ba4c59) Thanks [@richbachman](https://github.com/richbachman)! - [Drawer] Added the Drawer component, stories, and tests.
+
+### Patch Changes
+
+- [#255](https://github.com/Localitos/pluto/pull/255) [`d954fa4`](https://github.com/Localitos/pluto/commit/d954fa4d2c25a0378e92151eeb51f911650ccb14) Thanks [@richbachman](https://github.com/richbachman)! - [Modal]: Added `disableOverflow` prop to ModalBody so a modal can be used with content that is visible outside the modal body area, i.e. a dropdown.
+
 ## 5.0.2
 
 ### Patch Changes
