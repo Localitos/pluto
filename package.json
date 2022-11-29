@@ -28,7 +28,7 @@
     "packages/**"
   ],
   "dependencies": {
-    "@tanstack/react-table": "^8.5.30",
+    "@tanstack/react-table": "^8.7.0",
     "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
