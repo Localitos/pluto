@@ -1,5 +1,12 @@
 # @localyze-pluto/components
 
+## 5.1.1
+
+### Patch Changes
+
+- [#256](https://github.com/Localitos/pluto/pull/256) [`9e40ea0`](https://github.com/Localitos/pluto/commit/9e40ea0be014c5d0116c6e5bab34c3dbc681f53d) Thanks [@sliminas](https://github.com/sliminas)! - [Dropzone]: Use `fileTypes` and `maxFileSize` props to generate the file size and type restriction
+  text and according error messages.
+
 ## 5.1.0
 
 ### Minor Changes
