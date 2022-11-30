@@ -9,8 +9,8 @@ Object {
     "spin": "x-spin 1s linear infinite",
   },
   "borderStyles": Object {
-    "borderDashed": "dashed",
-    "borderSolid": "solid",
+    "borderStyleDashed": "dashed",
+    "borderStyleSolid": "solid",
   },
   "borderWidths": Object {
     "borderWidth0": "0px",
@@ -51,7 +51,7 @@ Object {
     "colorBackgroundWeaker": "#F7F9FF",
     "colorBackgroundWeakest": "#F8FAFC",
     "colorBorder": "#64748B",
-    "colorBorderError": "#DC2626",
+    "colorBorderError": "#EF4444",
     "colorBorderPrimary": "#102EE9",
     "colorBorderStrongest": "#0F172A",
     "colorBorderSuccess": "#059669",
@@ -106,7 +106,7 @@ Object {
     "fontWeightRegular": "400",
   },
   "fonts": Object {
-    "fontFamilyModerat": "\\"Moderat\\", \\"Inter\\", sans-serif",
+    "fontFamilyModerat": "'Moderat', 'Inter', sans-serif",
   },
   "gridTemplateColumns": Object {
     "1": "repeat(1, minmax(0, 1fr))",
