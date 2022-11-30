@@ -3,6 +3,7 @@ module.exports = {
   roots: ["<rootDir>/packages"],
   transform: {
     "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.[j]sx?$": "babel-jest",
   },
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
   testEnvironment: "jsdom",
