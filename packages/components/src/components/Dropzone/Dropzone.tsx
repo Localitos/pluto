@@ -178,7 +178,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           )}
           alignItems="center"
           borderRadius="borderRadius30"
-          borderStyle="borderDashed"
+          borderStyle="borderStyleDashed"
           borderWidth="borderWidth10"
           display="flex"
           flexDirection="column"

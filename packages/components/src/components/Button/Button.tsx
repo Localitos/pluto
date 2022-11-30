@@ -222,7 +222,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           aria-busy={loading ? "true" : "false"}
           background="none"
           borderRadius="borderRadius20"
-          borderStyle="borderSolid"
+          borderStyle="borderStyleSolid"
           cursor={{
             _: "default",
             hover: "pointer",
