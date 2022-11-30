@@ -1,5 +1,8 @@
 {
   "border-style": {
+    "dashed": {
+      "value": "dashed"
+    },
     "solid": {
       "value": "solid"
     }
