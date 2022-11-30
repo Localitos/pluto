@@ -1,6 +1,7 @@
 {
   "color": {
     "text-strongest": {
+      "type": "color",
       "value": "#0F172A"
     },
     "text-stronger": {
@@ -69,6 +70,12 @@
     "background-primary-strongest": {
       "value": "#041162"
     },
+    "background-decorative-weak": {
+      "value": "#FFF1DB"
+    },
+    "background-decorative-strong": {
+      "value": "#C8F0EF"
+    },
     "background-destructive": {
       "value": "#DC2626"
     },
@@ -92,6 +99,9 @@
     },
     "background-body": {
       "value": "#F7F9FF"
+    },
+    "background-body-strong": {
+      "value": "#1E293B"
     },
     "border-weakest": {
       "value": "#E2E8F0"
