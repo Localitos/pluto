@@ -14,7 +14,7 @@ const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
       <Box.div
         alignItems="center"
         borderTopColor="colorBorderWeakest"
-        borderTopStyle="borderSolid"
+        borderTopStyle="borderStyleSolid"
         borderTopWidth="borderWidth10"
         display="flex"
         gap="space30"

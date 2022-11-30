@@ -15,7 +15,7 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
     return (
       <Box.div
         borderBottomColor="colorBorderWeakest"
-        borderBottomStyle="borderSolid"
+        borderBottomStyle="borderStyleSolid"
         borderBottomWidth="borderWidth10"
         display="flex"
         gap="space30"
