@@ -12,7 +12,7 @@ export const Default = (): JSX.Element => (
     backgroundColor="colorBackgroundInfo"
     borderColor="colorBorderPrimary"
     borderRadius="borderRadius20"
-    borderStyle="borderSolid"
+    borderStyle="borderStyleSolid"
     borderWidth="borderWidth10"
     color="colorTextStronger"
     padding="space40"

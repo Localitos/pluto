@@ -41,7 +41,7 @@ export const IconList: React.FC = () => {
         return (
           <Box.div
             borderColor="colorBorder"
-            borderStyle="borderSolid"
+            borderStyle="borderStyleSolid"
             borderWidth="borderWidth10"
             padding="space60"
             textAlign="center"

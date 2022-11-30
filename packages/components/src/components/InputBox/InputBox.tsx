@@ -78,7 +78,7 @@ const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
       <Box.div
         alignItems="center"
         borderRadius="borderRadius20"
-        borderStyle="borderSolid"
+        borderStyle="borderStyleSolid"
         color="colorText"
         cursor={disabled ? "not-allowed" : "auto"}
         data-disabled={disabled}
