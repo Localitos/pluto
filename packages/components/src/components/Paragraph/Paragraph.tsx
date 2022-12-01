@@ -48,9 +48,11 @@ const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ children, marginBottom = "space70", size = "medium", ...props }, ref) => {
     return (
       <Text.p
+        color="colorTextStrongest"
         fontFamily="fontFamilyModerat"
         fontWeight="fontWeightRegular"
         marginBottom={marginBottom}
+        marginTop="space0"
         ref={ref}
         {...getParagraphStyles(size)}
         {...props}

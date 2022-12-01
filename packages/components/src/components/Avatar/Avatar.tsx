@@ -122,15 +122,14 @@ const getLabelSizes = (
         fontSize: "fontSize10",
       };
     }
-    case "small":
     case "large": {
       return {
-        fontSize: "fontSize20",
+        fontSize: "fontSize30",
       };
     }
     default: {
       return {
-        fontSize: "fontSize30",
+        fontSize: "fontSize20",
       };
     }
   }

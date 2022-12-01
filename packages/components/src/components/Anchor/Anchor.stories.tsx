@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof Anchor> = (args) => <Anchor {...args} />;
 
 const defaultArgs = {
   children: "I'm an anchor",
-  href: "https://www.localyze.com",
+  href: "#",
 };
 
 export const Default = Template.bind({});

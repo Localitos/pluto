@@ -19,7 +19,7 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
     return (
       <Box.label
         alignItems="center"
-        color="colorText"
+        color="colorTextStrongest"
         display="flex"
         fontFamily="fontFamilyModerat"
         fontSize="fontSize10"

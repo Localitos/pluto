@@ -19,9 +19,9 @@ export const Default = Template.bind({});
 Default.args = {
   children: (
     <Box.div>
-      <Text.p>This is a default message.</Text.p>
+      <Text.span display="block">This is a default message.</Text.span>
       <Box.div color="colorTextLink">
-        <UnorderedList>
+        <UnorderedList color="currentColor" marginBottom="space0">
           <ListItem>
             <Anchor href="https://www.localyze.com">localyze.com</Anchor>
           </ListItem>

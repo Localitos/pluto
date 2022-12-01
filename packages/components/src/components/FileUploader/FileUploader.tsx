@@ -78,6 +78,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
             status === "error" ? "colorBorderError" : "colorBorderWeaker"
           }
           borderRadius="borderRadius30"
+          borderStyle="borderSolid"
           borderWidth="borderWidth10"
           display="flex"
           flexDirection={{ _: "column", md: "row" }}
