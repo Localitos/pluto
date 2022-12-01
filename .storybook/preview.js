@@ -12,7 +12,6 @@ export const decorators = [
   (Story) => {
     return (
       <ThemeProvider theme={theme}>
-        <Preflight />
         <GlobalStyles />
         <BaseStyles />
         <Story />
