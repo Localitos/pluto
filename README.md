@@ -69,3 +69,7 @@ Enough said.
 ### 4. Feedback
 
 Let us know if you have any [feedback](https://github.com/Localitos/pluto/discussions/new) or [issues](https://github.com/Localitos/pluto/issues/new).
+
+### 5. Contributing
+
+If you are interested in contributing to Pluto, a contributing guide can be found [here](https://github.com/Localitos/pluto/blob/main/CONTRIBUTING.md).
