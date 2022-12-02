@@ -4,4 +4,3 @@ chore: "chore/*"
 documentation: ["docs/*", "documentation/*"]
 enhancement: ["perf/*", "refactor/*", "ci/*", "build/*"]
 skip-changelog: ["release/*"]
-do-not-merge: ["**/*"]
