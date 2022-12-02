@@ -1,0 +1,12 @@
+version = 1
+
+[merge]
+automerge_label = "🚀 merge it!"
+blocking_labels = ["wip", "do-not-merge"]
+method = "squash"
+
+[merge.automerge_dependencies]
+# only auto merge "minor" and "patch" version upgrades.
+# do not automerge "major" version upgrades.
+versions = ["minor", "patch"]
+usernames = ["dependabot"]
