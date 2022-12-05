@@ -51,7 +51,7 @@ Object {
     "colorBackgroundWeaker": "#F7F9FF",
     "colorBackgroundWeakest": "#F8FAFC",
     "colorBorder": "#64748B",
-    "colorBorderError": "#EF4444",
+    "colorBorderError": "#DC2626",
     "colorBorderPrimary": "#102EE9",
     "colorBorderStrongest": "#0F172A",
     "colorBorderSuccess": "#059669",
