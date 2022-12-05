@@ -1,5 +1,25 @@
 # @localyze-pluto/theme
 
+## 2.0.0
+
+### Major Changes
+
+- [#273](https://github.com/Localitos/pluto/pull/273) [`10fa34a`](https://github.com/Localitos/pluto/commit/10fa34a7bd7604e4fe740f1dfd422d7949d6961d) Thanks [@richbachman](https://github.com/richbachman)! - BREAKING CHANGE:
+
+  Adds the Pluto design tokens package and imports the necessary tokens into the theme. Doing so changed the names of the Border Style theme values:
+
+  - `borderDashed` changed to `borderStyleDashed`
+  - `borderSolid` changed to `borderStyleSolid`
+
+### Minor Changes
+
+- [#268](https://github.com/Localitos/pluto/pull/268) [`0da44e2`](https://github.com/Localitos/pluto/commit/0da44e2ebd53607f478686095524c33113f462e2) Thanks [@richbachman](https://github.com/richbachman)! - Removed color from the body base styles so as not to interfere with any downstream application usage.
+
+### Patch Changes
+
+- Updated dependencies [[`251b377`](https://github.com/Localitos/pluto/commit/251b377388ce3b812a3f4ced433afff0fa1f0d17)]:
+  - @localyze-pluto/design-tokens@0.0.4
+
 ## 1.4.0
 
 ### Minor Changes

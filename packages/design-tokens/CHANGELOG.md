@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.0.4
+
+### Patch Changes
+
+- [#273](https://github.com/Localitos/pluto/pull/273) [`251b377`](https://github.com/Localitos/pluto/commit/251b377388ce3b812a3f4ced433afff0fa1f0d17) Thanks [@richbachman](https://github.com/richbachman)! - Setup separate build files for javascript and typescript formats. This allows the theme package to import the tokens necessary.
+
 ## 0.0.3
 
 ### Patch Changes
