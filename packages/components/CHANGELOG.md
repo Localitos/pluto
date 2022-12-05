@@ -1,5 +1,21 @@
 # @localyze-pluto/components
 
+## 6.0.0
+
+### Patch Changes
+
+- [#273](https://github.com/Localitos/pluto/pull/273) [`c295e2c`](https://github.com/Localitos/pluto/commit/c295e2c4496db3afed922557b9e2cb7d6abbf046) Thanks [@richbachman](https://github.com/richbachman)! - Updated the border style values with the new value names.
+
+- [#268](https://github.com/Localitos/pluto/pull/268) [`eede46c`](https://github.com/Localitos/pluto/commit/eede46c61c09e7674468bbb25f3e93f07d0d9d57) Thanks [@richbachman](https://github.com/richbachman)! - - [FileUploader]: Set the correct border style prop (borderSolid).
+  - [Heading]: Removed the default browser top margin.
+  - [InputBox]: Set the correct color prop (colorText).
+  - [Label]: Set the correct color prop (colorTextStrongest).
+  - [UnorderedList]: Added a color prop (colorTextStrongest | currentColor). Removed the default browser spacing. Added a marginBottom prop (space0 | space70).
+  - [OrderedList]: Added a color prop (colorTextStrongest | currentColor). Removed the default browser spacing. Added a marginBottom prop (space0 | space70).
+  - [Paragraph]: Set the correct color prop (colorTextStrongest), and removed the default browser top margin.
+- Updated dependencies [[`0da44e2`](https://github.com/Localitos/pluto/commit/0da44e2ebd53607f478686095524c33113f462e2), [`10fa34a`](https://github.com/Localitos/pluto/commit/10fa34a7bd7604e4fe740f1dfd422d7949d6961d)]:
+  - @localyze-pluto/theme@2.0.0
+
 ## 5.1.1
 
 ### Patch Changes
