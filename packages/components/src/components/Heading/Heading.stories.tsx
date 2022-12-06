@@ -59,6 +59,10 @@ WithBreakpoints.args = {
   size: { _: "heading60", md: "heading10" },
 };
 
+WithBreakpoints.parameters = {
+  chromatic: { viewports: [320, 1200] },
+};
+
 export const NoMargin = Template.bind({});
 NoMargin.args = {
   children: "I'm a h2 element with no bottom margin.",
