@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.1.0
+
+### Minor Changes
+
+- [#272](https://github.com/Localitos/pluto/pull/272) [`67c8bb2`](https://github.com/Localitos/pluto/commit/67c8bb2f6bd94099659eb3ee45be0501234bb3c4) Thanks [@blumaa](https://github.com/blumaa)! - fixed dropzone error handling when isDragActive
+
 ## 6.0.0
 
 ### Patch Changes
