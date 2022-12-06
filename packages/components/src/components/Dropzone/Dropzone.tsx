@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import map from "lodash/map";
 import { FileWithPath, useDropzone } from "react-dropzone";
@@ -159,6 +159,12 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         });
       },
     });
+
+    useEffect(() => {
+      if (isDragActive && !isDragReject) {
+        setDropZoneErrors(undefined);
+      }
+    }, [isDragActive, isDragReject]);
 
     return (
       <>
