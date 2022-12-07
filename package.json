@@ -54,7 +54,7 @@
     "assert": "^2.0.0",
     "cspell": "^6.15.0",
     "danger": "^11.1.4",
-    "eslint": "^8.28.0",
+    "eslint": "^8.29.0",
     "husky": "^8.0.1",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^29.2.2",
