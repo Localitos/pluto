@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.2.1
+
+### Patch Changes
+
+- [#296](https://github.com/Localitos/pluto/pull/296) [`6d40e99`](https://github.com/Localitos/pluto/commit/6d40e99de2cf2a6e3ea6cdf02e96d1e489f5bcd9) Thanks [@blumaa](https://github.com/blumaa)! - adjusted dropzone to exclude hetero file drops
+
 ## 6.2.0
 
 ### Minor Changes
