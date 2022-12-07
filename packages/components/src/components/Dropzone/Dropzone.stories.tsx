@@ -24,6 +24,7 @@ WithFileRestrictions.args = {
     "application/pdf": [".pdf"],
   },
   maxFileSize: 12 * 1024 * 1024,
+  maxNumFiles: 2,
 };
 
 export const Error = Template.bind({});
@@ -67,5 +68,14 @@ export const WithMockedSuccess = (): React.ReactElement => {
     setCancelClick(true);
   };
 
-  return <Dropzone onCancel={onCancel} onDrop={onDrop} progress={progress} />;
+  return (
+    <Dropzone
+      fileTypes={{
+        "application/pdf": [".pdf"],
+      }}
+      onCancel={onCancel}
+      onDrop={onDrop}
+      progress={progress}
+    />
+  );
 };
