@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 6.2.0
+
+### Minor Changes
+
+- [#295](https://github.com/Localitos/pluto/pull/295) [`54b7b8d`](https://github.com/Localitos/pluto/commit/54b7b8d34a808f651f6bc58bacd56835648292ae) Thanks [@blumaa](https://github.com/blumaa)! - Refactor of dropzone to remove isDragReject
+
+### Patch Changes
+
+- [#275](https://github.com/Localitos/pluto/pull/275) [`5ca824a`](https://github.com/Localitos/pluto/commit/5ca824ae552f488cc0c6d92948b1ac1ea7c3aa98) Thanks [@richbachman](https://github.com/richbachman)! - [Heading]: adjusted the breakpoint story so it shows correctly in Chromatic.
+
 ## 6.1.0
 
 ### Minor Changes
