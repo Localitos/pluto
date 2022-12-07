@@ -22,17 +22,16 @@ export const getFileRestrictionText = (
     return;
   }
 
-  const tooManyFilesText = `you can upload only ${maxNumFiles} file${
+  const tooManyFilesText = `You can upload ${maxNumFiles} file${
     maxNumFiles > 1 ? `s.` : `.`
   }`;
   const fileExtensions = !isEmpty(fileTypes) && getFileExtensions(fileTypes);
 
   return compact([
-    "File must be ",
+    tooManyFilesText,
+    " File must be ",
     fileExtensions && `${fileExtensions} format`,
     fileExtensions && maxFileSize && ", ",
-    maxFileSize && `no larger than ${fileSizeInMb(maxFileSize)}MB`,
-    ", and ",
-    tooManyFilesText,
+    maxFileSize && `no larger than ${fileSizeInMb(maxFileSize)}MB.`,
   ]).join("");
 };

@@ -135,11 +135,11 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
 
     const {
       acceptedFiles,
-      fileRejections,
       getRootProps,
       getInputProps,
       isDragActive,
       isDragAccept,
+      isDragReject,
       isFocused,
     } = useDropzone({
       maxFiles: maxNumFiles,
@@ -149,7 +149,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         ...fileTypes,
       },
       onDropAccepted: (acceptedFiles) => {
-        if (fileRejections.length === 0) {
+        if (!isDragReject) {
           onDrop(acceptedFiles);
         }
       },

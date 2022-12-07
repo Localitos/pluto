@@ -44,7 +44,7 @@ describe("<Dropzone />", () => {
 
     expect(
       screen.getByText(
-        "File must be JPG, JPEG, PDF format, no larger than 12MB, and you can upload only 1 file."
+        "You can upload 1 file. File must be JPG, JPEG, PDF format, no larger than 12MB."
       )
     ).toBeInTheDocument();
   });
