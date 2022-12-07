@@ -15,18 +15,24 @@ export const getFileExtensions = (fileTypes: FileTypes): string =>
 
 export const getFileRestrictionText = (
   fileTypes: FileTypes,
+  maxNumFiles: number,
   maxFileSize?: number
 ): string | undefined => {
   if (isEmpty(fileTypes) && !maxFileSize) {
     return;
   }
 
+  const tooManyFilesText = `you can upload only ${maxNumFiles} file${
+    maxNumFiles > 1 ? `s.` : `.`
+  }`;
   const fileExtensions = !isEmpty(fileTypes) && getFileExtensions(fileTypes);
 
   return compact([
     "File must be ",
     fileExtensions && `${fileExtensions} format`,
-    fileExtensions && maxFileSize && " and ",
+    fileExtensions && maxFileSize && ", ",
     maxFileSize && `no larger than ${fileSizeInMb(maxFileSize)}MB`,
+    ", and ",
+    tooManyFilesText,
   ]).join("");
 };

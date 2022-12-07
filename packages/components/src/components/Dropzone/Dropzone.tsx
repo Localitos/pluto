@@ -25,6 +25,8 @@ export type DropzoneProps = {
   error?: string;
   /** The file types allowed. In the format of an object.{ "application/pdf": [".pdf"] } */
   fileTypes?: FileTypes;
+  /** The max number of files allowed to be dropped. Default is 1. Number.*/
+  maxNumFiles?: number;
   /** The max file size allowed. Default is 50mb. Number of bytes*/
   maxFileSize?: number;
   /** This is the progress of the file upload. */
@@ -36,8 +38,7 @@ const getColors = (
   isLoading: boolean,
   successState: boolean,
   isFocused: boolean,
-  isDragAccept: boolean,
-  isDragReject: boolean
+  isDragAccept: boolean
 ): {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
@@ -48,13 +49,13 @@ const getColors = (
       borderColor: "colorBorderPrimary",
     };
   }
-  if (!isDragReject && successState) {
+  if (successState) {
     return {
       backgroundColor: "colorBackgroundSuccess",
       borderColor: "colorBorderSuccess",
     };
   }
-  if (errorState || isDragReject) {
+  if (errorState) {
     return {
       backgroundColor: "colorBackgroundError",
       borderColor: "colorBorderError",
@@ -77,7 +78,6 @@ const getIcon = (
   isLoading: boolean,
   successState: boolean,
   isDragAccept: boolean,
-  isDragReject: boolean,
   isDragActive: boolean
 ) => {
   let icon: IconProps["icon"] = "CloudArrowUpIcon";
@@ -90,7 +90,7 @@ const getIcon = (
     icon = "CheckCircleIcon";
     iconColor = "colorIconSuccess";
   }
-  if (isDragReject || (errorState && !isDragActive)) {
+  if (errorState && !isDragActive) {
     icon = "ExclamationTriangleIcon";
     iconColor = "colorIconError";
   }
@@ -110,6 +110,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     {
       error,
       fileTypes = {},
+      maxNumFiles = 1,
       maxFileSize = undefined,
       onCancel,
       onDrop,
@@ -123,30 +124,41 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
 
     const isLoading = !!progress && progress > 0 && progress < 100;
     const successState = progress === 100 && !dropZoneErrors;
-    const fileRestrictionText = getFileRestrictionText(fileTypes, maxFileSize);
+    const fileRestrictionText = getFileRestrictionText(
+      fileTypes,
+      maxNumFiles,
+      maxFileSize
+    );
+    const tooManyFilesError = `You can upload only ${maxNumFiles} file${
+      maxNumFiles > 1 ? `s.` : `.`
+    }`;
 
     const {
       acceptedFiles,
+      fileRejections,
       getRootProps,
       getInputProps,
       isDragActive,
       isDragAccept,
-      isDragReject,
       isFocused,
     } = useDropzone({
-      maxFiles: 1,
+      maxFiles: maxNumFiles,
       maxSize: maxFileSize,
-      multiple: false,
+      multiple: maxNumFiles > 1 ? true : false,
       accept: {
         ...fileTypes,
       },
       onDropAccepted: (acceptedFiles) => {
-        setDropZoneErrors(undefined);
-        onDrop(acceptedFiles);
+        if (fileRejections.length === 0) {
+          onDrop(acceptedFiles);
+        }
       },
       onDropRejected: (fileRejections) => {
         forEach(fileRejections, (file) => {
           forEach(file.errors, (err) => {
+            if (err.code === "too-many-files") {
+              setDropZoneErrors(tooManyFilesError);
+            }
             if (err.code === "file-too-large" && maxFileSize) {
               setDropZoneErrors(
                 `File must be less than ${fileSizeInMb(maxFileSize)}MB.`
@@ -161,10 +173,10 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     });
 
     useEffect(() => {
-      if (isDragActive && !isDragReject) {
+      if (isDragActive) {
         setDropZoneErrors(undefined);
       }
-    }, [isDragActive, isDragReject]);
+    }, [isDragActive]);
 
     return (
       <>
@@ -179,8 +191,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
             isLoading,
             successState,
             isFocused,
-            isDragAccept,
-            isDragReject
+            isDragAccept
           )}
           alignItems="center"
           borderRadius="borderRadius30"
@@ -206,7 +217,6 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
             isLoading,
             successState,
             isDragAccept,
-            isDragReject,
             isDragActive
           )}
           {isLoading && (
@@ -232,23 +242,21 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               </Box.div>
             </>
           )}
-          {successState && !isDragAccept && !isDragReject && (
+          {successState && !isDragAccept && (
             <Text.span color="colorTextStronger" fontSize="fontSize20">
               {map(acceptedFiles, ({ name }) => name).join(", ")}
             </Text.span>
           )}
-          {(isDragReject || errorState) && (
+          {errorState && (
             <Text.span
               color="colorTextStronger"
               fontSize="fontSize30"
               fontWeight="fontWeightRegular"
             >
-              {!isDragReject && dropZoneErrors}
-              {isDragReject && getFileTypeErrorMessage(fileTypes)}
+              {dropZoneErrors}
             </Text.span>
           )}
-          {((!isDragReject && defaultState) ||
-            (isDragAccept && progress === 100)) && (
+          {(defaultState || (isDragAccept && progress === 100)) && (
             <>
               <Text.span
                 color="colorTextStronger"
