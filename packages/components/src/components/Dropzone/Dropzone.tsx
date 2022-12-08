@@ -8,7 +8,7 @@ import { ProgressBar } from "../ProgressBar";
 import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
 import {
-  fileSizeInMb,
+  formatBytes,
   getFileExtensions,
   getFileRestrictionText,
 } from "./getFileRestrictionText";
@@ -161,7 +161,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
             }
             if (err.code === "file-too-large" && maxFileSize) {
               setDropZoneErrors(
-                `File must be less than ${fileSizeInMb(maxFileSize)}MB.`
+                `File must be less than ${formatBytes(maxFileSize)}.`
               );
             }
             if (err.code === "file-invalid-type") {

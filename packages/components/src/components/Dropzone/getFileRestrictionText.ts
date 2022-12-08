@@ -5,7 +5,7 @@ import values from "lodash/values";
 import toUpper from "lodash/toUpper";
 import { FileTypes } from "./Dropzone";
 
-const formatBytes = (bytes: number, decimals = 0) => {
+export const formatBytes = (bytes: number, decimals = 0): string => {
   if (!+bytes) return "0 Bytes";
 
   const k = 1024;
@@ -18,9 +18,6 @@ const formatBytes = (bytes: number, decimals = 0) => {
     sizes[i]
   }`;
 };
-
-export const fileSizeInMb = (fileSize: number): number =>
-  Math.round(fileSize / 1024 / 1024);
 
 export const getFileExtensions = (fileTypes: FileTypes): string =>
   map(values(fileTypes).flat(), (extension) =>
