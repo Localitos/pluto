@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.2.3
+
+### Patch Changes
+
+- [#300](https://github.com/Localitos/pluto/pull/300) [`23bbabe`](https://github.com/Localitos/pluto/commit/23bbabefc4e837d3be6c72e2ab3bb0e708943f42) Thanks [@blumaa](https://github.com/blumaa)! - Changed error message in dropzone to include Kb
+
 ## 6.2.2
 
 ### Patch Changes
