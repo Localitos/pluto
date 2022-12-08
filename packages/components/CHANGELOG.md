@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.2.2
+
+### Patch Changes
+
+- [#298](https://github.com/Localitos/pluto/pull/298) [`f03dd66`](https://github.com/Localitos/pluto/commit/f03dd661143dbb9f6bc96f65f3935fab71a4c5a0) Thanks [@blumaa](https://github.com/blumaa)! - Adjusted file size limit in dropzone to include kb
+
 ## 6.2.1
 
 ### Patch Changes
