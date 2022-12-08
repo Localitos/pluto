@@ -30,4 +30,12 @@ describe("getFileRestrictionText", () => {
       "You can upload 1 file. File must be JPG format, no larger than 3MB."
     );
   });
+
+  it("returns correct text if file size limit is less than 1mb", () => {
+    expect(
+      getFileRestrictionText({ "image/jpeg": [".jpg"] }, 1, 500 * 1024)
+    ).toBe(
+      "You can upload 1 file. File must be JPG format, no larger than 500KB."
+    );
+  });
 });
