@@ -14,9 +14,9 @@ export const Default = (): JSX.Element => (
   </Box.div>
 );
 
-export const WithHeight = (): JSX.Element => (
+export const Large = (): JSX.Element => (
   <Box.div display="flex" flexDirection="column" gap="space40">
-    <ProgressBar borderRadius="borderRadiusPill" h="space50" value={85} />
+    <ProgressBar size="large" value={90} />
   </Box.div>
 );
 
