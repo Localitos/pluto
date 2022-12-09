@@ -14,6 +14,22 @@ export const Default = (): JSX.Element => (
   </Box.div>
 );
 
+export const WithHeight = (): JSX.Element => (
+  <Box.div display="flex" flexDirection="column" gap="space40">
+    <ProgressBar borderRadius="borderRadiusPill" h="space50" value={85} />
+  </Box.div>
+);
+
+export const WithCustomColors = (): JSX.Element => (
+  <Box.div display="flex" flexDirection="column" gap="space40">
+    <ProgressBar
+      backgroundColor="colorAvatarBackgroundPink"
+      indicatorColor="colorAvatarBackgroundGreen"
+      value={25}
+    />
+  </Box.div>
+);
+
 export const Animated = (): JSX.Element => {
   const [progress, setProgress] = useState(13);
 

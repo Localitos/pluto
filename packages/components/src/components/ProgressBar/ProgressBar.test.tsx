@@ -12,6 +12,25 @@ describe("<ProgressBar />", () => {
     expect(renderedProgressBar).toHaveAttribute("data-value", "50");
   });
 
+  it("renders background color, border radius and height correctly", () => {
+    render(
+      <ProgressBar
+        backgroundColor="colorAvatarBackgroundPink"
+        borderRadius="borderRadiusPill"
+        h="space50"
+        value={25}
+      />
+    );
+
+    const renderedProgressBar = screen.getByRole("progressbar");
+    expect(renderedProgressBar).toHaveAttribute(
+      "background",
+      "colorAvatarBackgroundPink"
+    );
+    expect(renderedProgressBar).toHaveAttribute("h", "space50");
+    expect(renderedProgressBar).toHaveAttribute("radius", "borderRadiusPill");
+  });
+
   it("should allow for global html Attributes", () => {
     render(<ProgressBar aria-label="foo" data-testid="bar" value={100} />);
 
