@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.3.0
+
+### Minor Changes
+
+- [#302](https://github.com/Localitos/pluto/pull/302) [`bfe3d07`](https://github.com/Localitos/pluto/commit/bfe3d07ca3e058be110328a7392d45cd8b7ae2d7) Thanks [@jvaladas](https://github.com/jvaladas)! - Adds support for custom colors, height and border radius on Progress Bar
+
 ## 6.2.3
 
 ### Patch Changes
