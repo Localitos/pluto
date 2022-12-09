@@ -1,5 +1,14 @@
 # @localyze-pluto/theme
 
+## 2.0.1
+
+### Patch Changes
+
+- [#306](https://github.com/Localitos/pluto/pull/306) [`02433d4`](https://github.com/Localitos/pluto/commit/02433d4a7ad033eea2bcddafd8fe45df45839a92) Thanks [@richbachman](https://github.com/richbachman)! - Imported the design tokens from the design-tokens main export.
+
+- Updated dependencies [[`ee6c277`](https://github.com/Localitos/pluto/commit/ee6c277008667cb97a981d98c5e7bb360b48d390)]:
+  - @localyze-pluto/design-tokens@0.0.5
+
 ## 2.0.0
 
 ### Major Changes
