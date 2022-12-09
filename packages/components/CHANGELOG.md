@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.3.2
+
+### Patch Changes
+
+- [#308](https://github.com/Localitos/pluto/pull/308) [`53fa075`](https://github.com/Localitos/pluto/commit/53fa075c393c9f5aa9d2a5539a433d2f4826b91d) Thanks [@richbachman](https://github.com/richbachman)! - [Icon]: add vertical alignment and display styles so we can remove Preflight.
+
 ## 6.3.1
 
 ### Patch Changes
