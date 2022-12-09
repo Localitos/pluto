@@ -29,14 +29,6 @@
       "buildPath": "dist/js/",
       "files": [
         {
-          "destination": "variables.js",
-          "format": "javascript/es6"
-        },
-        {
-          "destination": "variables.d.ts",
-          "format": "typescript/es6-declarations"
-        },
-        {
           "destination": "border-radius.js",
           "format": "javascript/es6",
           "filter": {

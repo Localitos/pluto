@@ -1,0 +1,11 @@
+export * as BorderRadiusTokens from "../dist/js/border-radius";
+export * as BorderStyleTokens from "../dist/js/border-style";
+export * as BorderWidthTokens from "../dist/js/border-width";
+export * as ColorTokens from "../dist/js/colors";
+export * as FontFamilyTokens from "../dist/js/font-family";
+export * as FontSizeTokens from "../dist/js/font-size";
+export * as FontWeightTokens from "../dist/js/font-weight";
+export * as LineHeightTokens from "../dist/js/line-height";
+export * as SizeTokens from "../dist/js/size";
+export * as SpaceTokens from "../dist/js/space";
+export * as ZIndexTokens from "../dist/js/z-index";

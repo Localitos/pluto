@@ -2,8 +2,9 @@
   "name": "@localyze-pluto/design-tokens",
   "version": "0.0.4",
   "description": "Pluto Design System Design Tokens",
-  "main": "./dist/js/variables.js",
-  "types": "./dist/js/variables.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -18,7 +19,7 @@
     "directory": "packages/design-tokens"
   },
   "scripts": {
-    "build": "yarn clean && style-dictionary build ",
+    "build": "yarn clean && style-dictionary build && tsup src/index.ts --format esm,cjs --dts --external react --minify",
     "clean": "style-dictionary clean",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix",
     "prettier-check": "prettier --check package.json tsconfig.json \"./src/**/*.{tsx,ts,json}\"",
