@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.0.5
+
+### Patch Changes
+
+- [#306](https://github.com/Localitos/pluto/pull/306) [`ee6c277`](https://github.com/Localitos/pluto/commit/ee6c277008667cb97a981d98c5e7bb360b48d390) Thanks [@richbachman](https://github.com/richbachman)! - Exporting the js design tokens into one main index file. This should fix import problems when using in other applications.
+
 ## 0.0.4
 
 ### Patch Changes
