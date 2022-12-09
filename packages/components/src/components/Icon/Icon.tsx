@@ -51,7 +51,13 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
         w={size}
         {...props}
       >
-        <RenderedIcon aria-hidden={decorative} aria-label={title} />
+        <Box.svg
+          aria-hidden={decorative}
+          aria-label={title}
+          as={RenderedIcon}
+          display="block"
+          verticalAlign="middle"
+        />
       </Box.div>
     );
   }
