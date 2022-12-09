@@ -1,26 +1,31 @@
+/* The theme object thinks all of the design tokens are typed as any when they're not. */
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { defaultTheme } from "@xstyled/styled-components";
-import * as borderRadiusTokens from "@localyze-pluto/design-tokens/dist/js/border-radius.js";
-import * as borderStyleTokens from "@localyze-pluto/design-tokens/dist/js/border-style.js";
-import * as borderWidthTokens from "@localyze-pluto/design-tokens/dist/js/border-width.js";
-import * as colorTokens from "@localyze-pluto/design-tokens/dist/js/colors.js";
-import * as fontFamilyTokens from "@localyze-pluto/design-tokens/dist/js/font-family.js";
-import * as fontSizeTokens from "@localyze-pluto/design-tokens/dist/js/font-size.js";
-import * as fontWeightTokens from "@localyze-pluto/design-tokens/dist/js/font-weight.js";
-import * as lineHeightTokens from "@localyze-pluto/design-tokens/dist/js/line-height.js";
-import * as sizeTokens from "@localyze-pluto/design-tokens/dist/js/size.js";
-import * as spaceTokens from "@localyze-pluto/design-tokens/dist/js/space.js";
-import * as zIndexTokens from "@localyze-pluto/design-tokens/dist/js/z-index.js";
+import {
+  BorderRadiusTokens,
+  BorderStyleTokens,
+  BorderWidthTokens,
+  ColorTokens,
+  FontFamilyTokens,
+  FontSizeTokens,
+  FontWeightTokens,
+  LineHeightTokens,
+  SizeTokens,
+  SpaceTokens,
+  ZIndexTokens,
+} from "@localyze-pluto/design-tokens";
 
 export const theme = {
   ...defaultTheme,
   borderStyles: {
-    ...borderStyleTokens,
+    ...BorderStyleTokens,
   },
   borderWidths: {
-    ...borderWidthTokens,
+    ...BorderWidthTokens,
   },
   colors: {
-    ...colorTokens,
+    ...ColorTokens,
     colorBackgroundTodo:
       "linear-gradient(360deg, rgba(16, 37, 233, 0.08) 0%, rgba(36, 63, 235, 0.0733333) 49.48%, rgba(255, 255, 255, 0) 100%)",
     colorBackgroundComplete:
@@ -29,19 +34,19 @@ export const theme = {
       "linear-gradient(360deg, rgba(71, 94, 105, 0.08) 6.19%, rgba(71, 94, 105, 0.0504167) 57.3%, rgba(255, 255, 255, 0) 93.81%)",
   },
   fontSizes: {
-    ...fontSizeTokens,
+    ...FontSizeTokens,
   },
   fontWeights: {
-    ...fontWeightTokens,
+    ...FontWeightTokens,
   },
   fonts: {
-    ...fontFamilyTokens,
+    ...FontFamilyTokens,
   },
   lineHeights: {
-    ...lineHeightTokens,
+    ...LineHeightTokens,
   },
   radii: {
-    ...borderRadiusTokens,
+    ...BorderRadiusTokens,
   },
   shadows: {
     shadow: "0px 3px 24px rgba(15, 23, 42, 0.05)",
@@ -50,10 +55,10 @@ export const theme = {
       "0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #102EE9",
   },
   sizes: {
-    ...sizeTokens,
+    ...SizeTokens,
   },
   space: {
-    ...spaceTokens,
+    ...SpaceTokens,
   },
   states: {
     ...defaultTheme.states,
@@ -62,6 +67,6 @@ export const theme = {
     loading: '&[aria-busy="true"]',
   },
   zIndices: {
-    ...zIndexTokens,
+    ...ZIndexTokens,
   },
 };
