@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.3.1
+
+### Patch Changes
+
+- [#304](https://github.com/Localitos/pluto/pull/304) [`dd369e5`](https://github.com/Localitos/pluto/commit/dd369e5ad1868c46c32cd9877cee6a04e267cfb5) Thanks [@jvaladas](https://github.com/jvaladas)! - Replace progress bar height with small/large size variant
+
 ## 6.3.0
 
 ### Minor Changes
