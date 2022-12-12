@@ -227,6 +227,7 @@ Object {
   "states": Object {
     "_": null,
     "active": "&:active",
+    "activeItem": "&[data-active-item]",
     "backdrop": "&[data-backdrop]",
     "checked": "&:checked",
     "disabled": "&:disabled, &[aria-disabled=true]",
@@ -243,6 +244,7 @@ Object {
     "motionSafe": "@media (prefers-reduced-motion: no-preference)",
     "odd": "&:odd",
     "placeholder": "&::placeholder",
+    "selected": "&[aria-selected=\\"true\\"]",
     "visited": "&:visited",
   },
   "texts": Object {

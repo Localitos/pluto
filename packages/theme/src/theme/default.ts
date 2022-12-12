@@ -62,9 +62,11 @@ export const theme = {
   },
   states: {
     ...defaultTheme.states,
+    activeItem: "&[data-active-item]",
     backdrop: "&[data-backdrop]",
     hidden: '&[data-hidden="true"]',
     loading: '&[aria-busy="true"]',
+    selected: '&[aria-selected="true"]',
   },
   zIndices: {
     ...ZIndexTokens,
