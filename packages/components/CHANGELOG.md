@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.4.0
+
+### Minor Changes
+
+- [#310](https://github.com/Localitos/pluto/pull/310) [`89c6408`](https://github.com/Localitos/pluto/commit/89c64082483808106868899335850a990036a65d) Thanks [@blumaa](https://github.com/blumaa)! - Add zIndex prop to modal
+
 ## 6.3.2
 
 ### Patch Changes
