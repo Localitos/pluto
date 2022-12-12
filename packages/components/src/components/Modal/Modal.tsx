@@ -1,4 +1,3 @@
-import type { SystemProp, Theme } from "@xstyled/styled-components";
 import React from "react";
 import { Dialog } from "ariakit/dialog";
 import type { DialogProps } from "ariakit";
@@ -7,13 +6,11 @@ import { Box } from "../../primitives/Box";
 export interface ModalProps extends Omit<DialogProps, "noonce"> {
   /** The contents of the modal. */
   children: NonNullable<React.ReactNode>;
-  /** The zIndex of the modal. */
-  zIndex?: SystemProp<keyof Theme["zIndices"], Theme>;
 }
 
 /** A Modal is a page overlay that displays information and blocks interaction with the page until an action is taken or the Modal is dismissed. */
 const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
-  ({ children, zIndex = "zIndex30", ...props }, ref) => {
+  ({ children, ...props }, ref) => {
     return (
       <Box.div
         as={Dialog}
@@ -29,7 +26,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         top="50%"
         transform="translate(-50%, -50%)"
         w="90vw"
-        zIndex={zIndex}
+        zIndex="zIndex30"
         {...props}
       >
         {children}
