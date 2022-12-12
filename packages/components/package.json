@@ -31,7 +31,8 @@
     "@heroicons/react": "^2.0.12",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-progress": "^1.0.1",
-    "ariakit": "^2.0.0-next.41"
+    "ariakit": "^2.0.0-next.41",
+    "react-dropzone": "^14.2.3"
   },
   "peerDependencies": {
     "@heroicons/react": "^2.0.12",
@@ -44,6 +45,7 @@
     "lodash": "^4.17.21",
     "react": "^17.0.2 || ^18.2.0",
     "react-dom": "^17.0.2 || ^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-uid": "^2.3.2",
     "styled-components": "^5.3.6"
   },

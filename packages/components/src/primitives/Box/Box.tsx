@@ -39,9 +39,9 @@ export interface BoxProps extends SystemProps {
   lineHeight?: SystemProp<keyof Theme["lineHeights"], Theme> | "inherit";
   margin?: SystemProp<keyof Theme["space"], Theme>;
   marginTop?: SystemProp<keyof Theme["space"], Theme>;
-  marginRight?: SystemProp<keyof Theme["space"], Theme>;
+  marginRight?: SystemProp<keyof Theme["space"], Theme> | "auto";
   marginBottom?: SystemProp<keyof Theme["space"], Theme>;
-  marginLeft?: SystemProp<keyof Theme["space"], Theme>;
+  marginLeft?: SystemProp<keyof Theme["space"], Theme> | "auto";
   padding?: SystemProp<keyof Theme["space"], Theme>;
   paddingTop?: SystemProp<keyof Theme["space"], Theme>;
   paddingRight?: SystemProp<keyof Theme["space"], Theme>;

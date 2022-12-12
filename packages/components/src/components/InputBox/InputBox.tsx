@@ -88,7 +88,7 @@ const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
         display="flex"
         outlineColor={{ focusWithin: "colorBorderPrimary" }}
         outlineStyle={{ focusWithin: "solid" }}
-        outlineWidth={{ focusWithin: "borderWidth20" }}
+        outlineWidth={{ focusWithin: "borderWidth10" }}
         position="relative"
         {...getInputBoxStyles(disabled, hasError, readOnly, type)}
         {...props}
