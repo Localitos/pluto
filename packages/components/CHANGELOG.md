@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.4.1
+
+### Patch Changes
+
+- [#312](https://github.com/Localitos/pluto/pull/312) [`1c826af`](https://github.com/Localitos/pluto/commit/1c826af4716606aae966e02b05d588c46e07b072) Thanks [@blumaa](https://github.com/blumaa)! - Removing the optional zIndex to make it bulletproof
+
 ## 6.4.0
 
 ### Minor Changes
