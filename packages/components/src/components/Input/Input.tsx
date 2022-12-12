@@ -120,11 +120,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           cursor={disabled ? "not-allowed" : "auto"}
           disabled={disabled}
           display="block"
-          fontFamily="inherit"
+          fontFamily="fontFamilyModerat"
           fontSize={size === "large" ? "fontSize30" : "fontSize20"}
-          fontWeight="inherit"
+          fontWeight="fontWeightMedium"
           id={id}
-          lineHeight="inherit"
+          lineHeight="lineHeight30"
           margin="space0"
           name={name}
           outline="none"
@@ -136,7 +136,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           readOnly={readOnly}
           required={required}
           resize="none"
-          textAlign="inherit"
+          textAlign="left"
           w="100%"
           {...typeProps}
           ref={ref}

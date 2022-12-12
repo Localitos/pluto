@@ -29,7 +29,9 @@
   ],
   "dependencies": {
     "@tanstack/react-table": "^8.7.0",
-    "react-dropzone": "^14.2.3"
+    "formik": "^2.2.9",
+    "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.40.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",

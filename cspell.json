@@ -24,7 +24,7 @@
     "xsmall",
     "unhover",
     "uppy",
-    "noonce"
+    "formik"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,

@@ -56,11 +56,11 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           cursor={disabled ? "not-allowed" : "auto"}
           disabled={disabled}
           display="block"
-          fontFamily="inherit"
+          fontFamily="fontFamilyModerat"
           fontSize="fontSize20"
-          fontWeight="inherit"
+          fontWeight="fontWeightMedium"
           id={id}
-          lineHeight="inherit"
+          lineHeight="lineHeight30"
           margin="space0"
           minHeight="100px"
           name={name}
@@ -74,6 +74,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={ref}
           required={required}
           resize="vertical"
+          textAlign="left"
           w="100%"
           {...props}
         >
