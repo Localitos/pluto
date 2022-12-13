@@ -1,4 +1,4 @@
-version = 1
+version = 2
 
 [merge]
 automerge_label = ["🚀 merge it!", "Merge It"]
