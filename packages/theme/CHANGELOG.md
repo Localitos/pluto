@@ -1,5 +1,14 @@
 # @localyze-pluto/theme
 
+## 2.0.2
+
+### Patch Changes
+
+- [#314](https://github.com/Localitos/pluto/pull/314) [`5e7fe9e`](https://github.com/Localitos/pluto/commit/5e7fe9ebab03b22b978572f23de580cff6cdd1ec) Thanks [@richbachman](https://github.com/richbachman)! - Added multiple states to the theme object.
+
+  - `activeItem` in order to style elements with `data-active-item`.
+  - `selected` in order to style elements with `aria-selected="true"`.
+
 ## 2.0.1
 
 ### Patch Changes

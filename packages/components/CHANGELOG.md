@@ -1,5 +1,20 @@
 # @localyze-pluto/components
 
+## 6.5.0
+
+### Minor Changes
+
+- [#314](https://github.com/Localitos/pluto/pull/314) [`cc1af7a`](https://github.com/Localitos/pluto/commit/cc1af7acc74c41f3dd9c11c0054bfb7a5e8b1b6c) Thanks [@richbachman](https://github.com/richbachman)! - - [Box]: Added `auto` to `marginLeft` and marginRight` props.
+  - [InputBox]: Adjusted the focus border to correctly match the design.
+  - [Modal]: Potentially fixed the `nonce` bug.
+  - [Select]: Added the Select component, tests, and stories.
+  - [Tooltip]: Potentially fixed the `nonce` bug.
+
+### Patch Changes
+
+- Updated dependencies [[`5e7fe9e`](https://github.com/Localitos/pluto/commit/5e7fe9ebab03b22b978572f23de580cff6cdd1ec)]:
+  - @localyze-pluto/theme@2.0.2
+
 ## 6.4.1
 
 ### Patch Changes
