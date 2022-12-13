@@ -1,8 +1,8 @@
 version = 1
 
 [merge]
-automerge_label = "🚀 merge it!"
-blocking_labels = ["wip", "do-not-merge"]
+automerge_label = ["🚀 merge it!", "Merge It"]
+blocking_labels = ["WIP", "Do Not Merge"]
 method = "squash"
 
 [merge.automerge_dependencies]

@@ -1,0 +1,15 @@
+reviewers:
+  defaults:
+    - richbachman
+  groups:
+    core-contributors:
+      - rssilva # cspell:disable-line
+      - RohitRajendran # cspell:disable-line
+      - BrianLincoln
+      - apvale # cspell:disable-line
+      - blumaa # cspell:disable-line
+      - jvaladas # cspell:disable-line
+
+options:
+  ignore_drafts: true
+  number_of_reviewers: 3
