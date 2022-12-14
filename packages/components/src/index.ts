@@ -22,6 +22,7 @@ export * from "./components/Search";
 export * from "./components/Select";
 export * from "./components/Table";
 export * from "./components/Textarea";
+export * from "./components/Toast";
 export * from "./components/Tooltip";
 export * from "./primitives/Box";
 export * from "./primitives/Text";
