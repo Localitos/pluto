@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof Toast> = (args) => {
   const [open, setOpen] = React.useState(isChromatic() ? true : false);
 
   return (
-    <ToastProvider duration={3000}>
+    <ToastProvider duration={5000}>
       <Button onClick={() => setOpen(true)} variant="primary">
         Open toast
       </Button>

@@ -5,7 +5,11 @@ import { Default } from "./Toast.stories";
 
 describe("<Toast />", () => {
   it("should open and close a toast", async () => {
-    render(<Default variant="success">This is the toast text.</Default>);
+    render(
+      <Default duration={1000} variant="success">
+        This is the toast text.
+      </Default>
+    );
 
     const renderedOpenButtons = screen.getByRole("button");
     await userEvent.click(renderedOpenButtons);
@@ -15,7 +19,7 @@ describe("<Toast />", () => {
     expect(renderedToast).toBeInTheDocument();
 
     await waitFor(() => expect(renderedToast).not.toBeInTheDocument(), {
-      timeout: 3000,
+      timeout: 1000,
     });
   });
 });
