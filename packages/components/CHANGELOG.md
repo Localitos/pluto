@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.6.0
+
+### Minor Changes
+
+- [#326](https://github.com/Localitos/pluto/pull/326) [`263da47`](https://github.com/Localitos/pluto/commit/263da474d1f26982b2ccd63f2a76b8d003c0e8a7) Thanks [@richbachman](https://github.com/richbachman)! - [Toast] Add Toast component, tests, and stories.
+
 ## 6.5.0
 
 ### Minor Changes
