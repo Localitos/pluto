@@ -1,26 +1,42 @@
 import React from "react";
 import * as ToastPrimitive from "@radix-ui/react-toast";
-import { Anchor } from "../Anchor";
 import { Box } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 import type { ToastVariants } from "./types";
 
-export interface ToastProps
+export interface CommonToastProps
   extends Omit<React.ComponentProps<typeof ToastPrimitive.Root>, "asChild"> {
-  /** The text used if an Anchor is used in the toast. */
-  anchorText?: string;
-  /** The href used if an Anchor is used in the toast. */
-  anchorHref?: string;
   /** The text content of the toast. */
   children: NonNullable<React.ReactNode>;
   /** The type and style of the toast. */
   variant: ToastVariants;
 }
 
+type CtaToastProps =
+  | {
+      /** An action that users can take, but also may be safely ignored. */
+      cta: React.ReactNode;
+      /** The accessible alt text used if an action is used in the toast. */
+      ctaAltText: string;
+
+      /** The accessible alt text used if an action is used in the toast. */
+      hasCta: true;
+    }
+  | {
+      /** An action that users can take, but also may be safely ignored. */
+      cta?: never;
+      /** The accessible alt text used if an action is used in the toast. */
+      ctaAltText?: never;
+      /** The accessible alt text used if an action is used in the toast. */
+      hasCta?: false;
+    };
+
+export type ToastProps = CommonToastProps & CtaToastProps;
+
 /** A succinct message that is displayed temporarily. */
 const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
-  ({ anchorText, anchorHref, children, variant, ...props }, ref) => {
+  ({ cta, ctaAltText, hasCta = false, children, variant, ...props }, ref) => {
     return (
       <Box.li
         as={ToastPrimitive.Root}
@@ -64,11 +80,11 @@ const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
               {children}
             </Text.span>
           </ToastPrimitive.Description>
-          {anchorHref && anchorText && (
+          {cta && hasCta && ctaAltText && (
             <>
               {" "}
-              <ToastPrimitive.Action altText={anchorText} asChild>
-                <Anchor href={anchorHref}>{anchorText}</Anchor>
+              <ToastPrimitive.Action altText={ctaAltText} asChild>
+                {cta}
               </ToastPrimitive.Action>
             </>
           )}

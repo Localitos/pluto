@@ -1,6 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
+import { Anchor } from "../Anchor";
 import { Button } from "../Button";
 import { Toast } from "./Toast";
 import { ToastViewport } from "./ToastViewport";
@@ -9,6 +10,12 @@ import { ToastProvider } from ".";
 export default {
   component: Toast,
   title: "Components/Toast",
+  parameters: {
+    docs: {
+      storyDescription:
+        "ToastProvider and ToastViewport should only be used once in an application. Both should be placed in the root of the application.",
+    },
+  },
 } as ComponentMeta<typeof Toast>;
 
 const Template: ComponentStory<typeof Toast> = (args) => {
@@ -38,10 +45,16 @@ Error.args = {
 
 export const WithAnchor = Template.bind({});
 WithAnchor.args = {
-  anchorHref: "#",
-  anchorText: "See link here",
+  hasCta: true,
+  cta: <Anchor href="#">See link here.</Anchor>,
+  ctaAltText: "See link here.",
   children: "Card could not be charged.",
   variant: "error",
+};
+WithAnchor.parameters = {
+  docs: {
+    storyDescription: "Currently on Anchors are supported as a CTA.",
+  },
 };
 
 export const MultiLineContent = Template.bind({});
