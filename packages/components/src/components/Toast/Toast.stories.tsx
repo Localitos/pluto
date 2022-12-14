@@ -45,9 +45,10 @@ Error.args = {
 
 export const WithAnchor = Template.bind({});
 WithAnchor.args = {
-  hasCta: true,
-  cta: <Anchor href="#">See link here.</Anchor>,
-  ctaAltText: "See link here.",
+  cta: {
+    content: <Anchor href="#">See link here.</Anchor>,
+    altText: "See link here.",
+  },
   children: "Card could not be charged.",
   variant: "error",
 };

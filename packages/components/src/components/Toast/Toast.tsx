@@ -5,38 +5,26 @@ import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 import type { ToastVariants } from "./types";
 
-export interface CommonToastProps
+export interface ToastCtaProps {
+  /** The content of the action. */
+  content: React.ReactNode;
+  /** The accessible alt text used if an action is used in the toast. */
+  altText: string;
+}
+
+export interface ToastProps
   extends Omit<React.ComponentProps<typeof ToastPrimitive.Root>, "asChild"> {
   /** The text content of the toast. */
   children: NonNullable<React.ReactNode>;
   /** The type and style of the toast. */
   variant: ToastVariants;
+  /** An action that users can take, but also may be safely ignored. */
+  cta?: ToastCtaProps;
 }
-
-type CtaToastProps =
-  | {
-      /** An action that users can take, but also may be safely ignored. */
-      cta: React.ReactNode;
-      /** The accessible alt text used if an action is used in the toast. */
-      ctaAltText: string;
-
-      /** The accessible alt text used if an action is used in the toast. */
-      hasCta: true;
-    }
-  | {
-      /** An action that users can take, but also may be safely ignored. */
-      cta?: never;
-      /** The accessible alt text used if an action is used in the toast. */
-      ctaAltText?: never;
-      /** The accessible alt text used if an action is used in the toast. */
-      hasCta?: false;
-    };
-
-export type ToastProps = CommonToastProps & CtaToastProps;
 
 /** A succinct message that is displayed temporarily. */
 const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
-  ({ cta, ctaAltText, hasCta = false, children, variant, ...props }, ref) => {
+  ({ cta, children, variant, ...props }, ref) => {
     return (
       <Box.li
         as={ToastPrimitive.Root}
@@ -80,11 +68,11 @@ const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
               {children}
             </Text.span>
           </ToastPrimitive.Description>
-          {cta && hasCta && ctaAltText && (
+          {cta?.content && cta.altText && (
             <>
               {" "}
-              <ToastPrimitive.Action altText={ctaAltText} asChild>
-                {cta}
+              <ToastPrimitive.Action altText={cta.altText} asChild>
+                {cta.content}
               </ToastPrimitive.Action>
             </>
           )}
