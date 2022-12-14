@@ -14,9 +14,6 @@ describe("<Toast />", () => {
     expect(screen.getByRole("region")).toBeInTheDocument();
     expect(renderedToast).toBeInTheDocument();
 
-    const renderedButtons = screen.getAllByRole("button");
-    expect(renderedButtons[1]).toBeInTheDocument();
-
     await waitFor(() => expect(renderedToast).not.toBeInTheDocument(), {
       timeout: 3000,
     });
