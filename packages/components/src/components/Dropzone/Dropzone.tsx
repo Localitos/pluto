@@ -122,8 +122,10 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     const defaultState = !dropZoneErrors && !progress;
     const errorState = dropZoneErrors;
 
-    const isLoading = !!progress && progress > 0 && progress < 100;
+    const isLoading =
+      !!progress && progress > 0 && progress < 100 && !errorState;
     const successState = progress === 100 && !dropZoneErrors;
+
     const fileRestrictionText = getFileRestrictionText(
       fileTypes,
       maxNumFiles,
