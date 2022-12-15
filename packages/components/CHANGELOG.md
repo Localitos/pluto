@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.6.1
+
+### Patch Changes
+
+- [#327](https://github.com/Localitos/pluto/pull/327) [`019cff2`](https://github.com/Localitos/pluto/commit/019cff2b77b57b90d44eb5ec088db7e94712fc37) Thanks [@blumaa](https://github.com/blumaa)! - fixed dropzone isloading state to include error
+
 ## 6.6.0
 
 ### Minor Changes
