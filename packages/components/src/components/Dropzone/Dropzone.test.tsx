@@ -51,7 +51,7 @@ describe("<Dropzone />", () => {
 
   it("renders error state", () => {
     renderDropZone({
-      error: "File must be less than 50mb.",
+      error: { message: "File must be less than 50mb." },
       onCancel: NOOP,
       onDrop: NOOP,
     });

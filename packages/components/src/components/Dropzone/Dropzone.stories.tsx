@@ -29,12 +29,12 @@ WithFileRestrictions.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-  error: "The document failed to upload",
+  error: { message: "The document failed to upload" },
 };
 
 export const ErrorWithProgress = Template.bind({});
 ErrorWithProgress.args = {
-  error: "The document failed to upload",
+  error: { message: "The document failed to upload" },
   progress: 50,
 };
 

@@ -15,14 +15,15 @@ import {
 import { DropzoneCancelUploadButton } from "./DropzoneCancelUploadButton";
 
 export type FileTypes = Record<string, string[]>;
+export type DropzoneError = { message?: string };
 
 export type DropzoneProps = {
   /** This is the function that gets triggered when a file is dropped */
   onDrop: (files: FileWithPath[]) => void;
   /** This is the function that gets triggered when the cancel button is clicked */
   onCancel: (files: FileWithPath[]) => void;
-  /** This is an error if there is one. string */
-  error?: string;
+  /** This is an error if there is one. This is an object. { message: "string" } */
+  error?: DropzoneError;
   /** The file types allowed. In the format of an object.{ "application/pdf": [".pdf"] } */
   fileTypes?: FileTypes;
   /** The max number of files allowed to be dropped. Default is 1. Number.*/
@@ -102,7 +103,7 @@ const getIcon = (
   );
 };
 
-const getFileTypeErrorMessage = (fileTypes: FileTypes) =>
+const getFileTypeErrorMessage = (fileTypes: FileTypes): string =>
   `Wrong file type. ${getFileExtensions(fileTypes)} format only.`;
 
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
@@ -118,12 +119,15 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     },
     ref
   ) => {
-    const [dropZoneErrors, setDropZoneErrors] = useState(error);
+    const [dropZoneErrors, setDropZoneErrors] = useState<
+      DropzoneError | undefined
+    >(error);
     const defaultState = !dropZoneErrors && !progress;
-    const errorState = dropZoneErrors;
+    const errorState = dropZoneErrors?.message;
 
     const isLoading =
       !!progress && progress > 0 && progress < 100 && !errorState;
+
     const successState = progress === 100 && !dropZoneErrors;
 
     const fileRestrictionText = getFileRestrictionText(
@@ -159,15 +163,17 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         forEach(fileRejections, (file) => {
           forEach(file.errors, (err) => {
             if (err.code === "too-many-files") {
-              setDropZoneErrors(tooManyFilesError);
+              setDropZoneErrors({ message: tooManyFilesError });
             }
             if (err.code === "file-too-large" && maxFileSize) {
-              setDropZoneErrors(
-                `File must be less than ${formatBytes(maxFileSize)}.`
-              );
+              setDropZoneErrors({
+                message: `File must be less than ${formatBytes(maxFileSize)}.`,
+              });
             }
             if (err.code === "file-invalid-type") {
-              setDropZoneErrors(getFileTypeErrorMessage(fileTypes));
+              setDropZoneErrors({
+                message: getFileTypeErrorMessage(fileTypes),
+              });
             }
           });
         });
@@ -255,7 +261,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               fontSize="fontSize30"
               fontWeight="fontWeightRegular"
             >
-              {dropZoneErrors}
+              {dropZoneErrors?.message}
             </Text.span>
           )}
           {(defaultState || (isDragAccept && progress === 100)) && (
