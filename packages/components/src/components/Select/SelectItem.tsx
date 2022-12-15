@@ -9,7 +9,7 @@ export interface SelectItemProps
   disabled?: boolean;
   /** The first item in the set. Can be used as a reset option. */
   initial?: boolean;
-  /** The text value of the select item. */
+  /** The text label of the select item. */
   label: string;
   /** The text value of the select item. */
   value: string;
