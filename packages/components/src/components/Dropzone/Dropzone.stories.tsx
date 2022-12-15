@@ -32,6 +32,12 @@ Error.args = {
   error: "The document failed to upload",
 };
 
+export const ErrorWithProgress = Template.bind({});
+ErrorWithProgress.args = {
+  error: "The document failed to upload",
+  progress: 50,
+};
+
 export const Loading = Template.bind({});
 Loading.args = {
   progress: 50,
