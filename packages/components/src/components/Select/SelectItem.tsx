@@ -9,13 +9,15 @@ export interface SelectItemProps
   disabled?: boolean;
   /** The first item in the set. Can be used as a reset option. */
   initial?: boolean;
+  /** The text label of the select item. */
+  label: string;
   /** The text value of the select item. */
   value: string;
 }
 
 /** A select item is a styled element that can be selected within a select. */
 const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
-  ({ disabled, initial, value, ...props }, ref) => {
+  ({ disabled, initial, label, value, ...props }, ref) => {
     return (
       <Box.div
         as={SelectItemPrimitive}
@@ -46,7 +48,9 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
         ref={ref}
         value={value}
         {...props}
-      />
+      >
+        {label}
+      </Box.div>
     );
   }
 );

@@ -112,6 +112,9 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       setValue,
     });
 
+    // eslint-disable-next-line lodash/prefer-lodash-method
+    const selectedItem = items.find((item) => item.value === select.value);
+
     return (
       <>
         <Box.button
@@ -161,7 +164,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             w="100%"
             whiteSpace="nowrap"
           >
-            {select.value}
+            {selectedItem?.label}
           </Box.div>
           <Box.div
             display="inline-flex"
@@ -182,6 +185,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
               disabled={item.disabled}
               initial={item.initial}
               key={item.value}
+              label={item.label}
               value={item.value}
             />
           ))}
