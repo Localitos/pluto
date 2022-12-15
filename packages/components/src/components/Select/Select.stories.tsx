@@ -16,13 +16,14 @@ export default {
 } as ComponentMeta<typeof Select>;
 
 const selectItems: SelectProps["items"] = [
-  { value: "Select an option", initial: true },
-  { value: "Option One" },
-  { value: "Option Two" },
-  { value: "Option Three", disabled: true },
-  { value: "Option Four" },
+  { value: "select-option", label: "Select an option", initial: true },
+  { value: "option-one", label: "Option One" },
+  { value: "option-two", label: "Option Two" },
+  { value: "option-three", label: "Option Three", disabled: true },
+  { value: "option-four", label: "Option Four" },
   {
-    value:
+    value: "option-five",
+    label:
       "Option Five which is a really long item and should overflow to the next line",
   },
 ];
@@ -150,7 +151,7 @@ export const WithReactHookForm = (): JSX.Element => {
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      flavor: "Chocolate",
+      flavor: "chocolate",
     },
   });
 
@@ -171,9 +172,9 @@ export const WithReactHookForm = (): JSX.Element => {
             {...field}
             id={selectID}
             items={[
-              { value: "Chocolate" },
-              { value: "Strawberry" },
-              { value: "Vanilla" },
+              { value: "chocolate", label: "Chocolate" },
+              { value: "strawberry", label: "Strawberry" },
+              { value: "vanilla", label: "Vanilla" },
             ]}
             setValue={field.onChange}
           />

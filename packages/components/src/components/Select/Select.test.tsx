@@ -8,7 +8,10 @@ describe("<Select />", () => {
     required: true,
     disabled: true,
     hasError: true,
-    items: [{ value: "Item One" }, { value: "Item Two" }],
+    items: [
+      { label: "item-one", value: "Item One" },
+      { label: "item-two", value: "Item Two" },
+    ],
   };
 
   render(<Select {...initialProps} />);
