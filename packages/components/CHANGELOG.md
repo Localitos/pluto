@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 6.6.2
+
+### Patch Changes
+
+- [#331](https://github.com/Localitos/pluto/pull/331) [`23b3510`](https://github.com/Localitos/pluto/commit/23b3510c0a51dfb544d70954189c5cb8b87a7cd2) Thanks [@richbachman](https://github.com/richbachman)! - [Select]: Added a `label` prop to SelectItem. This allows for select items to have a different value and label.
+
+- [#333](https://github.com/Localitos/pluto/pull/333) [`9e3aa46`](https://github.com/Localitos/pluto/commit/9e3aa46ebf1f884ca9916c8b075c52de62332cac) Thanks [@richbachman](https://github.com/richbachman)! - [Select] Fix the initial option color.
+
 ## 6.6.1
 
 ### Patch Changes
