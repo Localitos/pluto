@@ -127,7 +127,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           borderStyle="borderStyleSolid"
           borderWidth="borderWidth10"
           color={
-            disabled || startsWith(select.value, "Select")
+            disabled || startsWith(select.value, "select-")
               ? "colorText"
               : "colorTextStronger"
           }
