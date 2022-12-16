@@ -9,28 +9,53 @@ describe("<Select />", () => {
     disabled: true,
     hasError: true,
     items: [
-      { label: "item-one", value: "Item One" },
-      { label: "item-two", value: "Item Two" },
+      { value: "item-one", label: "Item One" },
+      { value: "item-two", label: "Item Two" },
     ],
+    value: "",
   };
 
-  render(<Select {...initialProps} />);
-
-  const SelectElement = screen.getByRole("combobox");
-
   it("renders correctly", () => {
+    render(<Select {...initialProps} />);
+    const SelectElement = screen.getByRole("combobox");
     expect(SelectElement).toBeInTheDocument();
+    expect(screen.getByText("Select one")).toBeInTheDocument();
+  });
+
+  it("should render a selection", () => {
+    render(<Select {...initialProps} value={initialProps.items[0].value} />);
+    const SelectElement = screen.getByRole("combobox");
+    expect(SelectElement).toBeInTheDocument();
+    expect(screen.getAllByText("Item One")[0]).toBeInTheDocument();
+  });
+
+  it("should render a multiselection", () => {
+    render(
+      <Select
+        {...initialProps}
+        value={[initialProps.items[0].value, initialProps.items[1].value]}
+      />
+    );
+    const SelectElement = screen.getByRole("combobox");
+    expect(SelectElement).toBeInTheDocument();
+    expect(screen.getByText("Item One, Item Two")).toBeInTheDocument();
   });
 
   it("should render a required select", () => {
-    expect(SelectElement).toHaveAttribute("aria-required", "true");
+    render(<Select {...initialProps} />);
+    const SelectElement = screen.getByRole("combobox");
+    expect(SelectElement).toBeRequired();
   });
 
   it("should render a disabled select", () => {
-    expect(SelectElement).toHaveAttribute("disabled", "");
+    render(<Select {...initialProps} />);
+    const SelectElement = screen.getByRole("combobox");
+    expect(SelectElement).toBeDisabled();
   });
 
   it("should render a select id", () => {
+    render(<Select {...initialProps} />);
+    const SelectElement = screen.getByRole("combobox");
     expect(SelectElement).toHaveAttribute("id", "select");
   });
 });
