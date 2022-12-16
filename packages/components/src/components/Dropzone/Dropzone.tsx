@@ -172,6 +172,9 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           });
         });
       },
+      onFileDialogOpen: () => {
+        setDropZoneErrors(undefined);
+      },
     });
 
     useEffect(() => {
