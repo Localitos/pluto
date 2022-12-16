@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.6.3
+
+### Patch Changes
+
+- [#334](https://github.com/Localitos/pluto/pull/334) [`e60ee6d`](https://github.com/Localitos/pluto/commit/e60ee6d04c60a6f72dc51e55aa9730913859308e) Thanks [@blumaa](https://github.com/blumaa)! - added clearing of errors to dropzone onFileDialogOpen
+
 ## 6.6.2
 
 ### Patch Changes
