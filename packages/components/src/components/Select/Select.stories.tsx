@@ -155,6 +155,25 @@ LongItem.parameters = {
   chromatic: { viewports: [320, 1200] },
 };
 
+export const Placeholder = (): JSX.Element => {
+  const selectID = useUID();
+  const helpTextID = useUID();
+  return (
+    <Box.form>
+      <Label htmlFor={selectID}>Choose One</Label>
+      <Select
+        aria-describedby={helpTextID}
+        defaultValue=""
+        id={selectID}
+        items={selectItems}
+        name="select"
+        placeholder="This is a custom placeholder"
+      />
+      <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
+    </Box.form>
+  );
+};
+
 export const MultiSelect = (): JSX.Element => {
   const selectID = useUID();
   const helpTextID = useUID();

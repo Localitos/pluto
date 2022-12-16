@@ -49,6 +49,8 @@ export interface SelectProps
   items: SelectItemProps[];
   /** The `name` of the select. */
   name?: string;
+  /** The text to be used for the select placeholder. */
+  placeholder?: string;
   /** Sets the select state to required, so a user has to provide a value in order to be valid. */
   required?: boolean;
   /** Function that will be called when setting the select value state. */
@@ -92,14 +94,23 @@ const getSelectStyles = (
 
 const getSelectedLabel = (
   items: SelectItemProps[],
-  value: string[] | string
+  value: string[] | string,
+  placeholder?: string
 ) => {
   if (value === "") {
-    return <Text.span color="colorText">{NO_SELECTION_STRING}</Text.span>;
+    return (
+      <Text.span color="colorText">
+        {placeholder || NO_SELECTION_STRING}
+      </Text.span>
+    );
   }
   if (isArray(value)) {
     if (value.length === 0)
-      return <Text.span color="colorText">{NO_SELECTION_STRING}</Text.span>;
+      return (
+        <Text.span color="colorText">
+          {placeholder || NO_SELECTION_STRING}
+        </Text.span>
+      );
     if (value.length === 1)
       // eslint-disable-next-line lodash/prefer-lodash-method
       return items.find((item) => item.value === value[0])?.label;
@@ -122,6 +133,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       id,
       items,
       name,
+      placeholder,
       required,
       setValue,
       size = "small",
@@ -188,7 +200,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             w="100%"
             whiteSpace="nowrap"
           >
-            {getSelectedLabel(items, select.value)}
+            {getSelectedLabel(items, select.value, placeholder)}
           </Box.div>
           <Box.div
             display="inline-flex"
