@@ -5,7 +5,12 @@ import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
 
 type ButtonSizeOptions = "large" | "small";
-type ButtonVariantOptions = "ghost" | "outline" | "primary" | "secondary";
+type ButtonVariantOptions =
+  | "destructive"
+  | "ghost"
+  | "outline"
+  | "primary"
+  | "secondary";
 
 type IconNames = keyof typeof HeroOutlineIcons;
 
@@ -49,6 +54,7 @@ const getButtonVariantStyles = (
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
+  outlineColor?: SystemProp<keyof Theme["colors"], Theme>;
 } => {
   switch (variant) {
     case "ghost": {
@@ -73,6 +79,7 @@ const getButtonVariantStyles = (
           disabled: "colorText",
         },
         borderWidth: "borderWidth0",
+        outlineColor: { focus: "colorBorderPrimary" },
       };
     }
     case "secondary": {
@@ -89,6 +96,26 @@ const getButtonVariantStyles = (
           active: "colorBackground",
           hover: "colorBackgroundInfo",
         },
+        outlineColor: { focus: "colorBorderPrimary" },
+      };
+    }
+    case "destructive": {
+      return {
+        borderWidth: "borderWidth10",
+        color: "colorTextInverse",
+        backgroundColor: {
+          _: "colorBackgroundDestructive",
+          active: "colorBackgroundDestructive",
+          hover: "colorBackgroundDestructiveStrong",
+          disabled: "colorIconWeak",
+        },
+        borderColor: {
+          _: "colorBackgroundDestructiveStrong",
+          active: "colorBackgroundDestructive",
+          hover: "colorBackgroundDestructiveStrong",
+          disabled: "colorIconWeak",
+        },
+        outlineColor: { focus: "colorBackgroundDestructive" },
       };
     }
     case "outline": {
@@ -103,6 +130,7 @@ const getButtonVariantStyles = (
           active: "colorBackground",
           hover: "colorBackgroundInfo",
         },
+        outlineColor: { focus: "colorBorderPrimary" },
       };
     }
     default: {
@@ -121,6 +149,7 @@ const getButtonVariantStyles = (
           hover: "colorBorderPrimary",
           disabled: "colorIconWeak",
         },
+        outlineColor: { focus: "colorBorderPrimary" },
       };
     }
   }
@@ -237,9 +266,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           gap="space30"
           justifyContent="center"
           lineHeight={size === "large" ? "lineHeight40" : "lineHeight30"}
-          outlineColor={{ focus: "colorBorderPrimary" }}
           outlineOffset={{ focus: "borderWidth20" }}
-          outlineStyle={{ focus: "borderSolid" }}
+          outlineStyle={{ focus: "borderStyleSolid" }}
           outlineWidth={{ active: "borderWidth0", focus: "borderWidth20" }}
           ref={ref}
           textDecoration="none"

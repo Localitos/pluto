@@ -10,7 +10,7 @@ export default {
   title: "Components/Button",
 } as ComponentMeta<typeof Button>;
 
-const variants = ["primary", "secondary", "ghost", "outline"];
+const variants = ["primary", "secondary", "destructive", "ghost", "outline"];
 
 const Template: ComponentStory<typeof Button> = (args) => (
   <Box.div alignItems="center" display="flex" gap="space30">
