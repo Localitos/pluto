@@ -7,8 +7,6 @@ export interface SelectItemProps
   extends Omit<SelectItemPrimitiveProps, "nonce"> {
   /** Sets the state of the select item to disabled. */
   disabled?: boolean;
-  /** The first item in the set. Can be used as a reset option. */
-  initial?: boolean;
   /** The text label of the select item. */
   label: string;
   /** The text value of the select item. */
@@ -17,30 +15,29 @@ export interface SelectItemProps
 
 /** A select item is a styled element that can be selected within a select. */
 const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
-  ({ disabled, initial, label, value, ...props }, ref) => {
+  ({ disabled, label, value, ...props }, ref) => {
     return (
       <Box.div
         as={SelectItemPrimitive}
         backgroundColor={{
           activeItem: "colorBackgroundWeak",
-          selected: {
-            _: initial ? "colorBackground" : "colorBackgroundInfo",
-            activeItem: "colorBackgroundWeak",
-          },
+          selected: "colorBackgroundInfo",
         }}
         borderLeftColor={{
           _: "colorBackground",
           activeItem: "colorBackgroundWeak",
-          selected: initial ? "colorBackground" : "colorBorderPrimary",
+          selected: "colorBorderPrimary",
         }}
         borderLeftStyle="borderStyleSolid"
         borderLeftWidth="borderWidth20"
-        color={disabled || initial ? "colorText" : "colorTextStrongest"}
+        color={disabled ? "colorText" : "colorTextStrongest"}
         cursor="default"
         disabled={disabled}
         fontFamily="fontFamilyModerat"
         fontSize="fontSize20"
         fontWeight="fontWeightMedium"
+        marginBottom="space10"
+        marginTop="space10"
         paddingBottom="space30"
         paddingLeft="space50"
         paddingRight="space50"

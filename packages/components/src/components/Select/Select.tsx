@@ -9,11 +9,15 @@ import {
 } from "ariakit/select";
 import type { SelectProps as SelectPrimitiveProps } from "ariakit/select";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
+import isArray from "lodash/isArray";
 import { Box } from "../../primitives/Box";
+import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 import { SelectItem } from "./SelectItem";
 import type { SelectItemProps } from "./SelectItem";
 import { SelectPopover } from "./SelectPopover";
+
+const NO_SELECTION_STRING = "Select one";
 
 export interface SelectProps
   extends Omit<
@@ -34,7 +38,7 @@ export interface SelectProps
     | "wrapElement"
   > {
   /** The default selected option of the select. */
-  defaultValue?: string;
+  defaultValue?: string[] | string;
   /** Sets the state of the select to disabled, so a user is not able to interact with it. */
   disabled?: boolean;
   /** Sets the state of the select to an error state. */
@@ -45,6 +49,8 @@ export interface SelectProps
   items: SelectItemProps[];
   /** The `name` of the select. */
   name?: string;
+  /** The text to be used for the select placeholder. */
+  placeholder?: string;
   /** Sets the select state to required, so a user has to provide a value in order to be valid. */
   required?: boolean;
   /** Function that will be called when setting the select value state. */
@@ -52,7 +58,7 @@ export interface SelectProps
   /** Changes the size of the select. */
   size?: "large" | "small";
   /** The selected option of the select. */
-  value?: string;
+  value?: string[] | string;
 }
 
 const getSelectStyles = (
@@ -86,6 +92,37 @@ const getSelectStyles = (
   };
 };
 
+const getSelectedLabel = (
+  items: SelectItemProps[],
+  value: string[] | string,
+  placeholder?: string
+) => {
+  if (value === "") {
+    return (
+      <Text.span color="colorText">
+        {placeholder || NO_SELECTION_STRING}
+      </Text.span>
+    );
+  }
+  if (isArray(value)) {
+    if (value.length === 0)
+      return (
+        <Text.span color="colorText">
+          {placeholder || NO_SELECTION_STRING}
+        </Text.span>
+      );
+    if (value.length === 1)
+      // eslint-disable-next-line lodash/prefer-lodash-method
+      return items.find((item) => item.value === value[0])?.label;
+    return map(value, (val) => {
+      // eslint-disable-next-line lodash/prefer-lodash-method
+      return items.find((item) => item.value === val)?.label;
+    }).join(", ") as string;
+  }
+  // eslint-disable-next-line lodash/prefer-lodash-method
+  return items.find((item) => item.value === value)?.label;
+};
+
 /** A select is an styled form element that allows users to select a value from a list. */
 const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
   (
@@ -96,6 +133,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       id,
       items,
       name,
+      placeholder,
       required,
       setValue,
       size = "small",
@@ -112,9 +150,6 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       setValue,
     });
 
-    // eslint-disable-next-line lodash/prefer-lodash-method
-    const selectedItem = items.find((item) => item.value === select.value);
-
     return (
       <>
         <Box.button
@@ -127,7 +162,8 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           borderStyle="borderStyleSolid"
           borderWidth="borderWidth10"
           color={
-            disabled || startsWith(select.value, "select-")
+            disabled ||
+            (!isArray(select.value) && startsWith(select.value, "select-"))
               ? "colorText"
               : "colorTextStronger"
           }
@@ -164,7 +200,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             w="100%"
             whiteSpace="nowrap"
           >
-            {selectedItem?.label}
+            {getSelectedLabel(items, select.value, placeholder)}
           </Box.div>
           <Box.div
             display="inline-flex"
@@ -183,7 +219,6 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           {map(items, (item) => (
             <SelectItem
               disabled={item.disabled}
-              initial={item.initial}
               key={item.value}
               label={item.label}
               value={item.value}
