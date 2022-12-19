@@ -1,5 +1,17 @@
 # @localyze-pluto/components
 
+## 6.7.0
+
+### Minor Changes
+
+- [#336](https://github.com/Localitos/pluto/pull/336) [`8083405`](https://github.com/Localitos/pluto/commit/808340544354713a026d2f10e600ec3aac96c9c3) Thanks [@richbachman](https://github.com/richbachman)! - [Select]: Adjusted the base functionality so it works as a multiselect. In order to get a multiselect, an array should be passed to either `defaultValue` or `value`.
+
+  - Also removed the need for the `initial` prop on `SelectItem` by adding default text if a Select value is an empty string.
+
+### Patch Changes
+
+- [#338](https://github.com/Localitos/pluto/pull/338) [`2ddf9d4`](https://github.com/Localitos/pluto/commit/2ddf9d4bf4583042cde2cb00f5f65d4c9f178b92) Thanks [@richbachman](https://github.com/richbachman)! - [Button]: added destructive button variant.
+
 ## 6.6.3
 
 ### Patch Changes
