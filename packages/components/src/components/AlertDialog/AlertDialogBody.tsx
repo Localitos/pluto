@@ -7,18 +7,14 @@ export interface AlertDialogBodyProps
   children: NonNullable<React.ReactNode>;
   /** Disables the overflowY for situations where the modal includes a dropdown. */
   disableOverflow?: boolean;
-  /** The centering of the contents of the modal header */
-  isContentCentered?: boolean;
 }
 
 /** The body content area of the modal. */
 const AlertDialogBody = React.forwardRef<HTMLDivElement, AlertDialogBodyProps>(
-  ({ children, disableOverflow, isContentCentered = false, ...props }, ref) => {
+  ({ children, disableOverflow, ...props }, ref) => {
     return (
       <Box.div
-        /* overflowY={!disableOverflow ? "auto" : undefined} */
-        display="flex"
-        justifyContent={isContentCentered ? "center" : "flex-start"}
+        overflowY={disableOverflow ? undefined : "auto"}
         ref={ref}
         {...props}
       >

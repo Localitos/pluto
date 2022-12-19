@@ -6,32 +6,36 @@ import { Box } from "../../primitives/Box";
 export interface AlertDialogProps extends Omit<DialogProps, "noonce"> {
   /** The contents of the modal. */
   children: NonNullable<React.ReactNode>;
-  /** Add a description comment for each prop. */
-  isContentCentered?: boolean;
+  /** Centers the content of the alert dialog. */
+  centered?: boolean;
 }
 
 /** A dialog component that forces the user to acknowledge and make a choice */
 const AlertDialog = React.forwardRef<HTMLDivElement, AlertDialogProps>(
-  ({ isContentCentered = false, children, ...props }, ref) => {
+  ({ centered = false, children, ...props }, ref) => {
     return (
       <Box.div
+        alignItems={centered ? "center" : undefined}
         as={Dialog}
         backgroundColor="colorBackground"
         borderRadius="borderRadius10"
+        boxShadow="shadow"
         display="flex"
         flexDirection="column"
-        alignItems={isContentCentered ? "center" : undefined}
-        left="50%"
-        padding="space60"
         gap="space50"
-        maxWidth="25rem"
-        position="fixed"
-        ref={ref}
-        top="50%"
-        transform="translate(-50%, -50%)"
-        zIndex="zIndex30"
         hideOnEscape={false}
         hideOnInteractOutside={false}
+        justifyContent={centered ? "center" : undefined}
+        left="50%"
+        maxWidth="25rem"
+        padding="space60"
+        position="fixed"
+        ref={ref}
+        textAlign={centered ? "center" : undefined}
+        top="50%"
+        transform="translate(-50%, -50%)"
+        w="400px"
+        zIndex="zIndex30"
         {...props}
       >
         {children}

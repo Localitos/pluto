@@ -4,11 +4,13 @@ import isChromatic from "chromatic/isChromatic";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 import { Paragraph } from "../Paragraph";
+import { Icon } from "../Icon";
 import {
-  useDialogState,
+  useAlertDialogState,
   AlertDialog,
   AlertDialogHeader,
   AlertDialogHeading,
+  AlertDialogIconWrapper,
   AlertDialogBody,
   AlertDialogFooter,
 } from "./index";
@@ -19,29 +21,30 @@ export default {
 } as ComponentMeta<typeof AlertDialog>;
 
 export const Default = (): JSX.Element => {
-  const modal = useDialogState({ defaultOpen: isChromatic() ? true : false });
+  const alertDialog = useAlertDialogState({
+    defaultOpen: isChromatic() ? true : false,
+  });
   return (
     <Box.div h="100px" w="1350px">
-      <Button onClick={modal.toggle} variant="primary">
+      <Button onClick={alertDialog.toggle} variant="primary">
         Open alert dialog
       </Button>
-      <AlertDialog state={modal}>
+      <AlertDialog state={alertDialog}>
         <>
-          <AlertDialogHeader isContentCentered={false}>
-            <AlertDialogHeading>Are you sure?</AlertDialogHeading>
+          <AlertDialogHeader>
+            <AlertDialogHeading>Dupllicate this page</AlertDialogHeading>
           </AlertDialogHeader>
           <AlertDialogBody>
             <Paragraph marginBottom="space0" size="large">
-              Deleting will remove this document for all users and cannot be
-              undone.
+              Duplicating this page will create a copy in the Talents section.
             </Paragraph>
           </AlertDialogBody>
           <AlertDialogFooter>
-            <Button onClick={modal.toggle} variant="secondary">
+            <Button onClick={alertDialog.toggle} variant="secondary">
               Cancel
             </Button>
-            <Button onClick={modal.toggle} variant="primary">
-              Delete
+            <Button onClick={alertDialog.toggle} variant="primary">
+              Duplicate
             </Button>
           </AlertDialogFooter>
         </>
@@ -51,31 +54,38 @@ export const Default = (): JSX.Element => {
 };
 
 export const WithContentCentered = (): JSX.Element => {
-  const modal = useDialogState({ defaultOpen: isChromatic() ? true : false });
+  const alertDialog = useAlertDialogState({
+    defaultOpen: isChromatic() ? true : false,
+  });
   return (
     <Box.div h="100px" w="1350px">
-      <Button onClick={modal.toggle} variant="primary">
+      <Button onClick={alertDialog.toggle} variant="primary">
         Open alert dialog
       </Button>
-      <AlertDialog state={modal} isContentCentered>
+      <AlertDialog centered state={alertDialog}>
         <>
-          <AlertDialogHeader isContentCentered={true}>
+          <AlertDialogIconWrapper>
+            <Icon
+              color="colorIconError"
+              decorative
+              icon="XCircleIcon"
+              size="sizeIcon40"
+            />
+          </AlertDialogIconWrapper>
+          <AlertDialogHeader>
             <AlertDialogHeading>Are you sure?</AlertDialogHeading>
           </AlertDialogHeader>
-          <AlertDialogHeader isContentCentered={true}>
-            <AlertDialogHeading>Are you sure?</AlertDialogHeading>
-          </AlertDialogHeader>
-          <AlertDialogBody isContentCentered={true}>
+          <AlertDialogBody>
             <Paragraph marginBottom="space0" size="large">
               Deleting will remove this document for all users and cannot be
               undone.
             </Paragraph>
           </AlertDialogBody>
           <AlertDialogFooter>
-            <Button onClick={modal.toggle} variant="secondary">
+            <Button onClick={alertDialog.toggle} variant="secondary">
               Cancel
             </Button>
-            <Button onClick={modal.toggle} variant="primary">
+            <Button onClick={alertDialog.toggle} variant="primary">
               Delete
             </Button>
           </AlertDialogFooter>

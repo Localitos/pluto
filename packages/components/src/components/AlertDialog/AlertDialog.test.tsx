@@ -13,7 +13,6 @@ describe("<AlertDialog />", () => {
 
     await userEvent.click(renderedOpenButton);
     expect(screen.getByRole("dialog")).toBeInTheDocument();
-    /* expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument(); */
 
     const renderedCloseButton = screen.getByRole("button", { name: "Cancel" });
     expect(renderedCloseButton).toBeInTheDocument();

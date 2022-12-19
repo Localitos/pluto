@@ -18,7 +18,6 @@ const AlertDialogFooter = React.forwardRef<
       display="flex"
       gap="space30"
       justifyContent="flex-end"
-      /* padding="space60" */
       ref={ref}
       {...props}
     >
