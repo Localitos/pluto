@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.8.0
+
+### Minor Changes
+
+- [#325](https://github.com/Localitos/pluto/pull/325) [`da40b2e`](https://github.com/Localitos/pluto/commit/da40b2e57b91160d7925f516782752a6c6b624a4) Thanks [@blumaa](https://github.com/blumaa)! - Added AlertDialog component
+
 ## 6.7.1
 
 ### Patch Changes
