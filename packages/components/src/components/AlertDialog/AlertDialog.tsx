@@ -4,7 +4,7 @@ import type { DialogProps } from "ariakit";
 import { Box } from "../../primitives/Box";
 
 export interface AlertDialogProps extends Omit<DialogProps, "noonce"> {
-  /** The contents of the modal. */
+  /** The contents of the alert dialog. */
   children: NonNullable<React.ReactNode>;
   /** Centers the content of the alert dialog. */
   centered?: boolean;

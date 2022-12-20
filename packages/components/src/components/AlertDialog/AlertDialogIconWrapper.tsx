@@ -1,21 +1,49 @@
+import { SystemProp, Theme } from "@xstyled/styled-components";
 import React from "react";
 import { Box } from "../../primitives/Box";
 
+type AlertDialogIconWrapperVariantOptions = "error" | "information" | "warning";
+
 export interface AlertDialogIconWrapperProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
-  /** The contents of the modal heading. */
+  /** The contents of the alert dialog icon wrapper. */
   children: NonNullable<React.ReactNode>;
+  /** The type of icon wrapper. */
+  variant?: AlertDialogIconWrapperVariantOptions;
 }
 
-/** The heading of the modal. */
+const getVariantProps = (
+  variant: AlertDialogIconWrapperVariantOptions
+): {
+  backgroundColor: SystemProp<keyof Theme["colors"], Theme>;
+} => {
+  switch (variant) {
+    case "error": {
+      return {
+        backgroundColor: "colorBackgroundError",
+      };
+    }
+    case "warning": {
+      return {
+        backgroundColor: "colorBackgroundWarning",
+      };
+    }
+    default: {
+      return {
+        backgroundColor: "colorBackgroundInfo",
+      };
+    }
+  }
+};
+
+/** The ircon wrapper of the alert dialog icon. */
 const AlertDialogIconWrapper = React.forwardRef<
   HTMLDivElement,
   AlertDialogIconWrapperProps
->(({ children, ...props }, ref) => {
+>(({ children, variant = "error", ...props }, ref) => {
   return (
     <Box.div
       alignItems="center"
-      backgroundColor="colorBackgroundError"
       borderRadius="borderRadius30"
       boxSizing="border-box"
       display="flex"
@@ -26,6 +54,7 @@ const AlertDialogIconWrapper = React.forwardRef<
       padding="space20"
       ref={ref}
       w="40px"
+      {...getVariantProps(variant)}
       {...props}
     >
       {children}

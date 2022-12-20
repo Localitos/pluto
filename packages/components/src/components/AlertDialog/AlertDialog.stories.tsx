@@ -8,8 +8,8 @@ import { Icon } from "../Icon";
 import {
   useAlertDialogState,
   AlertDialog,
+  AlertDialogButton,
   AlertDialogHeader,
-  AlertDialogHeading,
   AlertDialogIconWrapper,
   AlertDialogBody,
   AlertDialogFooter,
@@ -20,34 +20,63 @@ export default {
   title: "Components/AlertDialog",
 } as ComponentMeta<typeof AlertDialog>;
 
+/* interface AlertDialogFunctionProps { */
+/*   name: string; */
+/*   title: string; */
+/*   description: string; */
+/*   cancelLabel: string; */
+/*   confirmationLabel: string; */
+/* } */
+
+/* const AlertDialogFunction = ({ */
+/*   name, */
+/*   title, */
+/*   description, */
+/*   cancelLabel, */
+/*   confirmationLabel, */
+/* }): AlertDialogFunctionProps => { */
+/*   console.log("name", name); */
+/* }; */
+
 export const Default = (): JSX.Element => {
   const alertDialog = useAlertDialogState({
     defaultOpen: isChromatic() ? true : false,
   });
   return (
     <Box.div h="100px" w="1350px">
+      {/* <AlertDialogButton */}
+      {/*   variant="secondary" */}
+      {/*   onClick={() => */}
+      {/*     AlertDialogFunction({ */}
+      {/*       name: "Test", */}
+      {/*       title: "Are you sure", */}
+      {/*       description: "This is your last chance.", */}
+      {/*       cancelLabel: "Cancel", */}
+      {/*       confirmationLabel: "Confirm", */}
+      {/*     }) */}
+      {/*   } */}
+      {/* > */}
+      {/*   Test */}
+      {/* </AlertDialogButton> */}
+
       <Button onClick={alertDialog.toggle} variant="primary">
         Open alert dialog
       </Button>
       <AlertDialog state={alertDialog}>
-        <>
-          <AlertDialogHeader>
-            <AlertDialogHeading>Dupllicate this page</AlertDialogHeading>
-          </AlertDialogHeader>
-          <AlertDialogBody>
-            <Paragraph marginBottom="space0" size="large">
-              Duplicating this page will create a copy in the Talents section.
-            </Paragraph>
-          </AlertDialogBody>
-          <AlertDialogFooter>
-            <Button onClick={alertDialog.toggle} variant="secondary">
-              Cancel
-            </Button>
-            <Button onClick={alertDialog.toggle} variant="primary">
-              Duplicate
-            </Button>
-          </AlertDialogFooter>
-        </>
+        <AlertDialogHeader>Dupllicate this page</AlertDialogHeader>
+        <AlertDialogBody>
+          <Paragraph marginBottom="space0" size="large">
+            Duplicating this page will create a copy in the Talents section.
+          </Paragraph>
+        </AlertDialogBody>
+        <AlertDialogFooter>
+          <Button onClick={alertDialog.toggle} variant="secondary">
+            Cancel
+          </Button>
+          <Button onClick={alertDialog.toggle} variant="primary">
+            Duplicate
+          </Button>
+        </AlertDialogFooter>
       </AlertDialog>
     </Box.div>
   );
@@ -63,33 +92,29 @@ export const WithContentCentered = (): JSX.Element => {
         Open alert dialog
       </Button>
       <AlertDialog centered state={alertDialog}>
-        <>
-          <AlertDialogIconWrapper>
-            <Icon
-              color="colorIconError"
-              decorative
-              icon="XCircleIcon"
-              size="sizeIcon40"
-            />
-          </AlertDialogIconWrapper>
-          <AlertDialogHeader>
-            <AlertDialogHeading>Are you sure?</AlertDialogHeading>
-          </AlertDialogHeader>
-          <AlertDialogBody>
-            <Paragraph marginBottom="space0" size="large">
-              Deleting will remove this document for all users and cannot be
-              undone.
-            </Paragraph>
-          </AlertDialogBody>
-          <AlertDialogFooter>
-            <Button onClick={alertDialog.toggle} variant="secondary">
-              Cancel
-            </Button>
-            <Button onClick={alertDialog.toggle} variant="primary">
-              Delete
-            </Button>
-          </AlertDialogFooter>
-        </>
+        <AlertDialogIconWrapper>
+          <Icon
+            color="colorIconError"
+            decorative
+            icon="XCircleIcon"
+            size="sizeIcon40"
+          />
+        </AlertDialogIconWrapper>
+        <AlertDialogHeader>Are you sure?</AlertDialogHeader>
+        <AlertDialogBody>
+          <Paragraph marginBottom="space0" size="large">
+            Deleting will remove this document for all users and cannot be
+            undone.
+          </Paragraph>
+        </AlertDialogBody>
+        <AlertDialogFooter>
+          <Button onClick={alertDialog.toggle} variant="secondary">
+            Cancel
+          </Button>
+          <Button onClick={alertDialog.toggle} variant="destructive">
+            Delete
+          </Button>
+        </AlertDialogFooter>
       </AlertDialog>
     </Box.div>
   );

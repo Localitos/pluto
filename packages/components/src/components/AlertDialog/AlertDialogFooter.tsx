@@ -3,11 +3,11 @@ import { Box } from "../../primitives/Box";
 
 export interface AlertDialogFooterProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
-  /** The contents of the modal footer. */
+  /** The contents of the alert dialog footer. */
   children: NonNullable<React.ReactNode>;
 }
 
-/** The footer content area of the modal. */
+/** The footer content area of the alert dialog. */
 const AlertDialogFooter = React.forwardRef<
   HTMLDivElement,
   AlertDialogFooterProps
