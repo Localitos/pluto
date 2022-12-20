@@ -1,5 +1,4 @@
 export * from "./AlertDialog";
-export * from "./AlertDialogButton";
 export * from "./AlertDialogHeader";
 export * from "./AlertDialogIconWrapper";
 export * from "./AlertDialogBody";

@@ -31,6 +31,7 @@ const AlertDialog = React.forwardRef<HTMLDivElement, AlertDialogProps>(
         padding="space60"
         position="fixed"
         ref={ref}
+        role="alertdialog"
         textAlign={centered ? "center" : undefined}
         top="50%"
         transform="translate(-50%, -50%)"

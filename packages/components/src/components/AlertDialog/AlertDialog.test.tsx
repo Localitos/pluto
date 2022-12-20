@@ -12,12 +12,15 @@ describe("<AlertDialog />", () => {
     expect(renderedOpenButton).toBeInTheDocument();
 
     await userEvent.click(renderedOpenButton);
-    expect(screen.getByRole("dialog")).toBeInTheDocument();
+    expect(screen.getByRole("alertdialog")).toBeInTheDocument();
+
+    await userEvent.keyboard("{Escape}");
+    expect(screen.getByRole("alertdialog")).toBeInTheDocument();
 
     const renderedCloseButton = screen.getByRole("button", { name: "Cancel" });
     expect(renderedCloseButton).toBeInTheDocument();
 
     await userEvent.click(renderedCloseButton);
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.queryByRole("alertdialog")).not.toBeInTheDocument();
   });
 });

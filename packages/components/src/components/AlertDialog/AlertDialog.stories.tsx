@@ -8,7 +8,6 @@ import { Icon } from "../Icon";
 import {
   useAlertDialogState,
   AlertDialog,
-  AlertDialogButton,
   AlertDialogHeader,
   AlertDialogIconWrapper,
   AlertDialogBody,
@@ -20,45 +19,12 @@ export default {
   title: "Components/AlertDialog",
 } as ComponentMeta<typeof AlertDialog>;
 
-/* interface AlertDialogFunctionProps { */
-/*   name: string; */
-/*   title: string; */
-/*   description: string; */
-/*   cancelLabel: string; */
-/*   confirmationLabel: string; */
-/* } */
-
-/* const AlertDialogFunction = ({ */
-/*   name, */
-/*   title, */
-/*   description, */
-/*   cancelLabel, */
-/*   confirmationLabel, */
-/* }): AlertDialogFunctionProps => { */
-/*   console.log("name", name); */
-/* }; */
-
 export const Default = (): JSX.Element => {
   const alertDialog = useAlertDialogState({
     defaultOpen: isChromatic() ? true : false,
   });
   return (
     <Box.div h="100px" w="1350px">
-      {/* <AlertDialogButton */}
-      {/*   variant="secondary" */}
-      {/*   onClick={() => */}
-      {/*     AlertDialogFunction({ */}
-      {/*       name: "Test", */}
-      {/*       title: "Are you sure", */}
-      {/*       description: "This is your last chance.", */}
-      {/*       cancelLabel: "Cancel", */}
-      {/*       confirmationLabel: "Confirm", */}
-      {/*     }) */}
-      {/*   } */}
-      {/* > */}
-      {/*   Test */}
-      {/* </AlertDialogButton> */}
-
       <Button onClick={alertDialog.toggle} variant="primary">
         Open alert dialog
       </Button>
