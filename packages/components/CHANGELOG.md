@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.7.1
+
+### Patch Changes
+
+- [#339](https://github.com/Localitos/pluto/pull/339) [`efe0be6`](https://github.com/Localitos/pluto/commit/efe0be6478567375ede6ded92df7c6f2d957deb2) Thanks [@richbachman](https://github.com/richbachman)! - [Select]: export SelectItemProps for use in applications.
+
 ## 6.7.0
 
 ### Minor Changes
