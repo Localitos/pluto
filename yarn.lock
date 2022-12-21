@@ -2799,19 +2799,19 @@
     lodash.union "^4.6.0"
     lodash.values "^4.3.0"
 
-"@storybook/addon-a11y@^6.5.14":
-  version "6.5.14"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.5.14.tgz#3095f87396955f64d86110636e6e2fdf603dd10e"
-  integrity sha512-nQf+pTcIXZr4dnrn4eDQoIeR62P6aHFFLoNBTcKFsESmHO3KYMC709j6uU1N+GNFMj9SEZYMav3iQC1Ue9BUnw==
+"@storybook/addon-a11y@^6.5.15":
+  version "6.5.15"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.5.15.tgz#2e36fdadf2b1e0fd68d19a24c537bd2d73ad7cca"
+  integrity sha512-4IgsCU7mrfooyGSgvyQdkZVu2iGJZqZ+2GDDIzzeIs1yXvuRy6QiHYNzesSrgeL52ykDXaPGuzKu2pcMKfDQHA==
   dependencies:
-    "@storybook/addons" "6.5.14"
-    "@storybook/api" "6.5.14"
-    "@storybook/channels" "6.5.14"
-    "@storybook/client-logger" "6.5.14"
-    "@storybook/components" "6.5.14"
-    "@storybook/core-events" "6.5.14"
+    "@storybook/addons" "6.5.15"
+    "@storybook/api" "6.5.15"
+    "@storybook/channels" "6.5.15"
+    "@storybook/client-logger" "6.5.15"
+    "@storybook/components" "6.5.15"
+    "@storybook/core-events" "6.5.15"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/theming" "6.5.14"
+    "@storybook/theming" "6.5.15"
     axe-core "^4.2.0"
     core-js "^3.8.2"
     global "^4.4.0"
@@ -3342,6 +3342,20 @@
     "@storybook/client-logger" "6.5.14"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     "@storybook/theming" "6.5.14"
+    core-js "^3.8.2"
+    memoizerific "^1.11.3"
+    qs "^6.10.0"
+    regenerator-runtime "^0.13.7"
+    util-deprecate "^1.0.2"
+
+"@storybook/components@6.5.15":
+  version "6.5.15"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.5.15.tgz#8145be807bf48c1d010f29114411f390a9e3228f"
+  integrity sha512-bHTT0Oa3s4g+MBMaLBbX9ofMtb1AW59AzIUNGrfqW1XqJMGuUHMiJ7TSo+i5dRSFpbFygnwMEG9LfHxpR2Z0Dw==
+  dependencies:
+    "@storybook/client-logger" "6.5.15"
+    "@storybook/csf" "0.0.2--canary.4566f4d.1"
+    "@storybook/theming" "6.5.15"
     core-js "^3.8.2"
     memoizerific "^1.11.3"
     qs "^6.10.0"
