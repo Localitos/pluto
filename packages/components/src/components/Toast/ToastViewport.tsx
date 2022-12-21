@@ -1,8 +1,7 @@
 import React from "react";
 import * as ToastPrimitive from "@radix-ui/react-toast";
 import { Box } from "../../primitives/Box";
-
-export type ToastViewportProps = ToastPrimitive.ToastViewportProps;
+import type { ToastViewportProps } from "./types";
 
 /** The fixed area where toasts appear. */
 const ToastViewport = React.forwardRef<HTMLOListElement, ToastViewportProps>(
