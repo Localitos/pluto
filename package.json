@@ -28,15 +28,15 @@
     "packages/**"
   ],
   "dependencies": {
-    "@tanstack/react-table": "^8.7.3",
+    "@tanstack/react-table": "^8.7.4",
     "formik": "^2.2.9",
     "react-dropzone": "^14.2.3",
-    "react-hook-form": "^7.40.0"
+    "react-hook-form": "^7.41.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
     "@changesets/changelog-github": "0.4.7",
-    "@changesets/cli": "^2.25.2",
+    "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@storybook/addon-a11y": "^6.5.15",
@@ -45,7 +45,7 @@
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/addon-links": "^6.5.15",
     "@storybook/addon-viewport": "^6.5.12",
-    "@storybook/builder-webpack5": "^6.5.14",
+    "@storybook/builder-webpack5": "^6.5.15",
     "@storybook/manager-webpack5": "^6.5.14",
     "@storybook/react": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
