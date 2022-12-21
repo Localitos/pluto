@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.8.1
+
+### Patch Changes
+
+- [#360](https://github.com/Localitos/pluto/pull/360) [`e137904`](https://github.com/Localitos/pluto/commit/e1379044dcdc74945de180f436b927e729053af5) Thanks [@richbachman](https://github.com/richbachman)! - [Toast]: Added useToast, ToastContext, and ToastContainer so teams have the option to fire toasts using a hook.
+
 ## 6.8.0
 
 ### Minor Changes
