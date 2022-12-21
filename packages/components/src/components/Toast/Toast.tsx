@@ -3,24 +3,7 @@ import * as ToastPrimitive from "@radix-ui/react-toast";
 import { Box } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
-import type { ToastVariants } from "./types";
-
-export interface ToastCtaProps {
-  /** The content of the action. */
-  content: React.ReactNode;
-  /** The accessible alt text used if an action is used in the toast. */
-  altText: string;
-}
-
-export interface ToastProps
-  extends Omit<React.ComponentProps<typeof ToastPrimitive.Root>, "asChild"> {
-  /** The text content of the toast. */
-  children: NonNullable<React.ReactNode>;
-  /** The type and style of the toast. */
-  variant: ToastVariants;
-  /** An action that users can take, but also may be safely ignored. */
-  cta?: ToastCtaProps;
-}
+import type { ToastProps } from "./types";
 
 /** A succinct message that is displayed temporarily. */
 const Toast = React.forwardRef<HTMLLIElement, ToastProps>(

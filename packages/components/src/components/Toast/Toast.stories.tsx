@@ -3,8 +3,12 @@ import React from "react";
 import isChromatic from "chromatic/isChromatic";
 import { Anchor } from "../Anchor";
 import { Button } from "../Button";
+import { Box } from "../../primitives/Box";
 import { Toast } from "./Toast";
 import { ToastViewport } from "./ToastViewport";
+import { useToast } from "./useToast";
+import { ToastContainer } from "./ToastContainer";
+import type { ToastCtaProps } from "./types";
 import { ToastProvider } from ".";
 
 export default {
@@ -63,3 +67,35 @@ MultiLineContent.args = {
   children:
     "Reports have been successfully sent to recipients! This should wrap to a second line.",
 };
+
+const SampleApp = (): JSX.Element => {
+  const toast = useToast();
+
+  const ctaAction: ToastCtaProps = {
+    content: <Anchor href="#">See link here.</Anchor>,
+    altText: "See link here.",
+  };
+
+  return (
+    <Box.div display="flex" gap="space70">
+      <Button
+        onClick={() => toast("Toast message!", "success")}
+        variant="primary"
+      >
+        Open Toast
+      </Button>
+      <Button
+        onClick={() => toast("Toast message!", "error", "action-id", ctaAction)}
+        variant="primary"
+      >
+        Open Toast with action
+      </Button>
+    </Box.div>
+  );
+};
+
+export const WithToastContainer = (): JSX.Element => (
+  <ToastContainer>
+    <SampleApp />
+  </ToastContainer>
+);
