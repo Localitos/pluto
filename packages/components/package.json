@@ -32,7 +32,7 @@
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-progress": "^1.0.1",
     "@radix-ui/react-toast": "^1.1.2",
-    "ariakit": "^2.0.0-next.41",
+    "ariakit": "^2.0.0-next.43",
     "react-dropzone": "^14.2.3"
   },
   "peerDependencies": {
@@ -42,7 +42,7 @@
     "@radix-ui/react-progress": "^1.0.1",
     "@radix-ui/react-toast": "^1.1.2",
     "@xstyled/styled-components": "^3.6.0",
-    "ariakit": "^2.0.0-next.41",
+    "ariakit": "^2.0.0-next.43",
     "html-react-parser": "^3.0.6",
     "lodash": "^4.17.21",
     "react": "^17.0.2 || ^18.2.0",
