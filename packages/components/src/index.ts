@@ -21,6 +21,7 @@ export * from "./components/ProgressBar";
 export * from "./components/RichText";
 export * from "./components/Search";
 export * from "./components/Select";
+export * from "./components/StepIndicator";
 export * from "./components/Table";
 export * from "./components/Textarea";
 export * from "./components/Toast";

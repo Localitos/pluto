@@ -16,7 +16,13 @@ export const Default = (): JSX.Element => {
   return (
     <>
       <Label htmlFor={inputID}>Text Input</Label>
-      <Input id={inputID} name="input" type="text" value="Text input" />
+      <Input
+        aria-describedby={helpTextID}
+        id={inputID}
+        name="input"
+        type="text"
+        value="Text input"
+      />
       <HelpText id={helpTextID}>Please enter some text.</HelpText>
     </>
   );
@@ -148,6 +154,7 @@ export const NumberError = (): JSX.Element => {
     <>
       <Label htmlFor={inputID}>Text Input</Label>
       <Input
+        aria-describedby={helpTextID}
         hasError
         id={inputID}
         name="input-number-error"
@@ -168,6 +175,7 @@ export const LeadingIcon = (): JSX.Element => {
     <>
       <Label htmlFor={inputID}>Text Input</Label>
       <Input
+        aria-describedby={helpTextID}
         id={inputID}
         leadingIcon="InformationCircleIcon"
         name="input"
@@ -186,6 +194,7 @@ export const TrailingIcon = (): JSX.Element => {
     <>
       <Label htmlFor={inputID}>Text Input</Label>
       <Input
+        aria-describedby={helpTextID}
         id={inputID}
         name="input"
         trailingIcon="MagnifyingGlassIcon"
@@ -204,6 +213,7 @@ export const LeadingIconAndTrailingIcon = (): JSX.Element => {
     <>
       <Label htmlFor={inputID}>Text Input</Label>
       <Input
+        aria-describedby={helpTextID}
         id={inputID}
         leadingIcon="InformationCircleIcon"
         name="input"
@@ -223,6 +233,7 @@ export const LargeLeadingIcon = (): JSX.Element => {
     <>
       <Label htmlFor={inputID}>Text Input</Label>
       <Input
+        aria-describedby={helpTextID}
         id={inputID}
         leadingIcon="InformationCircleIcon"
         name="input"
@@ -242,6 +253,7 @@ export const LargeTrailingIcon = (): JSX.Element => {
     <>
       <Label htmlFor={inputID}>Text Input</Label>
       <Input
+        aria-describedby={helpTextID}
         id={inputID}
         name="input"
         size="large"
@@ -261,6 +273,7 @@ export const LargeLeadingIconAndTrailingIcon = (): JSX.Element => {
     <>
       <Label htmlFor={inputID}>Text Input</Label>
       <Input
+        aria-describedby={helpTextID}
         id={inputID}
         leadingIcon="InformationCircleIcon"
         name="input"
