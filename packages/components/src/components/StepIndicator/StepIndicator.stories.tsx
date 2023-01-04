@@ -14,20 +14,20 @@ const threeStepsArray = ["Step 1", "Step 2", "Step 3"];
 const fiveStepsArray = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 
 export const Default = (): JSX.Element => {
-  return <StepIndicator current={1} steps={threeStepsArray} />;
+  return <StepIndicator current={0} steps={threeStepsArray} />;
 };
 
 export const SetCurrentStep = (): JSX.Element => {
-  return <StepIndicator current={3} steps={fiveStepsArray} />;
+  return <StepIndicator current={2} steps={fiveStepsArray} />;
 };
 
 export const WithButtons = (): JSX.Element => {
-  const [currentStep, setCurrentStep] = React.useState(1);
+  const [currentStep, setCurrentStep] = React.useState(0);
 
   return (
     <Box.div alignItems="center" display="flex" gap="space30">
       <Button
-        disabled={currentStep === 1}
+        disabled={currentStep === 0}
         onClick={() => setCurrentStep(currentStep - 1)}
         variant="secondary"
       >
@@ -37,7 +37,7 @@ export const WithButtons = (): JSX.Element => {
         <StepIndicator current={currentStep} steps={fiveStepsArray} />
       </Box.div>
       <Button
-        disabled={currentStep === 5}
+        disabled={currentStep === 4}
         onClick={() => setCurrentStep(currentStep + 1)}
         variant="secondary"
       >

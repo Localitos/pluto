@@ -6,24 +6,20 @@ export interface StepIndicatorSegmentProps
   extends Omit<React.HTMLAttributes<HTMLOListElement>, "color"> {
   /** The accessible text content of the step. */
   children: string;
-  /** The current step that shows the user’s position. Inherited from StepIndicator. */
-  current?: number;
-  /** The index within the array of segments. Inherited from StepIndicator. */
-  index?: number;
+  /** Indicates whether a step is active or not. */
+  isActiveStep?: boolean;
 }
 
 /** The step indicator segment indicates the current step within the StepIndicator. */
 const StepIndicatorSegment = React.forwardRef<
   HTMLLIElement,
   StepIndicatorSegmentProps
->(({ children, current, index = 1 }, ref) => {
+>(({ children, isActiveStep }, ref) => {
   return (
     <Box.li
-      aria-current={current === index + 1}
+      aria-current={isActiveStep}
       backgroundColor={
-        current === index + 1
-          ? "colorBackgroundPrimary"
-          : "colorBackgroundStrong"
+        isActiveStep ? "colorBackgroundPrimary" : "colorBackgroundStrong"
       }
       borderRadius="borderRadius30"
       flexGrow={1}

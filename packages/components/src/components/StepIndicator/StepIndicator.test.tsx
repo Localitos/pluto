@@ -15,11 +15,7 @@ describe("<StepIndicator />", () => {
 
 describe("<StepIndicatorSegment />", () => {
   it("renders as the current segment", () => {
-    render(
-      <StepIndicatorSegment current={1} index={0}>
-        Step 1
-      </StepIndicatorSegment>
-    );
+    render(<StepIndicatorSegment isActiveStep>Step 1</StepIndicatorSegment>);
     // eslint-disable-next-line testing-library/no-node-access
     expect(screen.getByText("Step 1").closest("li")).toHaveAttribute(
       "aria-current",
@@ -28,15 +24,11 @@ describe("<StepIndicatorSegment />", () => {
   });
 
   it("renders as not the current segment", () => {
-    render(
-      <StepIndicatorSegment current={2} index={0}>
-        Step 1
-      </StepIndicatorSegment>
-    );
+    render(<StepIndicatorSegment>Step 1</StepIndicatorSegment>);
     // eslint-disable-next-line testing-library/no-node-access
-    expect(screen.getByText("Step 1").closest("li")).toHaveAttribute(
+    expect(screen.getByText("Step 1").closest("li")).not.toHaveAttribute(
       "aria-current",
-      "false"
+      "true"
     );
   });
 });
