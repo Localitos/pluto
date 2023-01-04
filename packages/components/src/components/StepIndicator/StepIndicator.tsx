@@ -22,6 +22,7 @@ const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
             index,
           });
         }
+        return null;
       });
     }, [children, current]);
 
