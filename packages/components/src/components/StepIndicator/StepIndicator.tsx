@@ -1,31 +1,18 @@
 import React from "react";
 import { Box } from "../../primitives/Box";
-import type { StepIndicatorSegmentProps } from "./StepIndicatorSegment";
+import { StepIndicatorSegment } from "./StepIndicatorSegment";
 
 export interface StepIndicatorProps
   extends Omit<React.HTMLAttributes<HTMLOListElement>, "color"> {
-  /** The step progress indicators: StepIndicatorSegment. */
-  children: NonNullable<React.ReactNode>;
   /** The current step that shows the user’s position. */
   current: number;
+  /** The steps that are part of a multi step process. */
+  steps: string[];
 }
 
-/** The step indicator can be used to show the user s position in and progress through a multi step process. */
+/** The step indicator can be used to show the user's progress through a multi step process. */
 const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
-  ({ children, current = 1 }, ref) => {
-    const validChildren = React.useMemo(() => {
-      // eslint-disable-next-line lodash/prefer-lodash-method
-      return React.Children.map(children, (child, index) => {
-        if (React.isValidElement<StepIndicatorSegmentProps>(child)) {
-          return React.cloneElement(child, {
-            current,
-            index,
-          });
-        }
-        return null;
-      });
-    }, [children, current]);
-
+  ({ current = 1, steps }, ref) => {
     return (
       <Box.ol
         alignItems="center"
@@ -37,7 +24,14 @@ const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
         padding="space0"
         ref={ref}
       >
-        {validChildren}
+        {
+          // eslint-disable-next-line lodash/prefer-lodash-method
+          steps.map((step, index) => (
+            <StepIndicatorSegment current={current} index={index} key={index}>
+              {step}
+            </StepIndicatorSegment>
+          ))
+        }
       </Box.ol>
     );
   }

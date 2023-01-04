@@ -3,33 +3,22 @@ import React from "react";
 import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
 import { StepIndicator } from "./StepIndicator";
-import { StepIndicatorSegment } from "./StepIndicatorSegment";
 
 export default {
   component: StepIndicator,
   title: "Components/StepIndicator",
 } as ComponentMeta<typeof StepIndicator>;
 
+const threeStepsArray = ["Step 1", "Step 2", "Step 3"];
+
+const fiveStepsArray = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
+
 export const Default = (): JSX.Element => {
-  return (
-    <StepIndicator current={1}>
-      <StepIndicatorSegment>Step 1</StepIndicatorSegment>
-      <StepIndicatorSegment>Step 2</StepIndicatorSegment>
-      <StepIndicatorSegment>Step 3</StepIndicatorSegment>
-    </StepIndicator>
-  );
+  return <StepIndicator current={1} steps={threeStepsArray} />;
 };
 
 export const SetCurrentStep = (): JSX.Element => {
-  return (
-    <StepIndicator current={3}>
-      <StepIndicatorSegment>Step 1</StepIndicatorSegment>
-      <StepIndicatorSegment>Step 2</StepIndicatorSegment>
-      <StepIndicatorSegment>Step 3</StepIndicatorSegment>
-      <StepIndicatorSegment>Step 4</StepIndicatorSegment>
-      <StepIndicatorSegment>Step 5</StepIndicatorSegment>
-    </StepIndicator>
-  );
+  return <StepIndicator current={3} steps={fiveStepsArray} />;
 };
 
 export const WithButtons = (): JSX.Element => {
@@ -45,13 +34,7 @@ export const WithButtons = (): JSX.Element => {
         Previous
       </Button>
       <Box.div w="100%">
-        <StepIndicator current={currentStep}>
-          <StepIndicatorSegment>Step 1</StepIndicatorSegment>
-          <StepIndicatorSegment>Step 2</StepIndicatorSegment>
-          <StepIndicatorSegment>Step 3</StepIndicatorSegment>
-          <StepIndicatorSegment>Step 4</StepIndicatorSegment>
-          <StepIndicatorSegment>Step 5</StepIndicatorSegment>
-        </StepIndicator>
+        <StepIndicator current={currentStep} steps={fiveStepsArray} />
       </Box.div>
       <Button
         disabled={currentStep === 5}
