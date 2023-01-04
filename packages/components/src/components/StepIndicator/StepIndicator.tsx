@@ -6,7 +6,7 @@ export interface StepIndicatorProps
   extends Omit<React.HTMLAttributes<HTMLOListElement>, "color"> {
   /** The current step that shows the user’s position. Start with 0. */
   current: number;
-  /** The steps that are part of a multi step process. */
+  /** The steps that are part of a multi step process. Each string should describe each step in an accessible way. */
   steps: string[];
 }
 
