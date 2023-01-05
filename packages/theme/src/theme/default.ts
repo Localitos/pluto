@@ -64,6 +64,7 @@ export const theme = {
     ...defaultTheme.states,
     activeItem: "&[data-active-item]",
     backdrop: "&[data-backdrop]",
+    checked: '&:checked, &[aria-checked="true"], &[data-state="checked"]',
     hidden: '&[data-hidden="true"]',
     loading: '&[aria-busy="true"]',
     selected: '&[aria-selected="true"]',

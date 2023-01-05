@@ -231,7 +231,7 @@ Object {
     "active": "&:active",
     "activeItem": "&[data-active-item]",
     "backdrop": "&[data-backdrop]",
-    "checked": "&:checked",
+    "checked": "&:checked, &[aria-checked=\\"true\\"], &[data-state=\\"checked\\"]",
     "disabled": "&:disabled, &[aria-disabled=true]",
     "even": "&:even",
     "first": "&:first-child",
