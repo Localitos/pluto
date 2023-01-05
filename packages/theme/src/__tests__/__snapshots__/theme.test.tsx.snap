@@ -151,9 +151,11 @@ Object {
     "lineHeight90": "3.375rem",
   },
   "radii": Object {
+    "borderRadius0": "0px",
     "borderRadius10": "4px",
     "borderRadius20": "6px",
     "borderRadius30": "8px",
+    "borderRadius35": "12px",
     "borderRadius40": "16px",
     "borderRadius50": "24px",
     "borderRadiusCircle": "50%",
