@@ -1,5 +1,8 @@
 {
   "border-radius": {
+    "0": {
+      "value": "0px"
+    },
     "10": {
       "value": "4px"
     },
@@ -8,6 +11,9 @@
     },
     "30": {
       "value": "8px"
+    },
+    "35": {
+      "value": "12px"
     },
     "40": {
       "value": "16px"
