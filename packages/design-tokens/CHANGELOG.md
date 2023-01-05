@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.0.6
+
+### Patch Changes
+
+- [#385](https://github.com/Localitos/pluto/pull/385) [`3107ad7`](https://github.com/Localitos/pluto/commit/3107ad7a781f6f655cead1fc2ab73efdbc6d4b29) Thanks [@apvale](https://github.com/apvale)! - Add new borderRadius tokens
+
 ## 0.0.5
 
 ### Patch Changes
