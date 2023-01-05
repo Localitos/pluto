@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 6.9.0
+
+### Minor Changes
+
+- [#381](https://github.com/Localitos/pluto/pull/381) [`e11b31d`](https://github.com/Localitos/pluto/commit/e11b31d5c169f10272d29978d9c01c0e437c4543) Thanks [@richbachman](https://github.com/richbachman)! - [StepIndicator]: Added StepIndicator component, tests, and stories.
+
+### Patch Changes
+
+- Updated dependencies [[`3107ad7`](https://github.com/Localitos/pluto/commit/3107ad7a781f6f655cead1fc2ab73efdbc6d4b29)]:
+  - @localyze-pluto/theme@2.0.3
+
 ## 6.8.1
 
 ### Patch Changes
