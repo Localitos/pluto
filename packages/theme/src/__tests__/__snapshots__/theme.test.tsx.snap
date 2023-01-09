@@ -11,6 +11,7 @@ Object {
   "borderStyles": Object {
     "borderStyleDashed": "dashed",
     "borderStyleSolid": "solid",
+    "none": "none",
   },
   "borderWidths": Object {
     "borderWidth0": "0px",
@@ -80,6 +81,7 @@ Object {
     "colorTextStrongest": "#0F172A",
     "colorTextSuccess": "#047857",
     "colorTextWarning": "#B45309",
+    "transparent": "transparent",
   },
   "durations": Object {
     "fast-in": "250ms",

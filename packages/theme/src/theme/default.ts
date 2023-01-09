@@ -20,6 +20,7 @@ export const theme = {
   ...defaultTheme,
   borderStyles: {
     ...BorderStyleTokens,
+    none: "none",
   },
   borderWidths: {
     ...BorderWidthTokens,
@@ -32,6 +33,7 @@ export const theme = {
       "linear-gradient(360deg, rgba(82, 244, 174, 0.12) 0%, rgba(131, 247, 197, 0.0575) 57.81%, rgba(255, 255, 255, 0) 100%)",
     colorBackgroundPreview:
       "linear-gradient(360deg, rgba(71, 94, 105, 0.08) 6.19%, rgba(71, 94, 105, 0.0504167) 57.3%, rgba(255, 255, 255, 0) 93.81%)",
+    transparent: "transparent",
   },
   fontSizes: {
     ...FontSizeTokens,
