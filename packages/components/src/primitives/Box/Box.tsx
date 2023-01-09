@@ -6,7 +6,7 @@ import type {
 } from "@xstyled/styled-components";
 
 export interface BoxProps extends SystemProps {
-  backgroundColor?: SystemProp<keyof Theme["colors"], Theme> | "transparent";
+  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderTopColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderRightColor?: SystemProp<keyof Theme["colors"], Theme>;

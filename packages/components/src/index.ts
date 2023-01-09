@@ -23,6 +23,7 @@ export * from "./components/Search";
 export * from "./components/Select";
 export * from "./components/StepIndicator";
 export * from "./components/Table";
+export * from "./components/Tabs";
 export * from "./components/Textarea";
 export * from "./components/Toast";
 export * from "./components/Tooltip";
