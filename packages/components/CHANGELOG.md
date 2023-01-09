@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 6.10.0
+
+### Minor Changes
+
+- [#386](https://github.com/Localitos/pluto/pull/386) [`cf757a9`](https://github.com/Localitos/pluto/commit/cf757a9fa64d4d4159d882bdcf3fa725e0bb4a9d) Thanks [@blumaa](https://github.com/blumaa)! - Added RadioGroup component
+
+### Patch Changes
+
+- Updated dependencies [[`9692cc3`](https://github.com/Localitos/pluto/commit/9692cc3e66244889a9705e441dcba2a04ac19932)]:
+  - @localyze-pluto/theme@2.0.4
+
 ## 6.9.0
 
 ### Minor Changes

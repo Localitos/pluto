@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 2.0.4
+
+### Patch Changes
+
+- [#386](https://github.com/Localitos/pluto/pull/386) [`9692cc3`](https://github.com/Localitos/pluto/commit/9692cc3e66244889a9705e441dcba2a04ac19932) Thanks [@blumaa](https://github.com/blumaa)! - Added state for aria checked and data state checked.
+
 ## 2.0.3
 
 ### Patch Changes
