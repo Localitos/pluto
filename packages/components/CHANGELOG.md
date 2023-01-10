@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 6.11.0
+
+### Minor Changes
+
+- [#388](https://github.com/Localitos/pluto/pull/388) [`7917a21`](https://github.com/Localitos/pluto/commit/7917a21ca965fa35ad89179bd2436df1edb882be) Thanks [@richbachman](https://github.com/richbachman)! - [Tabs]: Added Tabs component, stories, and tests.
+
+### Patch Changes
+
+- Updated dependencies [[`9126891`](https://github.com/Localitos/pluto/commit/9126891c3df0a69b72e5d41a5875e1a52d0ed436)]:
+  - @localyze-pluto/theme@2.0.5
+
 ## 6.10.0
 
 ### Minor Changes
