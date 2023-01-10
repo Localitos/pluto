@@ -1,5 +1,12 @@
 # @localyze-pluto/theme
 
+## 2.0.5
+
+### Patch Changes
+
+- [#388](https://github.com/Localitos/pluto/pull/388) [`9126891`](https://github.com/Localitos/pluto/commit/9126891c3df0a69b72e5d41a5875e1a52d0ed436) Thanks [@richbachman](https://github.com/richbachman)! - - Added `none` to border styles theme object.
+  - Added `transparent` to colors theme object.
+
 ## 2.0.4
 
 ### Patch Changes
