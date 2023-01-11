@@ -22,6 +22,7 @@ export * from "./components/RichText";
 export * from "./components/Search";
 export * from "./components/Select";
 export * from "./components/StepIndicator";
+export * from "./components/Switch";
 export * from "./components/Table";
 export * from "./components/Tabs";
 export * from "./components/Textarea";
