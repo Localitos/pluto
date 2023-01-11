@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.11.1
+
+### Patch Changes
+
+- [#402](https://github.com/Localitos/pluto/pull/402) [`e9e353b`](https://github.com/Localitos/pluto/commit/e9e353b8918df3df47819c6b1556a1bfe57ab69d) Thanks [@blumaa](https://github.com/blumaa)! - Added cursor pointer to Dropzone
+
 ## 6.11.0
 
 ### Minor Changes
