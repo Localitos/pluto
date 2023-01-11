@@ -58,6 +58,12 @@
     "background-strong": {
       "value": "#CBD5E1"
     },
+    "background-strongest": {
+      "value": "#64748B"
+    },
+    "background-primary-weakest": {
+      "value": "#7084FF"
+    },
     "background-primary-weak": {
       "value": "#4A63FC"
     },
