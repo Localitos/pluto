@@ -28,7 +28,7 @@
     "packages/**"
   ],
   "dependencies": {
-    "@tanstack/react-table": "^8.7.4",
+    "@tanstack/react-table": "^8.7.6",
     "formik": "^2.2.9",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.41.5"
