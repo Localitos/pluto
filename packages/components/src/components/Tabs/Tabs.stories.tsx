@@ -9,11 +9,13 @@ import { TabPanels } from "./TabPanels";
 import { TabPanel } from "./TabPanel";
 import { Tab } from "./Tab";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore TabList has a required prop which confuses Storybook here.
 export default {
   component: Tabs,
   subcomponents: { Tab, TabList, TabPanels, TabPanel },
   title: "Components/Tabs",
-} as unknown as ComponentMeta<typeof Tabs>;
+} as ComponentMeta<typeof Tabs>;
 
 export const Default = (): JSX.Element => {
   return (
