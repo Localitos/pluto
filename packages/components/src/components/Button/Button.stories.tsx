@@ -2,6 +2,7 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import map from "lodash/map";
 import React, { ReactElement } from "react";
 import dropRight from "lodash/dropRight";
+import { Link, BrowserRouter } from "react-router-dom";
 import { Box } from "../../primitives/Box";
 import { Button, ButtonProps } from "./Button";
 
@@ -84,10 +85,14 @@ AsLink.args = {
   href: "#",
 };
 
-export const AsLabel = Template.bind({});
-AsLabel.args = {
-  as: "label",
-  children: "Label button",
+export const AsLinkWithReactRouter = (): JSX.Element => {
+  return (
+    <BrowserRouter>
+      <Button as={Link} to="/router-page" variant="primary">
+        Testing
+      </Button>
+    </BrowserRouter>
+  );
 };
 
 export const FullWidth: React.FC = () => (
