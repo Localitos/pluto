@@ -1,5 +1,12 @@
 # @localyze-pluto/components
 
+## 6.11.2
+
+### Patch Changes
+
+- [#405](https://github.com/Localitos/pluto/pull/405) [`b253282`](https://github.com/Localitos/pluto/commit/b25328242e90e4e36ec5b9c153fac4470286fb3e) Thanks [@richbachman](https://github.com/richbachman)! - - [Anchor]: Added additional props so Anchor will work with React Router Link.
+  - [Button]: Added additional props so Button will work with React Router Link.
+
 ## 6.11.1
 
 ### Patch Changes
