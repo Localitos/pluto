@@ -1,5 +1,4 @@
 const path = require("path");
-
 module.exports = {
   stories: ["../packages/**/*.stories.@(js|jsx|ts|tsx)"],
   /** Expose public folder to storybook as static */
@@ -11,9 +10,6 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
   ],
-  core: {
-    builder: "webpack5",
-  },
   webpackFinal: (config) => {
     /**
      * Add support for alias-imports
@@ -32,7 +28,13 @@ module.exports = {
       path.resolve(__dirname, "../public"),
       "node_modules",
     ];
-
     return config;
+  },
+  framework: {
+    name: "@storybook/nextjs",
+    options: {},
+  },
+  docs: {
+    autodocs: true,
   },
 };
