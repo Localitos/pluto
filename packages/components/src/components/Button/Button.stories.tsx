@@ -2,7 +2,8 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import map from "lodash/map";
 import React, { ReactElement } from "react";
 import dropRight from "lodash/dropRight";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link as ReactRouterLink, BrowserRouter } from "react-router-dom";
+import Link from "next/link";
 import { Box } from "../../primitives/Box";
 import { Button, ButtonProps } from "./Button";
 
@@ -85,14 +86,31 @@ AsLink.args = {
   href: "#",
 };
 
-export const AsLinkWithReactRouter = (): JSX.Element => {
+export const WithReactRouter = (): JSX.Element => {
   return (
     <BrowserRouter>
-      <Button as={Link} to="/router-page" variant="primary">
-        Testing
+      <Button as={ReactRouterLink} to="/router-page" variant="primary">
+        React router link
       </Button>
     </BrowserRouter>
   );
+};
+
+export const WithNextJS: ComponentStory<typeof Button> = () => {
+  return (
+    <Link href="/router-page" legacyBehavior passHref>
+      <Button as="a" variant="primary">
+        NextJS link
+      </Button>
+    </Link>
+  );
+};
+WithNextJS.parameters = {
+  nextjs: {
+    router: {
+      basePath: "/router-page",
+    },
+  },
 };
 
 export const FullWidth: React.FC = () => (

@@ -13,7 +13,7 @@ export default {
   component: Tabs,
   subcomponents: { Tab, TabList, TabPanels, TabPanel },
   title: "Components/Tabs",
-} as ComponentMeta<typeof Tabs>;
+} as unknown as ComponentMeta<typeof Tabs>;
 
 export const Default = (): JSX.Element => {
   return (

@@ -4,9 +4,6 @@ import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ButtonAsOptions<Props = any> = React.ElementType<Props>;
-
 type ButtonSizeOptions = "large" | "small";
 type ButtonVariantOptions =
   | "destructive"
@@ -22,7 +19,7 @@ export interface ButtonProps
   /** Sets the variant of the button. */
   variant: ButtonVariantOptions;
   /** Sets the render element of the component. */
-  as?: ButtonAsOptions;
+  as?: React.ComponentProps<typeof Box.button>["as"];
   /** Button content */
   children?: React.ReactNode;
   /** If used as an 'a', the href is url that the link point to. */
@@ -39,7 +36,7 @@ export interface ButtonProps
   trailingIcon?: IconNames;
   /** Sets the button state to loading. */
   loading?: boolean;
-  /** Used with React Router or NextJS to set the route the button links to. */
+  /** Used with React Router to set the route the button links to. */
   to?: string;
   /** Sets the size of the button. */
   size?: ButtonSizeOptions;
@@ -246,8 +243,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
      */
     return (
       <>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore-next-line because we don't know the props coming from possible external libraries. Specifically for `as` prop. */}
         <Box.button
           alignItems="center"
           appearance="none"

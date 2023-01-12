@@ -1,18 +1,14 @@
 import React from "react";
 import { Text } from "../../primitives/Text";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type AnchorAsOptions<Props = any> = React.ElementType<Props>;
-
 export interface AnchorProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "color"> {
   /** Sets the render element of the component. */
-  as?: AnchorAsOptions;
+  as?: React.ComponentProps<typeof Text.a>["as"];
   /** The contents of the anchor. Can be text or valid text related HTML, i.e. strong elements. */
   children: NonNullable<React.ReactNode>;
   /** Sets target to "_blank" and rel to "noreferrer noopener". */
   isExternal?: boolean;
-  /** Used with React Router or NextJS to set the route the anchor links to. */
+  /** Used with React Router to set the route the anchor links to. */
   to?: string;
 }
 
@@ -27,8 +23,6 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
       : {};
 
     return (
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore because we don't know the props coming from possible external libraries. Specifically for `as` prop.
       <Text.a
         color={{
           _: "colorTextLink",
