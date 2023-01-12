@@ -24,7 +24,8 @@
     "xsmall",
     "unhover",
     "uppy",
-    "formik"
+    "formik",
+    "nextjs"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,

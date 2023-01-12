@@ -1,12 +1,15 @@
 import React from "react";
 import { Text } from "../../primitives/Text";
-
 export interface AnchorProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "color"> {
+  /** Sets the render element of the component. */
+  as?: React.ComponentProps<typeof Text.a>["as"];
   /** The contents of the anchor. Can be text or valid text related HTML, i.e. strong elements. */
   children: NonNullable<React.ReactNode>;
   /** Sets target to "_blank" and rel to "noreferrer noopener". */
   isExternal?: boolean;
+  /** Used with React Router to set the route the anchor links to. */
+  to?: string;
 }
 
 /** An anchor is text that navigates the user from one webpage to another */

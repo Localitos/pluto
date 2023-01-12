@@ -1,11 +1,11 @@
 import React from "react";
 import { Title, Description, ArgsTable, Stories } from "@storybook/addon-docs";
+import customTheme from "./theme";
 import {
   ThemeProvider,
   theme,
   GlobalStyles,
   BaseStyles,
-  Preflight,
 } from "../packages/theme";
 
 export const decorators = [
@@ -44,5 +44,6 @@ export const parameters = {
     source: {
       state: "open",
     },
+    theme: customTheme,
   },
 };
