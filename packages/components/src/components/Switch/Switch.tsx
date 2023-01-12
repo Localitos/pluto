@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import { Label } from "../Label";
 import { Box } from "../../primitives/Box";
 import { HelpText } from "../HelpText";
+import { Icon } from "../Icon";
 
 export interface SwitchProps extends SwitchPrimitiveProps {
   /** The controlled state of the switch. Must be used in conjunction with onCheckedChange. */
@@ -58,17 +59,17 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
           as={SwitchRootPrimitive}
           background="none"
           backgroundColor={{
-            _: "colorBackgroundStrong",
-            hover: "colorBackgroundStrongest",
-            focus: "colorBackgroundStrongest",
+            _: "colorBackgroundStrongest",
+            hover: "colorBackgroundPrimaryStrong",
+            focus: "colorBackgroundPrimaryStrong",
             checked: {
               _: "colorBackgroundPrimary",
               hover: "colorBackgroundPrimaryStrong",
               focus: "colorBackgroundPrimaryStrong",
             },
             disabled: {
-              _: "colorBackgroundWeak",
-              checked: "colorBackgroundPrimaryWeak",
+              _: "colorBackgroundStrong",
+              checked: "colorBackgroundPrimaryWeakest",
             },
           }}
           border="none"
@@ -98,6 +99,22 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
           {...props}
         >
           <Box.span
+            display="block"
+            h="1rem"
+            left="4px"
+            position="absolute"
+            top="50%"
+            transform="translate(0, -50%)"
+            w="1rem"
+          >
+            <Icon
+              color="colorTextInverse"
+              decorative
+              icon="CheckIcon"
+              size="sizeIcon20"
+            />
+          </Box.span>
+          <Box.span
             as={SwitchThumbPrimitive}
             backgroundColor="colorBackground"
             borderRadius="borderRadiusCircle"
@@ -110,6 +127,22 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             transition="transform 100ms"
             w="1.25rem"
           />
+          <Box.span
+            display="block"
+            h="1rem"
+            position="absolute"
+            right="4px"
+            top="50%"
+            transform="translate(0, -50%)"
+            w="1rem"
+          >
+            <Icon
+              color="colorTextInverse"
+              decorative
+              icon="XMarkIcon"
+              size="sizeIcon20"
+            />
+          </Box.span>
         </Box.button>
         <Box.div marginTop="space20">
           <Label disabled={disabled} htmlFor={switchId} marginBottom="space0">
