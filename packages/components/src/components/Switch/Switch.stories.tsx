@@ -19,21 +19,27 @@ Default.args = {
 
 export const Checked = Template.bind({});
 Checked.args = {
-  children: "Enable options",
+  children: "Enable option",
   defaultChecked: true,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  children: "Disabled options",
+  children: "Disabled option",
   disabled: true,
 };
 
 export const DisabledChecked = Template.bind({});
 DisabledChecked.args = {
-  children: "Enable options",
+  children: "Disabled option",
   defaultChecked: true,
   disabled: true,
+};
+
+export const WithHelpText = Template.bind({});
+WithHelpText.args = {
+  children: "Notifications",
+  helpText: "This enables the notifications settings.",
 };
 
 export const Controlled = (): JSX.Element => {

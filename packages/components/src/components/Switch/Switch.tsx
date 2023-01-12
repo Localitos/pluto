@@ -31,7 +31,7 @@ export interface SwitchProps extends SwitchPrimitiveProps {
   value?: string;
 }
 
-/** A control that allows the user to toggle between checked and not checked */
+/** A control that allows the user to toggle between checked and not checked. */
 const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
   (
     {
@@ -51,7 +51,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
     const switchId = useUID();
     const helpTextId = useUID();
     return (
-      <Box.div alignItems="center" display="flex" gap="space40">
+      <Box.div display="flex" gap="space40">
         <Box.button
           appearance="none"
           aria-describedby={helpTextId}
@@ -111,12 +111,8 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             w="1.25rem"
           />
         </Box.button>
-        <Box.div>
-          <Label
-            cursor={{ hover: "pointer" }}
-            htmlFor={switchId}
-            marginBottom="space0"
-          >
+        <Box.div marginTop="space20">
+          <Label disabled={disabled} htmlFor={switchId} marginBottom="space0">
             {children}
           </Label>
           {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}

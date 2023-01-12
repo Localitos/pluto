@@ -1,12 +1,12 @@
 import React from "react";
 import { Box } from "../../primitives/Box";
-import type { BoxProps } from "../../primitives/Box";
 
 type LabelMarginBottom = "space0" | "space20";
 
 export interface LabelProps
-  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "color">,
-    Pick<BoxProps, "cursor"> {
+  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "color"> {
+  /** Adjusts the cursor to be not-allowed. */
+  disabled?: boolean;
   /** Use and `id` to tie a label directly to a specific form element. */
   htmlFor: string;
   /** Sets the bottom margin of the label. */
@@ -17,11 +17,15 @@ export interface LabelProps
 
 /** A label is text that provides a visible and accessible name to a form element */
 const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
-  ({ children, marginBottom = "space20", required, ...props }, ref) => {
+  (
+    { children, disabled, marginBottom = "space20", required, ...props },
+    ref
+  ) => {
     return (
       <Box.label
         alignItems="center"
         color="colorTextStrongest"
+        cursor={disabled ? "not-allowed" : "default"}
         display="flex"
         fontFamily="fontFamilyModerat"
         fontSize="fontSize10"
