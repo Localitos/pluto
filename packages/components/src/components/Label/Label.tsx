@@ -1,10 +1,12 @@
 import React from "react";
 import { Box } from "../../primitives/Box";
+import type { BoxProps } from "../../primitives/Box";
 
 type LabelMarginBottom = "space0" | "space20";
 
 export interface LabelProps
-  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "color"> {
+  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "color">,
+    Pick<BoxProps, "cursor"> {
   /** Use and `id` to tie a label directly to a specific form element. */
   htmlFor: string;
   /** Sets the bottom margin of the label. */

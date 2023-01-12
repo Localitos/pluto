@@ -23,6 +23,19 @@ Checked.args = {
   defaultChecked: true,
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: "Disabled options",
+  disabled: true,
+};
+
+export const DisabledChecked = Template.bind({});
+DisabledChecked.args = {
+  children: "Enable options",
+  defaultChecked: true,
+  disabled: true,
+};
+
 export const Controlled = (): JSX.Element => {
   const [checked, setChecked] = React.useState(false);
 

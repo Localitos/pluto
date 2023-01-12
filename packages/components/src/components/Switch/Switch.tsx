@@ -66,11 +66,16 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
               hover: "colorBackgroundPrimaryStrong",
               focus: "colorBackgroundPrimaryStrong",
             },
+            disabled: {
+              _: "colorBackgroundWeak",
+              checked: "colorBackgroundPrimaryWeak",
+            },
           }}
           border="none"
           borderRadius="borderRadiusPill"
           checked={checked}
           cursor={{
+            disabled: "not-allowed",
             hover: "pointer",
           }}
           defaultChecked={defaultChecked}
@@ -107,7 +112,11 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
           />
         </Box.button>
         <Box.div>
-          <Label htmlFor={switchId} marginBottom="space0">
+          <Label
+            cursor={{ hover: "pointer" }}
+            htmlFor={switchId}
+            marginBottom="space0"
+          >
             {children}
           </Label>
           {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}
