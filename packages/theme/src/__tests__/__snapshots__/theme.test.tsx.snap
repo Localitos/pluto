@@ -44,6 +44,7 @@ Object {
     "colorBackgroundPrimaryStrong": "#0B1F9C",
     "colorBackgroundPrimaryStrongest": "#041162",
     "colorBackgroundPrimaryWeak": "#4A63FC",
+    "colorBackgroundPrimaryWeakest": "#7084FF",
     "colorBackgroundStrong": "#CBD5E1",
     "colorBackgroundStrongest": "#64748B",
     "colorBackgroundSuccess": "#ECFDF5",
