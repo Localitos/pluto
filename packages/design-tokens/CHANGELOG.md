@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.0.7
+
+### Patch Changes
+
+- [#407](https://github.com/Localitos/pluto/pull/407) [`38839cd`](https://github.com/Localitos/pluto/commit/38839cdedf90e22be5bae06ab758a98b0113500d) Thanks [@richbachman](https://github.com/richbachman)! - Added colorBackgroundPrimaryWeakest and colorBackgroundStrongest tokens.
+
 ## 0.0.6
 
 ### Patch Changes
