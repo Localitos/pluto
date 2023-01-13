@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 6.12.0
+
+### Minor Changes
+
+- [#407](https://github.com/Localitos/pluto/pull/407) [`bfde897`](https://github.com/Localitos/pluto/commit/bfde8976a933784587477a8034e92146317f92fa) Thanks [@richbachman](https://github.com/richbachman)! - [Switch]: Added Switch component, tests, and stories.
+
+### Patch Changes
+
+- Updated dependencies [[`35cc45f`](https://github.com/Localitos/pluto/commit/35cc45fdf64943fd2866170b86e9bc0791d135fa)]:
+  - @localyze-pluto/theme@2.0.6
+
 ## 6.11.2
 
 ### Patch Changes

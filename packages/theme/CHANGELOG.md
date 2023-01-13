@@ -1,5 +1,14 @@
 # @localyze-pluto/theme
 
+## 2.0.6
+
+### Patch Changes
+
+- [#407](https://github.com/Localitos/pluto/pull/407) [`35cc45f`](https://github.com/Localitos/pluto/commit/35cc45fdf64943fd2866170b86e9bc0791d135fa) Thanks [@richbachman](https://github.com/richbachman)! - Added colorBackgroundPrimaryWeakest and colorBackgroundStrongest to theme.
+
+- Updated dependencies [[`38839cd`](https://github.com/Localitos/pluto/commit/38839cdedf90e22be5bae06ab758a98b0113500d)]:
+  - @localyze-pluto/design-tokens@0.0.7
+
 ## 2.0.5
 
 ### Patch Changes
