@@ -10,6 +10,9 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
   ],
+  features: {
+    interactionsDebugger: true, // 👈 Enable playback controls
+  },
   webpackFinal: (config) => {
     /**
      * Add support for alias-imports

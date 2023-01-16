@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
 
 export interface TdProps
@@ -15,7 +16,20 @@ export interface TdProps
 const Td = React.forwardRef<HTMLTableCellElement, TdProps>(
   ({ children, colSpan, rowSpan, ...props }, ref) => {
     return (
-      <Box.td colSpan={colSpan} ref={ref} rowSpan={rowSpan} {...props}>
+      <Box.td
+        borderBottomColor="colorBorderWeakest"
+        borderBottomStyle="borderStyleSolid"
+        borderBottomWidth="borderWidth10"
+        colSpan={colSpan}
+        paddingBottom="space50"
+        paddingLeft={{
+          first: "space50",
+        }}
+        paddingTop="space50"
+        ref={ref}
+        rowSpan={rowSpan}
+        {...props}
+      >
         {children}
       </Box.td>
     );
@@ -23,5 +37,11 @@ const Td = React.forwardRef<HTMLTableCellElement, TdProps>(
 );
 
 Td.displayName = "Td";
+
+Td.propTypes = {
+  children: PropTypes.node,
+  colSpan: PropTypes.number,
+  rowSpan: PropTypes.number,
+};
 
 export { Td };

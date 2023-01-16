@@ -1,25 +1,50 @@
 import React from "react";
+import { styled } from "@localyze-pluto/theme";
+import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
+import { TableContext } from "./TableContext";
 
 export interface TableProps
   extends Omit<React.TableHTMLAttributes<HTMLTableElement>, "color"> {
   /** The valid HTML contents of the table. */
   children: NonNullable<React.ReactNode>;
+  /** Stripes the rows with alternating colors. */
+  striped?: boolean;
   /** Determines how to layout the cells, rows, and columns. */
   tableLayout?: "auto" | "fixed";
 }
 
+const StyledTable = styled(Box.table)<TableProps>`
+  border-spacing: 0px;
+`;
+
 /** Represent your data in rows and columns */
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ children, tableLayout = "auto", ...props }, ref) => {
+  ({ children, striped = false, tableLayout = "auto", ...props }, ref) => {
+    const tableContext = { striped };
+
     return (
-      <Box.table ref={ref} tableLayout={tableLayout} {...props}>
-        {children}
-      </Box.table>
+      <TableContext.Provider value={tableContext}>
+        <StyledTable
+          borderCollapse="separate"
+          ref={ref}
+          tableLayout={tableLayout}
+          w="100%"
+          {...props}
+        >
+          {children}
+        </StyledTable>
+      </TableContext.Provider>
     );
   }
 );
 
 Table.displayName = "Table";
+
+Table.propTypes = {
+  children: PropTypes.node.isRequired,
+  striped: PropTypes.bool,
+  tableLayout: PropTypes.oneOf(["auto", "fixed"]),
+};
 
 export { Table };
