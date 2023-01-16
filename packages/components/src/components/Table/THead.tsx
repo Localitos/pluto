@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
 
 export interface THeadProps
@@ -24,6 +25,7 @@ const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
   ) => {
     return (
       <Box.thead
+        backgroundColor="colorBackgroundWeakest"
         position={isSticky ? "sticky" : undefined}
         ref={ref}
         top={stickyTopOffset}
@@ -36,5 +38,11 @@ const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
 );
 
 THead.displayName = "THead";
+
+THead.propTypes = {
+  children: PropTypes.node.isRequired,
+  isSticky: PropTypes.bool,
+  stickyTopOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
 
 export { THead };

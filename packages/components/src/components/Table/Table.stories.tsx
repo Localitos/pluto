@@ -1,6 +1,7 @@
+import { within, userEvent } from "@storybook/testing-library";
 // eslint-disable-next-line eslint-comments/disable-enable-pair
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import {
   createColumnHelper,
@@ -11,17 +12,23 @@ import {
   SortingState,
 } from "@tanstack/react-table";
 import map from "lodash/map";
-import { Box } from "../../primitives/Box";
-import { Table, THead, TBody, Tr, Th, Td } from "./index";
+import { Table, THead, TBody, Tr, Th, ThButton, Td } from "./index";
 
-export default {
-  component: Table,
+const table: Meta<typeof Table> = {
   title: "Components/Table",
-} as ComponentMeta<typeof Table>;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore Table has a required prop which confuses Storybook here.
+  subcomponents: { Table, THead, TBody, Tr, Th, ThButton, Td },
+  component: Table,
+};
 
-const Template: ComponentStory<typeof Table> = () => {
-  return (
-    <Table tableLayout="fixed">
+export default table;
+
+type Story = StoryObj<typeof Table>;
+
+export const Default: Story = {
+  render: () => (
+    <Table>
       <THead>
         <Tr>
           <Th>Talent name</Th>
@@ -32,17 +39,40 @@ const Template: ComponentStory<typeof Table> = () => {
       </THead>
       <TBody>
         <Tr>
+          <Td>Captain Picard</Td>
+          <Td>c.picard@enterprise.org</Td>
+          <Td>Open</Td>
+          <Td>Full relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Ford Prefect</Td>
+          <Td>f.prefect@hhgttg.com</Td>
+          <Td>Closed</Td>
+          <Td>Part relocation</Td>
+        </Tr>
+        <Tr>
           <Td>Dietrich Eldert</Td>
           <Td>dietr-ehler@arketmay.com</Td>
           <Td>Closed</Td>
           <Td>Full relocation</Td>
         </Tr>
+        <Tr>
+          <Td>Drew Breeze</Td>
+          <Td>drew.breeze@easy.com</Td>
+          <Td>Open</Td>
+          <Td>Full relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Sugar Magnolia</Td>
+          <Td>sugar.magnolia@gd.com</Td>
+          <Td>Open</Td>
+          <Td>Part relocation</Td>
+        </Tr>
       </TBody>
     </Table>
-  );
+  ),
 };
 
-export const Default = Template.bind({});
 Default.parameters = {
   docs: {
     storyDescription:
@@ -50,41 +80,77 @@ Default.parameters = {
   },
 };
 
-export const StickyHeaders = (): JSX.Element => {
-  return (
-    <Box.div h="500px">
-      <Table>
-        <THead isSticky>
-          <Tr>
-            <Th>Column 1</Th>
-            <Th>Column 2</Th>
-            <Th>Column 3</Th>
+export const StickyHeaders: Story = {
+  render: () => (
+    <Table>
+      <THead isSticky>
+        <Tr>
+          <Th>Column 1</Th>
+          <Th>Column 2</Th>
+          <Th>Column 3</Th>
+        </Tr>
+      </THead>
+      <TBody>
+        {map([...Array.from({ length: 100 }).keys()], (index) => (
+          <Tr key={index}>
+            <Td>Content</Td>
+            <Td>Content</Td>
+            <Td>Content</Td>
           </Tr>
-          <Tr>
-            <Th>Column 1</Th>
-            <Th>Column 2</Th>
-            <Th>Column 3</Th>
-          </Tr>
-        </THead>
-        <TBody>
-          {map([...Array.from({ length: 100 }).keys()], (index) => (
-            <Tr key={index}>
-              <Td>Content</Td>
-              <Td>Content</Td>
-              <Td>Content</Td>
-            </Tr>
-          ))}
-        </TBody>
-      </Table>
-    </Box.div>
-  );
+        ))}
+      </TBody>
+    </Table>
+  ),
 };
 
-StickyHeaders.story = {
-  name: "Sticky headers",
+export const Striped: Story = {
+  render: () => (
+    <Table striped>
+      <THead>
+        <Tr>
+          <Th>Talent name</Th>
+          <Th>Email</Th>
+          <Th>Current state</Th>
+          <Th>Case type</Th>
+        </Tr>
+      </THead>
+      <TBody>
+        <Tr>
+          <Td>Captain Picard</Td>
+          <Td>c.picard@enterprise.org</Td>
+          <Td>Open</Td>
+          <Td>Full relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Ford Prefect</Td>
+          <Td>f.prefect@hhgttg.com</Td>
+          <Td>Closed</Td>
+          <Td>Part relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Dietrich Eldert</Td>
+          <Td>dietr-ehler@arketmay.com</Td>
+          <Td>Closed</Td>
+          <Td>Full relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Drew Breeze</Td>
+          <Td>drew.breeze@easy.com</Td>
+          <Td>Open</Td>
+          <Td>Full relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Sugar Magnolia</Td>
+          <Td>sugar.magnolia@gd.com</Td>
+          <Td>Open</Td>
+          <Td>Part relocation</Td>
+        </Tr>
+      </TBody>
+    </Table>
+  ),
 };
 
-export const ReactTable = (): JSX.Element => {
+const ReactTable = () => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
   type Talent = {
@@ -163,7 +229,7 @@ export const ReactTable = (): JSX.Element => {
           <Tr key={headerGroup.id}>
             {map(headerGroup.headers, (header) => (
               <Th key={header.id}>
-                <div
+                <ThButton
                   {...{
                     onClick: header.column.getToggleSortingHandler(),
                   }}
@@ -176,7 +242,7 @@ export const ReactTable = (): JSX.Element => {
                     asc: " 🔼",
                     desc: " 🔽",
                   }[header.column.getIsSorted() as string] ?? null}
-                </div>
+                </ThButton>
               </Th>
             ))}
           </Tr>
@@ -196,6 +262,21 @@ export const ReactTable = (): JSX.Element => {
     </Table>
   );
 };
+
+export const WithReactTable: Story = {
+  render: (): JSX.Element => <ReactTable />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // See https://storybook.js.org/docs/7.0/react/essentials/actions#automatically-matching-args to learn how to setup logging in the Actions panel
+    await userEvent.click(canvas.getByText("First Name"));
+
+    setTimeout(() => {
+      userEvent.click(canvas.getByText("Last Name"));
+    }, 2000);
+  },
+};
+
 ReactTable.parameters = {
   docs: {
     storyDescription:
