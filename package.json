@@ -46,7 +46,7 @@
     "@storybook/addon-links": "^7.0.0-beta.25",
     "@storybook/addon-viewport": "^7.0.0-beta.25",
     "@storybook/nextjs": "^7.0.0-beta.25",
-    "@storybook/react": "^7.0.0-beta.25",
+    "@storybook/react": "^7.0.0-beta.29",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
