@@ -68,7 +68,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.6.2",
-    "storybook": "^7.0.0-beta.25",
+    "storybook": "^7.0.0-beta.30",
     "ts-jest": "^28.0.5",
     "turbo": "latest"
   },
