@@ -70,6 +70,8 @@ export const theme = {
     hidden: '&[data-hidden="true"]',
     loading: '&[aria-busy="true"]',
     selected: '&[aria-selected="true"]',
+    even: "&:nth-child(even)",
+    odd: "&:nth-child(odd)",
   },
   zIndices: {
     ...ZIndexTokens,
