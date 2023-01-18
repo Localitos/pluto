@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Text } from "../../primitives/Text";
+
 export interface AnchorProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "color"> {
   /** Sets the render element of the component. */
@@ -12,7 +14,7 @@ export interface AnchorProps
   to?: string;
 }
 
-/** An anchor is text that navigates the user from one webpage to another */
+/** An anchor is text that navigates the user from one webpage to another. */
 const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
   ({ children, isExternal, ...props }, ref) => {
     const externalProps = isExternal
@@ -45,5 +47,12 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 );
 
 Anchor.displayName = "Anchor";
+
+Anchor.propTypes = {
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
+  children: PropTypes.node.isRequired,
+  isExternal: PropTypes.bool,
+  to: PropTypes.string,
+};
 
 export { Anchor };
