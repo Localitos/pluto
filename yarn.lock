@@ -3018,7 +3018,7 @@
     lodash "^4.17.21"
     react-resize-detector "^7.1.2"
 
-"@storybook/addon-actions@7.0.0-beta.25", "@storybook/addon-actions@^7.0.0-beta.25":
+"@storybook/addon-actions@7.0.0-beta.25":
   version "7.0.0-beta.25"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.25.tgz#92ccc29a8c4bfb0ec741a71a0ecf7d86aa0433c7"
   integrity sha512-N4itoL2jrbfhEvOVSbi8PvUzGP6RqVwBwbyQkNi9+cmtpdHCVLTZAuXKjZRUcCUIG/+YWd4WjD9McreDVCAVWw==
@@ -3031,6 +3031,28 @@
     "@storybook/preview-api" "7.0.0-beta.25"
     "@storybook/theming" "7.0.0-beta.25"
     "@storybook/types" "7.0.0-beta.25"
+    dequal "^2.0.2"
+    lodash "^4.17.21"
+    polished "^4.2.2"
+    prop-types "^15.7.2"
+    react-inspector "^6.0.0"
+    telejson "^7.0.3"
+    ts-dedent "^2.0.0"
+    uuid-browser "^3.1.0"
+
+"@storybook/addon-actions@^7.0.0-beta.30":
+  version "7.0.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.30.tgz#feea3f3e95ce68f655a2cab35bf9f4b9f5f37c94"
+  integrity sha512-hk7e0B6kSPD/m5+pU6lKS3CzBBYf3n74m33cFjTRyhk8vO8x5QC5tni8nZdzmqREthoIOIf+1zHxYDO8SLE5zg==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.30"
+    "@storybook/components" "7.0.0-beta.30"
+    "@storybook/core-events" "7.0.0-beta.30"
+    "@storybook/global" "^5.0.0"
+    "@storybook/manager-api" "7.0.0-beta.30"
+    "@storybook/preview-api" "7.0.0-beta.30"
+    "@storybook/theming" "7.0.0-beta.30"
+    "@storybook/types" "7.0.0-beta.30"
     dequal "^2.0.2"
     lodash "^4.17.21"
     polished "^4.2.2"
