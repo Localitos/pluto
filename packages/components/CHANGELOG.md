@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.12.1
+
+### Patch Changes
+
+- [#436](https://github.com/Localitos/pluto/pull/436) [`ff6934f`](https://github.com/Localitos/pluto/commit/ff6934f4c795962c2cd20ae37fa77816027c798e) Thanks [@richbachman](https://github.com/richbachman)! - [Heading]: add initial text-transform style rule in order to fix style bleed issue.
+
 ## 6.12.0
 
 ### Minor Changes
