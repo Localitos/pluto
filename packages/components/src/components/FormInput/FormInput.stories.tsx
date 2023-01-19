@@ -14,10 +14,11 @@ export const Default = (): JSX.Element => {
   const inputID = useUID();
   return (
     <FormInput
-      inputId={inputID}
+      id={inputID}
       label="Label text"
       name="input-field"
       placeholder="Placeholder text"
+      type="text"
     />
   );
 };
@@ -27,10 +28,11 @@ export const Required = (): JSX.Element => {
   return (
     <FormInput
       helpText="Please enter some text."
-      inputId={inputID}
+      id={inputID}
       label="Label text"
       name="input-field"
       required
+      type="text"
     />
   );
 };
@@ -41,9 +43,10 @@ export const Disabled = (): JSX.Element => {
     <FormInput
       disabled
       helpText="Please enter some text."
-      inputId={inputID}
+      id={inputID}
       label="Label text"
       name="input-field"
+      type="text"
     />
   );
 };
@@ -54,9 +57,10 @@ export const Error = (): JSX.Element => {
     <FormInput
       hasError
       helpText="This is the error text."
-      inputId={inputID}
+      id={inputID}
       label="Label text"
       name="input-field"
+      type="text"
     />
   );
 };
@@ -67,10 +71,11 @@ export const Controlled = (): JSX.Element => {
   return (
     <FormInput
       helpText="Please enter some text."
-      inputId={inputID}
+      id={inputID}
       label="Label text"
       name="input-field"
       onChange={(e) => setValue(e.target.value)}
+      type="text"
       value={value}
     />
   );

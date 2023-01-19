@@ -3,21 +3,12 @@ import PropTypes from "prop-types";
 import { Label } from "../Label";
 import { Input } from "../Input";
 import { HelpText } from "../HelpText";
-import type { InputTypes } from "../Input";
+import type { InputProps } from "../Input";
 import { Box } from "../../primitives/Box";
 
-export interface FormInputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "color" | "size"> {
+export interface FormInputProps extends Omit<InputProps, "id"> {
   /** The `id` of the input. */
-  inputId: string;
-  /** Changes the input type. */
-  type?: InputTypes;
-  /** Sets the input state to required, so a user has to provide a value in order to be valid. */
-  required?: boolean;
-  /** Sets the state of the input to an error state. */
-  hasError?: boolean;
-  /** The value of the input. */
-  value?: string;
+  id: string;
   /** The text to be used for Label. */
   label: string;
   /** The text to be used for HelpText. */
@@ -28,11 +19,12 @@ export interface FormInputProps
 const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
   (
     {
-      inputId,
+      id,
       type = "text",
       required,
       label,
       helpText,
+      disabled,
       hasError,
       value,
       ...props
@@ -41,13 +33,14 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
   ) => {
     return (
       <Box.div position="relative">
-        <Label htmlFor={inputId} required={required}>
+        <Label disabled={disabled} htmlFor={id} required={required}>
           {label}
         </Label>
         <Input
-          aria-describedby={helpText ? `${inputId}-help-text` : undefined}
+          aria-describedby={helpText ? `${id}-help-text` : undefined}
+          disabled={disabled}
           hasError={hasError}
-          id={inputId}
+          id={id}
           ref={ref}
           required={required}
           type={type}
@@ -56,7 +49,7 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
         />
         {helpText && (
           <Box.div position="absolute">
-            <HelpText hasError={hasError} id={`${inputId}-help-text`}>
+            <HelpText hasError={hasError} id={`${id}-help-text`}>
               {helpText}
             </HelpText>
           </Box.div>
@@ -69,22 +62,7 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
 FormInput.displayName = "FormInput";
 
 FormInput.propTypes = {
-  inputId: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
-    "date",
-    "datetime-local",
-    "email",
-    "hidden",
-    "number",
-    "password",
-    "search",
-    "tel",
-    "text",
-    "time",
-  ]),
-  required: PropTypes.bool,
-  hasError: PropTypes.bool,
-  value: PropTypes.string,
+  id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   helpText: PropTypes.string,
 };
