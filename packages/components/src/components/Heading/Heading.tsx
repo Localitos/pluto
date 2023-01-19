@@ -139,6 +139,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         marginBottom={marginBottom}
         marginTop="space0"
         ref={ref}
+        textTransform="initial"
         {...getHeadingSizes(size)}
         {...props}
       >
