@@ -9,6 +9,8 @@ export * from "./components/Drawer";
 export * from "./components/Dropzone";
 export * from "./components/FileUploader";
 export * from "./components/FormInput";
+export * from "./components/FormSelect";
+export * from "./components/FormTextArea";
 export * from "./components/Heading";
 export * from "./components/HelpText";
 export * from "./components/Icon";
