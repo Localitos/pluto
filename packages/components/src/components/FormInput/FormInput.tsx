@@ -10,9 +10,9 @@ export interface FormInputProps extends Omit<InputProps, "id"> {
   /** The `id` of the input. */
   id: string;
   /** The text to be used for Label. */
-  label: string;
+  label: NonNullable<React.ReactNode>;
   /** The text to be used for HelpText. */
-  helpText?: string;
+  helpText?: React.ReactNode;
 }
 
 /** Combined Label, Input, and HelpText used in forms. */
@@ -63,8 +63,8 @@ FormInput.displayName = "FormInput";
 
 FormInput.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  helpText: PropTypes.string,
+  label: PropTypes.node.isRequired,
+  helpText: PropTypes.node,
 };
 
 export { FormInput };
