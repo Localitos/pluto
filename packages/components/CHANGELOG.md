@@ -1,5 +1,18 @@
 # @localyze-pluto/components
 
+## 6.13.0
+
+### Minor Changes
+
+- [#438](https://github.com/Localitos/pluto/pull/438) [`d68b998`](https://github.com/Localitos/pluto/commit/d68b9980b1606185a7a4acd77c2361f5bae6a527) Thanks [@richbachman](https://github.com/richbachman)! - [FormInput] - Added FormInput component, tests, and stories.
+
+- [#409](https://github.com/Localitos/pluto/pull/409) [`92f08d0`](https://github.com/Localitos/pluto/commit/92f08d056498cb73fc7d3ef8654173162169a92c) Thanks [@blumaa](https://github.com/blumaa)! - added styles to table
+
+### Patch Changes
+
+- Updated dependencies [[`db13f40`](https://github.com/Localitos/pluto/commit/db13f40be41fa26126245a4adf8d52cbf842fc26)]:
+  - @localyze-pluto/theme@2.0.7
+
 ## 6.12.1
 
 ### Patch Changes
