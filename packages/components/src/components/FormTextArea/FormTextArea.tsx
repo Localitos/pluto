@@ -7,7 +7,10 @@ import type { TextAreaProps } from "../Textarea";
 import { Box } from "../../primitives/Box";
 
 export interface FormTextAreaProps
-  extends Omit<TextAreaProps, "aria-label" | "aria-labelledby" | "id"> {
+  extends Omit<
+    TextAreaProps,
+    "aria-describedby" | "aria-label" | "aria-labelledby" | "id"
+  > {
   /** The `id` of the input. */
   id: string;
   /** The text to be used for Label. */

@@ -7,7 +7,10 @@ import type { SelectProps } from "../Select";
 import { Box } from "../../primitives/Box";
 
 export interface FormSelectProps
-  extends Omit<SelectProps, "aria-label" | "aria-labelledby" | "id"> {
+  extends Omit<
+    SelectProps,
+    "aria-describedby" | "aria-label" | "aria-labelledby" | "id"
+  > {
   /** The `id` of the select. */
   id: string;
   /** The text to be used for Label. */
