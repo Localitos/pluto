@@ -1,5 +1,12 @@
 # @localyze-pluto/components
 
+## 6.14.0
+
+### Minor Changes
+
+- [#440](https://github.com/Localitos/pluto/pull/440) [`3c683cb`](https://github.com/Localitos/pluto/commit/3c683cbec601f9e1bbc43da47efea2b6f2580cdd) Thanks [@richbachman](https://github.com/richbachman)! - [FormSelect] - Added FormSelect component, tests, and stories.
+  [FormTextArea] - Added FormTextArea component, tests, and stories.
+
 ## 6.13.0
 
 ### Minor Changes
