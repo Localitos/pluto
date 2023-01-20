@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 2.0.7
+
+### Patch Changes
+
+- [#409](https://github.com/Localitos/pluto/pull/409) [`db13f40`](https://github.com/Localitos/pluto/commit/db13f40be41fa26126245a4adf8d52cbf842fc26) Thanks [@blumaa](https://github.com/blumaa)! - added nth-child odd and even to theme
+
 ## 2.0.6
 
 ### Patch Changes
