@@ -11,6 +11,7 @@ const meta: Meta<typeof FormSelect> = {
 
 export default meta;
 
+// This duplicated in the first story so we can show the shape in the storybook code snippet.
 const selectItems: SelectProps["items"] = [
   { value: "option-one", label: "Option One" },
   { value: "option-two", label: "Option Two" },
@@ -25,6 +26,19 @@ const selectItems: SelectProps["items"] = [
 
 export const Default = (): JSX.Element => {
   const selectID = useUID();
+
+  const selectItems: SelectProps["items"] = [
+    { value: "option-one", label: "Option One" },
+    { value: "option-two", label: "Option Two" },
+    { value: "option-three", label: "Option Three", disabled: true },
+    { value: "option-four", label: "Option Four" },
+    {
+      value: "option-five",
+      label:
+        "Option Five which is a really long item and should overflow to the next line",
+    },
+  ];
+
   return (
     <FormSelect
       id={selectID}

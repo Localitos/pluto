@@ -6,7 +6,8 @@ import { HelpText } from "../HelpText";
 import type { InputProps } from "../Input";
 import { Box } from "../../primitives/Box";
 
-export interface FormInputProps extends Omit<InputProps, "id"> {
+export interface FormInputProps
+  extends Omit<InputProps, "aria-label" | "aria-labelledby" | "id"> {
   /** The `id` of the input. */
   id: string;
   /** The text to be used for Label. */

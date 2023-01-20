@@ -6,7 +6,8 @@ import { HelpText } from "../HelpText";
 import type { TextAreaProps } from "../Textarea";
 import { Box } from "../../primitives/Box";
 
-export interface FormTextAreaProps extends Omit<TextAreaProps, "id"> {
+export interface FormTextAreaProps
+  extends Omit<TextAreaProps, "aria-label" | "aria-labelledby" | "id"> {
   /** The `id` of the input. */
   id: string;
   /** The text to be used for Label. */
