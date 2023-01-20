@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Label } from "../Label";
-import { Input } from "../Input";
+import { TextArea } from "../Textarea";
 import { HelpText } from "../HelpText";
-import type { InputProps } from "../Input";
+import type { TextAreaProps } from "../Textarea";
 import { Box } from "../../primitives/Box";
 
-export interface FormInputProps
+export interface FormTextAreaProps
   extends Omit<
-    InputProps,
+    TextAreaProps,
     "aria-describedby" | "aria-label" | "aria-labelledby" | "id"
   > {
   /** The `id` of the input. */
@@ -19,36 +19,21 @@ export interface FormInputProps
   helpText?: React.ReactNode;
 }
 
-/** Combined Label, Input, and HelpText used for Inputs in forms. */
-const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
-  (
-    {
-      id,
-      type = "text",
-      required,
-      label,
-      helpText,
-      disabled,
-      hasError,
-      value,
-      ...props
-    },
-    ref
-  ) => {
+/** Combined Label, Input, and HelpText used for Textareas in forms. */
+const FormTextArea = React.forwardRef<HTMLTextAreaElement, FormTextAreaProps>(
+  ({ id, required, label, helpText, disabled, hasError, ...props }, ref) => {
     return (
       <Box.div position="relative">
         <Label disabled={disabled} htmlFor={id} required={required}>
           {label}
         </Label>
-        <Input
+        <TextArea
           aria-describedby={helpText ? `${id}-help-text` : undefined}
           disabled={disabled}
           hasError={hasError}
           id={id}
           ref={ref}
           required={required}
-          type={type}
-          value={value}
           {...props}
         />
         {helpText && (
@@ -63,12 +48,12 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
   }
 );
 
-FormInput.displayName = "FormInput";
+FormTextArea.displayName = "FormTextArea";
 
-FormInput.propTypes = {
+FormTextArea.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.node.isRequired,
   helpText: PropTypes.node,
 };
 
-export { FormInput };
+export { FormTextArea };

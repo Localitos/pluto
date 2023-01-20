@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Label } from "../Label";
-import { Input } from "../Input";
+import { Select } from "../Select";
 import { HelpText } from "../HelpText";
-import type { InputProps } from "../Input";
+import type { SelectProps } from "../Select";
 import { Box } from "../../primitives/Box";
 
-export interface FormInputProps
+export interface FormSelectProps
   extends Omit<
-    InputProps,
+    SelectProps,
     "aria-describedby" | "aria-label" | "aria-labelledby" | "id"
   > {
-  /** The `id` of the input. */
+  /** The `id` of the select. */
   id: string;
   /** The text to be used for Label. */
   label: NonNullable<React.ReactNode>;
@@ -19,36 +19,21 @@ export interface FormInputProps
   helpText?: React.ReactNode;
 }
 
-/** Combined Label, Input, and HelpText used for Inputs in forms. */
-const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
-  (
-    {
-      id,
-      type = "text",
-      required,
-      label,
-      helpText,
-      disabled,
-      hasError,
-      value,
-      ...props
-    },
-    ref
-  ) => {
+/** Combined Label, Select, and HelpText used for Selects in forms. */
+const FormSelect = React.forwardRef<HTMLButtonElement, FormSelectProps>(
+  ({ id, required, label, helpText, hasError, disabled, ...props }, ref) => {
     return (
       <Box.div position="relative">
         <Label disabled={disabled} htmlFor={id} required={required}>
           {label}
         </Label>
-        <Input
+        <Select
           aria-describedby={helpText ? `${id}-help-text` : undefined}
           disabled={disabled}
           hasError={hasError}
           id={id}
           ref={ref}
           required={required}
-          type={type}
-          value={value}
           {...props}
         />
         {helpText && (
@@ -63,12 +48,12 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
   }
 );
 
-FormInput.displayName = "FormInput";
+FormSelect.displayName = "FormSelect";
 
-FormInput.propTypes = {
+FormSelect.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.node.isRequired,
   helpText: PropTypes.node,
 };
 
-export { FormInput };
+export { FormSelect };
