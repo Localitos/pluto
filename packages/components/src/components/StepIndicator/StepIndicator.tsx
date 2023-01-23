@@ -29,7 +29,7 @@ const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
           // eslint-disable-next-line lodash/prefer-lodash-method
           steps.map((step, index) => (
             <StepIndicatorSegment
-              completed={current >= index}
+              complete={current >= index}
               isActiveStep={current === index}
               key={index}
             >
