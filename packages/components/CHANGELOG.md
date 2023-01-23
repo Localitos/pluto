@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.14.1
+
+### Patch Changes
+
+- [`da466cd`](https://github.com/Localitos/pluto/commit/da466cdb0d99db0b65a6ca9cfe21143b4c3f57b4) Thanks [@blumaa](https://github.com/blumaa)! - Fixed stickyheaders wrapper
+
 ## 6.14.0
 
 ### Minor Changes
