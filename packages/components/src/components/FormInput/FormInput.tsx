@@ -36,7 +36,7 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
     ref
   ) => {
     return (
-      <Box.div position="relative">
+      <Box.div>
         <Label disabled={disabled} htmlFor={id} required={required}>
           {label}
         </Label>
@@ -52,11 +52,9 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
           {...props}
         />
         {helpText && (
-          <Box.div position="absolute">
-            <HelpText hasError={hasError} id={`${id}-help-text`}>
-              {helpText}
-            </HelpText>
-          </Box.div>
+          <HelpText hasError={hasError} id={`${id}-help-text`}>
+            {helpText}
+          </HelpText>
         )}
       </Box.div>
     );

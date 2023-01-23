@@ -23,7 +23,7 @@ export interface FormSelectProps
 const FormSelect = React.forwardRef<HTMLButtonElement, FormSelectProps>(
   ({ id, required, label, helpText, hasError, disabled, ...props }, ref) => {
     return (
-      <Box.div position="relative">
+      <Box.div>
         <Label disabled={disabled} htmlFor={id} required={required}>
           {label}
         </Label>
@@ -37,11 +37,9 @@ const FormSelect = React.forwardRef<HTMLButtonElement, FormSelectProps>(
           {...props}
         />
         {helpText && (
-          <Box.div position="absolute">
-            <HelpText hasError={hasError} id={`${id}-help-text`}>
-              {helpText}
-            </HelpText>
-          </Box.div>
+          <HelpText hasError={hasError} id={`${id}-help-text`}>
+            {helpText}
+          </HelpText>
         )}
       </Box.div>
     );

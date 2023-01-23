@@ -104,3 +104,20 @@ export const MultiSelect = (): JSX.Element => {
     />
   );
 };
+
+export const Controlled = (): JSX.Element => {
+  const [selectValue, setSelectValue] =
+    React.useState<SelectProps["value"]>("");
+  const selectID = useUID();
+  return (
+    <FormSelect
+      helpText="Please choose one of the values."
+      id={selectID}
+      items={selectItems}
+      label="Label text"
+      name="select-field"
+      setValue={(value) => setSelectValue(value)}
+      value={selectValue}
+    />
+  );
+};
