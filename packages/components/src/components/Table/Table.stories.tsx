@@ -34,40 +34,75 @@ export const Default: Story = {
         <Tr>
           <Th>Talent name</Th>
           <Th>Email</Th>
-          <Th>Current state</Th>
-          <Th>Case type</Th>
+          <Th textAlign="center">Current state</Th>
+          <Th textAlign="right">Case type</Th>
         </Tr>
       </THead>
       <TBody>
         <Tr>
           <Td>Captain Picard</Td>
           <Td>c.picard@enterprise.org</Td>
-          <Td>Open</Td>
-          <Td>Full relocation</Td>
+          <Td textAlign="center">Open</Td>
+          <Td textAlign="right">Full relocation</Td>
         </Tr>
         <Tr>
           <Td>Ford Prefect</Td>
           <Td>f.prefect@hhgttg.com</Td>
-          <Td>Closed</Td>
-          <Td>Part relocation</Td>
+          <Td textAlign="center">Closed</Td>
+          <Td textAlign="right">Part relocation</Td>
         </Tr>
         <Tr>
           <Td>Dietrich Eldert</Td>
           <Td>dietr-ehler@arketmay.com</Td>
-          <Td>Closed</Td>
-          <Td>Full relocation</Td>
+          <Td textAlign="center">Closed</Td>
+          <Td textAlign="right">Full relocation</Td>
         </Tr>
         <Tr>
           <Td>Drew Breeze</Td>
           <Td>drew.breeze@easy.com</Td>
-          <Td>Open</Td>
-          <Td>Full relocation</Td>
+          <Td textAlign="center">Open</Td>
+          <Td textAlign="right">Full relocation</Td>
         </Tr>
         <Tr>
           <Td>Sugar Magnolia</Td>
           <Td>sugar.magnolia@gd.com</Td>
-          <Td>Open</Td>
-          <Td>Part relocation</Td>
+          <Td textAlign="center">Open</Td>
+          <Td textAlign="right">Part relocation</Td>
+        </Tr>
+      </TBody>
+    </Table>
+  ),
+};
+
+export const Bordered: Story = {
+  render: () => (
+    <Table bordered>
+      <THead>
+        <Tr>
+          <Th>Talent name</Th>
+          <Th>Email</Th>
+          <Th textAlign="center">Current state</Th>
+          <Th textAlign="right">Case type</Th>
+        </Tr>
+      </THead>
+      <TBody>
+        <Tr>
+          <Td>Captain Picard</Td>
+          <Td>c.picard@enterprise.org</Td>
+          <Td textAlign="center">Open</Td>
+          <Td textAlign="right">Full relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Ford Prefect</Td>
+          <Td>f.prefect@hhgttg.com</Td>
+          <Td textAlign="center">Closed</Td>
+          <Td textAlign="right">Part relocation</Td>
+        </Tr>
+        <Tr>
+          <Td>Dietrich Eldert</Td>
+          <Td>dietr-ehler@arketmay.com</Td>
+          <Td textAlign="center">Closed</Td>
+          <Td textAlign="right">Full relocation</Td>
         </Tr>
       </TBody>
     </Table>
