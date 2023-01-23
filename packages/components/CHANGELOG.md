@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 6.14.1
+
+### Patch Changes
+
+- [#444](https://github.com/Localitos/pluto/pull/444) [`e48e392`](https://github.com/Localitos/pluto/commit/e48e3920a0e9a7f4ecd4e40a7e918a0b95f25f30) Thanks [@richbachman](https://github.com/richbachman)! - - [FormInput, FormSelect, FormTextArea] - Removed absolute positioning in form element HelpText.
+
+  - [FormSelect] - Added a controlled story example.
+
+- [#443](https://github.com/Localitos/pluto/pull/443) [`0c8e22c`](https://github.com/Localitos/pluto/commit/0c8e22caab8ce12f000beccc334ad3099abdc175) Thanks [@blumaa](https://github.com/blumaa)! - fixed sticky table headers by adding wrapper
+
 ## 6.14.0
 
 ### Minor Changes
