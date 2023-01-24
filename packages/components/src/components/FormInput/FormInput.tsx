@@ -23,13 +23,13 @@ export interface FormInputProps
 const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
   (
     {
-      id,
-      type = "text",
-      required,
-      label,
-      helpText,
       disabled,
       hasError,
+      helpText,
+      id,
+      label,
+      required,
+      type = "text",
       value,
       ...props
     },
@@ -51,6 +51,7 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
           value={value}
           {...props}
         />
+        {!hasError && !helpText && <Box.div h="1rem" marginTop="space20" />}
         {helpText && (
           <HelpText hasError={hasError} id={`${id}-help-text`}>
             {helpText}
@@ -64,9 +65,14 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
 FormInput.displayName = "FormInput";
 
 FormInput.propTypes = {
+  disabled: PropTypes.bool,
+  helpText: PropTypes.node,
   id: PropTypes.string.isRequired,
   label: PropTypes.node.isRequired,
-  helpText: PropTypes.node,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
+  required: PropTypes.bool,
 };
 
 export { FormInput };
