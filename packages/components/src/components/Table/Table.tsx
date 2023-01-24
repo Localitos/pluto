@@ -6,6 +6,8 @@ import { TableContext } from "./TableContext";
 
 export interface TableProps
   extends Omit<React.TableHTMLAttributes<HTMLTableElement>, "color"> {
+  /** Adds vertical borders to the table THs and Tds. */
+  bordered?: boolean;
   /** The valid HTML contents of the table. */
   children: NonNullable<React.ReactNode>;
   /** Stripes the rows with alternating colors. */
@@ -20,8 +22,17 @@ const StyledTable = styled(Box.table)<TableProps>`
 
 /** Represent your data in rows and columns */
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ children, striped = false, tableLayout = "auto", ...props }, ref) => {
-    const tableContext = { striped };
+  (
+    {
+      bordered = false,
+      children,
+      striped = false,
+      tableLayout = "auto",
+      ...props
+    },
+    ref
+  ) => {
+    const tableContext = { bordered, striped };
 
     return (
       <TableContext.Provider value={tableContext}>
@@ -42,6 +53,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
 Table.displayName = "Table";
 
 Table.propTypes = {
+  bordered: PropTypes.bool,
   children: PropTypes.node.isRequired,
   striped: PropTypes.bool,
   tableLayout: PropTypes.oneOf(["auto", "fixed"]),

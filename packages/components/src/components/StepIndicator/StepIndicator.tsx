@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
 import { StepIndicatorSegment } from "./StepIndicatorSegment";
 
@@ -27,7 +28,11 @@ const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
         {
           // eslint-disable-next-line lodash/prefer-lodash-method
           steps.map((step, index) => (
-            <StepIndicatorSegment isActiveStep={current === index} key={index}>
+            <StepIndicatorSegment
+              complete={current >= index}
+              isActiveStep={current === index}
+              key={index}
+            >
               {step}
             </StepIndicatorSegment>
           ))
@@ -38,5 +43,10 @@ const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
 );
 
 StepIndicator.displayName = "StepIndicator";
+
+StepIndicator.propTypes = {
+  current: PropTypes.number.isRequired,
+  steps: PropTypes.array.isRequired,
+};
 
 export { StepIndicator };

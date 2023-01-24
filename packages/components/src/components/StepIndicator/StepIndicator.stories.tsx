@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
@@ -7,7 +7,7 @@ import { StepIndicator } from "./StepIndicator";
 export default {
   component: StepIndicator,
   title: "Components/StepIndicator",
-} as ComponentMeta<typeof StepIndicator>;
+} as Meta<typeof StepIndicator>;
 
 const threeStepsArray = ["Step 1", "Step 2", "Step 3"];
 
