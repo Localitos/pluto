@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 6.14.2
+
+### Patch Changes
+
+- [#446](https://github.com/Localitos/pluto/pull/446) [`b79755c`](https://github.com/Localitos/pluto/commit/b79755c03e62833eade5f8482efdc816904fe34d) Thanks [@richbachman](https://github.com/richbachman)! - - [Table] - added `bordered` prop to add vertical borders to the tables THs and TDs.
+  - [Table] - added `textAlign` prop to TH and TD.
+  - [StepIndicator] - fixed the color of for completed step.
+
 ## 6.14.1
 
 ### Patch Changes
