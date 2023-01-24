@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.14.3
+
+### Patch Changes
+
+- [#448](https://github.com/Localitos/pluto/pull/448) [`3e529e1`](https://github.com/Localitos/pluto/commit/3e529e1b0c14fd780c5175c3bfeebdd14c3da6d1) Thanks [@richbachman](https://github.com/richbachman)! - [Heading] - Add letter spacing reset so downstream app styles don't interfere.
+
 ## 6.14.2
 
 ### Patch Changes
