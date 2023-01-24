@@ -136,6 +136,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         color={color}
         fontFamily="fontFamilyModerat"
         fontWeight="fontWeightBold"
+        letterSpacing="normal"
         marginBottom={marginBottom}
         marginTop="space0"
         ref={ref}
