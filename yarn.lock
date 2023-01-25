@@ -3698,6 +3698,14 @@
     "@storybook/client-logger" "7.0.0-beta.30"
     "@storybook/preview-api" "7.0.0-beta.30"
 
+"@storybook/core-client@7.0.0-beta.33":
+  version "7.0.0-beta.33"
+  resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-7.0.0-beta.33.tgz#84a9436e22885287372748a8ba0f40635de99991"
+  integrity sha512-U0oSqi0GiQ6VAY0jDyXrMdbsGgRIY6N2b/ONWMI8PyZUYE9Nnf6QPOQWfKzlIeNctFGmrH37+FIG0wn5yr5VjQ==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.33"
+    "@storybook/preview-api" "7.0.0-beta.33"
+
 "@storybook/core-common@7.0.0-beta.25":
   version "7.0.0-beta.25"
   resolved "https://registry.yarnpkg.com/@storybook/core-common/-/core-common-7.0.0-beta.25.tgz#ba4f43f9ca69ed5efe96ea22847040e51c5c1b68"
@@ -4307,7 +4315,7 @@
     react-docgen-typescript "^2.1.1"
     tslib "^2.0.0"
 
-"@storybook/react@7.0.0-beta.30", "@storybook/react@^7.0.0-beta.30":
+"@storybook/react@7.0.0-beta.30":
   version "7.0.0-beta.30"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-beta.30.tgz#553138256b467761b8bf106f09647d46a7b91c04"
   integrity sha512-tcG+7vkf8/C2Az/Ei23DEfCx7sBqBi/odBEFIKYlZZkDTlkYWdTpcsn1P4fE/QFetwyS6F85aG3Qmluyk7YBQA==
@@ -4318,6 +4326,32 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-beta.30"
     "@storybook/types" "7.0.0-beta.30"
+    "@types/escodegen" "^0.0.6"
+    "@types/estree" "^0.0.51"
+    "@types/node" "^16.0.0"
+    acorn "^7.4.1"
+    acorn-jsx "^5.3.1"
+    acorn-walk "^7.2.0"
+    escodegen "^2.0.0"
+    html-tags "^3.1.0"
+    lodash "^4.17.21"
+    prop-types "^15.7.2"
+    react-element-to-jsx-string "^15.0.0"
+    ts-dedent "^2.0.0"
+    type-fest "^2.19.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/react@^7.0.0-beta.33":
+  version "7.0.0-beta.33"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-beta.33.tgz#7cf8e4eb11467319854c09746ed0d7b9a8b966e7"
+  integrity sha512-+UCI1xMpeZ0I7zESRIexLdhc6Xqm8aXC/W68VL9oAcijMh+3aCzvTv9f6UE1TbjqZ4azxaK+cPfGIDuNNtXd0A==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.33"
+    "@storybook/core-client" "7.0.0-beta.33"
+    "@storybook/docs-tools" "7.0.0-beta.33"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "7.0.0-beta.33"
+    "@storybook/types" "7.0.0-beta.33"
     "@types/escodegen" "^0.0.6"
     "@types/estree" "^0.0.51"
     "@types/node" "^16.0.0"
