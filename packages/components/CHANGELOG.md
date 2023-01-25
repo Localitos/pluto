@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.14.4
+
+### Patch Changes
+
+- [#471](https://github.com/Localitos/pluto/pull/471) [`ee100b1`](https://github.com/Localitos/pluto/commit/ee100b11aeee18df10900ae908a140c9b3ee9fbb) Thanks [@blumaa](https://github.com/blumaa)! - Added hover colorBackgroundWeak to Tr and isClickable prop
+
 ## 6.14.3
 
 ### Patch Changes
