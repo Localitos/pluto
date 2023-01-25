@@ -45,9 +45,10 @@ const ControlledFormInput = ({
           readOnly={readOnly}
           required={required}
           type={type}
+          {...props}
         />
       )}
-      {...props}
+      rules={props.rules}
     />
   );
 };

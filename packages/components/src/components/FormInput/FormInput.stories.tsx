@@ -116,6 +116,7 @@ export const WithReactHookForm = (): JSX.Element => {
     <Box.form onSubmit={handleSubmit(onSubmit)}>
       <ControlledFormInput
         control={control}
+        data-testid="test"
         errorText={
           formState.errors.flavor?.type === "minLength"
             ? "Please enter more than two characters."
@@ -128,6 +129,7 @@ export const WithReactHookForm = (): JSX.Element => {
         placeholder="Maybe something crazy?"
         required
         rules={{ minLength: 2, required: true }}
+        size="large"
         type="text"
       />
       <ControlledFormInput
