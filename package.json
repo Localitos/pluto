@@ -62,7 +62,7 @@
     "jest-environment-jsdom": "^29.4.0",
     "jest-watch-typeahead": "^2.2.1",
     "lint-staged": "^13.1.0",
-    "next": "^13.1.2",
+    "next": "^13.1.5",
     "plop": "^3.1.1",
     "prettier": "^2.8.3",
     "react": "^17.0.2",
