@@ -54,7 +54,7 @@
     "@types/jest": "^28.1.4",
     "assert": "^2.0.0",
     "cspell": "^6.19.2",
-    "danger": "^11.2.1",
+    "danger": "^11.2.2",
     "eslint": "^8.31.0",
     "eslint-plugin-storybook": "^0.6.10",
     "husky": "^8.0.3",
