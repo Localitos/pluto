@@ -141,6 +141,30 @@ export const StickyHeaders: Story = {
   ),
 };
 
+export const WithClickableRows: Story = {
+  render: () => (
+    <Box.div h="20rem" overflowY="auto">
+      <Table>
+        <THead isSticky>
+          <Tr>
+            <Th>Column 1</Th>
+            <Th>Column 2</Th>
+            <Th>Column 3</Th>
+          </Tr>
+        </THead>
+        <TBody>
+          {map([...Array.from({ length: 100 }).keys()], (index) => (
+            <Tr isClickable key={index}>
+              <Td>Content</Td>
+              <Td>Content</Td>
+              <Td>Content</Td>
+            </Tr>
+          ))}
+        </TBody>
+      </Table>
+    </Box.div>
+  ),
+};
 export const Striped: Story = {
   render: () => (
     <Table striped>
