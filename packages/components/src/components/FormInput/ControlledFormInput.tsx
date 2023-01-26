@@ -6,8 +6,8 @@ import { FormInput } from "./FormInput";
 import type { FormInputProps } from "./FormInput";
 
 export interface ControlledFormInputProps
-  extends Omit<ControllerProps, "control" | "render">,
-    Omit<FormInputProps, "defaultValue" | "name"> {
+  extends Omit<ControllerProps, "control" | "defaultValue" | "render">,
+    Omit<FormInputProps, "defaultValue" | "name" | "value"> {
   /** Invoked with `useForm`. Set to any to allow `any` number of form inputs. */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control?: Control<any>;
