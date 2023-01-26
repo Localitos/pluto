@@ -2,6 +2,8 @@ import type { Meta } from "@storybook/react";
 import React from "react";
 import { useUID } from "react-uid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 import { FormInput } from "./FormInput";
@@ -89,6 +91,20 @@ export const Controlled = (): JSX.Element => {
 };
 
 export const WithReactHookForm = (): JSX.Element => {
+  const schema = yup.object().shape({
+    flavor: yup
+      .string()
+      .required("A flavor is required.")
+      .min(2, "Please enter more than two characters."),
+    flavor1: yup
+      .string()
+      .required("A flavor is required.")
+      .min(2, "Please enter more than two characters."),
+    flavor2: yup.string(),
+    flavor3: yup.string(),
+    flavor4: yup.string(),
+  });
+
   interface FormInputs {
     flavor: string;
     flavor1: string;
@@ -105,6 +121,7 @@ export const WithReactHookForm = (): JSX.Element => {
       flavor3: "Vanilla",
       flavor4: "Strawberry",
     },
+    resolver: yupResolver(schema),
   });
 
   // eslint-disable-next-line unicorn/consistent-function-scoping
@@ -117,32 +134,33 @@ export const WithReactHookForm = (): JSX.Element => {
       <ControlledFormInput
         control={control}
         data-testid="test"
-        errorText={
-          formState.errors.flavor?.type === "minLength"
-            ? "Please enter more than two characters."
+        hasError={!!formState.errors.flavor}
+        helpText={
+          formState.errors.flavor
+            ? formState.errors.flavor.message
             : "Please enter a flavor."
         }
-        helpText="Please enter a flavor."
         id={`${inputID}-1`}
         label="Enter a flavor"
         name="flavor"
         placeholder="Maybe something crazy?"
-        rules={{ minLength: 2, required: true }}
+        required
         size="large"
         type="text"
       />
       <ControlledFormInput
         control={control}
-        errorText={
-          formState.errors.flavor1?.type === "minLength"
-            ? "Please enter more than two characters."
+        hasError={!!formState.errors.flavor1}
+        helpText={
+          formState.errors.flavor1
+            ? formState.errors.flavor1.message
             : "Please enter a flavor."
         }
         id={`${inputID}-1`}
         label="Enter a flavor"
         name="flavor1"
         placeholder="Maybe something crazy?"
-        rules={{ minLength: 2, required: true }}
+        required
         type="text"
       />
       <ControlledFormInput

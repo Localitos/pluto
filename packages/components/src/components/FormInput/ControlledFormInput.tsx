@@ -7,24 +7,22 @@ import type { FormInputProps } from "./FormInput";
 
 export interface ControlledFormInputProps
   extends Omit<ControllerProps, "control" | "render">,
-    Omit<FormInputProps, "defaultValue" | "name" | "required"> {
+    Omit<FormInputProps, "defaultValue" | "name"> {
   /** Invoked with `useForm`. Set to any to allow `any` number of form inputs. */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control?: Control<any>;
-  /** The text to be used for HelpText errors. */
-  errorText?: React.ReactNode;
 }
 
 const ControlledFormInput = ({
   control,
   disabled,
-  errorText,
   helpText,
   id,
   label,
   name,
   placeholder,
   readOnly,
+  required,
   type,
   ...props
 }: ControlledFormInputProps): JSX.Element => {
@@ -37,12 +35,12 @@ const ControlledFormInput = ({
           {...field}
           disabled={disabled}
           hasError={fieldState.invalid}
-          helpText={fieldState.invalid ? errorText : helpText}
+          helpText={helpText}
           id={id}
           label={label}
           placeholder={placeholder}
           readOnly={readOnly}
-          required={props.rules?.required as boolean}
+          required={(props.rules?.required as boolean) || required}
           type={type}
           {...props}
         />
@@ -57,7 +55,6 @@ ControlledFormInput.displayName = "ControlledFormInput";
 ControlledFormInput.propTypes = {
   control: PropTypes.any,
   disabled: PropTypes.bool,
-  errorText: PropTypes.node,
   helpText: PropTypes.node,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,

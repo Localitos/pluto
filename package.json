@@ -28,10 +28,12 @@
     "packages/**"
   ],
   "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
     "@tanstack/react-table": "^8.7.6",
     "formik": "^2.2.9",
     "react-dropzone": "^14.2.3",
-    "react-hook-form": "^7.42.1"
+    "react-hook-form": "^7.42.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",

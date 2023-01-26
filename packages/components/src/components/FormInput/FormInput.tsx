@@ -51,11 +51,12 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
           value={value}
           {...props}
         />
-        {!hasError && !helpText && <Box.div h="1rem" marginTop="space20" />}
-        {helpText && (
+        {helpText ? (
           <HelpText hasError={hasError} id={`${id}-help-text`}>
             {helpText}
           </HelpText>
+        ) : (
+          <Box.div h="1rem" marginTop="space20" />
         )}
       </Box.div>
     );
