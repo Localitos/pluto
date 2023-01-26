@@ -90,7 +90,7 @@ export const Controlled = (): JSX.Element => {
   );
 };
 
-export const WithReactHookForm = (): JSX.Element => {
+export const AsControlledFormInput = (): JSX.Element => {
   const schema = yup.object().shape({
     flavor: yup
       .string()
