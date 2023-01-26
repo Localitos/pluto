@@ -7,7 +7,7 @@ import type { FormInputProps } from "./FormInput";
 
 export interface ControlledFormInputProps
   extends Omit<ControllerProps, "control" | "render">,
-    Omit<FormInputProps, "defaultValue" | "name"> {
+    Omit<FormInputProps, "defaultValue" | "name" | "required"> {
   /** Invoked with `useForm`. Set to any to allow `any` number of form inputs. */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control?: Control<any>;
@@ -25,7 +25,6 @@ const ControlledFormInput = ({
   name,
   placeholder,
   readOnly,
-  required,
   type,
   ...props
 }: ControlledFormInputProps): JSX.Element => {
@@ -43,7 +42,7 @@ const ControlledFormInput = ({
           label={label}
           placeholder={placeholder}
           readOnly={readOnly}
-          required={required}
+          required={props.rules?.required as boolean}
           type={type}
           {...props}
         />

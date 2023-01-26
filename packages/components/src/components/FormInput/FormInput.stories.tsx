@@ -127,7 +127,6 @@ export const WithReactHookForm = (): JSX.Element => {
         label="Enter a flavor"
         name="flavor"
         placeholder="Maybe something crazy?"
-        required
         rules={{ minLength: 2, required: true }}
         size="large"
         type="text"
@@ -143,7 +142,6 @@ export const WithReactHookForm = (): JSX.Element => {
         label="Enter a flavor"
         name="flavor1"
         placeholder="Maybe something crazy?"
-        required
         rules={{ minLength: 2, required: true }}
         type="text"
       />
