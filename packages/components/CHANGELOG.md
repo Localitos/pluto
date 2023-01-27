@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 6.14.5
+
+### Patch Changes
+
+- [#450](https://github.com/Localitos/pluto/pull/450) [`bdc953b`](https://github.com/Localitos/pluto/commit/bdc953baa287b2843d054478c72aecbd9edc8a7a) Thanks [@richbachman](https://github.com/richbachman)! - [FormInput] - Added a ControlledFormInput version so it can be easier used with React Hook Form.
+
+- [#477](https://github.com/Localitos/pluto/pull/477) [`19db8bc`](https://github.com/Localitos/pluto/commit/19db8bcd12c5b525b42bd659e0493d1ce148e456) Thanks [@richbachman](https://github.com/richbachman)! - [List]: Added `space30` margin to bottom of ListItems.
+
 ## 6.14.4
 
 ### Patch Changes
