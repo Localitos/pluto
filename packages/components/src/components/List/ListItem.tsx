@@ -10,7 +10,11 @@ export interface ListItemProps
 /** An item that is used inside a `List` */
 export const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
   ({ children, ...props }, ref) => (
-    <Box.li {...props} ref={ref}>
+    <Box.li
+      marginBottom={{ _: "space30", last: "space0" }}
+      {...props}
+      ref={ref}
+    >
       {children}
     </Box.li>
   )
