@@ -26,8 +26,9 @@ type IconNames = keyof typeof HeroOutlineIcons;
 
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "color" | "size"> {
+  /** Sets the state of the input to disabled so a user can not interact with it. */
   disabled?: boolean;
-  /** Changes the font family of the input. */
+  /** Sets the state of the input to an error state. */
   hasError?: boolean;
   /** The `id` of the input. */
   id?: string;
