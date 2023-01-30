@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.14.6
+
+### Patch Changes
+
+- [#479](https://github.com/Localitos/pluto/pull/479) [`d1261b9`](https://github.com/Localitos/pluto/commit/d1261b97dd902b41d86b809c856720345d00f1c7) Thanks [@richbachman](https://github.com/richbachman)! - [FormTextArea] - Added a ControlledFormTextArea version so it can be easier used with React Hook Form.
+
 ## 6.14.5
 
 ### Patch Changes
