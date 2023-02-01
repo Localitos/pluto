@@ -39,7 +39,7 @@
     "eslint": "^8.32.0",
     "jest": "^28.1.2",
     "jest-dom": "^4.0.0",
-    "jest-environment-jsdom": "^29.4.0",
+    "jest-environment-jsdom": "^29.4.1",
     "jest-watch-typeahead": "^2.2.2",
     "lodash": "^4.17.21",
     "prettier": "^2.8.3",
