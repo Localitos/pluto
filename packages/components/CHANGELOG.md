@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.14.7
+
+### Patch Changes
+
+- [#501](https://github.com/Localitos/pluto/pull/501) [`f8ff200`](https://github.com/Localitos/pluto/commit/f8ff200bbb6d9fc13f6e2d09e82444313400c2ed) Thanks [@richbachman](https://github.com/richbachman)! - [FormSelect] - Added a ControlledFormSelect version so it can be easier used with React Hook Form.
+
 ## 6.14.6
 
 ### Patch Changes
