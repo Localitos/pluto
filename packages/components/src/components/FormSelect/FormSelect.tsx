@@ -36,10 +36,12 @@ const FormSelect = React.forwardRef<HTMLButtonElement, FormSelectProps>(
           required={required}
           {...props}
         />
-        {helpText && (
+        {helpText ? (
           <HelpText hasError={hasError} id={`${id}-help-text`}>
             {helpText}
           </HelpText>
+        ) : (
+          <Box.div h="1rem" marginTop="space20" />
         )}
       </Box.div>
     );

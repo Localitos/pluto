@@ -1,7 +1,13 @@
 import type { Meta } from "@storybook/react";
 import React from "react";
 import { useUID } from "react-uid";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useForm, SubmitHandler } from "react-hook-form";
 import type { SelectProps } from "../Select";
+import { Box } from "../../primitives/Box";
+import { Button } from "../Button";
+import { ControlledFormSelect } from "./ControlledFormSelect";
 import { FormSelect } from "./FormSelect";
 
 const meta: Meta<typeof FormSelect> = {
@@ -119,5 +125,72 @@ export const Controlled = (): JSX.Element => {
       setValue={(value) => setSelectValue(value)}
       value={selectValue}
     />
+  );
+};
+
+export const AsControlledFormSelect = (): JSX.Element => {
+  const schema = yup.object().shape({
+    flavor: yup.string().required("A flavor is required."),
+    flavor1: yup.string(),
+    flavor2: yup.array(),
+  });
+
+  interface FormInputs {
+    flavor: string;
+    flavor1: string;
+    flavor2: string[];
+  }
+
+  const { control, handleSubmit, formState } = useForm<FormInputs>({
+    defaultValues: {
+      flavor: "",
+      flavor1: selectItems[1].value,
+      flavor2: [selectItems[0].value, selectItems[2].value],
+    },
+    resolver: yupResolver(schema),
+  });
+
+  // eslint-disable-next-line unicorn/consistent-function-scoping
+  const onSubmit: SubmitHandler<FormInputs> = (data) =>
+    alert(JSON.stringify(data, null, 2));
+
+  const selectID = useUID();
+  return (
+    <Box.form onSubmit={handleSubmit(onSubmit)}>
+      <ControlledFormSelect
+        control={control}
+        hasError={!!formState.errors.flavor}
+        helpText={
+          formState.errors.flavor
+            ? formState.errors.flavor.message
+            : "Please select a flavor."
+        }
+        id={`${selectID}-1`}
+        items={selectItems}
+        label="Select a flavor"
+        name="flavor"
+        placeholder="Maybe something crazy?"
+        required
+      />
+      <ControlledFormSelect
+        control={control}
+        id={`${selectID}-2`}
+        items={selectItems}
+        label="Select a flavor"
+        name="flavor1"
+      />
+      <ControlledFormSelect
+        control={control}
+        id={`${selectID}-3`}
+        items={selectItems}
+        label="Select multiple flavors"
+        name="flavor2"
+      />
+      <Box.div>
+        <Button type="submit" variant="primary">
+          Submit
+        </Button>
+      </Box.div>
+    </Box.form>
   );
 };
