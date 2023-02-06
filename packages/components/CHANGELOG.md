@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.14.8
+
+### Patch Changes
+
+- [#505](https://github.com/Localitos/pluto/pull/505) [`282a628`](https://github.com/Localitos/pluto/commit/282a628c6e8cd70ea6de1d1ce5175ace8bf176fc) Thanks [@apvale](https://github.com/apvale)! - [Heading] Add textInverse color
+
 ## 6.14.7
 
 ### Patch Changes
