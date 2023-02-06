@@ -26,7 +26,8 @@ type HeadingSizeOptionsProp = HeadingSizeBreakpoints | HeadingSizeOptions;
 type HeadingFontColors =
   | "colorTextHeading"
   | "colorTextHeadingStrong"
-  | "colorTextHeadingStronger";
+  | "colorTextHeadingStronger"
+  | "colorTextInverse";
 
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /** Sets the HTML element on render. */

@@ -1,5 +1,6 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
+import { Box } from "../../primitives/Box";
 import { Heading } from "./Heading";
 
 export default {
@@ -68,3 +69,11 @@ NoMargin.args = {
   children: "I'm a h2 element with no bottom margin.",
   marginBottom: "space0",
 };
+
+export const WithColorTextInverse = (): React.ReactElement => (
+  <Box.div backgroundColor="colorBackgroundPrimaryStrong" padding="space30">
+    <Heading color="colorTextInverse">
+      I&apos;m a h2 element in color white.
+    </Heading>
+  </Box.div>
+);
