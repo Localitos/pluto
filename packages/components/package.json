@@ -68,7 +68,7 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
     "@types/styled-components": "^5.1.26",
-    "@uppy/core": "^3.0.4",
+    "@uppy/core": "^3.0.5",
     "@xstyled/styled-components": "^3.6.0",
     "chromatic": "^6.15.0",
     "eslint": "^8.32.0",
