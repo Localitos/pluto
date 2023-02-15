@@ -3042,21 +3042,21 @@
     lodash.union "^4.6.0"
     lodash.values "^4.3.0"
 
-"@storybook/addon-a11y@^7.0.0-beta.33":
-  version "7.0.0-beta.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-7.0.0-beta.33.tgz#46af6d7c9019e5f2d5add625621235640ce117e4"
-  integrity sha512-+gTA3Tc31Z9c4ed2OE3oHDEDdfy60gbiB3aXH5SX8h6yLX9d56PrU6Ihnohmxj3PR58gEIIfY7j0RQ5Q9ZSKeg==
+"@storybook/addon-a11y@^7.0.0-beta.48":
+  version "7.0.0-beta.48"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-7.0.0-beta.48.tgz#7936ce3117098303a8ae78ec65c0ef0902c84c84"
+  integrity sha512-1EFwGd/u4sEV0y8r8EzKcAPkExb5Y8Zr6Ifh+GPI6+a5rCMPcRt+sZoLmmsCMqR0bfMCcrlfF7DUGhHw7CGa3Q==
   dependencies:
-    "@storybook/addon-highlight" "7.0.0-beta.33"
-    "@storybook/channels" "7.0.0-beta.33"
-    "@storybook/client-logger" "7.0.0-beta.33"
-    "@storybook/components" "7.0.0-beta.33"
-    "@storybook/core-events" "7.0.0-beta.33"
+    "@storybook/addon-highlight" "7.0.0-beta.48"
+    "@storybook/channels" "7.0.0-beta.48"
+    "@storybook/client-logger" "7.0.0-beta.48"
+    "@storybook/components" "7.0.0-beta.48"
+    "@storybook/core-events" "7.0.0-beta.48"
     "@storybook/global" "^5.0.0"
-    "@storybook/manager-api" "7.0.0-beta.33"
-    "@storybook/preview-api" "7.0.0-beta.33"
-    "@storybook/theming" "7.0.0-beta.33"
-    "@storybook/types" "7.0.0-beta.33"
+    "@storybook/manager-api" "7.0.0-beta.48"
+    "@storybook/preview-api" "7.0.0-beta.48"
+    "@storybook/theming" "7.0.0-beta.48"
+    "@storybook/types" "7.0.0-beta.48"
     axe-core "^4.2.0"
     lodash "^4.17.21"
     react-resize-detector "^7.1.2"
@@ -3219,14 +3219,14 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-beta.25"
 
-"@storybook/addon-highlight@7.0.0-beta.33":
-  version "7.0.0-beta.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.0.0-beta.33.tgz#318525f1e6218cf16e464a8bab0d460f2c7ca826"
-  integrity sha512-TvDTVqfw5iyXApifctgOBTCz/a2Lq8Sn4kI3PW0N4Sn6qtnn/rDkgp+No/BP6F+L3jVgOAJdTtpLmxhn4RqvUg==
+"@storybook/addon-highlight@7.0.0-beta.48":
+  version "7.0.0-beta.48"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.0.0-beta.48.tgz#02ada646678a525aa73d120eb569b89aa2f970af"
+  integrity sha512-DXCtq7yoErAYrp2knKW1q4bdADa++ZPb3DgXSlTxASK8UbqmNb7Os+5FrmmpwPalPghB3a6ZlAtnzpuUo9WLbw==
   dependencies:
-    "@storybook/core-events" "7.0.0-beta.33"
+    "@storybook/core-events" "7.0.0-beta.48"
     "@storybook/global" "^5.0.0"
-    "@storybook/preview-api" "7.0.0-beta.33"
+    "@storybook/preview-api" "7.0.0-beta.48"
 
 "@storybook/addon-links@^7.0.0-beta.33":
   version "7.0.0-beta.33"
