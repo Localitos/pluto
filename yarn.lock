@@ -2074,10 +2074,10 @@
     query-string "^6.12.1"
     xcase "^2.0.1"
 
-"@heroicons/react@^2.0.12":
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.13.tgz#9b1cc54ff77d6625c9565efdce0054a4bcd9074c"
-  integrity sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==
+"@heroicons/react@^2.0.15":
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.15.tgz#e1fc966350577a1ab0e38211e7b58e4bf8285b49"
+  integrity sha512-CZ2dGWgWG3/z5LEoD5D3MEr1syn45JM/OB2aDpw531Ryecgkz2V7TWQ808P0lva7zP003PVW6WlwbofsYyga3A==
 
 "@hookform/resolvers@^2.9.10":
   version "2.9.10"
@@ -3666,19 +3666,6 @@
     "@storybook/global" "^5.0.0"
     "@storybook/theming" "7.0.0-beta.25"
     "@storybook/types" "7.0.0-beta.25"
-    memoizerific "^1.11.3"
-    util-deprecate "^1.0.2"
-
-"@storybook/components@7.0.0-beta.33":
-  version "7.0.0-beta.33"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-7.0.0-beta.33.tgz#c5bb6f828cddf1d942d64040aac753efdf5bb9fb"
-  integrity sha512-kXoiGSyltyBct5YdnyxODach8jPXyRc1xPqCpPb+hT4IcwRFppAd3FozRBsFw/c603XmjFH36nbIClFwb4LPAA==
-  dependencies:
-    "@storybook/client-logger" "7.0.0-beta.33"
-    "@storybook/csf" next
-    "@storybook/global" "^5.0.0"
-    "@storybook/theming" "7.0.0-beta.33"
-    "@storybook/types" "7.0.0-beta.33"
     memoizerific "^1.11.3"
     util-deprecate "^1.0.2"
 
