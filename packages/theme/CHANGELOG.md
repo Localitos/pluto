@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 2.0.8
+
+### Patch Changes
+
+- [#539](https://github.com/Localitos/pluto/pull/539) [`ecf41d6`](https://github.com/Localitos/pluto/commit/ecf41d67ead6005c1c39f1a66afc6fb1ef6b5d7e) Thanks [@jvaladas](https://github.com/jvaladas)! - Add "none" value to box shadow
+
 ## 2.0.7
 
 ### Patch Changes
