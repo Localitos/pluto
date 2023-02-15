@@ -3717,6 +3717,14 @@
     "@storybook/client-logger" "7.0.0-beta.34"
     "@storybook/preview-api" "7.0.0-beta.34"
 
+"@storybook/core-client@7.0.0-beta.48":
+  version "7.0.0-beta.48"
+  resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-7.0.0-beta.48.tgz#bd68c5d04d267fc742660c111c498224c1117135"
+  integrity sha512-4dQ+8Wh9nd7NR6/FvLGVUHcSTrc3WOfH5nliWKxSIaxT7h/r6U90pv/1kHTgTrQ8vVR/X+udbK0U/JA0oZBiPA==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.48"
+    "@storybook/preview-api" "7.0.0-beta.48"
+
 "@storybook/core-common@7.0.0-beta.25":
   version "7.0.0-beta.25"
   resolved "https://registry.yarnpkg.com/@storybook/core-common/-/core-common-7.0.0-beta.25.tgz#ba4f43f9ca69ed5efe96ea22847040e51c5c1b68"
@@ -4164,6 +4172,16 @@
     npmlog "^5.0.1"
     pretty-hrtime "^1.0.3"
 
+"@storybook/node-logger@7.0.0-beta.48":
+  version "7.0.0-beta.48"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-7.0.0-beta.48.tgz#24c37300a977eb5fb052d27a993c98962b03eb85"
+  integrity sha512-/6Yk6vaugabbSMxpjK77d5p0RYDOcw17sN5pF9T8TEprHCpfBJtfnrTTmg7hw9qq8iHPTGz/AUNkqBO33BTPXQ==
+  dependencies:
+    "@types/npmlog" "^4.1.2"
+    chalk "^4.1.0"
+    npmlog "^5.0.1"
+    pretty-hrtime "^1.0.3"
+
 "@storybook/postinstall@7.0.0-beta.25":
   version "7.0.0-beta.25"
   resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-7.0.0-beta.25.tgz#eb7e12312c0eca3729fb5823996de04bb42ccfdf"
@@ -4323,7 +4341,7 @@
     react-docgen-typescript "^2.1.1"
     tslib "^2.0.0"
 
-"@storybook/react@7.0.0-beta.34", "@storybook/react@^7.0.0-beta.30":
+"@storybook/react@7.0.0-beta.34":
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-beta.34.tgz#8ff75dcca958f5eebfe9dfb82636a5d230e87cc2"
   integrity sha512-JY32LEplIBOCukUyfUfK1SFCe4AHGawXVi2eYKnrrc44PXLTEAj36XxQwxzwOURF4ncvGiPc+wzvB56k1qhtlQ==
@@ -4334,6 +4352,32 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-beta.34"
     "@storybook/types" "7.0.0-beta.34"
+    "@types/escodegen" "^0.0.6"
+    "@types/estree" "^0.0.51"
+    "@types/node" "^16.0.0"
+    acorn "^7.4.1"
+    acorn-jsx "^5.3.1"
+    acorn-walk "^7.2.0"
+    escodegen "^2.0.0"
+    html-tags "^3.1.0"
+    lodash "^4.17.21"
+    prop-types "^15.7.2"
+    react-element-to-jsx-string "^15.0.0"
+    ts-dedent "^2.0.0"
+    type-fest "^2.19.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/react@^7.0.0-beta.48":
+  version "7.0.0-beta.48"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-beta.48.tgz#4465165c28f51683e991b68505065c57d57ca9f5"
+  integrity sha512-mdPEtuKO9YmI74I5ZELnn3jqB70p4oLQ40Vl8nrSUI/wX9QMlI7VLgIRTor3893gHXlw+rzZyQ4Z/BKhX2kTaA==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.48"
+    "@storybook/core-client" "7.0.0-beta.48"
+    "@storybook/docs-tools" "7.0.0-beta.48"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "7.0.0-beta.48"
+    "@storybook/types" "7.0.0-beta.48"
     "@types/escodegen" "^0.0.6"
     "@types/estree" "^0.0.51"
     "@types/node" "^16.0.0"
