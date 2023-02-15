@@ -55,6 +55,7 @@ export const theme = {
     shadowStrong: "0px 8px 24px rgba(15, 23, 42, 0.08)",
     shadowFocus:
       "0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #102EE9",
+    none: "none",
   },
   sizes: {
     ...SizeTokens,
