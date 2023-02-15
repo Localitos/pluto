@@ -47,6 +47,6 @@
     "style-dictionary": "^3.7.2",
     "ts-jest": "^28.0.5",
     "tslib": "^2.4.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   }
 }
