@@ -70,7 +70,7 @@
     "@types/styled-components": "^5.1.26",
     "@uppy/core": "^3.0.4",
     "@xstyled/styled-components": "^3.6.0",
-    "chromatic": "^6.15.0",
+    "chromatic": "^6.17.0",
     "eslint": "^8.32.0",
     "html-react-parser": "^3.0.8",
     "jest": "^28.1.2",
