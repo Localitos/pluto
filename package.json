@@ -55,7 +55,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.4",
     "assert": "^2.0.0",
-    "cspell": "^6.19.2",
+    "cspell": "^6.26.1",
     "danger": "^11.2.2",
     "eslint": "^8.32.0",
     "eslint-plugin-storybook": "^0.6.10",
