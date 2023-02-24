@@ -58,7 +58,7 @@
     "cspell": "^6.26.1",
     "danger": "^11.2.2",
     "eslint": "^8.32.0",
-    "eslint-plugin-storybook": "^0.6.10",
+    "eslint-plugin-storybook": "^0.6.11",
     "husky": "^8.0.3",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^29.4.0",
