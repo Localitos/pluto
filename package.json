@@ -32,7 +32,7 @@
     "@tanstack/react-table": "^8.7.6",
     "formik": "^2.2.9",
     "react-dropzone": "^14.2.3",
-    "react-hook-form": "^7.42.1",
+    "react-hook-form": "^7.43.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "@storybook/addon-docs": "^7.0.0-beta.48",
     "@storybook/addon-essentials": "^7.0.0-beta.48",
     "@storybook/addon-links": "^7.0.0-beta.33",
-    "@storybook/addon-viewport": "^7.0.0-beta.48",
+    "@storybook/addon-viewport": "^7.0.0-beta.53",
     "@storybook/nextjs": "^7.0.0-beta.48",
     "@storybook/react": "^7.0.0-beta.48",
     "@storybook/testing-library": "^0.0.14-next.1",
