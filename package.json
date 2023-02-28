@@ -45,7 +45,7 @@
     "@storybook/addon-actions": "^7.0.0-beta.34",
     "@storybook/addon-docs": "^7.0.0-beta.48",
     "@storybook/addon-essentials": "^7.0.0-beta.48",
-    "@storybook/addon-links": "^7.0.0-beta.33",
+    "@storybook/addon-links": "^7.0.0-beta.56",
     "@storybook/addon-viewport": "^7.0.0-beta.53",
     "@storybook/nextjs": "^7.0.0-beta.48",
     "@storybook/react": "^7.0.0-beta.48",
