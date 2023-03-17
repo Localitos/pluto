@@ -19,6 +19,7 @@ Pluto is a design system used to build accessible, consistent, and high quality 
 npm install --save react react-dom
 ```
 
+
 ### 2. Install Pluto packages
 
 Install the following packages so you can consume Pluto's tokens and themes to build custom page sections.
