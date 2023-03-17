@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.14.9
+
+### Patch Changes
+
+- [#651](https://github.com/Localitos/pluto/pull/651) [`044614c`](https://github.com/Localitos/pluto/commit/044614c208cd98d81aa0d375ca257bfff5f44d00) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - Package updates and storybook fixes
+
 ## 6.14.8
 
 ### Patch Changes
