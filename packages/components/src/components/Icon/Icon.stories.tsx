@@ -1,6 +1,8 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
-import React from "react";
 import * as HeroOutlineIcons from "@heroicons/react/24/outline";
+
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+
+import React from "react";
 import map from "lodash/map";
 import { Box } from "../../primitives/Box";
 import { Paragraph } from "../../components/Paragraph";
@@ -22,7 +24,9 @@ Default.args = {
 const getIconNamesArray = () => {
   const iconsArray = [];
   for (const [key] of Object.entries(HeroOutlineIcons)) {
-    iconsArray.push(key);
+    if (key !== "default") {
+      iconsArray.push(key);
+    }
   }
   return iconsArray;
 };
