@@ -47,6 +47,7 @@ export const IconList: React.FC = () => {
             borderColor="colorBorder"
             borderStyle="borderStyleSolid"
             borderWidth="borderWidth10"
+            key={value}
             padding="space60"
             textAlign="center"
           >
