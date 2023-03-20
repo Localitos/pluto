@@ -6236,14 +6236,14 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chromatic@^6.17.0:
-  version "6.17.0"
-  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.17.0.tgz#c7a1c15262e748abd9e2bc7247653974e6eb2ea0"
-  integrity sha512-0CYJOwAAHrcD0kXqMDvZql7wih+IO7A7E8hdCRotC0cmfHK8gOFWK6ajUsZUVwrr2zF6IFSJ23wsMLuaZxqSlw==
+chromatic@^6.17.2:
+  version "6.17.2"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-6.17.2.tgz#ae303ffe38e2852a854aae3f5898dc42945babee"
+  integrity sha512-rtrkywh1CuDDuuiRWXpdiX38aEGN3sGCATsgdh3X/EUBjQjgQtEbSzcMusC3cqz3K9dFKcWwKpFm3jaw9gNymA==
   dependencies:
     "@discoveryjs/json-ext" "^0.5.7"
     "@types/webpack-env" "^1.17.0"
-    snyk-nodejs-lockfile-parser "^1.43.1"
+    snyk-nodejs-lockfile-parser "^1.47.4"
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
@@ -13274,20 +13274,20 @@ snake-case@^3.0.4:
     dot-case "^3.0.4"
     tslib "^2.0.3"
 
-snyk-config@^4.0.0-rc.2:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/snyk-config/-/snyk-config-4.0.0.tgz#21d459f19087991246cc07a7ffb4501dce6f4159"
-  integrity sha512-E6jNe0oUjjzVASWBOAc/mA23DhbzABDF9MI6UZvl0gylh2NSXSXw2/LjlqMNOKL2c1qkbSkzLOdIX5XACoLCAQ==
+snyk-config@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/snyk-config/-/snyk-config-5.1.0.tgz#d725739ede0732a7db13be4e120c90b39e496ab7"
+  integrity sha512-wqVMxUGqjjHX+MJrz0WHa/pJTDWU17aRv6cnI/6i7cq93J3TkkJZ8sjgvwCgP8cWX5wTHIlRuMV+IAd59K4X/g==
   dependencies:
     async "^3.2.0"
     debug "^4.1.1"
     lodash.merge "^4.6.2"
     minimist "^1.2.5"
 
-snyk-nodejs-lockfile-parser@^1.43.1:
-  version "1.45.1"
-  resolved "https://registry.yarnpkg.com/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.45.1.tgz#bb9a7bf8802d8339f73800b9ffc5189982b748ec"
-  integrity sha512-uj3dGoruveEZ1l/i5Qv4RS+dTBgAfmXXvTEmvH14fNuTEzDzb/PFe6+H1VPExrihwjrjHci1WIUhm9lQpYZZCQ==
+snyk-nodejs-lockfile-parser@^1.47.4:
+  version "1.48.0"
+  resolved "https://registry.yarnpkg.com/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.48.0.tgz#8b8576131fec3081dc22f59c4728014bc57e87aa"
+  integrity sha512-kq4gVwL5V0SUatDxyyzbptKkaX4Ew9N3ZDNR5r7sqBRparY+U+xGuYBhTaJdweBUD+jkvs7rKO1JV1h0Z8c2ew==
   dependencies:
     "@snyk/dep-graph" "^2.3.0"
     "@snyk/graphlib" "2.1.9-patch.3"
@@ -13299,8 +13299,9 @@ snyk-nodejs-lockfile-parser@^1.43.1:
     lodash.flatmap "^4.5.0"
     lodash.isempty "^4.4.0"
     lodash.topairs "^4.3.0"
+    micromatch "^4.0.5"
     semver "^7.3.5"
-    snyk-config "^4.0.0-rc.2"
+    snyk-config "^5.0.0"
     tslib "^1.9.3"
     uuid "^8.3.0"
 
@@ -14548,9 +14549,9 @@ webpack-virtual-modules@^0.4.3, webpack-virtual-modules@^0.4.5:
   integrity sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==
 
 webpack@5, webpack@^5:
-  version "5.75.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.75.0.tgz#1e440468647b2505860e94c9ff3e44d5b582c152"
-  integrity sha512-piaIaoVJlqMsPtX/+3KTTO6jfvrSYgauFVdt8cr9LTHKmcq/AMd4mhzsiP7ZF/PGRNPGA8336jldh9l2Kt2ogQ==
+  version "5.76.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.76.2.tgz#6f80d1c1d1e3bf704db571b2504a0461fac80230"
+  integrity sha512-Th05ggRm23rVzEOlX8y67NkYCHa9nTNcwHPBhdg+lKG+mtiW7XgggjAeeLnADAe7mLjJ6LUNfgHAuRRh+Z6J7w==
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^0.0.51"
