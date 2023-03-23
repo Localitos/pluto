@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.0.8
+
+### Patch Changes
+
+- [#656](https://github.com/Localitos/pluto/pull/656) [`b236853`](https://github.com/Localitos/pluto/commit/b23685395f6855ad20dc01b1cf4b62355ba1a1c4) Thanks [@rssilva](https://github.com/rssilva)! - Replace token avatar-background-pink #A9EBE8 by #FF9788
+
 ## 0.0.7
 
 ### Patch Changes
