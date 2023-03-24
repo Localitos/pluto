@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.15.0
+
+### Minor Changes
+
+- [#679](https://github.com/Localitos/pluto/pull/679) [`ced918a`](https://github.com/Localitos/pluto/commit/ced918a998c9cac8d502814a372304fe5b0c9f19) Thanks [@rssilva](https://github.com/rssilva)! - Change ProgressBar to use Box.div instead styled version and tokens correctly
+
 ## 6.14.9
 
 ### Patch Changes
