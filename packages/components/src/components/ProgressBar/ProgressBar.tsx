@@ -11,21 +11,25 @@ export interface ProgressBarProps {
   value: number;
   /** The color of the progress indicator */
   indicatorColor?: SystemProp<keyof Theme["colors"], Theme>;
+  /** Overwrites the styles of the indicator. */
+  indicatorStyle?: React.CSSProperties;
   /** The background color of the progress bar */
-  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+  backgroundcolor?: SystemProp<keyof Theme["colors"], Theme>;
   /** Sets the size of the progress bar. */
   size?: ProgressBarSizeOptions;
+  /** Overwrites the styles of the progress bar. */
+  style?: React.CSSProperties;
 }
 
 interface StyledProgressProps extends Omit<ProgressProps, "value"> {
   value: number;
-  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+  backgroundcolor?: SystemProp<keyof Theme["colors"], Theme>;
   h: SystemProp<keyof Theme["space"], Theme>;
   radius: SystemProp<keyof Theme["radii"], Theme>;
 }
 
 interface StyledIndicatorProps {
-  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
+  backgroundcolor?: SystemProp<keyof Theme["colors"], Theme>;
   radius: SystemProp<keyof Theme["radii"], Theme>;
 }
 
@@ -33,7 +37,7 @@ const StyledProgress = styled.div`
   background-color: ${(props: StyledProgressProps) =>
     get(
       theme.colors,
-      String(props.backgroundColor),
+      String(props.backgroundcolor),
       theme.colors.colorBackgroundWeak
     )};
   border-radius: ${(props: StyledProgressProps) =>
@@ -53,7 +57,7 @@ const StyledIndicator = styled.div`
   background-color: ${(props: StyledIndicatorProps) =>
     get(
       theme.colors,
-      String(props.backgroundColor),
+      String(props.backgroundcolor),
       theme.colors.colorBackgroundPrimaryWeak
     )};
 `;
@@ -61,7 +65,14 @@ const StyledIndicator = styled.div`
 /** Displays an indicator showing the completion progress of a task, typically displayed as a progress bar. */
 const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
   (
-    { value, size = "small", indicatorColor, backgroundColor, ...props },
+    {
+      value,
+      size = "small",
+      indicatorColor,
+      backgroundcolor,
+      indicatorStyle,
+      ...props
+    },
     ref
   ) => {
     const borderRadius = size === "large" ? "borderRadius50" : "borderRadius10";
@@ -69,7 +80,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
     return (
       <StyledProgress
         as={Root}
-        backgroundColor={backgroundColor}
+        backgroundcolor={backgroundcolor}
         h={size === "large" ? "space40" : "space25"}
         radius={borderRadius}
         ref={ref}
@@ -78,9 +89,12 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
       >
         <StyledIndicator
           as={Indicator}
-          backgroundColor={indicatorColor}
+          backgroundcolor={indicatorColor}
           radius={borderRadius}
-          style={{ transform: `translateX(-${100 - value}%)` }}
+          style={{
+            transform: `translateX(-${100 - value}%)`,
+            ...indicatorStyle,
+          }}
         />
       </StyledProgress>
     );

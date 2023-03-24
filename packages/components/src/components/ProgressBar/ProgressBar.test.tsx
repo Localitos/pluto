@@ -22,7 +22,7 @@ describe("<ProgressBar />", () => {
 
   it("renders background color correctly", () => {
     render(
-      <ProgressBar backgroundColor="colorAvatarBackgroundPink" value={25} />
+      <ProgressBar backgroundcolor="colorAvatarBackgroundPink" value={25} />
     );
 
     const renderedProgressBar = screen.getByRole("progressbar");
