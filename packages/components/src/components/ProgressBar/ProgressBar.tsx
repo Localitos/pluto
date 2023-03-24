@@ -19,7 +19,13 @@ export interface ProgressBarProps {
 /** Displays an indicator showing the completion progress of a task, typically displayed as a progress bar. */
 const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
   (
-    { value, size = "small", indicatorColor, backgroundColor, ...props },
+    {
+      value,
+      size = "small",
+      indicatorColor = "colorBackgroundPrimaryWeak",
+      backgroundColor = "colorBackgroundWeak",
+      ...props
+    },
     ref
   ) => {
     const borderRadius = size === "large" ? "borderRadius50" : "borderRadius10";
@@ -27,7 +33,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
     return (
       <Box.div
         as={Root}
-        backgroundColor={backgroundColor || "colorBackgroundWeak"}
+        backgroundColor={backgroundColor}
         borderRadius={borderRadius}
         h={size === "large" ? "0.75rem" : "0.4rem"}
         overflow="hidden"
@@ -38,7 +44,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
       >
         <Box.div
           as={Indicator}
-          backgroundColor={indicatorColor || "colorBackgroundPrimaryWeak"}
+          backgroundColor={indicatorColor}
           borderRadius={borderRadius}
           h="100%"
           style={{ transform: `translateX(-${100 - value}%)` }}
