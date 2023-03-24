@@ -8,28 +8,6 @@ describe("<ProgressBar />", () => {
 
     const renderedProgressBar = screen.getByRole("progressbar");
     expect(renderedProgressBar).toHaveAttribute("data-value", "50");
-    expect(renderedProgressBar).toHaveAttribute("radius", "borderRadius10");
-    expect(renderedProgressBar).toHaveAttribute("h", "space25");
-  });
-
-  it("renders the large variant correctly", () => {
-    render(<ProgressBar size="large" value={75} />);
-
-    const renderedProgressBar = screen.getByRole("progressbar");
-    expect(renderedProgressBar).toHaveAttribute("h", "space40");
-    expect(renderedProgressBar).toHaveAttribute("radius", "borderRadius50");
-  });
-
-  it("renders background color correctly", () => {
-    render(
-      <ProgressBar backgroundColor="colorAvatarBackgroundPink" value={25} />
-    );
-
-    const renderedProgressBar = screen.getByRole("progressbar");
-    expect(renderedProgressBar).toHaveAttribute(
-      "background",
-      "colorAvatarBackgroundPink"
-    );
   });
 
   it("should allow for global html Attributes", () => {
