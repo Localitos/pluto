@@ -23,7 +23,7 @@ export const Large = (): JSX.Element => (
 export const WithCustomColors = (): JSX.Element => (
   <Box.div display="flex" flexDirection="column" gap="space40">
     <ProgressBar
-      backgroundColor="colorAvatarBackgroundPink"
+      backgroundcolor="colorAvatarBackgroundPink"
       indicatorColor="colorAvatarBackgroundGreen"
       value={25}
     />
