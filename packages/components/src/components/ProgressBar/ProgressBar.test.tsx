@@ -27,7 +27,7 @@ describe("<ProgressBar />", () => {
 
     const renderedProgressBar = screen.getByRole("progressbar");
     expect(renderedProgressBar).toHaveAttribute(
-      "background",
+      "backgroundColor",
       "colorAvatarBackgroundPink"
     );
   });
