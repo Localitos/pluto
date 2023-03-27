@@ -30,6 +30,22 @@ export const WithCustomColors = (): JSX.Element => (
   </Box.div>
 );
 
+export const WithOverWrittenStyles = (): JSX.Element => (
+  <Box.div display="flex" flexDirection="column" gap="space40">
+    <ProgressBar
+      backgroundColor="colorAvatarBackgroundPink"
+      indicatorColor="colorAvatarBackgroundGreen"
+      indicatorStyle={{
+        backgroundColor: "purple",
+      }}
+      style={{
+        backgroundColor: "red",
+      }}
+      value={25}
+    />
+  </Box.div>
+);
+
 export const Animated = (): JSX.Element => {
   const [progress, setProgress] = useState(13);
 

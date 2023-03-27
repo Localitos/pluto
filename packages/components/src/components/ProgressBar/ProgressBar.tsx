@@ -14,6 +14,10 @@ export interface ProgressBarProps {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   /** Sets the size of the progress bar. */
   size?: ProgressBarSizeOptions;
+  /** The style of the progress indicator background color, should be an object with html style attributes */
+  style?: React.CSSProperties;
+  /** The style of the progress indicator, should be an object with html style attributes */
+  indicatorStyles?: React.CSSProperties;
 }
 
 /** Displays an indicator showing the completion progress of a task, typically displayed as a progress bar. */
@@ -24,6 +28,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
       size = "small",
       indicatorColor = "colorBackgroundPrimaryWeak",
       backgroundColor = "colorBackgroundWeak",
+      indicatorStyles,
       ...props
     },
     ref
@@ -47,7 +52,10 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
           backgroundColor={indicatorColor}
           borderRadius={borderRadius}
           h="100%"
-          style={{ transform: `translateX(-${100 - value}%)` }}
+          style={{
+            transform: `translateX(-${100 - value}%)`,
+            ...indicatorStyles,
+          }}
           transition="transform 660ms cubic-bezier(0.65, 0, 0.35, 1)"
           w="100%"
         />
