@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 6.16.0
+
+### Minor Changes
+
+- [#681](https://github.com/Localitos/pluto/pull/681) [`ab79d38`](https://github.com/Localitos/pluto/commit/ab79d3818057f3f2c576886b3b53c4a82c527672) Thanks [@BrianLincoln](https://github.com/BrianLincoln)! - feat: export Radio component
+
 ## 6.15.0
 
 ### Minor Changes
