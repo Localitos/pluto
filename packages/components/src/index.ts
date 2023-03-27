@@ -21,6 +21,7 @@ export * from "./components/List";
 export * from "./components/Modal";
 export * from "./components/Paragraph";
 export * from "./components/ProgressBar";
+export * from "./components/Radio";
 export * from "./components/RichText";
 export * from "./components/Search";
 export * from "./components/Select";
