@@ -32,6 +32,8 @@ export type AvatarProps = {
   size?: AvatarSizeOptions;
   /** Set `true` to show the name of the entity to the right of the avatar. */
   showName?: boolean;
+  /** Set `true` to adds a border to Avatar */
+  border?: boolean;
 };
 
 const getAvatarSizes = (
@@ -190,9 +192,46 @@ const getAvatarColorStyles = (
   }
 };
 
+const getBorderStyles = (
+  size: AvatarSizeOptions
+): {
+  borderWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
+  borderColor?: SystemProp<keyof Theme["colors"], Theme>;
+  borderStyle?: SystemProp<keyof Theme["borderStyles"], Theme>;
+} => {
+  const getBorderWidth = () => {
+    switch (size) {
+      case "xsmall": {
+        return "borderWidth10";
+      }
+
+      case "small": {
+        return "borderWidth20";
+      }
+
+      case "xlarge": {
+        return "borderWidth60";
+      }
+
+      default: {
+        return "borderWidth30";
+      }
+    }
+  };
+
+  return {
+    borderColor: "colorBorderWarning",
+    borderStyle: "borderStyleSolid",
+    borderWidth: getBorderWidth(),
+  };
+};
+
 /** An avatar is an element that uses text or images to represent users visually. */
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
-  ({ color = "blue", src, name, showName, size = "medium", ...props }, ref) => {
+  (
+    { border, color = "blue", src, name, showName, size = "medium", ...props },
+    ref
+  ) => {
     const { orientation, hasError } = useGetImageOrientation(src);
     const shouldRenderImage = src && !hasError;
     const shouldRenderInitials = (!src && name) || (hasError && name);
@@ -210,6 +249,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
           overflow="hidden"
           ref={ref}
           {...ariaProps}
+          {...(border && getBorderStyles(size))}
           {...getAvatarColorStyles(color)}
           {...getAvatarSizes(size)}
           {...props}

@@ -57,6 +57,18 @@ export const WithName = (): JSX.Element => (
   </Box.div>
 );
 
+export const WithBorder = (): JSX.Element => (
+  <Box.div alignItems="center" display="flex" gap="space30" maxWidth="680px">
+    {map(sizes, (size: AvatarSizeOptions) => {
+      return (
+        <Box.div padding="space60">
+          <Avatar size={size} {...defaultArgs} border />
+        </Box.div>
+      );
+    })}
+  </Box.div>
+);
+
 export const InitialsAndBackgroundColors: ComponentStory<
   typeof Avatar
 > = () => {
