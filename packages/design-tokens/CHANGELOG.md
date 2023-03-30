@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.1.0
+
+### Minor Changes
+
+- [#703](https://github.com/Localitos/pluto/pull/703) [`b1dd380`](https://github.com/Localitos/pluto/commit/b1dd380215f0226e8ab6382c9740f92d6fd7c635) Thanks [@rssilva](https://github.com/rssilva)! - Add specific tokens to improve customization and theming
+
 ## 0.0.8
 
 ### Patch Changes
