@@ -17,6 +17,8 @@ Object {
     "borderWidth0": "0px",
     "borderWidth10": "1px",
     "borderWidth20": "2px",
+    "borderWidth30": "3px",
+    "borderWidth60": "6px",
   },
   "borders": Object {
     "default": "1px solid transparent",
