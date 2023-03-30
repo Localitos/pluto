@@ -157,6 +157,57 @@
     "icon-stronger": {
       "value": "#0F172A"
     },
+    "primary": {
+      "value": "#102EE9"
+    },
+    "secondary": {
+      "value": "#76FAC1"
+    },
+    "header-background": {
+      "value": "#0B1F9C"
+    },
+    "header-text-inverse": {
+      "value": "#FFFFFF"
+    },
+    "header-decoration": {
+      "value": "#6EE7B7"
+    },
+    "icon-map": {
+      "value": "#4A63FC"
+    },
+    "step-progress-text": {
+      "value": "#FFFFFF"
+    },
+    "map-background": {
+      "value": "#102EE9"
+    },
+    "footer-text": {
+      "value": "#041162"
+    },
+    "footer-secondary-text": {
+      "value": "#0F172A"
+    },
+    "footer-background": {
+      "value": "#C8F0EF"
+    },
+    "button-text-primary": {
+      "value": "#FFFFFF"
+    },
+    "button-background-primary": {
+      "value": "#102EE9"
+    },
+    "button-background-primary-hover": {
+      "value": "#041162"
+    },
+    "button-background-primary-outline-focus": {
+      "value": "#102EE9"
+    },
+    "progress-bar-background-primary": {
+      "value": "#FFFFFF"
+    },
+    "progress-bar-indicator-primary": {
+      "value": "#102EE9"
+    },
     "avatar-background-blue": {
       "value": "#B8C2FF"
     },
