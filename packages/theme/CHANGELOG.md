@@ -1,5 +1,14 @@
 # @localyze-pluto/theme
 
+## 3.0.1
+
+### Patch Changes
+
+- [#702](https://github.com/Localitos/pluto/pull/702) [`5bb8f65`](https://github.com/Localitos/pluto/commit/5bb8f65fab8b8c5852d8c40323c5d3b7381de2ff) Thanks [@apvale](https://github.com/apvale)! - Add new borderWidth tokens
+
+- Updated dependencies [[`5bb8f65`](https://github.com/Localitos/pluto/commit/5bb8f65fab8b8c5852d8c40323c5d3b7381de2ff)]:
+  - @localyze-pluto/design-tokens@0.1.1
+
 ## 3.0.0
 
 ### Minor Changes

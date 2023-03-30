@@ -1,5 +1,14 @@
 # @localyze-pluto/components
 
+## 7.0.1
+
+### Patch Changes
+
+- [#702](https://github.com/Localitos/pluto/pull/702) [`5bb8f65`](https://github.com/Localitos/pluto/commit/5bb8f65fab8b8c5852d8c40323c5d3b7381de2ff) Thanks [@apvale](https://github.com/apvale)! - [Avatar] Add border property
+
+- Updated dependencies [[`5bb8f65`](https://github.com/Localitos/pluto/commit/5bb8f65fab8b8c5852d8c40323c5d3b7381de2ff)]:
+  - @localyze-pluto/theme@3.0.1
+
 ## 7.0.0
 
 ### Minor Changes
