@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useUID } from "react-uid";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,9 +12,6 @@ import { ControlledFormInput } from "./ControlledFormInput";
 const meta: Meta<typeof FormInput> = {
   title: "Components/Form/FormInput",
   component: FormInput,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore Table has a required prop which confuses Storybook here.
-  subcomponents: { ControlledFormInput },
 };
 
 export default meta;
@@ -113,14 +110,16 @@ export const AsControlledFormInput = (): JSX.Element => {
     flavor4: string;
   }
 
-  const { control, handleSubmit, formState } = useForm<FormInputs>({
+  const { control, handleSubmit, trigger } = useForm<FormInputs>({
     defaultValues: {
-      flavor: "",
+      flavor: "Mint",
       flavor1: "W",
       flavor2: "Chocolate",
       flavor3: "Vanilla",
       flavor4: "Strawberry",
     },
+    reValidateMode: "onBlur",
+    mode: "onBlur",
     resolver: yupResolver(schema),
   });
 
@@ -128,20 +127,19 @@ export const AsControlledFormInput = (): JSX.Element => {
   const onSubmit: SubmitHandler<FormInputs> = (data) =>
     alert(JSON.stringify(data, null, 2));
 
+  useEffect(() => {
+    trigger();
+  }, []);
+
   const inputID = useUID();
   return (
     <Box.form onSubmit={handleSubmit(onSubmit)}>
       <ControlledFormInput
         control={control}
         data-testid="test"
-        hasError={!!formState.errors.flavor}
-        helpText={
-          formState.errors.flavor
-            ? formState.errors.flavor.message
-            : "Please enter a flavor."
-        }
+        helpText={"Please enter a flavor."}
         id={`${inputID}-1`}
-        label="Enter a flavor"
+        label="Help text flavor"
         name="flavor"
         placeholder="Maybe something crazy?"
         required
@@ -150,14 +148,9 @@ export const AsControlledFormInput = (): JSX.Element => {
       />
       <ControlledFormInput
         control={control}
-        hasError={!!formState.errors.flavor1}
-        helpText={
-          formState.errors.flavor1
-            ? formState.errors.flavor1.message
-            : "Please enter a flavor."
-        }
+        helpText={"Please enter a flavor."}
         id={`${inputID}-1`}
-        label="Enter a flavor"
+        label="Error flavor"
         name="flavor1"
         placeholder="Maybe something crazy?"
         required
