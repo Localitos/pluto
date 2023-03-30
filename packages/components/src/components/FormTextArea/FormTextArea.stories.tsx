@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useUID } from "react-uid";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,9 +12,6 @@ import { FormTextArea } from "./FormTextArea";
 const meta: Meta<typeof FormTextArea> = {
   title: "Components/Form/FormTextArea",
   component: FormTextArea,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore ControlledFormTextArea has a required prop which confuses Storybook here.
-  subcomponents: { ControlledFormTextArea },
 };
 
 export default meta;
@@ -108,7 +105,7 @@ export const AsControlledFormTextArea = (): JSX.Element => {
     flavor4: string;
   }
 
-  const { control, handleSubmit, formState } = useForm<FormInputs>({
+  const { control, handleSubmit, trigger } = useForm<FormInputs>({
     defaultValues: {
       flavor: "",
       flavor1: "W",
@@ -123,18 +120,16 @@ export const AsControlledFormTextArea = (): JSX.Element => {
   const onSubmit: SubmitHandler<FormInputs> = (data) =>
     alert(JSON.stringify(data, null, 2));
 
+  useEffect(() => {
+    trigger();
+  }, []);
   const inputID = useUID();
   return (
     <Box.form onSubmit={handleSubmit(onSubmit)}>
       <ControlledFormTextArea
         control={control}
         data-testid="test"
-        hasError={!!formState.errors.flavor}
-        helpText={
-          formState.errors.flavor
-            ? formState.errors.flavor.message
-            : "Please enter a flavor."
-        }
+        helpText={"Please enter a flavor."}
         id={`${inputID}-1`}
         label="Enter a flavor"
         name="flavor"
@@ -143,12 +138,7 @@ export const AsControlledFormTextArea = (): JSX.Element => {
       />
       <ControlledFormTextArea
         control={control}
-        hasError={!!formState.errors.flavor1}
-        helpText={
-          formState.errors.flavor1
-            ? formState.errors.flavor1.message
-            : "Please enter a flavor."
-        }
+        helpText={"Please enter a flavor."}
         id={`${inputID}-1`}
         label="Enter a flavor"
         name="flavor1"
