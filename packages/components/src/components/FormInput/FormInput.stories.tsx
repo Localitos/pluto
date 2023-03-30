@@ -89,10 +89,7 @@ export const Controlled = (): JSX.Element => {
 
 export const AsControlledFormInput = (): JSX.Element => {
   const schema = yup.object().shape({
-    flavor: yup
-      .string()
-      .required("A flavor is required.")
-      .min(2, "Please enter more than two characters."),
+    flavor: yup.string(),
     flavor1: yup
       .string()
       .required("A flavor is required.")
@@ -112,7 +109,7 @@ export const AsControlledFormInput = (): JSX.Element => {
 
   const { control, handleSubmit, trigger } = useForm<FormInputs>({
     defaultValues: {
-      flavor: "Mint",
+      flavor: "",
       flavor1: "W",
       flavor2: "Chocolate",
       flavor3: "Vanilla",
@@ -128,6 +125,7 @@ export const AsControlledFormInput = (): JSX.Element => {
     alert(JSON.stringify(data, null, 2));
 
   useEffect(() => {
+    // Trigger validation on mount
     trigger();
   }, []);
 
@@ -139,7 +137,7 @@ export const AsControlledFormInput = (): JSX.Element => {
         data-testid="test"
         helpText={"Please enter a flavor."}
         id={`${inputID}-1`}
-        label="Help text flavor"
+        label="Enter a flavor"
         name="flavor"
         placeholder="Maybe something crazy?"
         required

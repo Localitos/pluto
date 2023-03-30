@@ -84,10 +84,7 @@ export const Controlled = (): JSX.Element => {
 
 export const AsControlledFormTextArea = (): JSX.Element => {
   const schema = yup.object().shape({
-    flavor: yup
-      .string()
-      .required("A flavor is required.")
-      .min(2, "Please enter more than two characters."),
+    flavor: yup.string(),
     flavor1: yup
       .string()
       .required("A flavor is required.")
@@ -121,8 +118,10 @@ export const AsControlledFormTextArea = (): JSX.Element => {
     alert(JSON.stringify(data, null, 2));
 
   useEffect(() => {
+    // Trigger validation on mount
     trigger();
   }, []);
+
   const inputID = useUID();
   return (
     <Box.form onSubmit={handleSubmit(onSubmit)}>
