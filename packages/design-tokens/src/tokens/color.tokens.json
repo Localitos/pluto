@@ -157,55 +157,55 @@
     "icon-stronger": {
       "value": "#0F172A"
     },
-    "custom-primary": {
+    "primary": {
       "value": "#102EE9"
     },
-    "custom-secondary": {
+    "secondary": {
       "value": "#76FAC1"
     },
-    "custom-header-background": {
+    "header-background": {
       "value": "#0B1F9C"
     },
-    "custom-header-text-inverse": {
+    "header-text-inverse": {
       "value": "#FFFFFF"
     },
-    "custom-header-decoration": {
+    "header-decoration": {
       "value": "#6EE7B7"
     },
-    "custom-icon-map": {
+    "icon-map": {
       "value": "#4A63FC"
     },
-    "custom-step-progress-text": {
+    "step-progress-text": {
       "value": "#FFFFFF"
     },
-    "custom-map-background": {
+    "map-background": {
       "value": "#102EE9"
     },
-    "custom-footer-text": {
+    "footer-text": {
       "value": "#041162"
     },
-    "custom-footer-secondary-text": {
+    "footer-secondary-text": {
       "value": "#0F172A"
     },
-    "custom-footer-background": {
+    "footer-background": {
       "value": "#C8F0EF"
     },
-    "custom-button-text-primary": {
+    "button-text-primary": {
       "value": "#FFFFFF"
     },
-    "custom-button-background-primary": {
+    "button-background-primary": {
       "value": "#102EE9"
     },
-    "custom-button-background-primary-hover": {
+    "button-background-primary-hover": {
       "value": "#041162"
     },
-    "custom-button-background-primary-outline-focus": {
+    "button-background-primary-outline-focus": {
       "value": "#102EE9"
     },
-    "custom-progress-bar-background-primary": {
+    "progress-bar-background-primary": {
       "value": "#FFFFFF"
     },
-    "custom-progress-bar-indicator-primary": {
+    "progress-bar-indicator-primary": {
       "value": "#102EE9"
     },
     "avatar-background-blue": {
