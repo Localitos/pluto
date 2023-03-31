@@ -175,10 +175,16 @@
     "icon-map": {
       "value": "#4A63FC"
     },
+    "step-progress-background": {
+      "value": "#4A63FC"
+    },
     "step-progress-text": {
       "value": "#FFFFFF"
     },
     "map-background": {
+      "value": "#102EE9"
+    },
+    "footer-avatar-decoration": {
       "value": "#102EE9"
     },
     "footer-text": {
