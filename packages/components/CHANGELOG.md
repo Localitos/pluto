@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 8.0.0
+
+### Major Changes
+
+- [#710](https://github.com/Localitos/pluto/pull/710) [`aee8772`](https://github.com/Localitos/pluto/commit/aee87722dd7b1996fb4be063202764bc843e0d32) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [ControlledFormInput/ControlledFormSelect/ControlledFormTextArea] - Fixed missing dependency causing the controlled components to throw an error when used.
+
+  BREAKING CHANGE
+
+  [ControlledFormInput/ControlledFormSelect/ControlledFormTextArea] - Omits `hasError` property and automatically sets that and error message based on field state.
+
 ## 7.0.1
 
 ### Patch Changes
