@@ -141,12 +141,14 @@ export const AsControlledFormSelect = (): JSX.Element => {
     flavor2: string[];
   }
 
-  const { control, handleSubmit, formState } = useForm<FormInputs>({
+  const { control, handleSubmit } = useForm<FormInputs>({
     defaultValues: {
       flavor: "",
       flavor1: selectItems[1].value,
       flavor2: [selectItems[0].value, selectItems[2].value],
     },
+    reValidateMode: "onBlur",
+    mode: "onBlur",
     resolver: yupResolver(schema),
   });
 
@@ -159,12 +161,7 @@ export const AsControlledFormSelect = (): JSX.Element => {
     <Box.form onSubmit={handleSubmit(onSubmit)}>
       <ControlledFormSelect
         control={control}
-        hasError={!!formState.errors.flavor}
-        helpText={
-          formState.errors.flavor
-            ? formState.errors.flavor.message
-            : "Please select a flavor."
-        }
+        helpText={"Please select a flavor."}
         id={`${selectID}-1`}
         items={selectItems}
         label="Select a flavor"

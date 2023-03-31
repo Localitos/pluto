@@ -32,7 +32,6 @@ const ReactHookFormExample = (): JSX.Element => {
       <ControlledFormInput
         control={control}
         data-testid="test"
-        hasError={!!formState.errors.flavor}
         helpText={
           formState.errors.flavor
             ? formState.errors.flavor.message

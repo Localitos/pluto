@@ -7,7 +7,7 @@ import type { FormTextAreaProps } from "./FormTextArea";
 
 export interface ControlledFormTextAreaProps
   extends Omit<ControllerProps, "control" | "defaultValue" | "render">,
-    Omit<FormTextAreaProps, "defaultValue" | "name" | "value"> {
+    Omit<FormTextAreaProps, "defaultValue" | "hasError" | "name" | "value"> {
   /** Invoked with `useForm`. Set to any to allow `any` number of form inputs. */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control?: Control<any>;
@@ -34,7 +34,7 @@ const ControlledFormTextArea = ({
           {...field}
           disabled={disabled}
           hasError={fieldState.invalid}
-          helpText={helpText}
+          helpText={fieldState.error?.message || helpText}
           id={id}
           label={label}
           placeholder={placeholder}

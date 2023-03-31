@@ -7,7 +7,7 @@ import type { FormInputProps } from "./FormInput";
 
 export interface ControlledFormInputProps
   extends Omit<ControllerProps, "control" | "defaultValue" | "render">,
-    Omit<FormInputProps, "defaultValue" | "name" | "value"> {
+    Omit<FormInputProps, "defaultValue" | "hasError" | "name" | "value"> {
   /** Invoked with `useForm`. Set to any to allow `any` number of form inputs. */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control?: Control<any>;
@@ -35,7 +35,7 @@ const ControlledFormInput = ({
           {...field}
           disabled={disabled}
           hasError={fieldState.invalid}
-          helpText={helpText}
+          helpText={fieldState.error?.message || helpText}
           id={id}
           label={label}
           placeholder={placeholder}
