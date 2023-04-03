@@ -1,5 +1,12 @@
 # @localyze-pluto/components
 
+## 9.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`8ca6652`](https://github.com/Localitos/pluto/commit/8ca66520cb4cdb9449e2ef44b0c09ae3f049db43)]:
+  - @localyze-pluto/theme@4.0.0
+
 ## 8.0.0
 
 ### Major Changes
