@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.2.0
+
+### Minor Changes
+
+- [#727](https://github.com/Localitos/pluto/pull/727) [`8ca6652`](https://github.com/Localitos/pluto/commit/8ca66520cb4cdb9449e2ef44b0c09ae3f049db43) Thanks [@rssilva](https://github.com/rssilva)! - Fix colorIconMap token
+
 ## 0.1.2
 
 ### Patch Changes
