@@ -5099,27 +5099,27 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@xstyled/core@^3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-3.7.0.tgz#b6ea2c4b059ca9d808ffdf3800406eaddd2a9491"
-  integrity sha512-4U7PnDf4DnCWPwLRpyyCocQXod5T3Ap+h0nIwdJyZtHB35sjUXsEO8Cp8wP9lqbn/bnWkqhaL79StjUEmIIvrQ==
+"@xstyled/core@^3.7.5":
+  version "3.7.5"
+  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-3.7.5.tgz#e86f3ea7421e6ee2edce58b82e622c95f582f103"
+  integrity sha512-VZbq2UItx1mJSj1OZkBGGdzNOotk8qZmTXEpo9Do6PN8UJMvgvQ2qDVEiV0x2SXLoi1ln5UE/PTG2r+vudvKBQ==
   dependencies:
-    "@xstyled/system" "^3.7.0"
+    "@xstyled/system" "^3.7.5"
     "@xstyled/util" "^3.7.0"
 
-"@xstyled/styled-components@^3.6.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-3.7.0.tgz#28c9ca3ee675fa320faeccbb4c20116b0c98ec25"
-  integrity sha512-5zUmlC6v3wvBPHrhFUawu0FBYwHzGTFlGZYrZob54QMu9Sv1tFjgMVwGCp4uOLK9kVrRVyTVwWXejKXpyeGFVg==
+"@xstyled/styled-components@^3.7.5":
+  version "3.7.5"
+  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-3.7.5.tgz#ce39a158df298a2ef3548048e31b991e6e4daac9"
+  integrity sha512-f+lvX+YLll6UGAeo8gqv12XaLZFyxERNFbCy8zIzHMd5s9YlK0Ua4P50OenvNcUx19GD6ISwUHBf9DkI+Z0SlQ==
   dependencies:
-    "@xstyled/core" "^3.7.0"
-    "@xstyled/system" "^3.7.0"
+    "@xstyled/core" "^3.7.5"
+    "@xstyled/system" "^3.7.5"
     "@xstyled/util" "^3.7.0"
 
-"@xstyled/system@^3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-3.7.0.tgz#ed2c4f87c62eead93e112e71147fd816699759a3"
-  integrity sha512-110+yxP3zJSCr6Qyy89GMvaKhrR/3ezVyAGVOYsyUBz2u0+p3uAJ7uHKro2Pcwbt7V6oc7D5nTQVaOLasKMPCg==
+"@xstyled/system@^3.7.5":
+  version "3.7.5"
+  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-3.7.5.tgz#7c948aac386508c6662026388c29f6c983f5c9ad"
+  integrity sha512-tv8t00dNWRyXLMux7wb/jLvsYk3va1ZcfbiKF5J1Dj1uD8v96kWtW1CAgpYxyNTmtrZwSx2Kajvwru6dIpEGFQ==
   dependencies:
     "@xstyled/util" "^3.7.0"
     csstype "^3.1.1"
@@ -14553,9 +14553,9 @@ webpack-virtual-modules@^0.4.3, webpack-virtual-modules@^0.4.5:
   integrity sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==
 
 webpack@5, webpack@^5:
-  version "5.76.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.76.2.tgz#6f80d1c1d1e3bf704db571b2504a0461fac80230"
-  integrity sha512-Th05ggRm23rVzEOlX8y67NkYCHa9nTNcwHPBhdg+lKG+mtiW7XgggjAeeLnADAe7mLjJ6LUNfgHAuRRh+Z6J7w==
+  version "5.77.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.77.0.tgz#dea3ad16d7ea6b84aa55fa42f4eac9f30e7eb9b4"
+  integrity sha512-sbGNjBr5Ya5ss91yzjeJTLKyfiwo5C628AFjEa6WSXcZa4E+F57om3Cc8xLb1Jh0b243AWuSYRf3dn7HVeFQ9Q==
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^0.0.51"
