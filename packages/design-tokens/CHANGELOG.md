@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.1.2
+
+### Patch Changes
+
+- [#720](https://github.com/Localitos/pluto/pull/720) [`75ee3d7`](https://github.com/Localitos/pluto/commit/75ee3d71193e287744eb4fb0af334fd23f718e9d) Thanks [@blumaa](https://github.com/blumaa)! - added footerAvatarDecoration and stepProgressBackground tokens
+
 ## 0.1.1
 
 ### Patch Changes
