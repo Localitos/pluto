@@ -100,7 +100,11 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
               flexGrow={1}
               justifyContent={isMobile ? "top" : "center"}
             >
-              <FileUploaderTitle fileUrl={fileUrl} label={label} />
+              <FileUploaderTitle
+                fileUrl={fileUrl}
+                label={label}
+                status={status}
+              />
               <Box.div
                 alignItems={{ _: "left", md: "center" }}
                 display="flex"
