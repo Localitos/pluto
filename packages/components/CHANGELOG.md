@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.1.1
+
+### Patch Changes
+
+- [#741](https://github.com/Localitos/pluto/pull/741) [`e977809`](https://github.com/Localitos/pluto/commit/e977809d7980c75d53119150977ff988179037df) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [ControlledCheckbox] - Properly export the component
+
 ## 9.1.0
 
 ### Minor Changes
