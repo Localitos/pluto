@@ -4,6 +4,8 @@ import Uppy from "@uppy/core";
 import { FileUploader } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";
 
+const FILE_URL = "http://file-path/file.pdf";
+
 export default {
   component: FileUploader,
   title: "Components/FileUploader",
@@ -53,7 +55,7 @@ Success.args = {
   label: "Passport scan",
   fileSize: "2MB",
   fileName: "my_passport_scap.pdf",
-  fileUrl: "http://file-path/file.pdf",
+  fileUrl: FILE_URL,
   children: (
     <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
       Upload
@@ -84,7 +86,7 @@ Multiline.parameters = {
 export const SuccessWithoutFileInfo = Template.bind({});
 SuccessWithoutFileInfo.args = {
   label: "Passport scan",
-  fileUrl: "http://file-path/file.pdf",
+  fileUrl: FILE_URL,
   children: (
     <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
       Upload
@@ -115,6 +117,7 @@ WithError.parameters = {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
+  fileUrl: FILE_URL,
   label: "Employment Contract",
   maxFileSize: "3MB",
   disabled: true,
