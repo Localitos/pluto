@@ -1,8 +1,11 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { Button } from "../Button";
 import { Text } from "../../primitives/Text";
+import { Box } from "../..";
 import { Checkbox, CheckedState } from "./Checkbox";
+import { ControlledCheckbox } from "./ControlledCheckbox/ControlledCheckbox";
 
 export default {
   component: Checkbox,
@@ -118,4 +121,40 @@ export const Controlled = (): React.ReactElement => {
       </Checkbox>
     </form>
   );
+};
+
+export const AsControlledCheckbox = (): JSX.Element => {
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      checkbox: false,
+    },
+  });
+
+  return (
+    <form
+      onSubmit={handleSubmit((data) => alert(JSON.stringify(data, null, 2)))}
+    >
+      <ControlledCheckbox
+        control={control}
+        id="checkbox-controlled"
+        name="checkbox"
+      >
+        Working example with React Hook Form
+      </ControlledCheckbox>
+
+      <Box.div marginTop="space40">
+        <Button type="submit" variant="primary">
+          Submit
+        </Button>
+      </Box.div>
+    </form>
+  );
+};
+AsControlledCheckbox.parameters = {
+  docs: {
+    description: {
+      story:
+        "If you want to use the Checkbox with [React Hook Form](https://react-hook-form.com/), use the ControlledCheckbox component instead.",
+    },
+  },
 };
