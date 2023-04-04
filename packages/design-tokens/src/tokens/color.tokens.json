@@ -231,6 +231,24 @@
     },
     "avatar-background-pink": {
       "value": "#FF9788"
+    },
+    "sidebar-button-background": {
+      "value": "#FFFFFF"
+    },
+    "sidebar-button-hover": {
+      "value": "#F1F5F9"
+    },
+    "sidebar-button-text": {
+      "value": "#334155"
+    },
+    "sidebar-button-text-hover": {
+      "value": "#0B1F9C"
+    },
+    "sidebar-button-selected-background": {
+      "value": "#F1F5F9"
+    },
+    "sidebar-button-selected-text": {
+      "value": "#0B1F9C"
     }
   }
 }
