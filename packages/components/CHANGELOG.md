@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 9.1.0
+
+### Minor Changes
+
+- [#740](https://github.com/Localitos/pluto/pull/740) [`ab59547`](https://github.com/Localitos/pluto/commit/ab5954771a86ac367ceb7b4dfd1cc00ec98cafc2) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [Checkbox] - Added a ControlledCheckbox version so it can be easier used with React Hook Form
+
+### Patch Changes
+
+- Updated dependencies [[`a05d496`](https://github.com/Localitos/pluto/commit/a05d496abeeeb1e7baeae47ee3d7aa2b454876d6)]:
+  - @localyze-pluto/theme@4.0.1
+
 ## 9.0.1
 
 ### Patch Changes
