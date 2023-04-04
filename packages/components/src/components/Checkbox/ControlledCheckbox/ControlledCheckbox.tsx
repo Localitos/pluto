@@ -9,6 +9,7 @@ import type { CheckboxProps } from "../Checkbox";
 export interface ControlledCheckboxProps
   extends Pick<ControllerProps, "name" | "rules">,
     Omit<CheckboxProps, "checked" | "error" | "name" | "onBlur" | "value"> {
+  // Invoked with `useForm`. Set to any to allow `any` number of form inputs.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control?: Control<any>;
 }
