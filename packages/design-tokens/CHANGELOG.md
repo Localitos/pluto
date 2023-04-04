@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.2.1
+
+### Patch Changes
+
+- [#738](https://github.com/Localitos/pluto/pull/738) [`a05d496`](https://github.com/Localitos/pluto/commit/a05d496abeeeb1e7baeae47ee3d7aa2b454876d6) Thanks [@blumaa](https://github.com/blumaa)! - added tokens for sidebar
+
 ## 0.2.0
 
 ### Minor Changes
