@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.0.1
+
+### Patch Changes
+
+- [#736](https://github.com/Localitos/pluto/pull/736) [`de9e8bf`](https://github.com/Localitos/pluto/commit/de9e8bf41644cbbb90590ace6a723998ed9357cb) Thanks [@apvale](https://github.com/apvale)! - [File Uploader] Remove link from file title when status is disabled
+
 ## 9.0.0
 
 ### Patch Changes
