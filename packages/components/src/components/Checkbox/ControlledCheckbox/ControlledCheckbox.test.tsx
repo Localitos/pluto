@@ -47,12 +47,15 @@ describe("<ControlledCheckbox />", () => {
 
     const onSubmit = jest.fn();
     render(<ReactHookFormExample onSubmit={onSubmit} />);
+    const checkbox = screen.getByRole("checkbox", { name: "Checkbox" });
 
+    expect(checkbox).toHaveAttribute("data-state", "unchecked");
     await user.click(screen.getByRole("button", { name: "Submit" }));
 
     expect(onSubmit).toHaveBeenCalledWith({ checkbox: false });
 
-    await user.click(screen.getByRole("checkbox", { name: "Checkbox" }));
+    await user.click(checkbox);
+    expect(checkbox).toHaveAttribute("data-state", "checked");
     await user.click(screen.getByRole("button", { name: "Submit" }));
 
     expect(onSubmit).toHaveBeenNthCalledWith(2, { checkbox: true });
