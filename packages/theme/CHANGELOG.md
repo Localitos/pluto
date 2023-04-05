@@ -1,5 +1,14 @@
 # @localyze-pluto/theme
 
+## 4.0.2
+
+### Patch Changes
+
+- [#744](https://github.com/Localitos/pluto/pull/744) [`10660dd`](https://github.com/Localitos/pluto/commit/10660dd22ddc6c07f70aa3f3a867da683d1bc0f8) Thanks [@blumaa](https://github.com/blumaa)! - add two tokens mapIconSecondary and mapIconBackgroundSecondary
+
+- Updated dependencies [[`10660dd`](https://github.com/Localitos/pluto/commit/10660dd22ddc6c07f70aa3f3a867da683d1bc0f8)]:
+  - @localyze-pluto/design-tokens@0.2.2
+
 ## 4.0.1
 
 ### Patch Changes
