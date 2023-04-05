@@ -172,7 +172,10 @@
     "header-decoration": {
       "value": "#6EE7B7"
     },
-    "icon-map": {
+    "icon-map-primary": {
+      "value": "#0B1F9C"
+    },
+    "icon-map-secondary": {
       "value": "#0B1F9C"
     },
     "step-progress-background": {
@@ -181,7 +184,10 @@
     "step-progress-text": {
       "value": "#FFFFFF"
     },
-    "map-background": {
+    "map-background-primary": {
+      "value": "#102EE9"
+    },
+    "map-background-secondary": {
       "value": "#102EE9"
     },
     "footer-avatar-decoration": {
