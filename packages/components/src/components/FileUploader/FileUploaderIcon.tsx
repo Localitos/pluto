@@ -6,19 +6,21 @@ import { Icon } from "../Icon";
 import { FileUploaderStatus } from "./types/FileUploaderStatus";
 
 const getIconContainerProps = (
-  status: FileUploaderStatus
+  status: FileUploaderStatus,
+  disabled = false
 ): {
   backgroundColor: SystemProp<keyof Theme["colors"], Theme>;
 } => {
+  if (disabled && status !== "success") {
+    return { backgroundColor: "colorBackgroundWeak" };
+  }
+
   switch (status) {
     case "success": {
       return { backgroundColor: "colorBackgroundSuccess" };
     }
     case "error": {
       return { backgroundColor: "colorBackgroundError" };
-    }
-    case "disabled": {
-      return { backgroundColor: "colorBackgroundWeak" };
     }
     default: {
       return { backgroundColor: "colorBackgroundInfo" };
@@ -27,20 +29,22 @@ const getIconContainerProps = (
 };
 
 const getIconProps = (
-  status: FileUploaderStatus
+  status: FileUploaderStatus,
+  disabled = false
 ): {
   color: SystemProp<keyof Theme["colors"], Theme>;
   icon: keyof typeof HeroOutlineIcons;
 } => {
+  if (disabled && status !== "success") {
+    return { icon: "CloudArrowUpIcon", color: "colorTextStronger" };
+  }
+
   switch (status) {
     case "success": {
       return { icon: "PaperClipIcon", color: "colorTextSuccess" };
     }
     case "error": {
       return { icon: "XCircleIcon", color: "colorTextError" };
-    }
-    case "disabled": {
-      return { icon: "CloudArrowUpIcon", color: "colorTextStronger" };
     }
     default: {
       return { icon: "CloudArrowUpIcon", color: "colorTextLink" };
@@ -50,10 +54,12 @@ const getIconProps = (
 
 type FileUploaderIconProps = {
   status: FileUploaderStatus;
+  disabled?: boolean;
 };
 
 export const FileUploaderIcon = ({
   status,
+  disabled,
 }: FileUploaderIconProps): React.ReactElement => {
   return (
     <Box.div
@@ -63,13 +69,13 @@ export const FileUploaderIcon = ({
       h="36px"
       justifyContent="center"
       minWidth="36px"
-      {...getIconContainerProps(status)}
+      {...getIconContainerProps(status, disabled)}
     >
       <Icon
         decorative={false}
         size="sizeIcon30"
         title="status"
-        {...getIconProps(status)}
+        {...getIconProps(status, disabled)}
       />
     </Box.div>
   );

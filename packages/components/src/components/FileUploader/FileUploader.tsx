@@ -67,7 +67,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
     ref
   ) => {
     const isMobile = useDown("md");
-    const status = getStatus({ disabled, progress, fileUrl, errorMessage });
+    const status = getStatus({ progress, fileUrl, errorMessage });
     const isMobileUploading = isMobile && status === "loading";
     const isUploadedWithoutName = status === "success" && !fileName;
 
@@ -93,18 +93,14 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
             gap="space40"
             style={{ wordBreak: "break-word" }}
           >
-            <FileUploaderIcon status={status} />
+            <FileUploaderIcon disabled={disabled} status={status} />
             <Box.div
               display="flex"
               flexDirection="column"
               flexGrow={1}
               justifyContent={isMobile ? "top" : "center"}
             >
-              <FileUploaderTitle
-                fileUrl={fileUrl}
-                label={label}
-                status={status}
-              />
+              <FileUploaderTitle fileUrl={fileUrl} label={label} />
               <Box.div
                 alignItems={{ _: "left", md: "center" }}
                 display="flex"
@@ -128,14 +124,14 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
           {isMobileUploading && (
             <FileUploaderProgressBar fileName={fileName} progress={progress} />
           )}
-          {(status === "waiting" || status === "disabled") &&
+          {status === "waiting" &&
             React.cloneElement(children, {
               fullWidth: isMobile,
               disabled,
               style: { alignSelf: "start" },
             })}
           {(status === "error" || status === "success") && (
-            <RemoveButton onClick={onRemove} />
+            <RemoveButton disabled={disabled} onClick={onRemove} />
           )}
           {status === "loading" && <CancelUploadButton onClick={onCancel} />}
         </Box.div>
