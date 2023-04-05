@@ -1,11 +1,6 @@
 import { getStatus } from "./getStatus";
 
 describe("getStatus", () => {
-  it("returns disabled if disabled is true", () => {
-    const result = getStatus({ progress: 50, disabled: true });
-    expect(result).toMatch("disabled");
-  });
-
   it("returns loading if not disabled and progress is between 1 and 99", () => {
     const result = getStatus({ progress: 60 });
     expect(result).toMatch("loading");

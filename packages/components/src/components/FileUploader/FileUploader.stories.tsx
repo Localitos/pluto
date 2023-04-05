@@ -34,6 +34,22 @@ Default.parameters = {
   chromatic: { viewports: [320, 1200] },
 };
 
+export const Multiline = Template.bind({});
+Multiline.args = {
+  label:
+    "Certificate of valid health insurance (travel health insurance with minimum coverage of 30.000 € and valid during visa timeframe)",
+  fileSize: "2MB",
+  children: (
+    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+      Upload
+    </FileUploaderButton>
+  ),
+};
+
+Multiline.parameters = {
+  chromatic: { viewports: [320, 1200] },
+};
+
 export const Loading = Template.bind({});
 Loading.args = {
   label: "Visa",
@@ -64,22 +80,6 @@ Success.args = {
 };
 
 Success.parameters = {
-  chromatic: { viewports: [320, 1200] },
-};
-
-export const Multiline = Template.bind({});
-Multiline.args = {
-  label:
-    "Certificate of valid health insurance (travel health insurance with minimum coverage of 30.000 € and valid during visa timeframe)",
-  fileSize: "2MB",
-  children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
-      Upload
-    </FileUploaderButton>
-  ),
-};
-
-Multiline.parameters = {
   chromatic: { viewports: [320, 1200] },
 };
 
@@ -115,24 +115,36 @@ WithError.parameters = {
   chromatic: { viewports: [320, 1200] },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  fileUrl: FILE_URL,
+export const DisabledWithoutFile = Template.bind({});
+DisabledWithoutFile.args = {
   label: "Employment Contract",
   maxFileSize: "3MB",
   disabled: true,
   children: (
-    <FileUploaderButton
-      disabled={true}
-      trailingIcon="ArrowUpTrayIcon"
-      variant="secondary"
-    >
+    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
       Upload
     </FileUploaderButton>
   ),
 };
 
-Disabled.parameters = {
+DisabledWithoutFile.parameters = {
+  chromatic: { viewports: [320, 1200] },
+};
+
+export const DisabledWithFile = Template.bind({});
+DisabledWithFile.args = {
+  fileUrl: FILE_URL,
+  label: "Employment Contract",
+  maxFileSize: "3MB",
+  disabled: true,
+  children: (
+    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+      Upload
+    </FileUploaderButton>
+  ),
+};
+
+DisabledWithFile.parameters = {
   chromatic: { viewports: [320, 1200] },
 };
 

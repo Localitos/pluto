@@ -5,13 +5,11 @@ import { Text } from "../../primitives/Text";
 export const FileUploaderTitle = ({
   label,
   fileUrl,
-  status,
 }: {
   label: string;
-  status: string;
   fileUrl?: string;
 }): React.ReactElement => {
-  if (fileUrl && status !== "disabled") {
+  if (fileUrl) {
     return (
       <Anchor href={fileUrl} target="_blank">
         {label}
