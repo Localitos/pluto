@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.1.2
+
+### Patch Changes
+
+- [#746](https://github.com/Localitos/pluto/pull/746) [`10775c7`](https://github.com/Localitos/pluto/commit/10775c7027e7f3aa22e2d200e61f815ebe292d26) Thanks [@apvale](https://github.com/apvale)! - [FileUploader] Remove disabled status and start to use disabled prop
+
 ## 9.1.1
 
 ### Patch Changes
