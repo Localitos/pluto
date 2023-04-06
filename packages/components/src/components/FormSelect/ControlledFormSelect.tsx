@@ -10,7 +10,7 @@ export interface ControlledFormSelectProps
     Omit<FormSelectProps, "defaultValue" | "hasError" | "name" | "value"> {
   /** Invoked with `useForm`. Set to any to allow `any` number of form inputs. */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  control?: Control<any>;
+  control: Control<any>;
 }
 
 const ControlledFormSelect = ({
