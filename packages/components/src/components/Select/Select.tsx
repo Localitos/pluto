@@ -192,6 +192,16 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           w="100%"
           {...getSelectStyles(disabled, hasError)}
           {...props}
+          onBlur={(event) => {
+            if (event.defaultPrevented) {
+              return;
+            }
+            const popover = select.popoverRef.current;
+            if (popover?.contains(event.relatedTarget)) {
+              return;
+            }
+            props.onBlur?.(event);
+          }}
           state={select}
         >
           <Box.div
