@@ -1,5 +1,12 @@
 # @localyze-pluto/components
 
+## 9.1.3
+
+### Patch Changes
+
+- [#749](https://github.com/Localitos/pluto/pull/749) [`7a61bdf`](https://github.com/Localitos/pluto/commit/7a61bdf15a61b9a057212e624c5a29c70c329920) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [ControlledFormSelect] - Fix: Make `control` required as that is necessary for the component to work
+  [Select] - Fix: onBlur was previously getting triggered when clicking on a select item
+
 ## 9.1.2
 
 ### Patch Changes
