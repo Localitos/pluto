@@ -79,6 +79,9 @@
     "background-decorative-weak": {
       "value": "#FFF1DB"
     },
+    "background-outline-hover": {
+      "value": "#EBEDFF"
+    },
     "background-decorative-strong": {
       "value": "#C8F0EF"
     },
