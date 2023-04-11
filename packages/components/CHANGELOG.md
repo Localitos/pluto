@@ -1,5 +1,14 @@
 # @localyze-pluto/components
 
+## 9.1.4
+
+### Patch Changes
+
+- [#751](https://github.com/Localitos/pluto/pull/751) [`1e9056d`](https://github.com/Localitos/pluto/commit/1e9056ddfc0c20563a274805d0a9a82adaafefe3) Thanks [@rssilva](https://github.com/rssilva)! - Add color background outline hover token
+
+- Updated dependencies [[`1e9056d`](https://github.com/Localitos/pluto/commit/1e9056ddfc0c20563a274805d0a9a82adaafefe3)]:
+  - @localyze-pluto/theme@4.0.3
+
 ## 9.1.3
 
 ### Patch Changes
