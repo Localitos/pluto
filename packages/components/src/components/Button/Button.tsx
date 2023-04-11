@@ -128,7 +128,7 @@ const getButtonVariantStyles = (
         borderColor: { _: "colorBorderPrimary", disabled: "colorBorder" },
         backgroundColor: {
           active: "colorBackground",
-          hover: "colorBackgroundInfo",
+          hover: "colorBackgroundOutlineHover",
         },
         outlineColor: { focus: "colorBorderPrimary" },
       };
