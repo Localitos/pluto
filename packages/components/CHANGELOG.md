@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.1.5
+
+### Patch Changes
+
+- [#761](https://github.com/Localitos/pluto/pull/761) [`5f990d0`](https://github.com/Localitos/pluto/commit/5f990d02b3a313a9d6ff584986f314eface055bf) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [Button] - Be explicit about hover color and text decoration stylings so that it doesn't get overwritten
+
 ## 9.1.4
 
 ### Patch Changes
