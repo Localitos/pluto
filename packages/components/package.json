@@ -55,7 +55,7 @@
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.43.2",
     "react-uid": "^2.3.2",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.9"
   },
   "devDependencies": {
     "@heroicons/react": "^2.0.16",
@@ -85,7 +85,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-uid": "^2.3.2",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.9",
     "ts-jest": "^28.0.5",
     "tslib": "^2.4.0",
     "tsup": "^6.6.3",
