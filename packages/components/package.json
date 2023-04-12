@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
-    "@radix-ui/react-checkbox": "^1.0.1",
+    "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-progress": "^1.0.1",
     "@radix-ui/react-radio-group": "^1.1.1",
     "@radix-ui/react-switch": "^1.0.1",
@@ -41,7 +41,7 @@
   "peerDependencies": {
     "@heroicons/react": "^2.0.16",
     "@localyze-pluto/theme": "^4.0.3",
-    "@radix-ui/react-checkbox": "^1.0.1",
+    "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-progress": "^1.0.1",
     "@radix-ui/react-radio-group": "^1.1.1",
     "@radix-ui/react-switch": "^1.0.1",

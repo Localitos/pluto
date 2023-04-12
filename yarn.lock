@@ -3029,17 +3029,17 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
-"@radix-ui/react-checkbox@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-checkbox/-/react-checkbox-1.0.1.tgz#80cb38b1fd2cbe73f3ad0f4db8aebead0ab0617a"
-  integrity sha512-TisH0B8hWmYP3ONRduYCyN04rR9yLPIw/Rwyn1RoC1suSoGCa8Wn+YPdSSSarSszeIbcg3p2lBkDp2XXit4sZw==
+"@radix-ui/react-checkbox@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-checkbox/-/react-checkbox-1.0.3.tgz#bab1916c04b9f66e944e7168be2217cb74c7b94e"
+  integrity sha512-55B8/vKzTuzxllH5sGJO4zaBf9gYpJuJRRzaOKm+0oAefRnMvbf+Kgww7IOANVN0w3z7agFJgtnXaZl8Uj95AA==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/primitive" "1.0.0"
     "@radix-ui/react-compose-refs" "1.0.0"
     "@radix-ui/react-context" "1.0.0"
     "@radix-ui/react-presence" "1.0.0"
-    "@radix-ui/react-primitive" "1.0.1"
+    "@radix-ui/react-primitive" "1.0.2"
     "@radix-ui/react-use-controllable-state" "1.0.0"
     "@radix-ui/react-use-previous" "1.0.0"
     "@radix-ui/react-use-size" "1.0.0"
@@ -3117,6 +3117,14 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-primitive/-/react-primitive-1.0.1.tgz#c1ebcce283dd2f02e4fbefdaa49d1cb13dbc990a"
   integrity sha512-fHbmislWVkZaIdeF6GZxF0A/NH/3BjrGIYj+Ae6eTmTCr7EB0RQAAVEiqsXK6p3/JcRqVSBQoceZroj30Jj3XA==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-slot" "1.0.1"
+
+"@radix-ui/react-primitive@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-primitive/-/react-primitive-1.0.2.tgz#54e22f49ca59ba88d8143090276d50b93f8a7053"
+  integrity sha512-zY6G5Qq4R8diFPNwtyoLRZBxzu1Z+SXMlfYpChN7Dv8gvmx9X3qhDqiLWvKseKVJMuedFeU/Sa0Sy/Ia+t06Dw==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-slot" "1.0.1"
@@ -14553,9 +14561,9 @@ webpack-virtual-modules@^0.4.3, webpack-virtual-modules@^0.4.5:
   integrity sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==
 
 webpack@5, webpack@^5:
-  version "5.76.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.76.2.tgz#6f80d1c1d1e3bf704db571b2504a0461fac80230"
-  integrity sha512-Th05ggRm23rVzEOlX8y67NkYCHa9nTNcwHPBhdg+lKG+mtiW7XgggjAeeLnADAe7mLjJ6LUNfgHAuRRh+Z6J7w==
+  version "5.78.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.78.0.tgz#836452a12416af2a7beae906b31644cb2562f9e6"
+  integrity sha512-gT5DP72KInmE/3azEaQrISjTvLYlSM0j1Ezhht/KLVkrqtv10JoP/RXhwmX/frrutOPuSq3o5Vq0ehR/4Vmd1g==
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^0.0.51"
