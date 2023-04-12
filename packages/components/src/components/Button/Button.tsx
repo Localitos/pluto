@@ -62,6 +62,7 @@ const getButtonVariantStyles = (
         return {
           color: {
             _: "colorIconWeak",
+            hover: "colorIconWeak",
             disabled: "colorIconWeaker",
           },
           backgroundColor: {
@@ -86,6 +87,7 @@ const getButtonVariantStyles = (
       return {
         color: {
           _: "colorTextLink",
+          hover: "colorTextLink",
           disabled: "colorText",
         },
         borderWidth: "borderWidth10",
@@ -122,6 +124,7 @@ const getButtonVariantStyles = (
       return {
         color: {
           _: "colorTextLink",
+          hover: "colorTextLink",
           disabled: "colorText",
         },
         borderWidth: "borderWidth10",
@@ -136,7 +139,7 @@ const getButtonVariantStyles = (
     default: {
       return {
         borderWidth: "borderWidth10",
-        color: "colorTextInverse",
+        color: { _: "colorTextInverse", hover: "colorTextInverse" },
         backgroundColor: {
           _: "colorBackgroundPrimary",
           active: "colorBackgroundPrimary",
@@ -268,7 +271,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           outlineStyle={{ focus: "borderStyleSolid" }}
           outlineWidth={{ active: "borderWidth0", focus: "borderWidth20" }}
           ref={ref}
-          textDecoration="none"
+          textDecoration={{ _: "none", hover: "none" }}
           transition="background-color 100ms ease-in, border-color 100ms ease-in"
           w={fullWidth ? "100%" : "auto"}
           {...getButtonPadding(size, iconOnly, !!leadingIcon, !!trailingIcon)}
