@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.1.6
+
+### Patch Changes
+
+- [#763](https://github.com/Localitos/pluto/pull/763) [`ba10cb1`](https://github.com/Localitos/pluto/commit/ba10cb1bfb311f2efa099644e83701af20b019e5) Thanks [@nyan07](https://github.com/nyan07)! - [FileUploader] Fix: Remove IconTrash button when file uploader has an error
+
 ## 9.1.5
 
 ### Patch Changes
