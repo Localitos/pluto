@@ -130,7 +130,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
               disabled,
               style: { alignSelf: "start" },
             })}
-          {status === "success" && (
+          {(status === "error" || status === "success") && (
             <RemoveButton disabled={disabled} onClick={onRemove} />
           )}
           {status === "loading" && <CancelUploadButton onClick={onCancel} />}
