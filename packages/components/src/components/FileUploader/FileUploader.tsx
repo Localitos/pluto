@@ -124,7 +124,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
           {isMobileUploading && (
             <FileUploaderProgressBar fileName={fileName} progress={progress} />
           )}
-          {status === "waiting" &&
+          {(status === "waiting" || status === "error") &&
             React.cloneElement(children, {
               fullWidth: isMobile,
               disabled,
