@@ -127,3 +127,12 @@ export const AsControlledRadioGroup = (): JSX.Element => {
     </form>
   );
 };
+
+AsControlledRadioGroup.parameters = {
+  docs: {
+    description: {
+      story:
+        "If you want to use the RadioGroup with [React Hook Form](https://react-hook-form.com/), use the ControlledRadioGroup component instead.",
+    },
+  },
+};

@@ -2,7 +2,8 @@ import React from "react";
 import { Control, Controller } from "react-hook-form";
 import { RadioGroup, RadioGroupProps } from "../RadioGroup";
 
-export interface ControlledRadioGroupProps extends RadioGroupProps {
+export interface ControlledRadioGroupProps
+  extends Omit<RadioGroupProps, "onValueChange" | "value"> {
   /** The name of the group. Submitted with its owning form as part of a name/value pair. */
   name: string;
   /** Invoked with `useForm`. Set to any to allow `any` number of form inputs. */
