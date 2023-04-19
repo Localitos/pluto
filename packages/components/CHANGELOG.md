@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.2.0
+
+### Minor Changes
+
+- [#777](https://github.com/Localitos/pluto/pull/777) [`5689b15`](https://github.com/Localitos/pluto/commit/5689b1549f7af8f86c87e114b57ee0f794668884) Thanks [@rssilva](https://github.com/rssilva)! - Add controlled RadioGroup, enforce Radio component to have margin-bottom zero
+
 ## 9.1.5
 
 ### Patch Changes
