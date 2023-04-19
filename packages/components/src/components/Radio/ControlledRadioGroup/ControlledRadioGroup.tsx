@@ -11,10 +11,12 @@ export interface ControlledRadioGroupProps
   control?: Control<any>;
 }
 
-const ControlledRadioGroup = React.forwardRef<
-  HTMLDivElement,
-  ControlledRadioGroupProps
->(({ children, name, control, ...props }) => {
+export const ControlledRadioGroup = ({
+  children,
+  name,
+  control,
+  ...props
+}: ControlledRadioGroupProps): JSX.Element => {
   return (
     <Controller
       control={control}
@@ -31,8 +33,4 @@ const ControlledRadioGroup = React.forwardRef<
       )}
     />
   );
-});
-
-ControlledRadioGroup.displayName = "ControlledRadioGroup";
-
-export { ControlledRadioGroup };
+};
