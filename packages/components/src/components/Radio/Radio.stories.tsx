@@ -2,8 +2,10 @@ import type { ComponentMeta } from "@storybook/react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import React from "react";
 import { Box } from "../../primitives/Box";
+import { Button } from "../Button";
 import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
+import { ControlledRadioGroup } from "./ControlledRadioGroup/ControlledRadioGroup";
 
 export default {
   component: Radio,
@@ -93,5 +95,35 @@ export const WithReactHookForm = (): JSX.Element => {
         </Box.form>
       )}
     />
+  );
+};
+
+export const AsControlledRadioGroup = (): JSX.Element => {
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      radio: "default",
+    },
+  });
+
+  return (
+    <form
+      onSubmit={handleSubmit((data) => alert(JSON.stringify(data, null, 2)))}
+    >
+      <ControlledRadioGroup
+        control={control}
+        id="radio-group-controlled"
+        name="radio"
+      >
+        <Radio label="Default" value="default" />
+        <Radio label="Secondary" value="secondary" />
+        <Radio label="Third Option" value="third option" />
+      </ControlledRadioGroup>
+
+      <Box.div marginTop="space40">
+        <Button type="submit" variant="primary">
+          Submit
+        </Button>
+      </Box.div>
+    </form>
   );
 };
