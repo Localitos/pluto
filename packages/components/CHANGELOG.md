@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.2.1
+
+### Patch Changes
+
+- [#779](https://github.com/Localitos/pluto/pull/779) [`c5f484a`](https://github.com/Localitos/pluto/commit/c5f484a4e97c91c137021f739118f5239f97ee5f) Thanks [@rssilva](https://github.com/rssilva)! - Remove unnecessary forwardRef from ControlledRadioGroup
+
 ## 9.2.0
 
 ### Minor Changes
