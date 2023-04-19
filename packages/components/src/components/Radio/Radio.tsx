@@ -95,6 +95,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
           fontWeight="fontWeightRegular"
           htmlFor={radioID}
           lineHeight="lineHeight20"
+          margin="space0"
         >
           {label}
         </Text.label>
