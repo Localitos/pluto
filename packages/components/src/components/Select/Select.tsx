@@ -226,14 +226,15 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           </Box.div>
         </Box.button>
         <SelectPopover state={select}>
-          {map(items, (item) => (
-            <SelectItem
-              disabled={item.disabled}
-              key={item.value}
-              label={item.label}
-              value={item.value}
-            />
-          ))}
+          {select.open &&
+            map(items, (item) => (
+              <SelectItem
+                disabled={item.disabled}
+                key={item.value}
+                label={item.label}
+                value={item.value}
+              />
+            ))}
         </SelectPopover>
       </>
     );
