@@ -54,4 +54,6 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
 
 SelectItem.displayName = "SelectItem";
 
-export { SelectItem };
+const MemoizedSelectItem = React.memo(SelectItem);
+
+export { MemoizedSelectItem as SelectItem };
