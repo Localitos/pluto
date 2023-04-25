@@ -27,6 +27,14 @@ const selectItems: SelectProps["items"] = [
   },
 ];
 
+const longSelectItems: SelectProps["items"] = Array.from(
+  { length: 750 },
+  (_, i) => ({
+    value: `option-${i}`,
+    label: `Option ${i}`,
+  })
+);
+
 const multiSelectItems: SelectProps["items"] = [
   { value: "option-one", label: "Option One" },
   { value: "option-two", label: "Option Two" },
@@ -190,6 +198,30 @@ export const MultiSelect = (): JSX.Element => {
       <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
     </Box.form>
   );
+};
+
+export const WithLongList = (): JSX.Element => {
+  const selectID = useUID();
+  const helpTextID = useUID();
+  return (
+    <Box.form>
+      <Label htmlFor={selectID}>Choose One</Label>
+      <Select
+        aria-describedby={helpTextID}
+        id={selectID}
+        items={longSelectItems}
+        name="select"
+      />
+      <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
+    </Box.form>
+  );
+};
+WithLongList.parameters = {
+  docs: {
+    description: {
+      story: "Example where the select has 750 options",
+    },
+  },
 };
 
 export const WithFormik = (): JSX.Element => {
