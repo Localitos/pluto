@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.2.2
+
+### Patch Changes
+
+- [#782](https://github.com/Localitos/pluto/pull/782) [`996622d`](https://github.com/Localitos/pluto/commit/996622d7245b1c7dbd39b8d7dddcee3a5b536e1f) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [Select] - Memoize SelectItem to fix performance issues
+
 ## 9.2.1
 
 ### Patch Changes
