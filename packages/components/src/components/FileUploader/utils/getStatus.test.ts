@@ -11,9 +11,20 @@ describe("getStatus", () => {
     expect(result).toMatch("success");
   });
 
-  it("returns error if not loading or success and with errorMessage", () => {
-    const result = getStatus({ progress: 100, errorMessage: "An error" });
-    expect(result).toMatch("error");
+  describe("returns error", () => {
+    it("if not loading or success and with errorMessage", () => {
+      const result = getStatus({ progress: 100, errorMessage: "An error" });
+      expect(result).toMatch("error");
+    });
+
+    it("if it is required with errorMessage and does not have fileUrl", () => {
+      const result = getStatus({
+        progress: 0,
+        errorMessage: "Necessary field",
+        required: true,
+      });
+      expect(result).toMatch("error");
+    });
   });
 
   it("returns waiting if not loading, success or error", () => {

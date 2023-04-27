@@ -127,6 +127,41 @@ describe("<FileUploader />", () => {
     });
   });
 
+  describe("when required", () => {
+    it("renders Upload button but not Remove button when there is errorMessage", () => {
+      renderFileUploader({
+        label: "Permit",
+        errorMessage: "You must upload a file",
+        required: true,
+      });
+
+      expect(screen.getByText("Permit")).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Upload" })
+      ).toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: "Remove file" })
+      ).not.toBeInTheDocument();
+      expect(screen.getByRole("alert")).toHaveTextContent(
+        "You must upload a file"
+      );
+    });
+
+    it("renders Upload button but not alert if there is no errorMessage", () => {
+      renderFileUploader({
+        label: "Permit",
+        errorMessage: "",
+        required: true,
+      });
+
+      expect(screen.getByText("Permit")).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Upload" })
+      ).toBeInTheDocument();
+      expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    });
+  });
+
   it('renders correctly when state is "error"', () => {
     renderFileUploader({
       label: "Visa Confirmation",

@@ -46,6 +46,9 @@ export interface FileUploaderProps
 
   /** Disables the file uploader */
   disabled?: boolean;
+
+  /** When `true`, indicates that the user must upload a file before the form can be submitted. */
+  required?: boolean;
 }
 
 /** Visual component to display status of a file upload */
@@ -63,6 +66,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       onCancel,
       onRemove,
       disabled = false,
+      required,
     },
     ref
   ) => {
@@ -70,6 +74,11 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
     const status = getStatus({ progress, fileUrl, errorMessage });
     const isMobileUploading = isMobile && status === "loading";
     const isUploadedWithoutName = status === "success" && !fileName;
+    const hasFile = fileName || fileUrl;
+    const shouldShowChildren =
+      status === "waiting" || (required && errorMessage);
+    const shouldShowRemoveButton =
+      (status === "error" && hasFile) || status === "success";
 
     return (
       <Box.div display="flex" flexDirection="column" gap="space25">
@@ -124,13 +133,13 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
           {isMobileUploading && (
             <FileUploaderProgressBar fileName={fileName} progress={progress} />
           )}
-          {status === "waiting" &&
+          {shouldShowChildren &&
             React.cloneElement(children, {
               fullWidth: isMobile,
               disabled,
               style: { alignSelf: "start" },
             })}
-          {(status === "error" || status === "success") && (
+          {shouldShowRemoveButton && (
             <RemoveButton disabled={disabled} onClick={onRemove} />
           )}
           {status === "loading" && <CancelUploadButton onClick={onCancel} />}

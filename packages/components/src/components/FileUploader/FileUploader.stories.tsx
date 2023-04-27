@@ -1,6 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
 import Uppy from "@uppy/core";
+import { Button } from "../Button";
 import { FileUploader } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";
 
@@ -207,5 +208,54 @@ export const WithUppy = (): React.ReactElement => {
         Upload
       </FileUploaderButton>
     </FileUploader>
+  );
+};
+
+export const AsRequiredFileUploader = (): React.ReactElement => {
+  const [file, setFile] = useState<File | undefined>();
+  const [error, setError] = useState("");
+
+  const onSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
+    ev.preventDefault();
+
+    if (file) {
+      setError("");
+      setFile(file);
+    } else {
+      setError("This is a required field");
+      setFile(undefined);
+    }
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <FileUploader
+        errorMessage={error}
+        fileName={file?.name}
+        label="Passport"
+        required
+      >
+        <FileUploaderButton
+          id="upload-passport"
+          onChange={(ev) => {
+            setFile(ev.target.files?.[0]);
+            setError("");
+          }}
+          type="button"
+          variant={"secondary"}
+        >
+          Upload
+        </FileUploaderButton>
+      </FileUploader>
+      <Button
+        style={{
+          marginTop: "30px",
+        }}
+        type="submit"
+        variant="primary"
+      >
+        Submit
+      </Button>
+    </form>
   );
 };
