@@ -259,7 +259,9 @@ export const WithRequiredButton = (): React.ReactElement => {
   const [file, setFile] = useState<File | undefined>();
   const [error, setError] = useState("");
 
-  const onSubmit = (ev: React.MouseEvent<HTMLButtonElement>) => {
+  const onSubmit = (
+    ev: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+  ) => {
     ev.preventDefault();
 
     if (file) {
@@ -272,7 +274,7 @@ export const WithRequiredButton = (): React.ReactElement => {
   };
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <FileUploader errorMessage={error} fileName={file?.name} label="Passport">
         <FileUploaderButton
           id="upload-passport"
