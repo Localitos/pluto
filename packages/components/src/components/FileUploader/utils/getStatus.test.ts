@@ -17,11 +17,10 @@ describe("getStatus", () => {
       expect(result).toMatch("error");
     });
 
-    it("if it is required with errorMessage and does not have fileUrl", () => {
+    it("if it has errorMessage and does not have fileUrl", () => {
       const result = getStatus({
         progress: 0,
         errorMessage: "Necessary field",
-        required: true,
       });
       expect(result).toMatch("error");
     });

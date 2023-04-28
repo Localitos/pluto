@@ -75,8 +75,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
     const isMobileUploading = isMobile && status === "loading";
     const isUploadedWithoutName = status === "success" && !fileName;
     const hasFile = fileName || fileUrl;
-    const shouldShowChildren =
-      status === "waiting" || (required && errorMessage);
+    const shouldShowChildren = status === "waiting" || (required && !hasFile);
     const shouldShowRemoveButton =
       (status === "error" && hasFile) || status === "success";
 
