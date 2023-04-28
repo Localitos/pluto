@@ -2,4 +2,4 @@
 "@localyze-pluto/components": patch
 ---
 
-Add required property to File Uploader to show errors when it is empty and has an error message
+Handles File Uploader errors to show the remove button properly when there was no file added

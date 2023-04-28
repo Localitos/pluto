@@ -127,8 +127,8 @@ describe("<FileUploader />", () => {
     });
   });
 
-  describe("when required", () => {
-    it("renders Upload button but not Remove button when there is errorMessage", () => {
+  describe("when there is an error", () => {
+    it("renders Upload button but not Remove button when there is an errorMessage", () => {
       renderFileUploader({
         label: "Permit",
         errorMessage: "You must upload a file",
