@@ -211,7 +211,7 @@ export const WithUppy = (): React.ReactElement => {
   );
 };
 
-export const AsRequiredFileUploader = (): React.ReactElement => {
+export const HandlingSubmitErrors = (): React.ReactElement => {
   const [file, setFile] = useState<File | undefined>();
   const [error, setError] = useState("");
 
@@ -229,12 +229,7 @@ export const AsRequiredFileUploader = (): React.ReactElement => {
 
   return (
     <form onSubmit={onSubmit}>
-      <FileUploader
-        errorMessage={error}
-        fileName={file?.name}
-        label="Passport"
-        required
-      >
+      <FileUploader errorMessage={error} fileName={file?.name} label="Passport">
         <FileUploaderButton
           id="upload-passport"
           onChange={(ev) => {

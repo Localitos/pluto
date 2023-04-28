@@ -132,7 +132,6 @@ describe("<FileUploader />", () => {
       renderFileUploader({
         label: "Permit",
         errorMessage: "You must upload a file",
-        required: true,
       });
 
       expect(screen.getByText("Permit")).toBeInTheDocument();
@@ -151,7 +150,6 @@ describe("<FileUploader />", () => {
       renderFileUploader({
         label: "Permit",
         errorMessage: "",
-        required: true,
       });
 
       expect(screen.getByText("Permit")).toBeInTheDocument();

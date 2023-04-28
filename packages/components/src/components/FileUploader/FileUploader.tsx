@@ -46,9 +46,6 @@ export interface FileUploaderProps
 
   /** Disables the file uploader */
   disabled?: boolean;
-
-  /** When `true`, indicates that the user must upload a file before the form can be submitted. */
-  required?: boolean;
 }
 
 /** Visual component to display status of a file upload */
