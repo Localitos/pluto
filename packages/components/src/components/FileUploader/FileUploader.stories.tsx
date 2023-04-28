@@ -254,3 +254,49 @@ export const HandlingSubmitErrors = (): React.ReactElement => {
     </form>
   );
 };
+
+export const WithRequiredButton = (): React.ReactElement => {
+  const [file, setFile] = useState<File | undefined>();
+  const [error, setError] = useState("");
+
+  const onSubmit = (ev: React.MouseEvent<HTMLButtonElement>) => {
+    ev.preventDefault();
+
+    if (file) {
+      setError("");
+      setFile(file);
+    } else {
+      setError("Please upload a file");
+      setFile(undefined);
+    }
+  };
+
+  return (
+    <form>
+      <FileUploader errorMessage={error} fileName={file?.name} label="Passport">
+        <FileUploaderButton
+          id="upload-passport"
+          onChange={(ev) => {
+            setFile(ev.target.files?.[0]);
+            setError("");
+          }}
+          required
+          type="button"
+          variant={"secondary"}
+        >
+          Upload
+        </FileUploaderButton>
+      </FileUploader>
+      <Button
+        onClick={onSubmit}
+        style={{
+          marginTop: "30px",
+        }}
+        type="submit"
+        variant="primary"
+      >
+        Submit
+      </Button>
+    </form>
+  );
+};
