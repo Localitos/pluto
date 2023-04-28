@@ -255,6 +255,15 @@ export const HandlingSubmitErrors = (): React.ReactElement => {
   );
 };
 
+HandlingSubmitErrors.parameters = {
+  docs: {
+    description: {
+      story:
+        "If you want to handle form submissions checking for missing data.",
+    },
+  },
+};
+
 export const WithRequiredButton = (): React.ReactElement => {
   const [file, setFile] = useState<File | undefined>();
   const [error, setError] = useState("");
@@ -301,4 +310,13 @@ export const WithRequiredButton = (): React.ReactElement => {
       </Button>
     </form>
   );
+};
+
+WithRequiredButton.parameters = {
+  docs: {
+    description: {
+      story:
+        "If you want to use required property on the FileUploaderButton to allow form submissions only with filled data.",
+    },
+  },
 };

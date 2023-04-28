@@ -128,6 +128,25 @@ describe("<FileUploader />", () => {
   });
 
   describe("when there is an error", () => {
+    it("renders label and the Remove button if it has a fileName", () => {
+      renderFileUploader({
+        label: "Visa Confirmation",
+        maxFileSize: "2MB",
+        fileName: "visa_v2.pdf",
+        fileUrl: FILE_URL,
+        fileSize: "1MB",
+        progress: 100,
+        errorMessage: "File is too large.",
+      });
+
+      expect(screen.getByText("Visa Confirmation")).toBeInTheDocument();
+      expect(screen.getByText("visa_v2.pdf • 1MB")).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Remove file" })
+      ).toBeInTheDocument();
+      expect(screen.getByRole("alert")).toHaveTextContent("File is too large.");
+    });
+
     it("renders Upload button but not Remove button when there is an errorMessage", () => {
       renderFileUploader({
         label: "Permit",
@@ -158,25 +177,6 @@ describe("<FileUploader />", () => {
       ).toBeInTheDocument();
       expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     });
-  });
-
-  it('renders correctly when state is "error"', () => {
-    renderFileUploader({
-      label: "Visa Confirmation",
-      maxFileSize: "2MB",
-      fileName: "visa_v2.pdf",
-      fileUrl: FILE_URL,
-      fileSize: "1MB",
-      progress: 100,
-      errorMessage: "File is too large.",
-    });
-
-    expect(screen.getByText("Visa Confirmation")).toBeInTheDocument();
-    expect(screen.getByText("visa_v2.pdf • 1MB")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "Remove file" })
-    ).toBeInTheDocument();
-    expect(screen.getByRole("alert")).toHaveTextContent("File is too large.");
   });
 
   it('renders correctly when state is "disabled"', () => {
