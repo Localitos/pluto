@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 9.2.3
+
+### Patch Changes
+
+- [#793](https://github.com/Localitos/pluto/pull/793) [`feb03c6`](https://github.com/Localitos/pluto/commit/feb03c6aab783958889fdaee0eb9113be935628b) Thanks [@rssilva](https://github.com/rssilva)! - Handles File Uploader errors to show the remove button properly when there was no file added
+
 ## 9.2.2
 
 ### Patch Changes
