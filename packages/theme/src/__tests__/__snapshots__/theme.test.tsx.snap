@@ -99,6 +99,7 @@ Object {
     "colorSidebarButtonTextHover": "#0B1F9C",
     "colorStepProgressBackground": "#4A63FC",
     "colorStepProgressText": "#FFFFFF",
+    "colorStepProgressTitle": "#FFFFFF",
     "colorText": "#64748B",
     "colorTextError": "#B91C1C",
     "colorTextHeading": "#334155",

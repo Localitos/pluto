@@ -184,6 +184,9 @@
     "step-progress-background": {
       "value": "#4A63FC"
     },
+    "step-progress-title": {
+      "value": "#FFFFFF"
+    },
     "step-progress-text": {
       "value": "#FFFFFF"
     },
