@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.2.4
+
+### Patch Changes
+
+- [`5a0c949`](https://github.com/Localitos/pluto/commit/5a0c94901fa63dc5fd56d0a9e9ea3476f57e57db) Thanks [@blumaa](https://github.com/blumaa)! - add step progress title token
+
 ## 0.2.3
 
 ### Patch Changes
