@@ -1,10 +1,9 @@
-import React, { useMemo } from "react";
+import React from "react";
 import map from "lodash/map";
+import isNaN from "lodash/isNaN";
 import { Box } from "../../primitives/Box";
-import { Icon } from "../Icon";
-import { usePagination } from "./usePagination";
-import { isNaN } from "lodash";
 import { Button } from "../Button";
+import { usePagination } from "./usePagination";
 
 export interface PaginationProps
   extends Omit<React.HtmlHTMLAttributes<HTMLDivElement>, "color"> {
@@ -33,16 +32,14 @@ const PaginationButton = ({
   isCurrentPage: boolean;
   onClick: () => void;
 }) => {
-  console.log("isCurrentPage", isCurrentPage);
   return (
     <Box.li
       alignItems="center"
       appearance="none"
-      background="none"
       backgroundColor={{
         _: isCurrentPage ? "colorBackgroundInfo" : "colorBackground",
         hover: "colorBackgroundInfo",
-        focus: "colorBackground",
+        focus: "colorBackgroundInfo",
       }}
       borderColor={{
         _: isCurrentPage ? "colorBorderPrimary" : "colorBorder",
@@ -56,21 +53,19 @@ const PaginationButton = ({
       color={{
         _: isCurrentPage ? "colorTextLink" : "colorTextStronger",
         hover: isCurrentPage ? "colorTextStronger" : "colorTextLink",
-        disabled: "colorIconWeaker",
       }}
       cursor={{
         _: "default",
         hover: "pointer",
         disabled: "not-allowed",
-        loading: "wait",
       }}
       display="inline-flex"
       fontFamily="fontFamilyModerat"
-      fontSize={"fontSize20"}
+      fontSize="fontSize20"
       fontWeight="fontWeightMedium"
-      gap="space30"
+      // gap="space30"
       justifyContent="center"
-      lineHeight={"lineHeight30"}
+      // lineHeight="lineHeight30"
       onClick={onClick}
       outlineOffset={{ focus: "borderWidth20" }}
       outlineStyle={{ focus: "borderStyleSolid" }}
@@ -80,7 +75,7 @@ const PaginationButton = ({
       paddingRight="space30"
       paddingTop="space30"
       textDecoration={{ _: "none", hover: "none" }}
-      w="auto"
+      w="36px"
     >
       {children}
     </Box.li>
@@ -96,7 +91,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       if (currentPage !== totalPages) onPageChange(currentPage + 1);
     };
     const prevPage = () => {
-      if (currentPage <= 1) onPageChange(currentPage - 1);
+      if (currentPage >= 1) onPageChange(currentPage - 1);
     };
 
     return (
@@ -125,16 +120,13 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
           {map(pages, (page, index) => {
             return (
               <PaginationButton
-                isCurrentPage={currentPage === Number(page) ? true : false}
+                isCurrentPage={currentPage === Number(page)}
                 key={index}
                 onClick={() =>
                   !isNaN(Number(page)) && onPageChange(Number(page))
                 }
               >
-                {/* <Box.a */}
-                {/* > */}
                 {page}
-                {/* </Box.a> */}
               </PaginationButton>
             );
           })}
