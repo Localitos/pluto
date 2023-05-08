@@ -1,13 +1,17 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
+
 import React from "react";
 import { Pagination } from "./Pagination";
 
-export default {
-  component: Pagination,
+const meta: Meta<typeof Pagination> = {
   title: "Components/Pagination",
-} as ComponentMeta<typeof Pagination>;
+  component: Pagination,
+};
 
-export const Default = (): JSX.Element => {
+export default meta;
+type Story = StoryObj<typeof Pagination>;
+
+const BasicPagination = (): JSX.Element => {
   const [currentPage, setCurrentPage] = React.useState(10);
   return (
     <Pagination
@@ -18,14 +22,13 @@ export const Default = (): JSX.Element => {
   );
 };
 
-// export const WithMorePages = (): JSX.Element => {
-//   const [currentPage, setCurrentPage] = React.useState(1);
-//   return (
-//     <Pagination
-//       currentPage={currentPage}
-//       onPageChange={setCurrentPage}
-//       totalPages={700}
-//     />
-//   );
-// };
+export const Default: Story = {
+  render: (): JSX.Element => <BasicPagination />,
+};
 
+Default.parameters = {
+  docs: {
+    storyDescription:
+      "Pagination lets users navigate through content or a dataset that’s been broken up into multiple pages.",
+  },
+};

@@ -3,6 +3,7 @@ import map from "lodash/map";
 import isNaN from "lodash/isNaN";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
+import { PaginationButton } from "./PaginationButton";
 import { usePagination } from "./usePagination";
 
 export interface PaginationProps
@@ -22,65 +23,6 @@ export interface PaginationProps
    */
   onPageChange: (page: number) => void;
 }
-
-const PaginationButton = ({
-  children,
-  isCurrentPage,
-  onClick,
-}: {
-  children: React.ReactNode;
-  isCurrentPage: boolean;
-  onClick: () => void;
-}) => {
-  return (
-    <Box.li
-      alignItems="center"
-      appearance="none"
-      backgroundColor={{
-        _: isCurrentPage ? "colorBackgroundInfo" : "colorBackground",
-        hover: "colorBackgroundInfo",
-        focus: "colorBackgroundInfo",
-      }}
-      borderColor={{
-        _: isCurrentPage ? "colorBorderPrimary" : "colorBorder",
-        hover: isCurrentPage ? "colorBorder" : "colorBorderPrimary",
-      }}
-      borderRadius="borderRadius20"
-      borderStyle="borderStyleSolid"
-      borderWidth={{
-        _: isCurrentPage ? "borderWidth10" : "borderWidth0",
-      }}
-      color={{
-        _: isCurrentPage ? "colorTextLink" : "colorTextStronger",
-        hover: isCurrentPage ? "colorTextStronger" : "colorTextLink",
-      }}
-      cursor={{
-        _: "default",
-        hover: "pointer",
-        disabled: "not-allowed",
-      }}
-      display="inline-flex"
-      fontFamily="fontFamilyModerat"
-      fontSize="fontSize20"
-      fontWeight="fontWeightMedium"
-      // gap="space30"
-      justifyContent="center"
-      // lineHeight="lineHeight30"
-      onClick={onClick}
-      outlineOffset={{ focus: "borderWidth20" }}
-      outlineStyle={{ focus: "borderStyleSolid" }}
-      outlineWidth={{ active: "borderWidth0", focus: "borderWidth20" }}
-      paddingBottom="space30"
-      paddingLeft="space30"
-      paddingRight="space30"
-      paddingTop="space30"
-      textDecoration={{ _: "none", hover: "none" }}
-      w="36px"
-    >
-      {children}
-    </Box.li>
-  );
-};
 
 /** Pagination lets users navigate through content or a dataset that’s been broken up into multiple pages. */
 const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
@@ -115,6 +57,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
             iconOnly
             leadingIcon="ChevronLeftIcon"
             onClick={prevPage}
+            style={{ outlineColor: "colorBorderPrimary" }}
             variant="ghost"
           />
           {map(pages, (page, index) => {
