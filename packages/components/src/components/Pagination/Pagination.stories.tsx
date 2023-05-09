@@ -32,3 +32,18 @@ Default.parameters = {
       "Pagination lets users navigate through content or a dataset that’s been broken up into multiple pages.",
   },
 };
+
+const PaginationWithMorePages = (): JSX.Element => {
+  const [currentPage, setCurrentPage] = React.useState(333);
+  return (
+    <Pagination
+      currentPage={currentPage}
+      onPageChange={setCurrentPage}
+      totalPages={999}
+    />
+  );
+};
+
+export const WithMorePages: Story = {
+  render: (): JSX.Element => <PaginationWithMorePages />,
+};

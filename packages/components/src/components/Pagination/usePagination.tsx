@@ -1,10 +1,9 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 const DOTS = "...";
 
 const range = (start: number, end: number): string[] => {
   const length = end - start + 1;
-  // console.log("lenght", length);
   return Array.from({ length }, (_, idx) => `${idx + start}`);
 };
 
@@ -17,7 +16,6 @@ export const usePagination = (
     // Pages count is determined as siblingCount + firstPage + lastPage + currentPage + 2*DOTS
     const fixedItems = siblingCount + 5;
     const fixedItemsOnEachSide = 3;
-    const totalSibilings = 2 * siblingCount;
     const firstPage = 1;
     const lastPage = totalCount;
 
@@ -38,11 +36,6 @@ export const usePagination = (
       component size which we do not want
     */
     const shouldShowLeftDots = leftSiblingIndex >= 5;
-    console.log("---------------");
-    console.log("leftSiblingIndex", leftSiblingIndex);
-    console.log("currentPage", currentPage);
-    // console.log("rightSiblingIndex", rightSiblingIndex, shouldShowLeftDots);
-    // console.log("shouldShowRightDots", totalCount - fixedItemsOnEachSide);
     const shouldShowRightDots =
       rightSiblingIndex < totalCount - fixedItemsOnEachSide;
 
@@ -52,8 +45,6 @@ export const usePagination = (
       const leftItemCount = fixedItemsOnEachSide + siblingCount + 1;
       const leftRange = range(firstPage, leftItemCount);
 
-      console.log("leftItemCount", leftItemCount);
-      console.log("leftRange", leftRange);
       return [...leftRange, DOTS, totalCount];
     }
 
