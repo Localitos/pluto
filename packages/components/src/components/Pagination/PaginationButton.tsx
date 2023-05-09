@@ -5,16 +5,22 @@ export const PaginationButton = ({
   children,
   isCurrentPage,
   onClick,
+  page,
 }: {
   children: React.ReactNode;
   isCurrentPage: boolean;
   onClick: () => void;
+  page: number;
 }): React.ReactElement => {
   return (
     <Box.li>
       <Box.button
         alignItems="center"
         appearance="none"
+        aria-current={isCurrentPage ? true : false}
+        aria-label={
+          isCurrentPage ? `Current Page, Page ${page}` : `Goto Page ${page}`
+        }
         backgroundColor={{
           _: isCurrentPage ? "colorBackgroundInfo" : "colorBackground",
           hover: "colorBackgroundInfo",

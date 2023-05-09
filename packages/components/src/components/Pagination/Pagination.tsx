@@ -9,7 +9,7 @@ import { usePagination } from "./usePagination";
 export interface PaginationProps
   extends Omit<React.HtmlHTMLAttributes<HTMLDivElement>, "color"> {
   /** The accessible label assigned to the pagination. */
-  // label: string;
+  // Label: string;
   /**
    * The total number of pages.
    */
@@ -38,13 +38,13 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
 
     return (
       <Box.nav
-        // aria-label={label}
+        aria-label="Pagination Navigation"
         ref={ref}
+        role="navigation"
         {...props}
       >
-        <Box.ol
+        <Box.ul
           alignItems="center"
-          aria-label="progress"
           display="flex"
           gap="space30"
           listStyleType="none"
@@ -68,6 +68,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                 onClick={() =>
                   !isNaN(Number(page)) && onPageChange(Number(page))
                 }
+                page={Number(page)}
               >
                 {page}
               </PaginationButton>
@@ -81,7 +82,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
             onClick={nextPage}
             variant="ghost"
           />
-        </Box.ol>
+        </Box.ul>
       </Box.nav>
     );
   }
