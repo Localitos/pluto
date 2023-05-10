@@ -19,6 +19,8 @@ export interface IconProps
   size?: SystemProp<keyof Theme["sizes"], Theme>;
   /** Controls the aria-label of the icon rendered.  */
   title?: string;
+  /** Sets the render element of the component. */
+  as?: React.ComponentProps<typeof Box.div>["as"];
 }
 
 /** Icons are small graphical representation of a program or a function. */
@@ -31,6 +33,7 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
       icon,
       size = "sizeIcon40",
       title,
+      as = "div",
       ...props
     },
     ref
@@ -44,6 +47,7 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
 
     return (
       <Box.div
+        as={as}
         color={color}
         display={display}
         h={size}
