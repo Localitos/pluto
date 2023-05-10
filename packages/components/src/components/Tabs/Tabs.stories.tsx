@@ -24,6 +24,14 @@ export const Default = (): JSX.Element => {
         <Tab>Tab One</Tab>
         <Tab>Tab Two</Tab>
         <Tab>Tab Three</Tab>
+        {/* <Box.div
+          backgroundColor="colorTextError"
+          bottom="0"
+          h="1px"
+          position="absolute"
+          w="100%"
+          zIndex="zIndexNegative1"
+        ></Box.div> */}
       </TabList>
       <TabPanels>
         <TabPanel>
@@ -198,6 +206,41 @@ export const Fitted = (): JSX.Element => {
   return (
     <Tabs variant="fitted">
       <TabList aria-label="Page tabs">
+        <Tab>Tab One</Tab>
+        <Tab>Tab Two</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <Box.div padding="space60">
+            <Heading as="h2" marginBottom="space0" size="heading50">
+              Tab One
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
+              sodales vel purus.
+            </Paragraph>
+          </Box.div>
+        </TabPanel>
+        <TabPanel>
+          <Box.div padding="space60">
+            <Heading as="h2" marginBottom="space0" size="heading50">
+              Tab Two
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
+              sodales vel purus.
+            </Paragraph>
+          </Box.div>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+
+export const WithDivider = (): JSX.Element => {
+  return (
+    <Tabs>
+      <TabList aria-label="Page tabs" withDivider>
         <Tab>Tab One</Tab>
         <Tab>Tab Two</Tab>
       </TabList>
