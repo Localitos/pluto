@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 10.0.0
+
+### Minor Changes
+
+- [#807](https://github.com/Localitos/pluto/pull/807) [`d201108`](https://github.com/Localitos/pluto/commit/d201108401895fa577fae1f535e4fb4ea836159e) Thanks [@rssilva](https://github.com/rssilva)! - Add 'as' property to Icon component so it can be rendered as different html
+
+### Patch Changes
+
+- Updated dependencies [[`d201108`](https://github.com/Localitos/pluto/commit/d201108401895fa577fae1f535e4fb4ea836159e)]:
+  - @localyze-pluto/theme@5.0.0
+
 ## 9.2.3
 
 ### Patch Changes
