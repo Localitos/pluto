@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.3.0
+
+### Minor Changes
+
+- [#807](https://github.com/Localitos/pluto/pull/807) [`d201108`](https://github.com/Localitos/pluto/commit/d201108401895fa577fae1f535e4fb4ea836159e) Thanks [@rssilva](https://github.com/rssilva)! - Add 'as' property to Icon component so it can be rendered as different html
+
 ## 0.2.4
 
 ### Patch Changes
