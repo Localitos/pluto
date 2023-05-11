@@ -68,6 +68,7 @@ const getButtonVariantStyles = (
             focus: "colorBackground",
           },
           borderWidth: "borderWidth0",
+          outlineColor: { focus: "colorBorderPrimary" },
         };
       }
       return {

@@ -8,8 +8,6 @@ import { usePagination } from "./usePagination";
 
 export interface PaginationProps
   extends Omit<React.HtmlHTMLAttributes<HTMLDivElement>, "color"> {
-  /** The accessible label assigned to the pagination. */
-  // Label: string;
   /**
    * The total number of pages.
    */
@@ -22,12 +20,32 @@ export interface PaginationProps
    * Callback fired when the page is changed.
    */
   onPageChange: (page: number) => void;
+  /** The accessible label assigned to the pagination. */
+  label?: string;
+  /**
+   * The number of pages to display to each side of the current page.
+   */
+  pagesAroundCurrentPage?: number;
 }
 
 /** Pagination lets users navigate through content or a dataset that’s been broken up into multiple pages. */
 const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
-  ({ currentPage, onPageChange, totalPages, ...props }, ref) => {
-    const pages = usePagination(totalPages, 1, currentPage);
+  (
+    {
+      currentPage,
+      label = "Page navigation",
+      onPageChange,
+      totalPages,
+      pagesAroundCurrentPage = 1,
+      ...props
+    },
+    ref
+  ) => {
+    const pages = usePagination(
+      totalPages,
+      pagesAroundCurrentPage,
+      currentPage
+    );
 
     const nextPage = () => {
       if (currentPage !== totalPages) onPageChange(currentPage + 1);
@@ -37,12 +55,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
     };
 
     return (
-      <Box.nav
-        aria-label="Pagination Navigation"
-        ref={ref}
-        role="navigation"
-        {...props}
-      >
+      <Box.nav aria-label={label} ref={ref} role="navigation" {...props}>
         <Box.ul
           alignItems="center"
           display="flex"
@@ -61,6 +74,25 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
             variant="ghost"
           />
           {map(pages, (page, index) => {
+            if (page === "...") {
+              return (
+                <Box.div
+                  display="inline-flex"
+                  fontFamily="fontFamilyModerat"
+                  fontSize="fontSize20"
+                  fontWeight="fontWeightMedium"
+                  justifyContent="center"
+                  key={index}
+                  paddingBottom="space30"
+                  paddingLeft="space30"
+                  paddingRight="space30"
+                  paddingTop="space30"
+                  w="36px"
+                >
+                  ...
+                </Box.div>
+              );
+            }
             return (
               <PaginationButton
                 isCurrentPage={currentPage === Number(page)}
