@@ -47,3 +47,19 @@ const PaginationWithMorePages = (): JSX.Element => {
 export const WithMorePages: Story = {
   render: (): JSX.Element => <PaginationWithMorePages />,
 };
+
+const PaginationWithMorePagesDisplayedToEachSide = (): JSX.Element => {
+  const [currentPage, setCurrentPage] = React.useState(333);
+  return (
+    <Pagination
+      currentPage={currentPage}
+      onPageChange={setCurrentPage}
+      pagesAroundCurrentPage={3}
+      totalPages={999}
+    />
+  );
+};
+
+export const WithMorePagesDisplayedToEachSide: Story = {
+  render: (): JSX.Element => <PaginationWithMorePagesDisplayedToEachSide />,
+};
