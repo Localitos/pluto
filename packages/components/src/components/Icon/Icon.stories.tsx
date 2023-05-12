@@ -64,21 +64,3 @@ export const IconList: React.FC = () => {
     </Box.div>
   );
 };
-
-export const One: React.FC = () => {
-  return (
-    <Box.div
-      display="grid"
-      gap="space30"
-      gridTemplateColumns="repeat(4, 1fr);"
-      maxWidth="680px"
-    >
-      <Icon
-        color="colorIconStrong"
-        decorative
-        icon="FingerPrintIcon"
-        size="sizeIcon40"
-      />
-    </Box.div>
-  );
-};
