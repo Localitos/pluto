@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.3.1
+
+### Patch Changes
+
+- [#810](https://github.com/Localitos/pluto/pull/810) [`6dc9ae5`](https://github.com/Localitos/pluto/commit/6dc9ae505b0461a208c88887e80ee3de086303f0) Thanks [@rssilva](https://github.com/rssilva)! - Add icon size tokens 50, 60, 70
+
 ## 0.3.0
 
 ### Minor Changes
