@@ -393,6 +393,7 @@ Object {
     "zIndex70": 70,
     "zIndex80": 80,
     "zIndex90": 90,
+    "zIndexNegative1": -1,
   },
 }
 `;
