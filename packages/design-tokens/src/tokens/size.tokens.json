@@ -15,6 +15,18 @@
     "icon-40": {
       "value": "1.5rem",
       "comment": "24px"
+    },
+    "icon-50": {
+      "value": "1.75rem",
+      "comment": "28px"
+    },
+    "icon-60": {
+      "value": "2rem",
+      "comment": "32px"
+    },
+    "icon-70": {
+      "value": "2.25rem",
+      "comment": "36px"
     }
   }
 }
