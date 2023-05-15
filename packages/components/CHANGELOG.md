@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 11.0.0
+
+### Minor Changes
+
+- [#809](https://github.com/Localitos/pluto/pull/809) [`3d54ca6`](https://github.com/Localitos/pluto/commit/3d54ca62bfcd2c638d7db6342a8baa83ed4ac44e) Thanks [@rssilva](https://github.com/rssilva)! - Add a property to create a divider element on the bottom of tabs list. Add a negative -1 token to zIndex called zIndexNegative1
+
+### Patch Changes
+
+- Updated dependencies [[`3d54ca6`](https://github.com/Localitos/pluto/commit/3d54ca62bfcd2c638d7db6342a8baa83ed4ac44e)]:
+  - @localyze-pluto/theme@6.0.0
+
 ## 10.0.1
 
 ### Patch Changes
