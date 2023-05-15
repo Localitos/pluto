@@ -37,7 +37,7 @@ const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
             position="absolute"
             w="100%"
             zIndex="zIndexNegative1"
-          ></Box.div>
+          />
         )}
       </Box.div>
     );
