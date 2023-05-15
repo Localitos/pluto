@@ -71,3 +71,32 @@ feat(theme): your commit message goes here
 This will help Changesets determine which package `CHANGELOG.md` file to update.
 If you are commiting to multiple packages in a single PR, please rebase and
 merge the final commits for each package.
+
+## Using locally
+
+install [yalc](https://github.com/wclr/yalc)
+
+```
+npm install yalc -g
+```
+
+go to the Pluto packages/ folders you need updated locally, for example
+
+**Step 1**
+
+```
+cd path_to_pluto_folder/packages/components && yarn build && yalc publish
+cd path_to_pluto_folder/packages/theme && yarn build && yalc publish
+```
+
+go to the folder of the project that uses Pluto and run
+
+```
+yalc link @localyze-pluto/components
+```
+
+now every time you do a change you can repeat **Step 1** and then, on the folder of the project that uses Pluto
+
+```
+yalc update @localyze-pluto/components
+```
