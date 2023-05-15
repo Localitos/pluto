@@ -228,3 +228,47 @@ export const Fitted = (): JSX.Element => {
     </Tabs>
   );
 };
+
+export const WithDivider = (): JSX.Element => {
+  return (
+    <Tabs>
+      <TabList aria-label="Page tabs" withDivider>
+        <Tab>Tab One</Tab>
+        <Tab>Tab Two</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <Box.div padding="space60">
+            <Heading as="h2" marginBottom="space0" size="heading50">
+              Tab One
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
+              sodales vel purus.
+            </Paragraph>
+          </Box.div>
+        </TabPanel>
+        <TabPanel>
+          <Box.div padding="space60">
+            <Heading as="h2" marginBottom="space0" size="heading50">
+              Tab Two
+            </Heading>
+            <Paragraph>
+              Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
+              sodales vel purus.
+            </Paragraph>
+          </Box.div>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+
+WithDivider.parameters = {
+  docs: {
+    description: {
+      story:
+        "You can display a divider between the tabs and the content by using the `withDivider` property on the `TabList` component.",
+    },
+  },
+};
