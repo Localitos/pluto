@@ -24,14 +24,6 @@ export const Default = (): JSX.Element => {
         <Tab>Tab One</Tab>
         <Tab>Tab Two</Tab>
         <Tab>Tab Three</Tab>
-        {/* <Box.div
-          backgroundColor="colorTextError"
-          bottom="0"
-          h="1px"
-          position="absolute"
-          w="100%"
-          zIndex="zIndexNegative1"
-        ></Box.div> */}
       </TabList>
       <TabPanels>
         <TabPanel>
@@ -270,4 +262,13 @@ export const WithDivider = (): JSX.Element => {
       </TabPanels>
     </Tabs>
   );
+};
+
+WithDivider.parameters = {
+  docs: {
+    description: {
+      story:
+        "You can display a divider between the tabs and the content by using the `withDivider` property on the `TabList` component.",
+    },
+  },
 };
