@@ -13,7 +13,7 @@ import { FileUploaderProgressBar } from "./FileUploaderProgressBar";
 import { FileUploaderIcon } from "./FileUploaderIcon";
 
 export interface FileUploaderProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "onClick"> {
   /** The title of the file */
   label: string;
 
@@ -46,6 +46,9 @@ export interface FileUploaderProps
 
   /** Disables the file uploader */
   disabled?: boolean;
+
+  /** Handles clicking on file title */
+  onLabelClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 /** Visual component to display status of a file upload */
@@ -63,6 +66,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       onCancel,
       onRemove,
       disabled = false,
+      onLabelClick,
     },
     ref
   ) => {
@@ -105,7 +109,11 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
               flexGrow={1}
               justifyContent={isMobile ? "top" : "center"}
             >
-              <FileUploaderTitle fileUrl={fileUrl} label={label} />
+              <FileUploaderTitle
+                fileUrl={fileUrl}
+                label={label}
+                onClick={onLabelClick}
+              />
               <Box.div
                 alignItems={{ _: "left", md: "center" }}
                 display="flex"

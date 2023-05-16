@@ -29,6 +29,21 @@ describe("<FileUploader />", () => {
     expect(screen.getByRole("button", { name: "Upload" })).toBeInTheDocument();
   });
 
+  it("calls onLabelClick when file title is clicked", async () => {
+    const onLabelClickSpy = jest.fn();
+    renderFileUploader({
+      label: "CV",
+      maxFileSize: "2MB",
+      onLabelClick: onLabelClickSpy,
+    });
+
+    const label = screen.getByText("CV");
+    expect(label).toBeInTheDocument();
+    await userEvent.click(label);
+
+    expect(onLabelClickSpy).toHaveBeenCalled();
+  });
+
   describe('when state is "loading"', () => {
     const FILE_LABEL = "Passport scan";
     const FILE_NAME = "my_file_name.pdf";
@@ -125,6 +140,24 @@ describe("<FileUploader />", () => {
 
       expect(mockOnRemove).toHaveBeenCalled();
     });
+  });
+
+  it("calls onLabelClick when file title anchor is clicked", async () => {
+    const onLabelClickSpy = jest.fn();
+    renderFileUploader({
+      label: "Personal Document",
+      maxFileSize: "2MB",
+      fileUrl: FILE_URL,
+      fileSize: "1MB",
+      progress: 100,
+      onLabelClick: onLabelClickSpy,
+    });
+
+    const anchor = screen.getByRole("link", { name: "Personal Document" });
+    expect(anchor).toBeInTheDocument();
+    await userEvent.click(anchor);
+
+    expect(onLabelClickSpy).toHaveBeenCalled();
   });
 
   describe("when there is an error", () => {
