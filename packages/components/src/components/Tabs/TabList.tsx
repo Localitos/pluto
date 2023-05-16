@@ -27,6 +27,7 @@ const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
         {...props}
         ref={ref}
       >
+        {children}
         {withDivider && (
           <Box.div
             backgroundColor="colorBorderWeaker"
@@ -37,7 +38,6 @@ const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
             zIndex="zIndex0"
           />
         )}
-        {children}
       </Box.div>
     );
   }
