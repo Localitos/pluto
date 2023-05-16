@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 11.0.1
+
+### Patch Changes
+
+- [#814](https://github.com/Localitos/pluto/pull/814) [`440239c`](https://github.com/Localitos/pluto/commit/440239c9a32421e5c5b8d5d242acf9fae459c464) Thanks [@rssilva](https://github.com/rssilva)! - Change z-index on tabs list to be positive so does not get hidden by background
+
 ## 11.0.0
 
 ### Minor Changes
