@@ -47,7 +47,7 @@
     "@storybook/addon-essentials": "^7.0.0-rc.4",
     "@storybook/addon-links": "^7.0.0-rc.4",
     "@storybook/addon-viewport": "^7.0.0-rc.4",
-    "@storybook/nextjs": "^7.0.0-rc.4",
+    "@storybook/nextjs": "^7.0.12",
     "@storybook/react": "^7.0.0-rc.4",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@testing-library/jest-dom": "^5.16.5",
