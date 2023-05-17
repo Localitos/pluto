@@ -67,7 +67,11 @@
     "next": "^13.2.3",
     "plop": "^3.1.2",
     "prettier": "^2.8.6",
+<<<<<<< HEAD
     "react": "^18.2.0",
+=======
+    "react": "^18.0.2",
+>>>>>>> 2c3a8ae (feat(components): add test for usePagination)
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.2",
     "storybook": "^7.0.0-rc.4",

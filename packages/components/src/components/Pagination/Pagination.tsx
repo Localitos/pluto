@@ -17,7 +17,7 @@ export interface PaginationProps
    */
   currentPage: number;
   /**
-   * Callback fired when the page is changed.
+   * Callback executed when the page is changed.
    */
   onPageChange: (page: number) => void;
   /** The accessible label assigned to the pagination. */

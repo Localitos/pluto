@@ -17,7 +17,7 @@ describe("<Pagination />", () => {
     expect(screen.getByLabelText("Goto Page 9")).toBeInTheDocument();
   });
 
-  it("doesn't show the aria label for three pages ahead and behind because they are dots", () => {
+  it("doesn't show the aria label for three pages ahead and behind", () => {
     render(<Pagination currentPage={10} onPageChange={noop} totalPages={20} />);
     expect(screen.queryByLabelText("Goto Page 15")).not.toBeInTheDocument();
     expect(screen.queryByLabelText("Goto Page 6")).not.toBeInTheDocument();
