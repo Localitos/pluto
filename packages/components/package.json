@@ -35,6 +35,7 @@
     "@radix-ui/react-switch": "^1.0.1",
     "@radix-ui/react-toast": "^1.1.2",
     "ariakit": "^2.0.0-next.43",
+    "lucide-react": "^0.218.0",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.43.2"
   },

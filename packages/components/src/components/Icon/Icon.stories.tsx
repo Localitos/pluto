@@ -4,9 +4,11 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import React from "react";
 import map from "lodash/map";
+import keys from "lodash/keys";
 import { Box } from "../../primitives/Box";
 import { Paragraph } from "../../components/Paragraph";
 import { Icon } from "./Icon";
+import { LucideIcons } from "./LucideIcons";
 
 export default {
   component: Icon,
@@ -21,6 +23,13 @@ Default.args = {
   title: "Academic Icon",
 };
 
+export const WithLucideIcons = Template.bind({});
+WithLucideIcons.args = {
+  icon: "palette",
+  title: "Palette Icon",
+  decorative: true,
+};
+
 const getIconNamesArray = () => {
   const iconsArray = [];
   for (const [key] of Object.entries(HeroOutlineIcons)) {
@@ -32,7 +41,8 @@ const getIconNamesArray = () => {
 };
 
 export const IconList: React.FC = () => {
-  const iconNames = getIconNamesArray();
+  const heroIconNames = getIconNamesArray();
+  const lucideIconNames = keys(LucideIcons);
 
   return (
     <Box.div
@@ -41,26 +51,29 @@ export const IconList: React.FC = () => {
       gridTemplateColumns="repeat(4, 1fr);"
       maxWidth="680px"
     >
-      {map(iconNames, (value: keyof typeof HeroOutlineIcons) => {
-        return (
-          <Box.div
-            borderColor="colorBorder"
-            borderStyle="borderStyleSolid"
-            borderWidth="borderWidth10"
-            key={value}
-            padding="space60"
-            textAlign="center"
-          >
-            <Icon
-              color="colorIconStrong"
-              decorative
-              icon={value}
-              size="sizeIcon40"
-            />
-            <Paragraph marginBottom="space0">{value}</Paragraph>
-          </Box.div>
-        );
-      })}
+      {map(
+        [...heroIconNames, ...lucideIconNames],
+        (value: keyof typeof HeroOutlineIcons) => {
+          return (
+            <Box.div
+              borderColor="colorBorder"
+              borderStyle="borderStyleSolid"
+              borderWidth="borderWidth10"
+              key={value}
+              padding="space60"
+              textAlign="center"
+            >
+              <Icon
+                color="colorIconStrong"
+                decorative
+                icon={value}
+                size="sizeIcon40"
+              />
+              <Paragraph marginBottom="space0">{value}</Paragraph>
+            </Box.div>
+          );
+        }
+      )}
     </Box.div>
   );
 };
