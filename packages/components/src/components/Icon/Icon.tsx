@@ -70,7 +70,9 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
           aria-label={title}
           as={RenderedIcon}
           display="block"
+          h={size}
           verticalAlign="middle"
+          w={size}
         />
       </Box.div>
     );
