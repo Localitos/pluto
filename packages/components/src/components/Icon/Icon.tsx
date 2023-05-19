@@ -2,10 +2,10 @@ import React from "react";
 import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
-import { IconName } from "./IconName";
+import { IconName } from "./types/IconName";
 import { LucideIcons } from "./LucideIcons";
-import { isHeroIcon } from "./isHeroIcon";
-import { isLucideIcon } from "./isLucideIcon";
+import { isHeroIcon } from "./utils/isHeroIcon";
+import { isLucideIcon } from "./utils/isLucideIcon";
 
 export interface IconProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
@@ -49,9 +49,7 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
     if (isHeroIcon(icon)) {
       // eslint-disable-next-line import/namespace
       RenderedIcon = HeroOutlineIcons[icon];
-    }
-
-    if (isLucideIcon(icon)) {
+    } else if (isLucideIcon(icon)) {
       RenderedIcon = LucideIcons[icon];
     }
 

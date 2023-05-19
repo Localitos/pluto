@@ -31,18 +31,20 @@ WithLucideIcons.args = {
 };
 
 const getIconNamesArray = () => {
-  const iconsArray = [];
+  const heroIconsArray = [];
+  const lucideIconsNames = keys(LucideIcons);
+
   for (const [key] of Object.entries(HeroOutlineIcons)) {
     if (key !== "default") {
-      iconsArray.push(key);
+      heroIconsArray.push(key);
     }
   }
-  return iconsArray;
+
+  return [...heroIconsArray, ...lucideIconsNames];
 };
 
 export const IconList: React.FC = () => {
-  const heroIconNames = getIconNamesArray();
-  const lucideIconNames = keys(LucideIcons);
+  const iconNames = getIconNamesArray();
 
   return (
     <Box.div
@@ -51,29 +53,26 @@ export const IconList: React.FC = () => {
       gridTemplateColumns="repeat(4, 1fr);"
       maxWidth="680px"
     >
-      {map(
-        [...heroIconNames, ...lucideIconNames],
-        (value: keyof typeof HeroOutlineIcons) => {
-          return (
-            <Box.div
-              borderColor="colorBorder"
-              borderStyle="borderStyleSolid"
-              borderWidth="borderWidth10"
-              key={value}
-              padding="space60"
-              textAlign="center"
-            >
-              <Icon
-                color="colorIconStrong"
-                decorative
-                icon={value}
-                size="sizeIcon40"
-              />
-              <Paragraph marginBottom="space0">{value}</Paragraph>
-            </Box.div>
-          );
-        }
-      )}
+      {map(iconNames, (value: keyof typeof HeroOutlineIcons) => {
+        return (
+          <Box.div
+            borderColor="colorBorder"
+            borderStyle="borderStyleSolid"
+            borderWidth="borderWidth10"
+            key={value}
+            padding="space60"
+            textAlign="center"
+          >
+            <Icon
+              color="colorIconStrong"
+              decorative
+              icon={value}
+              size="sizeIcon40"
+            />
+            <Paragraph marginBottom="space0">{value}</Paragraph>
+          </Box.div>
+        );
+      })}
     </Box.div>
   );
 };

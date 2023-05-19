@@ -1,8 +1,8 @@
 import React from "react";
 import { SystemProp, Theme } from "@localyze-pluto/theme";
-import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
+import { IconName } from "../Icon/types/IconName";
 import { FileUploaderStatus } from "./types/FileUploaderStatus";
 
 const getIconContainerProps = (
@@ -33,7 +33,7 @@ const getIconProps = (
   disabled = false
 ): {
   color: SystemProp<keyof Theme["colors"], Theme>;
-  icon: keyof typeof HeroOutlineIcons;
+  icon: IconName;
 } => {
   if (disabled && status !== "success") {
     return { icon: "CloudArrowUpIcon", color: "colorTextStronger" };

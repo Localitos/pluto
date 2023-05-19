@@ -1,5 +1,5 @@
 import * as HeroOutlineIcons from "@heroicons/react/24/outline";
-import { IconName } from "./IconName";
+import { IconName } from "../types/IconName";
 
 export const isHeroIcon = (
   name: IconName

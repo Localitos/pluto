@@ -1,10 +1,8 @@
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import React from "react";
-import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
-
-type IconNames = keyof typeof HeroOutlineIcons;
+import { IconName } from "../Icon/types/IconName";
 
 type BadgeSizeOptions = "large" | "small";
 type BadgeColorOptions = "blue" | "gray" | "green" | "purple" | "yellow";
@@ -14,7 +12,7 @@ export interface BadgeProps
   /** The contents of the badge. Can be text. */
   children: NonNullable<React.ReactNode>;
   /** Icon to be added on the left of the content. */
-  icon?: IconNames;
+  icon?: IconName;
   /** Sets the size of the badge. */
   size?: BadgeSizeOptions;
   /** Sets the color of the badge. */
@@ -88,7 +86,7 @@ const getSizeProps = (
   };
 };
 
-const getIcon = (iconName: IconNames, size: BadgeSizeOptions) => {
+const getIcon = (iconName: IconName, size: BadgeSizeOptions) => {
   const iconProps = (size: BadgeSizeOptions) =>
     size === "small" ? "sizeIcon30" : "sizeIcon40";
 

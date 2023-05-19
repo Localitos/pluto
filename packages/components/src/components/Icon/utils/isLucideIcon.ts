@@ -1,5 +1,5 @@
-import { LucideIcons } from "./LucideIcons";
-import { IconName } from "./IconName";
+import { LucideIcons } from "../LucideIcons";
+import { IconName } from "../types/IconName";
 
 export const isLucideIcon = (
   name: IconName
