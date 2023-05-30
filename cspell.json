@@ -25,7 +25,8 @@
     "unhover",
     "uppy",
     "formik",
-    "nextjs"
+    "nextjs",
+    "lucide"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,

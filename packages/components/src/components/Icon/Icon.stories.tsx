@@ -4,9 +4,11 @@ import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import React from "react";
 import map from "lodash/map";
+import keys from "lodash/keys";
 import { Box } from "../../primitives/Box";
 import { Paragraph } from "../../components/Paragraph";
 import { Icon } from "./Icon";
+import { LucideIcons } from "./LucideIcons";
 
 export default {
   component: Icon,
@@ -21,14 +23,24 @@ Default.args = {
   title: "Academic Icon",
 };
 
+export const WithLucideIcons = Template.bind({});
+WithLucideIcons.args = {
+  icon: "palette",
+  title: "Palette Icon",
+  decorative: true,
+};
+
 const getIconNamesArray = () => {
-  const iconsArray = [];
+  const heroIconsArray = [];
+  const lucideIconsNames = keys(LucideIcons);
+
   for (const [key] of Object.entries(HeroOutlineIcons)) {
     if (key !== "default") {
-      iconsArray.push(key);
+      heroIconsArray.push(key);
     }
   }
-  return iconsArray;
+
+  return [...heroIconsArray, ...lucideIconsNames];
 };
 
 export const IconList: React.FC = () => {

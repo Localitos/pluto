@@ -16,7 +16,6 @@ const StyledCheckboxIndicator = styled.span`
   justify-content: center;
   width: 14px;
   height: 14px;
-  padding-bottom: ${theme.space.space10};
 
   svg {
     stroke-width: 2.5;
@@ -30,7 +29,7 @@ export const CheckIndicator = (): React.ReactElement => {
         color="colorBackground"
         decorative
         icon="CheckIcon"
-        size="sizeIcon30"
+        size="sizeIcon20"
       />
     </StyledCheckboxIndicator>
   );
@@ -43,7 +42,7 @@ export const IndeterminateIndicator = (): React.ReactElement => {
         color="colorBackground"
         decorative
         icon="MinusSmallIcon"
-        size="sizeIcon30"
+        size="sizeIcon20"
       />
     </StyledCheckboxIndicator>
   );
@@ -83,7 +82,7 @@ const StyledCheckbox = styled.input`
   height: 16px;
   border-radius: 4px;
   margin-right: ${theme.space.space30};
-  padding: 4px 0 0;
+  padding: 0;
   margin-bottom: auto;
   margin-top: 1px;
 

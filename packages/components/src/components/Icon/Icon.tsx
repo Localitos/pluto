@@ -2,8 +2,10 @@ import React from "react";
 import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
-
-type IconNames = keyof typeof HeroOutlineIcons;
+import { IconName } from "./types/IconName";
+import { LucideIcons } from "./LucideIcons";
+import { isHeroIcon } from "./utils/isHeroIcon";
+import { isLucideIcon } from "./utils/isLucideIcon";
 
 export interface IconProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
@@ -14,7 +16,7 @@ export interface IconProps
   /** Changes the dispay style of the icon container. */
   display?: "block" | "flex" | "inline-block" | "inline-flex";
   /** Changes the icon being rendered. */
-  icon: IconNames;
+  icon: IconName;
   /** Adjusts the size of the icon being rendered. */
   size?: SystemProp<keyof Theme["sizes"], Theme>;
   /** Controls the aria-label of the icon rendered.  */
@@ -42,8 +44,14 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
       throw new Error(`${icon}: Missing a title for non-decorative icon.`);
     }
 
-    // eslint-disable-next-line import/namespace
-    const RenderedIcon = HeroOutlineIcons[icon];
+    let RenderedIcon = undefined;
+
+    if (isHeroIcon(icon)) {
+      // eslint-disable-next-line import/namespace
+      RenderedIcon = HeroOutlineIcons[icon];
+    } else if (isLucideIcon(icon)) {
+      RenderedIcon = LucideIcons[icon];
+    }
 
     return (
       <Box.div
@@ -60,7 +68,9 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
           aria-label={title}
           as={RenderedIcon}
           display="block"
+          h={size}
           verticalAlign="middle"
+          w={size}
         />
       </Box.div>
     );
