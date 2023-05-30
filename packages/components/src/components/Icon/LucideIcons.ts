@@ -1,6 +1,5 @@
 import {
   BaggageClaim,
-  Fingerprint,
   HeartHandshake,
   Palette,
   Slack,
@@ -10,7 +9,6 @@ import { LucideIconName } from "./types/LucideIconName";
 
 export const LucideIcons: Record<LucideIconName, Icon> = {
   "baggage-claim": BaggageClaim,
-  fingerprint: Fingerprint,
   "heart-handshake": HeartHandshake,
   palette: Palette,
   slack: Slack,
