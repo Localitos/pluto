@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 11.1.0
+
+### Minor Changes
+
+- [#825](https://github.com/Localitos/pluto/pull/825) [`ef3e3d7`](https://github.com/Localitos/pluto/commit/ef3e3d7d8d786b7fe7f2b99755fd43e0ec19d204) Thanks [@rssilva](https://github.com/rssilva)! - Add a Lucide Icons as dependency with a specific subset available: baggage-claim, heart-handshake, palette, slack
+
 ## 11.0.1
 
 ### Patch Changes
