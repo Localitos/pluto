@@ -5511,10 +5511,10 @@ ariakit-utils@0.17.0-next.27:
   resolved "https://registry.yarnpkg.com/ariakit-utils/-/ariakit-utils-0.17.0-next.27.tgz#c9971d41526f5f8afa9e8ae7596d15ed22b2f977"
   integrity sha512-IcjtuHl7FZP5mGrpvTSXqPUj+jRuIuBHlJAlxr3y4pxRgYpsYVpyZOClU3yrOoG7KUVApfmJjPOGWy00y+Gi+Q==
 
-ariakit@^2.0.0-next.43:
-  version "2.0.0-next.43"
-  resolved "https://registry.yarnpkg.com/ariakit/-/ariakit-2.0.0-next.43.tgz#3da7410f72b9f61074cd62ac910a5e51729df7bd"
-  integrity sha512-CatNgIMyurefYTEvp8aF3aQQGR5m9bZxYQXuqyw/MKwxJ/aJ295SSSY5pXyTHbbsgDI28GOKFYa5pfUBvkd7cQ==
+ariakit@^2.0.0-next.44:
+  version "2.0.0-next.44"
+  resolved "https://registry.yarnpkg.com/ariakit/-/ariakit-2.0.0-next.44.tgz#2a37b0f111754b6dc06083289e36767a3d46d480"
+  integrity sha512-vWWS+2HUFz4Nii1lXP3QHMa+fxr9vbu4p/sGmD/b80+JfVtW8OicAUSR4FXnyMwX2nVy+77DN6eAw3/LbuzX1g==
   dependencies:
     "@floating-ui/dom" "^1.0.0"
     ariakit-react-utils "0.17.0-next.27"
