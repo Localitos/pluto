@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 11.1.1
+
+### Patch Changes
+
+- [#848](https://github.com/Localitos/pluto/pull/848) [`1851c04`](https://github.com/Localitos/pluto/commit/1851c04d562eae88306545abd86424798fa17b49) Thanks [@jvaladas](https://github.com/jvaladas)! - chore(deps): Bump ariakit from 2.0.0-next.43 to 2.0.0-next.44
+
 ## 11.1.0
 
 ### Minor Changes
