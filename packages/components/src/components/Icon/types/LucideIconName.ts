@@ -1,5 +1,9 @@
 export type LucideIconName =
   | "baggage-claim"
+  | "building-2"
   | "heart-handshake"
   | "palette"
-  | "slack";
+  | "pie-chart"
+  | "puzzle"
+  | "slack"
+  | "wallet";
