@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 11.1.2
+
+### Patch Changes
+
+- [#850](https://github.com/Localitos/pluto/pull/850) [`eb000af`](https://github.com/Localitos/pluto/commit/eb000af6d90ee1e43f477c0c73e2007b2d59dab9) Thanks [@rssilva](https://github.com/rssilva)! - Add building-2, pie-chart, puzzle and wallet as available icons
+
 ## 11.1.1
 
 ### Patch Changes
