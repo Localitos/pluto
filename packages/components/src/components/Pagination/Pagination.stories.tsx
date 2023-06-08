@@ -12,12 +12,12 @@ export default meta;
 type Story = StoryObj<typeof Pagination>;
 
 const BasicPagination = (): JSX.Element => {
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = React.useState(5);
   return (
     <Pagination
       currentPage={currentPage}
       onPageChange={setCurrentPage}
-      totalPages={7}
+      totalPages={20}
     />
   );
 };
