@@ -25,7 +25,7 @@ export interface PaginationProps
   /**
    * The number of pages to display to each side of the current page.
    */
-  pagesAroundCurrentPage?: number;
+  pageNeighbors?: number;
 }
 
 /** Pagination lets users navigate through content or a dataset that’s been broken up into multiple pages. */
@@ -36,16 +36,12 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       label = "Page navigation",
       onPageChange,
       totalPages,
-      pagesAroundCurrentPage = 1,
+      pageNeighbors = 1,
       ...props
     },
     ref
   ) => {
-    const pages = usePagination(
-      totalPages,
-      pagesAroundCurrentPage,
-      currentPage
-    );
+    const pages = usePagination(totalPages, pageNeighbors, currentPage);
 
     const nextPage = () => {
       if (currentPage !== totalPages) onPageChange(currentPage + 1);
@@ -82,7 +78,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                   fontSize="fontSize20"
                   fontWeight="fontWeightMedium"
                   justifyContent="center"
-                  key={index}
+                  key={`${page}-${index}`}
                   paddingBottom="space30"
                   paddingLeft="space30"
                   paddingRight="space30"
@@ -96,7 +92,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
             return (
               <PaginationButton
                 isCurrentPage={currentPage === Number(page)}
-                key={index}
+                key={`${page}-${index}`}
                 onClick={() =>
                   !isNaN(Number(page)) && onPageChange(Number(page))
                 }

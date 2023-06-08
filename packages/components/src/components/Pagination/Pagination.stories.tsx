@@ -12,12 +12,12 @@ export default meta;
 type Story = StoryObj<typeof Pagination>;
 
 const BasicPagination = (): JSX.Element => {
-  const [currentPage, setCurrentPage] = React.useState(10);
+  const [currentPage, setCurrentPage] = React.useState(1);
   return (
     <Pagination
       currentPage={currentPage}
       onPageChange={setCurrentPage}
-      totalPages={20}
+      totalPages={7}
     />
   );
 };
@@ -33,7 +33,7 @@ Default.parameters = {
   },
 };
 
-const PaginationWithMorePages = (): JSX.Element => {
+const PaginationWithLotsOfPages = (): JSX.Element => {
   const [currentPage, setCurrentPage] = React.useState(333);
   return (
     <Pagination
@@ -44,22 +44,22 @@ const PaginationWithMorePages = (): JSX.Element => {
   );
 };
 
-export const WithMorePages: Story = {
-  render: (): JSX.Element => <PaginationWithMorePages />,
+export const WithLotsOfPages: Story = {
+  render: (): JSX.Element => <PaginationWithLotsOfPages />,
 };
 
-const PaginationWithMorePagesDisplayedToEachSide = (): JSX.Element => {
+const PaginationWithMorePageNeighbors = (): JSX.Element => {
   const [currentPage, setCurrentPage] = React.useState(333);
   return (
     <Pagination
       currentPage={currentPage}
       onPageChange={setCurrentPage}
-      pagesAroundCurrentPage={3}
+      pageNeighbors={3}
       totalPages={999}
     />
   );
 };
 
-export const WithMorePagesDisplayedToEachSide: Story = {
-  render: (): JSX.Element => <PaginationWithMorePagesDisplayedToEachSide />,
+export const WithMorePageNeighbors: Story = {
+  render: (): JSX.Element => <PaginationWithMorePageNeighbors />,
 };
