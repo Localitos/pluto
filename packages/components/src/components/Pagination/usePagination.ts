@@ -1,6 +1,14 @@
 import { useMemo } from "react";
 
 const DOTS = "...";
+// SIDE_COUNT is used to calculate how many page neighbors there are outside the current page
+const SIDE_COUNT = 2;
+// These are extra blocks to make the total blocks add up to seven
+const ADDITIONAL_BLOCK_COUNT = 2;
+// This helps to determine the total blocks
+const ACCOUNT_FOR_CURRENT_PAGE = 1;
+// These are the blocks of the first and last page that are always displayed
+const FIXED_BLOCK_COUNT = 2;
 
 // Calculates the numbers to display between two numbers
 const range = (from: number, to: number, step = 1) => {
@@ -22,10 +30,14 @@ export const usePagination = (
   currentPage: number
 ): (number | string)[] => {
   return useMemo(() => {
-    // This is how many numbers to display on the left or right side (the default is 5 because pageNeighbors default is 1)
-    const totalNumbers = pageNeighbors * 2 + 3;
-    // This is how many total blocks/segments there will be in the pagination component without the arrow buttons (default is 7)
-    const totalBlocks = totalNumbers + 2;
+    // The dynamic block count changes based on the pageNeighbors prop
+    const dynamicBlockCount =
+      pageNeighbors * SIDE_COUNT +
+      ACCOUNT_FOR_CURRENT_PAGE +
+      ADDITIONAL_BLOCK_COUNT;
+
+    // This is the total number of blocks that are displayed in the pagination component (without the arrows)
+    const totalBlocks = dynamicBlockCount + FIXED_BLOCK_COUNT;
 
     if (totalPages > totalBlocks) {
       let pages = [];
@@ -40,22 +52,19 @@ export const usePagination = (
       pages = range(startPage, endPage);
 
       const pagesCount = pages.length;
-      const singleSpillOffset = totalNumbers - pagesCount - 1;
+      const singleSpillOffset = dynamicBlockCount - pagesCount - 1;
 
-      const leftSpill = startPage > 2;
-      const rightSpill = endPage < beforeLastPage;
+      const shouldDotsShowOnLeft = startPage > 2;
+      const shouldDotsShowOnRight = endPage < beforeLastPage;
 
-      const leftSpillPage = DOTS;
-      const rightSpillPage = DOTS;
-
-      if (leftSpill && !rightSpill) {
+      if (shouldDotsShowOnLeft && !shouldDotsShowOnRight) {
         const extraPages = range(startPage - singleSpillOffset, startPage - 1);
-        pages = [leftSpillPage, ...extraPages, ...pages];
-      } else if (!leftSpill && rightSpill) {
+        pages = [DOTS, ...extraPages, ...pages];
+      } else if (!shouldDotsShowOnLeft && shouldDotsShowOnRight) {
         const extraPages = range(endPage + 1, endPage + singleSpillOffset);
-        pages = [...pages, ...extraPages, rightSpillPage];
-      } else if (leftSpill && rightSpill) {
-        pages = [leftSpillPage, ...pages, rightSpillPage];
+        pages = [...pages, ...extraPages, DOTS];
+      } else if (shouldDotsShowOnLeft && shouldDotsShowOnRight) {
+        pages = [DOTS, ...pages, DOTS];
       }
 
       return [1, ...pages, totalPages];
