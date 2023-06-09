@@ -219,6 +219,9 @@ Object {
     "sizeIcon20": "1rem",
     "sizeIcon30": "1.25rem",
     "sizeIcon40": "1.5rem",
+    "sizeIcon50": "1.75rem",
+    "sizeIcon60": "2rem",
+    "sizeIcon70": "2.25rem",
   },
   "space": Object {
     "space0": "0rem",
@@ -393,6 +396,7 @@ Object {
     "zIndex70": 70,
     "zIndex80": 80,
     "zIndex90": 90,
+    "zIndexNegative1": -1,
   },
 }
 `;
