@@ -92,7 +92,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
             return (
               <PaginationButton
                 isCurrentPage={currentPage === Number(page)}
-                key={`${page}-${index}`}
+                key={page}
                 onClick={() =>
                   !isNaN(Number(page)) && onPageChange(Number(page))
                 }
