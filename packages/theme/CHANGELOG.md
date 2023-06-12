@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 6.2.0
+
+### Minor Changes
+
+- [#860](https://github.com/Localitos/pluto/pull/860) [`e175fc0`](https://github.com/Localitos/pluto/commit/e175fc0783a4db262b84625b07b9196d076cac30) Thanks [@blumaa](https://github.com/blumaa)! - update react testing library to 14
+
 ## 6.1.0
 
 ### Minor Changes
