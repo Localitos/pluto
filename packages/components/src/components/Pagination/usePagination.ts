@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import range from "lodash/range";
 
 const DOTS = "...";
 // SIDE_COUNT is used to calculate how many page neighbors there are outside the current page
@@ -9,19 +10,8 @@ const ADDITIONAL_BLOCK_COUNT = 2;
 const ACCOUNT_FOR_CURRENT_PAGE = 1;
 // These are the blocks of the first and last page that are always displayed
 const FIXED_BLOCK_COUNT = 2;
-
-// Calculates the numbers to display between two numbers
-const range = (from: number, to: number, step = 1) => {
-  let i = from;
-  const range = [];
-
-  while (i <= to) {
-    range.push(i);
-    i += step;
-  }
-
-  return range;
-};
+// This adds an additional number to lodash range calculations
+const LODASH_OFFSET = 1;
 
 /* This hook generates an array that calculates where to put the dots depending on the current page and the number of pages */
 export const usePagination = (
@@ -49,7 +39,7 @@ export const usePagination = (
       const startPage = leftBound > 2 ? leftBound : 2;
       const endPage = rightBound < beforeLastPage ? rightBound : beforeLastPage;
 
-      pages = range(startPage, endPage);
+      pages = range(startPage, endPage + LODASH_OFFSET);
 
       const pagesCount = pages.length;
       const singleSpillOffset = dynamicBlockCount - pagesCount - 1;
@@ -58,10 +48,13 @@ export const usePagination = (
       const shouldDotsShowOnRight = endPage < beforeLastPage;
 
       if (shouldDotsShowOnLeft && !shouldDotsShowOnRight) {
-        const extraPages = range(startPage - singleSpillOffset, startPage - 1);
+        const extraPages = range(startPage - singleSpillOffset, startPage);
         pages = [DOTS, ...extraPages, ...pages];
       } else if (!shouldDotsShowOnLeft && shouldDotsShowOnRight) {
-        const extraPages = range(endPage + 1, endPage + singleSpillOffset);
+        const extraPages = range(
+          endPage + 1,
+          endPage + singleSpillOffset + LODASH_OFFSET
+        );
         pages = [...pages, ...extraPages, DOTS];
       } else if (shouldDotsShowOnLeft && shouldDotsShowOnRight) {
         pages = [DOTS, ...pages, DOTS];
@@ -70,6 +63,6 @@ export const usePagination = (
       return [1, ...pages, totalPages];
     }
 
-    return range(1, totalPages);
+    return range(1, totalPages + LODASH_OFFSET);
   }, [totalPages, pageNeighbors, currentPage]);
 };
