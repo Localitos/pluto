@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 13.0.0
+
+### Minor Changes
+
+- [#860](https://github.com/Localitos/pluto/pull/860) [`e175fc0`](https://github.com/Localitos/pluto/commit/e175fc0783a4db262b84625b07b9196d076cac30) Thanks [@blumaa](https://github.com/blumaa)! - update react testing library to 14
+
+### Patch Changes
+
+- Updated dependencies [[`e175fc0`](https://github.com/Localitos/pluto/commit/e175fc0783a4db262b84625b07b9196d076cac30)]:
+  - @localyze-pluto/theme@6.2.0
+
 ## 12.0.0
 
 ### Minor Changes
