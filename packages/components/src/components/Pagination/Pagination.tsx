@@ -11,7 +11,7 @@ export interface PaginationProps
   /**
    * The total number of pages.
    */
-  totalPages: number;
+  pageCount: number;
   /**
    * The currently selected page.
    */
@@ -35,16 +35,16 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       currentPage,
       label = "Page navigation",
       onPageChange,
-      totalPages,
+      pageCount,
       pageNeighbors = 1,
       ...props
     },
     ref
   ) => {
-    const pages = usePagination(totalPages, pageNeighbors, currentPage);
+    const pages = usePagination(pageCount, pageNeighbors, currentPage);
 
     const nextPage = () => {
-      if (currentPage !== totalPages) onPageChange(currentPage + 1);
+      if (currentPage !== pageCount) onPageChange(currentPage + 1);
     };
     const prevPage = () => {
       if (currentPage >= 1) onPageChange(currentPage - 1);
@@ -104,7 +104,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
           })}
           <Button
             aria-label="Next page"
-            disabled={currentPage === totalPages}
+            disabled={currentPage === pageCount}
             iconOnly
             leadingIcon="ChevronRightIcon"
             onClick={nextPage}
