@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 12.0.0
+
+### Minor Changes
+
+- [#858](https://github.com/Localitos/pluto/pull/858) [`2e05384`](https://github.com/Localitos/pluto/commit/2e05384681e21be4c89da96882e77df82d86549a) Thanks [@blumaa](https://github.com/blumaa)! - Updated react and react-dom to 18.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`2e05384`](https://github.com/Localitos/pluto/commit/2e05384681e21be4c89da96882e77df82d86549a)]:
+  - @localyze-pluto/theme@6.1.0
+
 ## 11.1.2
 
 ### Patch Changes
