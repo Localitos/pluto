@@ -17,7 +17,7 @@ const BasicPagination = (): JSX.Element => {
     <Pagination
       currentPage={currentPage}
       onPageChange={setCurrentPage}
-      totalPages={7}
+      pageCount={7}
     />
   );
 };
@@ -39,7 +39,7 @@ const PaginationWithLotsOfPages = (): JSX.Element => {
     <Pagination
       currentPage={currentPage}
       onPageChange={setCurrentPage}
-      totalPages={999}
+      pageCount={999}
     />
   );
 };
@@ -54,8 +54,8 @@ const PaginationWithMorePageNeighbors = (): JSX.Element => {
     <Pagination
       currentPage={currentPage}
       onPageChange={setCurrentPage}
+      pageCount={999}
       pageNeighbors={3}
-      totalPages={999}
     />
   );
 };

@@ -15,7 +15,7 @@ const LODASH_OFFSET = 1;
 
 /* This hook generates an array that calculates where to put the dots depending on the current page and the number of pages */
 export const usePagination = (
-  totalPages: number,
+  pageCount: number,
   pageNeighbors: number, // The number of pages to display to each side of the current page
   currentPage: number
 ): (number | string)[] => {
@@ -29,12 +29,12 @@ export const usePagination = (
     // This is the total number of blocks that are displayed in the pagination component (without the arrows)
     const totalBlocks = dynamicBlockCount + FIXED_BLOCK_COUNT;
 
-    if (totalPages > totalBlocks) {
+    if (pageCount > totalBlocks) {
       let pages = [];
 
       const leftBound = currentPage - pageNeighbors;
       const rightBound = currentPage + pageNeighbors;
-      const beforeLastPage = totalPages - 1;
+      const beforeLastPage = pageCount - 1;
 
       const startPage = leftBound > 2 ? leftBound : 2;
       const endPage = rightBound < beforeLastPage ? rightBound : beforeLastPage;
@@ -60,9 +60,9 @@ export const usePagination = (
         pages = [DOTS, ...pages, DOTS];
       }
 
-      return [1, ...pages, totalPages];
+      return [1, ...pages, pageCount];
     }
 
-    return range(1, totalPages + LODASH_OFFSET);
-  }, [totalPages, pageNeighbors, currentPage]);
+    return range(1, pageCount + LODASH_OFFSET);
+  }, [pageCount, pageNeighbors, currentPage]);
 };

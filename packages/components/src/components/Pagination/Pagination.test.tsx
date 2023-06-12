@@ -7,18 +7,18 @@ import { Pagination } from "./Pagination";
 
 describe("<Pagination />", () => {
   it("shows the aria label for the current page", () => {
-    render(<Pagination currentPage={10} onPageChange={noop} totalPages={20} />);
+    render(<Pagination currentPage={10} onPageChange={noop} pageCount={20} />);
     expect(screen.getByLabelText("Current Page, Page 10")).toBeInTheDocument();
   });
 
   it("shows the aria label for the next page and previous page", () => {
-    render(<Pagination currentPage={10} onPageChange={noop} totalPages={20} />);
+    render(<Pagination currentPage={10} onPageChange={noop} pageCount={20} />);
     expect(screen.getByLabelText("Goto Page 11")).toBeInTheDocument();
     expect(screen.getByLabelText("Goto Page 9")).toBeInTheDocument();
   });
 
   it("doesn't show the aria label for three pages ahead and behind", () => {
-    render(<Pagination currentPage={10} onPageChange={noop} totalPages={20} />);
+    render(<Pagination currentPage={10} onPageChange={noop} pageCount={20} />);
     expect(screen.queryByLabelText("Goto Page 15")).not.toBeInTheDocument();
     expect(screen.queryByLabelText("Goto Page 6")).not.toBeInTheDocument();
   });
@@ -29,11 +29,7 @@ describe("<Pagination />", () => {
     const user = userEvent.setup() as UserEvent;
 
     render(
-      <Pagination
-        currentPage={10}
-        onPageChange={onPageChange}
-        totalPages={20}
-      />
+      <Pagination currentPage={10} onPageChange={onPageChange} pageCount={20} />
     );
 
     const firstPage = screen.getByRole("button", { name: "Goto Page 1" });
