@@ -2,6 +2,7 @@ import { SystemProp, Theme } from "@xstyled/styled-components";
 import React from "react";
 import { Box } from "../../primitives/Box";
 import { Icon, IconProps } from "../Icon";
+import { IconName } from "../Icon/types/IconName";
 
 type CalloutVariantOptions = "error" | "information" | "success" | "warning";
 
@@ -15,6 +16,9 @@ export interface CalloutProps
 
   /** Show or hide the callout background */
   withoutBackground?: boolean;
+
+  /** Overrides default icon for variant */
+  icon?: IconName;
 }
 
 const getVariantProps = (
@@ -124,9 +128,17 @@ const getContentVariantProps = (
 /** A callout is a bar used to give user information. */
 const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
   (
-    { variant = "information", children, withoutBackground = false, ...props },
+    {
+      variant = "information",
+      children,
+      withoutBackground = false,
+      icon,
+      ...props
+    },
     ref
   ) => {
+    const iconProps = getIconVariantProps(variant);
+
     return (
       <Box.div
         borderRadius="borderRadius20"
@@ -138,9 +150,10 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
       >
         <Box.span padding="space10">
           <Icon
-            size="sizeIcon20"
-            {...getIconVariantProps(variant)}
+            color={iconProps.color}
             decorative
+            icon={icon || iconProps.icon}
+            size="sizeIcon20"
           />
         </Box.span>
         <Box.span
