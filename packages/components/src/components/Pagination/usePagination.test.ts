@@ -61,4 +61,16 @@ describe("<Pagination />", () => {
 
     expect(result.current).toEqual([1, "...", 16, 17, 18, 19, 20]);
   });
+
+  it("returns the correct page numbers and one set of dots on the left when current page equals total pages", () => {
+    const totalPages = 20;
+    const pagesAroundCurrentPage = 1;
+    const currentPage = 20;
+
+    const { result } = renderHook(() =>
+      usePagination(totalPages, pagesAroundCurrentPage, currentPage)
+    );
+
+    expect(result.current).toEqual([1, "...", 16, 17, 18, 19, 20]);
+  });
 });

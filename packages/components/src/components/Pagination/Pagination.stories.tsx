@@ -17,7 +17,7 @@ const BasicPagination = (): JSX.Element => {
     <Pagination
       currentPage={currentPage}
       onPageChange={setCurrentPage}
-      totalPages={20}
+      totalPages={7}
     />
   );
 };
