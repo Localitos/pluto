@@ -51,7 +51,7 @@
     "@storybook/react": "^7.0.0-rc.4",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.4",
     "assert": "^2.0.0",
