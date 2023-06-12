@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.1.0
+
+### Minor Changes
+
+- [#862](https://github.com/Localitos/pluto/pull/862) [`bf715b0`](https://github.com/Localitos/pluto/commit/bf715b026a707636ad198afd512229db78118c01) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [Callout] - Can now use any supported icon
+
 ## 13.0.0
 
 ### Minor Changes
