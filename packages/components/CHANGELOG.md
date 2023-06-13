@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.2.1
+
+### Patch Changes
+
+- [#865](https://github.com/Localitos/pluto/pull/865) [`f00e4dc`](https://github.com/Localitos/pluto/commit/f00e4dc30c91ac41438ca3cc5c74bb7f5dee5167) Thanks [@blumaa](https://github.com/blumaa)! - Fix storybook docs bug in Tabs and Table
+
 ## 13.2.0
 
 ### Minor Changes
