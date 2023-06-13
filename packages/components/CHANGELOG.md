@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.2.0
+
+### Minor Changes
+
+- [#798](https://github.com/Localitos/pluto/pull/798) [`54a9c8e`](https://github.com/Localitos/pluto/commit/54a9c8ebab5e8016cfb6a2c248a48b476141b657) Thanks [@blumaa](https://github.com/blumaa)! - add Pagination
+
 ## 13.1.0
 
 ### Minor Changes
