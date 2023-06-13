@@ -17,10 +17,12 @@ import { Table, THead, TBody, Tr, Th, ThButton, Td } from "./index";
 
 const table: Meta<typeof Table> = {
   title: "Components/Table",
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore Table has a required prop which confuses Storybook here.
-  subcomponents: { Table, THead, TBody, Tr, Th, ThButton, Td },
-  component: Table,
+  args: {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore Table has a required prop which confuses Storybook here.
+    subcomponents: { Table, THead, TBody, Tr, Th, ThButton, Td },
+    component: Table,
+  },
 };
 
 export default table;
