@@ -1,8 +1,8 @@
 import React from "react";
-import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
+import { IconName } from "../Icon/types/IconName";
 
 type ButtonSizeOptions = "large" | "small";
 type ButtonVariantOptions =
@@ -11,8 +11,6 @@ type ButtonVariantOptions =
   | "outline"
   | "primary"
   | "secondary";
-
-type IconNames = keyof typeof HeroOutlineIcons;
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> {
@@ -31,9 +29,9 @@ export interface ButtonProps
   /** Sets the button to be disabled. */
   disabled?: boolean;
   /** Icon to be added on the left of the content. */
-  leadingIcon?: IconNames;
+  leadingIcon?: IconName;
   /** Icon to be added on the right of the content. */
-  trailingIcon?: IconNames;
+  trailingIcon?: IconName;
   /** Sets the button state to loading. */
   loading?: boolean;
   /** Used with React Router to set the route the button links to. */
@@ -70,6 +68,7 @@ const getButtonVariantStyles = (
             focus: "colorBackground",
           },
           borderWidth: "borderWidth0",
+          outlineColor: { focus: "colorBorderPrimary" },
         };
       }
       return {
@@ -158,7 +157,7 @@ const getButtonVariantStyles = (
   }
 };
 
-const getIcon = (iconName: IconNames, size: ButtonSizeOptions) => {
+const getIcon = (iconName: IconName, size: ButtonSizeOptions) => {
   const iconProps = (size: ButtonSizeOptions) =>
     size === "small" ? "sizeIcon30" : "sizeIcon40";
 

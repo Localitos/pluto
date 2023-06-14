@@ -57,7 +57,9 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>(
         paddingLeft="space40"
         paddingRight="space40"
         paddingTop="space20"
+        position="relative"
         textDecoration="none"
+        zIndex="zIndex10"
         {...props}
         ref={ref}
       >

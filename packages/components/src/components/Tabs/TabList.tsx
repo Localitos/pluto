@@ -10,21 +10,34 @@ export interface TabListProps extends Omit<TabListPrimitiveProps, "state"> {
   "aria-label": string;
   /** The child elements of the TabList. */
   children: NonNullable<React.ReactNode>;
+  /** Add a divider element on the bottom of the tabs list */
+  withDivider?: boolean;
 }
 
 const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, withDivider, ...props }, ref) => {
     const tab = React.useContext(TabsContext);
 
     return (
       <Box.div
         as={TabListPrimitive}
         display={tab.variant === "fitted" ? "flex" : "block"}
+        position="relative"
         state={tab}
         {...props}
         ref={ref}
       >
         {children}
+        {withDivider && (
+          <Box.div
+            backgroundColor="colorBorderWeaker"
+            bottom="0"
+            h="1px"
+            position="absolute"
+            w="100%"
+            zIndex="zIndex0"
+          />
+        )}
       </Box.div>
     );
   }

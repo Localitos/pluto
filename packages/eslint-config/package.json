@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/eslint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": ".eslintrc.js",
   "license": "MIT",
   "dependencies": {
@@ -23,7 +23,7 @@
     "eslint-plugin-sonarjs": "^0.18.0",
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-testing-library": "^5.10.2",
-    "eslint-plugin-unicorn": "^45.0.2"
+    "eslint-plugin-unicorn": "^47.0.0"
   },
   "publishConfig": {
     "access": "public"

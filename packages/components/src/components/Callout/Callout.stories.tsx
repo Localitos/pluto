@@ -60,3 +60,10 @@ WithoutBackground.args = {
   children: "This is an callout without background.",
   withoutBackground: true,
 };
+
+export const WithCustomIcon = Template.bind({});
+WithCustomIcon.args = {
+  children: "This is an info message with a custom icon.",
+  variant: "information",
+  icon: "FireIcon",
+};

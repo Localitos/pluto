@@ -1,8 +1,8 @@
 import React from "react";
-import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import { InputBox } from "../InputBox";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
+import { IconName } from "../Icon/types/IconName";
 
 export type InputTypes =
   | "date"
@@ -22,8 +22,6 @@ export interface InputTypeProps {
   pattern?: string;
 }
 
-type IconNames = keyof typeof HeroOutlineIcons;
-
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "color" | "size"> {
   /** Sets the state of the input to disabled so a user can not interact with it. */
@@ -33,9 +31,9 @@ export interface InputProps
   /** The `id` of the input. */
   id?: string;
   /** Icon to be added on the left of the input. */
-  leadingIcon?: IconNames;
+  leadingIcon?: IconName;
   /** Icon to be added on the right of the input. */
-  trailingIcon?: IconNames;
+  trailingIcon?: IconName;
   /** The `name` of the input. */
   name?: string;
   /** The text to be used for the input placeholder. */
@@ -53,7 +51,7 @@ export interface InputProps
 }
 
 const getInputIcon = (
-  iconName: IconNames,
+  iconName: IconName,
   size?: "large" | "small",
   isLeadingIcon?: boolean,
   isTrailingIcon?: boolean

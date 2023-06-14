@@ -1,5 +1,57 @@
 # @localyze-pluto/theme
 
+## 6.2.0
+
+### Minor Changes
+
+- [#860](https://github.com/Localitos/pluto/pull/860) [`e175fc0`](https://github.com/Localitos/pluto/commit/e175fc0783a4db262b84625b07b9196d076cac30) Thanks [@blumaa](https://github.com/blumaa)! - update react testing library to 14
+
+## 6.1.0
+
+### Minor Changes
+
+- [#858](https://github.com/Localitos/pluto/pull/858) [`2e05384`](https://github.com/Localitos/pluto/commit/2e05384681e21be4c89da96882e77df82d86549a) Thanks [@blumaa](https://github.com/blumaa)! - Updated react and react-dom to 18.2.0
+
+## 6.0.0
+
+### Minor Changes
+
+- [#809](https://github.com/Localitos/pluto/pull/809) [`3d54ca6`](https://github.com/Localitos/pluto/commit/3d54ca62bfcd2c638d7db6342a8baa83ed4ac44e) Thanks [@rssilva](https://github.com/rssilva)! - Add a property to create a divider element on the bottom of tabs list. Add a negative -1 token to zIndex called zIndexNegative1
+
+### Patch Changes
+
+- Updated dependencies [[`3d54ca6`](https://github.com/Localitos/pluto/commit/3d54ca62bfcd2c638d7db6342a8baa83ed4ac44e)]:
+  - @localyze-pluto/design-tokens@0.4.0
+
+## 5.0.1
+
+### Patch Changes
+
+- [#810](https://github.com/Localitos/pluto/pull/810) [`6dc9ae5`](https://github.com/Localitos/pluto/commit/6dc9ae505b0461a208c88887e80ee3de086303f0) Thanks [@rssilva](https://github.com/rssilva)! - Add icon size tokens 50, 60, 70
+
+- Updated dependencies [[`6dc9ae5`](https://github.com/Localitos/pluto/commit/6dc9ae505b0461a208c88887e80ee3de086303f0)]:
+  - @localyze-pluto/design-tokens@0.3.1
+
+## 5.0.0
+
+### Minor Changes
+
+- [#807](https://github.com/Localitos/pluto/pull/807) [`d201108`](https://github.com/Localitos/pluto/commit/d201108401895fa577fae1f535e4fb4ea836159e) Thanks [@rssilva](https://github.com/rssilva)! - Add 'as' property to Icon component so it can be rendered as different html
+
+### Patch Changes
+
+- Updated dependencies [[`d201108`](https://github.com/Localitos/pluto/commit/d201108401895fa577fae1f535e4fb4ea836159e)]:
+  - @localyze-pluto/design-tokens@0.3.0
+
+## 4.0.4
+
+### Patch Changes
+
+- [`5a0c949`](https://github.com/Localitos/pluto/commit/5a0c94901fa63dc5fd56d0a9e9ea3476f57e57db) Thanks [@blumaa](https://github.com/blumaa)! - add step progress title token
+
+- Updated dependencies [[`5a0c949`](https://github.com/Localitos/pluto/commit/5a0c94901fa63dc5fd56d0a9e9ea3476f57e57db)]:
+  - @localyze-pluto/design-tokens@0.2.4
+
 ## 4.0.3
 
 ### Patch Changes

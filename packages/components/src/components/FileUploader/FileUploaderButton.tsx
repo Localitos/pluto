@@ -13,13 +13,16 @@ export interface FileUploaderButtonProps
 
   /** The acceptable file types/extensions */
   accept?: string;
+
+  /** Sets the button state to required and must have a value to be valid */
+  required?: boolean;
 }
 
 /** An input that handles a file to be uploaded */
 const FileUploaderButton = React.forwardRef<
   HTMLButtonElement,
   FileUploaderButtonProps
->(({ id, onChange, onClick, accept, disabled, ...props }, ref) => {
+>(({ id, onChange, onClick, accept, disabled, required, ...props }, ref) => {
   const inputRef = useRef(null);
   const clickInput = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -46,6 +49,7 @@ const FileUploaderButton = React.forwardRef<
         id={id}
         onChange={onChange}
         ref={inputRef}
+        required={required}
         tabIndex={-1}
         type="file"
       />

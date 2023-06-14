@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/design-tokens",
-  "version": "0.2.3",
+  "version": "0.4.0",
   "description": "Pluto Design System Design Tokens",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

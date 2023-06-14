@@ -20,6 +20,7 @@ export * from "./components/InputBox";
 export * from "./components/Label";
 export * from "./components/List";
 export * from "./components/Modal";
+export * from "./components/Pagination/";
 export * from "./components/Paragraph";
 export * from "./components/ProgressBar";
 export * from "./components/Radio";

@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/theme",
-  "version": "4.0.3",
+  "version": "6.2.0",
   "description": "Pluto Design System Theme",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -28,18 +28,18 @@
     "tsc": "tsc"
   },
   "peerDependencies": {
-    "@localyze-pluto/design-tokens": "^0.2.3",
+    "@localyze-pluto/design-tokens": "^0.4.0",
     "@xstyled/styled-components": "^3.6.0",
     "react": "^17.0.2 || ^18.2.0",
     "react-dom": "^17.0.2 || ^18.2.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@localyze-pluto/design-tokens": "^0.2.3",
+    "@localyze-pluto/design-tokens": "^0.4.0",
     "@localyze-pluto/eslint-config": "^1.0.1",
     "@localyze-pluto/tsconfig": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.4",
     "@types/react": "^17.0.2",
@@ -53,8 +53,8 @@
     "jest-watch-typeahead": "^2.2.2",
     "prettier": "^2.8.6",
     "pretty-quick": "^3.1.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "styled-components": "^5.3.6",
     "ts-jest": "^28.0.5",
     "tslib": "^2.4.0",

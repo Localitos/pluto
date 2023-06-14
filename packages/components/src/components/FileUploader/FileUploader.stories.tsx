@@ -1,6 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
 import Uppy from "@uppy/core";
+import { Button } from "../Button";
 import { FileUploader } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";
 
@@ -208,4 +209,114 @@ export const WithUppy = (): React.ReactElement => {
       </FileUploaderButton>
     </FileUploader>
   );
+};
+
+export const HandlingSubmitErrors = (): React.ReactElement => {
+  const [file, setFile] = useState<File | undefined>();
+  const [error, setError] = useState("");
+
+  const onSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
+    ev.preventDefault();
+
+    if (file) {
+      setError("");
+      setFile(file);
+    } else {
+      setError("This is a required field");
+      setFile(undefined);
+    }
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <FileUploader errorMessage={error} fileName={file?.name} label="Passport">
+        <FileUploaderButton
+          id="upload-passport"
+          onChange={(ev) => {
+            setFile(ev.target.files?.[0]);
+            setError("");
+          }}
+          type="button"
+          variant={"secondary"}
+        >
+          Upload
+        </FileUploaderButton>
+      </FileUploader>
+      <Button
+        style={{
+          marginTop: "30px",
+        }}
+        type="submit"
+        variant="primary"
+      >
+        Submit
+      </Button>
+    </form>
+  );
+};
+
+HandlingSubmitErrors.parameters = {
+  docs: {
+    description: {
+      story:
+        "If you want to handle form submissions checking for missing data.",
+    },
+  },
+};
+
+export const WithRequiredButton = (): React.ReactElement => {
+  const [file, setFile] = useState<File | undefined>();
+  const [error, setError] = useState("");
+
+  const onSubmit = (
+    ev: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+  ) => {
+    ev.preventDefault();
+
+    if (file) {
+      setError("");
+      setFile(file);
+    } else {
+      setError("Please upload a file");
+      setFile(undefined);
+    }
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <FileUploader errorMessage={error} fileName={file?.name} label="Passport">
+        <FileUploaderButton
+          id="upload-passport"
+          onChange={(ev) => {
+            setFile(ev.target.files?.[0]);
+            setError("");
+          }}
+          required
+          type="button"
+          variant={"secondary"}
+        >
+          Upload
+        </FileUploaderButton>
+      </FileUploader>
+      <Button
+        onClick={onSubmit}
+        style={{
+          marginTop: "30px",
+        }}
+        type="submit"
+        variant="primary"
+      >
+        Submit
+      </Button>
+    </form>
+  );
+};
+
+WithRequiredButton.parameters = {
+  docs: {
+    description: {
+      story:
+        "If you want to use required property on the FileUploaderButton to allow form submissions only with filled data.",
+    },
+  },
 };

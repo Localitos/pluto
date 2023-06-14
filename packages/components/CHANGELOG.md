@@ -1,5 +1,124 @@
 # @localyze-pluto/components
 
+## 13.2.1
+
+### Patch Changes
+
+- [#865](https://github.com/Localitos/pluto/pull/865) [`f00e4dc`](https://github.com/Localitos/pluto/commit/f00e4dc30c91ac41438ca3cc5c74bb7f5dee5167) Thanks [@blumaa](https://github.com/blumaa)! - Fix storybook docs bug in Tabs and Table
+
+## 13.2.0
+
+### Minor Changes
+
+- [#798](https://github.com/Localitos/pluto/pull/798) [`54a9c8e`](https://github.com/Localitos/pluto/commit/54a9c8ebab5e8016cfb6a2c248a48b476141b657) Thanks [@blumaa](https://github.com/blumaa)! - add Pagination
+
+## 13.1.0
+
+### Minor Changes
+
+- [#862](https://github.com/Localitos/pluto/pull/862) [`bf715b0`](https://github.com/Localitos/pluto/commit/bf715b026a707636ad198afd512229db78118c01) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [Callout] - Can now use any supported icon
+
+## 13.0.0
+
+### Minor Changes
+
+- [#860](https://github.com/Localitos/pluto/pull/860) [`e175fc0`](https://github.com/Localitos/pluto/commit/e175fc0783a4db262b84625b07b9196d076cac30) Thanks [@blumaa](https://github.com/blumaa)! - update react testing library to 14
+
+### Patch Changes
+
+- Updated dependencies [[`e175fc0`](https://github.com/Localitos/pluto/commit/e175fc0783a4db262b84625b07b9196d076cac30)]:
+  - @localyze-pluto/theme@6.2.0
+
+## 12.0.0
+
+### Minor Changes
+
+- [#858](https://github.com/Localitos/pluto/pull/858) [`2e05384`](https://github.com/Localitos/pluto/commit/2e05384681e21be4c89da96882e77df82d86549a) Thanks [@blumaa](https://github.com/blumaa)! - Updated react and react-dom to 18.2.0
+
+### Patch Changes
+
+- Updated dependencies [[`2e05384`](https://github.com/Localitos/pluto/commit/2e05384681e21be4c89da96882e77df82d86549a)]:
+  - @localyze-pluto/theme@6.1.0
+
+## 11.1.2
+
+### Patch Changes
+
+- [#850](https://github.com/Localitos/pluto/pull/850) [`eb000af`](https://github.com/Localitos/pluto/commit/eb000af6d90ee1e43f477c0c73e2007b2d59dab9) Thanks [@rssilva](https://github.com/rssilva)! - Add building-2, pie-chart, puzzle and wallet as available icons
+
+## 11.1.1
+
+### Patch Changes
+
+- [#848](https://github.com/Localitos/pluto/pull/848) [`1851c04`](https://github.com/Localitos/pluto/commit/1851c04d562eae88306545abd86424798fa17b49) Thanks [@jvaladas](https://github.com/jvaladas)! - chore(deps): Bump ariakit from 2.0.0-next.43 to 2.0.0-next.44
+
+## 11.1.0
+
+### Minor Changes
+
+- [#825](https://github.com/Localitos/pluto/pull/825) [`ef3e3d7`](https://github.com/Localitos/pluto/commit/ef3e3d7d8d786b7fe7f2b99755fd43e0ec19d204) Thanks [@rssilva](https://github.com/rssilva)! - Add a Lucide Icons as dependency with a specific subset available: baggage-claim, heart-handshake, palette, slack
+
+## 11.0.1
+
+### Patch Changes
+
+- [#814](https://github.com/Localitos/pluto/pull/814) [`440239c`](https://github.com/Localitos/pluto/commit/440239c9a32421e5c5b8d5d242acf9fae459c464) Thanks [@rssilva](https://github.com/rssilva)! - Change z-index on tabs list to be positive so does not get hidden by background
+
+## 11.0.0
+
+### Minor Changes
+
+- [#809](https://github.com/Localitos/pluto/pull/809) [`3d54ca6`](https://github.com/Localitos/pluto/commit/3d54ca62bfcd2c638d7db6342a8baa83ed4ac44e) Thanks [@rssilva](https://github.com/rssilva)! - Add a property to create a divider element on the bottom of tabs list. Add a negative -1 token to zIndex called zIndexNegative1
+
+### Patch Changes
+
+- Updated dependencies [[`3d54ca6`](https://github.com/Localitos/pluto/commit/3d54ca62bfcd2c638d7db6342a8baa83ed4ac44e)]:
+  - @localyze-pluto/theme@6.0.0
+
+## 10.0.1
+
+### Patch Changes
+
+- [#810](https://github.com/Localitos/pluto/pull/810) [`6dc9ae5`](https://github.com/Localitos/pluto/commit/6dc9ae505b0461a208c88887e80ee3de086303f0) Thanks [@rssilva](https://github.com/rssilva)! - Add icon size tokens 50, 60, 70
+
+- Updated dependencies [[`6dc9ae5`](https://github.com/Localitos/pluto/commit/6dc9ae505b0461a208c88887e80ee3de086303f0)]:
+  - @localyze-pluto/theme@5.0.1
+
+## 10.0.0
+
+### Minor Changes
+
+- [#807](https://github.com/Localitos/pluto/pull/807) [`d201108`](https://github.com/Localitos/pluto/commit/d201108401895fa577fae1f535e4fb4ea836159e) Thanks [@rssilva](https://github.com/rssilva)! - Add 'as' property to Icon component so it can be rendered as different html
+
+### Patch Changes
+
+- Updated dependencies [[`d201108`](https://github.com/Localitos/pluto/commit/d201108401895fa577fae1f535e4fb4ea836159e)]:
+  - @localyze-pluto/theme@5.0.0
+
+## 9.2.3
+
+### Patch Changes
+
+- [#793](https://github.com/Localitos/pluto/pull/793) [`feb03c6`](https://github.com/Localitos/pluto/commit/feb03c6aab783958889fdaee0eb9113be935628b) Thanks [@rssilva](https://github.com/rssilva)! - Handles File Uploader errors to show the remove button properly when there was no file added
+
+## 9.2.2
+
+### Patch Changes
+
+- [#782](https://github.com/Localitos/pluto/pull/782) [`996622d`](https://github.com/Localitos/pluto/commit/996622d7245b1c7dbd39b8d7dddcee3a5b536e1f) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [Select] - Memoize SelectItem to fix performance issues
+
+## 9.2.1
+
+### Patch Changes
+
+- [#779](https://github.com/Localitos/pluto/pull/779) [`c5f484a`](https://github.com/Localitos/pluto/commit/c5f484a4e97c91c137021f739118f5239f97ee5f) Thanks [@rssilva](https://github.com/rssilva)! - Remove unnecessary forwardRef from ControlledRadioGroup
+
+## 9.2.0
+
+### Minor Changes
+
+- [#777](https://github.com/Localitos/pluto/pull/777) [`5689b15`](https://github.com/Localitos/pluto/commit/5689b1549f7af8f86c87e114b57ee0f794668884) Thanks [@rssilva](https://github.com/rssilva)! - Add controlled RadioGroup, enforce Radio component to have margin-bottom zero
+
 ## 9.1.5
 
 ### Patch Changes

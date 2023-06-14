@@ -99,6 +99,7 @@ Object {
     "colorSidebarButtonTextHover": "#0B1F9C",
     "colorStepProgressBackground": "#4A63FC",
     "colorStepProgressText": "#FFFFFF",
+    "colorStepProgressTitle": "#FFFFFF",
     "colorText": "#64748B",
     "colorTextError": "#B91C1C",
     "colorTextHeading": "#334155",
@@ -218,6 +219,9 @@ Object {
     "sizeIcon20": "1rem",
     "sizeIcon30": "1.25rem",
     "sizeIcon40": "1.5rem",
+    "sizeIcon50": "1.75rem",
+    "sizeIcon60": "2rem",
+    "sizeIcon70": "2.25rem",
   },
   "space": Object {
     "space0": "0rem",
@@ -392,6 +396,7 @@ Object {
     "zIndex70": 70,
     "zIndex80": 80,
     "zIndex90": 90,
+    "zIndexNegative1": -1,
   },
 }
 `;
