@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import map from "lodash/map";
-import { FileWithPath, useDropzone } from "react-dropzone";
+import { FileError, FileWithPath, useDropzone } from "react-dropzone";
 import forEach from "lodash/forEach";
 import { Text } from "../../primitives/Text";
 import { ProgressBar } from "../ProgressBar";
@@ -17,7 +17,7 @@ import { DropzoneCancelUploadButton } from "./DropzoneCancelUploadButton";
 export type FileTypes = Record<string, string[]>;
 
 export type DropzoneProps = {
-  /** This is the function that gets triggered when a file is dropped */
+  /** This is the function that gets triggered when a file is dropped AHOY */
   onDrop: (files: FileWithPath[]) => void;
   /** This is the function that gets triggered when the cancel button is clicked */
   onCancel: (files: FileWithPath[]) => void;
@@ -105,6 +105,24 @@ const getIcon = (
 const getFileTypeErrorMessage = (fileTypes: FileTypes) =>
   `Wrong file type. ${getFileExtensions(fileTypes)} format only.`;
 
+const onError = (
+  err: FileError,
+  setDropZoneErrors: (error: string) => void,
+  tooManyFilesError: string,
+  maxFileSize: number | undefined,
+  fileTypes: FileTypes
+) => {
+  if (err.code === "too-many-files") {
+    setDropZoneErrors(tooManyFilesError);
+  }
+  if (err.code === "file-too-large" && maxFileSize) {
+    setDropZoneErrors(`File must be less than ${formatBytes(maxFileSize)}.`);
+  }
+  if (err.code === "file-invalid-type") {
+    setDropZoneErrors(getFileTypeErrorMessage(fileTypes));
+  }
+};
+
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
   (
     {
@@ -158,17 +176,13 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
       onDropRejected: (fileRejections) => {
         forEach(fileRejections, (file) => {
           forEach(file.errors, (err) => {
-            if (err.code === "too-many-files") {
-              setDropZoneErrors(tooManyFilesError);
-            }
-            if (err.code === "file-too-large" && maxFileSize) {
-              setDropZoneErrors(
-                `File must be less than ${formatBytes(maxFileSize)}.`
-              );
-            }
-            if (err.code === "file-invalid-type") {
-              setDropZoneErrors(getFileTypeErrorMessage(fileTypes));
-            }
+            onError(
+              err,
+              setDropZoneErrors,
+              tooManyFilesError,
+              maxFileSize,
+              fileTypes
+            );
           });
         });
       },

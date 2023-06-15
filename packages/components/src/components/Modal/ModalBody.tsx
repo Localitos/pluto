@@ -16,7 +16,7 @@ const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>(
   ({ children, disableOverflow, padding = "space60", ...props }, ref) => {
     return (
       <Box.div
-        overflowY={!disableOverflow ? "auto" : undefined}
+        overflowY={disableOverflow ? undefined : "auto"}
         padding={padding}
         ref={ref}
         {...props}

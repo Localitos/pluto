@@ -15,7 +15,7 @@
     "clean": "turbo clean && rm -rf node_modules",
     "dev": "turbo dev --no-cache --parallel --continue",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo lint",
+    "lint": "eslint packages",
     "prepare": "husky install",
     "release": "turbo build && changeset publish",
     "start": "storybook dev -p 6006",
