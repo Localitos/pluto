@@ -17,7 +17,7 @@ import { DropzoneCancelUploadButton } from "./DropzoneCancelUploadButton";
 export type FileTypes = Record<string, string[]>;
 
 export type DropzoneProps = {
-  /** This is the function that gets triggered when a file is dropped AHOY */
+  /** This is the function that gets triggered when a file is dropped */
   onDrop: (files: FileWithPath[]) => void;
   /** This is the function that gets triggered when the cancel button is clicked */
   onCancel: (files: FileWithPath[]) => void;
