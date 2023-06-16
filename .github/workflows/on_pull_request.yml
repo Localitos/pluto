@@ -150,12 +150,11 @@ jobs:
           name: compiled-js-and-types
           path: packages/
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
-          eslint_extensions: ts
+      - name: Run linter
+        run: yarn lint
+
+      - name: Run prettier
+        run: yarn prettier-check
 
   test:
     name: Test
