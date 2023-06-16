@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@localyze-pluto/design-tokens": "^0.4.0",
-    "@localyze-pluto/eslint-config": "^1.0.1",
+    "@localyze-pluto/eslint-config": "^1.0.2",
     "@localyze-pluto/tsconfig": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -46,7 +46,7 @@
     "@types/react-dom": "^17.0.2",
     "@types/styled-components": "^5.1.26",
     "@xstyled/styled-components": "^3.6.0",
-    "eslint": "^8.36.0",
+    "eslint": "^8.42.0",
     "jest": "^28.1.2",
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^29.4.0",
