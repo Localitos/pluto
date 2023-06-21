@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 13.2.2
+
+### Patch Changes
+
+- [#891](https://github.com/Localitos/pluto/pull/891) [`d3a72d7`](https://github.com/Localitos/pluto/commit/d3a72d7c348e3ad9c0adc26051fd0d1249b9c13c) Thanks [@rssilva](https://github.com/rssilva)! - Fix error related to ReactDom.render while running tests
+
+- [#877](https://github.com/Localitos/pluto/pull/877) [`061c5c6`](https://github.com/Localitos/pluto/commit/061c5c64a8d7111884fbd60a5487f90bfff04131) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - Update packages
+
+- Updated dependencies [[`061c5c6`](https://github.com/Localitos/pluto/commit/061c5c64a8d7111884fbd60a5487f90bfff04131)]:
+  - @localyze-pluto/theme@6.2.1
+
 ## 13.2.1
 
 ### Patch Changes

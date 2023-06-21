@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.4.1
+
+### Patch Changes
+
+- [#877](https://github.com/Localitos/pluto/pull/877) [`061c5c6`](https://github.com/Localitos/pluto/commit/061c5c64a8d7111884fbd60a5487f90bfff04131) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - Update packages
+
 ## 0.4.0
 
 ### Minor Changes
