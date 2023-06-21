@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook, waitFor } from "@testing-library/react";
 import * as imageOrientation from "./getImageOrientation";
 import { useGetImageOrientation } from "./useGetImageOrientation";
 
@@ -7,25 +7,27 @@ describe("useGetImageOrientation", () => {
     jest
       .spyOn(imageOrientation, "getImageOrientation")
       .mockResolvedValue("portrait");
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = renderHook(() =>
       useGetImageOrientation("/path-to-file.jpg")
     );
 
-    await waitForNextUpdate();
-
-    expect(result.current.orientation).toBe("portrait");
     expect(result.current.hasError).toBeFalsy();
+
+    await waitFor(() => {
+      expect(result.current.orientation).toBe("portrait");
+    });
   });
 
   it("should return error", async () => {
     jest.spyOn(imageOrientation, "getImageOrientation").mockRejectedValue(null);
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = renderHook(() =>
       useGetImageOrientation("/path-to-file.jpg")
     );
 
-    await waitForNextUpdate();
-
     expect(result.current.orientation).toBeUndefined();
-    expect(result.current.hasError).toBeTruthy();
+
+    await waitFor(() => {
+      expect(result.current.hasError).toBeTruthy();
+    });
   });
 });
