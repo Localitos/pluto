@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import { Default, WithReactTable } from "./Table.stories";
@@ -24,6 +24,7 @@ describe("<Table />", () => {
   });
 
   it("should sort the columns", async () => {
+    const user = userEvent.setup();
     // Ignoring this error because the story has children.
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -36,7 +37,7 @@ describe("<Table />", () => {
     expect(rowHeaders[3]).toHaveTextContent("Visits");
     expect(rowHeaders[4]).toHaveTextContent("Status");
 
-    await userEvent.click(screen.getByText("First Name"));
+    await act(() => user.click(screen.getByText("First Name")));
     const cells = screen.getAllByRole("cell");
     expect(cells[0]).toHaveTextContent("Damara");
     expect(cells[5]).toHaveTextContent("Dietrich");

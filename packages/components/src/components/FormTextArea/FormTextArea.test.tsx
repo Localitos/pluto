@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import React from "react";
 import { useForm } from "react-hook-form";
 import userEvent from "@testing-library/user-event";
@@ -72,6 +72,7 @@ describe("<FormTextArea />", () => {
 
   it("should render a ControlledFormTextArea", async () => {
     render(<ReactHookFormExample />);
+    const user = userEvent.setup();
     const controlledInput = screen.getByRole("textbox");
 
     expect(controlledInput).toBeInTheDocument();
@@ -86,9 +87,9 @@ describe("<FormTextArea />", () => {
     expect(controlledInput).toHaveAttribute("id", "flavor");
     expect(controlledInput).toHaveAttribute("data-testid", "test");
 
-    await userEvent.tab();
+    await act(() => user.tab());
 
-    await userEvent.keyboard("Chocolate");
+    await act(() => user.keyboard("Chocolate"));
 
     expect(controlledInput).toHaveValue("Chocolate");
   });

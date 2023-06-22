@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import React from "react";
 import { useForm } from "react-hook-form";
 import userEvent from "@testing-library/user-event";
@@ -79,6 +79,7 @@ describe("<FormSelect />", () => {
   });
 
   it("should render a ControlledFormSelect", async () => {
+    const user = userEvent.setup();
     render(<ReactHookFormExample />);
     const controlledSelect = screen.getByRole("combobox");
     const selectOptions = screen.getAllByRole("option", { hidden: true });
@@ -90,8 +91,8 @@ describe("<FormSelect />", () => {
     expect(controlledSelect).toHaveAttribute("id", "flavor");
     expect(controlledSelect).toHaveAttribute("data-testid", "test");
 
-    await userEvent.click(controlledSelect);
-    await userEvent.click(selectOptions[2]);
+    await act(() => user.click(controlledSelect));
+    await act(() => user.click(selectOptions[2]));
 
     expect(selectOptions[2]).toHaveAttribute("aria-selected", "true");
   });

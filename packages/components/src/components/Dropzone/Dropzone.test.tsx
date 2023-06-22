@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import { Dropzone, DropzoneProps } from "./Dropzone";
@@ -74,6 +74,7 @@ describe("<Dropzone />", () => {
   });
 
   it("calls onCancel when Cancel button is clicked", async () => {
+    const user = userEvent.setup();
     const mockOnCancel = jest.fn();
     renderDropZone({
       progress: 33,
@@ -85,12 +86,13 @@ describe("<Dropzone />", () => {
       name: /cancel upload/i,
     });
 
-    await userEvent.click(cancelButton);
+    await act(() => user.click(cancelButton));
 
     expect(mockOnCancel).toHaveBeenCalled();
   });
 
   it("calls onDrop when file is dropped", async () => {
+    const user = userEvent.setup();
     const mockOnDrop = jest.fn();
     const file = new File(["hello"], "dummy.pdf", {
       type: "application/pdf",
@@ -103,7 +105,7 @@ describe("<Dropzone />", () => {
     const input = await screen.findByRole("textbox", { hidden: true });
 
     expect(input).toBeInTheDocument();
-    await userEvent.upload(input, file);
+    await act(() => user.upload(input, file));
 
     expect(mockOnDrop).toHaveBeenCalled();
   });

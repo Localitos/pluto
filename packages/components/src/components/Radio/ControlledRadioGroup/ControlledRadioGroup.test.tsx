@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { useForm } from "react-hook-form";
 import React from "react";
 import UserEvent from "@testing-library/user-event";
@@ -51,10 +51,10 @@ describe("<ControlledRadioGroup />", () => {
 
     expect(radios[0]).toHaveAttribute("data-state", "checked");
 
-    await user.click(screen.getByText("Station 2"));
+    await act(() => user.click(screen.getByText("Station 2")));
     expect(radios[1]).toHaveAttribute("data-state", "checked");
 
-    await user.click(screen.getByText("Submit"));
+    await act(() => user.click(screen.getByText("Submit")));
 
     expect(onSubmit).toHaveBeenCalledWith({ station: "two" });
   });

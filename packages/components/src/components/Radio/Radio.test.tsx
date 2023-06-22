@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
@@ -47,7 +47,7 @@ describe("Radio", () => {
     );
     const renderedRadio = screen.getByRole("radio");
 
-    await user.click(renderedRadio);
+    await act(() => user.click(renderedRadio));
     expect(renderedRadio).toBeChecked();
     expect(renderedRadio).toHaveAttribute("data-state", "checked");
   });

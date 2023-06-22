@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import { Default as Switch } from "./Switch.stories";
@@ -14,10 +14,11 @@ describe("<Switch />", () => {
   });
 
   it("checks the switch", async () => {
+    const user = userEvent.setup();
     render(<Switch>Test switch</Switch>);
     const switcher = screen.getByRole("switch");
 
-    await userEvent.click(switcher);
+    await act(() => user.click(switcher));
 
     expect(switcher).toBeChecked();
   });

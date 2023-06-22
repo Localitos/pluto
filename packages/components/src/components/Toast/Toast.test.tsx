@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import { Button } from "../Button";
@@ -21,6 +21,7 @@ const SampleApp = (): JSX.Element => {
 
 describe("<Toast />", () => {
   it("should open and close a toast", async () => {
+    const user = userEvent.setup();
     render(
       <Default duration={1000} variant="success">
         This is the toast text.
@@ -28,7 +29,7 @@ describe("<Toast />", () => {
     );
 
     const renderedOpenButtons = screen.getByRole("button");
-    await userEvent.click(renderedOpenButtons);
+    await act(() => user.click(renderedOpenButtons));
 
     const renderedToast = screen.getByText("This is the toast text.");
     expect(screen.getByRole("region")).toBeInTheDocument();
@@ -42,6 +43,7 @@ describe("<Toast />", () => {
 
 describe("<ToastContainer />", () => {
   it("should open a toast in the ToastContainer", async () => {
+    const user = userEvent.setup();
     render(
       <ToastContainer>
         <SampleApp />
@@ -49,7 +51,7 @@ describe("<ToastContainer />", () => {
     );
 
     const renderedOpenButton = screen.getByRole("button");
-    await userEvent.click(renderedOpenButton);
+    await act(() => user.click(renderedOpenButton));
 
     const renderedToast = screen.getByText("Toast message!");
     expect(screen.getByRole("region")).toBeInTheDocument();
