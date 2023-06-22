@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.0.3
+
+### Patch Changes
+
+- [#892](https://github.com/Localitos/pluto/pull/892) [`72ad3b4`](https://github.com/Localitos/pluto/commit/72ad3b4363c948cd6f17e360ccb820ad2b0970c3) Thanks [@rssilva](https://github.com/rssilva)! - Update eslint dependencies
+
 ## 1.0.2
 
 ### Patch Changes
