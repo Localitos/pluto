@@ -1,6 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
 import Uppy from "@uppy/core";
+import noop from "lodash/noop";
 import { Button } from "../Button";
 import { FileUploader } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";
@@ -319,4 +320,32 @@ WithRequiredButton.parameters = {
         "If you want to use required property on the FileUploaderButton to allow form submissions only with filled data.",
     },
   },
+};
+
+export const WithRemoveConfirmation = (): React.ReactElement => {
+  const [fileInformation, setFileInformation] = useState<{
+    fileName: string;
+    fileSize: string;
+    fileUrl?: string;
+  } | null>({
+    fileName: "employment.pdf",
+    fileSize: "128",
+    fileUrl: FILE_URL,
+  });
+
+  return (
+    <FileUploader
+      deleteWithConfirmation
+      label="Employment Contract"
+      {...fileInformation}
+      maxFileSize="2MB"
+      onRemove={() => {
+        setFileInformation(null);
+      }}
+    >
+      <FileUploaderButton id="my-uploader" onChange={noop} variant="secondary">
+        Upload
+      </FileUploaderButton>
+    </FileUploader>
+  );
 };

@@ -1,5 +1,6 @@
 import { useDown } from "@localyze-pluto/theme";
 import React, { ReactElement } from "react";
+import { useAlertDialogState } from "../AlertDialog";
 import { Box } from "../../primitives/Box";
 import { ButtonProps } from "../Button";
 import { HelpText } from "../HelpText";
@@ -11,6 +12,7 @@ import { FileUploaderTitle } from "./FileUploaderTitle";
 import { FileUploaderDescription } from "./FileUploaderDescription";
 import { FileUploaderProgressBar } from "./FileUploaderProgressBar";
 import { FileUploaderIcon } from "./FileUploaderIcon";
+import { ConfirmationDialog } from "./ConfirmationDialog";
 
 export interface FileUploaderProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -46,6 +48,8 @@ export interface FileUploaderProps
 
   /** Disables the file uploader */
   disabled?: boolean;
+
+  deleteWithConfirmation?: boolean;
 }
 
 /** Visual component to display status of a file upload */
@@ -63,6 +67,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       onCancel,
       onRemove,
       disabled = false,
+      deleteWithConfirmation,
     },
     ref
   ) => {
@@ -75,6 +80,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       status === "waiting" || (status === "error" && !hasFile);
     const shouldShowRemoveButton =
       (status === "error" && hasFile) || status === "success";
+    const deleteDialogState = useAlertDialogState({ defaultOpen: false });
 
     return (
       <Box.div display="flex" flexDirection="column" gap="space25">
@@ -136,7 +142,16 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
               style: { alignSelf: "start" },
             })}
           {shouldShowRemoveButton && (
-            <RemoveButton disabled={disabled} onClick={onRemove} />
+            <RemoveButton
+              disabled={disabled}
+              onClick={() => {
+                if (deleteWithConfirmation) {
+                  deleteDialogState.show();
+                } else {
+                  onRemove?.();
+                }
+              }}
+            />
           )}
           {status === "loading" && <CancelUploadButton onClick={onCancel} />}
         </Box.div>
@@ -145,6 +160,14 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
             {errorMessage}
           </HelpText>
         )}
+        <ConfirmationDialog
+          onCancel={deleteDialogState.hide}
+          onConfirm={() => {
+            onRemove?.();
+            deleteDialogState.hide();
+          }}
+          state={deleteDialogState}
+        />
       </Box.div>
     );
   }
