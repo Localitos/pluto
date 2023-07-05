@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import { FileUploader, FileUploaderProps } from "./FileUploader";
@@ -195,5 +195,65 @@ describe("<FileUploader />", () => {
     const uploadButton = screen.getByRole("button", { name: "Upload" });
     expect(uploadButton).toBeInTheDocument();
     expect(uploadButton).toBeDisabled();
+  });
+
+  describe("when deleteWithConfirmation is true", () => {
+    it("shows a Dialog before deleting a file calling onRemove only if user confirms it", async () => {
+      const mockOnRemove = jest.fn();
+      renderFileUploader({
+        label: "Visa",
+        maxFileSize: "2MB",
+        fileUrl: FILE_URL,
+        fileSize: "1MB",
+        progress: 100,
+        onRemove: mockOnRemove,
+        deleteWithConfirmation: true,
+      });
+      const removeButton = await screen.findByRole("button", {
+        name: "Remove file",
+      });
+
+      await act(async () => await userEvent.click(removeButton));
+
+      await waitFor(async () => {
+        expect(await screen.findByText("Delete document")).toBeInTheDocument();
+      });
+
+      const deleteButton = await screen.findByRole("button", {
+        name: "Delete",
+      });
+
+      await act(async () => await userEvent.click(deleteButton));
+      expect(mockOnRemove).toHaveBeenCalled();
+    });
+
+    it("shows a Dialog before deleting a file but does not call onRemove if user cancel it", async () => {
+      const mockOnRemove = jest.fn();
+      renderFileUploader({
+        label: "Visa",
+        maxFileSize: "2MB",
+        fileUrl: FILE_URL,
+        fileSize: "1MB",
+        progress: 100,
+        onRemove: mockOnRemove,
+        deleteWithConfirmation: true,
+      });
+      const removeButton = await screen.findByRole("button", {
+        name: "Remove file",
+      });
+
+      await act(async () => await userEvent.click(removeButton));
+
+      await waitFor(async () => {
+        expect(await screen.findByText("Delete document")).toBeInTheDocument();
+      });
+
+      const cancelButton = await screen.findByRole("button", {
+        name: "Cancel",
+      });
+
+      await act(async () => await userEvent.click(cancelButton));
+      expect(mockOnRemove).not.toHaveBeenCalled();
+    });
   });
 });
