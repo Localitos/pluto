@@ -1,5 +1,20 @@
 # @localyze-pluto/theme
 
+## 6.2.2
+
+### Patch Changes
+
+- [#845](https://github.com/Localitos/pluto/pull/845) [`5982586`](https://github.com/Localitos/pluto/commit/5982586d76b36625d185ce2158f42f1298c82308) Thanks [@dependabot](https://github.com/apps/dependabot)! - Update dependencies related to linting, storybook and styled-components
+
+## 6.2.1
+
+### Patch Changes
+
+- [#877](https://github.com/Localitos/pluto/pull/877) [`061c5c6`](https://github.com/Localitos/pluto/commit/061c5c64a8d7111884fbd60a5487f90bfff04131) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - Update packages
+
+- Updated dependencies [[`061c5c6`](https://github.com/Localitos/pluto/commit/061c5c64a8d7111884fbd60a5487f90bfff04131)]:
+  - @localyze-pluto/design-tokens@0.4.1
+
 ## 6.2.0
 
 ### Minor Changes

@@ -12,6 +12,7 @@
     "lint": {
       "outputs": []
     },
+    "prettier-check": {},
     "tsc": {
       "outputs": ["dist/**"],
       "inputs": ["src/**/*.tsx", "src/**/*.ts"]

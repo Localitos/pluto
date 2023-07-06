@@ -1,11 +1,11 @@
 {
   "name": "@localyze-pluto/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": ".eslintrc.js",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-config-turbo": "latest",
     "eslint-plugin-cypress": "^2.12.1",
@@ -14,7 +14,7 @@
     "eslint-plugin-jest": "^27.2.1",
     "eslint-plugin-jest-dom": "^4.0.2",
     "eslint-plugin-jest-formatting": "^3.1.0",
-    "eslint-plugin-jsdoc": "^40.0.0",
+    "eslint-plugin-jsdoc": "^46.2.6",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-lodash": "^7.4.0",
     "eslint-plugin-prettier": "^4.0.0",

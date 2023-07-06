@@ -1,5 +1,25 @@
 # @localyze-pluto/components
 
+## 13.2.3
+
+### Patch Changes
+
+- [#845](https://github.com/Localitos/pluto/pull/845) [`5982586`](https://github.com/Localitos/pluto/commit/5982586d76b36625d185ce2158f42f1298c82308) Thanks [@dependabot](https://github.com/apps/dependabot)! - Update dependencies related to linting, storybook and styled-components
+
+- Updated dependencies [[`5982586`](https://github.com/Localitos/pluto/commit/5982586d76b36625d185ce2158f42f1298c82308)]:
+  - @localyze-pluto/theme@6.2.2
+
+## 13.2.2
+
+### Patch Changes
+
+- [#891](https://github.com/Localitos/pluto/pull/891) [`d3a72d7`](https://github.com/Localitos/pluto/commit/d3a72d7c348e3ad9c0adc26051fd0d1249b9c13c) Thanks [@rssilva](https://github.com/rssilva)! - Fix error related to ReactDom.render while running tests
+
+- [#877](https://github.com/Localitos/pluto/pull/877) [`061c5c6`](https://github.com/Localitos/pluto/commit/061c5c64a8d7111884fbd60a5487f90bfff04131) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - Update packages
+
+- Updated dependencies [[`061c5c6`](https://github.com/Localitos/pluto/commit/061c5c64a8d7111884fbd60a5487f90bfff04131)]:
+  - @localyze-pluto/theme@6.2.1
+
 ## 13.2.1
 
 ### Patch Changes

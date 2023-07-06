@@ -11,7 +11,10 @@ module.exports = {
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/dist/"],
   cacheDirectory: ".jest-cache",
   coverageDirectory: ".jest-coverage",
-  coveragePathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/dist/"],
+  coveragePathIgnorePatterns: [
+    "<rootDir>/packages/(?:.+?)/dist/",
+    "<rootDir>/packages/(?:.+?)/*.stories.tsx",
+  ],
   coverageReporters: ["html", "text"],
   coverageThreshold: {
     global: {
