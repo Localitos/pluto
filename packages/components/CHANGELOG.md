@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.3.0
+
+### Minor Changes
+
+- [#920](https://github.com/Localitos/pluto/pull/920) [`31b3e82`](https://github.com/Localitos/pluto/commit/31b3e824dc4e686efce7332211a715de840e0452) Thanks [@rssilva](https://github.com/rssilva)! - [FileUploader] - Add type to remove button avoiding unintentional form submission
+
 ## 13.2.4
 
 ### Patch Changes
