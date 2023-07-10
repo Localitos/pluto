@@ -14,13 +14,14 @@ const ModalSubHeading = React.forwardRef<
   ModalSubHeadingProps
 >(({ children, ...props }, ref) => {
   return (
-    <Box.div marginTop="space10">
+    <Box.div marginTop="space50">
       <Text.h3
         color="colorText"
         fontFamily="fontFamilyModerat"
         fontSize="fontSize20"
         fontWeight="fontWeightRegular"
         lineHeight="lineHeight20"
+        marginTop="space0"
         ref={ref}
         {...props}
       >
