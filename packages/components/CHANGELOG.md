@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.2.4
+
+### Patch Changes
+
+- [#918](https://github.com/Localitos/pluto/pull/918) [`1cf1015`](https://github.com/Localitos/pluto/commit/1cf1015d05094890cfaf7a19622cfdd6fb663289) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [ModalSubHeading] - Fixes inconsistent margin top because h3 margin was not explicit
+
 ## 13.2.3
 
 ### Patch Changes
