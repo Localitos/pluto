@@ -7,7 +7,12 @@ export const RemoveButton = (props: Partial<ButtonProps>): ReactElement => {
 
   if (isMobile) {
     return (
-      <Button {...props} aria-label="Remove file" variant="secondary">
+      <Button
+        {...props}
+        aria-label="Remove file"
+        type="button"
+        variant="secondary"
+      >
         Remove
       </Button>
     );
@@ -19,6 +24,7 @@ export const RemoveButton = (props: Partial<ButtonProps>): ReactElement => {
       aria-label="Remove file"
       iconOnly
       trailingIcon="TrashIcon"
+      type="button"
       variant="ghost"
     />
   );

@@ -125,6 +125,34 @@ describe("<FileUploader />", () => {
 
       expect(mockOnRemove).toHaveBeenCalled();
     });
+
+    it("does not submit a form when removing a file", async () => {
+      const mockOnSubmit = jest.fn();
+
+      render(
+        <form onSubmit={mockOnSubmit}>
+          <FileUploader
+            fileSize={"1MB"}
+            fileUrl={FILE_URL}
+            label={"passport"}
+            maxFileSize={"2MB"}
+            onRemove={jest.fn()}
+            progress={100}
+          >
+            <FileUploaderButton onChange={jest.fn()} variant="secondary">
+              Upload
+            </FileUploaderButton>
+          </FileUploader>
+        </form>
+      );
+
+      const removeButton = await screen.findByRole("button", {
+        name: "Remove file",
+      });
+      await userEvent.click(removeButton);
+
+      expect(mockOnSubmit).not.toHaveBeenCalled();
+    });
   });
 
   describe("when there is an error", () => {
