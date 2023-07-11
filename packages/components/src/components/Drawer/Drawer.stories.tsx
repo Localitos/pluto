@@ -10,7 +10,7 @@ import {
   DrawerHeading,
   DrawerHeader,
   DrawerBody,
-  useDrawerState,
+  useDrawerStore,
 } from "./index";
 
 export default {
@@ -19,13 +19,13 @@ export default {
 } as Meta<typeof Drawer>;
 
 export const Default = (): JSX.Element => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
     <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
@@ -53,13 +53,13 @@ Default.parameters = {
 };
 
 export const NoPaddingOnBody = (): React.ReactNode => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
     <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
@@ -87,13 +87,13 @@ NoPaddingOnBody.parameters = {
 };
 
 export const OverflowBodyContent = (): React.ReactNode => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
     <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
@@ -157,13 +157,13 @@ OverflowBodyContent.parameters = {
 };
 
 export const ReallyLongHeader = (): React.ReactNode => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
     <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>
             This is a really long header that should wrap to multiple lines. The
@@ -195,7 +195,7 @@ ReallyLongHeader.parameters = {
 
 export const InitialFocus = (): JSX.Element => {
   const buttonRef = React.createRef<HTMLButtonElement>();
-  const drawer = useDrawerState({
+  const drawer = useDrawerStore({
     defaultOpen: isChromatic() ? true : false,
   });
   return (
@@ -203,7 +203,7 @@ export const InitialFocus = (): JSX.Element => {
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer initialFocusRef={buttonRef} state={drawer}>
+      <Drawer initialFocus={buttonRef} store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>

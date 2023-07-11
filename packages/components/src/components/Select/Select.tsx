@@ -4,10 +4,10 @@ import startsWith from "lodash/startsWith";
 import {
   Select as SelectPrimitive,
   SelectArrow,
-  useSelectState,
-  SelectStateProps,
-} from "ariakit/select";
-import type { SelectProps as SelectPrimitiveProps } from "ariakit/select";
+  useSelectStore,
+  SelectStoreProps,
+} from "@ariakit/react/select";
+import type { SelectProps as SelectPrimitiveProps } from "@ariakit/react/select";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import isArray from "lodash/isArray";
 import { Box } from "../../primitives/Box";
@@ -32,6 +32,7 @@ export interface SelectProps
     | "onFocusVisible"
     | "showOnKeyDown"
     | "state"
+    | "store"
     | "toggleOnClick"
     | "toggleOnPress"
     | "typeahead"
@@ -54,7 +55,7 @@ export interface SelectProps
   /** Sets the select state to required, so a user has to provide a value in order to be valid. */
   required?: boolean;
   /** Function that will be called when setting the select value state. */
-  setValue?: SelectStateProps["setValue"];
+  setValue?: SelectStoreProps["setValue"];
   /** Changes the size of the select. */
   size?: "large" | "small";
   /** The selected option of the select. */
@@ -124,7 +125,7 @@ const getSelectedLabel = (
 };
 
 /** A select is an styled form element that allows users to select a value from a list. */
-const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
+const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
   (
     {
       defaultValue,
@@ -142,11 +143,11 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
     },
     ref,
   ) => {
-    const select = useSelectState({
+    const select = useSelectStore({
       defaultValue,
       value,
-      sameWidth: true,
-      gutter: 4,
+      // sameWidth: true,
+      // gutter: 4,
       setValue,
     });
 
@@ -163,7 +164,8 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           borderWidth="borderWidth10"
           color={
             disabled ||
-            (!isArray(select.value) && startsWith(select.value, "select-"))
+            (!isArray(select.getState().value) &&
+              startsWith(String(select.getState().value), "select-"))
               ? "colorText"
               : "colorTextStronger"
           }
@@ -196,13 +198,14 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             if (event.defaultPrevented) {
               return;
             }
-            const popover = select.popoverRef.current;
+
+            const popover = select.getState().popoverElement;
             if (popover?.contains(event.relatedTarget)) {
               return;
             }
             props.onBlur?.(event);
           }}
-          state={select}
+          store={select}
         >
           <Box.div
             overflow="hidden"
@@ -210,7 +213,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             w="100%"
             whiteSpace="nowrap"
           >
-            {getSelectedLabel(items, select.value, placeholder)}
+            {getSelectedLabel(items, select.getState().value, placeholder)}
           </Box.div>
           <Box.div
             display="inline-flex"
@@ -225,7 +228,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             />
           </Box.div>
         </Box.button>
-        <SelectPopover state={select}>
+        <SelectPopover store={select}>
           {map(items, (item) => (
             <SelectItem
               disabled={item.disabled}

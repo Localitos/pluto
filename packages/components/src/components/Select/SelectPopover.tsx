@@ -1,6 +1,6 @@
 import React from "react";
-import { SelectPopover as SelectPopoverPrimitive } from "ariakit/select";
-import type { SelectPopoverProps as SelectPopoverPrimitiveProps } from "ariakit/select";
+import { SelectPopover as SelectPopoverPrimitive } from "@ariakit/react/select";
+import type { SelectPopoverProps as SelectPopoverPrimitiveProps } from "@ariakit/react/select";
 import { Box } from "../../primitives/Box";
 
 export interface SelectPopoverProps
@@ -11,7 +11,7 @@ export interface SelectPopoverProps
 
 /** A select popover is a styled dropdown element that contains a list of select options. */
 const SelectPopover = React.forwardRef<HTMLDivElement, SelectPopoverProps>(
-  ({ children, state, ...props }, ref) => {
+  ({ children, store, ...props }, ref) => {
     return (
       <Box.div
         as={SelectPopoverPrimitive}
@@ -30,7 +30,7 @@ const SelectPopover = React.forwardRef<HTMLDivElement, SelectPopoverProps>(
         paddingTop="space20"
         position="absolute"
         ref={ref}
-        state={state}
+        store={store}
         zIndex="zIndex50"
         {...props}
       >

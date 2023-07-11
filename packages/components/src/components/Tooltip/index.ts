@@ -1,4 +1,4 @@
 export * from "./Tooltip";
-export { TooltipAnchor, useTooltipState } from "ariakit";
-export type { TooltipState } from "ariakit";
-export type { TooltipStateProps } from "ariakit";
+export { TooltipAnchor, useTooltipStore } from "@ariakit/react";
+export type { TooltipStore } from "@ariakit/react";
+export type { TooltipStoreProps } from "@ariakit/react";

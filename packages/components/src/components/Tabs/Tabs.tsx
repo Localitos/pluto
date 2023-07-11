@@ -1,5 +1,5 @@
 import React from "react";
-import { useTabState as useTabPrimitiveState } from "ariakit/tab";
+import { useTabStore as useTabPrimitiveState } from "@ariakit/react/tab";
 import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
 import { TabsContext } from "./TabsContext";

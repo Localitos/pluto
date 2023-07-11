@@ -1,6 +1,6 @@
 import React from "react";
-import { Tooltip as TooltipPrimitive, TooltipArrow } from "ariakit";
-import type { TooltipProps as TooltipPrimitiveProps } from "ariakit";
+import { Tooltip as TooltipPrimitive, TooltipArrow } from "@ariakit/react";
+import type { TooltipProps as TooltipPrimitiveProps } from "@ariakit/react";
 import { Box } from "../../primitives/Box";
 
 export interface TooltipProps extends Omit<TooltipPrimitiveProps, "nonce"> {

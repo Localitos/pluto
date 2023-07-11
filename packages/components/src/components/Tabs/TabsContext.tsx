@@ -1,14 +1,14 @@
 import React from "react";
-import type { TabState as TabStatePrimitiveProps } from "ariakit/tab";
+import type { TabStore as TabStorePrimitiveProps } from "@ariakit/react/tab";
 import type { TabsVariants } from "./types";
 
-export interface TabStateProps extends TabStatePrimitiveProps {
+export interface TabStoreProps extends TabStorePrimitiveProps {
   /** Tells the Tabs which panel to load when it mounts. */
   initialTabId?: string;
   /** Changes the Tabs' to either fit the width of the containing element or not. */
   variant?: TabsVariants;
 }
 
-const TabsContext = React.createContext<TabStateProps>({} as TabStateProps);
+const TabsContext = React.createContext<TabStoreProps>({} as TabStoreProps);
 
 export { TabsContext };

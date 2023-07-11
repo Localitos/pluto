@@ -1,17 +1,17 @@
-import React from "react";
-import { Dialog, useDialogState } from "ariakit/dialog";
-import type { DialogProps } from "ariakit";
-import { styled, theme } from "@localyze-pluto/theme";
-import type { SystemProp, Theme } from "@xstyled/styled-components";
-import { Box } from "../../primitives/Box";
+import React from "react"
+import {Dialog} from "@ariakit/react/dialog"
+import type {DialogProps} from "@ariakit/react"
+import {styled, theme} from "@localyze-pluto/theme"
+import type {SystemProp, Theme} from "@xstyled/styled-components"
+import {Box, BoxProps} from "../../primitives/Box"
 
 export interface DrawerProps extends DialogProps {
   /** The contents of the drawer. */
-  children: NonNullable<React.ReactNode>;
-  padding?: SystemProp<keyof Theme["space"], Theme>;
+  children: NonNullable<React.ReactNode>
+  padding?: SystemProp<keyof Theme["space"], Theme>
 }
 
-const StyledBackdrop = styled(Box.div)`
+const StyledBackdrop = styled(Box.div)<BoxProps>`
   background-color: rgba(39, 49, 63, 0.5);
   backdrop-filter: blur(3px);
   opacity: 0;
@@ -23,10 +23,10 @@ const StyledBackdrop = styled(Box.div)`
     backdrop-filter: blur(3px);
     opacity: 1;
   }
-`;
+`
 
 const StyledDrawer = styled(Box.div)<{
-  padding?: SystemProp<keyof Theme["space"], Theme>;
+  padding?: SystemProp<keyof Theme["space"], Theme>
 }>`
   background-color: ${theme.colors.colorBackground};
   box-shadow: ${theme.shadows.shadowStrong};
@@ -38,39 +38,30 @@ const StyledDrawer = styled(Box.div)<{
   top: 0;
   bottom: 0;
   transition: right 0.4s;
-  padding: ${({ padding }) => padding ?? "space0"};
+  padding: ${({padding}) => padding ?? "space0"};
   z-index: ${theme.zIndices.zIndex30};
 
   &[data-enter] {
     right: 0;
   }
-`;
+`
 
 /** A Drawer is a page overlay that displays information and blocks interaction with the page until an action is taken or the Drawer is dismissed. */
 const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
-  ({ children, state, initialFocusRef, padding, ...props }, ref) => {
-    const internalState = useDialogState({
-      ...state,
-      animated: true,
-    });
-
+  ({children, initialFocus, padding, ...props}, ref) => {
     return (
-      <StyledDrawer
-        as={Dialog}
-        autoFocusOnShow={initialFocusRef ?? false}
-        backdrop={StyledBackdrop}
-        initialFocusRef={initialFocusRef}
-        padding={padding}
+      <Dialog
+        autoFocusOnShow={initialFocus ? true : false}
+        backdrop={() => <StyledBackdrop />}
+        initialFocus={initialFocus}
         ref={ref}
-        state={internalState}
+        render={() => <StyledDrawer padding={padding}>{children}</StyledDrawer>}
         {...props}
-      >
-        {children}
-      </StyledDrawer>
-    );
+      />
+    )
   },
-);
+)
 
-Drawer.displayName = "Drawer";
+Drawer.displayName = "Drawer"
 
-export { Drawer };
+export {Drawer}
