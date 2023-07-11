@@ -44,7 +44,7 @@ module.exports = {
     "no-console": ["error"],
     "prefer-template": ["error"],
     "no-use-before-define": ["error"],
-    "capitalized-comments": ["error"],
+    "capitalized-comments": ["off"],
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "import/order": [
