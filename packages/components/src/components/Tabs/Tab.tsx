@@ -1,6 +1,6 @@
 import React from "react";
-import { Tab as TabPrimitive } from "ariakit/tab";
-import type { TabProps as TabPrimitiveProps } from "ariakit/tab";
+import { Tab as TabPrimitive } from "@ariakit/react/tab";
+import type { TabProps as TabPrimitiveProps } from "@ariakit/react/tab";
 import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
 

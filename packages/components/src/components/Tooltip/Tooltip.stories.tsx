@@ -4,7 +4,7 @@ import isChromatic from "chromatic/isChromatic";
 import { Anchor } from "../Anchor";
 import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
-import { useTooltipState, Tooltip, TooltipAnchor } from "./index";
+import { useTooltipStore, Tooltip, TooltipAnchor } from "./index";
 
 export default {
   component: Tooltip,
@@ -15,95 +15,95 @@ export default {
 } as Meta<typeof Tooltip>;
 
 export const Default = (): JSX.Element => {
-  const tooltip = useTooltipState({
+  const tooltip = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
   return (
     <>
-      <TooltipAnchor as={Button} state={tooltip} variant="secondary">
+      <TooltipAnchor as={Button} store={tooltip} variant="secondary">
         Hover or focus on me
       </TooltipAnchor>
-      <Tooltip state={tooltip}>This is the content of the tooltip.</Tooltip>
+      <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
     </>
   );
 };
 
 export const AnchorBased = (): JSX.Element => {
-  const tooltip = useTooltipState({
+  const tooltip = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
   return (
     <>
-      <TooltipAnchor as={Anchor} href="#" state={tooltip}>
+      <TooltipAnchor as={Anchor} href="#" store={tooltip}>
         Hover or focus on me
       </TooltipAnchor>
-      <Tooltip state={tooltip}>This is the content of the tooltip.</Tooltip>
+      <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
     </>
   );
 };
 
 export const RightAligned = (): JSX.Element => {
-  const tooltip = useTooltipState({
+  const tooltip = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
     placement: "right",
   });
   return (
     <>
-      <TooltipAnchor as={Button} state={tooltip} variant="secondary">
+      <TooltipAnchor as={Button} store={tooltip} variant="secondary">
         Hover or focus on me
       </TooltipAnchor>
-      <Tooltip state={tooltip}>This is the content of the tooltip.</Tooltip>
+      <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
     </>
   );
 };
 
 export const BottomAligned = (): JSX.Element => {
-  const tooltip = useTooltipState({
+  const tooltip = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
     placement: "bottom",
   });
   return (
     <>
-      <TooltipAnchor as={Button} state={tooltip} variant="primary">
+      <TooltipAnchor as={Button} store={tooltip} variant="primary">
         Hover or focus on me
       </TooltipAnchor>
-      <Tooltip state={tooltip}>This is the content of the tooltip.</Tooltip>
+      <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
     </>
   );
 };
 
 export const LeftAligned = (): JSX.Element => {
-  const tooltip = useTooltipState({
+  const tooltip = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
     placement: "left",
   });
   return (
     <Box.div display="flex" justifyContent="flex-end">
-      <TooltipAnchor as={Button} state={tooltip} variant="primary">
+      <TooltipAnchor as={Button} store={tooltip} variant="primary">
         Hover or focus on me
       </TooltipAnchor>
-      <Tooltip state={tooltip}>This is the content of the tooltip.</Tooltip>
+      <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
     </Box.div>
   );
 };
 
 export const MultilineOpen = (): JSX.Element => {
-  const tooltipOne = useTooltipState({
+  const tooltipOne = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipTwo = useTooltipState({
+  const tooltipTwo = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipThree = useTooltipState({
+  const tooltipThree = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipFour = useTooltipState({
+  const tooltipFour = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipFive = useTooltipState({
+  const tooltipFive = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipSix = useTooltipState({
+  const tooltipSix = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
 
@@ -115,55 +115,55 @@ export const MultilineOpen = (): JSX.Element => {
       rowGap="18rem"
     >
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipOne} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipOne} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipOne}>
+        <Tooltip store={tooltipOne}>
           This is the content of the tooltip. It should be on multiple lines.
         </Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipTwo} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipTwo} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipTwo}>
+        <Tooltip store={tooltipTwo}>
           This is the content of the tooltip. It should be on multiple lines.
         </Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipThree} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipThree} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipThree}>
+        <Tooltip store={tooltipThree}>
           This is the content of the tooltip. It should be on multiple lines.
         </Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipFour} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipFour} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipFour}>
+        <Tooltip store={tooltipFour}>
           This is the content of the tooltip. It should be on multiple lines.
         </Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipFive} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipFive} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipFive}>
+        <Tooltip store={tooltipFive}>
           This is the content of the tooltip. It should be on multiple lines.
         </Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipSix} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipSix} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipSix}>
+        <Tooltip store={tooltipSix}>
           This is the content of the tooltip. It should be on multiple lines.
         </Tooltip>
       </Box.div>
@@ -172,22 +172,22 @@ export const MultilineOpen = (): JSX.Element => {
 };
 
 export const SinglelineOpen = (): JSX.Element => {
-  const tooltipOne = useTooltipState({
+  const tooltipOne = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipTwo = useTooltipState({
+  const tooltipTwo = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipThree = useTooltipState({
+  const tooltipThree = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipFour = useTooltipState({
+  const tooltipFour = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipFive = useTooltipState({
+  const tooltipFive = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
-  const tooltipSix = useTooltipState({
+  const tooltipSix = useTooltipStore({
     defaultOpen: isChromatic() ? true : false,
   });
 
@@ -199,45 +199,45 @@ export const SinglelineOpen = (): JSX.Element => {
       rowGap="18rem"
     >
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipOne} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipOne} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipOne}>Approved</Tooltip>
+        <Tooltip store={tooltipOne}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipTwo} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipTwo} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipTwo}>Approved</Tooltip>
+        <Tooltip store={tooltipTwo}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipThree} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipThree} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipThree}>Approved</Tooltip>
+        <Tooltip store={tooltipThree}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipFour} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipFour} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipFour}>Approved</Tooltip>
+        <Tooltip store={tooltipFour}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipFive} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipFive} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipFive}>Approved</Tooltip>
+        <Tooltip store={tooltipFive}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} state={tooltipSix} variant="secondary">
+        <TooltipAnchor as={Button} store={tooltipSix} variant="secondary">
           Hover or focus on me
         </TooltipAnchor>
-        <Tooltip state={tooltipSix}>Approved</Tooltip>
+        <Tooltip store={tooltipSix}>Approved</Tooltip>
       </Box.div>
     </Box.div>
   );

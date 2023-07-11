@@ -1,5 +1,5 @@
 import React from "react";
-import { DialogDismiss } from "ariakit/dialog";
+import { DialogDismiss } from "@ariakit/react/dialog";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 

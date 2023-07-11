@@ -1,4 +1,4 @@
-export { useTabState } from "ariakit/tab";
+export { useTabStore } from "@ariakit/react/tab";
 export * from "./Tabs";
 export * from "./TabList";
 export * from "./TabPanels";
