@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- [#924](https://github.com/Localitos/pluto/pull/924) [`140575a`](https://github.com/Localitos/pluto/commit/140575a245bc4ca391f86ad06c4a80d4f0753358) Thanks [@RohitRajendran](https://github.com/RohitRajendran)! - [Eslint] - Turn off capitalized comments eslint rule
+
 ## 1.0.3
 
 ### Patch Changes
