@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.3.1
+
+### Patch Changes
+
+- [#962](https://github.com/Localitos/pluto/pull/962) [`8da7c9b`](https://github.com/Localitos/pluto/commit/8da7c9b43a9b070c56d8ac053f93bf311f327f8b) Thanks [@rssilva](https://github.com/rssilva)! - Add save icon to the icons list
+
 ## 13.3.0
 
 ### Minor Changes
