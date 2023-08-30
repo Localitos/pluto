@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 6.2.3
+
+### Patch Changes
+
+- [#980](https://github.com/Localitos/pluto/pull/980) [`469a424`](https://github.com/Localitos/pluto/commit/469a4244ed36967665aea1777c3184042aeb36bc) Thanks [@jvaladas](https://github.com/jvaladas)! - Adds icon size tokens from 80 to 160
+
+- [#987](https://github.com/Localitos/pluto/pull/987) [`396a899`](https://github.com/Localitos/pluto/commit/396a8990310e4041f84cf0335779b4adce32d4ef) Thanks [@jvaladas](https://github.com/jvaladas)! - Updates the snapshot test for the theme after adding extra tokens
+
+- Updated dependencies [[`469a424`](https://github.com/Localitos/pluto/commit/469a4244ed36967665aea1777c3184042aeb36bc)]:
+  - @localyze-pluto/design-tokens@0.4.2
+
 ## 6.2.2
 
 ### Patch Changes
