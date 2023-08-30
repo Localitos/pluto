@@ -1,0 +1,22 @@
+import { ColorPalette, ColorItem } from "@storybook/blocks";
+import * as colorTokens from "../src/tokens/color.tokens.json";
+
+# Color Tokens
+
+---
+
+<br />
+
+<ColorPalette>
+  {Object.entries(colorTokens.color)
+    .sort()
+    .map((token, i) => {
+      return (
+        <ColorItem
+          key={i}
+          title={`${token[0]} color`}
+          colors={{ [`${token[0]}`]: token[1].value }}
+        />
+      );
+    })}
+</ColorPalette>

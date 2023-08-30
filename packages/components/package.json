@@ -34,6 +34,7 @@
     "@radix-ui/react-radio-group": "^1.1.1",
     "@radix-ui/react-switch": "^1.0.1",
     "@radix-ui/react-toast": "^1.1.2",
+    "@storybook/addon-docs": "^7.3.2",
     "ariakit": "^2.0.0-next.44",
     "lucide-react": "^0.218.0",
     "react-dropzone": "^14.2.3",
