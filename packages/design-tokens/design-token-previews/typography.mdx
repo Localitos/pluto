@@ -1,0 +1,58 @@
+import { Typeset } from "@storybook/blocks";
+import * as fontSizeTokens from "../src/tokens/font-size.tokens.json";
+import * as fontFamilyTokens from "../src/tokens/font-family.tokens.json";
+import * as fontWeightTokens from "../src/tokens/font-weight.tokens.json";
+
+# Typography
+
+<br />
+
+### The font is set with Moderat Inter, sans-serif
+
+---
+
+<br />
+
+#### with font weight light (300):
+
+<Typeset
+  fontSizes={Object.values(fontSizeTokens["font-size"]).map(
+    (size) => size.comment
+  )}
+  fontWeight={fontWeightTokens["font-weight"]["light"].value}
+  sampleText={"The quick brown fox jumps over the lazy dog"}
+  fontFamily={fontFamilyTokens["font-family"]["moderat"].value}
+/>
+
+#### with font weight regular (400):
+
+<Typeset
+  fontSizes={Object.values(fontSizeTokens["font-size"]).map(
+    (size) => size.comment
+  )}
+  fontWeight={fontWeightTokens["font-weight"]["regular"].value}
+  sampleText={"The quick brown fox jumps over the lazy dog"}
+  fontFamily={fontFamilyTokens["font-family"]["moderat"].value}
+/>
+
+#### with font weight medium (500):
+
+<Typeset
+  fontSizes={Object.values(fontSizeTokens["font-size"]).map(
+    (size) => size.comment
+  )}
+  fontWeight={fontWeightTokens["font-weight"]["medium"].value}
+  sampleText={"The quick brown fox jumps over the lazy dog"}
+  fontFamily={fontFamilyTokens["font-family"]["moderat"].value}
+/>
+
+#### with font weight bold (700):
+
+<Typeset
+  fontSizes={Object.values(fontSizeTokens["font-size"]).map(
+    (size) => size.comment
+  )}
+  fontWeight={fontWeightTokens["font-weight"]["bold"].value}
+  sampleText={"The quick brown fox jumps over the lazy dog"}
+  fontFamily={fontFamilyTokens["font-family"]["moderat"].value}
+/>
