@@ -27,6 +27,42 @@
     "icon-70": {
       "value": "2.25rem",
       "comment": "36px"
+    },
+    "icon-80": {
+      "value": "2.5rem",
+      "comment": "40px"
+    },
+    "icon-90": {
+      "value": "2.75rem",
+      "comment": "44px"
+    },
+    "icon-100": {
+      "value": "3rem",
+      "comment": "48px"
+    },
+    "icon-110": {
+      "value": "3.25rem",
+      "comment": "52px"
+    },
+    "icon-120": {
+      "value": "3.5rem",
+      "comment": "56px"
+    },
+    "icon-130": {
+      "value": "3.75rem",
+      "comment": "60px"
+    },
+    "icon-140": {
+      "value": "4rem",
+      "comment": "64px"
+    },
+    "icon-150": {
+      "value": "4.25rem",
+      "comment": "68px"
+    },
+    "icon-160": {
+      "value": "4.5rem",
+      "comment": "72px"
     }
   }
 }
