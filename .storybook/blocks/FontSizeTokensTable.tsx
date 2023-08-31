@@ -1,8 +1,8 @@
 import React from "react";
-import spaceTokens from "../../packages/design-tokens/src/tokens/space.tokens.json";
+import fontSizeTokens from "../../packages/design-tokens/src/tokens/font-size.tokens.json";
 import { formatTokenName, formatRems, formatPixels } from "./utils";
 
-const SpacingTokensTable = () => {
+const FontSizeTokensTable = () => {
   return (
     <table style={{ width: "100%" }}>
       <thead>
@@ -22,23 +22,18 @@ const SpacingTokensTable = () => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(spaceTokens.space).map((token) => {
+        {Object.entries(fontSizeTokens["font-size"]).map((token) => {
           return (
             <tr key={token[0]}>
-              <td>{formatTokenName(token, "space")}</td>
+              <td>{formatTokenName(token, "fontWeight")}</td>
               <td>{formatPixels(token)}</td>
               <td>{formatRems(token)}</td>
               <td>
-                {!token[1].value.includes("-") && (
-                  <div
-                    style={{
-                      width: `${formatPixels(token)}`,
-                      backgroundColor: "#413cff",
-                    }}
-                  >
-                    &nbsp;
-                  </div>
-                )}
+                <div style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
+                  <text style={{ fontSize: token[1].value }}>
+                    The quick brown fox jumped over the lazy dog.
+                  </text>
+                </div>
               </td>
             </tr>
           );
@@ -48,4 +43,4 @@ const SpacingTokensTable = () => {
   );
 };
 
-export default SpacingTokensTable;
+export default FontSizeTokensTable;
