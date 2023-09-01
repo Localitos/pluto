@@ -1,45 +1,61 @@
 import React from "react";
 import map from "lodash/map";
+import {
+  Table,
+  THead,
+  TBody,
+  Tr,
+  Th,
+  Td,
+} from "../../../components/src/components/Table/";
 import fontSizeTokens from "../../src/tokens/font-size.tokens.json";
 import { formatTokenName, formatRems, formatPixels } from "./utils";
+import { CopyToClipboardButton } from "./CopyToClipboardButton";
 
 export const FontSizeTokensTable = (): JSX.Element => {
   return (
-    <table style={{ width: "100%" }}>
-      <thead>
-        <tr>
-          <td>
+    <Table style={{ width: "100%" }}>
+      <THead>
+        <Tr>
+          <Th>
             <h3>Name</h3>
-          </td>
-          <td>
+          </Th>
+          <Th>
             <h3>Pixels</h3>
-          </td>
-          <td>
+          </Th>
+          <Th>
             <h3>Rems</h3>
-          </td>
-          <td>
+          </Th>
+          <Th>
             <h3>Visualization</h3>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
+          </Th>
+        </Tr>
+      </THead>
+      <TBody>
         {map(Object.entries(fontSizeTokens["font-size"]), (token) => {
           return (
-            <tr key={token[0]}>
-              <td>{formatTokenName(token, "fontWeight")}</td>
-              <td>{formatPixels(token)}</td>
-              <td>{formatRems(token)}</td>
-              <td>
+            <Tr key={token[0]}>
+              <Td>
+                <div style={{ display: "flex" }}>
+                  <div>{formatTokenName(token, "fontSize")}</div>
+                  <CopyToClipboardButton
+                    textToCopy={formatTokenName(token, "fontSize")}
+                  />
+                </div>
+              </Td>
+              <Td>{formatPixels(token)}</Td>
+              <Td>{formatRems(token)}</Td>
+              <Td>
                 <div style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
                   <text style={{ fontSize: token[1].value }}>
                     The quick brown fox jumped over the lazy dog.
                   </text>
                 </div>
-              </td>
-            </tr>
+              </Td>
+            </Tr>
           );
         })}
-      </tbody>
-    </table>
+      </TBody>
+    </Table>
   );
 };
