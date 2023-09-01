@@ -1,8 +1,9 @@
 import React from "react";
-import fontWeightTokens from "../../packages/design-tokens/src/tokens/font-weight.tokens.json";
+import map from "lodash/map";
+import fontWeightTokens from "../../src/tokens/font-weight.tokens.json";
 import { formatTokenName } from "./utils";
 
-const FontWeightTokensTable = () => {
+export const FontWeightTokensTable = (): JSX.Element => {
   return (
     <table style={{ width: "100%" }}>
       <thead>
@@ -19,7 +20,7 @@ const FontWeightTokensTable = () => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(fontWeightTokens["font-weight"]).map((token) => {
+        {map(Object.entries(fontWeightTokens["font-weight"]), (token) => {
           return (
             <tr key={token[0]}>
               <td>{formatTokenName(token, "fontWeight")}</td>
@@ -36,5 +37,3 @@ const FontWeightTokensTable = () => {
     </table>
   );
 };
-
-export default FontWeightTokensTable;

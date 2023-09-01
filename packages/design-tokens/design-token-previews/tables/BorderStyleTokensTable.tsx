@@ -1,8 +1,9 @@
 import React from "react";
-import borderRadiiTokens from "../../packages/design-tokens/src/tokens/border-radius.tokens.json";
+import map from "lodash/map";
+import borderStyleTokens from "../../src/tokens/border-style.tokens.json";
 import { formatTokenName } from "./utils";
 
-const BorderRadiiTokensTable = () => {
+export const BorderStyleTokensTable = (): JSX.Element => {
   return (
     <table style={{ width: "100%" }}>
       <thead>
@@ -11,7 +12,7 @@ const BorderRadiiTokensTable = () => {
             <h3>Name</h3>
           </td>
           <td>
-            <h3>Pixels</h3>
+            <h3>Style</h3>
           </td>
           <td>
             <h3>Visualization</h3>
@@ -19,17 +20,13 @@ const BorderRadiiTokensTable = () => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(borderRadiiTokens["border-radius"]).map((token) => {
+        {map(Object.entries(borderStyleTokens["border-style"]), (token) => {
           return (
             <tr key={token[0]}>
-              <td>{formatTokenName(token, "borderRadius")}</td>
+              <td>{formatTokenName(token, "borderStyle")}</td>
               <td>{token[1].value}</td>
               <td>
-                <div
-                  style={{ borderStyle: "solid", borderRadius: token[1].value }}
-                >
-                  &nbsp;
-                </div>
+                <div style={{ borderStyle: token[1].value }}>&nbsp;</div>
               </td>
             </tr>
           );
@@ -38,5 +35,3 @@ const BorderRadiiTokensTable = () => {
     </table>
   );
 };
-
-export default BorderRadiiTokensTable;

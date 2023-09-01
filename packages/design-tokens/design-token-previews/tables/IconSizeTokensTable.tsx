@@ -1,9 +1,10 @@
 import React from "react";
-import iconSizeTokens from "../../packages/design-tokens/src/tokens/size.tokens.json";
-import HeartSvgIcon from "./HeartSvgIcon";
+import map from "lodash/map";
+import iconSizeTokens from "../..//src/tokens/size.tokens.json";
+import { HeartSvgIcon } from "./HeartSvgIcon";
 import { formatPixels, formatRems, formatTokenName } from "./utils";
 
-const IconSizeTokensTable = () => {
+export const IconSizeTokensTable = (): JSX.Element => {
   return (
     <table style={{ width: "100%" }}>
       <thead>
@@ -23,7 +24,7 @@ const IconSizeTokensTable = () => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(iconSizeTokens.size).map((token) => {
+        {map(Object.entries(iconSizeTokens.size), (token) => {
           return (
             <tr key={token[0]}>
               <td>{formatTokenName(token, "size")}</td>
@@ -41,5 +42,3 @@ const IconSizeTokensTable = () => {
     </table>
   );
 };
-
-export default IconSizeTokensTable;

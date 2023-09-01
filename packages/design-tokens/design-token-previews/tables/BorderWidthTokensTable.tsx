@@ -1,8 +1,9 @@
 import React from "react";
-import borderWidthTokens from "../../packages/design-tokens/src/tokens/border-width.tokens.json";
+import map from "lodash/map";
+import borderWidthTokens from "../../src/tokens/border-width.tokens.json";
 import { formatTokenName } from "./utils";
 
-const BorderWidthTokensTable = () => {
+export const BorderWidthTokensTable = (): JSX.Element => {
   return (
     <table style={{ width: "100%" }}>
       <thead>
@@ -19,7 +20,7 @@ const BorderWidthTokensTable = () => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(borderWidthTokens["border-width"]).map((token) => {
+        {map(Object.entries(borderWidthTokens["border-width"]), (token) => {
           return (
             <tr key={token[0]}>
               <td>{formatTokenName(token, "borderWidth")}</td>
@@ -38,5 +39,3 @@ const BorderWidthTokensTable = () => {
     </table>
   );
 };
-
-export default BorderWidthTokensTable;
