@@ -19,3 +19,6 @@
 
 # Design system storybook build
 /docs
+
+# asdf version manager
+.tool-versions
