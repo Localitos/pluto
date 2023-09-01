@@ -1,8 +1,10 @@
 import React from "react";
-import fontSizeTokens from "../../packages/design-tokens/src/tokens/font-size.tokens.json";
+import map from "lodash/map";
+import includes from "lodash/includes";
+import spaceTokens from "../../src/tokens/space.tokens.json";
 import { formatTokenName, formatRems, formatPixels } from "./utils";
 
-const FontSizeTokensTable = () => {
+export const SpacingTokensTable = (): JSX.Element => {
   return (
     <table style={{ width: "100%" }}>
       <thead>
@@ -22,18 +24,23 @@ const FontSizeTokensTable = () => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(fontSizeTokens["font-size"]).map((token) => {
+        {map(Object.entries(spaceTokens.space), (token) => {
           return (
             <tr key={token[0]}>
-              <td>{formatTokenName(token, "fontWeight")}</td>
+              <td>{formatTokenName(token, "space")}</td>
               <td>{formatPixels(token)}</td>
               <td>{formatRems(token)}</td>
               <td>
-                <div style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
-                  <text style={{ fontSize: token[1].value }}>
-                    The quick brown fox jumped over the lazy dog.
-                  </text>
-                </div>
+                {!includes(token[1].value, "-") && (
+                  <div
+                    style={{
+                      width: `${formatPixels(token)}`,
+                      backgroundColor: "#413cff",
+                    }}
+                  >
+                    &nbsp;
+                  </div>
+                )}
               </td>
             </tr>
           );
@@ -42,5 +49,3 @@ const FontSizeTokensTable = () => {
     </table>
   );
 };
-
-export default FontSizeTokensTable;
