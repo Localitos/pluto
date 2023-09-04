@@ -8,11 +8,11 @@ import {
   Th,
   Td,
 } from "../../../components/src/components/Table/";
-import fontWeightTokens from "../../src/tokens/font-weight.tokens.json";
+import borderWidthTokens from "../../../design-tokens/src/tokens/border-width.tokens.json";
 import { formatTokenName } from "./utils";
 import { CopyToClipboardButton } from "./CopyToClipboardButton";
 
-export const FontWeightTokensTable = (): JSX.Element => {
+export const BorderWidthTokensTable = (): JSX.Element => {
   return (
     <Table style={{ width: "100%" }}>
       <THead>
@@ -21,7 +21,7 @@ export const FontWeightTokensTable = (): JSX.Element => {
             <h3>Name</h3>
           </Th>
           <Th>
-            <h3>Weight</h3>
+            <h3>Pixels</h3>
           </Th>
           <Th>
             <h3>Visualization</h3>
@@ -29,21 +29,23 @@ export const FontWeightTokensTable = (): JSX.Element => {
         </Tr>
       </THead>
       <TBody>
-        {map(Object.entries(fontWeightTokens["font-weight"]), (token) => {
+        {map(Object.entries(borderWidthTokens["border-width"]), (token) => {
           return (
             <Tr key={token[0]}>
               <Td>
                 <div style={{ display: "flex" }}>
-                  <div>{formatTokenName(token, "fontWeight")}</div>
+                  <div>{formatTokenName(token, "borderWidth")}</div>
                   <CopyToClipboardButton
-                    textToCopy={formatTokenName(token, "fontWeight")}
+                    textToCopy={formatTokenName(token, "borderWidth")}
                   />
                 </div>
               </Td>
               <Td>{token[1].value}</Td>
               <Td>
-                <div style={{ fontWeight: token[1].value }}>
-                  The quick brown fox jumped over the lazy dog.
+                <div
+                  style={{ borderStyle: "solid", borderWidth: token[1].value }}
+                >
+                  &nbsp;
                 </div>
               </Td>
             </Tr>

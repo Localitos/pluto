@@ -8,7 +8,7 @@ import {
   Th,
   Td,
 } from "../../../components/src/components/Table/";
-import colorTokens from "../../src/tokens/color.tokens.json";
+import colorTokens from "../../../design-tokens/src/tokens/color.tokens.json";
 import { formatColorTokenName, hexToRgb, hexToHsla, formatHex } from "./utils";
 import { CopyToClipboardButton } from "./CopyToClipboardButton";
 
@@ -46,7 +46,6 @@ export const ColorTokensTable = (): JSX.Element => {
                   />
                 </div>
               </Td>
-              <Td>{formatColorTokenName(token)}</Td>
               <Td>
                 <div
                   style={{

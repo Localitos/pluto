@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import iconSizeTokens from "../../src/tokens/size.tokens.json";
+import iconSizeTokens from "../../../design-tokens/src/tokens/size.tokens.json";
 import { IconSizeTokensTable } from "./IconSizeTokensTable";
 
 const numberOfTokens = Object.entries(iconSizeTokens.size).length;

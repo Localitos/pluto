@@ -1,7 +1,7 @@
 import React from "react";
 import map from "lodash/map";
 import { SystemProp, Theme } from "@xstyled/styled-components";
-import iconSizeTokens from "../../src/tokens/size.tokens.json";
+import iconSizeTokens from "../../../design-tokens/src/tokens/size.tokens.json";
 import { Icon } from "../../../components/src/components/Icon/Icon";
 import { ThemeProvider, theme } from "../../../theme";
 import {

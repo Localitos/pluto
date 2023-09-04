@@ -8,7 +8,7 @@ import {
   Th,
   Td,
 } from "../../../components/src/components/Table/";
-import borderStyleTokens from "../../src/tokens/border-style.tokens.json";
+import borderStyleTokens from "../../../design-tokens/src/tokens/border-style.tokens.json";
 import { formatTokenName } from "./utils";
 import { CopyToClipboardButton } from "./CopyToClipboardButton";
 

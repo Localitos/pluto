@@ -1,7 +1,7 @@
 import React from "react";
 import map from "lodash/map";
 import includes from "lodash/includes";
-import spaceTokens from "../../src/tokens/space.tokens.json";
+import spaceTokens from "../../../design-tokens/src/tokens/space.tokens.json";
 import {
   Table,
   THead,
