@@ -1,5 +1,6 @@
 import React from "react";
 import map from "lodash/map";
+import borderRadiiTokens from "../../../design-tokens/src/tokens/border-radius.tokens.json";
 import {
   Table,
   THead,
@@ -8,11 +9,10 @@ import {
   Th,
   Td,
 } from "../../../components/src/components/Table/";
-import fontSizeTokens from "../../src/tokens/font-size.tokens.json";
-import { formatTokenName, formatRems, formatPixels } from "./utils";
+import { formatTokenName } from "./utils";
 import { CopyToClipboardButton } from "./CopyToClipboardButton";
 
-export const FontSizeTokensTable = (): JSX.Element => {
+export const BorderRadiiTokensTable = (): JSX.Element => {
   return (
     <Table style={{ width: "100%" }}>
       <THead>
@@ -24,32 +24,28 @@ export const FontSizeTokensTable = (): JSX.Element => {
             <h3>Pixels</h3>
           </Th>
           <Th>
-            <h3>Rems</h3>
-          </Th>
-          <Th>
             <h3>Visualization</h3>
           </Th>
         </Tr>
       </THead>
       <TBody>
-        {map(Object.entries(fontSizeTokens["font-size"]), (token) => {
+        {map(Object.entries(borderRadiiTokens["border-radius"]), (token) => {
           return (
             <Tr key={token[0]}>
               <Td>
                 <div style={{ display: "flex" }}>
-                  <div>{formatTokenName(token, "fontSize")}</div>
+                  <div>{formatTokenName(token, "borderRadius")}</div>
                   <CopyToClipboardButton
-                    textToCopy={formatTokenName(token, "fontSize")}
+                    textToCopy={formatTokenName(token, "borderRadius")}
                   />
                 </div>
               </Td>
-              <Td>{formatPixels(token)}</Td>
-              <Td>{formatRems(token)}</Td>
+              <Td>{token[1].value}</Td>
               <Td>
-                <div style={{ paddingTop: "1rem", paddingBottom: "1rem" }}>
-                  <text style={{ fontSize: token[1].value }}>
-                    The quick brown fox jumped over the lazy dog.
-                  </text>
+                <div
+                  style={{ borderStyle: "solid", borderRadius: token[1].value }}
+                >
+                  &nbsp;
                 </div>
               </Td>
             </Tr>
