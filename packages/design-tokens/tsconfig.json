@@ -1,6 +1,7 @@
 {
   "extends": "@localyze-pluto/tsconfig",
   "compilerOptions": {
+    "baseUrl": "./src",
     "outDir": "dist/"
   },
   "include": ["."],
