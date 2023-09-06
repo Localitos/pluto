@@ -62,7 +62,7 @@
     "eslint-plugin-storybook": "^0.6.11",
     "husky": "^8.0.3",
     "jest": "^28.1.2",
-    "jest-environment-jsdom": "^29.4.0",
+    "jest-environment-jsdom": "^29.6.4",
     "jest-watch-typeahead": "^2.2.2",
     "lint-staged": "^13.1.2",
     "next": "^13.2.3",
