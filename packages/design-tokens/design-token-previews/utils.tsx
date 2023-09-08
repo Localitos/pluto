@@ -1,52 +1,75 @@
 import React from "react";
 import map from "lodash/map";
-import pick from "lodash/pick";
 import { FontPreview } from "./FontPreview";
+import { Token } from "./types/Token";
+import { hexToHsla, hexToRgb } from "./utils/colors";
+import * as fontSizeTokens from "../src/tokens/font-size.tokens.json";
+import * as colorTokens from "../src/tokens/color.tokens.json";
 
-type Row = Array<JSX.Element | string>;
 
-type SingleToken = Record<string, { value: string; comment?: string }>;
-
-const colorHeaders = ["Name", "Color", "Hex", "RGB", "hsla"];
-
-// const fontSizeHeaders = ["Name", "Pixels", "Rems", "Visualisation"];
-
-const createFontPreview = (token) => {
-  const [key, value] = token;
-
-  return <FontPreview fontSize={value.comment} key={key} />;
+const getKey = (object: Record<string, unknown>): string => {
+  return Object.keys(object)[0];
 };
 
-const fontSizeHeaders = [
-  { name: "Name", transform: console.log },
-  { name: "pixels", transform: console.log },
-  { name: "rems", transform: console.log },
-  { name: "preview", transform: createFontPreview },
-];
+type Row = Array<JSX.Element | string>;
+type TokenEntry = [string, Token];
+type Column = {
+  name: string;
+  transform: (entry: TokenEntry) => string | JSX.Element;
+};
+
+const createFontPreview = ([tokenSuffix, token]: TokenEntry) => {
+  return <FontPreview fontSize={token.value} key={tokenSuffix} />;
+};
+
+const getValue = ([, token]: TokenEntry): string => {
+  return token.value;
+};
+
+const getComment = ([, token]: TokenEntry): string => {
+  return token.comment || "";
+};
 
 const formatTokenName = (prefix: string, suffix: string) => {
   return `${prefix}${suffix}`;
 };
 
-const getAttributeValue = (key: string, token: SingleToken) => {
-  return token[key];
-};
 
-const getComment = (token: SingleToken) => {
-  const [, value] = token;
-  return getAttributeValue("comment", value);
-};
 
-export const renderRows = (tokens: Record<string, SingleToken>): Array<Row> => {
+export const TOKENS = {
+  [getKey(fontSizeTokens)]: [
+    { name: "pixels", transform: getComment },
+    { name: "rems", transform: getValue },
+    { name: "preview", transform: createFontPreview },
+  ],
+  [getKey(colorTokens)]: [
+    { name: "Hex", transform: getValue },
+    { name: "RGB", transform: ([, token]: TokenEntry) => hexToRgb(token.value) },
+    {
+      name: "hsla",
+      transform: ([, token]: TokenEntry) => hexToHsla(token.value),
+    },
+    { name: "Preview", transform: createFontPreview },
+  ],
+}
+
+
+export const renderRows = (
+  columns: Column[],
+  tokens: Record<string, Record<string, Token>>
+): Array<Row> => {
   const [tokenName, tokenEntries] = Object.entries(tokens)[0];
 
   return map(Object.entries(tokenEntries), (token) => {
-    const [key, value] = token;
+    const [key] = token;
 
-    return [
+    const row = [
       formatTokenName(tokenName, key),
-      getComment(token), getAttributeValue("value", value),
-      <FontPreview fontSize={value.comment} key={key} />,
+      ...map(columns, (column) => {
+        return column.transform(token);
+      }),
     ] as Row;
+
+    return row;
   });
 };
