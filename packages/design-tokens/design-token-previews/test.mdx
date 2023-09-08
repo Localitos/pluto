@@ -1,6 +1,5 @@
 import { TokensTable } from "./TokensTable";
 import { FontPreview } from "./FontPreview";
-import { renderRows } from "./utils";
 import * as fontSizeTokens from "../src/tokens/font-size.tokens.json";
 import * as colorTokens from "../src/tokens/color.tokens.json";
 
@@ -11,11 +10,11 @@ import * as colorTokens from "../src/tokens/color.tokens.json";
 <br />
 
 <TokensTable
-  header={["Name", "Pixels", "Rems", "Visualisation"]}
-  data={renderRows(fontSizeTokens)}
+  type="font-size"
+  data={fontSizeTokens}
 />
 
 <TokensTable
-  header={["Name", "Color", "Hex", "RGB", "hsla"]}
-  data={renderRows(colorTokens)}
+  type="color"
+  data={colorTokens}
 />

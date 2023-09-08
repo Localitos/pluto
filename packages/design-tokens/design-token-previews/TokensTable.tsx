@@ -8,29 +8,36 @@ import {
   Th,
   Td,
 } from "../../components/src/components/Table/";
+import { TOKENS, renderRows } from "./utils";
+import { Token } from "./types/Token";
+
+type TokenTypes = keyof typeof TOKENS;
 
 export const TokensTable = ({
-  header,
+  type,
   data,
 }: {
-  header: Array<string>;
-  data: Array<Array<Record<string, unknown>>>;
+  type: TokenTypes;
+  data: Record<string, Record<string, Token>>;
 }): JSX.Element => {
+  const columns = TOKENS[type];
+  const rows = renderRows(columns, data);
+
   return (
     <Table style={{ width: "100%" }}>
       <THead>
         <Tr>
-          {map(header, (column) => {
+          {map(columns, (column) => {
             return (
-              <Th key={column}>
-                <h3>{column}</h3>
+              <Th key={column.name}>
+                <h3>{column.name}</h3>
               </Th>
             );
           })}
         </Tr>
       </THead>
       <TBody>
-        {map(data, (row) => {
+        {map(rows, (row) => {
           return (
             <Tr>
               {map(row, (cell) => {
