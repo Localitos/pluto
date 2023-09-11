@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, Description, ArgTypes, Stories } from "@storybook/addon-docs";
+import { Title, Description, ArgsTable, Stories } from "@storybook/addon-docs";
 import customTheme from "./theme";
 import {
   ThemeProvider,
@@ -38,7 +38,7 @@ export const parameters = {
         <Title />
         <Description />
         <Stories includePrimary />
-        <ArgTypes />
+        <ArgsTable />
       </>
     ),
     source: {
