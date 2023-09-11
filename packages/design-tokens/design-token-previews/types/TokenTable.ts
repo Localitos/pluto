@@ -1,4 +1,4 @@
-import { TokenEntry } from "./Token";
+import { TokenEntry } from "./TokenEntry";
 
 export type Row = Array<JSX.Element | string>;
 

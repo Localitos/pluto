@@ -2,7 +2,7 @@ import React from "react";
 
 import includes from "lodash/includes";
 
-import { TokenEntry } from "../types/Token";
+import { TokenEntry } from "../types/TokenEntry";
 
 import { FontSizePreview } from "../FontSizePreview";
 import { FontWeightPreview } from "../FontWeightPreview";

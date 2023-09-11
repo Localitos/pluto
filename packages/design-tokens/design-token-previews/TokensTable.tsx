@@ -8,10 +8,11 @@ import {
   Th,
   Td,
 } from "../../components/src/components/Table/";
-import { TOKENS, renderRows } from "./utils";
+import { TOKEN_COLUMNS } from "./constants";
 import { Token } from "./types/Token";
+import { buildTokensTableRows } from "./buildTokensTableRows";
 
-type TokenTypes = keyof typeof TOKENS;
+type TokenTypes = keyof typeof TOKEN_COLUMNS;
 
 export const TokensTable = ({
   type,
@@ -20,8 +21,8 @@ export const TokensTable = ({
   type: TokenTypes;
   data: Record<string, Record<string, Token>>;
 }): JSX.Element => {
-  const columns = TOKENS[type];
-  const rows = renderRows(columns, data);
+  const columns = TOKEN_COLUMNS[type];
+  const rows = buildTokensTableRows(columns, data);
 
   return (
     <Table style={{ width: "100%" }}>
