@@ -1,4 +1,5 @@
-import { ColorTokensTable } from "../../components/src/design-token-preview-tables/ColorTokensTable";
+import * as colorTokens from "../src/tokens/color.tokens.json";
+import { TokensTable } from "./TokensTable";
 
 # Color Tokens
 
@@ -6,4 +7,4 @@ import { ColorTokensTable } from "../../components/src/design-token-preview-tabl
 
 <br />
 
-<ColorTokensTable />
+<TokensTable type="color" data={colorTokens} />

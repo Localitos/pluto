@@ -1,25 +1,38 @@
 import React from "react";
 import map from "lodash/map";
-import { FontPreview } from "./FontPreview";
-import { Token } from "./types/Token";
-import { hexToHsla, hexToRgb } from "./utils/colors";
-import * as fontSizeTokens from "../src/tokens/font-size.tokens.json";
-import * as colorTokens from "../src/tokens/color.tokens.json";
+import keys from "lodash/keys";
+import camelCase from "lodash/camelCase";
+import capitalize from "lodash/capitalize";
+import invokeMap from "lodash/invokeMap";
 
+import fontSizeTokens from "../src/tokens/font-size.tokens.json";
+import fontWeightTokens from "../src/tokens/font-weight.tokens.json";
+import colorTokens from "../src/tokens/color.tokens.json";
+import iconSizeTokens from "../src/tokens/size.tokens.json";
+import spaceTokens from "../src/tokens/space.tokens.json";
+import borderStyleTokens from "../src/tokens/border-style.tokens.json";
+import borderWidthTokens from "../src/tokens/border-width.tokens.json";
+import borderRadiiTokens from "../src/tokens/border-radius.tokens.json";
+
+import {
+  createBorderRadiiPreview,
+  createSpacePreview,
+  createColorPreview,
+  createFontSizePreview,
+  createIconSizePreview,
+  createFontWeightPreview,
+  createBorderStylePreview,
+  createBorderWidthPreview,
+} from "./utils/previews";
+
+import { hexToHsla, hexToRgb } from "./utils/colors";
+import { Token, TokenEntry } from "./types/Token";
+import { Column, Row } from "./types/TokenTable";
+
+import { CopyToClipboardButton } from "./CopyToClipboardButton";
 
 const getKey = (object: Record<string, unknown>): string => {
-  return Object.keys(object)[0];
-};
-
-type Row = Array<JSX.Element | string>;
-type TokenEntry = [string, Token];
-type Column = {
-  name: string;
-  transform: (entry: TokenEntry) => string | JSX.Element;
-};
-
-const createFontPreview = ([tokenSuffix, token]: TokenEntry) => {
-  return <FontPreview fontSize={token.value} key={tokenSuffix} />;
+  return keys(object)[0];
 };
 
 const getValue = ([, token]: TokenEntry): string => {
@@ -31,28 +44,62 @@ const getComment = ([, token]: TokenEntry): string => {
 };
 
 const formatTokenName = (prefix: string, suffix: string) => {
-  return `${prefix}${suffix}`;
+  const tokenName = camelCase(`${prefix}${capitalize(suffix)}`);
+  return (
+    <div style={{ display: "flex" }}>
+      <div>{tokenName}</div>
+      <div>
+        <CopyToClipboardButton textToCopy={tokenName} />
+      </div>
+    </div>
+  );
 };
 
-
-
 export const TOKENS = {
+  [getKey(borderRadiiTokens)]: [
+    { name: "Pixels", transform: getValue },
+    { name: "Preview", transform: createBorderRadiiPreview },
+  ],
+  [getKey(borderWidthTokens)]: [
+    { name: "Pixels", transform: getValue },
+    { name: "Preview", transform: createBorderWidthPreview },
+  ],
+  [getKey(borderStyleTokens)]: [
+    { name: "Style", transform: getValue },
+    { name: "Preview", transform: createBorderStylePreview },
+  ],
+  [getKey(spaceTokens)]: [
+    { name: "Pixels", transform: getComment },
+    { name: "Rems", transform: getValue },
+    { name: "Preview", transform: createSpacePreview },
+  ],
+  [getKey(iconSizeTokens)]: [
+    { name: "Pixels", transform: getComment },
+    { name: "Rems", transform: getValue },
+    { name: "Preview", transform: createIconSizePreview },
+  ],
+  [getKey(fontWeightTokens)]: [
+    { name: "Weight", transform: getValue },
+    { name: "Preview", transform: createFontWeightPreview },
+  ],
   [getKey(fontSizeTokens)]: [
-    { name: "pixels", transform: getComment },
-    { name: "rems", transform: getValue },
-    { name: "preview", transform: createFontPreview },
+    { name: "Pixels", transform: getComment },
+    { name: "Rems", transform: getValue },
+    { name: "Preview", transform: createFontSizePreview },
   ],
   [getKey(colorTokens)]: [
     { name: "Hex", transform: getValue },
-    { name: "RGB", transform: ([, token]: TokenEntry) => hexToRgb(token.value) },
     {
-      name: "hsla",
-      transform: ([, token]: TokenEntry) => hexToHsla(token.value),
+      name: "RGB",
+      transform: ([, token]: TokenEntry): string => hexToRgb(token.value),
     },
-    { name: "Preview", transform: createFontPreview },
+    {
+      name: "Hsla",
+      transform: ([, token]: TokenEntry): string => hexToHsla(token.value),
+    },
+    { name: "Preview", transform: createColorPreview },
   ],
-}
-
+};
 
 export const renderRows = (
   columns: Column[],
@@ -63,13 +110,8 @@ export const renderRows = (
   return map(Object.entries(tokenEntries), (token) => {
     const [key] = token;
 
-    const row = [
-      formatTokenName(tokenName, key),
-      ...map(columns, (column) => {
-        return column.transform(token);
-      }),
-    ] as Row;
+    const tokenRows: Row[] = invokeMap(columns, "transform", token) as Row[];
 
-    return row;
-  });
+    return [formatTokenName(tokenName, key), ...tokenRows];
+  }) as Row[];
 };

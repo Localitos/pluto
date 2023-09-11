@@ -27,6 +27,9 @@ export const TokensTable = ({
     <Table style={{ width: "100%" }}>
       <THead>
         <Tr>
+          <Th>
+            <h3>Name</h3>
+          </Th>
           {map(columns, (column) => {
             return (
               <Th key={column.name}>

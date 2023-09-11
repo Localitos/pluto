@@ -1,4 +1,5 @@
-import { FontWeightTokensTable } from "../../components/src/design-token-preview-tables/FontWeightTokensTable";
+import { TokensTable } from "./TokensTable";
+import * as fontWeightTokens from "../src/tokens/font-weight.tokens.json";
 
 # Font Weight Tokens
 
@@ -6,4 +7,4 @@ import { FontWeightTokensTable } from "../../components/src/design-token-preview
 
 <br />
 
-<FontWeightTokensTable />
+<TokensTable type="font-weight" data={fontWeightTokens} />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Icon } from "../../../components/src/components/Icon/Icon";
-import { ThemeProvider, theme } from "../../../theme";
-import { copyToClipboard } from "./utils";
+import { Icon } from "../../components/src/components/Icon/Icon";
+import { ThemeProvider, theme } from "../../theme";
+import { copyToClipboard } from "./utils/copyToClipboard";
 
 interface IconProps {
   textToCopy: string;

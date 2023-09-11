@@ -1,6 +1,6 @@
 import React from "react";
 
-const FontPreview = ({ fontSize }: { fontSize: string }): JSX.Element => {
+const FontSizePreview = ({ fontSize }: { fontSize: string }): JSX.Element => {
   return (
     <div style={{ fontSize: fontSize }}>
       The quick brown fox jumped over the lazy dog.
@@ -8,4 +8,4 @@ const FontPreview = ({ fontSize }: { fontSize: string }): JSX.Element => {
   );
 };
 
-export { FontPreview };
+export { FontSizePreview };
