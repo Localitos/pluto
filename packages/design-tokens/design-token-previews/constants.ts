@@ -1,10 +1,3 @@
-import React from "react";
-import map from "lodash/map";
-import keys from "lodash/keys";
-import camelCase from "lodash/camelCase";
-import capitalize from "lodash/capitalize";
-import invokeMap from "lodash/invokeMap";
-
 import fontSizeTokens from "../src/tokens/font-size.tokens.json";
 import fontWeightTokens from "../src/tokens/font-weight.tokens.json";
 import colorTokens from "../src/tokens/color.tokens.json";
@@ -13,6 +6,8 @@ import spaceTokens from "../src/tokens/space.tokens.json";
 import borderStyleTokens from "../src/tokens/border-style.tokens.json";
 import borderWidthTokens from "../src/tokens/border-width.tokens.json";
 import borderRadiiTokens from "../src/tokens/border-radius.tokens.json";
+
+import { TokenEntry } from "./types/TokenEntry";
 
 import {
   createBorderRadiiPreview,
@@ -26,36 +21,9 @@ import {
 } from "./utils/previews";
 
 import { hexToHsla, hexToRgb } from "./utils/colors";
-import { Token, TokenEntry } from "./types/Token";
-import { Column, Row } from "./types/TokenTable";
+import { getComment, getKey, getValue } from "./utils/utils";
 
-import { CopyToClipboardButton } from "./CopyToClipboardButton";
-
-const getKey = (object: Record<string, unknown>): string => {
-  return keys(object)[0];
-};
-
-const getValue = ([, token]: TokenEntry): string => {
-  return token.value;
-};
-
-const getComment = ([, token]: TokenEntry): string => {
-  return token.comment || "";
-};
-
-const formatTokenName = (prefix: string, suffix: string) => {
-  const tokenName = camelCase(`${prefix}${capitalize(suffix)}`);
-  return (
-    <div style={{ display: "flex" }}>
-      <div>{tokenName}</div>
-      <div>
-        <CopyToClipboardButton textToCopy={tokenName} />
-      </div>
-    </div>
-  );
-};
-
-export const TOKENS = {
+export const TOKEN_COLUMNS = {
   [getKey(borderRadiiTokens)]: [
     { name: "Pixels", transform: getValue },
     { name: "Preview", transform: createBorderRadiiPreview },
@@ -99,19 +67,4 @@ export const TOKENS = {
     },
     { name: "Preview", transform: createColorPreview },
   ],
-};
-
-export const renderRows = (
-  columns: Column[],
-  tokens: Record<string, Record<string, Token>>
-): Array<Row> => {
-  const [tokenName, tokenEntries] = Object.entries(tokens)[0];
-
-  return map(Object.entries(tokenEntries), (token) => {
-    const [key] = token;
-
-    const tokenRows: Row[] = invokeMap(columns, "transform", token) as Row[];
-
-    return [formatTokenName(tokenName, key), ...tokenRows];
-  }) as Row[];
 };
