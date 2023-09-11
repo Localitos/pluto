@@ -1,4 +1,5 @@
-import { FontSizeTokensTable } from "../../components/src/design-token-preview-tables/FontSizeTokensTable";
+import { TokensTable } from "./TokensTable";
+import * as fontSizeTokens from "../src/tokens/font-size.tokens.json";
 
 # Font Size Tokens
 
@@ -6,4 +7,4 @@ import { FontSizeTokensTable } from "../../components/src/design-token-preview-t
 
 <br />
 
-<FontSizeTokensTable />
+<TokensTable type="font-size" data={fontSizeTokens} />

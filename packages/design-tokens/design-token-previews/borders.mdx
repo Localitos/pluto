@@ -1,6 +1,7 @@
-import { BorderStyleTokensTable } from "../../components/src/design-token-preview-tables/BorderStyleTokensTable";
-import { BorderWidthTokensTable } from "../../components/src/design-token-preview-tables/BorderWidthTokensTable";
-import { BorderRadiiTokensTable } from "../../components/src/design-token-preview-tables/BorderRadiiTokensTable";
+import borderStyleTokens from "../src/tokens/border-style.tokens.json";
+import borderWidthTokens from "../src/tokens/border-width.tokens.json";
+import borderRadiiTokens from "../src/tokens/border-radius.tokens.json";
+import { TokensTable } from "./TokensTable";
 
 # Border Tokens
 
@@ -10,12 +11,12 @@ import { BorderRadiiTokensTable } from "../../components/src/design-token-previe
 
 ## Border Styles
 
-<BorderStyleTokensTable />
+<TokensTable type="border-style" data={borderStyleTokens} />
 
 ## Border Widths
 
-<BorderWidthTokensTable />
+<TokensTable type="border-width" data={borderWidthTokens} />
 
 ## Border Radii
 
-<BorderRadiiTokensTable />
+<TokensTable type="border-radius" data={borderRadiiTokens} />

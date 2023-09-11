@@ -1,4 +1,5 @@
-import { IconSizeTokensTable } from "../../components/src/design-token-preview-tables/IconSizeTokensTable";
+import { TokensTable } from "./TokensTable";
+import * as iconSizeTokens from "../src/tokens/size.tokens.json";
 
 # Icon Size Tokens
 
@@ -6,4 +7,4 @@ import { IconSizeTokensTable } from "../../components/src/design-token-preview-t
 
 <br />
 
-<IconSizeTokensTable />
+<TokensTable type="size" data={iconSizeTokens} />

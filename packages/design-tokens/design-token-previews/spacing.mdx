@@ -1,4 +1,5 @@
-import { SpacingTokensTable } from "../../components/src/design-token-preview-tables/SpacingTokensTable";
+import { TokensTable } from "./TokensTable";
+import * as spaceTokens from "../src/tokens/space.tokens.json";
 
 # Spacing Tokens
 
@@ -6,4 +7,4 @@ import { SpacingTokensTable } from "../../components/src/design-token-preview-ta
 
 <br />
 
-<SpacingTokensTable />
+<TokensTable type="space" data={spaceTokens} />
