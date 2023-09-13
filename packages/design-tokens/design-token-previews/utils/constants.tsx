@@ -47,10 +47,18 @@ export const TOKEN_COLUMNS = {
     },
   ],
   [getTokenKey(borderStyleTokens)]: [
+    {
+      name: "Name",
+      transform: getTokenName(getTokenKey(borderStyleTokens)),
+    },
     { name: "Style", transform: getTokenValue },
     { name: "Preview", transform: createBox("borderStyle") },
   ],
   [getTokenKey(spaceTokens)]: [
+    {
+      name: "Name",
+      transform: getTokenName(getTokenKey(spaceTokens)),
+    },
     { name: "Pixels", transform: getTokenComment },
     { name: "Rems", transform: getTokenValue },
     {
@@ -59,20 +67,36 @@ export const TOKEN_COLUMNS = {
     },
   ],
   [getTokenKey(iconSizeTokens)]: [
+    {
+      name: "Name",
+      transform: getTokenName(getTokenKey(iconSizeTokens)),
+    },
     { name: "Pixels", transform: getTokenComment },
     { name: "Rems", transform: getTokenValue },
     { name: "Preview", transform: createIconSizePreview },
   ],
   [getTokenKey(fontWeightTokens)]: [
+    {
+      name: "Name",
+      transform: getTokenName(getTokenKey(fontWeightTokens)),
+    },
     { name: "Weight", transform: getTokenValue },
     { name: "Preview", transform: createBox("fontWeight", {}, EXAMPLE_TEXT) },
   ],
   [getTokenKey(fontSizeTokens)]: [
+    {
+      name: "Name",
+      transform: getTokenName(getTokenKey(fontSizeTokens)),
+    },
     { name: "Pixels", transform: getTokenComment },
     { name: "Rems", transform: getTokenValue },
     { name: "Preview", transform: createFontSizePreview },
   ],
   [getTokenKey(colorTokens)]: [
+    {
+      name: "Name",
+      transform: getTokenName(getTokenKey(colorTokens)),
+    },
     { name: "Hex", transform: getTokenValue },
     {
       name: "RGB",

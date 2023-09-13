@@ -1,5 +1,6 @@
 import React from "react";
 import map from "lodash/map";
+import isString from "lodash/isString";
 import {
   Table,
   THead,
@@ -40,9 +41,13 @@ export const TokensTable = ({
       <TBody>
         {map(rows, (row) => {
           return (
-            <Tr>
+            <Tr key={`${isString(row[0]) ? row[0] : row[0].props.tokenName}`}>
               {map(row, (cell) => {
-                return <Td>{cell}</Td>;
+                return (
+                  <Td key={isString(cell) ? cell : `${cell.props.tokenName}`}>
+                    {cell}
+                  </Td>
+                );
               })}
             </Tr>
           );
