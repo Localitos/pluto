@@ -1,10 +1,11 @@
 import React from "react";
+import { Box } from "../../../components/src/primitives/Box";
 
 const FontSizePreview = ({ fontSize }: { fontSize: string }): JSX.Element => {
   return (
-    <div style={{ fontSize: fontSize }}>
+    <Box.div style={{ fontSize: fontSize }}>
       The quick brown fox jumped over the lazy dog.
-    </div>
+    </Box.div>
   );
 };
 

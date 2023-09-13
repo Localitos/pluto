@@ -7,10 +7,10 @@ import {
   Tr,
   Th,
   Td,
-} from "../../components/src/components/Table/";
-import { TOKEN_COLUMNS } from "./constants";
-import { Token } from "./types/Token";
-import { buildTokensTableRows } from "./buildTokensTableRows";
+} from "../../../components/src/components/Table/";
+import { Token } from "../types/Token";
+import { TOKEN_COLUMNS } from "../utils/constants";
+import { buildTokensTableRows } from "../utils";
 
 type TokenTypes = keyof typeof TOKEN_COLUMNS;
 
@@ -28,9 +28,6 @@ export const TokensTable = ({
     <Table style={{ width: "100%" }}>
       <THead>
         <Tr>
-          <Th>
-            <h3>Name</h3>
-          </Th>
           {map(columns, (column) => {
             return (
               <Th key={column.name}>

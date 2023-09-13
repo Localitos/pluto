@@ -1,23 +1,7 @@
 import React from "react";
-import keys from "lodash/keys";
 import camelCase from "lodash/camelCase";
 import capitalize from "lodash/capitalize";
-
-import { TokenEntry } from "../types/TokenEntry";
-
-import { CopyToClipboardButton } from "../CopyToClipboardButton";
-
-export const getKey = (object: Record<string, unknown>): string => {
-  return keys(object)[0];
-};
-
-export const getValue = ([, token]: TokenEntry): string => {
-  return token.value;
-};
-
-export const getComment = ([, token]: TokenEntry): string => {
-  return token.comment || "";
-};
+import { CopyToClipboardButton } from "./CopyToClipboardButton";
 
 export const formatTokenName = (
   prefix: string,

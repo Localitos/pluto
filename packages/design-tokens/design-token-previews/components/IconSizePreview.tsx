@@ -1,7 +1,7 @@
 import React from "react";
 import { SystemProp, Theme } from "@xstyled/styled-components";
-import { Icon } from "../../components/src/components/Icon/Icon";
-import { ThemeProvider, theme } from "../../theme";
+import { Icon } from "../../../components/src/components/Icon/Icon";
+import { ThemeProvider, theme } from "../../../theme";
 
 const IconSizePreview = ({ pixels }: { pixels: string }): JSX.Element => {
   return (
