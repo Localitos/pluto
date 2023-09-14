@@ -1,6 +1,6 @@
 import { TokenEntry } from "./TokenEntry";
 
-export type Column = {
+export type TokenColumn = {
   name: string;
   transform: (entry: TokenEntry) => JSX.Element | string;
 };

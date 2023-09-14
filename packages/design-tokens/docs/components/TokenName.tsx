@@ -7,7 +7,6 @@ export const TokenName = ({
 }: {
   tokenName: string;
 }): JSX.Element => {
-  // const tokenName = camelCase(`${prefix}${capitalize(suffix)}`);
   return (
     <Box.div style={{ display: "flex" }}>
       <Box.div>{tokenName}</Box.div>

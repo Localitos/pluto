@@ -1,9 +1,14 @@
 import React from "react";
+
 import { SystemProp, Theme } from "@xstyled/styled-components";
 import { Icon } from "../../../components/src/components/Icon/Icon";
 import { ThemeProvider, theme } from "../../../theme";
+import { TokenEntry } from "../types/TokenEntry";
 
-const IconSizePreview = ({ pixels }: { pixels: string }): JSX.Element => {
+import { getTokenValue } from "./getTokenValue";
+
+export const createIconPreview = (tokenEntry: TokenEntry): JSX.Element => {
+  const pixels = getTokenValue(tokenEntry);
   return (
     <ThemeProvider theme={theme}>
       <Icon
@@ -15,5 +20,3 @@ const IconSizePreview = ({ pixels }: { pixels: string }): JSX.Element => {
     </ThemeProvider>
   );
 };
-
-export { IconSizePreview };
