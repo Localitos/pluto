@@ -1,3 +1,4 @@
+import React from "react";
 import fontSizeTokens from "../../src/tokens/font-size.tokens.json";
 import fontWeightTokens from "../../src/tokens/font-weight.tokens.json";
 import colorTokens from "../../src/tokens/color.tokens.json";
@@ -6,9 +7,8 @@ import spaceTokens from "../../src/tokens/space.tokens.json";
 import borderStyleTokens from "../../src/tokens/border-style.tokens.json";
 import borderWidthTokens from "../../src/tokens/border-width.tokens.json";
 import borderRadiiTokens from "../../src/tokens/border-radius.tokens.json";
-import { Icon, IconProps } from "../../../components/src/components/Icon/Icon";
+import { Icon } from "../../../components/src/components/Icon/Icon";
 import { TokenEntry } from "../types/TokenEntry";
-import { createPreview } from "./createPreview";
 import {
   getTokenComment,
   getTokenKey,
@@ -19,6 +19,7 @@ import {
 } from "../utils";
 import { Box } from "../../../components/src/primitives/Box";
 import { Text } from "../../../components/src/primitives/Text";
+import { createPreview } from "./createPreview";
 
 const TEXT_PREVIEW = (
   <Text.span>The quick brown fox jumped over the lazy dog.</Text.span>
@@ -101,8 +102,8 @@ export const TOKEN_COLUMNS = {
         children: (
           <Box.div
             backgroundColor="colorBackgroundPrimaryWeakest"
-            w="50px"
             h="50px"
+            w="50px"
           />
         ),
         componentProps: {
@@ -122,7 +123,7 @@ export const TOKEN_COLUMNS = {
     { name: "Rems", transform: getTokenValue },
     {
       name: "Preview",
-      transform: createPreview<IconProps>({
+      transform: createPreview({
         prefix: getTokenKey(iconSizeTokens),
         component: Icon,
         componentProps: {
@@ -134,8 +135,8 @@ export const TOKEN_COLUMNS = {
         children: (
           <Box.div
             backgroundColor="colorBackgroundPrimaryWeakest"
-            w="50px"
             h="50px"
+            w="50px"
           />
         ),
       }),

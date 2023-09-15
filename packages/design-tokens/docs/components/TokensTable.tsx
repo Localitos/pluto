@@ -1,6 +1,5 @@
 import React from "react";
 import map from "lodash/map";
-import isString from "lodash/isString";
 import {
   Table,
   THead,
