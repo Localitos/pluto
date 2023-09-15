@@ -10,8 +10,8 @@ import {
   Td,
 } from "../../../components/src/components/Table/";
 import { Token } from "../types/Token";
-import { TOKEN_COLUMNS } from "../utils/constants";
 import { buildTokensTableRows } from "../utils";
+import { TOKEN_COLUMNS } from "./constants";
 
 type TokenTypes = keyof typeof TOKEN_COLUMNS;
 
