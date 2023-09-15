@@ -1,9 +1,10 @@
 import React from "react";
 import replace from "lodash/replace";
+import camelCase from "lodash/camelCase";
+import upperFirst from "lodash/upperFirst";
+import { ThemeProvider, theme } from "@localyze-pluto/theme";
 import { TokenEntry } from "../types/TokenEntry";
 import { Box, BoxProps } from "../../../components/src/primitives/Box";
-import { ThemeProvider, theme } from "@localyze-pluto/theme";
-import { camelCase, upperFirst } from "lodash";
 import { IconProps } from "../../../components/src/components/Icon/Icon";
 
 type PreviewProps = {
@@ -26,7 +27,7 @@ export const createPreview =
   }: PreviewProps) =>
   // eslint-disable-next-line react/display-name
   ([suffix]: TokenEntry): JSX.Element => {
-    const tokenProps = overrideProps[suffix] || {};
+    const tokenProps = overrideProps[suffix];
     const normalizedSuffix = replace(
       upperFirst(camelCase(suffix)),
       "Negative",
@@ -34,7 +35,7 @@ export const createPreview =
     );
 
     const props = {
-      ...(componentProps || {}),
+      ...componentProps,
       ...tokenProps,
       children,
       [attribute]: `${camelCase(prefix)}${normalizedSuffix}`,
@@ -43,6 +44,7 @@ export const createPreview =
     return (
       <ThemeProvider theme={theme}>
         <Box.div className="sb-unstyled">
+          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
           {/* @ts-ignore-next-line */}
           <Component {...props}>{children}</Component>
         </Box.div>
