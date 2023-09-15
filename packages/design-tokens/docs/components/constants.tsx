@@ -6,13 +6,10 @@ import spaceTokens from "../../src/tokens/space.tokens.json";
 import borderStyleTokens from "../../src/tokens/border-style.tokens.json";
 import borderWidthTokens from "../../src/tokens/border-width.tokens.json";
 import borderRadiiTokens from "../../src/tokens/border-radius.tokens.json";
-
+import { Icon, IconProps } from "../../../components/src/components/Icon/Icon";
 import { TokenEntry } from "../types/TokenEntry";
-
-import { createBox } from "../components/createBox";
+import { createPreview } from "./createPreview";
 import {
-  createIconPreview,
-  createFontSizePreview,
   getTokenComment,
   getTokenKey,
   getTokenName,
@@ -20,8 +17,12 @@ import {
   hexToRgb,
   hexToHsla,
 } from "../utils";
+import { Box } from "../../../components/src/primitives/Box";
+import { Text } from "../../../components/src/primitives/Text";
 
-const EXAMPLE_TEXT = "The quick brown fox jumped over the lazy dog.";
+const TEXT_PREVIEW = (
+  <Text.span>The quick brown fox jumped over the lazy dog.</Text.span>
+);
 
 export const TOKEN_COLUMNS = {
   [getTokenKey(borderRadiiTokens)]: [
@@ -32,10 +33,19 @@ export const TOKEN_COLUMNS = {
     { name: "Pixels", transform: getTokenValue },
     {
       name: "Preview",
-      transform: createBox("borderRadius", {
-        borderStyle: "solid",
-        w: "50px",
-        h: "50px",
+      transform: createPreview({
+        prefix: getTokenKey(borderRadiiTokens),
+        attribute: "borderRadius",
+        componentProps: {
+          borderStyle: "borderStyleSolid",
+          w: "50px",
+          h: "50px",
+        },
+        overrideProps: {
+          pill: {
+            h: "30px",
+          },
+        },
       }),
     },
   ],
@@ -47,10 +57,14 @@ export const TOKEN_COLUMNS = {
     { name: "Pixels", transform: getTokenValue },
     {
       name: "Preview",
-      transform: createBox("borderWidth", {
-        borderStyle: "solid",
-        w: "50px",
-        h: "50px",
+      transform: createPreview({
+        prefix: getTokenKey(borderWidthTokens),
+        attribute: "borderWidth",
+        componentProps: {
+          borderStyle: "borderStyleSolid",
+          w: "50px",
+          h: "50px",
+        },
       }),
     },
   ],
@@ -62,7 +76,14 @@ export const TOKEN_COLUMNS = {
     { name: "Style", transform: getTokenValue },
     {
       name: "Preview",
-      transform: createBox("borderStyle", { w: "50px", h: "50px" }),
+      transform: createPreview({
+        prefix: getTokenKey(borderStyleTokens),
+        attribute: "borderStyle",
+        componentProps: {
+          w: "50px",
+          h: "50px",
+        },
+      }),
     },
   ],
   [getTokenKey(spaceTokens)]: [
@@ -74,7 +95,22 @@ export const TOKEN_COLUMNS = {
     { name: "Rems", transform: getTokenValue },
     {
       name: "Preview",
-      transform: createBox("w", { backgroundColor: "#413cff" }),
+      transform: createPreview({
+        prefix: getTokenKey(spaceTokens),
+        attribute: "p",
+        children: (
+          <Box.div
+            backgroundColor="colorBackgroundPrimaryWeakest"
+            w="50px"
+            h="50px"
+          />
+        ),
+        componentProps: {
+          backgroundColor: "colorBackgroundPrimaryWeak",
+          display: "inline-flex",
+          justifyContent: "center",
+        },
+      }),
     },
   ],
   [getTokenKey(iconSizeTokens)]: [
@@ -84,7 +120,26 @@ export const TOKEN_COLUMNS = {
     },
     { name: "Pixels", transform: getTokenComment },
     { name: "Rems", transform: getTokenValue },
-    { name: "Preview", transform: createIconPreview },
+    {
+      name: "Preview",
+      transform: createPreview<IconProps>({
+        prefix: getTokenKey(iconSizeTokens),
+        component: Icon,
+        componentProps: {
+          decorative: true,
+          display: "flex",
+          icon: "HeartIcon",
+        },
+        attribute: "size",
+        children: (
+          <Box.div
+            backgroundColor="colorBackgroundPrimaryWeakest"
+            w="50px"
+            h="50px"
+          />
+        ),
+      }),
+    },
   ],
   [getTokenKey(fontWeightTokens)]: [
     {
@@ -92,7 +147,14 @@ export const TOKEN_COLUMNS = {
       transform: getTokenName(fontWeightTokens),
     },
     { name: "Weight", transform: getTokenValue },
-    { name: "Preview", transform: createBox("fontWeight", {}, EXAMPLE_TEXT) },
+    {
+      name: "Preview",
+      transform: createPreview({
+        prefix: getTokenKey(fontWeightTokens),
+        attribute: "fontWeight",
+        children: TEXT_PREVIEW,
+      }),
+    },
   ],
   [getTokenKey(fontSizeTokens)]: [
     {
@@ -101,7 +163,21 @@ export const TOKEN_COLUMNS = {
     },
     { name: "Pixels", transform: getTokenComment },
     { name: "Rems", transform: getTokenValue },
-    { name: "Preview", transform: createFontSizePreview },
+    {
+      name: "Preview",
+      transform: createPreview({
+        prefix: getTokenKey(fontSizeTokens),
+        attribute: "fontSize",
+        children: TEXT_PREVIEW,
+        componentProps: {
+          p: "space40",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          maxWidth: "600px",
+        },
+      }),
+    },
   ],
   [getTokenKey(colorTokens)]: [
     {
@@ -117,6 +193,17 @@ export const TOKEN_COLUMNS = {
       name: "Hsla",
       transform: ([, token]: TokenEntry): string => hexToHsla(token.value),
     },
-    { name: "Preview", transform: createBox("backgroundColor") },
+    {
+      name: "Preview",
+      transform: createPreview({
+        prefix: getTokenKey(colorTokens),
+        attribute: "backgroundColor",
+        componentProps: {
+          w: "70px",
+          h: "30px",
+          borderRadius: "borderRadius35",
+        },
+      }),
+    },
   ],
 };
