@@ -12,6 +12,7 @@ import {
 import { Token } from "../types/Token";
 import { buildTokensTableRows } from "../utils";
 import { TOKEN_COLUMNS } from "./constants";
+import { TokenName } from "./TokenName";
 
 type TokenTypes = keyof typeof TOKEN_COLUMNS;
 
@@ -40,12 +41,18 @@ export const TokensTable = ({
       </THead>
       <TBody>
         {map(rows, (row) => {
+          const tokenName = row[0] as string;
           return (
-            <Tr key={`${isString(row[0]) ? row[0] : row[0].props.tokenName}`}>
-              {map(row, (cell) => {
+            <Tr key={tokenName}>
+              {map(row, (cell, index) => {
+                const column = columns[index].name;
                 return (
-                  <Td key={isString(cell) ? cell : `${cell.props.tokenName}`}>
-                    {cell}
+                  <Td key={`${tokenName}${column}`}>
+                    {index === 0 ? (
+                      <TokenName tokenName={cell as string} />
+                    ) : (
+                      cell
+                    )}
                   </Td>
                 );
               })}

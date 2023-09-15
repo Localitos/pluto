@@ -1,1 +1,1 @@
-export type TokenRow = Array<JSX.Element | string>;
+export type TokenRow = [...string[], JSX.Element];
