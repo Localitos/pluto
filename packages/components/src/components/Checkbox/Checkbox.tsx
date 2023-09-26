@@ -167,7 +167,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
           )}
         </StyledCheckbox>
         <Text.label
-          color={error ? "colorTextError" : "colorTextStronger"}
+          color="colorTextStrongest"
           fontSize="fontSize20"
           htmlFor={id}
           lineHeight="lineHeight20"
