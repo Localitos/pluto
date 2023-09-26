@@ -89,7 +89,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
           </Box.span>
         </Box.button>
         <Text.label
-          color={hasError ? "colorTextError" : "colorTextStronger"}
+          color="colorTextStrongest"
           fontFamily="fontFamilyModerat"
           fontSize="fontSize20"
           fontWeight="fontWeightRegular"
