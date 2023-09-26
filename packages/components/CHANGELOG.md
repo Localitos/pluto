@@ -1,5 +1,14 @@
 # @localyze-pluto/components
 
+## 13.4.0
+
+### Minor Changes
+
+- [#1008](https://github.com/Localitos/pluto/pull/1008) [`f25303f`](https://github.com/Localitos/pluto/commit/f25303fbe2e362be2f2a6a1ff73a5d5a4b3e684b) Thanks [@apvale](https://github.com/apvale)! - [Radio] and [Checkbox]:
+
+  - Removes color red from Radio and Checkbox label when in error state
+  - Changes label color to colorTextStrongest
+
 ## 13.3.2
 
 ### Patch Changes
