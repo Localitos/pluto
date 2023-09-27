@@ -5,7 +5,13 @@ import { Icon } from "../Icon";
 import { IconName } from "../Icon/types/IconName";
 
 type BadgeSizeOptions = "large" | "small";
-type BadgeColorOptions = "blue" | "gray" | "green" | "purple" | "yellow";
+type BadgeColorOptions =
+  | "blue"
+  | "gray"
+  | "green"
+  | "purple"
+  | "red"
+  | "yellow";
 
 export interface BadgeProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
@@ -48,6 +54,12 @@ const getColorProps = (
       return {
         backgroundColor: "colorBackgroundLinkVisited",
         color: "colorTextLinkVisited",
+      };
+    }
+    case "red": {
+      return {
+        backgroundColor: "colorBackgroundError",
+        color: "colorTextStrongest",
       };
     }
     default: {
