@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.4.1
+
+### Patch Changes
+
+- [#1010](https://github.com/Localitos/pluto/pull/1010) [`e134b44`](https://github.com/Localitos/pluto/commit/e134b44b38fad1cf1f54d69661ab4042e1b5076e) Thanks [@rssilva](https://github.com/rssilva)! - Add mail-question icon
+
 ## 13.4.0
 
 ### Minor Changes
