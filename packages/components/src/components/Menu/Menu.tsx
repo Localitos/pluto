@@ -51,7 +51,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
           <Box.div
             borderColor="colorBorderPrimary"
             borderRadius="borderRadius20"
-            borderStyle="borderSolid"
+            borderStyle="borderStyleSolid"
             borderWidth="borderWidth10"
             display="flex"
             flexDirection="column"
