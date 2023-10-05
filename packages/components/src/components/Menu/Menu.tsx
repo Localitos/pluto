@@ -22,7 +22,7 @@ export type MenuProps = {
   items: MenuItemProps[];
 };
 
-const EllipsisButton = (
+const VerticalEllipsisButton = (
   <Button
     aria-label="Open menu"
     iconOnly
@@ -37,7 +37,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
   ({ menuButton, items }, ref) => {
     const state = useMenuState();
 
-    const button = menuButton || EllipsisButton;
+    const button = menuButton || VerticalEllipsisButton;
 
     return (
       <div>
