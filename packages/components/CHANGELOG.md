@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.5.0
+
+### Minor Changes
+
+- [#1026](https://github.com/Localitos/pluto/pull/1026) [`4fe99ec`](https://github.com/Localitos/pluto/commit/4fe99ece1f565da0f762164ba8d0a7a33b7d40f6) Thanks [@sliminas](https://github.com/sliminas)! - Add the menu component
+
 ## 13.4.1
 
 ### Patch Changes
