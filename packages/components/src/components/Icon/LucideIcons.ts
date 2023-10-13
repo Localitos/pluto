@@ -10,6 +10,7 @@ import {
   Slack,
   Wallet,
   Icon,
+  Copy,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
 
@@ -24,4 +25,5 @@ export const LucideIcons: Record<LucideIconName, Icon> = {
   "pie-chart": PieChart,
   puzzle: Puzzle,
   wallet: Wallet,
+  copy: Copy,
 };
