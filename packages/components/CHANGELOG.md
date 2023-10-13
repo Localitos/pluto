@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.5.2
+
+### Patch Changes
+
+- [#1033](https://github.com/Localitos/pluto/pull/1033) [`50e53cd`](https://github.com/Localitos/pluto/commit/50e53cd46e69f08ed6c9e93f0be90db58e706620) Thanks [@apvale](https://github.com/apvale)! - [Icon] Add Lucid copy Icon to the list
+
 ## 13.5.1
 
 ### Patch Changes
