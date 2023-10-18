@@ -5,6 +5,7 @@ export type LucideIconName =
   | "heart-handshake"
   | "mail-question"
   | "palette"
+  | "pen-square"
   | "pie-chart"
   | "puzzle"
   | "save"
