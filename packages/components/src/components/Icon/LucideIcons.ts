@@ -9,12 +9,12 @@ import {
   Save,
   Slack,
   Wallet,
-  Icon,
+  LucideIcon,
   Copy,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
 
-export const LucideIcons: Record<LucideIconName, Icon> = {
+export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   "baggage-claim": BaggageClaim,
   "building-2": Building2,
   "heart-handshake": HeartHandshake,
