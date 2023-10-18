@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 13.5.3
+
+### Patch Changes
+
+- [#1043](https://github.com/Localitos/pluto/pull/1043) [`228cca6`](https://github.com/Localitos/pluto/commit/228cca6c683595c316913d9e111cf6bbacd14855) Thanks [@apvale](https://github.com/apvale)! - [Icons] Add pen-square lucid icon to the list
+
 ## 13.5.2
 
 ### Patch Changes
