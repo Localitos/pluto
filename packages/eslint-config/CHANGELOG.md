@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.1.1
+
+### Patch Changes
+
+- [#1046](https://github.com/Localitos/pluto/pull/1046) [`3bcf532`](https://github.com/Localitos/pluto/commit/3bcf5322e0d0f78f01579f650a56305bfe516dd4) Thanks [@apvale](https://github.com/apvale)! - Updates eslint-plugin-jest-dom to newest version so we fix the warnings on tests
+
 ## 1.1.0
 
 ### Minor Changes
