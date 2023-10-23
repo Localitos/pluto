@@ -1,8 +1,11 @@
 import "@testing-library/jest-dom";
+import failOnConsole from "jest-fail-on-console";
 
 type JestToErrorArg = Parameters<
   jest.Matchers<unknown, () => unknown>["toThrow"]
 >[0];
+
+failOnConsole({});
 
 const matchers = {
   /**
