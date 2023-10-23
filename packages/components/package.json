@@ -28,7 +28,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.16",
+    "@heroicons/react": "^2.0.18",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-progress": "^1.0.1",
     "@radix-ui/react-radio-group": "^1.1.1",
@@ -40,7 +40,7 @@
     "react-hook-form": "^7.43.2"
   },
   "peerDependencies": {
-    "@heroicons/react": "^2.0.16",
+    "@heroicons/react": "^2.0.18",
     "@localyze-pluto/theme": "^6.2.3",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-progress": "^1.0.1",
@@ -60,7 +60,7 @@
     "styled-components": "^5.3.11"
   },
   "devDependencies": {
-    "@heroicons/react": "^2.0.16",
+    "@heroicons/react": "^2.0.18",
     "@localyze-pluto/eslint-config": "^1.0.3",
     "@localyze-pluto/theme": "^6.2.3",
     "@localyze-pluto/tsconfig": "^1.0.0",
