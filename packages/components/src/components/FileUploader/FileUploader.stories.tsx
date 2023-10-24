@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
-import Uppy from "@uppy/core";
+import { Uppy } from "@uppy/core";
 import { Button } from "../Button";
 import { FileUploader } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";

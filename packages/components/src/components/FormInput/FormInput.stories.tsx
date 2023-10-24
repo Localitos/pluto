@@ -127,7 +127,7 @@ export const AsControlledFormInput = (): JSX.Element => {
   useEffect(() => {
     // Trigger validation on mount
     trigger();
-  }, []);
+  }, [trigger]);
 
   const inputID = useUID();
   return (

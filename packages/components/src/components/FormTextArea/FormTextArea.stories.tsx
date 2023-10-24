@@ -120,7 +120,7 @@ export const AsControlledFormTextArea = (): JSX.Element => {
   useEffect(() => {
     // Trigger validation on mount
     trigger();
-  }, []);
+  }, [trigger]);
 
   const inputID = useUID();
   return (
