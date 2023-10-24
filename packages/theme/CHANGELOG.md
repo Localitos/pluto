@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 7.0.0
+
+### Minor Changes
+
+- [#1063](https://github.com/Localitos/pluto/pull/1063) [`cb5da03`](https://github.com/Localitos/pluto/commit/cb5da03d2ac3b4e345324960243d711c4e77af47) Thanks [@rssilva](https://github.com/rssilva)! - chore: update tslib, typescript eslint package replacing a rule, typescript parser
+
+### Patch Changes
+
+- Updated dependencies [[`cb5da03`](https://github.com/Localitos/pluto/commit/cb5da03d2ac3b4e345324960243d711c4e77af47)]:
+  - @localyze-pluto/design-tokens@0.5.0
+
 ## 6.3.0
 
 ### Minor Changes
