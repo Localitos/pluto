@@ -28,7 +28,7 @@ export interface BoxProps extends SystemProps {
   borderBottomRightRadius?: SystemProp<keyof Theme["radii"], Theme>;
   borderBottomLeftRadius?: SystemProp<keyof Theme["radii"], Theme>;
   boxShadow?: SystemProp<keyof Theme["shadows"], Theme> | "none";
-  color?: SystemProp<keyof Theme["colors"], Theme> | "currentColor" | "inherit";
+  color?: SystemProp<keyof Theme["colors"], Theme> | "currentcolor" | "inherit";
   fontFamily?: SystemProp<keyof Theme["fonts"], Theme> | "inherit";
   fontSize?: SystemProp<keyof Theme["fontSizes"], Theme> | "inherit";
   fontWeight?: SystemProp<keyof Theme["fontWeights"], Theme> | "inherit";

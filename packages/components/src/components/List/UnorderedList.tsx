@@ -2,7 +2,7 @@ import styled from "@xstyled/styled-components";
 import React from "react";
 import { Box } from "../../primitives/Box";
 
-type UnorderedListColorOptions = "colorTextStrongest" | "currentColor";
+type UnorderedListColorOptions = "colorTextStrongest" | "currentcolor";
 type UnorderedListMarginOptions = "space0" | "space70";
 
 export interface UnorderedListProps
