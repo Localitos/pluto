@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- [#1063](https://github.com/Localitos/pluto/pull/1063) [`cb5da03`](https://github.com/Localitos/pluto/commit/cb5da03d2ac3b4e345324960243d711c4e77af47) Thanks [@rssilva](https://github.com/rssilva)! - chore: update tslib, typescript eslint package replacing a rule, typescript parser
+
 ## 1.1.1
 
 ### Patch Changes
