@@ -81,7 +81,7 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": ["error"],
         "@typescript-eslint/no-extra-parens": ["error", "functions"],
         "@typescript-eslint/no-unsafe-return": ["error"],
-        "@typescript-eslint/sort-type-union-intersection-members": ["error"],
+        "@typescript-eslint/sort-type-constituents": ["error"],
         "@typescript-eslint/restrict-plus-operands": ["error"],
         "@typescript-eslint/no-unnecessary-condition": ["error"],
         "@typescript-eslint/no-unsafe-assignment": ["error"],
