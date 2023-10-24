@@ -1,5 +1,18 @@
 # @localyze-pluto/components
 
+## 14.0.0
+
+### Minor Changes
+
+- [#1056](https://github.com/Localitos/pluto/pull/1056) [`9a9bc68`](https://github.com/Localitos/pluto/commit/9a9bc68cf38d304e76fe2e7030eff04716c27cb8) Thanks [@rssilva](https://github.com/rssilva)! - Bump several dependencies fixing security alerts and minor changes
+
+### Patch Changes
+
+- [#1058](https://github.com/Localitos/pluto/pull/1058) [`a4f5bb2`](https://github.com/Localitos/pluto/commit/a4f5bb2ca0afde8ad3bea4730c3bbaa5bb99e078) Thanks [@rssilva](https://github.com/rssilva)! - Fix minor lint errors regarding imports and dependency arrays
+
+- Updated dependencies [[`9a9bc68`](https://github.com/Localitos/pluto/commit/9a9bc68cf38d304e76fe2e7030eff04716c27cb8)]:
+  - @localyze-pluto/theme@6.3.0
+
 ## 13.5.3
 
 ### Patch Changes

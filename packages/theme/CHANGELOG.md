@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 6.3.0
+
+### Minor Changes
+
+- [#1056](https://github.com/Localitos/pluto/pull/1056) [`9a9bc68`](https://github.com/Localitos/pluto/commit/9a9bc68cf38d304e76fe2e7030eff04716c27cb8) Thanks [@rssilva](https://github.com/rssilva)! - Bump several dependencies fixing security alerts and minor changes
+
 ## 6.2.3
 
 ### Patch Changes
