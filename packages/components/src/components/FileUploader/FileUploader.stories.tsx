@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
-import UppyCore from "@uppy/core";
+import { Uppy } from "@uppy/core";
 import { Button } from "../Button";
 import { FileUploader } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";
@@ -150,7 +150,7 @@ DisabledWithFile.parameters = {
 };
 
 export const WithUppy = (): React.ReactElement => {
-  const uppy = new UppyCore();
+  const uppy = new Uppy();
   const [fileInformation, setFileInformation] = useState<{
     fileName: string;
     fileSize: string;
