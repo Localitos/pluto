@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 14.1.0
+
+### Minor Changes
+
+- [#1061](https://github.com/Localitos/pluto/pull/1061) [`feeb5c4`](https://github.com/Localitos/pluto/commit/feeb5c4617528fa9063290bb26d46b2f391a1c35) Thanks [@rssilva](https://github.com/rssilva)! - chore: update radix-ui react-checkbox, react-progress and react-toast
+
 ## 14.0.0
 
 ### Minor Changes
