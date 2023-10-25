@@ -4,8 +4,8 @@ import {
   Menu as AriakitMenu,
   MenuButton,
   MenuItem,
-  useMenuState,
-} from "ariakit";
+  useMenuStore,
+} from "@ariakit/react";
 import map from "lodash/map";
 import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
@@ -36,7 +36,7 @@ const VerticalEllipsisButton = (
 /** A menu is a button element that opens a menu with items. */
 const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
   ({ menuButton, items }, ref) => {
-    const state = useMenuState();
+    const state = useMenuStore();
 
     const button = menuButton || VerticalEllipsisButton;
 
@@ -48,7 +48,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
           }
         </MenuButton>
 
-        <AriakitMenu state={state}>
+        <AriakitMenu store={state}>
           <Box.div
             backgroundColor="colorBackground"
             borderRadius="borderRadius20"
