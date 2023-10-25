@@ -3875,21 +3875,21 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-a11y@^7.0.22":
-  version "7.0.22"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-7.0.22.tgz#278513a0dc8b570ae94f5e78b2f5213370907546"
-  integrity sha512-J+K8UWZMR4YxWX2tKocFVW5qBYeRgOAMLK8g+AOfTLJhqoMrSWJqPxlGos+sTqgJO0xtQdTMc5cEcPT3WX317Q==
+"@storybook/addon-a11y@^7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-7.5.1.tgz#ed7876245c7b00fab4d742a058a32c577af17a79"
+  integrity sha512-BzmSIhgqR+WSS5gqSOyzFACs20Nv0Wk9b4lpUWw5zEqZkXy1PFAUyRQ65kD9Tdjc1O2KL2Zi1h/gi0O6dWldMg==
   dependencies:
-    "@storybook/addon-highlight" "7.0.22"
-    "@storybook/channels" "7.0.22"
-    "@storybook/client-logger" "7.0.22"
-    "@storybook/components" "7.0.22"
-    "@storybook/core-events" "7.0.22"
+    "@storybook/addon-highlight" "7.5.1"
+    "@storybook/channels" "7.5.1"
+    "@storybook/client-logger" "7.5.1"
+    "@storybook/components" "7.5.1"
+    "@storybook/core-events" "7.5.1"
     "@storybook/global" "^5.0.0"
-    "@storybook/manager-api" "7.0.22"
-    "@storybook/preview-api" "7.0.22"
-    "@storybook/theming" "7.0.22"
-    "@storybook/types" "7.0.22"
+    "@storybook/manager-api" "7.5.1"
+    "@storybook/preview-api" "7.5.1"
+    "@storybook/theming" "7.5.1"
+    "@storybook/types" "7.5.1"
     axe-core "^4.2.0"
     lodash "^4.17.21"
     react-resize-detector "^7.1.2"
@@ -4052,14 +4052,14 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-rc.4"
 
-"@storybook/addon-highlight@7.0.22":
-  version "7.0.22"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.0.22.tgz#1a02d91db0644eb2e7ed8ae98660e53d990acfe0"
-  integrity sha512-Bwxu86rg5AN+mgPyJ2NaTswx7D0L8BROW3eLvjTDI6B0qqDgkCU5KQ/N5POiYCYIMLlSO88cX/3SEpRendl6Mg==
+"@storybook/addon-highlight@7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.5.1.tgz#575152b8e54464ef6a29f5f58c19c14bfd45730c"
+  integrity sha512-js9OV17kpjRowuaGAPfI9aOn/zzt8P589ACZE+/eYBO9jT65CADwAUxg//Uq0/he+Ac9495pcK3BcYyDeym7/g==
   dependencies:
-    "@storybook/core-events" "7.0.22"
+    "@storybook/core-events" "7.5.1"
     "@storybook/global" "^5.0.0"
-    "@storybook/preview-api" "7.0.22"
+    "@storybook/preview-api" "7.5.1"
 
 "@storybook/addon-links@^7.0.22":
   version "7.0.22"
