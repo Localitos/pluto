@@ -123,3 +123,36 @@ const ManyItemsMenu = (): JSX.Element => {
 export const WithManyItems: Story = {
   render: (): JSX.Element => <ManyItemsMenu />,
 };
+
+const DisabledButtonsMenu = (): JSX.Element => {
+  const items: MenuItemProps[] = [
+    {
+      onClick: noop,
+      label: "Option 1",
+    },
+    {
+      onClick: noop,
+      label: "Option 2",
+      disabled: true,
+    },
+    {
+      onClick: noop,
+      label: "Option 3",
+    },
+    {
+      onClick: noop,
+      label: "Option 4",
+      disabled: true,
+    },
+  ];
+
+  return (
+    <Box.div minHeight="400px">
+      <Menu items={items} />
+    </Box.div>
+  );
+};
+
+export const WithDisabledButtons: Story = {
+  render: (): JSX.Element => <DisabledButtonsMenu />,
+};
