@@ -13,6 +13,7 @@ import { Box } from "../../primitives/Box";
 export type MenuItemProps = {
   label: string;
   onClick: () => void;
+  disabled?: boolean;
 };
 
 export type MenuProps = {
@@ -58,7 +59,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
             paddingBottom="space20"
             paddingTop="space20"
           >
-            {map(items, ({ label, onClick }, i) => (
+            {map(items, ({ label, onClick, disabled }, i) => (
               <MenuItem key={i}>
                 <Box.div
                   backgroundColor={{
@@ -66,7 +67,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
                     hover: "colorBackgroundWeakest",
                   }}
                 >
-                  <Button onClick={onClick} variant="ghost">
+                  <Button disabled={disabled} onClick={onClick} variant="ghost">
                     <Box.span color="colorTextStrongest">{label}</Box.span>
                   </Button>
                 </Box.div>
