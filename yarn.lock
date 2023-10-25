@@ -5934,10 +5934,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@uppy/core@^3.6.0":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@uppy/core/-/core-3.6.0.tgz#f81f936a5709b411d1e52cb63e9c87fd4b1ee2e6"
-  integrity sha512-fvj8XhIdbLq4cd/EJWOy9Mqgcfqzwcj/fKO1N9BG+mg/dPcCFtNfn5az8/Lzr1KqnOIR+zP6kdUVjM2JvUAgQw==
+"@uppy/core@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@uppy/core/-/core-3.6.1.tgz#db9ef5bcb9e0b8b69ecff9b462a21727b2378519"
+  integrity sha512-DZWSCcQlRbYmIjZ5cl4PMqnvssgpovLQ9Ke/9N8djIcVZdUV4TwNlF3ctdYaFSwsthIkxjR+h3Hf4cWDCZujJg==
   dependencies:
     "@transloadit/prettier-bytes" "0.0.9"
     "@uppy/store-default" "^3.0.5"
