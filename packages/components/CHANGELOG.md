@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 15.0.1
+
+### Patch Changes
+
+- [#1086](https://github.com/Localitos/pluto/pull/1086) [`4bb0636`](https://github.com/Localitos/pluto/commit/4bb06361fd18cfa3782829bcc26925000aeed135) Thanks [@blumaa](https://github.com/blumaa)! - add disabled prop to menuItems
+
 ## 15.0.0
 
 ### Minor Changes
