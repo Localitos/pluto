@@ -9,13 +9,13 @@ describe("<Menu />", () => {
     { onClick: jest.fn, label: "Item 2" },
   ];
 
-  it("renders correctly", () => {
+  it("renders correctly", async () => {
     render(<Menu items={items} />);
 
     const menuButton = screen.getByRole("button");
     expect(menuButton).toBeInTheDocument();
 
-    userEvent.click(menuButton);
+    await userEvent.click(menuButton);
 
     expect(screen.getByRole("presentation")).toBeInTheDocument();
 
@@ -23,13 +23,13 @@ describe("<Menu />", () => {
     expect(screen.getByText("Item 2")).toBeInTheDocument();
   });
 
-  it("accepts a custom menu button", () => {
+  it("accepts a custom menu button", async () => {
     render(<Menu items={items} menuButton={<button>Custom button</button>} />);
 
     const menuButton = screen.getByText("Custom button");
     expect(menuButton).toBeInTheDocument();
 
-    userEvent.click(menuButton);
+    await userEvent.click(menuButton);
 
     expect(screen.getByRole("presentation")).toBeInTheDocument();
 
@@ -37,7 +37,7 @@ describe("<Menu />", () => {
     expect(screen.getByText("Item 2")).toBeInTheDocument();
   });
 
-  it("allows a disabled prop for a menu item and disables the button", () => {
+  it("allows a disabled prop for a menu item and disables the button", async () => {
     render(
       <Menu items={[{ onClick: jest.fn(), label: "Item 1", disabled: true }]} />
     );
@@ -45,12 +45,10 @@ describe("<Menu />", () => {
     const menuButton = screen.getByRole("button");
     expect(menuButton).toBeInTheDocument();
 
-    userEvent.click(menuButton);
+    await userEvent.click(menuButton);
 
     expect(screen.getByRole("presentation")).toBeInTheDocument();
 
-    expect(
-      screen.getByRole("button", { name: /item 1/i, hidden: true })
-    ).toBeDisabled();
+    expect(screen.getByRole("button", { name: /item 1/i })).toBeDisabled();
   });
 });
