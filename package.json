@@ -49,7 +49,7 @@
     "@storybook/addon-links": "^7.0.22",
     "@storybook/addon-viewport": "^7.5.1",
     "@storybook/nextjs": "^7.0.22",
-    "@storybook/react": "^7.0.0-rc.4",
+    "@storybook/react": "^7.5.2",
     "@storybook/testing-library": "^0.2.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
