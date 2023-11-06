@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 15.0.2
+
+### Patch Changes
+
+- [#1098](https://github.com/Localitos/pluto/pull/1098) [`a31c1d8`](https://github.com/Localitos/pluto/commit/a31c1d868a79a16ceeaa71e333cd5449a8a85c9f) Thanks [@apvale](https://github.com/apvale)! - [Menu]
+
+  - Allow menu items to be also ReactNode
+  - Change menu item color and background color when disabled
+    [Icon] Add two new LucidIcons
+
 ## 15.0.1
 
 ### Patch Changes
