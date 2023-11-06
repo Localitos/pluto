@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   DisclosureProps,
   Menu as AriakitMenu,
@@ -11,7 +11,7 @@ import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
 
 export type MenuItemProps = {
-  label: string;
+  label: ReactNode | string;
   onClick: () => void;
   disabled?: boolean;
 };
@@ -64,11 +64,17 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
                 <Box.div
                   backgroundColor={{
                     _: "colorBackground",
-                    hover: "colorBackgroundWeakest",
+                    hover: disabled
+                      ? "colorBackground"
+                      : "colorBackgroundWeakest",
                   }}
                 >
                   <Button disabled={disabled} onClick={onClick} variant="ghost">
-                    <Box.span color="colorTextStrongest">{label}</Box.span>
+                    <Box.span
+                      color={disabled ? "colorText" : "colorTextStrongest"}
+                    >
+                      {label}
+                    </Box.span>
                   </Button>
                 </Box.div>
               </MenuItem>

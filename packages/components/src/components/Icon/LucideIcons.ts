@@ -12,6 +12,8 @@ import {
   LucideIcon,
   Copy,
   PenSquare,
+  Pin,
+  Trash2,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
 
@@ -24,8 +26,10 @@ export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   save: Save,
   "mail-question": MailQuestion,
   "pie-chart": PieChart,
+  pin: Pin,
   puzzle: Puzzle,
   wallet: Wallet,
   copy: Copy,
   "pen-square": PenSquare,
+  "trash-2": Trash2,
 };
