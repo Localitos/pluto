@@ -4,6 +4,7 @@ import React from "react";
 import noop from "lodash/noop";
 import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
+import { Icon } from "../Icon";
 import { Menu, MenuItemProps } from "./Menu";
 
 const meta: Meta<typeof Menu> = {
@@ -155,4 +156,36 @@ const DisabledButtonsMenu = (): JSX.Element => {
 
 export const WithDisabledButtons: Story = {
   render: (): JSX.Element => <DisabledButtonsMenu />,
+};
+
+export const WithIcons: Story = {
+  render: (): JSX.Element => {
+    const items: MenuItemProps[] = [
+      {
+        onClick: noop,
+        label: (
+          <Box.div alignItems="center" display="flex" gap="space30">
+            <Icon decorative icon="pin" size="sizeIcon20" />
+            <Box.span>Pin to top</Box.span>
+          </Box.div>
+        ),
+      },
+      {
+        onClick: noop,
+        label: (
+          <Box.div alignItems="center" display="flex" gap="space30">
+            <Icon decorative icon="trash-2" size="sizeIcon20" />
+            <Box.span>Delete</Box.span>
+          </Box.div>
+        ),
+        disabled: true,
+      },
+    ];
+
+    return (
+      <Box.div minHeight="100px">
+        <Menu items={items} />
+      </Box.div>
+    );
+  },
 };

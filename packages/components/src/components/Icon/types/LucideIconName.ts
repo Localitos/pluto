@@ -7,7 +7,9 @@ export type LucideIconName =
   | "palette"
   | "pen-square"
   | "pie-chart"
+  | "pin"
   | "puzzle"
   | "save"
   | "slack"
+  | "trash-2"
   | "wallet";
