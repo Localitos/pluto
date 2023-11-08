@@ -1,46 +1,71 @@
 import React from "react";
-import { Dialog } from "ariakit/dialog";
-import type { DialogProps } from "ariakit";
+import type { DialogProps, DisclosureState } from "ariakit";
+import {
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalHeading,
+} from "../Modal/index";
+import { Button } from "../Button/index";
 import { Box } from "../../primitives/Box";
 
 export interface AlertDialogProps extends Omit<DialogProps, "noonce"> {
   /** The contents of the alert dialog. */
   children: NonNullable<React.ReactNode>;
-  /** Centers the content of the alert dialog. */
-  centered?: boolean;
+  state: DisclosureState;
+  heading?: string;
+  buttonLabel?: string;
+  buttonVariant?: "destructive" | "primary";
+  onConfirm: () => void;
 }
 
 /** A dialog component that forces the user to acknowledge and make a choice */
 const AlertDialog = React.forwardRef<HTMLDivElement, AlertDialogProps>(
-  ({ centered = false, children, ...props }, ref) => {
+  ({
+    state,
+    heading = "Are you sure?",
+    buttonVariant = "primary",
+    buttonLabel = "Confirm",
+    onConfirm,
+    children,
+  }) => {
+    const confirm = () => {
+      onConfirm();
+      state.hide();
+    };
+
     return (
-      <Box.div
-        alignItems={centered ? "center" : undefined}
-        as={Dialog}
-        backgroundColor="colorBackground"
-        borderRadius="borderRadius10"
-        boxShadow="shadow"
-        display="flex"
-        flexDirection="column"
-        gap="space50"
-        hideOnEscape={false}
-        hideOnInteractOutside={false}
-        justifyContent={centered ? "center" : undefined}
-        left="50%"
-        maxWidth="25rem"
-        padding="space60"
-        position="fixed"
-        ref={ref}
-        role="alertdialog"
-        textAlign={centered ? "center" : undefined}
-        top="50%"
-        transform="translate(-50%, -50%)"
-        w="400px"
-        zIndex="zIndex30"
-        {...props}
-      >
-        {children}
-      </Box.div>
+      <Modal maxWidth="25rem" state={state}>
+        <ModalHeader>
+          <ModalHeading>{heading}</ModalHeading>
+        </ModalHeader>
+        <ModalBody>
+          <Box.div
+            alignItems="center"
+            display="flex"
+            justifyContent="center"
+            textAlign="center"
+          >
+            {children}
+          </Box.div>
+        </ModalBody>
+        <ModalFooter>
+          <Box.div
+            display="flex"
+            gap="space30"
+            justifyContent="center"
+            minWidth="100%"
+          >
+            <Button onClick={state.hide} variant="secondary">
+              Back
+            </Button>
+            <Button onClick={confirm} variant={buttonVariant}>
+              {buttonLabel}
+            </Button>
+          </Box.div>
+        </ModalFooter>
+      </Modal>
     );
   }
 );

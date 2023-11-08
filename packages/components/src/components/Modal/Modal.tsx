@@ -6,11 +6,12 @@ import { Box } from "../../primitives/Box";
 export interface ModalProps extends Omit<DialogProps, "nonce"> {
   /** The contents of the modal. */
   children: NonNullable<React.ReactNode>;
+  maxWidth?: string;
 }
 
 /** A Modal is a page overlay that displays information and blocks interaction with the page until an action is taken or the Modal is dismissed. */
 const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, maxWidth = "47.75rem", ...props }, ref) => {
     return (
       <Box.div
         as={Dialog}
@@ -20,7 +21,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         flexDirection="column"
         left="50%"
         maxHeight="90vh"
-        maxWidth="47.75rem"
+        maxWidth={maxWidth}
         position="fixed"
         ref={ref}
         top="50%"

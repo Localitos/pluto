@@ -1,87 +1,71 @@
-import type { ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
+import { useModalState } from "../Modal/index";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
-import { Paragraph } from "../Paragraph";
-import { Icon } from "../Icon";
-import {
-  useAlertDialogState,
-  AlertDialog,
-  AlertDialogHeader,
-  AlertDialogIconWrapper,
-  AlertDialogBody,
-  AlertDialogFooter,
-} from "./index";
+import { AlertDialog } from "./index";
 
-export default {
-  component: AlertDialog,
+const meta: Meta<typeof AlertDialog> = {
   title: "Components/AlertDialog",
-} as ComponentMeta<typeof AlertDialog>;
+  component: AlertDialog,
+};
 
-export const Default = (): JSX.Element => {
-  const alertDialog = useAlertDialogState({
-    defaultOpen: isChromatic() ? true : false,
-  });
+export default meta;
+type Story = StoryObj<typeof AlertDialog>;
+
+// eslint-disable-next-line no-console
+const onConfirm = () => console.log("Confirmed");
+
+const DefaultAlert = (): JSX.Element => {
+  const modalState = useModalState({ defaultOpen: isChromatic() });
+
   return (
     <Box.div h="100px" w="1350px">
-      <Button onClick={alertDialog.toggle} variant="primary">
-        Open alert dialog
+      <Button onClick={modalState.toggle} variant="primary">
+        Open alert
       </Button>
-      <AlertDialog state={alertDialog}>
-        <AlertDialogHeader>Dupllicate this page</AlertDialogHeader>
-        <AlertDialogBody>
-          <Paragraph marginBottom="space0" size="large">
-            Duplicating this page will create a copy in the Talents section.
-          </Paragraph>
-        </AlertDialogBody>
-        <AlertDialogFooter>
-          <Button onClick={alertDialog.toggle} variant="secondary">
-            Cancel
-          </Button>
-          <Button onClick={alertDialog.toggle} variant="primary">
-            Duplicate
-          </Button>
-        </AlertDialogFooter>
+
+      <AlertDialog onConfirm={onConfirm} state={modalState}>
+        Please confirm this action.
       </AlertDialog>
     </Box.div>
   );
 };
 
-export const WithContentCentered = (): JSX.Element => {
-  const alertDialog = useAlertDialogState({
-    defaultOpen: isChromatic() ? true : false,
-  });
+export const Default: Story = {
+  render: (): JSX.Element => <DefaultAlert />,
+};
+
+Default.parameters = {
+  docs: {
+    storyDescription:
+      "An alert is a modal with centered text and buttons to confirm or cancel an action.",
+  },
+};
+
+const CustomAlert = (): JSX.Element => {
+  const modalState = useModalState({ defaultOpen: isChromatic() });
+
   return (
     <Box.div h="100px" w="1350px">
-      <Button onClick={alertDialog.toggle} variant="primary">
-        Open alert dialog
+      <Button onClick={modalState.toggle} variant="primary">
+        Open alert
       </Button>
-      <AlertDialog centered state={alertDialog}>
-        <AlertDialogIconWrapper>
-          <Icon
-            color="colorIconError"
-            decorative
-            icon="XCircleIcon"
-            size="sizeIcon40"
-          />
-        </AlertDialogIconWrapper>
-        <AlertDialogHeader>Are you sure?</AlertDialogHeader>
-        <AlertDialogBody>
-          <Paragraph marginBottom="space0" size="large">
-            Deleting will remove this document for all users and cannot be
-            undone.
-          </Paragraph>
-        </AlertDialogBody>
-        <AlertDialogFooter>
-          <Button onClick={alertDialog.toggle} variant="secondary">
-            Cancel
-          </Button>
-          <Button onClick={alertDialog.toggle} variant="destructive">
-            Delete
-          </Button>
-        </AlertDialogFooter>
+
+      <AlertDialog
+        buttonLabel="Custom destructive label"
+        buttonVariant="destructive"
+        heading="Custom heading"
+        onConfirm={onConfirm}
+        state={modalState}
+      >
+        Are you sure you want to confirm this custom destructive action?
       </AlertDialog>
     </Box.div>
   );
+};
+
+export const WithCustomHeaderAndButton: Story = {
+  render: (): JSX.Element => <CustomAlert />,
 };
