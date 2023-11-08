@@ -4,7 +4,7 @@
 
 We're using [@ariakit-react](https://ariakit.org) to build many of the components in Pluto.
 Currently we're still using an outdated version of it (formerly named
-[reakit](https://reakit.io/docs/get-started/)). For some of the components you might to look at the
+[reakit](https://reakit.io/docs/get-started/)). For some of the components you might want to look at the
 old versions documentation until we upgraded to the new version (
 see https://github.com/Localitos/pluto/pull/926).
 
