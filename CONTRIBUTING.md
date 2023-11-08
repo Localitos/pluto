@@ -1,5 +1,13 @@
 # Contributing
 
+## ariakit
+
+We're using [@ariakit-react](https://ariakit.org) to build many of the components in Pluto.
+Currently we're still using an outdated version of it (formerly named
+[reakit](https://reakit.io/docs/get-started/)). For some of the components you might want to look at the
+old version's documentation until we upgraded to the new version)
+see https://github.com/Localitos/pluto/pull/926).
+
 ## Local Development
 
 Clone the Pluto repository anywhere on your computer.
@@ -95,7 +103,8 @@ go to the folder of the project that uses Pluto and run
 yalc link @localyze-pluto/components
 ```
 
-now every time you do a change you can repeat **Step 1** and then, on the folder of the project that uses Pluto
+now every time you do a change you can repeat **Step 1** and then, on the folder of the project that
+uses Pluto
 
 ```
 yalc update @localyze-pluto/components
