@@ -41,7 +41,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
     const button = menuButton || VerticalEllipsisButton;
 
     return (
-      <div>
+      <Box.div>
         <MenuButton ref={ref} state={state} {...button.props}>
           {(buttonProps: DisclosureProps) =>
             React.cloneElement(button, buttonProps)
@@ -50,14 +50,15 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
 
         <AriakitMenu state={state}>
           <Box.div
-            borderColor="colorBorderPrimary"
+            backgroundColor="colorBackground"
             borderRadius="borderRadius20"
-            borderStyle="borderStyleSolid"
-            borderWidth="borderWidth10"
             display="flex"
             flexDirection="column"
-            paddingBottom="space20"
-            paddingTop="space20"
+            maxWidth="280px"
+            minWidth="160px"
+            outlineColor="colorBorderPrimary"
+            outlineStyle="borderStyleSolid"
+            outlineWidth="borderWidth10"
           >
             {map(items, ({ label, onClick, disabled }, i) => (
               <MenuItem key={i}>
@@ -81,7 +82,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
             ))}
           </Box.div>
         </AriakitMenu>
-      </div>
+      </Box.div>
     );
   }
 );
