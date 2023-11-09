@@ -13,6 +13,7 @@ import {
   Copy,
   PenSquare,
   Pin,
+  PinOff,
   Trash2,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
@@ -32,4 +33,5 @@ export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   copy: Copy,
   "pen-square": PenSquare,
   "trash-2": Trash2,
+  "pin-off": PinOff,
 };
