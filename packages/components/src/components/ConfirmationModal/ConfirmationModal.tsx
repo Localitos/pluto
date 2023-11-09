@@ -1,5 +1,7 @@
-import React from "react";
 import type { DialogProps, DisclosureState } from "ariakit";
+import React from "react";
+import { Box } from "../../primitives/Box";
+import { Button } from "../Button";
 import {
   Modal,
   ModalBody,
@@ -7,10 +9,8 @@ import {
   ModalHeader,
   ModalHeading,
 } from "../Modal/index";
-import { Button } from "../Button/index";
-import { Box } from "../../primitives/Box";
 
-export interface AlertDialogProps extends Omit<DialogProps, "noonce"> {
+export interface ConfirmationModalProps extends Omit<DialogProps, "noonce"> {
   /** The contents of the alert dialog. */
   children: NonNullable<React.ReactNode>;
   state: DisclosureState;
@@ -20,16 +20,33 @@ export interface AlertDialogProps extends Omit<DialogProps, "noonce"> {
   onConfirm: () => void;
 }
 
-/** A dialog component that forces the user to acknowledge and make a choice */
-const AlertDialog = React.forwardRef<HTMLDivElement, AlertDialogProps>(
-  ({
-    state,
-    heading = "Are you sure?",
-    buttonVariant = "primary",
-    buttonLabel = "Confirm",
-    onConfirm,
-    children,
-  }) => {
+/**
+ * A dialog component that forces the user to acknowledge and make a choice
+ * @param props Object with props
+ * @param props.state state to open and close the modal
+ * @param props.heading text for the heading
+ * @param props.buttonVariant variant of the confirm button
+ * @param props.buttonLabel label for the confirm button
+ * @param props.onConfirm function to call when clicking the confirm button
+ * @param props.children React children for the modal body
+ * @returns React.JSX.Element
+ */
+
+const ConfirmationModal = React.forwardRef<
+  HTMLDivElement,
+  ConfirmationModalProps
+>(
+  (
+    {
+      state,
+      heading = "Are you sure?",
+      buttonVariant = "primary",
+      buttonLabel = "Confirm",
+      onConfirm,
+      children,
+    },
+    _ref
+  ): JSX.Element => {
     const confirm = () => {
       onConfirm();
       state.hide();
@@ -58,7 +75,7 @@ const AlertDialog = React.forwardRef<HTMLDivElement, AlertDialogProps>(
             minWidth="100%"
           >
             <Button onClick={state.hide} variant="secondary">
-              Back
+              Cancel
             </Button>
             <Button onClick={confirm} variant={buttonVariant}>
               {buttonLabel}
@@ -70,6 +87,6 @@ const AlertDialog = React.forwardRef<HTMLDivElement, AlertDialogProps>(
   }
 );
 
-AlertDialog.displayName = "AlertDialog";
+ConfirmationModal.displayName = "ConfirmationModal";
 
-export { AlertDialog };
+export { ConfirmationModal };

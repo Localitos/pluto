@@ -4,37 +4,37 @@ import isChromatic from "chromatic/isChromatic";
 import { useModalState } from "../Modal/index";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
-import { AlertDialog } from "./index";
+import { ConfirmationModal } from "./index";
 
-const meta: Meta<typeof AlertDialog> = {
-  title: "Components/AlertDialog",
-  component: AlertDialog,
+const meta: Meta<typeof ConfirmationModal> = {
+  title: "Components/ConfirmationModal",
+  component: ConfirmationModal,
 };
 
 export default meta;
-type Story = StoryObj<typeof AlertDialog>;
+type Story = StoryObj<typeof ConfirmationModal>;
 
 // eslint-disable-next-line no-console
 const onConfirm = () => console.log("Confirmed");
 
-const DefaultAlert = (): JSX.Element => {
+const DefaultConfirmationModal = (): JSX.Element => {
   const modalState = useModalState({ defaultOpen: isChromatic() });
 
   return (
     <Box.div h="100px" w="1350px">
       <Button onClick={modalState.toggle} variant="primary">
-        Open alert
+        Open modal
       </Button>
 
-      <AlertDialog onConfirm={onConfirm} state={modalState}>
+      <ConfirmationModal onConfirm={onConfirm} state={modalState}>
         Please confirm this action.
-      </AlertDialog>
+      </ConfirmationModal>
     </Box.div>
   );
 };
 
 export const Default: Story = {
-  render: (): JSX.Element => <DefaultAlert />,
+  render: (): JSX.Element => <DefaultConfirmationModal />,
 };
 
 Default.parameters = {
@@ -44,16 +44,16 @@ Default.parameters = {
   },
 };
 
-const CustomAlert = (): JSX.Element => {
+const CustomConfirmationModal = (): JSX.Element => {
   const modalState = useModalState({ defaultOpen: isChromatic() });
 
   return (
     <Box.div h="100px" w="1350px">
       <Button onClick={modalState.toggle} variant="primary">
-        Open alert
+        Open modal
       </Button>
 
-      <AlertDialog
+      <ConfirmationModal
         buttonLabel="Custom destructive label"
         buttonVariant="destructive"
         heading="Custom heading"
@@ -61,11 +61,11 @@ const CustomAlert = (): JSX.Element => {
         state={modalState}
       >
         Are you sure you want to confirm this custom destructive action?
-      </AlertDialog>
+      </ConfirmationModal>
     </Box.div>
   );
 };
 
 export const WithCustomHeaderAndButton: Story = {
-  render: (): JSX.Element => <CustomAlert />,
+  render: (): JSX.Element => <CustomConfirmationModal />,
 };
