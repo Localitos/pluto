@@ -1,6 +1,5 @@
-import type { DialogProps, DisclosureState } from "ariakit";
+import type { DisclosureState } from "ariakit";
 import React from "react";
-import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 import {
   Modal,
@@ -10,8 +9,7 @@ import {
   ModalHeading,
 } from "../Modal/index";
 
-export interface ConfirmationModalProps extends Omit<DialogProps, "noonce"> {
-  /** The contents of the alert dialog. */
+export interface ConfirmationModalProps {
   children: NonNullable<React.ReactNode>;
   state: DisclosureState;
   heading?: string;
@@ -57,30 +55,14 @@ const ConfirmationModal = React.forwardRef<
         <ModalHeader>
           <ModalHeading>{heading}</ModalHeading>
         </ModalHeader>
-        <ModalBody>
-          <Box.div
-            alignItems="center"
-            display="flex"
-            justifyContent="center"
-            textAlign="center"
-          >
-            {children}
-          </Box.div>
-        </ModalBody>
+        <ModalBody>{children}</ModalBody>
         <ModalFooter>
-          <Box.div
-            display="flex"
-            gap="space30"
-            justifyContent="center"
-            minWidth="100%"
-          >
-            <Button onClick={state.hide} variant="secondary">
-              Cancel
-            </Button>
-            <Button onClick={confirm} variant={buttonVariant}>
-              {buttonLabel}
-            </Button>
-          </Box.div>
+          <Button onClick={state.hide} variant="secondary">
+            Cancel
+          </Button>
+          <Button onClick={confirm} variant={buttonVariant}>
+            {buttonLabel}
+          </Button>
         </ModalFooter>
       </Modal>
     );
