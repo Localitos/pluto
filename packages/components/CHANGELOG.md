@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 15.0.3
+
+### Patch Changes
+
+- [#1109](https://github.com/Localitos/pluto/pull/1109) [`9897a2c`](https://github.com/Localitos/pluto/commit/9897a2ca2b839e112fbb57101408b4dcce0138cf) Thanks [@apvale](https://github.com/apvale)! - [Icon] Add PinOff Lucid Icon
+
 ## 15.0.2
 
 ### Patch Changes
