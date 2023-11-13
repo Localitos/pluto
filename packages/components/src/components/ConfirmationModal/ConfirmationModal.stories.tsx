@@ -27,7 +27,7 @@ const DefaultConfirmationModal = (): JSX.Element => {
       </Button>
 
       <ConfirmationModal onConfirm={onConfirm} state={modalState}>
-        Please confirm this action.
+        Are you sure you want to change your subscription?
       </ConfirmationModal>
     </Box.div>
   );
@@ -56,16 +56,15 @@ const CustomConfirmationModal = (): JSX.Element => {
       <ConfirmationModal
         buttonLabel="Custom destructive label"
         buttonVariant="destructive"
-        heading="Custom heading"
         onConfirm={onConfirm}
         state={modalState}
       >
-        Are you sure you want to confirm this custom destructive action?
+        Are you sure you want to delete this file? This cannot be undone.
       </ConfirmationModal>
     </Box.div>
   );
 };
 
-export const WithCustomHeaderAndButton: Story = {
+export const WithCustomButton: Story = {
   render: (): JSX.Element => <CustomConfirmationModal />,
 };
