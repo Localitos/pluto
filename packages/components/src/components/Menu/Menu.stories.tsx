@@ -158,6 +158,31 @@ export const WithDisabledButtons: Story = {
   render: (): JSX.Element => <DisabledButtonsMenu />,
 };
 
+export const WithLongMenuItems: Story = {
+  render: (): JSX.Element => {
+    const items: MenuItemProps[] = [
+      {
+        onClick: noop,
+        label: "Option with long text that would break lines",
+      },
+      {
+        onClick: noop,
+        label: "Option 2",
+      },
+      {
+        onClick: noop,
+        label: "Another option with more text",
+      },
+    ];
+
+    return (
+      <Box.div minHeight="100px">
+        <Menu items={items} />
+      </Box.div>
+    );
+  },
+};
+
 export const WithIcons: Story = {
   render: (): JSX.Element => {
     const items: MenuItemProps[] = [
