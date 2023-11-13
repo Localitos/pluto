@@ -15,7 +15,7 @@ const ExampleModal = () => {
     <div>
       <button onClick={state.show}>{OPEN_MODAL_TEXT}</button>
 
-      <ConfirmationModal heading="heading" onConfirm={onConfirm} state={state}>
+      <ConfirmationModal onConfirm={onConfirm} state={state}>
         Do you want to confirm?
       </ConfirmationModal>
     </div>
@@ -32,7 +32,6 @@ const CustomModal = () => {
       <ConfirmationModal
         buttonLabel="Delete"
         buttonVariant="destructive"
-        heading="heading"
         onConfirm={onConfirm}
         state={state}
       >
@@ -52,7 +51,6 @@ describe("<ConfirmationModal />", () => {
     await userEvent.click(openButton);
     expect(screen.getByRole("dialog")).toBeInTheDocument();
 
-    expect(screen.getByText("heading")).toBeInTheDocument();
     expect(screen.getByText("Do you want to confirm?")).toBeInTheDocument();
 
     const cancelButton = screen.getByRole("button", { name: "Cancel" });
