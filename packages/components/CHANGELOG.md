@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 15.0.4
+
+### Patch Changes
+
+- [#1108](https://github.com/Localitos/pluto/pull/1108) [`4e2984f`](https://github.com/Localitos/pluto/commit/4e2984f61efcaaba1b3ef162aa651fe01382d860) Thanks [@apvale](https://github.com/apvale)! - [Menu] Fix issues on Menu component
+
+  - Removes wrong white background on Menu items by using outline instead of border
+  - Update click trigger to the whole menu item
+  - Break line on long menu items
+
 ## 15.0.3
 
 ### Patch Changes
