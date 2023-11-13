@@ -70,13 +70,25 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
                       : "colorBackgroundWeakest",
                   }}
                 >
-                  <Button disabled={disabled} onClick={onClick} variant="ghost">
+                  <Box.button
+                    alignItems="center"
+                    as={Button}
+                    disabled={disabled}
+                    justifyContent="flex-start"
+                    onClick={onClick}
+                    padding="space0"
+                    px="space50"
+                    py="space30"
+                    variant="ghost"
+                    w="100%"
+                  >
                     <Box.span
                       color={disabled ? "colorText" : "colorTextStrongest"}
+                      textAlign="left"
                     >
                       {label}
                     </Box.span>
-                  </Button>
+                  </Box.button>
                 </Box.div>
               </MenuItem>
             ))}

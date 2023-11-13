@@ -4,5 +4,6 @@
 
 [Menu] Fix issues on Menu component
 
-- Remove extra padding
-- Use outline instead of border
+- Removes wrong white background on Menu items by using outline instead of border
+- Update click trigger to the whole menu item
+- Break line on long menu items
