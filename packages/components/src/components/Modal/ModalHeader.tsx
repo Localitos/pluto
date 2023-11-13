@@ -14,7 +14,6 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
   ({ children, ...props }, ref) => {
     return (
       <Box.div
-        alignItems="center"
         borderBottomColor="colorBorderWeakest"
         borderBottomStyle="borderStyleSolid"
         borderBottomWidth="borderWidth10"
