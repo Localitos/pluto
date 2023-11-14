@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { useForm } from "react-hook-form";
 import React from "react";
-import UserEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { Radio } from "../Radio";
 import { ControlledRadioGroup } from "./ControlledRadioGroup";
 
