@@ -1,4 +1,4 @@
-export * from "./components/AlertDialog";
+export * from "./components/ConfirmationModal";
 export * from "./components/Anchor";
 export * from "./components/Avatar";
 export * from "./components/Badge";
