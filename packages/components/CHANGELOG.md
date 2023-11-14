@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 16.0.0
+
+### Major Changes
+
+- [#1107](https://github.com/Localitos/pluto/pull/1107) [`613d35f`](https://github.com/Localitos/pluto/commit/613d35f700d6752fe088654d1d06c1babff97cee) Thanks [@sliminas](https://github.com/sliminas)! - Remove the `AlertDialog` component and replace it with the `ConfirmationModal` component which re-uses the `Modal` component to unify the appearance of modals
+
 ## 15.0.4
 
 ### Patch Changes
