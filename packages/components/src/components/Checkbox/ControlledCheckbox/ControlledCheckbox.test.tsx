@@ -43,7 +43,7 @@ describe("<ControlledCheckbox />", () => {
       disconnect: jest.fn(),
     }));
 
-    const user = UserEvent.setup();
+    const user = userEvent.setup();
 
     const onSubmit = jest.fn();
     render(<ReactHookFormExample onSubmit={onSubmit} />);
