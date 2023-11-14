@@ -30,8 +30,8 @@ const CustomModal = () => {
       <button onClick={state.show}>{OPEN_MODAL_TEXT}</button>
 
       <ConfirmationModal
-        buttonLabel="Delete"
-        buttonVariant="destructive"
+        confirmLabel="Delete"
+        destructive
         onConfirm={onConfirm}
         state={state}
       >

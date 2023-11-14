@@ -54,8 +54,8 @@ const CustomConfirmationModal = (): JSX.Element => {
       </Button>
 
       <ConfirmationModal
-        buttonLabel="Custom destructive label"
-        buttonVariant="destructive"
+        confirmLabel="Custom destructive label"
+        destructive
         onConfirm={onConfirm}
         state={modalState}
       >

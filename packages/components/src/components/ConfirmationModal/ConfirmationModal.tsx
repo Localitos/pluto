@@ -6,8 +6,8 @@ import { Modal, ModalBody, ModalFooter } from "../Modal/index";
 export interface ConfirmationModalProps {
   children: NonNullable<React.ReactNode>;
   state: DisclosureState;
-  buttonLabel?: string;
-  buttonVariant?: "destructive" | "primary";
+  confirmLabel?: string;
+  destructive?: boolean;
   onConfirm: () => void;
 }
 
@@ -15,8 +15,8 @@ export interface ConfirmationModalProps {
  * A modal dialog component that forces the user to acknowledge and make a choice
  * @param props Object with props
  * @param props.state state to open and close the modal
- * @param props.buttonVariant variant of the confirm button
- * @param props.buttonLabel label for the confirm button
+ * @param props.destructive is this a confirmation for a destructive action?
+ * @param props.confirmLabel label for the confirm button
  * @param props.onConfirm function to call when clicking the confirm button
  * @param props.children React children for the modal body
  * @returns React.JSX.Element
@@ -29,8 +29,8 @@ const ConfirmationModal = React.forwardRef<
   (
     {
       state,
-      buttonVariant = "primary",
-      buttonLabel = "Confirm",
+      destructive = false,
+      confirmLabel = "Confirm",
       onConfirm,
       children,
     },
@@ -48,8 +48,11 @@ const ConfirmationModal = React.forwardRef<
           <Button onClick={state.hide} variant="secondary">
             Cancel
           </Button>
-          <Button onClick={confirm} variant={buttonVariant}>
-            {buttonLabel}
+          <Button
+            onClick={confirm}
+            variant={destructive ? "destructive" : "primary"}
+          >
+            {confirmLabel}
           </Button>
         </ModalFooter>
       </Modal>
