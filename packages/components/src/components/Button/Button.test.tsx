@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import userEvent from "@testing-library/user-event";
-import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
+import { userEvent } from "@testing-library/user-event";
 import React from "react";
 import { Button } from "./Button";
 
@@ -61,7 +60,7 @@ describe("Button", () => {
       const onMouseEnterMock: jest.Mock = jest.fn();
       const onMouseLeaveMock: jest.Mock = jest.fn();
 
-      const user = userEvent.setup() as UserEvent;
+      const user = userEvent.setup();
 
       render(
         <Button

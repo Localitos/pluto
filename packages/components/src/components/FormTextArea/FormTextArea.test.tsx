@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 import { useForm } from "react-hook-form";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Box } from "../../primitives/Box";
