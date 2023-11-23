@@ -1,5 +1,21 @@
 # @localyze-pluto/components
 
+## 16.0.1
+
+### Patch Changes
+
+- [#1045](https://github.com/Localitos/pluto/pull/1045) [`57a2e92`](https://github.com/Localitos/pluto/commit/57a2e9257f58749bb6572940188926aab787e0da) Thanks [@apvale](https://github.com/apvale)! - [FormSelect] Remove the extra div from component when no helpText is provided
+  The extra div makes it hard to align the component with other elements
+  within the parent component outside of the design system
+
+  [FormInput] Remove the extra div from component when no helpText is provided
+  The extra div makes it hard to align the component with other elements
+  within the parent component outside of the design system
+
+  [FormTextArea] Remove the extra div from component when no helpText is provided
+  The extra div makes it hard to align the component with other elements
+  within the parent component outside of the design system
+
 ## 16.0.0
 
 ### Major Changes
