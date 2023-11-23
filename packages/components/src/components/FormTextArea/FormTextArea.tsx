@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Label } from "../Label";
+import type { TextAreaProps } from "../Textarea";
 import { TextArea } from "../Textarea";
 import { HelpText } from "../HelpText";
-import type { TextAreaProps } from "../Textarea";
 import { Box } from "../../primitives/Box";
 
 export interface FormTextAreaProps
@@ -36,12 +36,10 @@ const FormTextArea = React.forwardRef<HTMLTextAreaElement, FormTextAreaProps>(
           required={required}
           {...props}
         />
-        {helpText ? (
+        {helpText && (
           <HelpText hasError={hasError} id={`${id}-help-text`}>
             {helpText}
           </HelpText>
-        ) : (
-          <Box.div h="1rem" marginTop="space20" />
         )}
       </Box.div>
     );
