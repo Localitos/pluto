@@ -1,7 +1,7 @@
 import type { Meta } from "@storybook/react";
 import React, { useEffect } from "react";
 import { useUID } from "react-uid";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Box } from "../../primitives/Box";
@@ -125,49 +125,51 @@ export const AsControlledFormTextArea = (): JSX.Element => {
   const inputID = useUID();
   return (
     <Box.form onSubmit={handleSubmit(onSubmit)}>
-      <ControlledFormTextArea
-        control={control}
-        data-testid="test"
-        helpText={"Please enter a flavor."}
-        id={`${inputID}-1`}
-        label="Enter a flavor"
-        name="flavor"
-        placeholder="Maybe something crazy?"
-        required
-      />
-      <ControlledFormTextArea
-        control={control}
-        helpText={"Please enter a flavor."}
-        id={`${inputID}-1`}
-        label="Enter a flavor"
-        name="flavor1"
-        placeholder="Maybe something crazy?"
-        required
-      />
-      <ControlledFormTextArea
-        control={control}
-        id={`${inputID}-2`}
-        label="Prefilled flavor"
-        name="flavor2"
-      />
-      <ControlledFormTextArea
-        control={control}
-        disabled
-        id={`${inputID}-2`}
-        label="Disabled flavor"
-        name="flavor3"
-      />
-      <ControlledFormTextArea
-        control={control}
-        id={`${inputID}-2`}
-        label="Read-Only flavor"
-        name="flavor4"
-        readOnly
-      />
-      <Box.div>
-        <Button type="submit" variant="primary">
-          Submit
-        </Button>
+      <Box.div display="flex" flexDirection="column" gap="space50">
+        <ControlledFormTextArea
+          control={control}
+          data-testid="test"
+          helpText={"Please enter a flavor."}
+          id={`${inputID}-1`}
+          label="Enter a flavor"
+          name="flavor"
+          placeholder="Maybe something crazy?"
+          required
+        />
+        <ControlledFormTextArea
+          control={control}
+          helpText={"Please enter a flavor."}
+          id={`${inputID}-1`}
+          label="Enter a flavor"
+          name="flavor1"
+          placeholder="Maybe something crazy?"
+          required
+        />
+        <ControlledFormTextArea
+          control={control}
+          id={`${inputID}-2`}
+          label="Prefilled flavor"
+          name="flavor2"
+        />
+        <ControlledFormTextArea
+          control={control}
+          disabled
+          id={`${inputID}-2`}
+          label="Disabled flavor"
+          name="flavor3"
+        />
+        <ControlledFormTextArea
+          control={control}
+          id={`${inputID}-2`}
+          label="Read-Only flavor"
+          name="flavor4"
+          readOnly
+        />
+        <Box.div>
+          <Button type="submit" variant="primary">
+            Submit
+          </Button>
+        </Box.div>
       </Box.div>
     </Box.form>
   );

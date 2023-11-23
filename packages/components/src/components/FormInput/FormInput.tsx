@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Label } from "../Label";
+import type { InputProps } from "../Input";
 import { Input } from "../Input";
 import { HelpText } from "../HelpText";
-import type { InputProps } from "../Input";
 import { Box } from "../../primitives/Box";
 
 export interface FormInputProps
@@ -51,12 +51,10 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
           value={value}
           {...props}
         />
-        {helpText ? (
+        {helpText && (
           <HelpText hasError={hasError} id={`${id}-help-text`}>
             {helpText}
           </HelpText>
-        ) : (
-          <Box.div h="1rem" marginTop="space20" />
         )}
       </Box.div>
     );
