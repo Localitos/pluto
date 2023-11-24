@@ -1,5 +1,17 @@
 # @localyze-pluto/components
 
+## 16.0.2
+
+### Patch Changes
+
+- [#1125](https://github.com/Localitos/pluto/pull/1125) [`8d2323e`](https://github.com/Localitos/pluto/commit/8d2323e2856bbe50286abf1e2fb03db0b6c9cd5e) Thanks [@rssilva](https://github.com/rssilva)! - Update package dependencies including TypeScript version
+
+- [#1124](https://github.com/Localitos/pluto/pull/1124) [`acf8720`](https://github.com/Localitos/pluto/commit/acf87201c5d383b2fcb038a11750a614f8734633) Thanks [@rssilva](https://github.com/rssilva)! - Update assert
+
+- [#1126](https://github.com/Localitos/pluto/pull/1126) [`64e23e8`](https://github.com/Localitos/pluto/commit/64e23e80dc07f803dec251749dd2f4452dfd2dce) Thanks [@rssilva](https://github.com/rssilva)! - Fix release script by not running commitlint
+
+- [#1123](https://github.com/Localitos/pluto/pull/1123) [`eaa2886`](https://github.com/Localitos/pluto/commit/eaa2886f2b379c9c41ee63a895c45bcf576e86b6) Thanks [@rssilva](https://github.com/rssilva)! - Update minor dependencies together with TypeScript
+
 ## 16.0.1
 
 ### Patch Changes
