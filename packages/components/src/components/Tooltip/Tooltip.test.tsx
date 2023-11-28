@@ -12,7 +12,7 @@ describe("<Tooltip />", () => {
     expect(renderedOpenButton).toBeInTheDocument();
 
     await userEvent.hover(renderedOpenButton);
-    expect(screen.getByRole("tooltip")).toBeInTheDocument();
+    expect(await screen.findByRole("tooltip")).toBeInTheDocument();
 
     await userEvent.unhover(renderedOpenButton);
     expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
@@ -27,7 +27,7 @@ describe("<Tooltip />", () => {
 
     await userEvent.tab();
     expect(renderedOpenButton).toHaveFocus();
-    expect(screen.getByRole("tooltip")).toBeInTheDocument();
+    expect(await screen.findByRole("tooltip")).toBeInTheDocument();
 
     await userEvent.tab();
     expect(renderedOpenButton).not.toHaveFocus();
