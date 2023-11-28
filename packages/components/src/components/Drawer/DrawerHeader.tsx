@@ -26,11 +26,14 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, DrawerHeaderProps>(
         <Box.div>{children}</Box.div>
         <Box.div>
           <DialogDismiss
-            aria-label="Close drawer"
-            as={Button}
-            iconOnly
-            leadingIcon="XMarkIcon"
-            variant="ghost"
+            render={
+              <Button
+                aria-label="Close drawer"
+                iconOnly
+                leadingIcon="XMarkIcon"
+                variant="ghost"
+              />
+            }
           />
         </Box.div>
       </Box.div>

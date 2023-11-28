@@ -20,7 +20,7 @@ export const Default = (): JSX.Element => {
   });
   return (
     <>
-      <TooltipAnchor as={Button} store={tooltip} variant="secondary">
+      <TooltipAnchor render={<Button variant="secondary" />} store={tooltip}>
         Hover or focus on me
       </TooltipAnchor>
       <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
@@ -49,7 +49,7 @@ export const RightAligned = (): JSX.Element => {
   });
   return (
     <>
-      <TooltipAnchor as={Button} store={tooltip} variant="secondary">
+      <TooltipAnchor render={<Button variant="secondary" />} store={tooltip}>
         Hover or focus on me
       </TooltipAnchor>
       <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
@@ -64,7 +64,7 @@ export const BottomAligned = (): JSX.Element => {
   });
   return (
     <>
-      <TooltipAnchor as={Button} store={tooltip} variant="primary">
+      <TooltipAnchor render={<Button variant="secondary" />} store={tooltip}>
         Hover or focus on me
       </TooltipAnchor>
       <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
@@ -79,7 +79,7 @@ export const LeftAligned = (): JSX.Element => {
   });
   return (
     <Box.div display="flex" justifyContent="flex-end">
-      <TooltipAnchor as={Button} store={tooltip} variant="primary">
+      <TooltipAnchor render={<Button variant="secondary" />} store={tooltip}>
         Hover or focus on me
       </TooltipAnchor>
       <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
@@ -115,7 +115,10 @@ export const MultilineOpen = (): JSX.Element => {
       rowGap="18rem"
     >
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipOne} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipOne}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipOne}>
@@ -124,7 +127,10 @@ export const MultilineOpen = (): JSX.Element => {
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipTwo} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipTwo}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipTwo}>
@@ -133,7 +139,10 @@ export const MultilineOpen = (): JSX.Element => {
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipThree} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipThree}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipThree}>
@@ -142,7 +151,10 @@ export const MultilineOpen = (): JSX.Element => {
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipFour} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipFour}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipFour}>
@@ -151,7 +163,10 @@ export const MultilineOpen = (): JSX.Element => {
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipFive} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipFive}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipFive}>
@@ -160,7 +175,10 @@ export const MultilineOpen = (): JSX.Element => {
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipSix} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipSix}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipSix}>
@@ -199,42 +217,60 @@ export const SinglelineOpen = (): JSX.Element => {
       rowGap="18rem"
     >
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipOne} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipOne}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipOne}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipTwo} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipTwo}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipTwo}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipThree} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipThree}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipThree}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipFour} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipFour}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipFour}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipFive} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipFive}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipFive}>Approved</Tooltip>
       </Box.div>
 
       <Box.div>
-        <TooltipAnchor as={Button} store={tooltipSix} variant="secondary">
+        <TooltipAnchor
+          render={<Button variant="secondary" />}
+          store={tooltipSix}
+        >
           Hover or focus on me
         </TooltipAnchor>
         <Tooltip store={tooltipSix}>Approved</Tooltip>

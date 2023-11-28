@@ -221,10 +221,13 @@ const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
             marginLeft="auto"
           >
             <SelectArrow
-              as={Icon}
-              decorative
-              icon="ChevronDownIcon"
-              size={size === "large" ? "sizeIcon30" : "sizeIcon20"}
+              render={
+                <Icon
+                  decorative
+                  icon="ChevronDownIcon"
+                  size={size === "large" ? "sizeIcon30" : "sizeIcon20"}
+                />
+              }
             />
           </Box.div>
         </Box.button>
