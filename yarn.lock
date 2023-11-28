@@ -20,6 +20,27 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@ariakit/core@0.3.5":
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@ariakit/core/-/core-0.3.5.tgz#5b27beec8a8ae1c24580c448f4dcd931c991f68a"
+  integrity sha512-aOf20RS7CDv9O4qzoTeI3ozz1l4El0hjsgXzfY2gVvv+1fvfgnHLCz46n8i2clwYCfGnP//201U4y73eGf9uvA==
+
+"@ariakit/react-core@0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@ariakit/react-core/-/react-core-0.3.6.tgz#a39f711efb26581a0d157eaf49af8c972b74038b"
+  integrity sha512-7j2oqdX3dF1cWBSVSZFtKZHyVRJnSIA0T5f31aF/UmYY+Brvxgt+DICire+kxsnqSgxwgzYbZqyLSoLpZaMS0w==
+  dependencies:
+    "@ariakit/core" "0.3.5"
+    "@floating-ui/dom" "^1.0.0"
+    use-sync-external-store "^1.2.0"
+
+"@ariakit/react@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@ariakit/react/-/react-0.3.6.tgz#d9af3550b772f8823f165ac1a94ba0f61dd9c0fa"
+  integrity sha512-u3lQKo5cC6pKHk80yQ6XVxRpBvY79xlFfYoonNTQ2rdVE5Hls1pqVUajxoSw+Ui2GcvaCDvfe1SvpPFDuUiXNw==
+  dependencies:
+    "@ariakit/react-core" "0.3.6"
+
 "@aw-web-design/x-default-browser@1.4.126":
   version "1.4.126"
   resolved "https://registry.yarnpkg.com/@aw-web-design/x-default-browser/-/x-default-browser-1.4.126.tgz#43e4bd8f0314ed907a8718d7e862a203af79bc16"
@@ -5177,28 +5198,15 @@ aria-query@5.3.0, aria-query@^5.0.0, aria-query@^5.3.0:
   dependencies:
     dequal "^2.0.3"
 
-ariakit-react-utils@0.17.0-next.27:
-  version "0.17.0-next.27"
-  resolved "https://registry.yarnpkg.com/ariakit-react-utils/-/ariakit-react-utils-0.17.0-next.27.tgz#6749587a659ec9806439fe28209d155aff19f20e"
-  integrity sha512-YyL3sEowwaw6r8wRjENB9S4Hjz/ppyv5nJNeFkb6xaEX/QYUYmqL+lQch50LW04vj9oa8RGHlY2SmyQX3d7g3w==
+array-buffer-byte-length@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/array-buffer-byte-length/-/array-buffer-byte-length-1.0.0.tgz#fabe8bc193fea865f317fe7807085ee0dee5aead"
+  integrity sha512-LPuwb2P+NrQw3XhxGc36+XSvuBPopovXYTR9Ew++Du9Yb/bx5AzBfrIsBoj0EZUifjQU+sHL21sseZ3jerWO/A==
   dependencies:
-    ariakit-utils "0.17.0-next.27"
+    call-bind "^1.0.2"
+    is-array-buffer "^3.0.1"
 
-ariakit-utils@0.17.0-next.27:
-  version "0.17.0-next.27"
-  resolved "https://registry.yarnpkg.com/ariakit-utils/-/ariakit-utils-0.17.0-next.27.tgz#c9971d41526f5f8afa9e8ae7596d15ed22b2f977"
-  integrity sha512-IcjtuHl7FZP5mGrpvTSXqPUj+jRuIuBHlJAlxr3y4pxRgYpsYVpyZOClU3yrOoG7KUVApfmJjPOGWy00y+Gi+Q==
-
-ariakit@^2.0.0-next.44:
-  version "2.0.0-next.44"
-  resolved "https://registry.yarnpkg.com/ariakit/-/ariakit-2.0.0-next.44.tgz#2a37b0f111754b6dc06083289e36767a3d46d480"
-  integrity sha512-vWWS+2HUFz4Nii1lXP3QHMa+fxr9vbu4p/sGmD/b80+JfVtW8OicAUSR4FXnyMwX2nVy+77DN6eAw3/LbuzX1g==
-  dependencies:
-    "@floating-ui/dom" "^1.0.0"
-    ariakit-react-utils "0.17.0-next.27"
-    ariakit-utils "0.17.0-next.27"
-
-array-buffer-byte-length@^1.0.0, array-buffer-byte-length@^1.0.1:
+array-buffer-byte-length@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/array-buffer-byte-length/-/array-buffer-byte-length-1.0.1.tgz#1e5583ec16763540a27ae52eed99ff899223568f"
   integrity sha512-ahC5W1xgou+KTXix4sAO8Ki12Q+jf4i0+tmk3sC+zgcynshkHxzpXdImBehiUYKKKDwvfFiJl1tZt6ewscS1Mg==
@@ -9377,7 +9385,7 @@ is-arguments@^1.0.4, is-arguments@^1.1.1:
     call-bind "^1.0.2"
     has-tostringtag "^1.0.0"
 
-is-array-buffer@^3.0.2, is-array-buffer@^3.0.4:
+is-array-buffer@^3.0.1, is-array-buffer@^3.0.2, is-array-buffer@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/is-array-buffer/-/is-array-buffer-3.0.4.tgz#7a1f92b3d61edd2bc65d24f130530ea93d7fae98"
   integrity sha512-wcjaerHw0ydZwfhiKbXJWLDY8A7yV7KhjQOpb83hGgGfId/aQa4TOvwyzn2PuswW2gPCYEL/nEAiSVpdOj1lXw==
@@ -14634,6 +14642,11 @@ url@^0.11.0:
   dependencies:
     punycode "^1.4.1"
     qs "^6.11.2"
+
+use-sync-external-store@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"

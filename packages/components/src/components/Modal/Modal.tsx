@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog } from "@ariakit/react/dialog";
-import type { DialogProps } from "@ariakit/react";
+import type { DialogProps } from "@ariakit/react/dialog";
 import { Box } from "../../primitives/Box";
 
 export interface ModalProps extends Omit<DialogProps, "nonce"> {

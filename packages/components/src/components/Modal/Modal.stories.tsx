@@ -22,7 +22,7 @@ export default {
 export const Default = (): JSX.Element => {
   const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
@@ -63,8 +63,9 @@ Default.parameters = {
 
 export const NoPaddingOnBody = (): React.ReactNode => {
   const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
+
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
@@ -107,7 +108,7 @@ NoPaddingOnBody.parameters = {
 export const OverflowBodyContent = (): React.ReactNode => {
   const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
@@ -186,7 +187,7 @@ OverflowBodyContent.parameters = {
 export const OverflowBodyDisabled = (): React.ReactNode => {
   const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
@@ -265,7 +266,7 @@ OverflowBodyDisabled.parameters = {
 export const ReallyLongHeader = (): React.ReactNode => {
   const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
@@ -314,7 +315,7 @@ export const InitialFocus = (): JSX.Element => {
     defaultOpen: isChromatic() ? true : false,
   });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
