@@ -72,7 +72,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
-    "storybook": "^7.0.0-rc.4",
+    "storybook": "^7.6.0",
     "ts-jest": "^28.0.5",
     "turbo": "latest"
   },
