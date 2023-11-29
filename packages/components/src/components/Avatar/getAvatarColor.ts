@@ -11,7 +11,6 @@ const avatarColorOptions: AvatarColorOptions[] = [
 
 /**
  * Generates an avatar background color using the length of a person's full name.
- *
  * @param name - Person's full name.
  * @returns AvatarColors.
  * @example
