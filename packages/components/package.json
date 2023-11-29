@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/components",
-  "version": "16.0.2",
+  "version": "16.0.3",
   "description": "Pluto Design System Components",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@heroicons/react": "^2.0.18",
-    "@localyze-pluto/eslint-config": "^1.2.0",
+    "@localyze-pluto/eslint-config": "^1.2.2",
     "@localyze-pluto/theme": "^7.0.0",
     "@localyze-pluto/tsconfig": "^1.0.1",
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.2.2
+
+### Patch Changes
+
+- [#1147](https://github.com/Localitos/pluto/pull/1147) [`7aa3086`](https://github.com/Localitos/pluto/commit/7aa3086ca3aaf1739ca6761d79cecb41c2b7b64e) Thanks [@rssilva](https://github.com/rssilva)! - Update @typescript-eslint plugin and parser to 6.13.1
+
 ## 1.2.1
 
 ### Patch Changes
