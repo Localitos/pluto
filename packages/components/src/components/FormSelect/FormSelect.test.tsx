@@ -33,6 +33,7 @@ const ReactHookFormExample = (): JSX.Element => {
     },
     resolver: yupResolver(schema),
   });
+
   return (
     <Box.form>
       <ControlledFormSelect
@@ -79,9 +80,9 @@ describe("<FormSelect />", () => {
   });
 
   it("should render a ControlledFormSelect", async () => {
+    const user = userEvent.setup();
     render(<ReactHookFormExample />);
     const controlledSelect = screen.getByRole("combobox");
-    const selectOptions = screen.getAllByRole("option", { hidden: true });
 
     expect(controlledSelect).toBeInTheDocument();
     expect(screen.getByLabelText("Select a flavor")).toBeInTheDocument();
@@ -90,9 +91,11 @@ describe("<FormSelect />", () => {
     expect(controlledSelect).toHaveAttribute("id", "flavor");
     expect(controlledSelect).toHaveAttribute("data-testid", "test");
 
-    await userEvent.click(controlledSelect);
-    await userEvent.click(selectOptions[2]);
+    await user.click(controlledSelect);
+    await user.click(screen.getByRole("option", { name: "Vanilla" }));
 
-    expect(selectOptions[2]).toHaveAttribute("aria-selected", "true");
+    expect(
+      screen.getByRole("option", { name: "Vanilla", hidden: true })
+    ).toHaveAttribute("aria-selected", "true");
   });
 });
