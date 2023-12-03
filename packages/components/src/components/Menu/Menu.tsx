@@ -1,8 +1,7 @@
 import React, { ReactNode } from "react";
 import {
-  DisclosureProps,
   Menu as AriakitMenu,
-  MenuButton,
+  MenuButton as AriakitMenuButton,
   MenuItem,
   useMenuStore,
 } from "@ariakit/react";
@@ -36,19 +35,23 @@ const VerticalEllipsisButton = (
 /** A menu is a button element that opens a menu with items. */
 const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
   ({ menuButton, items }, ref) => {
-    const state = useMenuStore();
+    const store = useMenuStore();
 
     const button = menuButton || VerticalEllipsisButton;
 
     return (
       <Box.div>
-        <MenuButton ref={ref} state={state} {...button.props}>
-          {(buttonProps: DisclosureProps) =>
-            React.cloneElement(button, buttonProps)
+        <AriakitMenuButton
+          render={(props) =>
+            React.cloneElement(button, {
+              ...props,
+              ref,
+            })
           }
-        </MenuButton>
+          store={store}
+        />
 
-        <AriakitMenu store={state}>
+        <AriakitMenu store={store}>
           <Box.div
             backgroundColor="colorBackground"
             borderRadius="borderRadius20"

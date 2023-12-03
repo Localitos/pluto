@@ -32,7 +32,6 @@ export interface SelectProps
     | "onFocusVisible"
     | "showOnKeyDown"
     | "state"
-    | "store"
     | "toggleOnClick"
     | "toggleOnPress"
     | "typeahead"
@@ -125,7 +124,7 @@ const getSelectedLabel = (
 };
 
 /** A select is an styled form element that allows users to select a value from a list. */
-const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
+const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
   (
     {
       defaultValue,
@@ -143,11 +142,9 @@ const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
     },
     ref,
   ) => {
-    const select = useSelectStore({
+    const store = useSelectStore({
       defaultValue,
       value,
-      // sameWidth: true,
-      // gutter: 4,
       setValue,
     });
 
@@ -164,8 +161,8 @@ const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
           borderWidth="borderWidth10"
           color={
             disabled ||
-            (!isArray(select.getState().value) &&
-              startsWith(String(select.getState().value), "select-"))
+            (!isArray(store.useState().value) &&
+              startsWith(store.useState().value as string, "select-"))
               ? "colorText"
               : "colorTextStronger"
           }
@@ -198,14 +195,13 @@ const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
             if (event.defaultPrevented) {
               return;
             }
-
-            const popover = select.getState().popoverElement;
+            const popover = store.getState().popoverElement;
             if (popover?.contains(event.relatedTarget)) {
               return;
             }
             props.onBlur?.(event);
           }}
-          store={select}
+          store={store}
         >
           <Box.div
             overflow="hidden"
@@ -213,7 +209,7 @@ const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
             w="100%"
             whiteSpace="nowrap"
           >
-            {getSelectedLabel(items, select.getState().value, placeholder)}
+            {getSelectedLabel(items, store.useState().value, placeholder)}
           </Box.div>
           <Box.div
             display="inline-flex"
@@ -231,7 +227,7 @@ const Select = React.forwardRef<HTMLButtonElement, Omit<SelectProps, "store">>(
             />
           </Box.div>
         </Box.button>
-        <SelectPopover store={select}>
+        <SelectPopover store={store}>
           {map(items, (item) => (
             <SelectItem
               disabled={item.disabled}
