@@ -20,7 +20,7 @@
     "prepare": "husky install",
     "release": "turbo build && changeset publish",
     "start": "storybook dev -p 6006",
-    "test": "jest",
+    "test": "jest --watchAll",
     "test:ci": "jest --ci",
     "test:coverage": "jest --runInBand --coverage",
     "type-check": "turbo tsc"
