@@ -1,5 +1,14 @@
 # @localyze-pluto/components
 
+## 16.0.4
+
+### Patch Changes
+
+- [#1156](https://github.com/Localitos/pluto/pull/1156) [`f68b940`](https://github.com/Localitos/pluto/commit/f68b940d31db53cf503eadd740a6589813268483) Thanks [@rssilva](https://github.com/rssilva)! - Revert packages affected by eslint and storybook broken build
+
+- Updated dependencies [[`f68b940`](https://github.com/Localitos/pluto/commit/f68b940d31db53cf503eadd740a6589813268483)]:
+  - @localyze-pluto/theme@7.0.1
+
 ## 16.0.3
 
 ### Patch Changes
