@@ -1,6 +1,7 @@
 export type LucideIconName =
   | "baggage-claim"
   | "building-2"
+  | "check-square"
   | "copy"
   | "heart-handshake"
   | "mail-question"

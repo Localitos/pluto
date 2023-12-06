@@ -1,6 +1,7 @@
 import {
   BaggageClaim,
   Building2,
+  CheckSquare,
   HeartHandshake,
   MailQuestion,
   Palette,
@@ -20,6 +21,7 @@ import { LucideIconName } from "./types/LucideIconName";
 
 export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   "baggage-claim": BaggageClaim,
+  "check-square": CheckSquare,
   "building-2": Building2,
   "heart-handshake": HeartHandshake,
   palette: Palette,
