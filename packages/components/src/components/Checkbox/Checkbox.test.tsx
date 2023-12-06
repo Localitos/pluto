@@ -15,7 +15,7 @@ describe("Checkbox", () => {
       render(
         <Checkbox disabled id="checkbox-disabled">
           Checkbox
-        </Checkbox>
+        </Checkbox>,
       );
       const renderedCheckbox = screen.getByRole("checkbox");
       expect(renderedCheckbox).toHaveAttribute("data-disabled");
@@ -25,7 +25,7 @@ describe("Checkbox", () => {
       render(
         <Checkbox checked id="checkbox-check">
           Checkbox with check
-        </Checkbox>
+        </Checkbox>,
       );
       const renderedCheckbox = screen.getByRole("checkbox");
       expect(renderedCheckbox).toHaveAttribute("data-state", "checked");
@@ -35,7 +35,7 @@ describe("Checkbox", () => {
       render(
         <Checkbox checked="indeterminate" id="checkbox-indeterminate">
           Indeterminate checkbox
-        </Checkbox>
+        </Checkbox>,
       );
       const renderedCheckbox = screen.getByRole("checkbox");
       expect(renderedCheckbox).toHaveAttribute("data-state", "indeterminate");

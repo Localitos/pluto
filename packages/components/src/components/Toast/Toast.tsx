@@ -72,7 +72,7 @@ const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
         </Box.button>
       </Box.li>
     );
-  }
+  },
 );
 
 Toast.displayName = "Toast";

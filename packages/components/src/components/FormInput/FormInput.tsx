@@ -33,7 +33,7 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
       value,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <Box.div>
@@ -58,7 +58,7 @@ const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
         )}
       </Box.div>
     );
-  }
+  },
 );
 
 FormInput.displayName = "FormInput";

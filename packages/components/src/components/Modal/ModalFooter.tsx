@@ -26,7 +26,7 @@ const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 ModalFooter.displayName = "ModalFooter";

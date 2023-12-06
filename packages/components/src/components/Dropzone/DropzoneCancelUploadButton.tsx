@@ -2,7 +2,7 @@ import React from "react";
 import { Button, ButtonProps } from "../Button";
 
 export const DropzoneCancelUploadButton = (
-  props: Partial<ButtonProps>
+  props: Partial<ButtonProps>,
 ): JSX.Element => {
   return (
     <Button

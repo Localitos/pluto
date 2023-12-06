@@ -43,7 +43,7 @@ const Td = React.forwardRef<HTMLTableCellElement, TdProps>(
         {children}
       </Box.td>
     );
-  }
+  },
 );
 
 Td.displayName = "Td";

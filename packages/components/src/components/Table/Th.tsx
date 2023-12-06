@@ -47,7 +47,7 @@ const Th = React.forwardRef<HTMLTableCellElement, ThProps>(
         {children}
       </Box.th>
     );
-  }
+  },
 );
 
 Th.displayName = "Th";

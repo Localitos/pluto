@@ -27,7 +27,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     );
 
     return <Box.div ref={ref}>{returnValue}</Box.div>;
-  }
+  },
 );
 
 Tabs.displayName = "Tabs";

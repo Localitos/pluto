@@ -8,7 +8,7 @@ describe("<OrderedList />", () => {
     render(
       <OrderedList>
         <ListItem>An item</ListItem>
-      </OrderedList>
+      </OrderedList>,
     );
 
     expect(screen.getByRole("list")).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe("<OrderedList />", () => {
     render(
       <OrderedList aria-label="foo" data-testid="bar">
         <ListItem>An item</ListItem>
-      </OrderedList>
+      </OrderedList>,
     );
     expect(screen.getByTestId("bar")).toBeInTheDocument();
     expect(screen.getByLabelText("foo")).toBeInTheDocument();

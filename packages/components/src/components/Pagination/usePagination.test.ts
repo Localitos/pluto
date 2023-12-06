@@ -8,7 +8,7 @@ describe("<Pagination />", () => {
     const currentPage = 1;
 
     const { result } = renderHook(() =>
-      usePagination(pageCount, pagesAroundCurrentPage, currentPage)
+      usePagination(pageCount, pagesAroundCurrentPage, currentPage),
     );
 
     expect(result.current).toEqual([1, 2, 3, 4, 5, 6, 7]);
@@ -20,7 +20,7 @@ describe("<Pagination />", () => {
     const currentPage = 1;
 
     const { result } = renderHook(() =>
-      usePagination(pageCount, pagesAroundCurrentPage, currentPage)
+      usePagination(pageCount, pagesAroundCurrentPage, currentPage),
     );
 
     expect(result.current).toEqual([1, 2, 3]);
@@ -32,7 +32,7 @@ describe("<Pagination />", () => {
     const currentPage = 10;
 
     const { result } = renderHook(() =>
-      usePagination(pageCount, pagesAroundCurrentPage, currentPage)
+      usePagination(pageCount, pagesAroundCurrentPage, currentPage),
     );
 
     expect(result.current).toEqual([1, "...", 9, 10, 11, "...", 20]);
@@ -44,7 +44,7 @@ describe("<Pagination />", () => {
     const currentPage = 3;
 
     const { result } = renderHook(() =>
-      usePagination(pageCount, pagesAroundCurrentPage, currentPage)
+      usePagination(pageCount, pagesAroundCurrentPage, currentPage),
     );
 
     expect(result.current).toEqual([1, 2, 3, 4, 5, "...", 20]);
@@ -56,7 +56,7 @@ describe("<Pagination />", () => {
     const currentPage = 18;
 
     const { result } = renderHook(() =>
-      usePagination(pageCount, pagesAroundCurrentPage, currentPage)
+      usePagination(pageCount, pagesAroundCurrentPage, currentPage),
     );
 
     expect(result.current).toEqual([1, "...", 16, 17, 18, 19, 20]);
@@ -68,7 +68,7 @@ describe("<Pagination />", () => {
     const currentPage = 20;
 
     const { result } = renderHook(() =>
-      usePagination(pageCount, pagesAroundCurrentPage, currentPage)
+      usePagination(pageCount, pagesAroundCurrentPage, currentPage),
     );
 
     expect(result.current).toEqual([1, "...", 16, 17, 18, 19, 20]);

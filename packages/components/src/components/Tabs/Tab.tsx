@@ -66,7 +66,7 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>(
         {children}
       </Box.button>
     );
-  }
+  },
 );
 
 Tab.displayName = "Tab";

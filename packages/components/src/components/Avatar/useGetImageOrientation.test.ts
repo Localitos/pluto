@@ -8,7 +8,7 @@ describe("useGetImageOrientation", () => {
       .spyOn(imageOrientation, "getImageOrientation")
       .mockResolvedValue("portrait");
     const { result } = renderHook(() =>
-      useGetImageOrientation("/path-to-file.jpg")
+      useGetImageOrientation("/path-to-file.jpg"),
     );
 
     expect(result.current.hasError).toBeFalsy();
@@ -21,7 +21,7 @@ describe("useGetImageOrientation", () => {
   it("should return error", async () => {
     jest.spyOn(imageOrientation, "getImageOrientation").mockRejectedValue(null);
     const { result } = renderHook(() =>
-      useGetImageOrientation("/path-to-file.jpg")
+      useGetImageOrientation("/path-to-file.jpg"),
     );
 
     expect(result.current.orientation).toBeUndefined();

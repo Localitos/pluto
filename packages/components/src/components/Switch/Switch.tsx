@@ -38,7 +38,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
       onCheckedChange,
       ...props
     },
-    ref
+    ref,
   ) => {
     const switchId = useUID();
     const helpTextId = useUID();
@@ -140,7 +140,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
         </Box.div>
       </Box.div>
     );
-  }
+  },
 );
 
 Switch.displayName = "Switch";

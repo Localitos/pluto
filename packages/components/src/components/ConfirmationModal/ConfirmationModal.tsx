@@ -34,7 +34,7 @@ const ConfirmationModal = React.forwardRef<
       onConfirm,
       children,
     },
-    _ref
+    _ref,
   ): JSX.Element => {
     const confirm = () => {
       onConfirm();
@@ -57,7 +57,7 @@ const ConfirmationModal = React.forwardRef<
         </ModalFooter>
       </Modal>
     );
-  }
+  },
 );
 
 ConfirmationModal.displayName = "ConfirmationModal";

@@ -21,7 +21,7 @@ const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
       stickyTopOffset = isSticky ? "-1px" : undefined,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <Box.thead
@@ -34,7 +34,7 @@ const THead = React.forwardRef<HTMLTableSectionElement, THeadProps>(
         {children}
       </Box.thead>
     );
-  }
+  },
 );
 
 THead.displayName = "THead";

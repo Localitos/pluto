@@ -64,7 +64,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       onRemove,
       disabled = false,
     },
-    ref
+    ref,
   ) => {
     const isMobile = useDown("md");
     const status = getStatus({ progress, fileUrl, errorMessage });
@@ -147,7 +147,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
         )}
       </Box.div>
     );
-  }
+  },
 );
 
 FileUploader.displayName = "FileUploader";

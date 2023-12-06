@@ -23,7 +23,7 @@ export interface CalloutProps
 
 const getVariantProps = (
   variant: CalloutVariantOptions,
-  withoutBackground: boolean
+  withoutBackground: boolean,
 ): {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   padding?: SystemProp<keyof Theme["space"], Theme>;
@@ -63,7 +63,7 @@ const getVariantProps = (
 };
 
 const getIconVariantProps = (
-  variant: CalloutVariantOptions
+  variant: CalloutVariantOptions,
 ): {
   color: SystemProp<keyof Theme["colors"], Theme>;
   icon: IconProps["icon"];
@@ -97,7 +97,7 @@ const getIconVariantProps = (
 };
 
 const getContentVariantProps = (
-  variant: CalloutVariantOptions
+  variant: CalloutVariantOptions,
 ): {
   color: SystemProp<keyof Theme["colors"], Theme>;
 } => {
@@ -135,7 +135,7 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
       icon,
       ...props
     },
-    ref
+    ref,
   ) => {
     const iconProps = getIconVariantProps(variant);
 
@@ -165,7 +165,7 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
         </Box.span>
       </Box.div>
     );
-  }
+  },
 );
 
 Callout.displayName = "Callout";

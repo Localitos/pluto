@@ -34,7 +34,7 @@ const ThButton = React.forwardRef<HTMLButtonElement, ThButtonProps>(
         {children}
       </Box.button>
     );
-  }
+  },
 );
 
 ThButton.displayName = "ThButton";

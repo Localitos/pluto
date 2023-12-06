@@ -24,7 +24,7 @@ const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 ModalBody.displayName = "ModalBody";

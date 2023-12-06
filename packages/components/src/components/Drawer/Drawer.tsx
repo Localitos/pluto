@@ -31,7 +31,7 @@ const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 Drawer.displayName = "Drawer";

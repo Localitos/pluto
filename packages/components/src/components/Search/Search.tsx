@@ -49,7 +49,7 @@ const Search = React.forwardRef<HTMLInputElement, SearchProps>(
         />
       </>
     );
-  }
+  },
 );
 
 Search.displayName = "Search";

@@ -32,7 +32,7 @@ const longSelectItems: SelectProps["items"] = Array.from(
   (_, i) => ({
     value: `option-${i}`,
     label: `Option ${i}`,
-  })
+  }),
 );
 
 const multiSelectItems: SelectProps["items"] = [

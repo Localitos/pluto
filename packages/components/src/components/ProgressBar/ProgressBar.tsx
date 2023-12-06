@@ -26,7 +26,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
       backgroundColor = "colorBackgroundWeak",
       ...props
     },
-    ref
+    ref,
   ) => {
     const borderRadius = size === "large" ? "borderRadius50" : "borderRadius10";
 
@@ -53,7 +53,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
         />
       </Box.div>
     );
-  }
+  },
 );
 
 ProgressBar.displayName = "ProgressBar";

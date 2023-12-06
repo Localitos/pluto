@@ -33,7 +33,7 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, DrawerHeaderProps>(
         </Box.div>
       </Box.div>
     );
-  }
+  },
 );
 
 DrawerHeader.displayName = "DrawerHeader";

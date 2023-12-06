@@ -19,11 +19,11 @@ describe("<Dropzone />", () => {
     renderDropZone({ onCancel: NOOP, onDrop: NOOP });
 
     expect(
-      screen.getByText("Drag and drop or click to select a file")
+      screen.getByText("Drag and drop or click to select a file"),
     ).toBeInTheDocument();
 
     expect(
-      screen.queryByText("File must be PDF format and no larger than 50MB")
+      screen.queryByText("File must be PDF format and no larger than 50MB"),
     ).not.toBeInTheDocument();
   });
 
@@ -39,13 +39,13 @@ describe("<Dropzone />", () => {
     });
 
     expect(
-      screen.getByText("Drag and drop or click to select a file")
+      screen.getByText("Drag and drop or click to select a file"),
     ).toBeInTheDocument();
 
     expect(
       screen.getByText(
-        "You can upload 1 file. File must be JPG, JPEG, PDF format, no larger than 12MB."
-      )
+        "You can upload 1 file. File must be JPG, JPEG, PDF format, no larger than 12MB.",
+      ),
     ).toBeInTheDocument();
   });
 
@@ -56,7 +56,7 @@ describe("<Dropzone />", () => {
       onDrop: NOOP,
     });
     expect(
-      screen.getByText("File must be less than 50mb.")
+      screen.getByText("File must be less than 50mb."),
     ).toBeInTheDocument();
   });
 
@@ -117,10 +117,10 @@ describe("<Dropzone />", () => {
     expect(
       screen.queryByRole("button", {
         name: /cancel upload/i,
-      })
+      }),
     ).not.toBeInTheDocument();
     expect(
-      screen.queryByText("File must be PDF format and no larger than 50MB")
+      screen.queryByText("File must be PDF format and no larger than 50MB"),
     ).not.toBeInTheDocument();
   });
 });

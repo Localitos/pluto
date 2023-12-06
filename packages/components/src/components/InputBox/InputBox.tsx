@@ -31,7 +31,7 @@ const getInputBoxStyles = (
   disabled?: boolean,
   hasError?: boolean,
   readOnly?: boolean,
-  type?: InputBoxTypes
+  type?: InputBoxTypes,
 ): {
   backgroundColor: SystemProp<keyof Theme["colors"], Theme> | "transparent";
   borderColor: SystemProp<keyof Theme["colors"], Theme>;
@@ -97,7 +97,7 @@ const InputBox = React.forwardRef<HTMLDivElement, InputBoxProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 InputBox.displayName = "InputBox";

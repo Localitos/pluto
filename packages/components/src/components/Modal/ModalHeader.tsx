@@ -36,7 +36,7 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
         </Box.div>
       </Box.div>
     );
-  }
+  },
 );
 
 ModalHeader.displayName = "ModalHeader";

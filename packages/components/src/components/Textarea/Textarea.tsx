@@ -36,7 +36,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
       required,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <InputBox disabled={disabled} hasError={hasError} readOnly={readOnly}>
@@ -82,7 +82,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
         </Box.textarea>
       </InputBox>
     );
-  }
+  },
 );
 
 TextArea.displayName = "TextArea";

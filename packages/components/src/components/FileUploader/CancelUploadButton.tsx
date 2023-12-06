@@ -3,7 +3,7 @@ import { useDown } from "@localyze-pluto/theme";
 import { Button, ButtonProps } from "../Button";
 
 export const CancelUploadButton = (
-  props: Partial<ButtonProps>
+  props: Partial<ButtonProps>,
 ): ReactElement => {
   const isMobile = useDown("md");
 

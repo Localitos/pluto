@@ -38,7 +38,7 @@ const getColors = (
   isLoading: boolean,
   successState: boolean,
   isFocused: boolean,
-  isDragAccept: boolean
+  isDragAccept: boolean,
 ): {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
@@ -78,7 +78,7 @@ const getIcon = (
   isLoading: boolean,
   successState: boolean,
   isDragAccept: boolean,
-  isDragActive: boolean
+  isDragActive: boolean,
 ) => {
   let icon: IconProps["icon"] = "CloudArrowUpIcon";
   let iconColor: IconProps["color"] = "colorIconInfo";
@@ -110,7 +110,7 @@ const onError = (
   setDropZoneErrors: (error: string) => void,
   tooManyFilesError: string,
   maxFileSize: number | undefined,
-  fileTypes: FileTypes
+  fileTypes: FileTypes,
 ) => {
   if (err.code === "too-many-files") {
     setDropZoneErrors(tooManyFilesError);
@@ -134,7 +134,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
       onDrop,
       progress,
     },
-    ref
+    ref,
   ) => {
     const [dropZoneErrors, setDropZoneErrors] = useState(error);
     const defaultState = !dropZoneErrors && !progress;
@@ -147,7 +147,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
     const fileRestrictionText = getFileRestrictionText(
       fileTypes,
       maxNumFiles,
-      maxFileSize
+      maxFileSize,
     );
     const tooManyFilesError = `You can upload only ${maxNumFiles} file${
       maxNumFiles > 1 ? `s.` : `.`
@@ -181,7 +181,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
               setDropZoneErrors,
               tooManyFilesError,
               maxFileSize,
-              fileTypes
+              fileTypes,
             );
           });
         });
@@ -210,7 +210,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
             isLoading,
             successState,
             isFocused,
-            isDragAccept
+            isDragAccept,
           )}
           alignItems="center"
           borderRadius="borderRadius30"
@@ -237,7 +237,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
             isLoading,
             successState,
             isDragAccept,
-            isDragActive
+            isDragActive,
           )}
           {isLoading && (
             <>
@@ -295,7 +295,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         </Box.div>
       </>
     );
-  }
+  },
 );
 
 Dropzone.displayName = "Dropzone";

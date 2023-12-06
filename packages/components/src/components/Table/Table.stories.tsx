@@ -300,7 +300,7 @@ const ReactTable = () => {
                 >
                   {flexRender(
                     header.column.columnDef.header,
-                    header.getContext()
+                    header.getContext(),
                   )}
                   {{
                     asc: " 🔼",

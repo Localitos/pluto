@@ -13,7 +13,7 @@ describe("<Callout />", () => {
     render(
       <Callout aria-label="foo" data-testid="bar">
         Message here
-      </Callout>
+      </Callout>,
     );
 
     expect(screen.getByTestId("bar")).toBeInTheDocument();

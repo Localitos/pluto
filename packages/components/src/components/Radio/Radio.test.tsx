@@ -9,7 +9,7 @@ describe("Radio", () => {
     render(
       <RadioGroup label="View density">
         <Radio id="default" label="Default" value="default" />
-      </RadioGroup>
+      </RadioGroup>,
     );
     const renderedRadioGroup = screen.getByRole("radiogroup");
     const renderedRadio = screen.getByRole("radio");
@@ -21,7 +21,7 @@ describe("Radio", () => {
     render(
       <RadioGroup label="View density">
         <Radio id="default" label="Default" value="default" />
-      </RadioGroup>
+      </RadioGroup>,
     );
     const renderedRadioGroup = screen.getByRole("radiogroup");
     expect(renderedRadioGroup).toHaveAttribute("aria-label", "View density");
@@ -31,7 +31,7 @@ describe("Radio", () => {
     render(
       <RadioGroup>
         <Radio id="default" label="Default" value="default" />
-      </RadioGroup>
+      </RadioGroup>,
     );
     const renderedRadio = screen.getByRole("radio");
     expect(renderedRadio).not.toBeChecked();
@@ -43,7 +43,7 @@ describe("Radio", () => {
     render(
       <RadioGroup defaultValue="default">
         <Radio id="default" label="Default" value="default" />
-      </RadioGroup>
+      </RadioGroup>,
     );
     const renderedRadio = screen.getByRole("radio");
 
@@ -56,7 +56,7 @@ describe("Radio", () => {
     render(
       <RadioGroup label="View density">
         <Radio disabled id="default" label="Default" value="default" />
-      </RadioGroup>
+      </RadioGroup>,
     );
     const renderedRadio = screen.getByRole("radio");
     expect(renderedRadio).toBeDisabled();
@@ -66,7 +66,7 @@ describe("Radio", () => {
     render(
       <RadioGroup label="View density">
         <Radio id="default" label="Default" value="default" />
-      </RadioGroup>
+      </RadioGroup>,
     );
     const renderedRadio = screen.getByRole("radio");
     expect(renderedRadio).toHaveAttribute("id", "default");
@@ -76,7 +76,7 @@ describe("Radio", () => {
     render(
       <RadioGroup label="View density">
         <Radio id="default" label="Default" value="default" />
-      </RadioGroup>
+      </RadioGroup>,
     );
     const renderedRadio = screen.getByRole("radio");
     expect(renderedRadio).toHaveValue("default");

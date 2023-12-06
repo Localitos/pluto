@@ -21,13 +21,13 @@ export const formatBytes = (bytes: number, decimals = 0): string => {
 
 export const getFileExtensions = (fileTypes: FileTypes): string =>
   map(values(fileTypes).flat(), (extension) =>
-    toUpper(extension.slice(1))
+    toUpper(extension.slice(1)),
   ).join(", ");
 
 export const getFileRestrictionText = (
   fileTypes: FileTypes,
   maxNumFiles: number,
-  maxFileSize?: number
+  maxFileSize?: number,
 ): string | undefined => {
   if (isEmpty(fileTypes) && !maxFileSize) {
     return;

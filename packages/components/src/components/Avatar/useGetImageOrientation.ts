@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getImageOrientation, Orientation } from "./getImageOrientation";
 
 export const useGetImageOrientation = (
-  src?: string
+  src?: string,
 ): { orientation?: Orientation; hasError: boolean } => {
   const [orientation, setOrientation] = useState<Orientation | undefined>();
   const [hasError, setHasError] = useState(false);

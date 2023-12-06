@@ -23,7 +23,7 @@ const TBody = React.forwardRef<HTMLTableSectionElement, TBodyProps>(
         {children}
       </StyledTBody>
     );
-  }
+  },
 );
 
 TBody.displayName = "TBody";

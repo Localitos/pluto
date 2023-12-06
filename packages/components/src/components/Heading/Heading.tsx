@@ -44,13 +44,13 @@ export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 }
 
 const isBreakpointObject = (
-  size: HeadingSizeOptionsProp
+  size: HeadingSizeOptionsProp,
 ): size is HeadingSizeBreakpoints => {
   return isObject(size);
 };
 
 const getHeadingStyles = (
-  size: HeadingSizeOptionsProp
+  size: HeadingSizeOptionsProp,
 ): {
   fontSize: SystemProp<keyof Theme["fontSizes"], Theme>;
   lineHeight: SystemProp<keyof Theme["lineHeights"], Theme>;
@@ -129,7 +129,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       color = "colorTextHeadingStronger",
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <Text.h2
@@ -148,7 +148,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         {children}
       </Text.h2>
     );
-  }
+  },
 );
 
 Heading.displayName = "Heading";

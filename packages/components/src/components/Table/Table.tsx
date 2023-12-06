@@ -30,7 +30,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
       tableLayout = "auto",
       ...props
     },
-    ref
+    ref,
   ) => {
     const tableContext = { bordered, striped };
 
@@ -47,7 +47,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
         </StyledTable>
       </TableContext.Provider>
     );
-  }
+  },
 );
 
 Table.displayName = "Table";

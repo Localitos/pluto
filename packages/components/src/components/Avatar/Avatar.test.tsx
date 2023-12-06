@@ -37,7 +37,7 @@ describe("<Avatar />", () => {
       const image = await screen.findByAltText("Lisa Wang");
       expect(image).toHaveProperty(
         "src",
-        expect.stringContaining("path-to-image.jpg")
+        expect.stringContaining("path-to-image.jpg"),
       );
     });
 

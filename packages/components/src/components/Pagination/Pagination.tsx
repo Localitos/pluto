@@ -39,7 +39,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       pageNeighbors = 1,
       ...props
     },
-    ref
+    ref,
   ) => {
     const pages = usePagination(pageCount, pageNeighbors, currentPage);
 
@@ -113,7 +113,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
         </Box.ul>
       </Box.nav>
     );
-  }
+  },
 );
 
 Pagination.displayName = "Pagination";

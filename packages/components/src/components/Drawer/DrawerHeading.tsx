@@ -22,7 +22,7 @@ const DrawerHeading = React.forwardRef<HTMLHeadingElement, DrawerHeadingProps>(
         {children}
       </Heading>
     );
-  }
+  },
 );
 
 DrawerHeading.displayName = "DrawerHeading";

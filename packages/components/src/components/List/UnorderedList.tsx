@@ -44,7 +44,7 @@ export const UnorderedList = React.forwardRef<
       marginBottom = "space70",
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <InnerUnorderedList
@@ -60,7 +60,7 @@ export const UnorderedList = React.forwardRef<
         {children}
       </InnerUnorderedList>
     );
-  }
+  },
 );
 
 UnorderedList.displayName = "UnorderedList";

@@ -24,7 +24,7 @@ describe("<Toast />", () => {
     render(
       <Default duration={1000} variant="success">
         This is the toast text.
-      </Default>
+      </Default>,
     );
 
     const renderedOpenButtons = screen.getByRole("button");
@@ -45,7 +45,7 @@ describe("<ToastContainer />", () => {
     render(
       <ToastContainer>
         <SampleApp />
-      </ToastContainer>
+      </ToastContainer>,
     );
 
     const renderedOpenButton = screen.getByRole("button");

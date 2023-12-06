@@ -101,7 +101,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
         </Text.label>
       </Box.div>
     );
-  }
+  },
 );
 
 Radio.displayName = "Radio";

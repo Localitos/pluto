@@ -38,7 +38,7 @@ describe("<Switch />", () => {
     render(
       <Switch defaultChecked disabled>
         Test switch
-      </Switch>
+      </Switch>,
     );
     const switcher = screen.getByRole("switch");
     expect(switcher).toBeDisabled();

@@ -13,7 +13,7 @@ describe("<Anchor />", () => {
     render(
       <Anchor href="https://www.localyze.com" isExternal>
         I am an anchor
-      </Anchor>
+      </Anchor>,
     );
 
     const link = screen.getByRole("link");

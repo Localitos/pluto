@@ -17,7 +17,7 @@ const LODASH_OFFSET = 1;
 export const usePagination = (
   pageCount: number,
   pageNeighbors: number, // The number of pages to display to each side of the current page
-  currentPage: number
+  currentPage: number,
 ): (number | string)[] => {
   return useMemo(() => {
     // The dynamic block count changes based on the pageNeighbors prop
@@ -53,7 +53,7 @@ export const usePagination = (
       } else if (!shouldDotsShowOnLeft && shouldDotsShowOnRight) {
         const extraPages = range(
           endPage + 1,
-          endPage + singleSpillOffset + LODASH_OFFSET
+          endPage + singleSpillOffset + LODASH_OFFSET,
         );
         pages = [...pages, ...extraPages, DOTS];
       } else if (shouldDotsShowOnLeft && shouldDotsShowOnRight) {

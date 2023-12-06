@@ -20,7 +20,7 @@ export interface BadgeProps
 }
 
 const getColorProps = (
-  color: BadgeColorOptions
+  color: BadgeColorOptions,
 ): {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   color?: SystemProp<keyof Theme["colors"], Theme>;
@@ -60,7 +60,7 @@ const getColorProps = (
 };
 
 const getSizeProps = (
-  size: BadgeSizeOptions
+  size: BadgeSizeOptions,
 ): {
   fontSize: SystemProp<keyof Theme["fontSizes"], Theme>;
   paddingBottom: SystemProp<keyof Theme["space"], Theme>;
@@ -113,7 +113,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 Badge.displayName = "Badge";

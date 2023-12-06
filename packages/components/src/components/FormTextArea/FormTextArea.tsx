@@ -43,7 +43,7 @@ const FormTextArea = React.forwardRef<HTMLTextAreaElement, FormTextAreaProps>(
         )}
       </Box.div>
     );
-  }
+  },
 );
 
 FormTextArea.displayName = "FormTextArea";

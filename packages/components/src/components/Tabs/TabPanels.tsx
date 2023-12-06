@@ -14,7 +14,7 @@ const TabPanels = React.forwardRef<HTMLDivElement, TabPanelsProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 TabPanels.displayName = "TabPanels";

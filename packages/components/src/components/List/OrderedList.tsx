@@ -42,7 +42,7 @@ export const OrderedList = React.forwardRef<HTMLOListElement, OrderedListProps>(
       marginBottom = "space70",
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <InnerOrderedList
@@ -57,7 +57,7 @@ export const OrderedList = React.forwardRef<HTMLOListElement, OrderedListProps>(
         {children}
       </InnerOrderedList>
     );
-  }
+  },
 );
 
 OrderedList.displayName = "OrderedList";

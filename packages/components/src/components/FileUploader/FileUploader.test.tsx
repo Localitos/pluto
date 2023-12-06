@@ -15,7 +15,7 @@ const renderFileUploader = ({
       <FileUploaderButton onChange={jest.fn()} variant="secondary">
         Upload
       </FileUploaderButton>
-    </FileUploader>
+    </FileUploader>,
   );
 
 describe("<FileUploader />", () => {
@@ -24,7 +24,7 @@ describe("<FileUploader />", () => {
 
     expect(screen.getByText("Employment contract")).toBeInTheDocument();
     expect(
-      screen.getByText("No file uploaded • Max. file size 2MB")
+      screen.getByText("No file uploaded • Max. file size 2MB"),
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Upload" })).toBeInTheDocument();
   });
@@ -45,7 +45,7 @@ describe("<FileUploader />", () => {
       expect(screen.getByText("Passport scan")).toBeInTheDocument();
       expect(screen.getByText("my_file_name.pdf")).toBeInTheDocument();
       expect(
-        screen.getByRole("button", { name: "Cancel upload" })
+        screen.getByRole("button", { name: "Cancel upload" }),
       ).toBeInTheDocument();
       expect(screen.getByRole("progressbar")).toBeInTheDocument();
     });
@@ -85,7 +85,7 @@ describe("<FileUploader />", () => {
       expect(screen.getByText("my_visa_file.pdf • 1MB")).toBeInTheDocument();
       expect(
         // eslint-disable-next-line sonarjs/no-duplicate-string
-        screen.getByRole("button", { name: "Remove file" })
+        screen.getByRole("button", { name: "Remove file" }),
       ).toBeInTheDocument();
     });
 
@@ -103,7 +103,7 @@ describe("<FileUploader />", () => {
       expect(screen.queryByText(/1mb/i)).not.toBeInTheDocument();
       expect(screen.queryByText(/2mb/i)).not.toBeInTheDocument();
       expect(
-        screen.getByRole("button", { name: "Remove file" })
+        screen.getByRole("button", { name: "Remove file" }),
       ).toBeInTheDocument();
     });
 
@@ -143,7 +143,7 @@ describe("<FileUploader />", () => {
               Upload
             </FileUploaderButton>
           </FileUploader>
-        </form>
+        </form>,
       );
 
       const removeButton = await screen.findByRole("button", {
@@ -170,7 +170,7 @@ describe("<FileUploader />", () => {
       expect(screen.getByText("Visa Confirmation")).toBeInTheDocument();
       expect(screen.getByText("visa_v2.pdf • 1MB")).toBeInTheDocument();
       expect(
-        screen.getByRole("button", { name: "Remove file" })
+        screen.getByRole("button", { name: "Remove file" }),
       ).toBeInTheDocument();
       expect(screen.getByRole("alert")).toHaveTextContent("File is too large.");
     });
@@ -183,13 +183,13 @@ describe("<FileUploader />", () => {
 
       expect(screen.getByText("Permit")).toBeInTheDocument();
       expect(
-        screen.getByRole("button", { name: "Upload" })
+        screen.getByRole("button", { name: "Upload" }),
       ).toBeInTheDocument();
       expect(
-        screen.queryByRole("button", { name: "Remove file" })
+        screen.queryByRole("button", { name: "Remove file" }),
       ).not.toBeInTheDocument();
       expect(screen.getByRole("alert")).toHaveTextContent(
-        "You must upload a file"
+        "You must upload a file",
       );
     });
 
@@ -201,7 +201,7 @@ describe("<FileUploader />", () => {
 
       expect(screen.getByText("Permit")).toBeInTheDocument();
       expect(
-        screen.getByRole("button", { name: "Upload" })
+        screen.getByRole("button", { name: "Upload" }),
       ).toBeInTheDocument();
       expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     });
@@ -217,7 +217,7 @@ describe("<FileUploader />", () => {
 
     expect(screen.getByText("Registration confirmation")).toBeInTheDocument();
     expect(
-      screen.getByText("No file uploaded • Max. file size 2MB")
+      screen.getByText("No file uploaded • Max. file size 2MB"),
     ).toBeInTheDocument();
 
     const uploadButton = screen.getByRole("button", { name: "Upload" });

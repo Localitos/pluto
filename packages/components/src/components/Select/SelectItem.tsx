@@ -49,7 +49,7 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
         {label}
       </Box.div>
     );
-  }
+  },
 );
 
 SelectItem.displayName = "SelectItem";
