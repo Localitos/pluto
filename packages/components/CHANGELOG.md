@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 16.0.5
+
+### Patch Changes
+
+- [#1167](https://github.com/Localitos/pluto/pull/1167) [`f065c9c`](https://github.com/Localitos/pluto/commit/f065c9c52c28e755e2912c9a4e9a118eba5c7b70) Thanks [@blumaa](https://github.com/blumaa)! - add check-square lucid icon
+
 ## 16.0.4
 
 ### Patch Changes
