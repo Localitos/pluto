@@ -109,7 +109,7 @@ export const Controlled = (): React.ReactElement => {
         <Button
           onClick={() =>
             setChecked((prevIsChecked) =>
-              prevIsChecked === "indeterminate" ? false : "indeterminate"
+              prevIsChecked === "indeterminate" ? false : "indeterminate",
             )
           }
           size="small"

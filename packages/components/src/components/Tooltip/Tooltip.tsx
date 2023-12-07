@@ -28,7 +28,7 @@ const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 Tooltip.displayName = "Tooltip";

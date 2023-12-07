@@ -54,7 +54,7 @@ const getInputIcon = (
   iconName: IconName,
   size?: "large" | "small",
   isLeadingIcon?: boolean,
-  isTrailingIcon?: boolean
+  isTrailingIcon?: boolean,
 ) => {
   return (
     <Box.div
@@ -90,7 +90,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       value,
       ...props
     },
-    ref
+    ref,
   ) => {
     const typeProps: InputTypeProps = { type };
 
@@ -145,7 +145,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {trailingIcon && getInputIcon(trailingIcon, size, undefined, true)}
       </InputBox>
     );
-  }
+  },
 );
 
 Input.displayName = "Input";

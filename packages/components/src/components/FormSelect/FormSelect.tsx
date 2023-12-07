@@ -43,7 +43,7 @@ const FormSelect = React.forwardRef<HTMLButtonElement, FormSelectProps>(
         )}
       </Box.div>
     );
-  }
+  },
 );
 
 FormSelect.displayName = "FormSelect";

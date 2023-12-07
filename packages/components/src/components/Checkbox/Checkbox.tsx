@@ -60,7 +60,7 @@ export interface CheckboxProps extends Omit<RadixCheckboxProps, "id"> {
 }
 
 const getCheckboxStyles = (
-  wrapped: boolean
+  wrapped: boolean,
 ):
   | Record<string, never>
   | {
@@ -142,7 +142,7 @@ const StyledCheckbox = styled.input`
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
   (
     { wrapped = false, error = false, id, checked, children, ...props },
-    ref
+    ref,
   ) => {
     return (
       <Box.div
@@ -176,7 +176,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
         </Text.label>
       </Box.div>
     );
-  }
+  },
 );
 
 export type CheckedState = boolean | "indeterminate";

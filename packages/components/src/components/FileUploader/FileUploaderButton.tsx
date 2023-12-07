@@ -25,7 +25,7 @@ const FileUploaderButton = React.forwardRef<
 >(({ id, onChange, onClick, accept, disabled, required, ...props }, ref) => {
   const inputRef = useRef(null);
   const clickInput = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     invoke(inputRef.current, "click") as void;
     if (onClick) onClick(event);

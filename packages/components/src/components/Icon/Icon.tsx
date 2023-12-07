@@ -38,7 +38,7 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
       as = "div",
       ...props
     },
-    ref
+    ref,
   ) => {
     if (!decorative && title == null) {
       throw new Error(`${icon}: Missing a title for non-decorative icon.`);
@@ -74,7 +74,7 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
         />
       </Box.div>
     );
-  }
+  },
 );
 
 Icon.displayName = "Icon";

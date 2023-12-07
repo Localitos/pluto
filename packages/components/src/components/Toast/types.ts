@@ -41,7 +41,7 @@ export interface ToastContextProps {
     message: string,
     variant: ToastVariants,
     id?: string,
-    cta?: ToastCtaProps
+    cta?: ToastCtaProps,
   ) => void;
 }
 

@@ -19,7 +19,7 @@ export interface LabelProps
 const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
   (
     { children, disabled, marginBottom = "space20", required, ...props },
-    ref
+    ref,
   ) => {
     return (
       <Box.label
@@ -47,7 +47,7 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
         {children}
       </Box.label>
     );
-  }
+  },
 );
 
 Label.displayName = "Label";

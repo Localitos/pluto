@@ -28,7 +28,11 @@ describe("<Pagination />", () => {
     const user = userEvent.setup();
 
     render(
-      <Pagination currentPage={10} onPageChange={onPageChange} pageCount={20} />
+      <Pagination
+        currentPage={10}
+        onPageChange={onPageChange}
+        pageCount={20}
+      />,
     );
 
     const firstPage = screen.getByRole("button", { name: "Goto Page 1" });

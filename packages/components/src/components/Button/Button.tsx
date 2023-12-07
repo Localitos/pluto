@@ -46,7 +46,7 @@ export interface ButtonProps
 
 const getButtonVariantStyles = (
   variant: ButtonVariantOptions,
-  iconOnly: boolean
+  iconOnly: boolean,
 ): {
   color?: SystemProp<keyof Theme["colors"], Theme>;
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
@@ -168,7 +168,7 @@ const getButtonPadding = (
   size: ButtonSizeOptions,
   iconOnly: boolean,
   hasLeadingIcon: boolean,
-  hasTrailingIcon: boolean
+  hasTrailingIcon: boolean,
 ): {
   paddingBottom: SystemProp<keyof Theme["space"], Theme>;
   paddingLeft: SystemProp<keyof Theme["space"], Theme>;
@@ -176,7 +176,7 @@ const getButtonPadding = (
   paddingTop: SystemProp<keyof Theme["space"], Theme>;
 } => {
   const getDefaultPadding = (
-    size: ButtonSizeOptions
+    size: ButtonSizeOptions,
   ): SystemProp<keyof Theme["space"], Theme> =>
     size === "large" ? "space40" : "space30";
 
@@ -230,7 +230,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       ...props
     },
-    ref
+    ref,
   ) => {
     if (iconOnly && props["aria-label"] === undefined) {
       throw new Error("Missing a aria-label for icon only button.");
@@ -283,7 +283,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         </Box.button>
       </>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

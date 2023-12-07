@@ -31,21 +31,21 @@ describe("<Text />", () => {
         target="_blank"
       >
         This is an anchor
-      </Text.a>
+      </Text.a>,
     );
     const renderedText = screen.getByRole("link");
     expect(renderedText).toBeInTheDocument();
     expect(renderedText).toHaveAttribute(
       "href",
-      expect.stringContaining("https://localyzeapp.com")
+      expect.stringContaining("https://localyzeapp.com"),
     );
     expect(renderedText).toHaveAttribute(
       "rel",
-      expect.stringContaining("noreferrer noopener")
+      expect.stringContaining("noreferrer noopener"),
     );
     expect(renderedText).toHaveAttribute(
       "target",
-      expect.stringContaining("_blank")
+      expect.stringContaining("_blank"),
     );
   });
 });

@@ -11,7 +11,7 @@ describe("<Icon />", () => {
 
   it("renders wrapper according 'as' property", () => {
     render(
-      <Icon as="span" data-testid="icon" decorative icon="AcademicCapIcon" />
+      <Icon as="span" data-testid="icon" decorative icon="AcademicCapIcon" />,
     );
 
     const renderedIcon = screen.getByTestId("icon");

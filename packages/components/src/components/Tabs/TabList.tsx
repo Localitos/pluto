@@ -40,7 +40,7 @@ const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
         )}
       </Box.div>
     );
-  }
+  },
 );
 
 TabList.displayName = "TabList";

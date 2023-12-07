@@ -82,7 +82,7 @@ describe("<FormInput />", () => {
     expect(controlledInput).toBeRequired();
     expect(controlledInput).toHaveAttribute(
       "placeholder",
-      "Maybe something crazy?"
+      "Maybe something crazy?",
     );
     expect(controlledInput).toHaveAttribute("name", "flavor");
     expect(controlledInput).toHaveAttribute("id", "flavor");

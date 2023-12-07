@@ -25,7 +25,7 @@ const ToastViewport = React.forwardRef<HTMLOListElement, ToastViewportProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 ToastViewport.displayName = "ToastViewport";

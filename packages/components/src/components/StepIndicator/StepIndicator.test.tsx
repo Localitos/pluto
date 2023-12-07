@@ -19,7 +19,7 @@ describe("<StepIndicatorSegment />", () => {
     // eslint-disable-next-line testing-library/no-node-access
     expect(screen.getByText("Step 1").closest("li")).toHaveAttribute(
       "aria-current",
-      "true"
+      "true",
     );
   });
 
@@ -28,7 +28,7 @@ describe("<StepIndicatorSegment />", () => {
     // eslint-disable-next-line testing-library/no-node-access
     expect(screen.getByText("Step 1").closest("li")).not.toHaveAttribute(
       "aria-current",
-      "true"
+      "true",
     );
   });
 });

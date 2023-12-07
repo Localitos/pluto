@@ -13,7 +13,7 @@ describe("<Badge />", () => {
     render(
       <Badge aria-label="foo" data-testid="bar">
         Message here
-      </Badge>
+      </Badge>,
     );
 
     expect(screen.getByTestId("bar")).toBeInTheDocument();

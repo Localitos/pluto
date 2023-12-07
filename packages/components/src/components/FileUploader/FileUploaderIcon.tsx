@@ -7,7 +7,7 @@ import { FileUploaderStatus } from "./types/FileUploaderStatus";
 
 const getIconContainerProps = (
   status: FileUploaderStatus,
-  disabled = false
+  disabled = false,
 ): {
   backgroundColor: SystemProp<keyof Theme["colors"], Theme>;
 } => {
@@ -30,7 +30,7 @@ const getIconContainerProps = (
 
 const getIconProps = (
   status: FileUploaderStatus,
-  disabled = false
+  disabled = false,
 ): {
   color: SystemProp<keyof Theme["colors"], Theme>;
   icon: IconName;

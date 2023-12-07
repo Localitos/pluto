@@ -41,7 +41,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
         {children}
       </Text.a>
     );
-  }
+  },
 );
 
 Anchor.displayName = "Anchor";

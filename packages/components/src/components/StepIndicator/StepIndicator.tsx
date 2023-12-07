@@ -39,7 +39,7 @@ const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
         }
       </Box.ol>
     );
-  }
+  },
 );
 
 StepIndicator.displayName = "StepIndicator";

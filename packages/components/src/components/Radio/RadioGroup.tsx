@@ -41,7 +41,7 @@ const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
       value,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <Box.div
@@ -62,7 +62,7 @@ const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 RadioGroup.displayName = "Radio";

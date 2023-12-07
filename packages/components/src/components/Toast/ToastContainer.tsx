@@ -24,7 +24,7 @@ const ToastContainer = ({
           message: string,
           variant: ToastVariants = "success",
           id,
-          cta?: ToastCtaProps
+          cta?: ToastCtaProps,
         ) =>
           setToasts([
             ...toasts,

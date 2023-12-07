@@ -33,7 +33,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 Modal.displayName = "Modal";

@@ -74,7 +74,7 @@ describe("<FormSelect />", () => {
   it("should render help text with the", () => {
     render(<RequiredFormSelect />);
     expect(
-      screen.getByText("Please choose one of the values.")
+      screen.getByText("Please choose one of the values."),
     ).toBeInTheDocument();
   });
 

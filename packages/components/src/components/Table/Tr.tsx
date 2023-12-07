@@ -32,7 +32,7 @@ const Tr = React.forwardRef<HTMLTableRowElement, TrProps>(
         {children}
       </Box.tr>
     );
-  }
+  },
 );
 
 Tr.displayName = "Tr";

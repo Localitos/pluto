@@ -16,7 +16,7 @@ describe("Button", () => {
       render(
         <Button as="a" href="#" variant="primary">
           Primary Button
-        </Button>
+        </Button>,
       );
       const renderedButton = screen.getByRole("link");
       expect(renderedButton).toBeInTheDocument();
@@ -26,7 +26,7 @@ describe("Button", () => {
       render(
         <Button disabled variant="primary">
           Primary Button
-        </Button>
+        </Button>,
       );
       const renderedButton = screen.getByRole("button");
       expect(renderedButton).toBeDisabled();
@@ -36,7 +36,7 @@ describe("Button", () => {
       render(
         <Button loading variant="primary">
           Primary Button
-        </Button>
+        </Button>,
       );
       const renderedButton = screen.getByRole("button");
       expect(renderedButton).toHaveAttribute("aria-busy");
@@ -45,11 +45,11 @@ describe("Button", () => {
     it("should throw an exception when iconOnly is true and there is no aria-label", () => {
       const renderWrapper = () =>
         render(
-          <Button iconOnly leadingIcon="AcademicCapIcon" variant="primary" />
+          <Button iconOnly leadingIcon="AcademicCapIcon" variant="primary" />,
         );
 
       expect(renderWrapper).toThrowSilently(
-        "Missing a aria-label for icon only button."
+        "Missing a aria-label for icon only button.",
       );
     });
   });
@@ -70,7 +70,7 @@ describe("Button", () => {
           variant="primary"
         >
           button
-        </Button>
+        </Button>,
       );
 
       const renderedBox = screen.getByRole("button");

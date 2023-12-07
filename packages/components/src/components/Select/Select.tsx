@@ -63,7 +63,7 @@ export interface SelectProps
 
 const getSelectStyles = (
   disabled?: boolean,
-  hasError?: boolean
+  hasError?: boolean,
 ): {
   backgroundColor: SystemProp<keyof Theme["colors"], Theme> | "transparent";
   borderColor: SystemProp<keyof Theme["colors"], Theme>;
@@ -95,7 +95,7 @@ const getSelectStyles = (
 const getSelectedLabel = (
   items: SelectItemProps[],
   value: string[] | string,
-  placeholder?: string
+  placeholder?: string,
 ) => {
   if (value === "") {
     return (
@@ -140,7 +140,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       value,
       ...props
     },
-    ref
+    ref,
   ) => {
     const select = useSelectState({
       defaultValue,
@@ -237,7 +237,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
         </SelectPopover>
       </>
     );
-  }
+  },
 );
 
 Select.displayName = "Select";

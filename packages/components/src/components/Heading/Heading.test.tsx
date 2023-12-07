@@ -45,7 +45,7 @@ describe("<Heading />", () => {
     render(
       <Heading aria-label="foo" data-testid="bar">
         {text}
-      </Heading>
+      </Heading>,
     );
     expect(screen.getByTestId("bar")).toBeInTheDocument();
     expect(screen.getByLabelText("foo")).toBeInTheDocument();

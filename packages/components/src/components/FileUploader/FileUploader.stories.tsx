@@ -269,7 +269,7 @@ export const WithRequiredButton = (): React.ReactElement => {
   const [error, setError] = useState("");
 
   const onSubmit = (
-    ev: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+    ev: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>,
   ) => {
     ev.preventDefault();
 

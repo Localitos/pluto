@@ -37,7 +37,7 @@ export type AvatarProps = {
 };
 
 const getAvatarSizes = (
-  size: AvatarSizeOptions
+  size: AvatarSizeOptions,
 ): {
   w: string;
   h: string;
@@ -77,7 +77,7 @@ const getAvatarSizes = (
 };
 
 const getInitialsStyles = (
-  size: AvatarSizeOptions
+  size: AvatarSizeOptions,
 ): {
   fontSize?: SystemProp<keyof Theme["fontSizes"], Theme>;
   fontWeight?: SystemProp<keyof Theme["fontWeights"], Theme>;
@@ -114,7 +114,7 @@ const getInitialsStyles = (
 };
 
 const getLabelSizes = (
-  size: AvatarSizeOptions
+  size: AvatarSizeOptions,
 ): {
   fontSize: SystemProp<keyof Theme["fontSizes"], Theme>;
 } => {
@@ -139,7 +139,7 @@ const getLabelSizes = (
 
 const getImageSizes = (
   size: AvatarSizeOptions,
-  orientation?: Orientation
+  orientation?: Orientation,
 ): {
   w: string;
   h: string;
@@ -154,7 +154,7 @@ const getImageSizes = (
 };
 
 const getAvatarColorStyles = (
-  color: AvatarColorOptions
+  color: AvatarColorOptions,
 ): {
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
 } => {
@@ -193,7 +193,7 @@ const getAvatarColorStyles = (
 };
 
 const getBorderStyles = (
-  size: AvatarSizeOptions
+  size: AvatarSizeOptions,
 ): {
   borderWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
@@ -230,7 +230,7 @@ const getBorderStyles = (
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
   (
     { border, color = "blue", src, name, showName, size = "medium", ...props },
-    ref
+    ref,
   ) => {
     const { orientation, hasError } = useGetImageOrientation(src);
     const shouldRenderImage = src && !hasError;
@@ -283,7 +283,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         )}
       </Box.div>
     );
-  }
+  },
 );
 
 Avatar.displayName = "Avatar";

@@ -16,7 +16,7 @@ describe("<Label />", () => {
     render(
       <Label htmlFor="required-input-id" required>
         {requiredText}
-      </Label>
+      </Label>,
     );
 
     expect(screen.getByText(requiredText)).toBeInTheDocument();

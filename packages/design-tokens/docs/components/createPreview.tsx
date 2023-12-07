@@ -31,7 +31,7 @@ export const createPreview =
     const normalizedSuffix = replace(
       upperFirst(camelCase(suffix)),
       "Negative",
-      ""
+      "",
     );
 
     const props = {

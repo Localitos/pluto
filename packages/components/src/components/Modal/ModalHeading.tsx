@@ -22,7 +22,7 @@ const ModalHeading = React.forwardRef<HTMLHeadingElement, ModalHeadingProps>(
         {children}
       </Heading>
     );
-  }
+  },
 );
 
 ModalHeading.displayName = "ModalHeading";

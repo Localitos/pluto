@@ -37,7 +37,7 @@ const HelpText = React.forwardRef<HTMLSpanElement, HelpTextProps>(
         {children}
       </Box.span>
     );
-  }
+  },
 );
 
 HelpText.displayName = "HelpText";

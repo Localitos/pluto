@@ -8,7 +8,7 @@ describe("<UnorderedList />", () => {
     render(
       <UnorderedList>
         <ListItem>An item</ListItem>
-      </UnorderedList>
+      </UnorderedList>,
     );
 
     expect(screen.getByRole("list")).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe("<UnorderedList />", () => {
     render(
       <UnorderedList aria-label="foo" data-testid="bar">
         <ListItem>An item</ListItem>
-      </UnorderedList>
+      </UnorderedList>,
     );
     expect(screen.getByTestId("bar")).toBeInTheDocument();
     expect(screen.getByLabelText("foo")).toBeInTheDocument();

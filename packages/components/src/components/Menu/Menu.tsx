@@ -96,7 +96,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
         </AriakitMenu>
       </Box.div>
     );
-  }
+  },
 );
 
 Menu.displayName = "Menu";

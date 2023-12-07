@@ -34,7 +34,7 @@ describe("<Select />", () => {
       <Select
         {...initialProps}
         value={[initialProps.items[0].value, initialProps.items[1].value]}
-      />
+      />,
     );
     const SelectElement = screen.getByRole("combobox");
     expect(SelectElement).toBeInTheDocument();

@@ -37,7 +37,7 @@ const SelectPopover = React.forwardRef<HTMLDivElement, SelectPopoverProps>(
         {children}
       </Box.div>
     );
-  }
+  },
 );
 
 SelectPopover.displayName = "SelectPopover";

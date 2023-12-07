@@ -17,7 +17,7 @@ describe("<FileUploaderButton />", () => {
         variant="primary"
       >
         Upload
-      </FileUploaderButton>
+      </FileUploaderButton>,
     );
 
     const input = screen.getByLabelText("Upload");
@@ -25,7 +25,7 @@ describe("<FileUploaderButton />", () => {
     await userEvent.upload(input, mockFile);
 
     expect(mockOnChange).toHaveBeenCalledWith(
-      expect.objectContaining({ type: "change" })
+      expect.objectContaining({ type: "change" }),
     );
     expect((input as HTMLInputElement).files).toHaveLength(1);
   });
@@ -41,7 +41,7 @@ describe("<FileUploaderButton />", () => {
         variant="primary"
       >
         Upload
-      </FileUploaderButton>
+      </FileUploaderButton>,
     );
 
     await userEvent.click(screen.getByRole("button"));
@@ -57,7 +57,7 @@ describe("<FileUploaderButton />", () => {
         variant="primary"
       >
         Upload
-      </FileUploaderButton>
+      </FileUploaderButton>,
     );
 
     const input = screen.getByLabelText("Upload");

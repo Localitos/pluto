@@ -16,7 +16,7 @@ describe("<Paragraph />", () => {
     render(
       <Paragraph aria-label="foo" data-testid="bar">
         {text}
-      </Paragraph>
+      </Paragraph>,
     );
     expect(screen.getByTestId("bar")).toBeInTheDocument();
     expect(screen.getByLabelText("foo")).toBeInTheDocument();
