@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.5.2
+
+### Patch Changes
+
+- [#1164](https://github.com/Localitos/pluto/pull/1164) [`a608cde`](https://github.com/Localitos/pluto/commit/a608cdec05897dda5b2fe57170ec369ec9a9013f) Thanks [@dependabot](https://github.com/apps/dependabot)! - Applying new prettier version changes to code
+
 ## 0.5.1
 
 ### Patch Changes
