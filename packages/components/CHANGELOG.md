@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 16.1.0
+
+### Minor Changes
+
+- [#1184](https://github.com/Localitos/pluto/pull/1184) [`3cb39f4`](https://github.com/Localitos/pluto/commit/3cb39f42fad092615e76bb7c4fad4180056c31f7) Thanks [@rssilva](https://github.com/rssilva)! - Add a onCancel callback to confirmation modal
+
 ## 16.0.6
 
 ### Patch Changes
