@@ -9,6 +9,7 @@ export interface ConfirmationModalProps {
   confirmLabel?: string;
   destructive?: boolean;
   onConfirm: () => void;
+  onCancel?: () => void;
 }
 
 /**
@@ -18,6 +19,7 @@ export interface ConfirmationModalProps {
  * @param props.destructive is this a confirmation for a destructive action?
  * @param props.confirmLabel label for the confirm button
  * @param props.onConfirm function to call when clicking the confirm button
+ * @param props.onCancel function to call when clicking the cancel button
  * @param props.children React children for the modal body
  * @returns React.JSX.Element
  */
@@ -32,6 +34,7 @@ const ConfirmationModal = React.forwardRef<
       destructive = false,
       confirmLabel = "Confirm",
       onConfirm,
+      onCancel,
       children,
     },
     _ref,
@@ -45,7 +48,13 @@ const ConfirmationModal = React.forwardRef<
       <Modal maxWidth="25rem" state={state}>
         <ModalBody>{children}</ModalBody>
         <ModalFooter>
-          <Button onClick={state.hide} variant="secondary">
+          <Button
+            onClick={() => {
+              onCancel?.();
+              state.hide();
+            }}
+            variant="secondary"
+          >
             Cancel
           </Button>
           <Button
