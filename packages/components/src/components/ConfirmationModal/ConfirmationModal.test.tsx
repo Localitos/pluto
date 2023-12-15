@@ -2,20 +2,26 @@ import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import React from "react";
 import { useModalState } from "../Modal/index";
-import { ConfirmationModal } from "./ConfirmationModal";
+import { ConfirmationModal, ConfirmationModalProps } from "./ConfirmationModal";
 
 const OPEN_MODAL_TEXT = "Open modal";
 
 const onConfirm = jest.fn();
 
-const ExampleModal = () => {
+const ExampleModal = ({
+  onCancel,
+}: Pick<ConfirmationModalProps, "onCancel">) => {
   const state = useModalState();
 
   return (
     <div>
       <button onClick={state.show}>{OPEN_MODAL_TEXT}</button>
 
-      <ConfirmationModal onConfirm={onConfirm} state={state}>
+      <ConfirmationModal
+        onCancel={onCancel}
+        onConfirm={onConfirm}
+        state={state}
+      >
         Do you want to confirm?
       </ConfirmationModal>
     </div>
@@ -66,6 +72,19 @@ describe("<ConfirmationModal />", () => {
 
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     expect(onConfirm).toHaveBeenCalled();
+  });
+
+  it("calls onCancel when it is passed as a prop", async () => {
+    const onCancel = jest.fn();
+    render(<ExampleModal onCancel={onCancel} />);
+
+    await userEvent.click(screen.getByText(OPEN_MODAL_TEXT));
+
+    const cancelButton = screen.getByRole("button", { name: "Cancel" });
+    expect(cancelButton).toBeInTheDocument();
+    await userEvent.click(cancelButton);
+
+    expect(onCancel).toHaveBeenCalled();
   });
 
   it("renders a custom button label", async () => {
