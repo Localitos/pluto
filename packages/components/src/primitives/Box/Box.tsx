@@ -22,11 +22,12 @@ export interface BoxProps extends SystemProps {
   borderRightWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
   borderBottonWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
   borderLeftWidth?: SystemProp<keyof Theme["borderWidths"], Theme>;
-  borderRadius?: SystemProp<keyof Theme["radii"], Theme>;
-  borderTopRightRadius?: SystemProp<keyof Theme["radii"], Theme>;
-  borderTopLeftRadius?: SystemProp<keyof Theme["radii"], Theme>;
-  borderBottomRightRadius?: SystemProp<keyof Theme["radii"], Theme>;
-  borderBottomLeftRadius?: SystemProp<keyof Theme["radii"], Theme>;
+  borderRadius?:
+    | SystemProp<
+        `${keyof Theme["radii"]} ${keyof Theme["radii"]} ${keyof Theme["radii"]} ${keyof Theme["radii"]}`,
+        Theme
+      >
+    | SystemProp<keyof Theme["radii"], Theme>;
   boxShadow?: SystemProp<keyof Theme["shadows"], Theme> | "none";
   color?: SystemProp<keyof Theme["colors"], Theme> | "currentcolor" | "inherit";
   fontFamily?: SystemProp<keyof Theme["fonts"], Theme> | "inherit";
