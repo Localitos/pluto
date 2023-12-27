@@ -1,10 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": [
-    "localyze",
-    "localitos"
-  ],
+  "words": ["localyze", "localitos"],
   "ignoreWords": [
     "eamodio",
     "dbaeumer",
@@ -13,6 +10,7 @@
     "sonarjs",
     "tsup",
     "moderat",
+    "noto",
     "npmrc",
     "rgba",
     "testid",
@@ -32,9 +30,7 @@
     "lucide",
     "yalc"
   ],
-  "flagWords": [
-    "hte"
-  ],
+  "flagWords": ["hte"],
   "allowCompoundWords": true,
   "ignorePaths": [
     "**/node_modules/**",
@@ -50,9 +46,7 @@
   "overrides": [
     {
       "filename": "**/{stories,spec,test}.{ts,tsx,js,jsx}",
-      "dictionaries": [
-        "lorem-ipsum"
-      ]
+      "dictionaries": ["lorem-ipsum"]
     }
   ]
 }
