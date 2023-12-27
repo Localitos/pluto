@@ -2,20 +2,26 @@ import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import React from "react";
 import { useModalStore } from "../Modal/index";
-import { ConfirmationModal } from "./ConfirmationModal";
+import { ConfirmationModal, ConfirmationModalProps } from "./ConfirmationModal";
 
 const OPEN_MODAL_TEXT = "Open modal";
 
 const onConfirm = jest.fn();
 
-const ExampleModal = () => {
+const ExampleModal = ({
+  onCancel,
+}: Pick<ConfirmationModalProps, "onCancel">) => {
   const store = useModalStore();
 
   return (
     <div>
       <button onClick={store.show}>{OPEN_MODAL_TEXT}</button>
 
-      <ConfirmationModal onConfirm={onConfirm} store={store}>
+      <ConfirmationModal
+        onCancel={onCancel}
+        onConfirm={onConfirm}
+        store={store}
+      >
         Do you want to confirm?
       </ConfirmationModal>
     </div>
