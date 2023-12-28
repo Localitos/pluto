@@ -1,6 +1,5 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
-// import { Box } from "../../primitives/Box";
 import { ContentCard } from "./ContentCard";
 
 export default {
