@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import map from "lodash/map";
 import React, { ReactElement } from "react";
 import dropRight from "lodash/dropRight";
@@ -10,11 +10,11 @@ import { Button, ButtonProps } from "./Button";
 export default {
   component: Button,
   title: "Components/Button",
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
 const variants = ["primary", "secondary", "destructive", "ghost", "outline"];
 
-const Template: ComponentStory<typeof Button> = (args) => (
+const Template: StoryFn<typeof Button> = (args) => (
   <Box.div alignItems="center" display="flex" gap="space30">
     {map(dropRight(variants), (variant: ButtonProps["variant"]) => {
       return (
@@ -96,7 +96,7 @@ export const WithReactRouter = (): JSX.Element => {
   );
 };
 
-export const WithNextJS: ComponentStory<typeof Button> = () => {
+export const WithNextJS: StoryFn<typeof Button> = () => {
   return (
     <Link href="/router-page" legacyBehavior passHref>
       <Button as="a" variant="primary">

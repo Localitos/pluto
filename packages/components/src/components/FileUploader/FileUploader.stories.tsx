@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React, { useState } from "react";
 import { Uppy } from "@uppy/core";
 import { Button } from "../Button";
@@ -10,9 +10,9 @@ const FILE_URL = "http://file-path/file.pdf";
 export default {
   component: FileUploader,
   title: "Components/FileUploader",
-} as ComponentMeta<typeof FileUploader>;
+} as Meta<typeof FileUploader>;
 
-const Template: ComponentStory<typeof FileUploader> = (args) => (
+const Template: StoryFn<typeof FileUploader> = (args) => (
   <FileUploader {...args} />
 );
 

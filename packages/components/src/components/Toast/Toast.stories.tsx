@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
 import { Anchor } from "../Anchor";
@@ -20,9 +20,9 @@ export default {
         "ToastProvider and ToastViewport should only be used once in an application. Both should be placed in the root of the application.",
     },
   },
-} as ComponentMeta<typeof Toast>;
+} as Meta<typeof Toast>;
 
-const Template: ComponentStory<typeof Toast> = (args) => {
+const Template: StoryFn<typeof Toast> = (args) => {
   const [open, setOpen] = React.useState(isChromatic() ? true : false);
 
   return (

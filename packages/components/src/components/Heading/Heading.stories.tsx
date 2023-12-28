@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
 import { Heading } from "./Heading";
@@ -6,11 +6,9 @@ import { Heading } from "./Heading";
 export default {
   component: Heading,
   title: "Components/Heading",
-} as ComponentMeta<typeof Heading>;
+} as Meta<typeof Heading>;
 
-const Template: ComponentStory<typeof Heading> = (args) => (
-  <Heading {...args} />
-);
+const Template: StoryFn<typeof Heading> = (args) => <Heading {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

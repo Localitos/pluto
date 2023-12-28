@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
 import { Box } from "../../primitives/Box";
@@ -17,7 +17,7 @@ import {
 export default {
   component: Modal,
   title: "Components/Modal",
-} as ComponentMeta<typeof Modal>;
+} as Meta<typeof Modal>;
 
 export const Default = (): JSX.Element => {
   const modal = useModalState({ defaultOpen: isChromatic() ? true : false });

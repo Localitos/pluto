@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import { useFormik } from "formik";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
@@ -13,7 +13,7 @@ import type { SelectProps } from "./Select";
 export default {
   component: Select,
   title: "Components/Select",
-} as ComponentMeta<typeof Select>;
+} as Meta<typeof Select>;
 
 const selectItems: SelectProps["items"] = [
   { value: "option-one", label: "Option One" },

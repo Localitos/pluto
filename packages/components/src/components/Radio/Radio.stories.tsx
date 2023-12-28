@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import React from "react";
 import { Box } from "../../primitives/Box";
@@ -10,7 +10,7 @@ import { ControlledRadioGroup } from "./ControlledRadioGroup/ControlledRadioGrou
 export default {
   component: Radio,
   title: "Components/Radio",
-} as ComponentMeta<typeof Radio>;
+} as Meta<typeof Radio>;
 
 export const Default = (): JSX.Element => {
   return (

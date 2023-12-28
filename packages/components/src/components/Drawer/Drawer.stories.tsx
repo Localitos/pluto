@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
 import { Box } from "../../primitives/Box";
@@ -15,7 +15,7 @@ import {
 export default {
   component: Drawer,
   title: "Components/Drawer",
-} as ComponentMeta<typeof Drawer>;
+} as Meta<typeof Drawer>;
 
 export const Default = (): JSX.Element => {
   const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });

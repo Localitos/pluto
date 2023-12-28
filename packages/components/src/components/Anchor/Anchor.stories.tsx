@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Link as ReactRouterLink, BrowserRouter } from "react-router-dom";
 import Link from "next/link";
@@ -7,9 +7,9 @@ import { Anchor } from "./Anchor";
 export default {
   component: Anchor,
   title: "Components/Anchor",
-} as ComponentMeta<typeof Anchor>;
+} as Meta<typeof Anchor>;
 
-const Template: ComponentStory<typeof Anchor> = (args) => <Anchor {...args} />;
+const Template: StoryFn<typeof Anchor> = (args) => <Anchor {...args} />;
 
 const defaultArgs = {
   children: "I'm an anchor",
@@ -37,7 +37,7 @@ export const WithReactRouter = (): JSX.Element => {
   );
 };
 
-export const WithNextJS: ComponentStory<typeof Anchor> = () => {
+export const WithNextJS: StoryFn<typeof Anchor> = () => {
   return (
     <Link href="/router-page" legacyBehavior passHref>
       <Anchor>NextJS link</Anchor>

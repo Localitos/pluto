@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import map from "lodash/map";
 import dropRight from "lodash/dropRight";
 import React from "react";
@@ -10,7 +10,7 @@ import type { AvatarColorOptions } from "./Avatar";
 export default {
   component: Avatar,
   title: "Components/Avatar",
-} as ComponentMeta<typeof Avatar>;
+} as Meta<typeof Avatar>;
 
 const sizes: AvatarSizeOptions[] = [
   "xsmall",
@@ -20,7 +20,7 @@ const sizes: AvatarSizeOptions[] = [
   "xlarge",
 ];
 
-const Template: ComponentStory<typeof Avatar> = (args) => (
+const Template: StoryFn<typeof Avatar> = (args) => (
   <Box.div alignItems="center" display="flex" gap="space30" maxWidth="680px">
     {map(sizes, (size: AvatarSizeOptions) => {
       return (
@@ -69,9 +69,7 @@ export const WithBorder = (): JSX.Element => (
   </Box.div>
 );
 
-export const InitialsAndBackgroundColors: ComponentStory<
-  typeof Avatar
-> = () => {
+export const InitialsAndBackgroundColors: StoryFn<typeof Avatar> = () => {
   return (
     <Box.div display="flex" flexDirection="column" gap="space40">
       <Box.div display="flex" flexDirection="row" gap="space40">
@@ -114,9 +112,7 @@ export const InitialsAndBackgroundColors: ComponentStory<
   );
 };
 
-export const InitialsAndRandomBackgroundColor: ComponentStory<
-  typeof Avatar
-> = () => {
+export const InitialsAndRandomBackgroundColor: StoryFn<typeof Avatar> = () => {
   return (
     <Box.div display="flex" flexDirection="row" gap="space40">
       <Avatar
