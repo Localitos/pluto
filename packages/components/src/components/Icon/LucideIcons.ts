@@ -16,11 +16,13 @@ import {
   Pin,
   PinOff,
   Trash2,
+  Calendar,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
 
 export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   "baggage-claim": BaggageClaim,
+  calendar: Calendar,
   "check-square": CheckSquare,
   "building-2": Building2,
   "heart-handshake": HeartHandshake,
