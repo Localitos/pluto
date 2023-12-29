@@ -120,11 +120,14 @@ export const ContentCard = ({
           flexShrink={2}
           gap="space50"
         >
-          <Box.div w={{ _: "100%", md: "50%" }}>
-            <Button fullWidth onClick={onClickButton} variant="secondary">
-              {buttonText}
-            </Button>
-          </Box.div>
+          {buttonText && (
+            <Box.div w={{ _: "100%", md: "50%" }}>
+              <Button fullWidth onClick={onClickButton} variant="secondary">
+                {buttonText}
+              </Button>
+            </Box.div>
+          )}
+
           {href ? null : <Anchor href={linkHref}>{linkText || ""}</Anchor>}
         </Box.div>
       </Box.div>
@@ -141,7 +144,6 @@ export const ContentCard = ({
       >
         <Box.img
           alt={imageAlt}
-          // h={{ _: "unset", md: "auto" }}
           maxH={{ _: "unset", md: "max-content" }}
           maxWidth="100%"
           src={imageSrc}
