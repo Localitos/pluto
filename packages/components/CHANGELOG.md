@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 16.1.1
+
+### Patch Changes
+
+- [#1207](https://github.com/Localitos/pluto/pull/1207) [`a7dc6f7`](https://github.com/Localitos/pluto/commit/a7dc6f7cfeedcb11369dd875a4f2d1fb1f06ee0a) Thanks [@rssilva](https://github.com/rssilva)! - Add Calendar icon from lucide package
+
+- [#1187](https://github.com/Localitos/pluto/pull/1187) [`90ecb68`](https://github.com/Localitos/pluto/commit/90ecb683b3498c452d85f19038f804ec6310ab17) Thanks [@rssilva](https://github.com/rssilva)! - Update storybook, danger, typescript eslint plugin, react-uid
+
 ## 16.1.0
 
 ### Minor Changes
