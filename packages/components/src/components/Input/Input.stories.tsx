@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import { useUID } from "react-uid";
 import { HelpText } from "../HelpText";
@@ -8,7 +8,7 @@ import { Input } from "./Input";
 export default {
   component: Input,
   title: "Components/Input",
-} as ComponentMeta<typeof Input>;
+} as Meta<typeof Input>;
 
 export const Default = (): JSX.Element => {
   const inputID = useUID();

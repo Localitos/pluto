@@ -1,15 +1,13 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { HelpText } from "./HelpText";
 
 export default {
   component: HelpText,
   title: "Components/HelpText",
-} as ComponentMeta<typeof HelpText>;
+} as Meta<typeof HelpText>;
 
-const Template: ComponentStory<typeof HelpText> = (args) => (
-  <HelpText {...args} />
-);
+const Template: StoryFn<typeof HelpText> = (args) => <HelpText {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

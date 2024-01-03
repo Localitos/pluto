@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React, { ReactElement } from "react";
 import { Anchor } from "../Anchor/Anchor";
 import { Box } from "../../primitives/Box";
@@ -8,7 +8,7 @@ import { ListItem } from "./ListItem";
 export default {
   component: UnorderedList,
   title: "Components/List",
-} as ComponentMeta<typeof UnorderedList>;
+} as Meta<typeof UnorderedList>;
 
 export const Unordered = (): ReactElement => (
   <UnorderedList>

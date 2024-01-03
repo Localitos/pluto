@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
 import { Anchor } from "../Anchor";
@@ -12,7 +12,7 @@ export default {
   parameters: {
     chromatic: { delay: 1000 },
   },
-} as ComponentMeta<typeof Tooltip>;
+} as Meta<typeof Tooltip>;
 
 export const Default = (): JSX.Element => {
   const tooltip = useTooltipState({

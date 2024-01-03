@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
@@ -9,9 +9,9 @@ import { Callout } from "./Callout";
 export default {
   component: Callout,
   title: "Components/Callout",
-} as ComponentMeta<typeof Callout>;
+} as Meta<typeof Callout>;
 
-const Template: ComponentStory<typeof Callout> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Callout> = ({ children, ...args }) => (
   <Callout {...args}>{children}</Callout>
 );
 

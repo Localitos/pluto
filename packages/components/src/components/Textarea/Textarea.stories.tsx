@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import { useUID } from "react-uid";
 import { HelpText } from "../HelpText";
@@ -8,7 +8,7 @@ import { TextArea } from "./Textarea";
 export default {
   component: TextArea,
   title: "Components/Textarea",
-} as ComponentMeta<typeof TextArea>;
+} as Meta<typeof TextArea>;
 
 export const Default = (): JSX.Element => {
   const textAreaID = useUID();

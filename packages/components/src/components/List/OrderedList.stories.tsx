@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React, { ReactElement } from "react";
 import { Anchor } from "../Anchor/Anchor";
 import { OrderedList } from "./OrderedList";
@@ -7,7 +7,7 @@ import { ListItem } from "./ListItem";
 export default {
   component: OrderedList,
   title: "Components/List",
-} as ComponentMeta<typeof OrderedList>;
+} as Meta<typeof OrderedList>;
 
 export const Ordered = (): ReactElement => (
   <OrderedList>

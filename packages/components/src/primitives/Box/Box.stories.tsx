@@ -1,11 +1,11 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import { Box } from "./Box";
 
 export default {
   component: Box.div,
   title: "Primitives/Box",
-} as ComponentMeta<typeof Box.div>;
+} as Meta<typeof Box.div>;
 
 export const Default = (): JSX.Element => (
   <Box.div

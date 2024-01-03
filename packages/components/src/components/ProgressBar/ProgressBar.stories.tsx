@@ -1,4 +1,4 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React, { useEffect, useState } from "react";
 import { Box } from "../../primitives/Box";
 import { ProgressBar } from "./ProgressBar";
@@ -6,7 +6,7 @@ import { ProgressBar } from "./ProgressBar";
 export default {
   component: ProgressBar,
   title: "Components/ProgressBar",
-} as ComponentMeta<typeof ProgressBar>;
+} as Meta<typeof ProgressBar>;
 
 export const Default = (): JSX.Element => (
   <Box.div display="flex" flexDirection="column" gap="space40">

@@ -1,6 +1,6 @@
 import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 
 import React from "react";
 import map from "lodash/map";
@@ -13,9 +13,9 @@ import { LucideIcons } from "./LucideIcons";
 export default {
   component: Icon,
   title: "Components/Icon",
-} as ComponentMeta<typeof Icon>;
+} as Meta<typeof Icon>;
 
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
+const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

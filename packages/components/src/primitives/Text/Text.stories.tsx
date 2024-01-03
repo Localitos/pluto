@@ -1,11 +1,11 @@
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import React from "react";
 import { Text } from "./Text";
 
 export default {
   component: Text.span,
   title: "Primitives/Text",
-} as ComponentMeta<typeof Text.span>;
+} as Meta<typeof Text.span>;
 
 export const Default = (): JSX.Element => (
   <Text.span>This is the text component.</Text.span>

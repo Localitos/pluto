@@ -1,13 +1,13 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { InputBox } from "./InputBox";
 
 export default {
   component: InputBox,
   title: "Components/InputBox",
-} as ComponentMeta<typeof InputBox>;
+} as Meta<typeof InputBox>;
 
-const Template: ComponentStory<typeof InputBox> = (args) => (
+const Template: StoryFn<typeof InputBox> = (args) => (
   <InputBox {...args}>Input Box</InputBox>
 );
 

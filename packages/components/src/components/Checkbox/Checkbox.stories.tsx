@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../Button";
@@ -10,9 +10,9 @@ import { ControlledCheckbox } from "./ControlledCheckbox/ControlledCheckbox";
 export default {
   component: Checkbox,
   title: "Components/Checkbox",
-} as ComponentMeta<typeof Checkbox>;
+} as Meta<typeof Checkbox>;
 
-const Template: ComponentStory<typeof Checkbox> = (args) => (
+const Template: StoryFn<typeof Checkbox> = (args) => (
   <form>
     <Checkbox {...args} />
   </form>

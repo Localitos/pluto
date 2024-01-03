@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import React, { useEffect, useState } from "react";
 import { Dropzone } from "./Dropzone";
 
@@ -9,9 +9,9 @@ const NOOP = (): void => {};
 export default {
   component: Dropzone,
   title: "Components/Dropzone",
-} as ComponentMeta<typeof Dropzone>;
+} as Meta<typeof Dropzone>;
 
-const Template: ComponentStory<typeof Dropzone> = (args) => (
+const Template: StoryFn<typeof Dropzone> = (args) => (
   <Dropzone {...args} onCancel={NOOP} onDrop={NOOP} />
 );
 
