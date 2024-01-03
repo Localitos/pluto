@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 16.3.0
+
+### Minor Changes
+
+- [#1210](https://github.com/Localitos/pluto/pull/1210) [`105a81c`](https://github.com/Localitos/pluto/commit/105a81c9ce20908e3325ac7916bc5465968474db) Thanks [@rssilva](https://github.com/rssilva)! - Replace ComponentMeta and ComponentStory by their updated new versions
+
 ## 16.2.0
 
 ### Minor Changes
