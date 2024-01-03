@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 16.2.0
+
+### Minor Changes
+
+- [#1208](https://github.com/Localitos/pluto/pull/1208) [`3d8e17d`](https://github.com/Localitos/pluto/commit/3d8e17de92bcbad3303d5a87d41c5a8b44a36136) Thanks [@rssilva](https://github.com/rssilva)! - Remove border radius props that does not work, enable to pass strings with multiple values
+
 ## 16.1.1
 
 ### Patch Changes
