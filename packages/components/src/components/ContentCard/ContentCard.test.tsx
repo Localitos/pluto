@@ -19,10 +19,10 @@ describe("<ContentCard>", () => {
       />,
     );
 
-    expect(screen.queryByText("Good title!")).toBeVisible();
-    expect(screen.queryByText("hello! Long text")).toBeVisible();
-    expect(screen.queryByText("🏠 housing")).toBeVisible();
-    expect(screen.queryByText("Wed, Dec 27 2023")).toBeVisible();
+    expect(screen.getByText("Good title!")).toBeVisible();
+    expect(screen.getByText("hello! Long text")).toBeVisible();
+    expect(screen.getByText("🏠 housing")).toBeVisible();
+    expect(screen.getByText("Wed, Dec 27 2023")).toBeVisible();
   });
 
   it("renders image", () => {
