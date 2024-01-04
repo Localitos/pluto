@@ -1,10 +1,12 @@
 import React from "react";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 import { Heading } from "../Heading";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 import { Button } from "../Button";
 import { Anchor } from "../Anchor";
+
+type ImagePosition = "right" | "top";
 
 type CommonProps = {
   imageSrc: string;
@@ -15,6 +17,7 @@ type CommonProps = {
   date?: string;
   buttonText?: string;
   onClickButton?: () => void;
+  imagePosition?: ImagePosition;
 };
 
 type InteractiveCard = {
@@ -29,7 +32,7 @@ type RegularCard = {
   linkText?: string;
 };
 
-type ContentCardProps = CommonProps & (InteractiveCard | RegularCard);
+export type ContentCardProps = CommonProps & (InteractiveCard | RegularCard);
 
 export const ContentCard = ({
   href,
@@ -43,7 +46,33 @@ export const ContentCard = ({
   linkText,
   linkHref,
   imageAlt,
+  imagePosition = "right",
 }: ContentCardProps): JSX.Element => {
+  const isImageOnTop = imagePosition === "top";
+
+  const maxHeight = {
+    top: "",
+    right: {
+      md: 256,
+    },
+  };
+
+  const maxWidth = {
+    top: 350,
+    right: {
+      _: 350,
+      md: 1000,
+    },
+  };
+
+  const imageBorderRadius: Record<ImagePosition, BoxProps["borderRadius"]> = {
+    top: "borderRadius40 borderRadius40 borderRadius0 borderRadius0",
+    right: {
+      _: "borderRadius40 borderRadius40 borderRadius0 borderRadius0",
+      md: "borderRadius0 borderRadius40 borderRadius40 borderRadius0",
+    },
+  };
+
   return (
     <Box.div
       as={href ? "a" : "div"}
@@ -54,18 +83,19 @@ export const ContentCard = ({
       }}
       border={0}
       borderRadius="borderRadius40"
+      boxShadow={{
+        hover: "shadowStrong",
+        focusWithin: "shadowStrong",
+      }}
       cursor={href ? "pointer" : "default"}
       display="flex"
-      flexDirection={{ _: "column-reverse", md: "unset" }}
+      flexDirection={
+        isImageOnTop ? "column-reverse" : { _: "column-reverse", md: "unset" }
+      }
       fontFamily="fontFamilyNotoSans"
       href={href}
-      maxH={{
-        md: 256,
-      }}
-      maxW={{
-        _: 350,
-        md: 1000,
-      }}
+      maxH={maxHeight[imagePosition]}
+      maxW={maxWidth[imagePosition]}
       padding="space0"
       textDecoration="none"
     >
@@ -114,14 +144,16 @@ export const ContentCard = ({
           </Box.div>
         )}
         <Box.div
-          alignItems={{ _: "flex-start", md: "center" }}
+          alignItems={
+            isImageOnTop ? "center" : { _: "flex-start", md: "center" }
+          }
           display="flex"
-          flexDirection={{ _: "column", md: "row" }}
+          flexDirection={isImageOnTop ? "row" : { _: "column", md: "row" }}
           flexShrink={2}
           gap="space50"
         >
           {buttonText && (
-            <Box.div w={{ _: "100%", md: "50%" }}>
+            <Box.div w={isImageOnTop ? "50%" : { _: "100%", md: "50%" }}>
               <Button fullWidth onClick={onClickButton} variant="secondary">
                 {buttonText}
               </Button>
@@ -133,13 +165,10 @@ export const ContentCard = ({
       </Box.div>
       <Box.div
         alignItems="center"
-        borderRadius={{
-          _: "borderRadius40 borderRadius40 borderRadius0 borderRadius0",
-          md: "borderRadius0 borderRadius40 borderRadius40 borderRadius0",
-        }}
+        borderRadius={imageBorderRadius[imagePosition]}
         display="flex"
-        maxH={{ _: 180, md: "unset" }}
-        maxWidth={{ _: "100%", md: "400" }}
+        maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
+        maxWidth={isImageOnTop ? 400 : { _: "100%", md: 400 }}
         overflow="hidden"
       >
         <Box.img
