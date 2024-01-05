@@ -47,21 +47,36 @@ const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
 };
 
 export const ContentCard = ({
+  /** Sets the URL to be added to the card when it behaves as a link */
   href,
-  imageSrc,
-  title,
-  tag,
-  text,
-  date,
-  buttonText,
-  onClickButton,
-  linkText,
+  /** If the entire card is not a link this prop adds a link on the content body. This prop is mutually exclusive to "href" */
   linkHref,
+  /** Sets the text to the link on the content body */
+  linkText,
+  /** Sets the card image source */
+  imageSrc,
+  /** Sets the card image alt */
   imageAlt,
+  /** Sets the title to be rendered as h2 */
+  title,
+  /** Sets the content text */
+  text,
+  /** Sets the content tag */
+  tag,
+  /** Sets the date to be rendered together with calendar icon */
+  date,
+  /** Sets the content button text */
+  buttonText,
+  /** Sets a callback to content button */
+  onClickButton,
+  /** Sets an icon to be rendered over the image */
   iconUrl,
+  /** Sets the image position on the card */
   imagePosition = "right",
-  as = "div",
+  /** Sets the background color according with the type */
   background = "default",
+  /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
+  as = "div",
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
 
