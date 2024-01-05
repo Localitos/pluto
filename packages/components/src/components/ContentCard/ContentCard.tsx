@@ -11,20 +11,32 @@ type ImagePosition = "right" | "top";
 type Background = "default" | "emphasized" | "inverse";
 
 type CommonProps = {
+  /** Sets the card image source */
   imageSrc: string;
+  /** Sets the card image alt */
   imageAlt: string;
+  /** Sets the title to be rendered as h2 */
   title: string;
+  /** Sets the content text */
   text: string;
+  /** Sets the content tag */
   tag?: string;
+  /** Sets the date to be rendered together with calendar icon */
   date?: string;
+  /** Sets the content button text */
   buttonText?: string;
+  /** Sets a callback to content button */
   onClickButton?: () => void;
+  /** Sets the image position on the card */
   imagePosition?: ImagePosition;
+  /** Sets an icon to be rendered over the image */
   iconUrl?: string;
+  /** Sets the background color according with the type */
   background?: Background;
 };
 
 type InteractiveCard = {
+  /** Sets the URL to be added to the card when it behaves as a link */
   href: string;
   linkHref?: undefined;
   linkText?: undefined;
@@ -33,8 +45,11 @@ type InteractiveCard = {
 
 type RegularCard = {
   href?: undefined;
+  /** If the entire card is not a link this prop adds a link on the content body. This prop is mutually exclusive to "href" */
   linkHref?: string;
+  /** Sets the text to the link on the content body */
   linkText?: string;
+  /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
 };
 
@@ -47,35 +62,20 @@ const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
 };
 
 export const ContentCard = ({
-  /** Sets the URL to be added to the card when it behaves as a link */
   href,
-  /** If the entire card is not a link this prop adds a link on the content body. This prop is mutually exclusive to "href" */
   linkHref,
-  /** Sets the text to the link on the content body */
   linkText,
-  /** Sets the card image source */
   imageSrc,
-  /** Sets the card image alt */
   imageAlt,
-  /** Sets the title to be rendered as h2 */
   title,
-  /** Sets the content text */
   text,
-  /** Sets the content tag */
   tag,
-  /** Sets the date to be rendered together with calendar icon */
   date,
-  /** Sets the content button text */
   buttonText,
-  /** Sets a callback to content button */
   onClickButton,
-  /** Sets an icon to be rendered over the image */
   iconUrl,
-  /** Sets the image position on the card */
   imagePosition = "right",
-  /** Sets the background color according with the type */
   background = "default",
-  /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as = "div",
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
@@ -206,14 +206,14 @@ export const ContentCard = ({
             data-testid="service-content-card-icon"
             display="flex"
             gap="space30"
-            h="56px"
+            h={56}
             justifyContent="center"
             left="16px"
             position={"absolute"}
             top={16}
-            w="56px"
+            w={56}
           >
-            <Box.div h="24px" position="relative" w="24px">
+            <Box.div h={24} position="relative" w={24}>
               <Box.img aria-hidden h="auto" src={iconUrl} w="100%" />
             </Box.div>
           </Box.div>
