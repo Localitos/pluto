@@ -19,7 +19,7 @@ const defaultProps = {
   date: "Mon, Sept 5 2022",
   tag: "🏠 Permanent Housing",
   buttonText: "Go to Page",
-  imageSrc: "/images/profile.jpg",
+  imageSrc: "/images/beach-seal-rocks.jpg",
 };
 
 export const Default = Template.bind({});
@@ -39,6 +39,18 @@ export const ImageOnTop = Template.bind({});
 ImageOnTop.args = {
   ...defaultProps,
   href: linkHref,
-  buttonText: "Go to Page",
   imagePosition: "top",
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  ...defaultProps,
+  href: linkHref,
+  iconUrl: "/images/house.png",
+};
+
+export const PortraitImage = Template.bind({});
+PortraitImage.args = {
+  ...defaultProps,
+  imageSrc: "/images/beach-porto-rico.jpg",
 };

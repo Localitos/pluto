@@ -8,6 +8,8 @@ import { Anchor } from "../Anchor";
 
 type ImagePosition = "right" | "top";
 
+type Background = "default" | "emphasized" | "inverse";
+
 type CommonProps = {
   imageSrc: string;
   imageAlt: string;
@@ -18,21 +20,31 @@ type CommonProps = {
   buttonText?: string;
   onClickButton?: () => void;
   imagePosition?: ImagePosition;
+  iconUrl?: string;
+  background?: Background;
 };
 
 type InteractiveCard = {
   href: string;
   linkHref?: undefined;
   linkText?: undefined;
+  as?: undefined;
 };
 
 type RegularCard = {
   href?: undefined;
   linkHref?: string;
   linkText?: string;
+  as?: React.ComponentProps<typeof Box.div>["as"];
 };
 
 export type ContentCardProps = CommonProps & (InteractiveCard | RegularCard);
+
+const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
+  default: "colorBackgroundWeakest",
+  inverse: "colorBackground",
+  emphasized: "colorBackgroundInfo",
+};
 
 export const ContentCard = ({
   href,
@@ -46,7 +58,10 @@ export const ContentCard = ({
   linkText,
   linkHref,
   imageAlt,
+  iconUrl,
   imagePosition = "right",
+  as = "div",
+  background = "default",
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
 
@@ -75,12 +90,8 @@ export const ContentCard = ({
 
   return (
     <Box.div
-      as={href ? "a" : "div"}
-      backgroundColor={{
-        _: "colorBackground",
-        hover: "colorBackgroundWeakest",
-        active: "colorBackgroundInfo",
-      }}
+      as={href ? "a" : as}
+      backgroundColor={backgroundColor[background]}
       border={0}
       borderRadius="borderRadius40"
       boxShadow={{
@@ -170,7 +181,29 @@ export const ContentCard = ({
         maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
         maxWidth={isImageOnTop ? 400 : { _: "100%", md: 400 }}
         overflow="hidden"
+        position="relative"
       >
+        {iconUrl && (
+          <Box.div
+            alignItems="center"
+            backgroundColor="colorBackground"
+            borderRadius="borderRadiusCircle"
+            data-testid="service-content-card-icon"
+            display="flex"
+            gap="space30"
+            h="56px"
+            justifyContent="center"
+            left="16px"
+            position={"absolute"}
+            top={16}
+            w="56px"
+          >
+            <Box.div h="24px" position="relative" w="24px">
+              <Box.img aria-hidden h="auto" src={iconUrl} w="100%" />
+            </Box.div>
+          </Box.div>
+        )}
+
         <Box.img
           alt={imageAlt}
           maxH={{ _: "unset", md: "max-content" }}
