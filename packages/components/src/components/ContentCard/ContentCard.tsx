@@ -120,6 +120,7 @@ export const ContentCard = ({
       }
       fontFamily="fontFamilyNotoSans"
       href={href}
+      justifyContent="space-between"
       maxH={maxHeight[imagePosition]}
       maxW={maxWidth[imagePosition]}
       padding="space0"
