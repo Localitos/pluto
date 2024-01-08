@@ -260,7 +260,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           }}
           disabled={disabled}
           display="inline-flex"
-          fontFamily="fontFamilyModerat"
+          fontFamily="fontFamilyNotoSans"
           fontSize={size === "large" ? "fontSize30" : "fontSize20"}
           fontWeight="fontWeightMedium"
           gap="space30"

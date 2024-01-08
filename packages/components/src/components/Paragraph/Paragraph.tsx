@@ -49,7 +49,7 @@ const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
     return (
       <Text.p
         color="colorTextStrongest"
-        fontFamily="fontFamilyModerat"
+        fontFamily="fontFamilyNotoSans"
         fontWeight="fontWeightRegular"
         marginBottom={marginBottom}
         marginTop="space0"

@@ -43,7 +43,7 @@ const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
               color={
                 variant === "error" ? "colorTextError" : "colorTextSuccess"
               }
-              fontFamily="fontFamilyModerat"
+              fontFamily="fontFamilyNotoSans"
               fontSize="fontSize30"
               fontWeight="fontWeightMedium"
               lineHeight="lineHeight30"

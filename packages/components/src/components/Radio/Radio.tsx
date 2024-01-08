@@ -90,7 +90,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
         </Box.button>
         <Text.label
           color="colorTextStrongest"
-          fontFamily="fontFamilyModerat"
+          fontFamily="fontFamilyNotoSans"
           fontSize="fontSize20"
           fontWeight="fontWeightRegular"
           htmlFor={radioID}

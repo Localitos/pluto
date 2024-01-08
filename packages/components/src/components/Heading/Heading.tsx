@@ -135,7 +135,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       <Text.h2
         as={as}
         color={color}
-        fontFamily="fontFamilyModerat"
+        fontFamily="fontFamilyNotoSans"
         fontWeight="fontWeightBold"
         letterSpacing="normal"
         marginBottom={marginBottom}

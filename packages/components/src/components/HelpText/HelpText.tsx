@@ -17,7 +17,7 @@ const HelpText = React.forwardRef<HTMLSpanElement, HelpTextProps>(
       <Box.span
         color={hasError ? "colorTextError" : "colorTextStronger"}
         display="flex"
-        fontFamily="fontFamilyModerat"
+        fontFamily="fontFamilyNotoSans"
         fontSize="fontSize10"
         fontWeight="fontWeightMedium"
         gap="space20"

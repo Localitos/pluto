@@ -46,7 +46,7 @@ export const ProcessesCard = (): JSX.Element => (
       cursor={{ hover: "pointer" }}
       display="flex"
       flexDirection="column"
-      fontFamily="fontFamilyModerat"
+      fontFamily="fontFamilyNotoSans"
       padding="space70"
     >
       <Box.div

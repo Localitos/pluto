@@ -119,7 +119,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           cursor={disabled ? "not-allowed" : "auto"}
           disabled={disabled}
           display="block"
-          fontFamily="fontFamilyModerat"
+          fontFamily="fontFamilyNotoSans"
           fontSize={size === "large" ? "fontSize30" : "fontSize20"}
           fontWeight="fontWeightMedium"
           id={id}

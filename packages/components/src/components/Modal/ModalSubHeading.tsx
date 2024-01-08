@@ -17,7 +17,7 @@ const ModalSubHeading = React.forwardRef<
     <Box.div marginTop="space50">
       <Text.h3
         color="colorText"
-        fontFamily="fontFamilyModerat"
+        fontFamily="fontFamilyNotoSans"
         fontSize="fontSize20"
         fontWeight="fontWeightRegular"
         lineHeight="lineHeight20"
