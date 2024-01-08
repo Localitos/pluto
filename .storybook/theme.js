@@ -4,6 +4,6 @@ export default create({
   base: "light",
 
   // Typography
-  fontBase: '"Moderat", "Inter", sans-serif',
+  fontBase: '"Noto Sans", sans-serif',
   fontSize: "1rem",
 });
