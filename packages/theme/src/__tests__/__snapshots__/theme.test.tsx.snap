@@ -142,6 +142,7 @@ Object {
   },
   "fonts": Object {
     "fontFamilyModerat": "'Moderat', 'Inter', sans-serif",
+    "fontFamilyNotoSans": "'Noto Sans', sans-serif",
   },
   "gridTemplateColumns": Object {
     "1": "repeat(1, minmax(0, 1fr))",
