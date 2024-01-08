@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 0.6.0
+
+### Minor Changes
+
+- [#1206](https://github.com/Localitos/pluto/pull/1206) [`345dece`](https://github.com/Localitos/pluto/commit/345dece8d8e338c2c94116b9ef15232dd52665f9) Thanks [@rssilva](https://github.com/rssilva)! - Add Noto Sans font
+
 ## 0.5.2
 
 ### Patch Changes
