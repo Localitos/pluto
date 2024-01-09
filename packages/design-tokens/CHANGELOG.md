@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.1.0
+
+### Minor Changes
+
+- [#1222](https://github.com/Localitos/pluto/pull/1222) [`de4e28c`](https://github.com/Localitos/pluto/commit/de4e28cb3f0f218713ec1443910b871bfcce3e19) Thanks [@rssilva](https://github.com/rssilva)! - Completely remove Moderat font replacing it by Noto Sans
+
 ## 1.0.0
 
 ### Major Changes
