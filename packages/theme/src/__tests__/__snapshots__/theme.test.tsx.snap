@@ -141,7 +141,6 @@ Object {
     "fontWeightRegular": "400",
   },
   "fonts": Object {
-    "fontFamilyModerat": "'Moderat', 'Inter', sans-serif",
     "fontFamilyNotoSans": "'Noto Sans', sans-serif",
   },
   "gridTemplateColumns": Object {

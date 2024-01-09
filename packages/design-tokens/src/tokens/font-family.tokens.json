@@ -1,8 +1,5 @@
 {
   "font-family": {
-    "moderat": {
-      "value": "'Moderat', 'Inter', sans-serif"
-    },
     "noto-sans": {
       "value": "'Noto Sans', sans-serif"
     }
