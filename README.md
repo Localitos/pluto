@@ -60,7 +60,7 @@ import {
 
 #### Fonts
 
-Currently we only offer have one font family (Moderat) for use within Localyze applications. The Moderat font files must be loaded in the Localyze application because of licensing. [Here's how we're loading the fonts in Storybook](https://github.com/Localitos/pluto/blob/main/.storybook/preview-head.html). We're open to the idea of offering an open source font with Pluto. If you have any ideas on which fonts to offer, please open a [discussion](https://github.com/Localitos/pluto/discussions/new).
+Currently we only offer have one font family (Noto Sans) for use within Localyze applications.
 
 ### 3. Build some cool stuff.
 

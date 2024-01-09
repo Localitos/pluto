@@ -74,7 +74,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
               return (
                 <Box.div
                   display="inline-flex"
-                  fontFamily="fontFamilyModerat"
+                  fontFamily="fontFamilyNotoSans"
                   fontSize="fontSize20"
                   fontWeight="fontWeightMedium"
                   justifyContent="center"

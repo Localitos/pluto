@@ -45,7 +45,7 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>(
         }}
         disabled={disabled}
         flexGrow={1}
-        fontFamily="fontFamilyModerat"
+        fontFamily="fontFamilyNotoSans"
         fontSize="fontSize30"
         fontWeight="fontWeightMedium"
         lineHeight="lineHeight30"

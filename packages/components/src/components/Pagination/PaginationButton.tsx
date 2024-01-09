@@ -45,7 +45,7 @@ export const PaginationButton = ({
           disabled: "not-allowed",
         }}
         display="inline-flex"
-        fontFamily="fontFamilyModerat"
+        fontFamily="fontFamilyNotoSans"
         fontSize="fontSize20"
         fontWeight="fontWeightMedium"
         justifyContent="center"

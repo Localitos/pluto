@@ -171,7 +171,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           data-has-error={hasError}
           disabled={disabled}
           display="flex"
-          fontFamily="fontFamilyModerat"
+          fontFamily="fontFamilyNotoSans"
           fontSize={size === "large" ? "fontSize30" : "fontSize20"}
           fontWeight="fontWeightMedium"
           id={id}
