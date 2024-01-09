@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 9.0.0
+
+### Major Changes
+
+- [#1219](https://github.com/Localitos/pluto/pull/1219) [`c514fa5`](https://github.com/Localitos/pluto/commit/c514fa52e84dc91d41ae42ffb2242a1ea2a75bc7) Thanks [@rssilva](https://github.com/rssilva)! - Remove Moderat font family, adds Noto Sans
+
+### Patch Changes
+
+- Updated dependencies [[`c514fa5`](https://github.com/Localitos/pluto/commit/c514fa52e84dc91d41ae42ffb2242a1ea2a75bc7)]:
+  - @localyze-pluto/design-tokens@1.0.0
+
 ## 8.0.0
 
 ### Patch Changes
