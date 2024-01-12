@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.3.0
+
+### Minor Changes
+
+- [#1234](https://github.com/Localitos/pluto/pull/1234) [`62f523d`](https://github.com/Localitos/pluto/commit/62f523d0d9891bb3fd4001df38d3eaeebb7f8b7f) Thanks [@rssilva](https://github.com/rssilva)! - Bump packages react-table, yup, cspell, react-router-dom, @typescript-eslint/parser, eslint-plugin-jest, eslint-plugin-prettier
+
 ## 1.2.3
 
 ### Patch Changes
