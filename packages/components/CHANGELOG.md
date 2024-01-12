@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 19.2.0
+
+### Minor Changes
+
+- [#1203](https://github.com/Localitos/pluto/pull/1203) [`dbed68e`](https://github.com/Localitos/pluto/commit/dbed68e50e1f295a61e8e3075d652e6f1c71e160) Thanks [@dependabot](https://github.com/apps/dependabot)! - Update Chromatic version
+
 ## 19.1.0
 
 ### Minor Changes
