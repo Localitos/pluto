@@ -25,6 +25,8 @@ type CommonProps = {
   date?: string;
   /** Sets the content button text */
   buttonText?: string;
+  /** Sets the content button as a link and adds target="_blank" and rel="noopener noreferrer" */
+  buttonAsLink?: boolean;
   /** Sets a callback to content button */
   onClickButton?: () => void;
   /** Sets the image position on the card */
@@ -76,6 +78,7 @@ export const ContentCard = ({
   iconUrl,
   imagePosition = "right",
   background = "default",
+  buttonAsLink = false,
   as = "div",
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
@@ -103,6 +106,10 @@ export const ContentCard = ({
     },
   };
 
+  const buttonProps = buttonAsLink
+    ? { as: "a", href: linkHref, target: "_blank", rel: "noopener noreferrer" }
+    : {};
+
   return (
     <Box.div
       as={href ? "a" : as}
@@ -110,6 +117,7 @@ export const ContentCard = ({
       border={0}
       borderRadius="borderRadius40"
       boxShadow={{
+        _: href ? "shadowStrong" : "none",
         hover: "shadowStrong",
         focusWithin: "shadowStrong",
       }}
@@ -181,7 +189,12 @@ export const ContentCard = ({
         >
           {buttonText && (
             <Box.div w={isImageOnTop ? "50%" : { _: "100%", md: "50%" }}>
-              <Button fullWidth onClick={onClickButton} variant="secondary">
+              <Button
+                fullWidth
+                onClick={onClickButton}
+                variant="secondary"
+                {...buttonProps}
+              >
                 {buttonText}
               </Button>
             </Box.div>
