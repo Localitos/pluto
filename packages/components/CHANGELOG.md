@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 19.2.1
+
+### Patch Changes
+
+- [#1268](https://github.com/Localitos/pluto/pull/1268) [`7f4aaeb`](https://github.com/Localitos/pluto/commit/7f4aaebe38ed69aa05a9b35d35179ca2927e9e37) Thanks [@rssilva](https://github.com/rssilva)! - Add palmtree and luggage icons from Lucide icons
+
 ## 19.2.0
 
 ### Minor Changes
