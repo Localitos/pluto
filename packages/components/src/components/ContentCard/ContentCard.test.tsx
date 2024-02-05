@@ -1,11 +1,8 @@
-import { userEvent } from "@testing-library/user-event";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ContentCard } from "./ContentCard";
 
 describe("<ContentCard>", () => {
-  const user = userEvent.setup();
-
   it("renders text props", () => {
     render(
       <ContentCard
@@ -44,36 +41,10 @@ describe("<ContentCard>", () => {
     );
   });
 
-  it("calls onClickButton when the button is clicked", async () => {
-    const onClick = jest.fn();
-
-    render(
-      <ContentCard
-        buttonText="click me"
-        date=""
-        imageAlt=""
-        imageSrc=""
-        onClickButton={onClick}
-        tag=""
-        text=""
-        title=""
-      />,
-    );
-
-    const button = screen.getByRole("button", { name: "click me" });
-
-    expect(button).toBeVisible();
-
-    await user.click(button);
-
-    expect(onClick).toHaveBeenCalled();
-  });
-
   describe("when there is a href", () => {
     it("the card is rendered as a link", () => {
       render(
         <ContentCard
-          buttonText="alow"
           date=""
           href="google.com"
           imageAlt=""
@@ -107,5 +78,15 @@ describe("<ContentCard>", () => {
 
       expect(link).toHaveAttribute("href", "google.com");
     });
+  });
+
+  it("accepts children property", () => {
+    render(
+      <ContentCard date="" href="" imageAlt="" imageSrc="" text="" title="">
+        <button>Click me</button>
+      </ContentCard>,
+    );
+
+    expect(screen.getByRole("button", { name: "Click me" })).toBeVisible();
   });
 });

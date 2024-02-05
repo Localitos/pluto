@@ -3,7 +3,6 @@ import { Box, BoxProps } from "../../primitives/Box";
 import { Heading } from "../Heading";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
-import { Button } from "../Button";
 import { Anchor } from "../Anchor";
 
 type ImagePosition = "right" | "top";
@@ -23,18 +22,14 @@ type CommonProps = {
   tag?: string;
   /** Sets the date to be rendered together with calendar icon */
   date?: string;
-  /** Sets the content button text */
-  buttonText?: string;
-  /** Sets the content button as a link and adds target="_blank" and rel="noopener noreferrer" */
-  buttonAsLink?: boolean;
-  /** Sets a callback to content button */
-  onClickButton?: () => void;
   /** Sets the image position on the card */
   imagePosition?: ImagePosition;
   /** Sets an icon to be rendered over the image */
   iconUrl?: string;
   /** Sets the background color according with the type */
   background?: Background;
+  /** Accepts a children element to be rendered as the Card's content Button */
+  children?: React.ReactNode;
 };
 
 type InteractiveCard = {
@@ -73,13 +68,11 @@ export const ContentCard = ({
   text,
   tag,
   date,
-  buttonText,
-  onClickButton,
   iconUrl,
   imagePosition = "right",
   background = "default",
-  buttonAsLink = false,
   as = "div",
+  children,
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
 
@@ -106,21 +99,20 @@ export const ContentCard = ({
     },
   };
 
-  const buttonProps = buttonAsLink
-    ? { as: "a", href: linkHref, target: "_blank", rel: "noopener noreferrer" }
-    : {};
-
   return (
     <Box.div
       as={href ? "a" : as}
       backgroundColor={backgroundColor[background]}
       border={0}
       borderRadius="borderRadius40"
-      boxShadow={{
-        _: href ? "shadowStrong" : "none",
-        hover: "shadowStrong",
-        focusWithin: "shadowStrong",
-      }}
+      boxShadow={
+        href
+          ? {
+              _: "none",
+              hover: "shadowStrong",
+            }
+          : "none"
+      }
       cursor={href ? "pointer" : "default"}
       display="flex"
       flexDirection={
@@ -187,16 +179,9 @@ export const ContentCard = ({
           flexShrink={2}
           gap="space50"
         >
-          {buttonText && (
+          {children && (
             <Box.div w={isImageOnTop ? "50%" : { _: "100%", md: "50%" }}>
-              <Button
-                fullWidth
-                onClick={onClickButton}
-                variant="secondary"
-                {...buttonProps}
-              >
-                {buttonText}
-              </Button>
+              {children}
             </Box.div>
           )}
 
