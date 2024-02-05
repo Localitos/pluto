@@ -31,6 +31,13 @@ Default.args = {
   linkHref,
 };
 
+export const ButtonAsLink = Template.bind({});
+ButtonAsLink.args = {
+  ...defaultProps,
+  linkHref,
+  buttonAsLink: true,
+};
+
 export const Interactive = Template.bind({});
 Interactive.args = {
   ...defaultProps,
