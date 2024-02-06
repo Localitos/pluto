@@ -23,7 +23,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-storybook": "^0.6.15",
-    "eslint-plugin-testing-library": "^5.10.2",
+    "eslint-plugin-testing-library": "^6.2.0",
     "eslint-plugin-unicorn": "^47.0.0"
   },
   "publishConfig": {
