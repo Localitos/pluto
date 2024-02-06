@@ -1,7 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
-import { ContentCard, ContentCardProps } from "./ContentCard";
+import {
+  ContentCard,
+  ContentCardProps,
+  InteractiveElementType,
+} from "./ContentCard";
 
 const HREF = "https://google.com";
 
@@ -45,7 +49,12 @@ describe("<ContentCard>", () => {
   });
 
   it('renders card as link when interactive element type is "card"', () => {
-    render(<ContentCardMock href={HREF} interactiveElementType="card" />);
+    render(
+      <ContentCardMock
+        href={HREF}
+        interactiveElementType={InteractiveElementType.Card}
+      />,
+    );
 
     const cardLink = screen.getByRole("link");
     expect(cardLink).toHaveAttribute("href", HREF);
@@ -56,7 +65,7 @@ describe("<ContentCard>", () => {
       <ContentCardMock
         ctaText="Go to Page"
         href={HREF}
-        interactiveElementType="button"
+        interactiveElementType={InteractiveElementType.Button}
       />,
     );
 
@@ -69,7 +78,7 @@ describe("<ContentCard>", () => {
       <ContentCardMock
         ctaText="This is an Anchor"
         href={HREF}
-        interactiveElementType="anchor"
+        interactiveElementType={InteractiveElementType.Anchor}
       />,
     );
 
@@ -82,7 +91,7 @@ describe("<ContentCard>", () => {
       <ContentCardMock
         ctaText="This is an Anchor"
         href={HREF}
-        interactiveElementType="anchor"
+        interactiveElementType={InteractiveElementType.Anchor}
         target="_blank"
       />,
     );
@@ -114,7 +123,7 @@ describe("<ContentCard>", () => {
     render(
       <ContentCardMock
         href={HREF}
-        interactiveElementType="card"
+        interactiveElementType={InteractiveElementType.Card}
         onClick={onClick}
       />,
     );

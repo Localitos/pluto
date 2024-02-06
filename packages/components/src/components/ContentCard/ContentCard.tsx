@@ -10,6 +10,12 @@ type ImagePosition = "right" | "top";
 
 type Background = "default" | "emphasized" | "inverse";
 
+export enum InteractiveElementType {
+  Anchor = "anchor",
+  Button = "button",
+  Card = "card",
+}
+
 export type ContentCardProps = {
   /** Sets the card image source */
   imageSrc: string;
@@ -30,7 +36,7 @@ export type ContentCardProps = {
   /** Sets the background color according with the type */
   background?: Background;
   /** Sets the type of the clickable element */
-  interactiveElementType?: "anchor" | "button" | "card";
+  interactiveElementType?: InteractiveElementType;
   /** Sets the href to be added to the interactive element */
   href?: string;
   /** Where to display the linked URL. Same as: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target */
@@ -91,9 +97,8 @@ export const ContentCard = ({
     },
   };
 
-  const isCardInteractive = interactiveElementType === "card";
-  const isButton = interactiveElementType === "button";
-  const inAnchor = interactiveElementType === "anchor";
+  const isCardInteractive =
+    InteractiveElementType.Card === interactiveElementType;
 
   const interactiveElementProps = {
     href,
@@ -110,12 +115,10 @@ export const ContentCard = ({
       border={0}
       borderRadius="borderRadius40"
       boxShadow={
-        isCardInteractive
-          ? {
-              _: "none",
-              hover: "shadowStrong",
-            }
-          : "none"
+        isCardInteractive && {
+          _: "none",
+          hover: "shadowStrong",
+        }
       }
       display="flex"
       flexDirection={
@@ -182,7 +185,7 @@ export const ContentCard = ({
           flexShrink={2}
           gap="space50"
         >
-          {isButton && (
+          {InteractiveElementType.Button === interactiveElementType && (
             <Box.div w={isImageOnTop ? "50%" : { _: "100%", md: "50%" }}>
               <Button
                 as="a"
@@ -195,7 +198,7 @@ export const ContentCard = ({
             </Box.div>
           )}
 
-          {inAnchor && (
+          {InteractiveElementType.Anchor === interactiveElementType && (
             <Anchor {...interactiveElementProps}>{ctaText || ""}</Anchor>
           )}
         </Box.div>

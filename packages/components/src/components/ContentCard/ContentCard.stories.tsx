@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
-import { ContentCard } from "./ContentCard";
+import { ContentCard, InteractiveElementType } from "./ContentCard";
 
 export default {
   component: ContentCard,
@@ -33,7 +33,7 @@ Default.args = {
 export const WithButton: Story = Template.bind({});
 WithButton.args = {
   ...defaultProps,
-  interactiveElementType: "button",
+  interactiveElementType: InteractiveElementType.Button,
   ctaText: "Go to Page",
   href,
 };
@@ -42,21 +42,21 @@ export const WithAnchor: Story = Template.bind({});
 WithAnchor.args = {
   ...defaultProps,
   ctaText: "This is an Anchor",
-  interactiveElementType: "anchor",
+  interactiveElementType: InteractiveElementType.Anchor,
   href,
 };
 
 export const ClickableCard: Story = Template.bind({});
 ClickableCard.args = {
   ...defaultProps,
-  interactiveElementType: "card",
+  interactiveElementType: InteractiveElementType.Card,
   href,
 };
 
 export const WithTargetBlank: Story = Template.bind({});
 WithTargetBlank.args = {
   ...defaultProps,
-  interactiveElementType: "anchor",
+  interactiveElementType: InteractiveElementType.Anchor,
   href,
   ctaText: "This is an Anchor",
   target: "_blank",
