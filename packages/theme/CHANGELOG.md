@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 11.0.0
+
+### Minor Changes
+
+- [#1278](https://github.com/Localitos/pluto/pull/1278) [`21cfdd8`](https://github.com/Localitos/pluto/commit/21cfdd8c0652837d62937de8307600280bbc4d3e) Thanks [@dependabot](https://github.com/apps/dependabot)! - Version bump to lint related packages
+
+### Patch Changes
+
+- Updated dependencies [[`21cfdd8`](https://github.com/Localitos/pluto/commit/21cfdd8c0652837d62937de8307600280bbc4d3e)]:
+  - @localyze-pluto/design-tokens@1.2.0
+
 ## 10.0.0
 
 ### Minor Changes

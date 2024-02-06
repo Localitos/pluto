@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/design-tokens",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Pluto Design System Design Tokens",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -30,7 +30,7 @@
     "style-dictionary": "^3.9.0"
   },
   "devDependencies": {
-    "@localyze-pluto/eslint-config": "^1.2.3",
+    "@localyze-pluto/eslint-config": "^1.4.0",
     "@localyze-pluto/tsconfig": "^1.0.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.1.2",
