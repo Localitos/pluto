@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 19.3.0
+
+### Minor Changes
+
+- [#1272](https://github.com/Localitos/pluto/pull/1272) [`2d3efad`](https://github.com/Localitos/pluto/commit/2d3efad5850d2e813ac8bc7214d4729fe31f5d77) Thanks [@apvale](https://github.com/apvale)! - [ContentCard]:
+
+  - Refactors the component to use a new `interactiveElementType` prop to specify the type of element that should be used for the interactive part of the card
+  - Fixes a bug with the shadow state that should be shown in hover only when the card is the
+    interactive element
+
 ## 19.2.1
 
 ### Patch Changes
