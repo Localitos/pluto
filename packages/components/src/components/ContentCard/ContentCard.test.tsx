@@ -1,23 +1,29 @@
-import { userEvent } from "@testing-library/user-event";
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ContentCard } from "./ContentCard";
+import { userEvent } from "@testing-library/user-event";
+import {
+  ContentCard,
+  ContentCardProps,
+  InteractiveElementType,
+} from "./ContentCard";
+
+const HREF = "https://google.com";
+
+const ContentCardMock = (props: Partial<ContentCardProps>) => {
+  const defaultProps: ContentCardProps = {
+    imageAlt: "a test image",
+    imageSrc: "path-to-image.jpg",
+
+    text: "hello! Long text",
+    title: "Good title!",
+  };
+
+  return <ContentCard {...defaultProps} {...props} />;
+};
 
 describe("<ContentCard>", () => {
-  const user = userEvent.setup();
-
   it("renders text props", () => {
-    render(
-      <ContentCard
-        date="Wed, Dec 27 2023"
-        href=""
-        imageAlt=""
-        imageSrc=""
-        tag="🏠 housing"
-        text="hello! Long text"
-        title="Good title!"
-      />,
-    );
+    render(<ContentCardMock date="Wed, Dec 27 2023" tag="🏠 housing" />);
 
     expect(screen.getByText("Good title!")).toBeVisible();
     expect(screen.getByText("hello! Long text")).toBeVisible();
@@ -27,15 +33,7 @@ describe("<ContentCard>", () => {
 
   it("renders image", () => {
     render(
-      <ContentCard
-        date=""
-        href=""
-        imageAlt="a test image"
-        imageSrc="path-to-image.jpg"
-        tag=""
-        text=""
-        title=""
-      />,
+      <ContentCardMock imageAlt="a test image" imageSrc="path-to-image.jpg" />,
     );
 
     expect(screen.getByAltText("a test image")).toHaveAttribute(
@@ -44,68 +42,97 @@ describe("<ContentCard>", () => {
     );
   });
 
-  it("calls onClickButton when the button is clicked", async () => {
-    const onClick = jest.fn();
+  it("does not render card as link when interactive element type is not passed", () => {
+    render(<ContentCardMock />);
 
+    expect(screen.queryByRole("link")).not.toBeInTheDocument();
+  });
+
+  it('renders card as link when interactive element type is "card"', () => {
     render(
-      <ContentCard
-        buttonText="click me"
+      <ContentCardMock
+        href={HREF}
+        interactiveElementType={InteractiveElementType.Card}
+      />,
+    );
+
+    const cardLink = screen.getByRole("link");
+    expect(cardLink).toHaveAttribute("href", HREF);
+  });
+
+  it('renders button as link when interactive element type is "button"', () => {
+    render(
+      <ContentCardMock
+        ctaText="Go to Page"
+        href={HREF}
+        interactiveElementType={InteractiveElementType.Button}
+      />,
+    );
+
+    const cardButton = screen.getByRole("link", { name: "Go to Page" });
+    expect(cardButton).toHaveAttribute("href", HREF);
+  });
+
+  it('renders anchor as link when interactive element type is "anchor"', () => {
+    render(
+      <ContentCardMock
+        ctaText="This is an Anchor"
+        href={HREF}
+        interactiveElementType={InteractiveElementType.Anchor}
+      />,
+    );
+
+    const cardAnchor = screen.getByRole("link", { name: "This is an Anchor" });
+    expect(cardAnchor).toHaveAttribute("href", HREF);
+  });
+
+  it("renders interactive element with target blank when target is passed", () => {
+    render(
+      <ContentCardMock
+        ctaText="This is an Anchor"
+        href={HREF}
+        interactiveElementType={InteractiveElementType.Anchor}
+        target="_blank"
+      />,
+    );
+
+    const cardAnchor = screen.getByRole("link", { name: "This is an Anchor" });
+    expect(cardAnchor).toHaveAttribute("target", "_blank");
+  });
+
+  it('renders card as listitem when "as" prop is "li"', () => {
+    render(
+      <ContentCardMock
+        as="li"
         date=""
         imageAlt=""
         imageSrc=""
-        onClickButton={onClick}
-        tag=""
         text=""
         title=""
       />,
     );
 
-    const button = screen.getByRole("button", { name: "click me" });
+    expect(screen.getByRole("listitem")).toBeInTheDocument();
+  });
 
-    expect(button).toBeVisible();
+  it("calls onClick callback when interactive element is clicked", async () => {
+    const user = userEvent.setup();
 
-    await user.click(button);
+    const onClick = jest.fn();
 
+    render(
+      <ContentCardMock
+        href={HREF}
+        interactiveElementType={InteractiveElementType.Card}
+        onClick={onClick}
+      />,
+    );
+
+    const card = screen.getByRole("link");
+
+    card.addEventListener("click", (event) => event.preventDefault(), false);
+
+    await user.click(card);
     expect(onClick).toHaveBeenCalled();
-  });
-
-  describe("when there is a href", () => {
-    it("the card is rendered as a link", () => {
-      render(
-        <ContentCard
-          buttonText="alow"
-          date=""
-          href="google.com"
-          imageAlt=""
-          imageSrc=""
-          text=""
-          title=""
-        />,
-      );
-
-      const cardLink = screen.getByRole("link");
-
-      expect(cardLink).toHaveAttribute("href", "google.com");
-    });
-  });
-
-  describe("when there is not a href", () => {
-    it("allows a link to be rendered on the body of the Card", async () => {
-      render(
-        <ContentCard
-          date=""
-          imageAlt=""
-          imageSrc=""
-          linkHref="google.com"
-          linkText="I am a link"
-          text=""
-          title=""
-        />,
-      );
-
-      const link = screen.getByRole("link", { name: "I am a link" });
-
-      expect(link).toHaveAttribute("href", "google.com");
-    });
   });
 });

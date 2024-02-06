@@ -1,57 +1,86 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
-import { ContentCard } from "./ContentCard";
+import { ContentCard, InteractiveElementType } from "./ContentCard";
 
 export default {
   component: ContentCard,
   title: "Components/Content Card",
-} as Meta<typeof ContentCard>;
+} as Meta;
 
-const Template: StoryFn<typeof ContentCard> = (args) => (
-  <ContentCard {...args} />
-);
+type Story = StoryFn<typeof ContentCard>;
 
-const linkHref = "https://localyze.com";
+const Template = (args: React.ComponentProps<typeof ContentCard>) => {
+  return <ContentCard {...args} />;
+};
+
+const href = "https://localyze.com";
 
 const defaultProps = {
   title: "The card title",
   text: "Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et, sodales vel purus.",
   date: "Mon, Sept 5 2022",
   tag: "🏠 Permanent Housing",
-  buttonText: "Go to Page",
   imageSrc: "/images/beach-seal-rocks.jpg",
   imageAlt: "a beach",
 };
 
-export const Default = Template.bind({});
+export const Default: Story = Template.bind({});
 Default.args = {
   ...defaultProps,
-  linkText: "This is a link",
-  linkHref,
 };
 
-export const Interactive = Template.bind({});
-Interactive.args = {
+export const WithButton: Story = Template.bind({});
+WithButton.args = {
   ...defaultProps,
-  href: linkHref,
+  interactiveElementType: InteractiveElementType.Button,
+  ctaText: "Go to Page",
+  href,
 };
 
-export const ImageOnTop = Template.bind({});
+export const WithAnchor: Story = Template.bind({});
+WithAnchor.args = {
+  ...defaultProps,
+  ctaText: "This is an Anchor",
+  interactiveElementType: InteractiveElementType.Anchor,
+  href,
+};
+
+export const ClickableCard: Story = Template.bind({});
+ClickableCard.args = {
+  ...defaultProps,
+  interactiveElementType: InteractiveElementType.Card,
+  href,
+};
+
+export const WithTargetBlank: Story = Template.bind({});
+WithTargetBlank.args = {
+  ...defaultProps,
+  interactiveElementType: InteractiveElementType.Anchor,
+  href,
+  ctaText: "This is an Anchor",
+  target: "_blank",
+};
+
+export const EmphasizedBackground: Story = Template.bind({});
+EmphasizedBackground.args = {
+  ...defaultProps,
+  background: "emphasized",
+};
+
+export const ImageOnTop: Story = Template.bind({});
 ImageOnTop.args = {
   ...defaultProps,
-  href: linkHref,
   imagePosition: "top",
 };
 
-export const WithIcon = Template.bind({});
+export const WithIcon: Story = Template.bind({});
 WithIcon.args = {
   ...defaultProps,
-  href: linkHref,
   iconUrl: "/images/house.png",
 };
 
-export const PortraitImage = Template.bind({});
+export const PortraitImage: Story = Template.bind({});
 PortraitImage.args = {
   ...defaultProps,
   imageSrc: "/images/beach-porto-rico.jpg",
@@ -61,7 +90,7 @@ export const InList = (): JSX.Element => {
   return (
     <Box.ul
       display="grid"
-      gap={"space50"}
+      gap="space50"
       gridTemplateColumns={{ _: "1fr", lg: "1fr 1fr" }}
       listStyleType="none"
     >

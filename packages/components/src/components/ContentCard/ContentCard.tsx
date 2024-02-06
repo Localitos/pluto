@@ -3,14 +3,20 @@ import { Box, BoxProps } from "../../primitives/Box";
 import { Heading } from "../Heading";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
-import { Button } from "../Button";
 import { Anchor } from "../Anchor";
+import { Button } from "../Button";
 
 type ImagePosition = "right" | "top";
 
 type Background = "default" | "emphasized" | "inverse";
 
-type CommonProps = {
+export enum InteractiveElementType {
+  Anchor = "anchor",
+  Button = "button",
+  Card = "card",
+}
+
+export type ContentCardProps = {
   /** Sets the card image source */
   imageSrc: string;
   /** Sets the card image alt */
@@ -23,37 +29,25 @@ type CommonProps = {
   tag?: string;
   /** Sets the date to be rendered together with calendar icon */
   date?: string;
-  /** Sets the content button text */
-  buttonText?: string;
-  /** Sets a callback to content button */
-  onClickButton?: () => void;
   /** Sets the image position on the card */
   imagePosition?: ImagePosition;
   /** Sets an icon to be rendered over the image */
   iconUrl?: string;
   /** Sets the background color according with the type */
   background?: Background;
-};
-
-type InteractiveCard = {
-  /** Sets the URL to be added to the card when it behaves as a link */
-  href: string;
-  linkHref?: undefined;
-  linkText?: undefined;
-  as?: undefined;
-};
-
-type RegularCard = {
-  href?: undefined;
-  /** If the entire card is not a link this prop adds a link on the content body. This prop is mutually exclusive to "href" */
-  linkHref?: string;
-  /** Sets the text to the link on the content body */
-  linkText?: string;
+  /** Sets the type of the clickable element */
+  interactiveElementType?: InteractiveElementType;
+  /** Sets the href to be added to the interactive element */
+  href?: string;
+  /** Where to display the linked URL. Same as: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target */
+  target?: HTMLAnchorElement["target"];
+  /** Callback to be used when the interactive element is clicked */
+  onClick?: React.MouseEventHandler;
+  /** Sets the text to the interactive element when it's anchor or button */
+  ctaText?: string;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
 };
-
-export type ContentCardProps = CommonProps & (InteractiveCard | RegularCard);
 
 const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
   default: "colorBackgroundWeakest",
@@ -63,19 +57,19 @@ const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
 
 export const ContentCard = ({
   href,
-  linkHref,
-  linkText,
+  onClick,
+  ctaText,
+  interactiveElementType,
   imageSrc,
   imageAlt,
   title,
   text,
   tag,
   date,
-  buttonText,
-  onClickButton,
   iconUrl,
   imagePosition = "right",
   background = "default",
+  target,
   as = "div",
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
@@ -103,28 +97,40 @@ export const ContentCard = ({
     },
   };
 
+  const isCardInteractive =
+    InteractiveElementType.Card === interactiveElementType;
+
+  const interactiveElementProps = {
+    href,
+    onClick,
+    target,
+    rel: "noopener noreferrer",
+    cursor: "pointer",
+  };
+
   return (
     <Box.div
-      as={href ? "a" : as}
+      as={isCardInteractive ? "a" : as}
       backgroundColor={backgroundColor[background]}
       border={0}
       borderRadius="borderRadius40"
-      boxShadow={{
-        hover: "shadowStrong",
-        focusWithin: "shadowStrong",
-      }}
-      cursor={href ? "pointer" : "default"}
+      boxShadow={
+        isCardInteractive && {
+          _: "none",
+          hover: "shadowStrong",
+        }
+      }
       display="flex"
       flexDirection={
         isImageOnTop ? "column-reverse" : { _: "column-reverse", md: "unset" }
       }
       fontFamily="fontFamilyNotoSans"
-      href={href}
       justifyContent="space-between"
       maxH={maxHeight[imagePosition]}
       maxW={maxWidth[imagePosition]}
       padding="space0"
       textDecoration="none"
+      {...(isCardInteractive ? interactiveElementProps : {})}
     >
       <Box.div
         borderRadius="borderRadius40 borderRadius0 borderRadius0 borderRadius40"
@@ -179,15 +185,22 @@ export const ContentCard = ({
           flexShrink={2}
           gap="space50"
         >
-          {buttonText && (
+          {InteractiveElementType.Button === interactiveElementType && (
             <Box.div w={isImageOnTop ? "50%" : { _: "100%", md: "50%" }}>
-              <Button fullWidth onClick={onClickButton} variant="secondary">
-                {buttonText}
+              <Button
+                as="a"
+                fullWidth
+                variant="secondary"
+                {...interactiveElementProps}
+              >
+                {ctaText}
               </Button>
             </Box.div>
           )}
 
-          {href ? null : <Anchor href={linkHref}>{linkText || ""}</Anchor>}
+          {InteractiveElementType.Anchor === interactiveElementType && (
+            <Anchor {...interactiveElementProps}>{ctaText || ""}</Anchor>
+          )}
         </Box.div>
       </Box.div>
       <Box.div
