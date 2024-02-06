@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-
 import { userEvent } from "@testing-library/user-event";
 import React from "react";
 import { Button } from "./Button";
@@ -43,12 +42,15 @@ describe("Button", () => {
     });
 
     it("should throw an exception when iconOnly is true and there is no aria-label", () => {
-      const renderWrapper = () =>
-        render(
+      jest.spyOn(console, "error").mockImplementation();
+
+      const renderWrapper = () => {
+        return render(
           <Button iconOnly leadingIcon="AcademicCapIcon" variant="primary" />,
         );
+      };
 
-      expect(renderWrapper).toThrowSilently(
+      expect(renderWrapper).toThrow(
         "Missing a aria-label for icon only button.",
       );
     });
