@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.4.0
+
+### Minor Changes
+
+- [#1278](https://github.com/Localitos/pluto/pull/1278) [`21cfdd8`](https://github.com/Localitos/pluto/commit/21cfdd8c0652837d62937de8307600280bbc4d3e) Thanks [@dependabot](https://github.com/apps/dependabot)! - Version bump to lint related packages
+
 ## 1.3.0
 
 ### Minor Changes
