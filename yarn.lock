@@ -8150,11 +8150,11 @@ eslint-config-prettier@^9.1.0:
   integrity sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==
 
 eslint-config-turbo@latest:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-turbo/-/eslint-config-turbo-1.12.2.tgz#0f5a2f8aba495f481e7d0f514afaf71edce1f6b3"
-  integrity sha512-JHTGtDQuISBEWIorHenu5AeX1nv16NiDgDVRi1i0VyeYw0SiVh+lSQbv4BawXSnG1nOFpjbopAQdZvdB3PwXbQ==
+  version "1.12.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-turbo/-/eslint-config-turbo-1.12.3.tgz#53a1a1bbf9ea1a5cfe9e4bc422df089f5ff9fcbc"
+  integrity sha512-Q46MEOiNJpJWC3Et5/YEuIYYhbOieS04yZwQOinO2hpZw3folEXV+hbwVo8M+ap/q8gtpjIWiRMZ1A4QxmhEqQ==
   dependencies:
-    eslint-plugin-turbo "1.12.2"
+    eslint-plugin-turbo "1.12.3"
 
 eslint-import-resolver-node@^0.3.7:
   version "0.3.7"
@@ -8329,10 +8329,10 @@ eslint-plugin-testing-library@^6.2.0:
   dependencies:
     "@typescript-eslint/utils" "^5.58.0"
 
-eslint-plugin-turbo@1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-turbo/-/eslint-plugin-turbo-1.12.2.tgz#610327a35933a9f29cc6ce546e21ff3f3867b36a"
-  integrity sha512-/l0aGvZRzK1LMRTibRd6ZbEEuD5TtGotDTkZpxSIWA1FI764pWVvQduQMKBaRuz7aTuAo0WxatD8v1scK+qRWw==
+eslint-plugin-turbo@1.12.3:
+  version "1.12.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-turbo/-/eslint-plugin-turbo-1.12.3.tgz#c35927d29da5a25975cd32acd2f6064a89efb46a"
+  integrity sha512-7hEyxa+oP898EFNoxVenHlH8jtBwV1hbbIkdQWgqDcB0EmVNGVEZkYRo5Hm6BuMAjR433B+NISBJdj0bQo4/Lg==
   dependencies:
     dotenv "16.0.3"
 
