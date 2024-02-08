@@ -3,7 +3,7 @@
   "description": "eslint config to be shared across repos",
   "version": "1.4.0",
   "main": ".eslintrc.js",
-  "license": "MIT",
+  "license": "MIT ",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
