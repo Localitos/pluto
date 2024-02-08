@@ -1,7 +1,7 @@
 {
   "name": "@localyze-pluto/tsconfig",
   "version": "1.0.1",
-  "license": "MIT",
+  "license": "MIT ",
   "main": "tsconfig.json",
   "files": [
     "tsconfig.json"

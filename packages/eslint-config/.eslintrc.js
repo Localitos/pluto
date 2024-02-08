@@ -13,7 +13,7 @@ module.exports = {
     "import/resolver": {
       node: {
         paths: ["src"],
-        // Adding .d.ts is a temporary fix for bug in eslint-plugin-import
+        // Add .d.ts is a temporary fix for bug in eslint-plugin-import
         extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
       },
     },
