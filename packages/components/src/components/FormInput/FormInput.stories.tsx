@@ -100,11 +100,11 @@ export const AsControlledFormInput = (): JSX.Element => {
   });
 
   interface FormInputs {
-    flavor: string;
+    flavor?: string;
     flavor1: string;
-    flavor2: string;
-    flavor3: string;
-    flavor4: string;
+    flavor2?: string;
+    flavor3?: string;
+    flavor4?: string;
   }
 
   const { control, handleSubmit, trigger } = useForm<FormInputs>({
