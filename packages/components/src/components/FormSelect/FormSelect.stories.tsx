@@ -137,8 +137,8 @@ export const AsControlledFormSelect = (): JSX.Element => {
 
   interface FormInputs {
     flavor: string;
-    flavor1: string;
-    flavor2: string[];
+    flavor1?: string;
+    flavor2?: string[];
   }
 
   const { control, handleSubmit } = useForm<FormInputs>({
