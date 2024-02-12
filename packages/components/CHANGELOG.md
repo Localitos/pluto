@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 20.1.1
+
+### Patch Changes
+
+- [#1297](https://github.com/Localitos/pluto/pull/1297) [`b8ae523`](https://github.com/Localitos/pluto/commit/b8ae5233ad9c0df9d19494bddc69ce3c5c4bbe3c) Thanks [@rssilva](https://github.com/rssilva)! - Add type button to CancelUploadButton to avoid triggering a submit when it's part of a form
+
 ## 20.1.0
 
 ### Minor Changes
