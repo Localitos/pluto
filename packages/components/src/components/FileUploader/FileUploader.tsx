@@ -138,7 +138,9 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
           {shouldShowRemoveButton && (
             <RemoveButton disabled={disabled} onClick={onRemove} />
           )}
-          {status === "loading" && <CancelUploadButton onClick={onCancel} />}
+          {status === "loading" && (
+            <CancelUploadButton onClick={onCancel} type="button" />
+          )}
         </Box.div>
         {errorMessage && (
           <HelpText hasError role="alert">
