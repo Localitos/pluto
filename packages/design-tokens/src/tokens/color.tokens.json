@@ -262,5 +262,31 @@
     "sidebar-button-selected-text": {
       "value": "#0B1F9C"
     }
+  },
+  "bg": {
+    "primary": {
+      "value": "#FFFFFF"
+    },
+    "secondary": {
+      "value": "#F8FAFC"
+    },
+    "body-main": {
+      "value": "#F7F9FF"
+    },
+    "info": {
+      "value": "#EBEDFF"
+    },
+    "success": {
+      "value": "#ECFDF5"
+    },
+    "warning": {
+      "value": "#FFFBEB"
+    },
+    "error": {
+      "value": "#FEF2F2"
+    },
+    "body-talent": {
+      "value": "#27313F"
+    }
   }
 }
