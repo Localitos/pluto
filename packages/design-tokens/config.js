@@ -1,19 +1,5 @@
 module.exports = {
   source: ["src/**/*.tokens.json"],
-  transform: {
-    myTransform: {
-      type: "name",
-      transformer: (token) => {
-        // console.log("token", token);
-        if (token.attributes.category === "color") {
-          console.log(token);
-          return true;
-        }
-        return token.path.join("_").replace(/-/g, "").toUpperCase();
-        // return token.path.join("_").replace(/-/g, "").toUpperCase();
-      },
-    },
-  },
   platforms: {
     css: {
       transformGroup: "css",
