@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 21.0.0
+
+### Minor Changes
+
+- [#1317](https://github.com/Localitos/pluto/pull/1317) [`8998d26`](https://github.com/Localitos/pluto/commit/8998d26840e8ba3af5b45a0d0ccd28b6c2174fe9) Thanks [@rssilva](https://github.com/rssilva)! - Bump dependencies: @typescript-eslint/eslint-plugin tsup @tanstack/react-table @types/react-dom @commitlint pretty-quick turbo prettier style-dictionary storybook
+
+### Patch Changes
+
+- Updated dependencies [[`8998d26`](https://github.com/Localitos/pluto/commit/8998d26840e8ba3af5b45a0d0ccd28b6c2174fe9)]:
+  - @localyze-pluto/theme@12.0.0
+
 ## 20.1.1
 
 ### Patch Changes
