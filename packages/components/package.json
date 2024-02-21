@@ -73,7 +73,7 @@
     "@types/styled-components": "^5.1.26",
     "@uppy/core": "^3.6.1",
     "@xstyled/styled-components": "^3.8.0",
-    "chromatic": "^10.2.0",
+    "chromatic": "^10.9.6",
     "eslint": "^8.56.0",
     "html-react-parser": "^3.0.16",
     "jest": "^28.1.2",
