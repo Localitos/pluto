@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.4.0
+
+### Minor Changes
+
+- [#1320](https://github.com/Localitos/pluto/pull/1320) [`bbbe203`](https://github.com/Localitos/pluto/commit/bbbe203344975967524c1c16f669dc60ed28613c) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bumps @types/react package
+
 ## 1.3.0
 
 ### Minor Changes
