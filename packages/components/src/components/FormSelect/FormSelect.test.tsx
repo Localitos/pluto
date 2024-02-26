@@ -95,7 +95,7 @@ describe("<FormSelect />", () => {
     await user.click(screen.getByRole("option", { name: "Vanilla" }));
 
     expect(
-      screen.getByRole("option", { name: "Vanilla", hidden: true })
+      screen.getByRole("option", { name: "Vanilla", hidden: true }),
     ).toHaveAttribute("aria-selected", "true");
   });
 });
