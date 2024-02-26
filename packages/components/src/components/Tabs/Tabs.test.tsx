@@ -19,7 +19,9 @@ describe("<Tabs />", () => {
 
     expect(screen.getByRole("tablist")).toBeInTheDocument();
 
-    expect(tabs[0]).toHaveAttribute("aria-selected", "true");
+    await waitFor(() =>
+      expect(tabs[0]).toHaveAttribute("aria-selected", "true"),
+    );
     expect(tabs[1]).toHaveAttribute("aria-selected", "false");
     expect(tabs[2]).toHaveAttribute("aria-selected", "false");
 
