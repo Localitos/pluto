@@ -25,16 +25,18 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
         {...props}
       >
         <Box.div>{children}</Box.div>
-        <DialogDismiss
-          render={
-            <Button
-              aria-label="Close modal"
-              iconOnly
-              leadingIcon="XMarkIcon"
-              variant="ghost"
-            />
-          }
-        />
+        <Box.div>
+          <DialogDismiss
+            render={
+              <Button
+                aria-label="Close modal"
+                iconOnly
+                leadingIcon="XMarkIcon"
+                variant="ghost"
+              />
+            }
+          />
+        </Box.div>
       </Box.div>
     );
   },
