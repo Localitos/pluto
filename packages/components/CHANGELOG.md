@@ -1,5 +1,14 @@
 # @localyze-pluto/components
 
+## 23.0.0
+
+### Patch Changes
+
+- [#1338](https://github.com/Localitos/pluto/pull/1338) [`d2f3745`](https://github.com/Localitos/pluto/commit/d2f3745df1bdb6588340b1971b761d90030d69cc) Thanks [@apvale](https://github.com/apvale)! - [ContentCard]: Remove extra spaces when image does not fit the container
+
+- Updated dependencies [[`2203932`](https://github.com/Localitos/pluto/commit/220393256f759717a33312624290c429aaaafcb0)]:
+  - @localyze-pluto/theme@14.0.0
+
 ## 22.0.0
 
 ### Minor Changes

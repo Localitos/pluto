@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.5.0
+
+### Minor Changes
+
+- [#1299](https://github.com/Localitos/pluto/pull/1299) [`2203932`](https://github.com/Localitos/pluto/commit/220393256f759717a33312624290c429aaaafcb0) Thanks [@rssilva](https://github.com/rssilva)! - Add background tokens under bg prefix, change config files to filter it correctly
+
 ## 1.4.0
 
 ### Minor Changes
