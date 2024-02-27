@@ -235,10 +235,10 @@ export const ContentCard = ({
 
         <Box.img
           alt={imageAlt}
-          maxH={{ _: "unset", md: "max-content" }}
-          maxWidth="100%"
+          h="100%"
+          objectFit="cover"
           src={imageSrc}
-          w={{ _: "100%", md: "unset" }}
+          w="100%"
         />
       </Box.div>
     </Box.div>
