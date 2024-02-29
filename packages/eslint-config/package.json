@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/eslint-config",
-  "description": "eslint config to be shared across repos",
+  "description": "eslint config to be shared across repos ",
   "version": "1.7.0",
   "main": ".eslintrc.js",
   "license": "MIT",
