@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 15.0.0
+
+### Minor Changes
+
+- [#1357](https://github.com/Localitos/pluto/pull/1357) [`a713f45`](https://github.com/Localitos/pluto/commit/a713f45580359c807bb734b4ce4f72b26b3b9c10) Thanks [@rssilva](https://github.com/rssilva)! - Bump dependencies regarding chromatic @commitlint/config-conventional @commitlint/cli @tanstack/react-table @uppy/core @typescript-eslint/eslint-plugin @types/react @typescript-eslint/parser eslint
+
+### Patch Changes
+
+- Updated dependencies [[`a713f45`](https://github.com/Localitos/pluto/commit/a713f45580359c807bb734b4ce4f72b26b3b9c10)]:
+  - @localyze-pluto/design-tokens@1.6.0
+
 ## 14.0.0
 
 ### Minor Changes
