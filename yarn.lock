@@ -4777,14 +4777,14 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@uppy/core@^3.6.1":
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/@uppy/core/-/core-3.9.1.tgz#ba2a78de2af2d30aab0409f4159742794937915a"
-  integrity sha512-vKR45ljWscecBVXAMn4ilf1m2uGZEuVA8VqJtueUVREqSLsAzXVj26J6EVfz+WQZUNUUkUC3wtd8wIhCvLWJqQ==
+"@uppy/core@^3.9.3":
+  version "3.9.3"
+  resolved "https://registry.yarnpkg.com/@uppy/core/-/core-3.9.3.tgz#7d1cccba513225c24bc82a8fccae74f14189a03e"
+  integrity sha512-sUgiJ9Ag3eq8qf3i1unn7BOpjcidBj2lwnpJ8xlMGRcnQqwNznBXP2m39tK8nWEFvrj4kPgIslMZyoR0Lelzxg==
   dependencies:
     "@transloadit/prettier-bytes" "^0.3.0"
     "@uppy/store-default" "^3.2.2"
-    "@uppy/utils" "^5.7.2"
+    "@uppy/utils" "^5.7.4"
     lodash "^4.17.21"
     mime-match "^1.0.2"
     namespace-emitter "^2.0.1"
@@ -4796,10 +4796,10 @@
   resolved "https://registry.yarnpkg.com/@uppy/store-default/-/store-default-3.2.2.tgz#19ef59ea9a427372b21395fd4c842e193b9a9dde"
   integrity sha512-OiSgT++Jj4nLK0N9WTeod3UNjCH81OXE5BcMJCd9oWzl2d0xPNq2T/E9Y6O72XVd+6Y7+tf5vZlPElutfMB3KQ==
 
-"@uppy/utils@^5.7.2":
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/@uppy/utils/-/utils-5.7.2.tgz#4a889408153636dab1275dc7471067974b15fe59"
-  integrity sha512-hEqHZhKTVjBVZtH48JLsHYD6hs2fvGYZNteng4Hut+jo9+eLkGORY0HTWmurA+ZtoCgUtM7nnZRWndzY5gZ8iQ==
+"@uppy/utils@^5.7.4":
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/@uppy/utils/-/utils-5.7.4.tgz#479c1cd0e6790eb74654212ea128a1a28e392044"
+  integrity sha512-0Xsr7Xqdrb9mgfY3hi0YdhIaAxUw6qJasAflNMwNsyLGt3kH4pLfQHucolBKfWglVGtk1vfb49hZYvJGpcpzYA==
   dependencies:
     lodash "^4.17.21"
     preact "^10.5.13"
