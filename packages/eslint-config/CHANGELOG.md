@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.8.0
+
+### Minor Changes
+
+- [#1357](https://github.com/Localitos/pluto/pull/1357) [`a713f45`](https://github.com/Localitos/pluto/commit/a713f45580359c807bb734b4ce4f72b26b3b9c10) Thanks [@rssilva](https://github.com/rssilva)! - Bump dependencies regarding chromatic @commitlint/config-conventional @commitlint/cli @tanstack/react-table @uppy/core @typescript-eslint/eslint-plugin @types/react @typescript-eslint/parser eslint
+
 ## 1.7.0
 
 ### Minor Changes
