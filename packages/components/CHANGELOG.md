@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 23.1.0
+
+### Minor Changes
+
+- [#1351](https://github.com/Localitos/pluto/pull/1351) [`849a6d6`](https://github.com/Localitos/pluto/commit/849a6d631a40beae2b93bd0f68cb085bf4d851a7) Thanks [@apvale](https://github.com/apvale)! - [Table]:
+
+  - Adds border and background color property with white color as default to the Table component
+
 ## 23.0.0
 
 ### Patch Changes
