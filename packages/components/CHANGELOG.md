@@ -1,5 +1,20 @@
 # @localyze-pluto/components
 
+## 24.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`a713f45`](https://github.com/Localitos/pluto/commit/a713f45580359c807bb734b4ce4f72b26b3b9c10)]:
+  - @localyze-pluto/theme@15.0.0
+
+## 23.1.0
+
+### Minor Changes
+
+- [#1351](https://github.com/Localitos/pluto/pull/1351) [`849a6d6`](https://github.com/Localitos/pluto/commit/849a6d631a40beae2b93bd0f68cb085bf4d851a7) Thanks [@apvale](https://github.com/apvale)! - [Table]:
+
+  - Adds border and background color property with white color as default to the Table component
+
 ## 23.0.0
 
 ### Patch Changes
