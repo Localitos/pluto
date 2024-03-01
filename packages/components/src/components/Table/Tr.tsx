@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { SystemProp, Theme } from "@localyze-pluto/theme";
 import { Box } from "../../primitives/Box";
 import { TableContext } from "./TableContext";
 
@@ -13,17 +14,32 @@ export interface TrProps
   isClickable?: boolean;
 }
 
+const getTableRowBackgroundColor = (
+  striped: boolean,
+  isClickable: boolean | undefined,
+): SystemProp<keyof Theme["colors"], Theme> => {
+  if (isClickable) {
+    return {
+      hover: "bgBodyMain",
+    };
+  }
+
+  if (striped) {
+    return {
+      even: "bgSecondary",
+    };
+  }
+
+  return "transparent";
+};
+
 /** A row in the table */
 const Tr = React.forwardRef<HTMLTableRowElement, TrProps>(
   ({ children, isClickable, verticalAlign = "middle", ...props }, ref) => {
     const { striped } = useContext(TableContext);
     return (
       <Box.tr
-        backgroundColor={{
-          _: "transparent",
-          even: striped ? "colorBackgroundWeakest" : "transparent",
-          hover: isClickable ? "colorBackgroundWeak" : "transparent",
-        }}
+        backgroundColor={getTableRowBackgroundColor(striped, isClickable)}
         cursor={isClickable ? "pointer" : "default"}
         ref={ref}
         verticalAlign={verticalAlign}
