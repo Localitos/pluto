@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 24.1.1
+
+### Patch Changes
+
+- [#1360](https://github.com/Localitos/pluto/pull/1360) [`974dea6`](https://github.com/Localitos/pluto/commit/974dea61691f722f3480d530b81cb998d998e0a2) Thanks [@apvale](https://github.com/apvale)! - [Table]: Add overflow only when needed
+
 ## 24.1.0
 
 ### Minor Changes
