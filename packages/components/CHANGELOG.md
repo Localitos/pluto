@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 24.1.2
+
+### Patch Changes
+
+- [#1362](https://github.com/Localitos/pluto/pull/1362) [`c4ad3d6`](https://github.com/Localitos/pluto/commit/c4ad3d6635aa55ade641637a41b44f949c074588) Thanks [@apvale](https://github.com/apvale)! - [Table]: Fix hover when table row is not clickable
+
 ## 24.1.1
 
 ### Patch Changes
