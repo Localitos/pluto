@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/components",
-  "version": "24.1.1",
+  "version": "24.1.2",
   "description": "Pluto Design System Components",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
