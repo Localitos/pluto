@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 24.1.0
+
+### Minor Changes
+
+- [#1355](https://github.com/Localitos/pluto/pull/1355) [`79e9ae7`](https://github.com/Localitos/pluto/commit/79e9ae7c75cf9837ed8f74b9b7096439a9c9074e) Thanks [@padulafacundo](https://github.com/padulafacundo)! - Add red variant to the Badge component
+
 ## 24.0.0
 
 ### Patch Changes
