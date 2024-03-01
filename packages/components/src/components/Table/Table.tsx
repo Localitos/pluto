@@ -46,7 +46,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
           borderStyle="borderStyleSolid"
           borderWidth="borderWidth10"
           h="100%"
-          overflow="scroll"
+          overflow="auto"
         >
           <StyledTable
             borderCollapse="separate"
