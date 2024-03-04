@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 24.1.3
+
+### Patch Changes
+
+- [#1364](https://github.com/Localitos/pluto/pull/1364) [`a291a86`](https://github.com/Localitos/pluto/commit/a291a867c17cd073f0f6e5e960ff840d5d632514) Thanks [@apvale](https://github.com/apvale)! - [ContentCard] Improve how image and content are split
+
 ## 24.1.2
 
 ### Patch Changes
