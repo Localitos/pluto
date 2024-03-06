@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 15.1.0
+
+### Minor Changes
+
+- [#1380](https://github.com/Localitos/pluto/pull/1380) [`edf4039`](https://github.com/Localitos/pluto/commit/edf4039805d344ad499d930c23cd26b51aa07f43) Thanks [@rssilva](https://github.com/rssilva)! - bump dependencies: chromatic, @babel/preset-env, react-router-dom, react-hook-form, cspell, @tanstack/react-table, eslint-plugin-react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @types/react, @types/react-dom
+
 ## 15.0.0
 
 ### Minor Changes
