@@ -21,7 +21,7 @@ const tabs: Meta<typeof Tabs> = {
 
 export default tabs;
 
-export const Default = (): JSX.Element => {
+export const Default = (): React.JSX.Element => {
   return (
     <Tabs>
       <TabList aria-label="Page tabs">
@@ -68,7 +68,7 @@ export const Default = (): JSX.Element => {
   );
 };
 
-export const InitialTab = (): JSX.Element => {
+export const InitialTab = (): React.JSX.Element => {
   const selectedTab = "selected-tab";
   return (
     <Tabs initialTabId={selectedTab}>
@@ -116,7 +116,7 @@ export const InitialTab = (): JSX.Element => {
   );
 };
 
-export const Disabled = (): JSX.Element => {
+export const Disabled = (): React.JSX.Element => {
   return (
     <Tabs>
       <TabList aria-label="Page tabs">
@@ -163,7 +163,7 @@ export const Disabled = (): JSX.Element => {
   );
 };
 
-export const ReallyLongTab = (): JSX.Element => {
+export const ReallyLongTab = (): React.JSX.Element => {
   return (
     <Tabs>
       <TabList aria-label="Page tabs">
@@ -198,7 +198,7 @@ export const ReallyLongTab = (): JSX.Element => {
   );
 };
 
-export const Fitted = (): JSX.Element => {
+export const Fitted = (): React.JSX.Element => {
   return (
     <Tabs variant="fitted">
       <TabList aria-label="Page tabs">
@@ -233,7 +233,7 @@ export const Fitted = (): JSX.Element => {
   );
 };
 
-export const WithDivider = (): JSX.Element => {
+export const WithDivider = (): React.JSX.Element => {
   return (
     <Tabs>
       <TabList aria-label="Page tabs" withDivider>
@@ -273,6 +273,48 @@ WithDivider.parameters = {
     description: {
       story:
         "You can display a divider between the tabs and the content by using the `withDivider` property on the `TabList` component.",
+    },
+  },
+};
+
+export const Flexed = (): React.JSX.Element => {
+  return (
+    <Box.div display="flex" h="500px">
+      <Tabs flexed>
+        <TabList aria-label="Page tabs" withDivider>
+          <Tab>Tab One</Tab>
+          <Tab>Tab Two</Tab>
+        </TabList>
+        <Box.div display="flex" flexDirection="column" flexGrow="1">
+          <Box.div>
+            Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
+            sodales vel purus.
+          </Box.div>
+          <Box.div>
+            Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
+            sodales vel purus.
+          </Box.div>
+          <Box.div
+            borderColor="colorBackgroundComplete"
+            borderStyle="borderStyleSolid"
+            borderWidth="borderWidth10"
+            h="100%"
+            w="100%"
+          >
+            Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
+            sodales vel purus.
+          </Box.div>
+        </Box.div>
+      </Tabs>
+    </Box.div>
+  );
+};
+
+Flexed.parameters = {
+  docs: {
+    description: {
+      story:
+        "This uses {display: flex; flex-direction: column; flex-grow: 1;} for the div wrapping the tabs, to be able to fill the whole remaining container height with one of the containing divs.",
     },
   },
 };
