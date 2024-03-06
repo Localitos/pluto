@@ -6,7 +6,7 @@ import { Icon } from "../Icon";
 import type { ToastProps } from "./types";
 
 /** A succinct message that is displayed temporarily. */
-const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
+const Toast = React.forwardRef<HTMLLIElement, Omit<ToastProps, "ref">>(
   ({ cta, children, variant, ...props }, ref) => {
     return (
       <Box.li
