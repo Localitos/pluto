@@ -1,13 +1,12 @@
 import React from "react";
 import * as ToastPrimitive from "@radix-ui/react-toast";
-import omit from "lodash/omit";
 import { Box } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 import type { ToastProps } from "./types";
 
 /** A succinct message that is displayed temporarily. */
-const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
+const Toast = React.forwardRef<HTMLLIElement, Omit<ToastProps, "ref">>(
   ({ cta, children, variant, ...props }, ref) => {
     return (
       <Box.li
@@ -29,7 +28,7 @@ const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
         gridTemplateColumns="20px 1fr 20px"
         padding="space40"
         ref={ref}
-        {...omit(props, ["ref"])}
+        {...props}
       >
         <Icon
           color={variant === "error" ? "colorIconError" : "colorIconSuccess"}
