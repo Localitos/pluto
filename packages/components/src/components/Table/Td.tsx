@@ -13,11 +13,32 @@ export interface TdProps
   rowSpan?: number;
   /** Used to control the alignment of text. */
   textAlign?: "center" | "left" | "right";
+  /** Used to set the padding bottom */
+  paddingBottom?: "space0" | "space50";
+  /** Used to set the padding left */
+  paddingLeft?: "space0" | "space50";
+  /** Used to set the padding right */
+  paddingRight?: "space0" | "space50";
+  /** Used to set the padding top */
+  paddingTop?: "space0" | "space50";
 }
 
 /** A standard cell in the table, use within a <Tr>. */
 const Td = React.forwardRef<HTMLTableCellElement, TdProps>(
-  ({ children, colSpan, rowSpan, textAlign = "left", ...props }, ref) => {
+  (
+    {
+      children,
+      colSpan,
+      rowSpan,
+      textAlign = "left",
+      paddingBottom = "space50",
+      paddingLeft = "space50",
+      paddingRight = "space50",
+      paddingTop = "space50",
+      ...props
+    },
+    ref,
+  ) => {
     const { bordered } = React.useContext(TableContext);
     return (
       <Box.td
@@ -31,10 +52,10 @@ const Td = React.forwardRef<HTMLTableCellElement, TdProps>(
         borderLeftStyle="borderStyleSolid"
         borderLeftWidth="borderWidth10"
         colSpan={colSpan}
-        paddingBottom="space50"
-        paddingLeft="space50"
-        paddingRight="space50"
-        paddingTop="space50"
+        paddingBottom={paddingBottom}
+        paddingLeft={paddingLeft}
+        paddingRight={paddingRight}
+        paddingTop={paddingTop}
         ref={ref}
         rowSpan={rowSpan}
         textAlign={textAlign}
