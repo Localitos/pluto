@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 25.1.0
+
+### Minor Changes
+
+- [#1382](https://github.com/Localitos/pluto/pull/1382) [`f5f2d1d`](https://github.com/Localitos/pluto/commit/f5f2d1d247cb5b2d9c316b429dc0e3ed11e58e65) Thanks [@rssilva](https://github.com/rssilva)! - Add padding bottom, top, left and right prop option (space0 or space50) to td component
+
 ## 25.0.0
 
 ### Minor Changes
