@@ -277,33 +277,38 @@ WithDivider.parameters = {
   },
 };
 
+const Foo = () => (
+  <Box.div
+    borderColor="colorBackgroundComplete"
+    borderStyle="borderStyleSolid"
+    borderWidth="borderWidth10"
+    h="100%"
+    w="100%"
+  >
+    <h3>Foo</h3>
+    Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et, sodales vel
+    purus.
+  </Box.div>
+);
+
+const Bar = () => <div>Bar</div>;
+
 export const Flexed = (): React.JSX.Element => {
+  const [selectedTab, setSelectedTab] = React.useState("foo");
+
   return (
     <Box.div display="flex" h="500px">
       <Tabs flexed>
         <TabList aria-label="Page tabs" withDivider>
-          <Tab>Tab One</Tab>
-          <Tab>Tab Two</Tab>
+          <Tab id="foo" onClick={() => setSelectedTab("foo")}>
+            Foo
+          </Tab>
+          <Tab id="bar" onClick={() => setSelectedTab("bar")}>
+            Foo
+          </Tab>
         </TabList>
         <Box.div display="flex" flexDirection="column" flexGrow="1">
-          <Box.div>
-            Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
-            sodales vel purus.
-          </Box.div>
-          <Box.div>
-            Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
-            sodales vel purus.
-          </Box.div>
-          <Box.div
-            borderColor="colorBackgroundComplete"
-            borderStyle="borderStyleSolid"
-            borderWidth="borderWidth10"
-            h="100%"
-            w="100%"
-          >
-            Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
-            sodales vel purus.
-          </Box.div>
+          {selectedTab === "foo" ? <Foo /> : <Bar />}
         </Box.div>
       </Tabs>
     </Box.div>
