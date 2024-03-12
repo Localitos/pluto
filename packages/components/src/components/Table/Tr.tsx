@@ -12,34 +12,45 @@ export interface TrProps
   verticalAlign?: "bottom" | "middle" | "top";
   /** Determines whether to add a hover background color to the row if it's clickable. */
   isClickable?: boolean;
+  /** Determines whether to add a hover background color to the row when hovered. */
+  hasHover?: boolean;
 }
 
 const getTableRowBackgroundColor = (
   striped: boolean,
-  isClickable: boolean | undefined,
+  hasHover: boolean | undefined,
 ): SystemProp<keyof Theme["colors"], Theme> => {
-  if (isClickable) {
+  if (striped && hasHover) {
     return {
-      hover: "bgBodyMain",
+      even: "colorBackgroundWeakest",
+      hover: "colorBackgroundWeak",
     };
   }
 
-  if (striped) {
+  if (hasHover) {
     return {
-      even: "bgSecondary",
+      hover: "colorBackgroundWeak",
     };
   }
 
-  return "transparent";
+  return striped
+    ? {
+        even: "colorBackgroundWeakest",
+      }
+    : "transparent";
 };
 
 /** A row in the table */
 const Tr = React.forwardRef<HTMLTableRowElement, TrProps>(
-  ({ children, isClickable, verticalAlign = "middle", ...props }, ref) => {
+  (
+    { children, isClickable, hasHover, verticalAlign = "middle", ...props },
+    ref,
+  ) => {
     const { striped } = useContext(TableContext);
+
     return (
       <Box.tr
-        backgroundColor={getTableRowBackgroundColor(striped, isClickable)}
+        backgroundColor={getTableRowBackgroundColor(striped, hasHover)}
         cursor={isClickable ? "pointer" : "default"}
         ref={ref}
         verticalAlign={verticalAlign}
