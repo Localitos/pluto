@@ -88,7 +88,7 @@ module.exports = {
           filter: (token) => {
             return (
               token.filePath === "src/tokens/color.tokens.json" &&
-              ["color", "bg"].includes(token.attributes.category)
+              ["color", "bg", "content"].includes(token.attributes.category)
             );
           },
         },
@@ -98,7 +98,7 @@ module.exports = {
           filter: (token) => {
             return (
               token.filePath === "src/tokens/color.tokens.json" &&
-              ["color", "bg"].includes(token.attributes.category)
+              ["color", "bg", "content"].includes(token.attributes.category)
             );
           },
         },
