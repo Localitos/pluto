@@ -46,7 +46,7 @@
     "@storybook/addon-actions": "^7.6.15",
     "@storybook/addon-docs": "^7.6.15",
     "@storybook/addon-essentials": "^7.6.15",
-    "@storybook/addon-links": "^7.6.15",
+    "@storybook/addon-links": "^8.0.0",
     "@storybook/addon-viewport": "^7.6.15",
     "@storybook/nextjs": "^7.6.15",
     "@storybook/react": "^7.6.15",
