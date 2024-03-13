@@ -42,7 +42,7 @@
     "@changesets/cli": "^2.27.1",
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
-    "@storybook/addon-a11y": "^7.6.15",
+    "@storybook/addon-a11y": "^8.0.0",
     "@storybook/addon-actions": "^7.6.15",
     "@storybook/addon-docs": "^7.6.15",
     "@storybook/addon-essentials": "^7.6.15",
