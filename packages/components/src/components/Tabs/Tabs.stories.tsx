@@ -316,7 +316,7 @@ export const Flexed = (): React.JSX.Element => {
           </Tab>
         </TabList>
         <Box.div display="flex" flexDirection="column" flexGrow="1">
-          {selectedTab === "tab1" ? <Tab1/> : <Tab2/>}
+          {selectedTab === "tab1" ? <Tab1 /> : <Tab2 />}
         </Box.div>
       </Tabs>
     </Box.div>
