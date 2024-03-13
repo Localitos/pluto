@@ -288,5 +288,31 @@
     "body-talent": {
       "value": "#27313F"
     }
+  },
+  "content": {
+    "inverse": {
+      "value": "#FFFFFF"
+    },
+    "primary": {
+      "value": "#0F1A2A"
+    },
+    "secondary": {
+      "value": "#4F5865"
+    },
+    "tertiary": {
+      "value": "#6C7684"
+    },
+    "info": {
+      "value": "#102EE9"
+    },
+    "success": {
+      "value": "#047857"
+    },
+    "warning": {
+      "value": "#B05C09"
+    },
+    "error": {
+      "value": "#B91C1C"
+    }
   }
 }
