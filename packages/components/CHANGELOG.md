@@ -1,5 +1,22 @@
 # @localyze-pluto/components
 
+## 26.0.0
+
+### Minor Changes
+
+- [#1385](https://github.com/Localitos/pluto/pull/1385) [`06e9985`](https://github.com/Localitos/pluto/commit/06e99857c5a048e3c22720b0a386d01ed7228dac) Thanks [@apvale](https://github.com/apvale)! - [Table]:
+
+  - Make striped tables working with hoverable rows by introducing a new prop `hasHover`
+  - Add back the old background tokens because we need to first introduce the specific tokens
+    like "bgHover" and then update in places like tables.
+
+- [#1378](https://github.com/Localitos/pluto/pull/1378) [`49e3609`](https://github.com/Localitos/pluto/commit/49e360984d5ad105826f965bff835e058102311b) Thanks [@sliminas](https://github.com/sliminas)! - Add `flexed` option to Tabs component
+
+### Patch Changes
+
+- Updated dependencies [[`125d404`](https://github.com/Localitos/pluto/commit/125d404f1f7100697ed5089ece496c5eb8db7168)]:
+  - @localyze-pluto/theme@16.0.0
+
 ## 25.1.0
 
 ### Minor Changes
