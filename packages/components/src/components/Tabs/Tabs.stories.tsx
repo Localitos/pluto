@@ -277,38 +277,46 @@ WithDivider.parameters = {
   },
 };
 
-const Foo = () => (
+const Tab1 = () => (
   <Box.div
-    borderColor="colorBackgroundComplete"
+    borderColor="colorBorderWeaker"
     borderStyle="borderStyleSolid"
     borderWidth="borderWidth10"
     h="100%"
+    padding="space60"
     w="100%"
   >
-    <h3>Foo</h3>
-    Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et, sodales vel
-    purus.
+    Tab1
   </Box.div>
 );
 
-const Bar = () => <div>Bar</div>;
+const Tab2 = () => (
+  <Box.div
+    borderColor="colorBorderWeaker"
+    borderStyle="borderStyleSolid"
+    borderWidth="borderWidth10"
+    padding="space60"
+  >
+    Tab2
+  </Box.div>
+);
 
 export const Flexed = (): React.JSX.Element => {
-  const [selectedTab, setSelectedTab] = React.useState("foo");
+  const [selectedTab, setSelectedTab] = React.useState("tab1");
 
   return (
     <Box.div display="flex" h="500px">
       <Tabs flexed>
         <TabList aria-label="Page tabs" withDivider>
-          <Tab id="foo" onClick={() => setSelectedTab("foo")}>
-            Foo
+          <Tab id="tab1" onClick={() => setSelectedTab("tab1")}>
+            Tab1
           </Tab>
-          <Tab id="bar" onClick={() => setSelectedTab("bar")}>
-            Foo
+          <Tab id="tab2" onClick={() => setSelectedTab("tab2")}>
+            Tab2
           </Tab>
         </TabList>
         <Box.div display="flex" flexDirection="column" flexGrow="1">
-          {selectedTab === "foo" ? <Foo /> : <Bar />}
+          {selectedTab === "tab1" ? <Tab1/> : <Tab2/>}
         </Box.div>
       </Tabs>
     </Box.div>
