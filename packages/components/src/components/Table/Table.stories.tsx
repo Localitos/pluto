@@ -143,7 +143,7 @@ export const StickyHeaders: Story = {
   ),
 };
 
-export const WithClickableRows: Story = {
+export const WithClickableRowsAndHoverable: Story = {
   render: () => (
     <Box.div h="20rem" overflowY="auto">
       <Table>
@@ -156,7 +156,7 @@ export const WithClickableRows: Story = {
         </THead>
         <TBody>
           {map([...Array.from({ length: 100 }).keys()], (index) => (
-            <Tr isClickable key={index}>
+            <Tr hasHover isClickable key={index}>
               <Td>Content</Td>
               <Td>Content</Td>
               <Td>Content</Td>
@@ -167,6 +167,7 @@ export const WithClickableRows: Story = {
     </Box.div>
   ),
 };
+
 export const Striped: Story = {
   render: () => (
     <Table striped>
@@ -346,4 +347,54 @@ ReactTable.parameters = {
     storyDescription:
       "The table elements can be used with a headless table libray like Tanstack Table, formerly React Table. This allows you to build a datagrid on with the Pluto table elements.",
   },
+};
+
+export const Hoverable: Story = {
+  render: () => (
+    <Box.div h="20rem" overflowY="auto">
+      <Table>
+        <THead isSticky>
+          <Tr>
+            <Th>Column 1</Th>
+            <Th>Column 2</Th>
+            <Th>Column 3</Th>
+          </Tr>
+        </THead>
+        <TBody>
+          {map([...Array.from({ length: 100 }).keys()], (index) => (
+            <Tr hasHover key={index}>
+              <Td>Content</Td>
+              <Td>Content</Td>
+              <Td>Content</Td>
+            </Tr>
+          ))}
+        </TBody>
+      </Table>
+    </Box.div>
+  ),
+};
+
+export const StripedAndHoverable: Story = {
+  render: () => (
+    <Box.div h="20rem" overflowY="auto">
+      <Table striped>
+        <THead isSticky>
+          <Tr>
+            <Th>Column 1</Th>
+            <Th>Column 2</Th>
+            <Th>Column 3</Th>
+          </Tr>
+        </THead>
+        <TBody>
+          {map([...Array.from({ length: 100 }).keys()], (index) => (
+            <Tr hasHover key={index}>
+              <Td>Content</Td>
+              <Td>Content</Td>
+              <Td>Content</Td>
+            </Tr>
+          ))}
+        </TBody>
+      </Table>
+    </Box.div>
+  ),
 };
