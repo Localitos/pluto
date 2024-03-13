@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.7.0
+
+### Minor Changes
+
+- [#1384](https://github.com/Localitos/pluto/pull/1384) [`125d404`](https://github.com/Localitos/pluto/commit/125d404f1f7100697ed5089ece496c5eb8db7168) Thanks [@rssilva](https://github.com/rssilva)! - Add content prefix tokens to colors
+
 ## 1.6.0
 
 ### Minor Changes
