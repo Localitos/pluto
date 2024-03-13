@@ -316,22 +316,22 @@
     }
   },
   "border": {
-    "border-primary": {
+    "primary": {
       "value": "#6C7684"
     },
-    "border-secondary": {
+    "secondary": {
       "value": "#D2D7DF"
     },
-    "border-info": {
+    "info": {
       "value": "#102EE9"
     },
-    "border-success": {
+    "success": {
       "value": "#047857"
     },
-    "border-warning": {
+    "warning": {
       "value": "#B05C09"
     },
-    "border-error": {
+    "error": {
       "value": "#B91C1C"
     }
   }
