@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.9.0
+
+### Minor Changes
+
+- [#1407](https://github.com/Localitos/pluto/pull/1407) [`a000e55`](https://github.com/Localitos/pluto/commit/a000e55de182a7c75f8d10e6a864232560fbe3e9) Thanks [@VirginiaBalseiro](https://github.com/VirginiaBalseiro)! - Add border prefix tokens to colors
+
 ## 1.8.0
 
 ### Minor Changes
