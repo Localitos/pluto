@@ -7,9 +7,9 @@ import { TokenRow } from "../types/TokenRow";
 
 export const buildTokensTableRows = (
   columns: TokenColumn[],
-  tokens: Record<string, Record<string, Token>>,
+  tokens: Record<string, Record<string, Token>>
 ): Array<TokenRow> => {
-  const [, tokenEntries] = Object.entries(tokens)[0];
+  const tokenEntries = Object.entries(tokens);
 
   return map(Object.entries(tokenEntries), (token) => {
     return invokeMap(columns, "transform", token) as TokenRow;

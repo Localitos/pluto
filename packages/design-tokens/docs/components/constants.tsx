@@ -20,9 +20,53 @@ import {
 import { Box } from "../../../components/src/primitives/Box";
 import { Text } from "../../../components/src/primitives/Text";
 import { createPreview } from "./createPreview";
+import keys from "lodash/keys";
+import filter from "lodash/filter";
+import reduce from "lodash/reduce";
 
 const TEXT_PREVIEW = (
   <Text.span>The quick brown fox jumped over the lazy dog.</Text.span>
+);
+
+const COLORS = reduce(
+  filter(keys(colorTokens), (item) => item !== "default"),
+  (acc, cur) => {
+    const arr = [
+      {
+        name: "Name",
+        transform: ([, token]) => {
+          return cur + token[0];
+        },
+      },
+      { name: "Hex", transform: getTokenValue },
+      {
+        name: "RGB",
+        transform: ([, token]: TokenEntry): string => hexToRgb(token.value),
+      },
+      {
+        name: "Hsla",
+        transform: ([, token]: TokenEntry): string => hexToHsla(token.value),
+      },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix: getTokenKey(colorTokens),
+          attribute: "backgroundColor",
+          componentProps: {
+            w: "70px",
+            h: "30px",
+            borderRadius: "borderRadius35",
+          },
+        }),
+      },
+    ];
+
+    return {
+      ...acc,
+      [cur]: arr,
+    };
+  },
+  {}
 );
 
 export const TOKEN_COLUMNS = {
@@ -180,31 +224,5 @@ export const TOKEN_COLUMNS = {
       }),
     },
   ],
-  [getTokenKey(colorTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(colorTokens),
-    },
-    { name: "Hex", transform: getTokenValue },
-    {
-      name: "RGB",
-      transform: ([, token]: TokenEntry): string => hexToRgb(token.value),
-    },
-    {
-      name: "Hsla",
-      transform: ([, token]: TokenEntry): string => hexToHsla(token.value),
-    },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(colorTokens),
-        attribute: "backgroundColor",
-        componentProps: {
-          w: "70px",
-          h: "30px",
-          borderRadius: "borderRadius35",
-        },
-      }),
-    },
-  ],
+  ...COLORS,
 };
