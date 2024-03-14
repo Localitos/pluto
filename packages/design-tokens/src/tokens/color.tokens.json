@@ -314,5 +314,25 @@
     "error": {
       "value": "#B91C1C"
     }
+  },
+  "border": {
+    "primary": {
+      "value": "#6C7684"
+    },
+    "secondary": {
+      "value": "#D2D7DF"
+    },
+    "info": {
+      "value": "#102EE9"
+    },
+    "success": {
+      "value": "#047857"
+    },
+    "warning": {
+      "value": "#B05C09"
+    },
+    "error": {
+      "value": "#B91C1C"
+    }
   }
 }
