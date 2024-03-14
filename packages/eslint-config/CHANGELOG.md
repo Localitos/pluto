@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.10.0
+
+### Minor Changes
+
+- [#1408](https://github.com/Localitos/pluto/pull/1408) [`3e657f8`](https://github.com/Localitos/pluto/commit/3e657f855b5e60865158e246bdda260d77258490) Thanks [@rssilva](https://github.com/rssilva)! - Bumps dependencies: @commitlint/cli, yup, chromatic, react-router-dom, @commitlint/config-conventional, eslint-plugin-jsdoc, @typescript-eslint/eslint-plugin, @types/react-dom, @typescript-eslint/parser, typescript, @types/react
+
 ## 1.9.0
 
 ### Minor Changes
