@@ -3,7 +3,7 @@ import replace from "lodash/replace";
 import camelCase from "lodash/camelCase";
 import upperFirst from "lodash/upperFirst";
 import { ThemeProvider, theme } from "@localyze-pluto/theme";
-import { TokenEntry } from "../types/TokenEntry";
+import { TokenTuple } from "../types/TokenTuple";
 import { Box, BoxProps } from "../../../components/src/primitives/Box";
 import { IconProps } from "../../../components/src/components/Icon/Icon";
 
@@ -26,10 +26,10 @@ export const createPreview =
     component: Component = Box.div,
   }: PreviewProps) =>
   // eslint-disable-next-line react/display-name
-  ([suffix]: TokenEntry): JSX.Element => {
-    const tokenProps = overrideProps[suffix];
+  ([, token]: TokenTuple): JSX.Element => {
+    const tokenProps = overrideProps[token[0]];
     const normalizedSuffix = replace(
-      upperFirst(camelCase(suffix)),
+      upperFirst(camelCase(token[0])),
       "Negative",
       "",
     );
@@ -40,8 +40,6 @@ export const createPreview =
       children,
       [attribute]: `${camelCase(prefix)}${normalizedSuffix}`,
     };
-
-    console.log(suffix)
 
     return (
       <ThemeProvider theme={theme}>

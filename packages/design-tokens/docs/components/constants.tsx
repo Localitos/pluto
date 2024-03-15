@@ -1,4 +1,9 @@
 import React from "react";
+import camelCase from "lodash/camelCase";
+import capitalize from "lodash/capitalize";
+import keys from "lodash/keys";
+import filter from "lodash/filter";
+import reduce from "lodash/reduce";
 import fontSizeTokens from "../../src/tokens/font-size.tokens.json";
 import fontWeightTokens from "../../src/tokens/font-weight.tokens.json";
 import colorTokens from "../../src/tokens/color.tokens.json";
@@ -8,9 +13,7 @@ import borderStyleTokens from "../../src/tokens/border-style.tokens.json";
 import borderWidthTokens from "../../src/tokens/border-width.tokens.json";
 import borderRadiiTokens from "../../src/tokens/border-radius.tokens.json";
 import { Icon } from "../../../components/src/components/Icon/Icon";
-import { TokenEntry } from "../types/TokenEntry";
-import camelCase from "lodash/camelCase";
-import capitalize from "lodash/capitalize";
+import { TokenTuple } from "../types/TokenTuple";
 import {
   getTokenComment,
   getTokenKey,
@@ -22,9 +25,6 @@ import {
 import { Box } from "../../../components/src/primitives/Box";
 import { Text } from "../../../components/src/primitives/Text";
 import { createPreview } from "./createPreview";
-import keys from "lodash/keys";
-import filter from "lodash/filter";
-import reduce from "lodash/reduce";
 
 const TEXT_PREVIEW = (
   <Text.span>The quick brown fox jumped over the lazy dog.</Text.span>
@@ -36,23 +36,23 @@ const COLORS = reduce(
     const arr = [
       {
         name: "Name",
-        transform: ([, token]) => {
+        transform: ([, token]: TokenTuple) => {
           return camelCase(`${cur}${capitalize(token[0])}`);
         },
       },
       { name: "Hex", transform: getTokenValue },
       {
         name: "RGB",
-        transform: ([, token]: TokenEntry): string => hexToRgb(token[1].value),
+        transform: ([, token]: TokenTuple): string => hexToRgb(token[1].value),
       },
       {
         name: "Hsla",
-        transform: ([, token]: TokenEntry): string => hexToHsla(token[1].value),
+        transform: ([, token]: TokenTuple): string => hexToHsla(token[1].value),
       },
       {
         name: "Preview",
         transform: createPreview({
-          prefix: getTokenKey(colorTokens),
+          prefix: cur,
           attribute: "backgroundColor",
           componentProps: {
             w: "70px",
@@ -68,7 +68,7 @@ const COLORS = reduce(
       [cur]: arr,
     };
   },
-  {}
+  {},
 );
 
 export const TOKEN_COLUMNS = {
