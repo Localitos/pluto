@@ -51,8 +51,6 @@ export const TokensTable = ({
       <TBody>
         {map(rowGroups, (rows) =>
           map(rows, (row) => {
-            console.log(row, row[0]);
-
             const tokenName = row[0] as string;
             return (
               <Tr key={tokenName}>

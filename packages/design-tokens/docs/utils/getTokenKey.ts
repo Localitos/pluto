@@ -4,5 +4,7 @@ import { Token } from "../types/Token";
 export const getTokenKey = (
   object: Record<string, Record<string, Token>>,
 ): string => {
+  //console.log(Object.entries(object)[0][1]);
+  //console.log(object)
   return keys(object)[0];
 };

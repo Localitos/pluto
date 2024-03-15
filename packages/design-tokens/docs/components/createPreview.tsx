@@ -41,6 +41,8 @@ export const createPreview =
       [attribute]: `${camelCase(prefix)}${normalizedSuffix}`,
     };
 
+    console.log(suffix)
+
     return (
       <ThemeProvider theme={theme}>
         <Box.div className="sb-unstyled">

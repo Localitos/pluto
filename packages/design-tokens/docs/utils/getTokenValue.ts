@@ -1,5 +1,5 @@
 import { TokenEntry } from "../types/TokenEntry";
 
 export const getTokenValue = ([, token]: TokenEntry): string => {
-  return token.value;
+  return token[1].value;
 };

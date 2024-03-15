@@ -9,6 +9,8 @@ import borderWidthTokens from "../../src/tokens/border-width.tokens.json";
 import borderRadiiTokens from "../../src/tokens/border-radius.tokens.json";
 import { Icon } from "../../../components/src/components/Icon/Icon";
 import { TokenEntry } from "../types/TokenEntry";
+import camelCase from "lodash/camelCase";
+import capitalize from "lodash/capitalize";
 import {
   getTokenComment,
   getTokenKey,
@@ -35,17 +37,17 @@ const COLORS = reduce(
       {
         name: "Name",
         transform: ([, token]) => {
-          return cur + token[0];
+          return camelCase(`${cur}${capitalize(token[0])}`);
         },
       },
       { name: "Hex", transform: getTokenValue },
       {
         name: "RGB",
-        transform: ([, token]: TokenEntry): string => hexToRgb(token.value),
+        transform: ([, token]: TokenEntry): string => hexToRgb(token[1].value),
       },
       {
         name: "Hsla",
-        transform: ([, token]: TokenEntry): string => hexToHsla(token.value),
+        transform: ([, token]: TokenEntry): string => hexToHsla(token[1].value),
       },
       {
         name: "Preview",
