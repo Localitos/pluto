@@ -24,7 +24,7 @@ export const TokensTable = ({
   type: TokenTypes;
   data: Record<string, Record<string, Token>>;
 }): JSX.Element => {
-  const tokenNames = filter(keys(data), (item) => item !== "default");
+  const tokenNames: Array<string> = filter(keys(data), (item) => item !== "default");
   const columnGroups = map(tokenNames, (token) => {
     return TOKEN_COLUMNS[token];
   });
@@ -44,8 +44,6 @@ export const TokensTable = ({
               </Th>
             );
           })}
-          {/* {map(columnGroups, (columns) =>
-          )} */}
         </Tr>
       </THead>
       <TBody>
