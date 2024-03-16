@@ -24,11 +24,16 @@ import {
 } from "../utils";
 import { Box } from "../../../components/src/primitives/Box";
 import { Text } from "../../../components/src/primitives/Text";
+import { TokenColumn } from "../types/TokenColumn";
 import { createPreview } from "./createPreview";
 
 const TEXT_PREVIEW = (
   <Text.span>The quick brown fox jumped over the lazy dog.</Text.span>
 );
+
+type TokenColumnsProps = {
+  [key: string]: Array<TokenColumn>;
+};
 
 const COLORS = reduce(
   filter(keys(colorTokens), (item) => item !== "default"),
@@ -71,7 +76,7 @@ const COLORS = reduce(
   {},
 );
 
-export const TOKEN_COLUMNS = {
+export const TOKEN_COLUMNS: TokenColumnsProps = {
   [getTokenKey(borderRadiiTokens)]: [
     {
       name: "Name",

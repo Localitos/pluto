@@ -1,5 +1,7 @@
 import React from "react";
 import map from "lodash/map";
+import keys from "lodash/keys";
+import filter from "lodash/filter";
 import {
   Table,
   THead,
@@ -12,23 +14,24 @@ import { Token } from "../types/Token";
 import { buildTokensTableRows } from "../utils";
 import { TOKEN_COLUMNS } from "./constants";
 import { TokenName } from "./TokenName";
-import keys from "lodash/keys";
-import filter from "lodash/filter";
 
 type TokenTypes = keyof typeof TOKEN_COLUMNS;
 
 export const TokensTable = ({
-  type,
   data,
 }: {
   type: TokenTypes;
   data: Record<string, Record<string, Token>>;
 }): JSX.Element => {
-  const tokenNames: Array<string> = filter(keys(data), (item) => item !== "default");
+  const tokenNames: Array<string> = filter(
+    keys(data),
+    (item) => item !== "default",
+  );
   const columnGroups = map(tokenNames, (token) => {
     return TOKEN_COLUMNS[token];
   });
-  const rowGroups = map(columnGroups, (columns, index) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const rowGroups = map(columnGroups, (columns: any, index) => {
     const token = tokenNames[index];
     return buildTokensTableRows(columns, data[token]);
   });
@@ -66,7 +69,7 @@ export const TokensTable = ({
                 })}
               </Tr>
             );
-          })
+          }),
         )}
       </TBody>
     </Table>
