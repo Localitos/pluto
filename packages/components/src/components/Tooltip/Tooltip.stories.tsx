@@ -34,7 +34,10 @@ export const AnchorBased = (): JSX.Element => {
   });
   return (
     <>
-      <TooltipAnchor as={Anchor} href="#" store={tooltip}>
+      <TooltipAnchor
+        render={<Anchor href="#">Hover or focus on me</Anchor>}
+        store={tooltip}
+      >
         Hover or focus on me
       </TooltipAnchor>
       <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
