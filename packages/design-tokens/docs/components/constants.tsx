@@ -41,18 +41,18 @@ const COLORS = reduce(
     const arr = [
       {
         name: "Name",
-        transform: ([, token]: TokenTuple) => {
-          return camelCase(`${cur}${capitalize(token[0])}`);
+        transform: ([tokenName]: TokenTuple) => {
+          return camelCase(`${cur}${capitalize(tokenName)}`);
         },
       },
       { name: "Hex", transform: getTokenValue },
       {
         name: "RGB",
-        transform: ([, token]: TokenTuple): string => hexToRgb(token[1].value),
+        transform: ([, token]: TokenTuple): string => hexToRgb(token.value),
       },
       {
         name: "Hsla",
-        transform: ([, token]: TokenTuple): string => hexToHsla(token[1].value),
+        transform: ([, token]: TokenTuple): string => hexToHsla(token.value),
       },
       {
         name: "Preview",

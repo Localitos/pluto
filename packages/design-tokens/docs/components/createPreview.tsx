@@ -26,10 +26,10 @@ export const createPreview =
     component: Component = Box.div,
   }: PreviewProps) =>
   // eslint-disable-next-line react/display-name
-  ([, token]: TokenTuple): JSX.Element => {
-    const tokenProps = overrideProps[token[0]];
+  ([tokenName, token]: TokenTuple): JSX.Element => {
+    const tokenProps = overrideProps[token.value];
     const normalizedSuffix = replace(
-      upperFirst(camelCase(token[0])),
+      upperFirst(camelCase(tokenName)),
       "Negative",
       "",
     );

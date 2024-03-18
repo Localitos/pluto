@@ -1,5 +1,5 @@
 import { TokenTuple } from "../types/TokenTuple";
 
 export const getTokenValue = ([, token]: TokenTuple): string => {
-  return token[1].value;
+  return token.value;
 };

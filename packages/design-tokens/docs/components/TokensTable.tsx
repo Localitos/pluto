@@ -12,6 +12,7 @@ import {
 } from "../../../components/src/components/Table/";
 import { Token } from "../types/Token";
 import { buildTokensTableRows } from "../utils";
+import { TokenRow } from "../types/TokenRow";
 import { TOKEN_COLUMNS } from "./constants";
 import { TokenName } from "./TokenName";
 
@@ -31,7 +32,7 @@ export const TokensTable = ({
     return TOKEN_COLUMNS[token];
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const rowGroups = map(columnGroups, (columns: any, index) => {
+  const rowGroups: TokenRow[][] = map(columnGroups, (columns: any, index) => {
     const token = tokenNames[index];
     return buildTokensTableRows(columns, data[token]);
   });
