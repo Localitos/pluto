@@ -15,47 +15,47 @@ describe("<Select />", () => {
     value: "",
   };
 
-  it("renders correctly", () => {
+  it("renders correctly", async () => {
     render(<Select {...initialProps} />);
-    const SelectElement = screen.getByRole("combobox");
-    expect(SelectElement).toBeInTheDocument();
+
+    expect(await screen.findByRole("combobox")).toBeInTheDocument();
     expect(screen.getByText("Select one")).toBeInTheDocument();
   });
 
-  it("should render a selection", () => {
+  it("should render a selection", async () => {
     render(<Select {...initialProps} value={initialProps.items[0].value} />);
-    const SelectElement = screen.getByRole("combobox");
-    expect(SelectElement).toBeInTheDocument();
+
+    expect(await screen.findByRole("combobox")).toBeInTheDocument();
     expect(screen.getAllByText("Item One")[0]).toBeInTheDocument();
   });
 
-  it("should render a multiselection", () => {
+  it("should render a multiselection", async () => {
     render(
       <Select
         {...initialProps}
         value={[initialProps.items[0].value, initialProps.items[1].value]}
       />,
     );
-    const SelectElement = screen.getByRole("combobox");
-    expect(SelectElement).toBeInTheDocument();
+
+    expect(await screen.findByRole("combobox")).toBeInTheDocument();
     expect(screen.getByText("Item One, Item Two")).toBeInTheDocument();
   });
 
-  it("should render a required select", () => {
+  it("should render a required select", async () => {
     render(<Select {...initialProps} />);
-    const SelectElement = screen.getByRole("combobox");
-    expect(SelectElement).toBeRequired();
+
+    expect(await screen.findByRole("combobox")).toBeRequired();
   });
 
-  it("should render a disabled select", () => {
+  it("should render a disabled select", async () => {
     render(<Select {...initialProps} />);
-    const SelectElement = screen.getByRole("combobox");
-    expect(SelectElement).toBeDisabled();
+
+    expect(await screen.findByRole("combobox")).toBeDisabled();
   });
 
-  it("should render a select id", () => {
+  it("should render a select id", async () => {
     render(<Select {...initialProps} />);
-    const SelectElement = screen.getByRole("combobox");
-    expect(SelectElement).toHaveAttribute("id", "select");
+
+    expect(await screen.findByRole("combobox")).toHaveAttribute("id", "select");
   });
 });

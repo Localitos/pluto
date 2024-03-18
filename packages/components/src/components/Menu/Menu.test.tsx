@@ -17,7 +17,7 @@ describe("<Menu />", () => {
 
     await userEvent.click(menuButton);
 
-    expect(screen.getByRole("presentation")).toBeInTheDocument();
+    expect(screen.getByRole("menu")).toBeInTheDocument();
 
     expect(screen.getByText("Item 1")).toBeInTheDocument();
     expect(screen.getByText("Item 2")).toBeInTheDocument();
@@ -31,7 +31,7 @@ describe("<Menu />", () => {
 
     await userEvent.click(menuButton);
 
-    expect(screen.getByRole("presentation")).toBeInTheDocument();
+    expect(screen.getByRole("menu")).toBeInTheDocument();
 
     expect(screen.getByText("Item 1")).toBeInTheDocument();
     expect(screen.getByText("Item 2")).toBeInTheDocument();
@@ -46,7 +46,7 @@ describe("<Menu />", () => {
 
     await userEvent.click(menuButton);
 
-    expect(screen.getByRole("presentation")).toBeInTheDocument();
+    expect(screen.getByRole("menu")).toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: /item 1/i })).toBeDisabled();
     await userEvent.click(screen.getByRole("button", { name: /item 1/i }));
@@ -62,7 +62,7 @@ describe("<Menu />", () => {
 
     await userEvent.click(menuButton);
 
-    expect(screen.getByRole("presentation")).toBeInTheDocument();
+    expect(screen.getByRole("menu")).toBeInTheDocument();
 
     await userEvent.click(screen.getByRole("button", { name: /item 1/i }));
     expect(onClick).toHaveBeenCalled();
