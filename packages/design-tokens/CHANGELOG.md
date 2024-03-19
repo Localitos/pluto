@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.10.0
+
+### Minor Changes
+
+- [#1411](https://github.com/Localitos/pluto/pull/1411) [`0824d2b`](https://github.com/Localitos/pluto/commit/0824d2b91dd48ce00856b7e9ea82ea415c61ee4b) Thanks [@helfer1991](https://github.com/helfer1991)! - Enable multiple prefixes per design token type (example, on colors you can have now color, content, bg, ...)
+
 ## 1.9.0
 
 ### Minor Changes
