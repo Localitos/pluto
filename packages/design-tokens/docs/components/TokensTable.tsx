@@ -16,12 +16,9 @@ import { TokenRow } from "../types/TokenRow";
 import { TOKEN_COLUMNS } from "./constants";
 import { TokenName } from "./TokenName";
 
-type TokenTypes = keyof typeof TOKEN_COLUMNS;
-
 export const TokensTable = ({
   data,
 }: {
-  type: TokenTypes;
   data: Record<string, Record<string, Token>>;
 }): JSX.Element => {
   const tokenNames: Array<string> = filter(
@@ -31,8 +28,7 @@ export const TokensTable = ({
   const columnGroups = map(tokenNames, (token) => {
     return TOKEN_COLUMNS[token];
   });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const rowGroups: TokenRow[][] = map(columnGroups, (columns: any, index) => {
+  const rowGroups: TokenRow[][] = map(columnGroups, (columns, index) => {
     const token = tokenNames[index];
     return buildTokensTableRows(columns, data[token]);
   });
