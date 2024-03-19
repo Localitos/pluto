@@ -1,4 +1,9 @@
 import React from "react";
+import camelCase from "lodash/camelCase";
+import capitalize from "lodash/capitalize";
+import keys from "lodash/keys";
+import filter from "lodash/filter";
+import reduce from "lodash/reduce";
 import fontSizeTokens from "../../src/tokens/font-size.tokens.json";
 import fontWeightTokens from "../../src/tokens/font-weight.tokens.json";
 import colorTokens from "../../src/tokens/color.tokens.json";
@@ -8,7 +13,7 @@ import borderStyleTokens from "../../src/tokens/border-style.tokens.json";
 import borderWidthTokens from "../../src/tokens/border-width.tokens.json";
 import borderRadiiTokens from "../../src/tokens/border-radius.tokens.json";
 import { Icon } from "../../../components/src/components/Icon/Icon";
-import { TokenEntry } from "../types/TokenEntry";
+import { TokenTuple } from "../types/TokenTuple";
 import {
   getTokenComment,
   getTokenKey,
@@ -19,13 +24,59 @@ import {
 } from "../utils";
 import { Box } from "../../../components/src/primitives/Box";
 import { Text } from "../../../components/src/primitives/Text";
+import { TokenColumn } from "../types/TokenColumn";
 import { createPreview } from "./createPreview";
 
 const TEXT_PREVIEW = (
   <Text.span>The quick brown fox jumped over the lazy dog.</Text.span>
 );
 
-export const TOKEN_COLUMNS = {
+type TokenColumnsProps = {
+  [key: string]: Array<TokenColumn>;
+};
+
+const COLORS = reduce(
+  filter(keys(colorTokens), (item) => item !== "default"),
+  (acc, cur) => {
+    const arr = [
+      {
+        name: "Name",
+        transform: ([tokenName]: TokenTuple) => {
+          return camelCase(`${cur}${capitalize(tokenName)}`);
+        },
+      },
+      { name: "Hex", transform: getTokenValue },
+      {
+        name: "RGB",
+        transform: ([, token]: TokenTuple): string => hexToRgb(token.value),
+      },
+      {
+        name: "Hsla",
+        transform: ([, token]: TokenTuple): string => hexToHsla(token.value),
+      },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix: cur,
+          attribute: "backgroundColor",
+          componentProps: {
+            w: "70px",
+            h: "30px",
+            borderRadius: "borderRadius35",
+          },
+        }),
+      },
+    ];
+
+    return {
+      ...acc,
+      [cur]: arr,
+    };
+  },
+  {},
+);
+
+export const TOKEN_COLUMNS: TokenColumnsProps = {
   [getTokenKey(borderRadiiTokens)]: [
     {
       name: "Name",
@@ -180,31 +231,5 @@ export const TOKEN_COLUMNS = {
       }),
     },
   ],
-  [getTokenKey(colorTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(colorTokens),
-    },
-    { name: "Hex", transform: getTokenValue },
-    {
-      name: "RGB",
-      transform: ([, token]: TokenEntry): string => hexToRgb(token.value),
-    },
-    {
-      name: "Hsla",
-      transform: ([, token]: TokenEntry): string => hexToHsla(token.value),
-    },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(colorTokens),
-        attribute: "backgroundColor",
-        componentProps: {
-          w: "70px",
-          h: "30px",
-          borderRadius: "borderRadius35",
-        },
-      }),
-    },
-  ],
+  ...COLORS,
 };
