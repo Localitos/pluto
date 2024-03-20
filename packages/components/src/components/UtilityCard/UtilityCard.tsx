@@ -1,42 +1,77 @@
 import React from "react";
-import { Box, BoxProps } from "../../primitives/Box";
+import { Box } from "../../primitives/Box";
 import { Heading } from "../Heading";
 import { Badge } from "../Badge";
 import { Icon } from "../Icon";
 
-type UtilityCardProps = {
+export enum InteractiveElementType {
+  Card = "card",
+}
+
+export type UtilityCardProps = {
+  /** Sets the card image source */
   imageAlt: string;
+  /** Sets the card image alt */
   imageSrc: string;
+  /** Sets the title to be rendered as h2 */
   title: string;
-  categoryTag: string;
-  status: string;
+  /** Sets the type of the clickable element */
+  interactiveElementType?: InteractiveElementType;
+  /** Sets the href to be added to the interactive element */
+  href?: string;
+  /** Text describing the kind of service provided */
+  serviceTag: string;
+  /** Text describing the current status of the service as a badge */
+  status?: string;
+  /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
-  action?: () => void;
+  /** Callback function to be used to invoke onClicks */
+  onClick?: React.MouseEventHandler;
+};
+
+const cardBg = {
+  _: "colorBackgroundWeakest",
+  focus: "colorBackgroundWeakest",
+};
+
+const interactiveBg = {
+  active: "colorBackgroundWeak",
+  hover: "colorBackgroundWeak",
+  ...cardBg,
 };
 
 export const UtilityCard: React.FC<UtilityCardProps> = ({
-  as,
+  as = "div",
   imageAlt,
   imageSrc,
+  interactiveElementType,
+  href,
   title,
-  categoryTag,
+  serviceTag,
   status,
-  action,
+  onClick,
 }) => {
+  const isCardInteractive =
+    InteractiveElementType.Card === interactiveElementType;
+
+  const interactiveElementProps = {
+    href,
+    onClick,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    cursor: "pointer",
+  };
+
   return (
     <Box.div
-      as={as}
-      backgroundColor={{
-        _: "colorBackgroundWeakest",
-        active: "bgSecondary",
-        hover: "colorBackgroundWeak",
-        focus: "colorBackgroundWeakest",
-      }}
+      as={isCardInteractive ? "a" : as}
+      backgroundColor={isCardInteractive ? interactiveBg : cardBg}
       borderRadius="borderRadius30"
       display="flex"
       flexDirection={{ _: "column", lg: "row" }}
       padding="space50"
-      onClick={action}
+      textDecoration="none"
+      {...(isCardInteractive ? interactiveElementProps : {})}
     >
       <Box.div
         alignItems="center"
@@ -64,14 +99,16 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
           fontWeight={"fontWeightMedium"}
           marginBottom="space20"
         >
-          {categoryTag}
+          {serviceTag}
         </Box.div>
         <Heading as="h2" marginBottom="space40" size="heading70">
           {title}
         </Heading>
-        <Box.div>
-          <Badge>{status}</Badge>
-        </Box.div>
+        {status && (
+          <Box.div>
+            <Badge>{status}</Badge>
+          </Box.div>
+        )}
       </Box.div>
 
       <Box.div margin="space30">
