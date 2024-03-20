@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 20.0.0
+
+### Minor Changes
+
+- [#1437](https://github.com/Localitos/pluto/pull/1437) [`1a360dc`](https://github.com/Localitos/pluto/commit/1a360dcb579b9baccbec95d5ed202de37b66a03a) Thanks [@rssilva](https://github.com/rssilva)! - Update dependencies: chromatic, react-hook-form, @tanstack/react-table, @testing-library/react, @types/react, @commitlint/cli, @babel/preset-env, turbo, eslint-config-turbo, eslint-plugin-react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser
+
+### Patch Changes
+
+- Updated dependencies [[`1a360dc`](https://github.com/Localitos/pluto/commit/1a360dcb579b9baccbec95d5ed202de37b66a03a)]:
+  - @localyze-pluto/design-tokens@1.11.0
+
 ## 19.0.0
 
 ### Patch Changes
