@@ -199,11 +199,12 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
 
     return (
       <>
-        {/*  // Ignoring this ts-error because getRootProps is typed as
+        {/*
+        // Ignoring this ts-error because getRootProps is typed as
         // DropzoneRootProps which has a conflicting color prop. DropzoneRootProps
         // comes directly from React-Dropzone so we have no control over it.
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        @ts-ignore */}
+        */}
+        {/* @ts-expect-error please see above */}
         <Box.div
           {...getColors(
             errorState,
