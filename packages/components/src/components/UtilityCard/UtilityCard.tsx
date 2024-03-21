@@ -1,6 +1,5 @@
 import React from "react";
 import { Box } from "../../primitives/Box";
-import { Heading } from "../Heading";
 import { Badge } from "../Badge";
 import { Icon } from "../Icon";
 import { Text } from "../../primitives/Text";
@@ -52,17 +51,18 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
   const interactiveElementProps = {
     onClick,
     cursor: "pointer",
+    border: 0,
   };
 
   return (
     <Box.div
-      as={isCardInteractive ? "a" : as}
+      as={isCardInteractive ? "button" : as}
       backgroundColor={isCardInteractive ? interactiveBg : cardBg}
       borderRadius="borderRadius30"
       display="flex"
       flexDirection={{ lg: "row" }}
       padding="space50"
-      textDecoration="none"
+      w="100%"
       {...(isCardInteractive ? interactiveElementProps : {})}
     >
       <Box.div
@@ -84,16 +84,19 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         display="flex"
         flexDirection="column"
         marginRight="space50"
+        textAlign="left"
         w="100%"
       >
-        <Box.div
+        <Text.p
           color="colorTextStronger"
           fontSize="fontSize10"
           fontWeight="fontWeightMedium"
+          lineHeight="lineHeight10"
           marginBottom="space20"
+          style={{ textAlign: "left" }}
         >
           {categoryTag}
-        </Box.div>
+        </Text.p>
         <Text.h2
           fontSize="fontSize30"
           fontWeight="fontWeightBold"

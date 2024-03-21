@@ -7,13 +7,11 @@ import {
   InteractiveElementType,
 } from "./UtilityCard";
 
-const HREF = "https://google.com";
 const onClick = jest.fn();
 
 const defaultMockProps = {
-  imageAlt: "a test image",
   imageSrc: "path-to-image.jpg",
-  serviceTag: "a service tag",
+  categoryTag: "a service tag",
   title: "Good title!",
 };
 
@@ -37,7 +35,6 @@ const renderCardWithBadge = (): RenderResult => {
 const renderClickableCard = (): RenderResult => {
   return render(
     <UtilityCardMock
-      href={HREF}
       interactiveElementType={InteractiveElementType.Card}
       onClick={onClick}
     />,
@@ -62,7 +59,7 @@ describe("<UtilityCard>", () => {
     it("renders an image", () => {
       renderDefaultCard();
 
-      expect(screen.getByAltText("a test image")).toHaveAttribute(
+      expect(screen.getByAltText("")).toHaveAttribute(
         "src",
         "path-to-image.jpg",
       );
@@ -81,8 +78,8 @@ describe("<UtilityCard>", () => {
     it('renders card as link when interactive element type is "card"', () => {
       renderClickableCard();
 
-      const cardLink = screen.getByRole("link");
-      expect(cardLink).toHaveAttribute("href", HREF);
+      const cardAsButton = screen.getByRole("button");
+      expect(cardAsButton).toBeInTheDocument();
     });
 
     it("calls onClick callback when interactive element is clicked", async () => {
@@ -90,7 +87,7 @@ describe("<UtilityCard>", () => {
 
       const user = userEvent.setup();
 
-      const card = screen.getByRole("link");
+      const card = screen.getByRole("button");
 
       card.addEventListener("click", (event) => event.preventDefault(), false);
 
