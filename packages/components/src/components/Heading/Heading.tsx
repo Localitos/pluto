@@ -6,15 +6,14 @@ import forEach from "lodash/forEach";
 import { Text } from "../../primitives/Text";
 
 type HeadingLevelOptions = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-type HeadingMarginOptions = "space0" | "space40" | "space70";
+type HeadingMarginOptions = "space0" | "space70";
 type HeadingSizeOptions =
   | "heading10"
   | "heading20"
   | "heading30"
   | "heading40"
   | "heading50"
-  | "heading60"
-  | "heading70";
+  | "heading60";
 
 type ScreenSizes = keyof Theme["screens"];
 
@@ -85,12 +84,6 @@ const getHeadingStyles = (
       return {
         fontSize: "fontSize40",
         lineHeight: "lineHeight50",
-      };
-    }
-    case "heading70": {
-      return {
-        fontSize: "fontSize30",
-        lineHeight: "lineHeight40",
       };
     }
     default: {

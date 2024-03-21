@@ -16,7 +16,8 @@ const Template = (args: React.ComponentProps<typeof UtilityCard>) => {
 
 const href = "https://localyze.com";
 
-const onClick = (): void => window.location.assign(href);
+const onClick = (): void =>
+  alert("This is what happens when you click on the card");
 
 const defaultProps = {
   imageAlt: "a beach",
@@ -41,7 +42,6 @@ export const ClickableCard: Story = Template.bind({});
 ClickableCard.args = {
   ...defaultProps,
   interactiveElementType: InteractiveElementType.Card,
-  href,
   onClick,
 };
 
