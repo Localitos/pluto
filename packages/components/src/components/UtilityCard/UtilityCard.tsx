@@ -29,6 +29,10 @@ const cardBg = {
   _: "colorBackgroundWeakest",
 };
 
+const cardBorder = {
+  focus: "borderInfo",
+};
+
 const interactiveBg = {
   active: "colorBackgroundWeak",
   hover: "colorBackgroundWeak",
@@ -57,6 +61,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
     <Box.div
       as={isCardInteractive ? "button" : as}
       backgroundColor={isCardInteractive ? interactiveBg : cardBg}
+      borderColor={isCardInteractive ? cardBorder : null}
       borderRadius="borderRadius30"
       display="flex"
       flexDirection={{ lg: "row" }}
