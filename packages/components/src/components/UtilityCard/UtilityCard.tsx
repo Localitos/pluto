@@ -27,7 +27,6 @@ export type UtilityCardProps = {
 
 const cardBg = {
   _: "colorBackgroundWeakest",
-  focus: "colorBackgroundWeakest",
 };
 
 const interactiveBg = {
