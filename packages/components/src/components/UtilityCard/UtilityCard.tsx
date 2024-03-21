@@ -29,10 +29,6 @@ const cardBg = {
   _: "colorBackgroundWeakest",
 };
 
-const cardOutline = {
-  focus: "borderInfo",
-};
-
 const interactiveBg = {
   active: "colorBackgroundWeak",
   hover: "colorBackgroundWeak",
@@ -64,7 +60,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
       borderRadius="borderRadius30"
       display="flex"
       flexDirection={{ lg: "row" }}
-      outline={isCardInteractive ? cardOutline : null}
+      outlineColor={{ focus: "colorBorderPrimary" }}
       padding="space50"
       w="100%"
       {...(isCardInteractive ? interactiveElementProps : {})}
