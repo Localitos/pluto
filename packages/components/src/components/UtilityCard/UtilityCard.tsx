@@ -96,8 +96,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
           fontSize="fontSize10"
           fontWeight="fontWeightMedium"
           lineHeight="lineHeight10"
-          marginBottom="space20"
-          style={{ textAlign: "left" }}
+          margin="0 0 space20"
         >
           {categoryTag}
         </Text.p>
