@@ -14,8 +14,6 @@ const Template = (args: React.ComponentProps<typeof UtilityCard>) => {
   return <UtilityCard {...args} />;
 };
 
-const href = "https://localyze.com";
-
 const onClick = (): void =>
   alert("This is what happens when you click on the card");
 
