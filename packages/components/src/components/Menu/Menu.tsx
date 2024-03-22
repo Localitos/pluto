@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import {
   Menu as AriakitMenu,
-  MenuButton as AriakitMenuButton,
+  MenuButton,
   MenuItem,
   useMenuStore,
 } from "@ariakit/react";
@@ -41,7 +41,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
 
     return (
       <Box.div>
-        <AriakitMenuButton
+        <MenuButton
           render={(props) =>
             React.cloneElement(button, {
               ...props,
