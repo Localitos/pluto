@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 30.1.0
+
+### Minor Changes
+
+- [#1413](https://github.com/Localitos/pluto/pull/1413) [`b4dae7a`](https://github.com/Localitos/pluto/commit/b4dae7a30013e43938eb2af2d162be94a0fe7d12) Thanks [@helfer1991](https://github.com/helfer1991)! - Creation of UtilityCard
+
 ## 30.0.0
 
 ### Minor Changes
