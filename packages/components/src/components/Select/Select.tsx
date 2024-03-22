@@ -227,7 +227,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             />
           </Box.div>
         </Box.button>
-        <SelectPopover store={store}>
+        <SelectPopover gutter={4} hideOnInteractOutside sameWidth store={store}>
           {map(items, (item) => (
             <SelectItem
               disabled={item.disabled}
