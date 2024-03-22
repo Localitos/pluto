@@ -11,7 +11,7 @@ export interface SelectPopoverProps
 
 /** A select popover is a styled dropdown element that contains a list of select options. */
 const SelectPopover = React.forwardRef<HTMLDivElement, SelectPopoverProps>(
-  ({ children, store, ...props }, ref) => {
+  ({ children, store, gutter, sameWidth, ...props }, ref) => {
     return (
       <Box.div
         as={SelectPopoverPrimitive}
@@ -20,6 +20,7 @@ const SelectPopover = React.forwardRef<HTMLDivElement, SelectPopoverProps>(
         boxShadow="shadowStrong"
         display="flex"
         flexDirection="column"
+        gutter={gutter}
         maxHeight="250px"
         outlineColor={{ focus: "colorBorderPrimary" }}
         outlineStyle={{ focus: "solid" }}
@@ -30,6 +31,7 @@ const SelectPopover = React.forwardRef<HTMLDivElement, SelectPopoverProps>(
         paddingTop="space20"
         position="absolute"
         ref={ref}
+        sameWidth={sameWidth}
         store={store}
         zIndex="zIndex50"
         {...props}
