@@ -104,6 +104,7 @@ const getSelectedLabel = (
       </Text.span>
     );
   }
+
   if (isArray(value)) {
     if (value.length === 0)
       return (
@@ -119,6 +120,7 @@ const getSelectedLabel = (
       return items.find((item) => item.value === val)?.label;
     }).join(", ") as string;
   }
+
   // eslint-disable-next-line lodash/prefer-lodash-method
   return items.find((item) => item.value === value)?.label;
 };
@@ -148,6 +150,8 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       setValue,
     });
 
+    const selectValue = store.useState("value");
+
     return (
       <>
         <Box.button
@@ -161,8 +165,8 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           borderWidth="borderWidth10"
           color={
             disabled ||
-            (!isArray(store.useState().value) &&
-              startsWith(store.useState().value as string, "select-"))
+            (!isArray(selectValue) &&
+              startsWith(selectValue as string, "select-"))
               ? "colorText"
               : "colorTextStronger"
           }
@@ -209,7 +213,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             w="100%"
             whiteSpace="nowrap"
           >
-            {getSelectedLabel(items, store.useState().value, placeholder)}
+            {getSelectedLabel(items, selectValue, placeholder)}
           </Box.div>
           <Box.div
             display="inline-flex"
