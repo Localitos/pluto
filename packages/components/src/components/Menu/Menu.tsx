@@ -1,11 +1,10 @@
 import React, { ReactNode } from "react";
 import {
-  DisclosureProps,
   Menu as AriakitMenu,
   MenuButton,
   MenuItem,
-  useMenuState,
-} from "ariakit";
+  useMenuStore,
+} from "@ariakit/react";
 import map from "lodash/map";
 import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
@@ -36,19 +35,23 @@ const VerticalEllipsisButton = (
 /** A menu is a button element that opens a menu with items. */
 const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
   ({ menuButton, items }, ref) => {
-    const state = useMenuState();
+    const store = useMenuStore();
 
     const button = menuButton || VerticalEllipsisButton;
 
     return (
       <Box.div>
-        <MenuButton ref={ref} state={state} {...button.props}>
-          {(buttonProps: DisclosureProps) =>
-            React.cloneElement(button, buttonProps)
+        <MenuButton
+          render={(props) =>
+            React.cloneElement(button, {
+              ...props,
+              ref,
+            })
           }
-        </MenuButton>
+          store={store}
+        />
 
-        <AriakitMenu state={state}>
+        <AriakitMenu store={store}>
           <Box.div
             backgroundColor="colorBackground"
             borderRadius="borderRadius20"

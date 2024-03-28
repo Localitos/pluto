@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import React from "react";
-import { useModalState } from "../Modal/index";
+import { useModalStore } from "../Modal/index";
 import { ConfirmationModal, ConfirmationModalProps } from "./ConfirmationModal";
 
 const OPEN_MODAL_TEXT = "Open modal";
@@ -11,16 +11,16 @@ const onConfirm = jest.fn();
 const ExampleModal = ({
   onCancel,
 }: Pick<ConfirmationModalProps, "onCancel">) => {
-  const state = useModalState();
+  const store = useModalStore();
 
   return (
     <div>
-      <button onClick={state.show}>{OPEN_MODAL_TEXT}</button>
+      <button onClick={store.show}>{OPEN_MODAL_TEXT}</button>
 
       <ConfirmationModal
         onCancel={onCancel}
         onConfirm={onConfirm}
-        state={state}
+        store={store}
       >
         Do you want to confirm?
       </ConfirmationModal>
@@ -29,17 +29,17 @@ const ExampleModal = ({
 };
 
 const CustomModal = () => {
-  const state = useModalState();
+  const store = useModalStore();
 
   return (
     <div>
-      <button onClick={state.show}>{OPEN_MODAL_TEXT}</button>
+      <button onClick={store.show}>{OPEN_MODAL_TEXT}</button>
 
       <ConfirmationModal
         confirmLabel="Delete"
         destructive
         onConfirm={onConfirm}
-        state={state}
+        store={store}
       >
         Do you want to delete?
       </ConfirmationModal>

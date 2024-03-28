@@ -1,5 +1,5 @@
 import React from "react";
-import { DialogDismiss } from "ariakit/dialog";
+import { DialogDismiss } from "@ariakit/react/dialog";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 
@@ -27,11 +27,14 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
         <Box.div>{children}</Box.div>
         <Box.div>
           <DialogDismiss
-            aria-label="Close modal"
-            as={Button}
-            iconOnly
-            leadingIcon="XMarkIcon"
-            variant="ghost"
+            render={
+              <Button
+                aria-label="Close modal"
+                iconOnly
+                leadingIcon="XMarkIcon"
+                variant="ghost"
+              />
+            }
           />
         </Box.div>
       </Box.div>
