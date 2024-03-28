@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
-    "@tanstack/react-table": "^8.14.0",
+    "@tanstack/react-table": "^8.15.2",
     "formik": "^2.4.5",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.51.1",

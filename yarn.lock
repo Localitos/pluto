@@ -4198,17 +4198,17 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tanstack/react-table@^8.14.0":
-  version "8.14.0"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-table/-/react-table-8.14.0.tgz#3a55b11cce39b7670549800b888b74c029dae375"
-  integrity sha512-l9iwO99oz/azy5RT5VkVRsHHuy7o//fiXgLxzl3fad8qf7Bj+9ihsfmE6Q+BNjH4wHbxZkahwxtb3ngGq9FQxA==
+"@tanstack/react-table@^8.15.2":
+  version "8.15.2"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-table/-/react-table-8.15.2.tgz#bd95839576307b75a52ce4cdeec545d0fd684b3c"
+  integrity sha512-IJyTmCc2LWaRPjA8vK0kPkdrcs2MM0neCoXS3cazg8X3OkWt/bsJh6ieuK8jbQ1Gi0dxwvNlGCW2AVYOaxCbNA==
   dependencies:
-    "@tanstack/table-core" "8.14.0"
+    "@tanstack/table-core" "8.15.2"
 
-"@tanstack/table-core@8.14.0":
-  version "8.14.0"
-  resolved "https://registry.yarnpkg.com/@tanstack/table-core/-/table-core-8.14.0.tgz#4c9fe8b74949bb0ffe4ac8b1937beaff1f3a19de"
-  integrity sha512-wDhpKJahGHWhmRt4RxtV3pES63CoeadljGWS/xeS9OJr1HBl2NB+OO44ht3sxDH5j5TRDAbQzC0NvSlsUfn7lQ==
+"@tanstack/table-core@8.15.2":
+  version "8.15.2"
+  resolved "https://registry.yarnpkg.com/@tanstack/table-core/-/table-core-8.15.2.tgz#56997efdf75e7845a8227c5bf5b894df754fee48"
+  integrity sha512-OIBS4seJSr+J70rSLon8taWxcaGozMEu5B2CrNBwRG0gZbSbW6FtsE+neJHynl6Bqy7wN5HqaUZz67V1ysCq9w==
 
 "@testing-library/dom@^9.0.0":
   version "9.3.4"
