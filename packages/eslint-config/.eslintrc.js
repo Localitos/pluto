@@ -38,7 +38,7 @@ module.exports = {
     "unicorn/no-array-reduce": "off",
     "unicorn/prefer-node-protocol": "off",
     "unicorn/no-useless-undefined": "off",
-    // PropTypes are unnecessary with TypeScript.
+    // PropTypes are unnecessary with TypeScript .
     "react/prop-types": "off",
     "react/jsx-sort-props": ["warn"],
     "no-console": ["error"],
