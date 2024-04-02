@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 21.0.0
+
+### Minor Changes
+
+- [#1462](https://github.com/Localitos/pluto/pull/1462) [`6405392`](https://github.com/Localitos/pluto/commit/64053922b4165bfb6a8012534ec39a73a01f1971) Thanks [@rssilva](https://github.com/rssilva)! - Update packages react-hook-form, @tanstack/react-table, express, @heroicons/react, @types/react, webpack-dev-middleware, cspell, turbo, eslint-config-turbo, eslint-plugin-jest-dom, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, typescript
+
+### Patch Changes
+
+- Updated dependencies [[`6405392`](https://github.com/Localitos/pluto/commit/64053922b4165bfb6a8012534ec39a73a01f1971)]:
+  - @localyze-pluto/design-tokens@1.12.0
+
 ## 20.0.0
 
 ### Minor Changes
