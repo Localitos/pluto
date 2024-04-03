@@ -13,6 +13,9 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
   ],
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
+  },
   features: {
     interactionsDebugger: true, // 👈 Enable playback controls
   },

@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Title,
-  Description,
-  Stories,
-  Controls,
-  PureArgsTable,
-} from "@storybook/addon-docs";
-import { ArgTypes } from "@storybook/blocks";
+import { Title, Description, Stories, Controls } from "@storybook/addon-docs";
 import customTheme from "./theme";
 import {
   ThemeProvider,
@@ -47,8 +40,6 @@ export const parameters = {
           <Description />
           <Stories includePrimary />
           <Controls />
-          <ArgTypes />
-          {/* <PureArgsTable /> */}
         </>
       );
     },
