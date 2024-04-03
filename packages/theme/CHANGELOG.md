@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 21.1.0
+
+### Minor Changes
+
+- [#1485](https://github.com/Localitos/pluto/pull/1485) [`4bc71cb`](https://github.com/Localitos/pluto/commit/4bc71cb1045cc94ee0e4f15381f5ce90f272a1c7) Thanks [@rssilva](https://github.com/rssilva)! - Bump packages: storybook, @tanstack/react-table, turbo, chromatic, @types/react-dom, @types/react, eslint-config-turbo, eslint-plugin-sonarjs, eslint-plugin-jsdoc, @typescript-eslint/parser, @typescript-eslint/eslint-plugin
+
 ## 21.0.0
 
 ### Minor Changes
