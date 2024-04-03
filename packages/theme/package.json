@@ -43,7 +43,7 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^28.1.4",
     "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.22",
+    "@types/react-dom": "^18.2.23",
     "@types/styled-components": "^5.1.26",
     "@xstyled/styled-components": "^3.8.0",
     "eslint": "^8.57.0",
