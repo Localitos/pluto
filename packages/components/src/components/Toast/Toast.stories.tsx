@@ -7,9 +7,11 @@ import { Box } from "../../primitives/Box";
 import { Toast } from "./Toast";
 import { ToastViewport } from "./ToastViewport";
 import { useToast } from "./useToast";
-import { ToastContainer } from "./ToastContainer";
 import type { ToastCtaProps } from "./types";
 import { ToastProvider } from ".";
+// fixes Cannot access 'ToastContainer' before initialization:
+// eslint-disable-next-line import/order
+import { ToastContainer } from "./ToastContainer";
 
 export default {
   component: Toast,
