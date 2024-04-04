@@ -20,7 +20,7 @@ export default {
 export const Default = (): JSX.Element => {
   const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
@@ -54,7 +54,7 @@ Default.parameters = {
 export const NoPaddingOnBody = (): React.ReactNode => {
   const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
@@ -88,7 +88,7 @@ NoPaddingOnBody.parameters = {
 export const OverflowBodyContent = (): React.ReactNode => {
   const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
@@ -158,7 +158,7 @@ OverflowBodyContent.parameters = {
 export const ReallyLongHeader = (): React.ReactNode => {
   const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
@@ -198,7 +198,7 @@ export const InitialFocus = (): JSX.Element => {
     defaultOpen: isChromatic() ? true : false,
   });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
