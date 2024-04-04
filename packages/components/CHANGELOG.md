@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 32.1.0
+
+### Minor Changes
+
+- [#1484](https://github.com/Localitos/pluto/pull/1484) [`8c5ff61`](https://github.com/Localitos/pluto/commit/8c5ff6112d0d34048cf53076d4fd10d833647743) Thanks [@apvale](https://github.com/apvale)! - [Drawer]:
+
+  - Adds backdrop to Drawer component
+  - Control with autoFocusOnShow prop whether the Drawer
+    should focus the first focusable element when shown
+
 ## 32.0.0
 
 ### Minor Changes
