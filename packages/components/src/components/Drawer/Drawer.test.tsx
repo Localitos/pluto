@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent, UserEvent } from "@testing-library/user-event";
 import React from "react";
 import { Default } from "./Drawer.stories";
@@ -26,7 +26,9 @@ describe("<Drawer />", () => {
     expect(renderedCloseButton).toBeInTheDocument();
 
     await user.click(renderedCloseButton);
-    expect(await screen.findByRole("dialog")).not.toBeVisible();
+    await waitFor(() => {
+      expect(screen.getByRole("dialog")).not.toBeVisible();
+    });
   });
 
   it("should open a drawer and close it using the escape key", async () => {
@@ -39,7 +41,9 @@ describe("<Drawer />", () => {
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
 
     await user.keyboard("{Escape}");
-    expect(await screen.findByRole("dialog")).not.toBeVisible();
+    await waitFor(() => {
+      expect(screen.getByRole("dialog")).not.toBeVisible();
+    });
   });
 
   it("should open a drawer and close it by clicking an element in the background", async () => {
@@ -52,6 +56,8 @@ describe("<Drawer />", () => {
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
 
     await user.click(renderedOpenButton);
-    expect(await screen.findByRole("dialog")).not.toBeVisible();
+    await waitFor(() => {
+      expect(screen.getByRole("dialog")).not.toBeVisible();
+    });
   });
 });
