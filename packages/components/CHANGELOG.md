@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 32.2.0
+
+### Minor Changes
+
+- [#1488](https://github.com/Localitos/pluto/pull/1488) [`fbcbdec`](https://github.com/Localitos/pluto/commit/fbcbdecff4f8c3cfa273feb58a6efee17625556f) Thanks [@apvale](https://github.com/apvale)! - [Drawer]: Add transition when opening and closing the drawer
+
 ## 32.1.0
 
 ### Minor Changes
