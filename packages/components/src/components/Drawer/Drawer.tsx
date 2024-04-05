@@ -1,7 +1,7 @@
 import React from "react";
-import { Dialog } from "ariakit/dialog";
+import { Dialog, useDialogState } from "ariakit/dialog";
 import type { DialogProps } from "ariakit";
-import { styled } from "@localyze-pluto/theme";
+import { styled, theme } from "@localyze-pluto/theme";
 import { Box } from "../../primitives/Box";
 
 export interface DrawerProps extends DialogProps {
@@ -12,32 +12,55 @@ export interface DrawerProps extends DialogProps {
 const StyledBackdrop = styled(Box.div)`
   background-color: rgba(39, 49, 63, 0.5);
   backdrop-filter: blur(3px);
+  opacity: 0;
+  transition:
+    opacity 0.5s,
+    backdrop-filter 0.5s;
+
+  &[data-enter] {
+    backdrop-filter: blur(3px);
+    opacity: 1;
+  }
+`;
+
+const StyledDrawer = styled(Box.div)`
+  background-color: ${theme.colors.colorBackground};
+  box-shadow: ${theme.shadows.shadowStrong};
+  display: flex;
+  flex-direction: column;
+  max-width: 34.375rem;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  transition: right 0.4s;
+  z-index: ${theme.zIndices.zIndex30};
+
+  &[data-enter] {
+    right: 0;
+  }
 `;
 
 /** A Drawer is a page overlay that displays information and blocks interaction with the page until an action is taken or the Drawer is dismissed. */
 const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
-  ({ children, initialFocusRef, ...props }, ref) => {
+  ({ children, state, initialFocusRef, ...props }, ref) => {
+    const internalState = useDialogState({
+      ...state,
+      animated: true,
+    });
+
     return (
-      <Box.div
+      <StyledDrawer
         as={Dialog}
         autoFocusOnShow={initialFocusRef ?? false}
         backdrop={StyledBackdrop}
-        backgroundColor="colorBackground"
-        bottom={0}
-        boxShadow="shadowStrong"
-        display="flex"
-        flexDirection="column"
         initialFocusRef={initialFocusRef}
-        maxWidth="34.375rem"
-        position="fixed"
         ref={ref}
-        right={0}
-        top={0}
-        zIndex="zIndex30"
+        state={internalState}
         {...props}
       >
         {children}
-      </Box.div>
+      </StyledDrawer>
     );
   },
 );
