@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 32.2.1
+
+### Patch Changes
+
+- [#1490](https://github.com/Localitos/pluto/pull/1490) [`7340bd4`](https://github.com/Localitos/pluto/commit/7340bd490e316608f7b3844a0122fd30cfb4527d) Thanks [@helfer1991](https://github.com/helfer1991)! - allow Drawer to receive padding as prop
+
 ## 32.2.0
 
 ### Minor Changes
