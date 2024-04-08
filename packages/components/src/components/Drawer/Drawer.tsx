@@ -2,11 +2,13 @@ import React from "react";
 import { Dialog, useDialogState } from "ariakit/dialog";
 import type { DialogProps } from "ariakit";
 import { styled, theme } from "@localyze-pluto/theme";
+import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
 
 export interface DrawerProps extends DialogProps {
   /** The contents of the drawer. */
   children: NonNullable<React.ReactNode>;
+  padding?: SystemProp<keyof Theme["space"], Theme>;
 }
 
 const StyledBackdrop = styled(Box.div)`
@@ -23,7 +25,9 @@ const StyledBackdrop = styled(Box.div)`
   }
 `;
 
-const StyledDrawer = styled(Box.div)`
+const StyledDrawer = styled(Box.div)<{
+  padding?: SystemProp<keyof Theme["space"], Theme>;
+}>`
   background-color: ${theme.colors.colorBackground};
   box-shadow: ${theme.shadows.shadowStrong};
   display: flex;
@@ -34,6 +38,7 @@ const StyledDrawer = styled(Box.div)`
   top: 0;
   bottom: 0;
   transition: right 0.4s;
+  padding: ${({ padding }) => padding ?? "space0"};
   z-index: ${theme.zIndices.zIndex30};
 
   &[data-enter] {
@@ -43,7 +48,7 @@ const StyledDrawer = styled(Box.div)`
 
 /** A Drawer is a page overlay that displays information and blocks interaction with the page until an action is taken or the Drawer is dismissed. */
 const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
-  ({ children, state, initialFocusRef, ...props }, ref) => {
+  ({ children, state, initialFocusRef, padding, ...props }, ref) => {
     const internalState = useDialogState({
       ...state,
       animated: true,
@@ -55,6 +60,7 @@ const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
         autoFocusOnShow={initialFocusRef ?? false}
         backdrop={StyledBackdrop}
         initialFocusRef={initialFocusRef}
+        padding={padding}
         ref={ref}
         state={internalState}
         {...props}

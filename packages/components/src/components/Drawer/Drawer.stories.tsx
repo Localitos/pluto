@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
+import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 import { Paragraph } from "../Paragraph";
@@ -229,5 +230,53 @@ export const InitialFocus = (): JSX.Element => {
 };
 
 InitialFocus.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
+};
+
+export const WithPadding = (args: {
+  padding: SystemProp<keyof Theme["space"], Theme>;
+}): JSX.Element => {
+  const buttonRef = React.createRef<HTMLButtonElement>();
+  const drawer = useDrawerState({
+    defaultOpen: isChromatic() ? true : false,
+  });
+  const { padding } = args;
+
+  return (
+    <Box.div>
+      <Button onClick={drawer.toggle} variant="primary">
+        Open drawer
+      </Button>
+      <Drawer initialFocusRef={buttonRef} padding={padding} state={drawer}>
+        <DrawerHeader padding="space0">
+          <DrawerHeading>This is the heading</DrawerHeading>
+        </DrawerHeader>
+        <DrawerBody padding="space0">
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Button onClick={drawer.toggle} ref={buttonRef} variant="primary">
+            Done
+          </Button>
+        </DrawerBody>
+      </Drawer>
+    </Box.div>
+  );
+};
+
+WithPadding.args = {
+  padding: "space140",
+};
+
+WithPadding.parameters = {
   chromatic: { delay: 1000, pauseAnimationAtEnd: true },
 };
