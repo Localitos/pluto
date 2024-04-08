@@ -4,7 +4,7 @@ import { userEvent } from "@testing-library/user-event";
 import {
   UtilityCard,
   UtilityCardProps,
-  InteractiveElementType,
+  InteractiveElementTypeUtilityCard,
 } from "./UtilityCard";
 
 const onClick = jest.fn();
@@ -35,7 +35,7 @@ const renderCardWithBadge = (): RenderResult => {
 const renderClickableCard = (): RenderResult => {
   return render(
     <UtilityCardMock
-      interactiveElementType={InteractiveElementType.Card}
+      interactiveElementType={InteractiveElementTypeUtilityCard.Card}
       onClick={onClick}
     />,
   );
