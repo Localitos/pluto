@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 32.3.0
+
+### Minor Changes
+
+- [#1492](https://github.com/Localitos/pluto/pull/1492) [`7013669`](https://github.com/Localitos/pluto/commit/70136694982548bb3ee005d2a5903c9615b61b8c) Thanks [@helfer1991](https://github.com/helfer1991)! - export UtilityCard to be used externally
+
 ## 32.2.1
 
 ### Patch Changes
