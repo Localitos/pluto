@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
-import { UtilityCard, InteractiveElementType } from "./UtilityCard";
+import { UtilityCard, InteractiveElementTypeUtilityCard } from "./UtilityCard";
 
 export default {
   component: UtilityCard,
@@ -39,7 +39,7 @@ CardWithBadge.args = {
 export const ClickableCard: Story = Template.bind({});
 ClickableCard.args = {
   ...defaultProps,
-  interactiveElementType: InteractiveElementType.Card,
+  interactiveElementType: InteractiveElementTypeUtilityCard.Card,
   onClick,
 };
 

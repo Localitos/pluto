@@ -4,7 +4,7 @@ import { Badge } from "../Badge";
 import { Icon } from "../Icon";
 import { Text } from "../../primitives/Text";
 
-export enum InteractiveElementType {
+export enum InteractiveElementTypeUtilityCard {
   Card = "card",
 }
 
@@ -14,7 +14,7 @@ export type UtilityCardProps = {
   /** Sets the title to be rendered as h2 */
   title: string;
   /** Sets the type of the clickable element */
-  interactiveElementType?: InteractiveElementType;
+  interactiveElementType?: InteractiveElementTypeUtilityCard;
   /** Text describing the kind of category provided */
   categoryTag: string;
   /** Text describing the current status of the category as a badge */
@@ -45,7 +45,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
   onClick,
 }) => {
   const isCardInteractive =
-    InteractiveElementType.Card === interactiveElementType;
+    InteractiveElementTypeUtilityCard.Card === interactiveElementType;
 
   const interactiveElementProps = {
     onClick,
