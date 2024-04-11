@@ -48,6 +48,7 @@ describe("<Drawer />", () => {
 
   it("should open a drawer and close it by clicking an element in the background", async () => {
     render(<Default />);
+
     const renderedOpenButton = screen.getByText(OPEN_DRAWER_TEXT);
     expect(renderedOpenButton).toBeInTheDocument();
 
