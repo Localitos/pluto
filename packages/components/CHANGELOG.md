@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 33.0.0
+
+### Minor Changes
+
+- [#1521](https://github.com/Localitos/pluto/pull/1521) [`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a) Thanks [@rssilva](https://github.com/rssilva)! - storybook, @testing-library/react, @uppy/core, tar, @babel/preset-env, jest-fail-on-console, eslint-plugin-unicorn, eslint-plugin-jsdoc, eslint-plugin-jest, @typescript-eslint/parser, @typescript-eslint/eslint-plugin, typescript, @types/react
+
+### Patch Changes
+
+- Updated dependencies [[`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a)]:
+  - @localyze-pluto/theme@22.0.0
+
 ## 32.3.1
 
 ### Patch Changes
