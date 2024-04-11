@@ -48,6 +48,7 @@ describe("<Drawer />", () => {
 
   it("should open a drawer and close it by clicking an element in the background", async () => {
     render(<Default />);
+
     const renderedOpenButton = screen.getByText(OPEN_DRAWER_TEXT);
     expect(renderedOpenButton).toBeInTheDocument();
 
@@ -55,7 +56,7 @@ describe("<Drawer />", () => {
     expect(await screen.findByRole("dialog")).toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
 
-    await user.click(renderedOpenButton);
+    await user.click(await screen.findByRole("presentation"));
     await waitFor(() => {
       expect(screen.getByRole("dialog")).not.toBeVisible();
     });
