@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 32.3.1
+
+### Patch Changes
+
+- [#1515](https://github.com/Localitos/pluto/pull/1515) [`775916f`](https://github.com/Localitos/pluto/commit/775916f72ba57655c5bc53aec1b067c219481d47) Thanks [@rssilva](https://github.com/rssilva)! - Fix Drawer test
+
 ## 32.3.0
 
 ### Minor Changes
