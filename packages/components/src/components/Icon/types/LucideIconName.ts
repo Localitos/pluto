@@ -5,6 +5,7 @@ export type LucideIconName =
   | "check-square"
   | "copy"
   | "heart-handshake"
+  | "hourglass"
   | "info"
   | "luggage"
   | "mail-question"
@@ -18,6 +19,7 @@ export type LucideIconName =
   | "puzzle"
   | "save"
   | "slack"
+  | "thumbs-up"
   | "trash-2"
   | "triangle-alert"
   | "wallet";
