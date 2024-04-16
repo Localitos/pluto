@@ -2,4 +2,4 @@
 "@localyze-pluto/components": minor
 ---
 
-Add info, octagon-pause and triangle-alert icons
+Add info, octagon-pause, triangle-alert, thumbs-up and hourglass icons
