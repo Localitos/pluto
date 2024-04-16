@@ -34,7 +34,7 @@ export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   calendar: Calendar,
   "check-square": CheckSquare,
   copy: Copy,
-  "file-plus": FilePlus2,
+  "file-plus-2": FilePlus2,
   "heart-handshake": HeartHandshake,
   hourglass: Hourglass,
   info: Info,
