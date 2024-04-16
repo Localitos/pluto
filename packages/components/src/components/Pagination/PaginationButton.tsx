@@ -17,12 +17,12 @@ export const PaginationButton = ({
       <Box.button
         alignItems="center"
         appearance="none"
-        aria-current={isCurrentPage ? true : false}
+        aria-current={isCurrentPage}
         aria-label={
           isCurrentPage ? `Current Page, Page ${page}` : `Goto Page ${page}`
         }
         backgroundColor={{
-          _: isCurrentPage ? "colorBackgroundInfo" : "colorBackground",
+          _: isCurrentPage ? "colorBackgroundInfo" : "transparent",
           hover: "colorBackgroundInfo",
           focus: "colorBackgroundInfo",
         }}
