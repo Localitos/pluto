@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 33.1.0
+
+### Minor Changes
+
+- [#1524](https://github.com/Localitos/pluto/pull/1524) [`897684f`](https://github.com/Localitos/pluto/commit/897684f4d081bce650e4e46e9aaf8c0fea2038e4) Thanks [@rssilva](https://github.com/rssilva)! - Add info, octagon-pause, triangle-alert, thumbs-up and hourglass icons
+
+- [#1519](https://github.com/Localitos/pluto/pull/1519) [`b4a298e`](https://github.com/Localitos/pluto/commit/b4a298e384519080bfb02a10c925bcba2dcace5d) Thanks [@helfer1991](https://github.com/helfer1991)! - adjust font size of the title
+
 ## 33.0.0
 
 ### Minor Changes
