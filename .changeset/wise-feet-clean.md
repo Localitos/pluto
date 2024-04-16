@@ -2,4 +2,4 @@
 "@localyze-pluto/components": minor
 ---
 
-enable margin bottom to the title and change its font size
+adjust font size of the title
