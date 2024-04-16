@@ -4,6 +4,7 @@ export type LucideIconName =
   | "calendar"
   | "check-square"
   | "copy"
+  | "file-plus"
   | "heart-handshake"
   | "hourglass"
   | "info"
