@@ -5,8 +5,10 @@ export type LucideIconName =
   | "check-square"
   | "copy"
   | "heart-handshake"
+  | "info"
   | "luggage"
   | "mail-question"
+  | "octagon-pause"
   | "palette"
   | "palmtree"
   | "pen-square"
@@ -17,4 +19,5 @@ export type LucideIconName =
   | "save"
   | "slack"
   | "trash-2"
+  | "triangle-alert"
   | "wallet";
