@@ -15,6 +15,7 @@ const DrawerBody = React.forwardRef<HTMLDivElement, DrawerBodyProps>(
   ({ children, padding = "space60", ...props }, ref) => {
     return (
       <Box.div
+        h="100%"
         overflowY="auto"
         paddingBottom={padding}
         paddingLeft={padding}
