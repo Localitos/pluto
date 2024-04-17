@@ -1,9 +1,16 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent, UserEvent } from "@testing-library/user-event";
 import React from "react";
+import styled from "styled-components";
 import { Default } from "./Drawer.stories";
 
 const OPEN_DRAWER_TEXT = "Open drawer";
+
+const StyledDrawer = styled(Default)`
+  * > {
+    transition: none !important;
+  }
+`;
 
 describe("<Drawer />", () => {
   let user: UserEvent;
@@ -13,7 +20,7 @@ describe("<Drawer />", () => {
   });
 
   it("should open and close a drawer using the close drawer button", async () => {
-    render(<Default />);
+    render(<StyledDrawer />);
     const renderedOpenButton = screen.getByText(OPEN_DRAWER_TEXT);
     expect(renderedOpenButton).toBeInTheDocument();
 
@@ -32,7 +39,7 @@ describe("<Drawer />", () => {
   });
 
   it("should open a drawer and close it using the escape key", async () => {
-    render(<Default />);
+    render(<StyledDrawer />);
     const renderedOpenButton = screen.getByText(OPEN_DRAWER_TEXT);
     expect(renderedOpenButton).toBeInTheDocument();
 
@@ -41,13 +48,16 @@ describe("<Drawer />", () => {
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
 
     await user.keyboard("{Escape}");
-    await waitFor(() => {
-      expect(screen.getByRole("dialog")).not.toBeVisible();
-    });
+    await waitFor(
+      () => {
+        expect(screen.getByRole("dialog")).not.toBeVisible();
+      },
+      { timeout: 1000 },
+    );
   });
 
   it("should open a drawer and close it by clicking an element in the background", async () => {
-    render(<Default />);
+    render(<StyledDrawer />);
 
     const renderedOpenButton = screen.getByText(OPEN_DRAWER_TEXT);
     expect(renderedOpenButton).toBeInTheDocument();
