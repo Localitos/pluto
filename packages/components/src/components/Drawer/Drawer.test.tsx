@@ -48,12 +48,9 @@ describe("<Drawer />", () => {
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
 
     await user.keyboard("{Escape}");
-    await waitFor(
-      () => {
-        expect(screen.getByRole("dialog")).not.toBeVisible();
-      },
-      { timeout: 1000 },
-    );
+    await waitFor(() => {
+      expect(screen.getByRole("dialog")).not.toBeVisible();
+    });
   });
 
   it("should open a drawer and close it by clicking an element in the background", async () => {
