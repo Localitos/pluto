@@ -7,7 +7,7 @@ import { Default } from "./Drawer.stories";
 const OPEN_DRAWER_TEXT = "Open drawer";
 
 const StyledDrawer = styled(Default)`
-  * > {
+  * {
     transition: none !important;
   }
 `;
