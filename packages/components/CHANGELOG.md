@@ -1,5 +1,19 @@
 # @localyze-pluto/components
 
+## 33.2.0
+
+### Minor Changes
+
+- [#1526](https://github.com/Localitos/pluto/pull/1526) [`a9a806d`](https://github.com/Localitos/pluto/commit/a9a806d2b53c42db2b32912ab3bb38bd33f1f92f) Thanks [@helfer1991](https://github.com/helfer1991)! - add new Lucide Icon (FilePlus2)
+
+### Patch Changes
+
+- [#1525](https://github.com/Localitos/pluto/pull/1525) [`c768154`](https://github.com/Localitos/pluto/commit/c768154c67f202ad391e880f8e8efdead34e3cc3) Thanks [@sliminas](https://github.com/sliminas)! - The background of pagination buttons not being the current page is now transparent.
+
+- [#1514](https://github.com/Localitos/pluto/pull/1514) [`ec7ae19`](https://github.com/Localitos/pluto/commit/ec7ae1961a623ea901d102ff7700a0d264e504f4) Thanks [@apvale](https://github.com/apvale)! - [Drawer]:
+
+  - Show entire drawer content by adding full height to DrawerBody component.
+
 ## 33.1.0
 
 ### Minor Changes
