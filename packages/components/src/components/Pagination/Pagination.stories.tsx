@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import React from "react";
+import { Box } from "../../primitives/Box";
 import { Pagination } from "./Pagination";
 
 const meta: Meta<typeof Pagination> = {
@@ -11,7 +12,7 @@ const meta: Meta<typeof Pagination> = {
 export default meta;
 type Story = StoryObj<typeof Pagination>;
 
-const BasicPagination = (): JSX.Element => {
+const BasicPagination = (): React.JSX.Element => {
   const [currentPage, setCurrentPage] = React.useState(5);
   return (
     <Pagination
@@ -23,7 +24,7 @@ const BasicPagination = (): JSX.Element => {
 };
 
 export const Default: Story = {
-  render: (): JSX.Element => <BasicPagination />,
+  render: (): React.JSX.Element => <BasicPagination />,
 };
 
 Default.parameters = {
@@ -33,7 +34,7 @@ Default.parameters = {
   },
 };
 
-const PaginationWithLotsOfPages = (): JSX.Element => {
+const PaginationWithLotsOfPages = (): React.JSX.Element => {
   const [currentPage, setCurrentPage] = React.useState(333);
   return (
     <Pagination
@@ -45,10 +46,10 @@ const PaginationWithLotsOfPages = (): JSX.Element => {
 };
 
 export const WithLotsOfPages: Story = {
-  render: (): JSX.Element => <PaginationWithLotsOfPages />,
+  render: (): React.JSX.Element => <PaginationWithLotsOfPages />,
 };
 
-const PaginationWithMorePageNeighbors = (): JSX.Element => {
+const PaginationWithMorePageNeighbors = (): React.JSX.Element => {
   const [currentPage, setCurrentPage] = React.useState(333);
   return (
     <Pagination
@@ -61,5 +62,13 @@ const PaginationWithMorePageNeighbors = (): JSX.Element => {
 };
 
 export const WithMorePageNeighbors: Story = {
-  render: (): JSX.Element => <PaginationWithMorePageNeighbors />,
+  render: (): React.JSX.Element => <PaginationWithMorePageNeighbors />,
+};
+
+export const WithContainerBackground: Story = {
+  render: (): React.JSX.Element => (
+    <Box.div backgroundColor="colorBackgroundWeaker" padding="space40">
+      <PaginationWithLotsOfPages />
+    </Box.div>
+  ),
 };

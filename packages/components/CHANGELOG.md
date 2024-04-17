@@ -1,5 +1,30 @@
 # @localyze-pluto/components
 
+## 33.1.0
+
+### Minor Changes
+
+- [#1524](https://github.com/Localitos/pluto/pull/1524) [`897684f`](https://github.com/Localitos/pluto/commit/897684f4d081bce650e4e46e9aaf8c0fea2038e4) Thanks [@rssilva](https://github.com/rssilva)! - Add info, octagon-pause, triangle-alert, thumbs-up and hourglass icons
+
+- [#1519](https://github.com/Localitos/pluto/pull/1519) [`b4a298e`](https://github.com/Localitos/pluto/commit/b4a298e384519080bfb02a10c925bcba2dcace5d) Thanks [@helfer1991](https://github.com/helfer1991)! - adjust font size of the title
+
+## 33.0.0
+
+### Minor Changes
+
+- [#1521](https://github.com/Localitos/pluto/pull/1521) [`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a) Thanks [@rssilva](https://github.com/rssilva)! - storybook, @testing-library/react, @uppy/core, tar, @babel/preset-env, jest-fail-on-console, eslint-plugin-unicorn, eslint-plugin-jsdoc, eslint-plugin-jest, @typescript-eslint/parser, @typescript-eslint/eslint-plugin, typescript, @types/react
+
+### Patch Changes
+
+- Updated dependencies [[`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a)]:
+  - @localyze-pluto/theme@22.0.0
+
+## 32.3.1
+
+### Patch Changes
+
+- [#1515](https://github.com/Localitos/pluto/pull/1515) [`775916f`](https://github.com/Localitos/pluto/commit/775916f72ba57655c5bc53aec1b067c219481d47) Thanks [@rssilva](https://github.com/rssilva)! - Fix Drawer test
+
 ## 32.3.0
 
 ### Minor Changes
