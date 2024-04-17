@@ -3362,10 +3362,10 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/addon-links@^8.0.7":
-  version "8.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-8.0.7.tgz#d8bd5830247ed075ab10ba002c593de7b3a5fa22"
-  integrity sha512-+EFepDuKoW7GT9wUNKNhJo5JoR4oDNLRTwKTFfw/66tqmLqEeQI5nbUh+doKa14CRFHCqVhjs96EhZ5oO0BHyA==
+"@storybook/addon-links@^8.0.8":
+  version "8.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-8.0.8.tgz#9121b3b96e9aa696792596622582061c0320452b"
+  integrity sha512-iRI/W9I6fOom5zfZvsu53gfJtuhBSMmhgI/u5uZbAbfEoNL5D1PqpDXD4ygM8Vvlx90AZNZ2W5slEe7gCZOMyA==
   dependencies:
     "@storybook/csf" "^0.1.2"
     "@storybook/global" "^5.0.0"
