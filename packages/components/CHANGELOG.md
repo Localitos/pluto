@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 33.2.1
+
+### Patch Changes
+
+- [#1548](https://github.com/Localitos/pluto/pull/1548) [`08bde21`](https://github.com/Localitos/pluto/commit/08bde21b767e87a1199563e25272a499c9582ed2) Thanks [@rssilva](https://github.com/rssilva)! - Remove transition on Drawer tests to decrease errors
+
 ## 33.2.0
 
 ### Minor Changes
