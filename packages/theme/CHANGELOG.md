@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 23.0.0
+
+### Minor Changes
+
+- [#1552](https://github.com/Localitos/pluto/pull/1552) [`714229f`](https://github.com/Localitos/pluto/commit/714229f4f93da5ceceb0da642eeac5cfdb137eaf) Thanks [@rssilva](https://github.com/rssilva)! - Bump dependencies: @commitlint/cli, @commitlint/config-conventional, next, eslint-plugin-cypress, @testing-library/react, @types/react-dom, react-hook-form, cspell, eslint-plugin-testing-library, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, typescript
+
+### Patch Changes
+
+- Updated dependencies [[`714229f`](https://github.com/Localitos/pluto/commit/714229f4f93da5ceceb0da642eeac5cfdb137eaf)]:
+  - @localyze-pluto/design-tokens@1.14.0
+
 ## 22.0.0
 
 ### Minor Changes
