@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 24.0.0
+
+### Minor Changes
+
+- [#1554](https://github.com/Localitos/pluto/pull/1554) [`18bd040`](https://github.com/Localitos/pluto/commit/18bd040b6448a2a09be1c79cad24f972b6c7d09b) Thanks [@rssilva](https://github.com/rssilva)! - Remove import \* from heroicons keeping only the necessary ones
+
+### Patch Changes
+
+- Updated dependencies [[`18bd040`](https://github.com/Localitos/pluto/commit/18bd040b6448a2a09be1c79cad24f972b6c7d09b)]:
+  - @localyze-pluto/design-tokens@1.15.0
+
 ## 23.0.0
 
 ### Minor Changes

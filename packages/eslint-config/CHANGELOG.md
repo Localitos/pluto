@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.16.0
+
+### Minor Changes
+
+- [#1554](https://github.com/Localitos/pluto/pull/1554) [`18bd040`](https://github.com/Localitos/pluto/commit/18bd040b6448a2a09be1c79cad24f972b6c7d09b) Thanks [@rssilva](https://github.com/rssilva)! - Remove import \* from heroicons keeping only the necessary ones
+
 ## 1.15.0
 
 ### Minor Changes
