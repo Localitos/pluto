@@ -66,7 +66,7 @@ LargeBadgeWithIcon.args = {
 export const LargeYellowBadgeWithIcon = Template.bind({});
 LargeYellowBadgeWithIcon.args = {
   children: "Large badge with icon",
-  icon: "ArrowDownCircleIcon",
+  icon: "CheckCircleIcon",
   size: "large",
   color: "yellow",
 };
