@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 35.1.0
+
+### Minor Changes
+
+- [#1556](https://github.com/Localitos/pluto/pull/1556) [`82f626b`](https://github.com/Localitos/pluto/commit/82f626b452ff43ed963a3f89547f7a18b8d7ab9c) Thanks [@rssilva](https://github.com/rssilva)! - Add heroicons: ChevronUpIcon, MapIcon, ShoppingBagIcon, FireIcon, ArrowRightIcon, TicketIcon, ChevronDoubleRightIcon, ChevronDoubleLeftIcon
+
 ## 35.0.0
 
 ### Minor Changes
