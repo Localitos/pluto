@@ -1,10 +1,9 @@
-import * as HeroOutlineIcons from "@heroicons/react/24/outline";
-
 import type { Meta, StoryFn } from "@storybook/react";
 
 import React from "react";
 import map from "lodash/map";
 import keys from "lodash/keys";
+import * as HeroOutlineIcons from "../Icon/HeroIcons";
 import { Box } from "../../primitives/Box";
 import { Paragraph } from "../../components/Paragraph";
 import { Icon } from "./Icon";
@@ -19,8 +18,8 @@ const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  icon: "AcademicCapIcon",
-  title: "Academic Icon",
+  icon: "PaperClipIcon",
+  title: "PaperClip Icon",
 };
 
 export const WithLucideIcons = Template.bind({});
