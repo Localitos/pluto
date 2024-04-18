@@ -59,3 +59,4 @@ export { default as MapPinIcon } from "@heroicons/react/24/outline/MapPinIcon";
 export { default as CameraIcon } from "@heroicons/react/24/outline/CameraIcon";
 export { default as ExclamationTriangleIcon } from "@heroicons/react/24/outline/ExclamationTriangleIcon";
 export { default as EllipsisVerticalIcon } from "@heroicons/react/24/outline/EllipsisVerticalIcon";
+export { default as DocumentDuplicateIcon } from "@heroicons/react/24/outline/DocumentDuplicateIcon";

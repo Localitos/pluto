@@ -180,7 +180,7 @@ export const TOKEN_COLUMNS: TokenColumnsProps = {
         componentProps: {
           decorative: true,
           display: "flex",
-          icon: "HeartIcon",
+          icon: "BookOpenIcon",
         },
         attribute: "size",
         children: (
