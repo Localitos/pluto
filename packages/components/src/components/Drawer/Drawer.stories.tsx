@@ -237,7 +237,7 @@ export const WithPadding = (args: {
   padding: SystemProp<keyof Theme["space"], Theme>;
 }): JSX.Element => {
   const buttonRef = React.createRef<HTMLButtonElement>();
-  const drawer = useDrawerState({
+  const drawer = useDrawerStore({
     defaultOpen: isChromatic() ? true : false,
   });
   const { padding } = args;
@@ -247,7 +247,7 @@ export const WithPadding = (args: {
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer initialFocusRef={buttonRef} padding={padding} state={drawer}>
+      <Drawer initialFocus={buttonRef} padding={padding} store={drawer}>
         <DrawerHeader padding="space0">
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
