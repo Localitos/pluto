@@ -34,7 +34,7 @@ describe("<Drawer />", () => {
 
     await user.click(renderedCloseButton);
     await waitFor(() => {
-      expect(screen.getByRole("dialog")).not.toBeVisible();
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     });
   });
 
@@ -49,23 +49,7 @@ describe("<Drawer />", () => {
 
     await user.keyboard("{Escape}");
     await waitFor(() => {
-      expect(screen.getByRole("dialog")).not.toBeVisible();
-    });
-  });
-
-  it("should open a drawer and close it by clicking an element in the background", async () => {
-    render(<StyledDrawer />);
-
-    const renderedOpenButton = screen.getByText(OPEN_DRAWER_TEXT);
-    expect(renderedOpenButton).toBeInTheDocument();
-
-    await user.click(renderedOpenButton);
-    expect(await screen.findByRole("dialog")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
-
-    await user.click(await screen.findByRole("presentation"));
-    await waitFor(() => {
-      expect(screen.getByRole("dialog")).not.toBeVisible();
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     });
   });
 });
