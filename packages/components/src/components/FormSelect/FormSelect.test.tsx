@@ -33,6 +33,7 @@ const ReactHookFormExample = (): JSX.Element => {
     },
     resolver: yupResolver(schema),
   });
+
   return (
     <Box.form>
       <ControlledFormSelect
@@ -54,34 +55,34 @@ const ReactHookFormExample = (): JSX.Element => {
 };
 
 describe("<FormSelect />", () => {
-  it("renders correctly", () => {
+  it("renders correctly", async () => {
     render(<FormSelect />);
 
     expect(screen.getByLabelText("Label text")).toBeInTheDocument();
-    expect(screen.getByRole("combobox")).toBeInTheDocument();
+    expect(await screen.findByRole("combobox")).toBeInTheDocument();
   });
 
-  it("should render a required input", () => {
+  it("should render a required input", async () => {
     render(<RequiredFormSelect />);
-    expect(screen.getByRole("combobox")).toBeRequired();
+    expect(await screen.findByRole("combobox")).toBeRequired();
   });
 
-  it("should render a disabled input", () => {
+  it("should render a disabled input", async () => {
     render(<DisabledFormSelect />);
-    expect(screen.getByRole("combobox")).toBeDisabled();
+    expect(await screen.findByRole("combobox")).toBeDisabled();
   });
 
-  it("should render help text with the", () => {
+  it("should render help text with the", async () => {
     render(<RequiredFormSelect />);
     expect(
-      screen.getByText("Please choose one of the values."),
+      await screen.findByText("Please choose one of the values."),
     ).toBeInTheDocument();
   });
 
   it("should render a ControlledFormSelect", async () => {
+    const user = userEvent.setup();
     render(<ReactHookFormExample />);
-    const controlledSelect = screen.getByRole("combobox");
-    const selectOptions = screen.getAllByRole("option", { hidden: true });
+    const controlledSelect = await screen.findByRole("combobox");
 
     expect(controlledSelect).toBeInTheDocument();
     expect(screen.getByLabelText("Select a flavor")).toBeInTheDocument();
@@ -90,9 +91,11 @@ describe("<FormSelect />", () => {
     expect(controlledSelect).toHaveAttribute("id", "flavor");
     expect(controlledSelect).toHaveAttribute("data-testid", "test");
 
-    await userEvent.click(controlledSelect);
-    await userEvent.click(selectOptions[2]);
+    await user.click(controlledSelect);
+    await user.click(screen.getByRole("option", { name: "Vanilla" }));
 
-    expect(selectOptions[2]).toHaveAttribute("aria-selected", "true");
+    expect(
+      screen.getByRole("option", { name: "Vanilla", hidden: true }),
+    ).toHaveAttribute("aria-selected", "true");
   });
 });

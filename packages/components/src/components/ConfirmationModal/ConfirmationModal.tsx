@@ -1,11 +1,11 @@
-import type { DisclosureState } from "ariakit";
+import type { DisclosureStore } from "@ariakit/react";
 import React from "react";
 import { Button } from "../Button";
 import { Modal, ModalBody, ModalFooter } from "../Modal/index";
 
 export interface ConfirmationModalProps {
   children: NonNullable<React.ReactNode>;
-  state: DisclosureState;
+  store: DisclosureStore;
   confirmLabel?: string;
   destructive?: boolean;
   onConfirm: () => void;
@@ -30,7 +30,7 @@ const ConfirmationModal = React.forwardRef<
 >(
   (
     {
-      state,
+      store,
       destructive = false,
       confirmLabel = "Confirm",
       onConfirm,
@@ -41,17 +41,17 @@ const ConfirmationModal = React.forwardRef<
   ): JSX.Element => {
     const confirm = () => {
       onConfirm();
-      state.hide();
+      store.hide();
     };
 
     return (
-      <Modal maxWidth="25rem" state={state}>
+      <Modal maxWidth="25rem" store={store}>
         <ModalBody>{children}</ModalBody>
         <ModalFooter>
           <Button
             onClick={() => {
               onCancel?.();
-              state.hide();
+              store.hide();
             }}
             variant="secondary"
           >

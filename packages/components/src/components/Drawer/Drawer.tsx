@@ -1,6 +1,6 @@
 import React from "react";
-import { Dialog, useDialogState } from "ariakit/dialog";
-import type { DialogProps } from "ariakit";
+import { Dialog } from "@ariakit/react/dialog";
+import type { DialogProps } from "@ariakit/react";
 import { styled, theme } from "@localyze-pluto/theme";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
@@ -25,9 +25,13 @@ const StyledBackdrop = styled(Box.div)`
   }
 `;
 
-const StyledDrawer = styled(Box.div)<{
-  padding?: SystemProp<keyof Theme["space"], Theme>;
-}>`
+const CustomBackdrop = React.forwardRef(
+  function CustomBackdrop(props, forwardedRef) {
+    return <Box.div as={StyledBackdrop} ref={forwardedRef} {...props} />;
+  },
+);
+
+const StyledDrawer = styled(Box.div)<DrawerProps>`
   background-color: ${theme.colors.colorBackground};
   box-shadow: ${theme.shadows.shadowStrong};
   display: flex;
@@ -48,25 +52,20 @@ const StyledDrawer = styled(Box.div)<{
 
 /** A Drawer is a page overlay that displays information and blocks interaction with the page until an action is taken or the Drawer is dismissed. */
 const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
-  ({ children, state, initialFocusRef, padding, ...props }, ref) => {
-    const internalState = useDialogState({
-      ...state,
-      animated: true,
-    });
-
+  ({ children, initialFocus, padding, ...props }, ref) => {
     return (
-      <StyledDrawer
-        as={Dialog}
-        autoFocusOnShow={initialFocusRef ?? false}
-        backdrop={StyledBackdrop}
-        initialFocusRef={initialFocusRef}
-        padding={padding}
+      <Dialog
+        autoFocusOnShow={initialFocus ? true : false}
+        backdrop={<CustomBackdrop />}
+        initialFocus={initialFocus}
         ref={ref}
-        state={internalState}
+        render={(dialogProps) => (
+          <StyledDrawer padding={padding} {...dialogProps}>
+            {children}
+          </StyledDrawer>
+        )}
         {...props}
-      >
-        {children}
-      </StyledDrawer>
+      />
     );
   },
 );

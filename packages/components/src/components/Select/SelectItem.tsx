@@ -1,6 +1,6 @@
 import React from "react";
-import { SelectItem as SelectItemPrimitive } from "ariakit/select";
-import type { SelectItemProps as SelectItemPrimitiveProps } from "ariakit/select";
+import { SelectItem as SelectItemPrimitive } from "@ariakit/react/select";
+import type { SelectItemProps as SelectItemPrimitiveProps } from "@ariakit/react/select";
 import { Box } from "../../primitives/Box";
 
 export interface SelectItemProps

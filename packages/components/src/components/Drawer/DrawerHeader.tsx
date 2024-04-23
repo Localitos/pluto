@@ -1,5 +1,5 @@
 import React from "react";
-import { DialogDismiss } from "ariakit/dialog";
+import { DialogDismiss } from "@ariakit/react/dialog";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 
@@ -26,11 +26,14 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, DrawerHeaderProps>(
         <Box.div>{children}</Box.div>
         <Box.div>
           <DialogDismiss
-            aria-label="Close drawer"
-            as={Button}
-            iconOnly
-            leadingIcon="XMarkIcon"
-            variant="ghost"
+            render={
+              <Button
+                aria-label="Close drawer"
+                iconOnly
+                leadingIcon="XMarkIcon"
+                variant="ghost"
+              />
+            }
           />
         </Box.div>
       </Box.div>
