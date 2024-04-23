@@ -20,26 +20,26 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@ariakit/core@0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@ariakit/core/-/core-0.4.3.tgz#c68307e22b06e2bfae63f209feefe5ad65ad2d0f"
-  integrity sha512-Z5O1FZBbR2tIkEUJ7o+W5ZVBqMy2DQ5QpvAJCwM8iUibQBxEFi1rcYFWWpa/MO064wFJNyH7iadfrT4T+ZLuUw==
+"@ariakit/core@0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@ariakit/core/-/core-0.4.5.tgz#ba42573474c1f54109cf96650e8614d7312a432d"
+  integrity sha512-e294+bEcyzt/H/kO4fS5/czLAlkF7PY+Kul3q2z54VY+GGay8NlVs9UezAB7L4jUBlYRAXwp7/1Sq3R7b+MZ7w==
 
-"@ariakit/react-core@0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@ariakit/react-core/-/react-core-0.4.3.tgz#a7dbd43bf1e99f769151fcf0f2200fed9c5867c3"
-  integrity sha512-yGYiHUVQKbW1RN8tMMn2IJQ4HL7hG2+uliJzYpn5/SHWODwSJum1vXdcjx7jJoy8B6l53cxIsyUwBPhcaAR9NQ==
+"@ariakit/react-core@0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@ariakit/react-core/-/react-core-0.4.5.tgz#dd0bda1d54d708ec803e658f9d298ea507c96b8a"
+  integrity sha512-ciTYPwpj/+mdA+EstveEnoygbx5e4PXQJxfkLKy4lkTkDJJUS9GcbYhdnIFJVUta6P1YFvzkIKo+/y9mcbMKJg==
   dependencies:
-    "@ariakit/core" "0.4.3"
+    "@ariakit/core" "0.4.5"
     "@floating-ui/dom" "^1.0.0"
     use-sync-external-store "^1.2.0"
 
-"@ariakit/react@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@ariakit/react/-/react-0.4.3.tgz#7b1abd5dc90f8cd444de5e7d2117c2f80ef803ca"
-  integrity sha512-KmCflynxvJ1Uk9NHsf5LxpAJCaO30UWgml9c8+N4Y3ic9cOREsR0v4hQ9NG2R5JEV5C2yj77YovEfuk9YPHDpg==
+"@ariakit/react@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@ariakit/react/-/react-0.4.5.tgz#f6e356665cc45fa317c10fa041009acbb290d92f"
+  integrity sha512-GUHxaOY1JZrJUHkuV20IY4NWcgknhqTQM0qCQcVZDCi+pJiWchUjTG+UyIr/Of02hU569qnQ7yovskCf+V3tNg==
   dependencies:
-    "@ariakit/react-core" "0.4.3"
+    "@ariakit/react-core" "0.4.5"
 
 "@aw-web-design/x-default-browser@1.4.126":
   version "1.4.126"

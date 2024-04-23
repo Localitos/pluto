@@ -5,12 +5,12 @@
 Replaces ariakit with @ariakit-react
 Updates all these components:
 
-- [ ] ConfirmationModal
-- [ ] Drawer
-- [ ] Menu
-- [ ] Select
-- [ ] FormSelect
-- [ ] Modal
-- [ ] StepIndicator
-- [ ] Tabs
-- [ ] Tooltip
+- ConfirmationModal
+- Drawer
+- Menu
+- Select
+- FormSelect
+- Modal
+- StepIndicator
+- Tabs
+- Tooltip
