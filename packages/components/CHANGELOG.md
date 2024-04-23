@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 35.2.0
+
+### Minor Changes
+
+- [#1558](https://github.com/Localitos/pluto/pull/1558) [`a1ebaa8`](https://github.com/Localitos/pluto/commit/a1ebaa81708e3a43feed876fa560eef30f674df1) Thanks [@rssilva](https://github.com/rssilva)! - Add more lucide icons
+
 ## 35.1.0
 
 ### Minor Changes
