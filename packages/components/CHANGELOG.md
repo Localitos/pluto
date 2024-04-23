@@ -1,5 +1,22 @@
 # @localyze-pluto/components
 
+## 36.0.0
+
+### Major Changes
+
+- [#926](https://github.com/Localitos/pluto/pull/926) [`903e282`](https://github.com/Localitos/pluto/commit/903e28294e1863a4ee063a6db4577f454e8e890d) Thanks [@jvaladas](https://github.com/jvaladas)! - Replaces ariakit with @ariakit-react
+  Updates all these components:
+
+  - ConfirmationModal
+  - Drawer
+  - Menu
+  - Select
+  - FormSelect
+  - Modal
+  - StepIndicator
+  - Tabs
+  - Tooltip
+
 ## 35.2.0
 
 ### Minor Changes
