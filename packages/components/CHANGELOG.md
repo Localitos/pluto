@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 37.0.0
+
+### Minor Changes
+
+- [#1576](https://github.com/Localitos/pluto/pull/1576) [`7adec58`](https://github.com/Localitos/pluto/commit/7adec58fdc7f2202a92666f70857d3c0077bc364) Thanks [@rssilva](https://github.com/rssilva)! - bump: next, danger, @tanstack/react-table, eslint-plugin-jest-dom, eslint-plugin-cypress, @testing-library/react, @uppy/core, react-router-dom, @types/react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @ariakit/react, @commitlint/cli
+
+### Patch Changes
+
+- Updated dependencies [[`7adec58`](https://github.com/Localitos/pluto/commit/7adec58fdc7f2202a92666f70857d3c0077bc364)]:
+  - @localyze-pluto/theme@25.0.0
+
 ## 36.0.0
 
 ### Major Changes
