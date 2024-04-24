@@ -36,5 +36,31 @@
       "value": "3.375rem",
       "comment": "54px"
     }
+  },
+  "title": {
+    "display": {
+      "value": "2.5rem",
+      "comment": "40px"
+    },
+    "screen": {
+      "value": "2rem",
+      "comment": "32px"
+    },
+    "section": {
+      "value": "1.5rem",
+      "comment": "24px"
+    },
+    "subsection": {
+      "value": "1.25rem",
+      "comment": "20px"
+    },
+    "group": {
+      "value": "1.125rem",
+      "comment": "18px"
+    },
+    "body": {
+      "value": "1rem",
+      "comment": "16px"
+    }
   }
 }
