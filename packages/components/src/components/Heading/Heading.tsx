@@ -62,6 +62,12 @@ const getHeadingStyles = (
   lineHeight: SystemProp<keyof Theme["lineHeights"], Theme>;
 } => {
   switch (size) {
+    case "heading10": {
+      return {
+        fontSize: "fontSize90",
+        lineHeight: "lineHeight100",
+      };
+    }
     case "title-display":
     case "heading30": {
       return {
