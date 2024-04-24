@@ -186,7 +186,6 @@ module.exports = {
         },
         {
           destination: "line-height.js",
-          // format: "javascript/es6",
           format: "jsPrefixFormatter",
           filter: (token) => {
             return (
@@ -198,7 +197,6 @@ module.exports = {
         {
           destination: "line-height.d.ts",
           format: "typescript/es6-declarations",
-          // format: "tsHandling",
           filter: (token) => {
             return (
               token.filePath === "src/tokens/line-height.tokens.json" &&
