@@ -40,5 +40,39 @@
       "value": "3.75rem",
       "comment": "60px"
     }
+  },
+  "lh": {
+    "4": {
+      "value": "1rem",
+      "comment": "16px"
+    },
+    "4_5": {
+      "value": "1.125rem",
+      "comment": "18px"
+    },
+    "5": {
+      "value": "1.25rem",
+      "comment": "20px"
+    },
+    "6": {
+      "value": "1.5rem",
+      "comment": "24px"
+    },
+    "7": {
+      "value": "1.75rem",
+      "comment": "28px"
+    },
+    "8": {
+      "value": "2rem",
+      "comment": "32px"
+    },
+    "10": {
+      "value": "2.5rem",
+      "comment": "40px"
+    },
+    "12": {
+      "value": "3rem",
+      "comment": "48px"
+    }
   }
 }

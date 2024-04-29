@@ -13,7 +13,13 @@ type HeadingSizeOptions =
   | "heading30"
   | "heading40"
   | "heading50"
-  | "heading60";
+  | "heading60"
+  | "title-body"
+  | "title-display"
+  | "title-group"
+  | "title-screen"
+  | "title-section"
+  | "title-subsection";
 
 type ScreenSizes = keyof Theme["screens"];
 
@@ -62,28 +68,44 @@ const getHeadingStyles = (
         lineHeight: "lineHeight100",
       };
     }
+    case "title-display":
     case "heading30": {
       return {
-        fontSize: "fontSize70",
-        lineHeight: "lineHeight80",
+        fontSize: "titleDisplay",
+        lineHeight: "lh12",
       };
     }
+    case "title-screen":
     case "heading40": {
       return {
-        fontSize: "fontSize60",
-        lineHeight: "lineHeight70",
+        fontSize: "titleScreen",
+        lineHeight: "lh10",
       };
     }
+    case "title-section":
     case "heading50": {
       return {
-        fontSize: "fontSize50",
-        lineHeight: "lineHeight60",
+        fontSize: "titleSection",
+        lineHeight: "lh8",
       };
     }
+    case "title-subsection":
     case "heading60": {
       return {
-        fontSize: "fontSize40",
-        lineHeight: "lineHeight50",
+        fontSize: "titleSubsection",
+        lineHeight: "lh7",
+      };
+    }
+    case "title-body": {
+      return {
+        fontSize: "titleBody",
+        lineHeight: "lh6",
+      };
+    }
+    case "title-group": {
+      return {
+        fontSize: "titleGroup",
+        lineHeight: "lh6",
       };
     }
     default: {

@@ -1,6 +1,4 @@
 import React from "react";
-import camelCase from "lodash/camelCase";
-import capitalize from "lodash/capitalize";
 import keys from "lodash/keys";
 import filter from "lodash/filter";
 import reduce from "lodash/reduce";
@@ -18,6 +16,7 @@ import {
   getTokenComment,
   getTokenKey,
   getTokenName,
+  getTokenNameFromTuple,
   getTokenValue,
   hexToRgb,
   hexToHsla,
@@ -37,13 +36,11 @@ type TokenColumnsProps = {
 
 const COLORS = reduce(
   filter(keys(colorTokens), (item) => item !== "default"),
-  (acc, cur) => {
+  (acc, prefix) => {
     const arr = [
       {
         name: "Name",
-        transform: ([tokenName]: TokenTuple) => {
-          return camelCase(`${cur}${capitalize(tokenName)}`);
-        },
+        transform: getTokenNameFromTuple(prefix),
       },
       { name: "Hex", transform: getTokenValue },
       {
@@ -57,7 +54,7 @@ const COLORS = reduce(
       {
         name: "Preview",
         transform: createPreview({
-          prefix: cur,
+          prefix,
           attribute: "backgroundColor",
           componentProps: {
             w: "70px",
@@ -70,7 +67,42 @@ const COLORS = reduce(
 
     return {
       ...acc,
-      [cur]: arr,
+      [prefix]: arr,
+    };
+  },
+  {},
+);
+
+const FONT_SIZE = reduce(
+  filter(keys(fontSizeTokens), (item) => item !== "default"),
+  (acc, prefix) => {
+    const columns = [
+      {
+        name: "Name",
+        transform: getTokenNameFromTuple(prefix),
+      },
+      { name: "Pixels", transform: getTokenComment },
+      { name: "Rems", transform: getTokenValue },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix,
+          attribute: "fontSize",
+          children: TEXT_PREVIEW,
+          componentProps: {
+            p: "space40",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            maxWidth: "600px",
+          },
+        }),
+      },
+    ];
+
+    return {
+      ...acc,
+      [prefix]: columns,
     };
   },
   {},
@@ -208,28 +240,6 @@ export const TOKEN_COLUMNS: TokenColumnsProps = {
       }),
     },
   ],
-  [getTokenKey(fontSizeTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(fontSizeTokens),
-    },
-    { name: "Pixels", transform: getTokenComment },
-    { name: "Rems", transform: getTokenValue },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(fontSizeTokens),
-        attribute: "fontSize",
-        children: TEXT_PREVIEW,
-        componentProps: {
-          p: "space40",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          maxWidth: "600px",
-        },
-      }),
-    },
-  ],
+  ...FONT_SIZE,
   ...COLORS,
 };
