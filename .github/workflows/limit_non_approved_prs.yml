@@ -1,0 +1,79 @@
+name: Limit Non-approved PRs
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  limit-prs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check number of non-approved PRs
+      run: |
+        NON_APPROVED_COUNT=0
+        PRS_NEEDING_REVIEW=""
+
+        CURRENT_PR_NUMBER=${{ github.event.pull_request.number }}
+
+        PR_DATA=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" \
+                        -H "Accept: application/vnd.github+json" \
+                        -H "X-GitHub-Api-Version: 2022-11-28" \
+                        https://api.github.com/repos/${{ github.repository }}/pulls?state=open)
+
+        for PR in $(echo "$PR_DATA" | jq -r '.[] | @base64'); do
+          PR_JSON=$(echo "$PR" | base64 --decode)
+          PR_NUMBER=$(echo "$PR_JSON" | jq -r .number)
+          PR_URL=$(echo "$PR_JSON" | jq -r .html_url)
+          PR_TITLE=$(echo "$PR_JSON" | jq -r .title)
+          PR_AUTHOR=$(echo "$PR_JSON" | jq -r .user.login)
+          PR_DRAFT=$(echo "$PR_JSON" | jq -r .draft)
+          PR_LABELS=$(echo "$PR_JSON" | jq -r '[.labels[].name] | join(",")')
+
+          if [ "$PR_NUMBER" == "$CURRENT_PR_NUMBER" ] || [ "$PR_AUTHOR" == "dependabot[bot]" ] || [ "$PR_DRAFT" == "true" ] || [[ "$PR_LABELS" == *"do not merge"* ]]; then
+            continue
+          fi
+
+          APPROVAL_COUNT=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" \
+                             -H "Accept: application/vnd.github+json" \
+                             -H "X-GitHub-Api-Version: 2022-11-28" \
+                             https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/reviews | jq '[.[] | select(.state=="APPROVED")] | length')
+
+          if [ "$APPROVAL_COUNT" -eq "0" ]; then
+            NON_APPROVED_COUNT=$((NON_APPROVED_COUNT+1))
+            PRS_NEEDING_REVIEW="$PRS_NEEDING_REVIEW
+        - [$PR_TITLE]($PR_URL)"
+          fi
+        done
+
+        if [[ "$NON_APPROVED_COUNT" -gt 2 ]]; then
+          echo "Too many non-approved PRs. Posting a reminder comment."
+
+
+          MESSAGE_BODY="🚀 **Hey there, ${GITHUB_ACTOR}!** 🚀
+
+        Thanks for your contribution! We're super excited to review it. But before we do, we've noticed a bit of a backlog in our PR review process. 🕒
+
+        **Could you lend a hand?** 👀 Your insights on the following PRs would be invaluable and would help speed things up for everyone, including getting to your PR faster! 🙌
+
+        Here are some PRs that could use your attention:
+        $PRS_NEEDING_REVIEW
+
+        Once you've reviewed some of these, we'll be all set to jump into your awesome contribution. Thanks for helping us keep the momentum going! 🌟"
+
+        COMMENT_BODY=$(jq -n --arg body "$MESSAGE_BODY" '{body: $body}')
+
+          URL="https://api.github.com/repos/${{ github.repository }}/issues/$CURRENT_PR_NUMBER/comments"
+
+          curl -X POST \
+               -H "Authorization: Bearer $GITHUB_TOKEN" \
+               -H "Accept: application/vnd.github+json" \
+               -H "X-GitHub-Api-Version: 2022-11-28" \
+               $URL \
+               -d "$COMMENT_BODY"
+        else
+          echo "The number of non-approved PRs ($NON_APPROVED_COUNT) is not beyond the threshold. No comment will be posted."
+        fi
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
