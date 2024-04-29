@@ -1,4 +1,5 @@
 import React from "react";
+import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
 
 export interface DrawerBodyProps
@@ -6,7 +7,7 @@ export interface DrawerBodyProps
   /** The contents of the drawer body. */
   children: NonNullable<React.ReactNode>;
   /** Sets the padding of the drawer body. */
-  padding?: "space0" | "space60";
+  padding?: SystemProp<keyof Theme["space"], Theme>;
 }
 
 /** The body content area of the drawer. */
@@ -14,6 +15,7 @@ const DrawerBody = React.forwardRef<HTMLDivElement, DrawerBodyProps>(
   ({ children, padding = "space60", ...props }, ref) => {
     return (
       <Box.div
+        h="100%"
         overflowY="auto"
         paddingBottom={padding}
         paddingLeft={padding}

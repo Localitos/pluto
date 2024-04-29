@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "@localyze-pluto/theme";
+import { SystemProp, Theme, styled } from "@localyze-pluto/theme";
 import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
 import { TableContext } from "./TableContext";
@@ -14,6 +14,8 @@ export interface TableProps
   striped?: boolean;
   /** Determines how to layout the cells, rows, and columns. */
   tableLayout?: "auto" | "fixed";
+  /** The background color of the table wrapper. */
+  backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
 }
 
 const StyledTable = styled(Box.table)<TableProps>`
@@ -28,6 +30,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
       children,
       striped = false,
       tableLayout = "auto",
+      backgroundColor = "bgPrimary",
       ...props
     },
     ref,
@@ -36,15 +39,25 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
 
     return (
       <TableContext.Provider value={tableContext}>
-        <StyledTable
-          borderCollapse="separate"
-          ref={ref}
-          tableLayout={tableLayout}
-          w="100%"
-          {...props}
+        <Box.div
+          backgroundColor={backgroundColor}
+          borderColor="colorBorderWeaker"
+          borderRadius="borderRadius20"
+          borderStyle="borderStyleSolid"
+          borderWidth="borderWidth10"
+          h="100%"
+          overflow="auto"
         >
-          {children}
-        </StyledTable>
+          <StyledTable
+            borderCollapse="separate"
+            ref={ref}
+            tableLayout={tableLayout}
+            w="100%"
+            {...props}
+          >
+            {children}
+          </StyledTable>
+        </Box.div>
       </TableContext.Provider>
     );
   },

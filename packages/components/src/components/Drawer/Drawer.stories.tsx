@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react";
 import React from "react";
 import isChromatic from "chromatic/isChromatic";
+import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 import { Paragraph } from "../Paragraph";
@@ -9,7 +10,7 @@ import {
   DrawerHeading,
   DrawerHeader,
   DrawerBody,
-  useDrawerState,
+  useDrawerStore,
 } from "./index";
 
 export default {
@@ -18,13 +19,13 @@ export default {
 } as Meta<typeof Drawer>;
 
 export const Default = (): JSX.Element => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
@@ -52,13 +53,13 @@ Default.parameters = {
 };
 
 export const NoPaddingOnBody = (): React.ReactNode => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
@@ -86,13 +87,13 @@ NoPaddingOnBody.parameters = {
 };
 
 export const OverflowBodyContent = (): React.ReactNode => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
@@ -156,13 +157,13 @@ OverflowBodyContent.parameters = {
 };
 
 export const ReallyLongHeader = (): React.ReactNode => {
-  const drawer = useDrawerState({ defaultOpen: isChromatic() ? true : false });
+  const drawer = useDrawerStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer state={drawer}>
+      <Drawer store={drawer}>
         <DrawerHeader>
           <DrawerHeading>
             This is a really long header that should wrap to multiple lines. The
@@ -194,15 +195,15 @@ ReallyLongHeader.parameters = {
 
 export const InitialFocus = (): JSX.Element => {
   const buttonRef = React.createRef<HTMLButtonElement>();
-  const drawer = useDrawerState({
+  const drawer = useDrawerStore({
     defaultOpen: isChromatic() ? true : false,
   });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div>
       <Button onClick={drawer.toggle} variant="primary">
         Open drawer
       </Button>
-      <Drawer initialFocusRef={buttonRef} state={drawer}>
+      <Drawer initialFocus={buttonRef} store={drawer}>
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
@@ -229,5 +230,53 @@ export const InitialFocus = (): JSX.Element => {
 };
 
 InitialFocus.parameters = {
+  chromatic: { delay: 1000, pauseAnimationAtEnd: true },
+};
+
+export const WithPadding = (args: {
+  padding: SystemProp<keyof Theme["space"], Theme>;
+}): JSX.Element => {
+  const buttonRef = React.createRef<HTMLButtonElement>();
+  const drawer = useDrawerStore({
+    defaultOpen: isChromatic() ? true : false,
+  });
+  const { padding } = args;
+
+  return (
+    <Box.div>
+      <Button onClick={drawer.toggle} variant="primary">
+        Open drawer
+      </Button>
+      <Drawer initialFocus={buttonRef} padding={padding} store={drawer}>
+        <DrawerHeader padding="space0">
+          <DrawerHeading>This is the heading</DrawerHeading>
+        </DrawerHeader>
+        <DrawerBody padding="space0">
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Paragraph>
+            Times feedback the and his consider eating the through position. And
+            leaving than into the her accounts picture they of see her leaders,
+            character text the to and for completely he explanation cheek, for
+            or in the assets different took this treat. Is and the our.
+          </Paragraph>
+          <Button onClick={drawer.toggle} ref={buttonRef} variant="primary">
+            Done
+          </Button>
+        </DrawerBody>
+      </Drawer>
+    </Box.div>
+  );
+};
+
+WithPadding.args = {
+  padding: "space140",
+};
+
+WithPadding.parameters = {
   chromatic: { delay: 1000, pauseAnimationAtEnd: true },
 };

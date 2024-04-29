@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { VisuallyHidden } from "ariakit/visually-hidden";
+import { VisuallyHidden } from "@ariakit/react/visually-hidden";
 import { Box } from "../../primitives/Box";
 
 export interface StepIndicatorSegmentProps

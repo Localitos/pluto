@@ -1,5 +1,5 @@
 import React from "react";
-import { useTabState as useTabPrimitiveState } from "ariakit/tab";
+import { useTabStore as useTabPrimitiveState } from "@ariakit/react/tab";
 import PropTypes from "prop-types";
 import { Box } from "../../primitives/Box";
 import { TabsContext } from "./TabsContext";
@@ -10,13 +10,15 @@ export interface TabsProps {
   initialTabId?: string;
   /** Changes the Tabs' to either fit the width of the containing element or not. */
   variant?: TabsVariants;
+  /** Use flex column, growing to 1 for the div wrapping the tabs. */
+  flexed?: boolean;
   /** The child elements. */
   children: NonNullable<React.ReactNode>;
 }
 
 /** Tabs are labeled controls that allow users to switch between multiple views within a page */
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
-  ({ children, initialTabId, variant }, ref) => {
+  ({ children, initialTabId, variant, flexed }, ref) => {
     const tab = useTabPrimitiveState({
       defaultSelectedId: initialTabId,
     });
@@ -26,7 +28,16 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       <TabsContext.Provider value={value}>{children}</TabsContext.Provider>
     );
 
-    return <Box.div ref={ref}>{returnValue}</Box.div>;
+    return (
+      <Box.div
+        display={flexed ? "flex" : "block"}
+        flexDirection={flexed ? "column" : undefined}
+        flexGrow={flexed ? "1" : undefined}
+        ref={ref}
+      >
+        {returnValue}
+      </Box.div>
+    );
   },
 );
 

@@ -1,7 +1,7 @@
 import React from "react";
-import * as HeroOutlineIcons from "@heroicons/react/24/outline";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
+import * as HeroOutlineIcons from "./HeroIcons";
 import { IconName } from "./types/IconName";
 import { LucideIcons } from "./LucideIcons";
 import { isHeroIcon } from "./utils/isHeroIcon";

@@ -135,6 +135,7 @@ export const ContentCard = ({
       <Box.div
         borderRadius="borderRadius40 borderRadius0 borderRadius0 borderRadius40"
         lineHeight="lineHeight30"
+        maxWidth={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
         padding="space70"
       >
         <Text.div
@@ -208,9 +209,9 @@ export const ContentCard = ({
         borderRadius={imageBorderRadius[imagePosition]}
         display="flex"
         maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
-        maxWidth={isImageOnTop ? 400 : { _: "100%", md: 400 }}
         overflow="hidden"
         position="relative"
+        w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
       >
         {iconUrl && (
           <Box.div

@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, Description, ArgsTable, Stories } from "@storybook/addon-docs";
+import { Title, Description, Stories, Controls } from "@storybook/addon-docs";
 import customTheme from "./theme";
 import {
   ThemeProvider,
@@ -33,14 +33,16 @@ export const parameters = {
     "storybook/docs/panel": { index: -1 },
   },
   docs: {
-    page: () => (
-      <>
-        <Title />
-        <Description />
-        <Stories includePrimary />
-        <ArgsTable />
-      </>
-    ),
+    page: () => {
+      return (
+        <>
+          <Title />
+          <Description />
+          <Stories includePrimary />
+          <Controls />
+        </>
+      );
+    },
     source: {
       state: "open",
     },

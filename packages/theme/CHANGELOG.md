@@ -1,5 +1,145 @@
 # @localyze-pluto/theme
 
+## 26.0.0
+
+### Minor Changes
+
+- [#1574](https://github.com/Localitos/pluto/pull/1574) [`e2a9af6`](https://github.com/Localitos/pluto/commit/e2a9af669a6b6e085f7e44344578cb3979e6ff7c) Thanks [@rssilva](https://github.com/rssilva)! - Add new tokens to fontSize and fontHeight applying them to Heading component
+
+### Patch Changes
+
+- Updated dependencies [[`e2a9af6`](https://github.com/Localitos/pluto/commit/e2a9af669a6b6e085f7e44344578cb3979e6ff7c)]:
+  - @localyze-pluto/design-tokens@1.17.0
+
+## 25.0.0
+
+### Minor Changes
+
+- [#1576](https://github.com/Localitos/pluto/pull/1576) [`7adec58`](https://github.com/Localitos/pluto/commit/7adec58fdc7f2202a92666f70857d3c0077bc364) Thanks [@rssilva](https://github.com/rssilva)! - bump: next, danger, @tanstack/react-table, eslint-plugin-jest-dom, eslint-plugin-cypress, @testing-library/react, @uppy/core, react-router-dom, @types/react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @ariakit/react, @commitlint/cli
+
+### Patch Changes
+
+- Updated dependencies [[`7adec58`](https://github.com/Localitos/pluto/commit/7adec58fdc7f2202a92666f70857d3c0077bc364)]:
+  - @localyze-pluto/design-tokens@1.16.0
+
+## 24.0.0
+
+### Minor Changes
+
+- [#1554](https://github.com/Localitos/pluto/pull/1554) [`18bd040`](https://github.com/Localitos/pluto/commit/18bd040b6448a2a09be1c79cad24f972b6c7d09b) Thanks [@rssilva](https://github.com/rssilva)! - Remove import \* from heroicons keeping only the necessary ones
+
+### Patch Changes
+
+- Updated dependencies [[`18bd040`](https://github.com/Localitos/pluto/commit/18bd040b6448a2a09be1c79cad24f972b6c7d09b)]:
+  - @localyze-pluto/design-tokens@1.15.0
+
+## 23.0.0
+
+### Minor Changes
+
+- [#1552](https://github.com/Localitos/pluto/pull/1552) [`714229f`](https://github.com/Localitos/pluto/commit/714229f4f93da5ceceb0da642eeac5cfdb137eaf) Thanks [@rssilva](https://github.com/rssilva)! - Bump dependencies: @commitlint/cli, @commitlint/config-conventional, next, eslint-plugin-cypress, @testing-library/react, @types/react-dom, react-hook-form, cspell, eslint-plugin-testing-library, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, typescript
+
+### Patch Changes
+
+- Updated dependencies [[`714229f`](https://github.com/Localitos/pluto/commit/714229f4f93da5ceceb0da642eeac5cfdb137eaf)]:
+  - @localyze-pluto/design-tokens@1.14.0
+
+## 22.0.0
+
+### Minor Changes
+
+- [#1521](https://github.com/Localitos/pluto/pull/1521) [`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a) Thanks [@rssilva](https://github.com/rssilva)! - storybook, @testing-library/react, @uppy/core, tar, @babel/preset-env, jest-fail-on-console, eslint-plugin-unicorn, eslint-plugin-jsdoc, eslint-plugin-jest, @typescript-eslint/parser, @typescript-eslint/eslint-plugin, typescript, @types/react
+
+### Patch Changes
+
+- Updated dependencies [[`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a)]:
+  - @localyze-pluto/design-tokens@1.13.0
+
+## 21.1.0
+
+### Minor Changes
+
+- [#1485](https://github.com/Localitos/pluto/pull/1485) [`4bc71cb`](https://github.com/Localitos/pluto/commit/4bc71cb1045cc94ee0e4f15381f5ce90f272a1c7) Thanks [@rssilva](https://github.com/rssilva)! - Bump packages: storybook, @tanstack/react-table, turbo, chromatic, @types/react-dom, @types/react, eslint-config-turbo, eslint-plugin-sonarjs, eslint-plugin-jsdoc, @typescript-eslint/parser, @typescript-eslint/eslint-plugin
+
+## 21.0.0
+
+### Minor Changes
+
+- [#1462](https://github.com/Localitos/pluto/pull/1462) [`6405392`](https://github.com/Localitos/pluto/commit/64053922b4165bfb6a8012534ec39a73a01f1971) Thanks [@rssilva](https://github.com/rssilva)! - Update packages react-hook-form, @tanstack/react-table, express, @heroicons/react, @types/react, webpack-dev-middleware, cspell, turbo, eslint-config-turbo, eslint-plugin-jest-dom, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, typescript
+
+### Patch Changes
+
+- Updated dependencies [[`6405392`](https://github.com/Localitos/pluto/commit/64053922b4165bfb6a8012534ec39a73a01f1971)]:
+  - @localyze-pluto/design-tokens@1.12.0
+
+## 20.0.0
+
+### Minor Changes
+
+- [#1437](https://github.com/Localitos/pluto/pull/1437) [`1a360dc`](https://github.com/Localitos/pluto/commit/1a360dcb579b9baccbec95d5ed202de37b66a03a) Thanks [@rssilva](https://github.com/rssilva)! - Update dependencies: chromatic, react-hook-form, @tanstack/react-table, @testing-library/react, @types/react, @commitlint/cli, @babel/preset-env, turbo, eslint-config-turbo, eslint-plugin-react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser
+
+### Patch Changes
+
+- Updated dependencies [[`1a360dc`](https://github.com/Localitos/pluto/commit/1a360dcb579b9baccbec95d5ed202de37b66a03a)]:
+  - @localyze-pluto/design-tokens@1.11.0
+
+## 19.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`0824d2b`](https://github.com/Localitos/pluto/commit/0824d2b91dd48ce00856b7e9ea82ea415c61ee4b)]:
+  - @localyze-pluto/design-tokens@1.10.0
+
+## 18.0.0
+
+### Minor Changes
+
+- [#1407](https://github.com/Localitos/pluto/pull/1407) [`a000e55`](https://github.com/Localitos/pluto/commit/a000e55de182a7c75f8d10e6a864232560fbe3e9) Thanks [@VirginiaBalseiro](https://github.com/VirginiaBalseiro)! - Add border prefix tokens to colors
+
+### Patch Changes
+
+- Updated dependencies [[`a000e55`](https://github.com/Localitos/pluto/commit/a000e55de182a7c75f8d10e6a864232560fbe3e9)]:
+  - @localyze-pluto/design-tokens@1.9.0
+
+## 17.0.0
+
+### Minor Changes
+
+- [#1408](https://github.com/Localitos/pluto/pull/1408) [`3e657f8`](https://github.com/Localitos/pluto/commit/3e657f855b5e60865158e246bdda260d77258490) Thanks [@rssilva](https://github.com/rssilva)! - Bumps dependencies: @commitlint/cli, yup, chromatic, react-router-dom, @commitlint/config-conventional, eslint-plugin-jsdoc, @typescript-eslint/eslint-plugin, @types/react-dom, @typescript-eslint/parser, typescript, @types/react
+
+### Patch Changes
+
+- Updated dependencies [[`3e657f8`](https://github.com/Localitos/pluto/commit/3e657f855b5e60865158e246bdda260d77258490)]:
+  - @localyze-pluto/design-tokens@1.8.0
+
+## 16.0.0
+
+### Minor Changes
+
+- [#1384](https://github.com/Localitos/pluto/pull/1384) [`125d404`](https://github.com/Localitos/pluto/commit/125d404f1f7100697ed5089ece496c5eb8db7168) Thanks [@rssilva](https://github.com/rssilva)! - Add content prefix tokens to colors
+
+### Patch Changes
+
+- Updated dependencies [[`125d404`](https://github.com/Localitos/pluto/commit/125d404f1f7100697ed5089ece496c5eb8db7168)]:
+  - @localyze-pluto/design-tokens@1.7.0
+
+## 15.1.0
+
+### Minor Changes
+
+- [#1380](https://github.com/Localitos/pluto/pull/1380) [`edf4039`](https://github.com/Localitos/pluto/commit/edf4039805d344ad499d930c23cd26b51aa07f43) Thanks [@rssilva](https://github.com/rssilva)! - bump dependencies: chromatic, @babel/preset-env, react-router-dom, react-hook-form, cspell, @tanstack/react-table, eslint-plugin-react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @types/react, @types/react-dom
+
+## 15.0.0
+
+### Minor Changes
+
+- [#1357](https://github.com/Localitos/pluto/pull/1357) [`a713f45`](https://github.com/Localitos/pluto/commit/a713f45580359c807bb734b4ce4f72b26b3b9c10) Thanks [@rssilva](https://github.com/rssilva)! - Bump dependencies regarding chromatic @commitlint/config-conventional @commitlint/cli @tanstack/react-table @uppy/core @typescript-eslint/eslint-plugin @types/react @typescript-eslint/parser eslint
+
+### Patch Changes
+
+- Updated dependencies [[`a713f45`](https://github.com/Localitos/pluto/commit/a713f45580359c807bb734b4ce4f72b26b3b9c10)]:
+  - @localyze-pluto/design-tokens@1.6.0
+
 ## 14.0.0
 
 ### Minor Changes

@@ -5,7 +5,7 @@ import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 import { Paragraph } from "../Paragraph";
 import {
-  useModalState,
+  useModalStore,
   Modal,
   ModalBody,
   ModalFooter,
@@ -20,13 +20,13 @@ export default {
 } as Meta<typeof Modal>;
 
 export const Default = (): JSX.Element => {
-  const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
+  const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
-      <Modal state={modal}>
+      <Modal store={modal}>
         <ModalHeader>
           <ModalHeading>This is the heading</ModalHeading>
         </ModalHeader>
@@ -62,13 +62,14 @@ Default.parameters = {
 };
 
 export const NoPaddingOnBody = (): React.ReactNode => {
-  const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
+  const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
+
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
-      <Modal state={modal}>
+      <Modal store={modal}>
         <ModalHeader>
           <ModalHeading>This is the heading</ModalHeading>
           <ModalSubHeading>This is the sub heading</ModalSubHeading>
@@ -105,13 +106,13 @@ NoPaddingOnBody.parameters = {
 };
 
 export const OverflowBodyContent = (): React.ReactNode => {
-  const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
+  const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
-      <Modal state={modal}>
+      <Modal store={modal}>
         <ModalHeader>
           <ModalHeading>This is the heading</ModalHeading>
           <ModalSubHeading>This is the sub heading</ModalSubHeading>
@@ -184,13 +185,13 @@ OverflowBodyContent.parameters = {
 };
 
 export const OverflowBodyDisabled = (): React.ReactNode => {
-  const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
+  const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
-      <Modal state={modal}>
+      <Modal store={modal}>
         <ModalHeader>
           <ModalHeading>This is the heading</ModalHeading>
           <ModalSubHeading>This is the sub heading</ModalSubHeading>
@@ -263,13 +264,13 @@ OverflowBodyDisabled.parameters = {
 };
 
 export const ReallyLongHeader = (): React.ReactNode => {
-  const modal = useModalState({ defaultOpen: isChromatic() ? true : false });
+  const modal = useModalStore({ defaultOpen: isChromatic() ? true : false });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
-      <Modal state={modal}>
+      <Modal store={modal}>
         <ModalHeader>
           <ModalHeading>
             This is a really long header that should wrap to multiple lines. The
@@ -310,15 +311,15 @@ ReallyLongHeader.parameters = {
 
 export const InitialFocus = (): JSX.Element => {
   const buttonRef = React.createRef<HTMLButtonElement>();
-  const modal = useModalState({
+  const modal = useModalStore({
     defaultOpen: isChromatic() ? true : false,
   });
   return (
-    <Box.div h="1000px" w="1350px">
+    <Box.div w="1350px">
       <Button onClick={modal.toggle} variant="primary">
         Open modal
       </Button>
-      <Modal initialFocusRef={buttonRef} state={modal}>
+      <Modal initialFocus={buttonRef} store={modal}>
         <ModalHeader>
           <ModalHeading>This is the heading</ModalHeading>
           <ModalSubHeading>This is the sub heading</ModalSubHeading>

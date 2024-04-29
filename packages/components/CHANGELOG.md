@@ -1,5 +1,288 @@
 # @localyze-pluto/components
 
+## 38.0.0
+
+### Minor Changes
+
+- [#1574](https://github.com/Localitos/pluto/pull/1574) [`e2a9af6`](https://github.com/Localitos/pluto/commit/e2a9af669a6b6e085f7e44344578cb3979e6ff7c) Thanks [@rssilva](https://github.com/rssilva)! - Add new tokens to fontSize and fontHeight applying them to Heading component
+
+### Patch Changes
+
+- Updated dependencies [[`e2a9af6`](https://github.com/Localitos/pluto/commit/e2a9af669a6b6e085f7e44344578cb3979e6ff7c)]:
+  - @localyze-pluto/theme@26.0.0
+
+## 37.0.0
+
+### Minor Changes
+
+- [#1576](https://github.com/Localitos/pluto/pull/1576) [`7adec58`](https://github.com/Localitos/pluto/commit/7adec58fdc7f2202a92666f70857d3c0077bc364) Thanks [@rssilva](https://github.com/rssilva)! - bump: next, danger, @tanstack/react-table, eslint-plugin-jest-dom, eslint-plugin-cypress, @testing-library/react, @uppy/core, react-router-dom, @types/react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @ariakit/react, @commitlint/cli
+
+### Patch Changes
+
+- Updated dependencies [[`7adec58`](https://github.com/Localitos/pluto/commit/7adec58fdc7f2202a92666f70857d3c0077bc364)]:
+  - @localyze-pluto/theme@25.0.0
+
+## 36.0.0
+
+### Major Changes
+
+- [#926](https://github.com/Localitos/pluto/pull/926) [`903e282`](https://github.com/Localitos/pluto/commit/903e28294e1863a4ee063a6db4577f454e8e890d) Thanks [@jvaladas](https://github.com/jvaladas)! - Replaces ariakit with @ariakit-react
+  Updates all these components:
+
+  - ConfirmationModal
+  - Drawer
+  - Menu
+  - Select
+  - FormSelect
+  - Modal
+  - StepIndicator
+  - Tabs
+  - Tooltip
+
+## 35.2.0
+
+### Minor Changes
+
+- [#1558](https://github.com/Localitos/pluto/pull/1558) [`a1ebaa8`](https://github.com/Localitos/pluto/commit/a1ebaa81708e3a43feed876fa560eef30f674df1) Thanks [@rssilva](https://github.com/rssilva)! - Add more lucide icons
+
+## 35.1.0
+
+### Minor Changes
+
+- [#1556](https://github.com/Localitos/pluto/pull/1556) [`82f626b`](https://github.com/Localitos/pluto/commit/82f626b452ff43ed963a3f89547f7a18b8d7ab9c) Thanks [@rssilva](https://github.com/rssilva)! - Add heroicons: ChevronUpIcon, MapIcon, ShoppingBagIcon, FireIcon, ArrowRightIcon, TicketIcon, ChevronDoubleRightIcon, ChevronDoubleLeftIcon
+
+## 35.0.0
+
+### Minor Changes
+
+- [#1554](https://github.com/Localitos/pluto/pull/1554) [`18bd040`](https://github.com/Localitos/pluto/commit/18bd040b6448a2a09be1c79cad24f972b6c7d09b) Thanks [@rssilva](https://github.com/rssilva)! - Remove import \* from heroicons keeping only the necessary ones
+
+### Patch Changes
+
+- Updated dependencies [[`18bd040`](https://github.com/Localitos/pluto/commit/18bd040b6448a2a09be1c79cad24f972b6c7d09b)]:
+  - @localyze-pluto/theme@24.0.0
+
+## 34.0.0
+
+### Minor Changes
+
+- [#1552](https://github.com/Localitos/pluto/pull/1552) [`714229f`](https://github.com/Localitos/pluto/commit/714229f4f93da5ceceb0da642eeac5cfdb137eaf) Thanks [@rssilva](https://github.com/rssilva)! - Bump dependencies: @commitlint/cli, @commitlint/config-conventional, next, eslint-plugin-cypress, @testing-library/react, @types/react-dom, react-hook-form, cspell, eslint-plugin-testing-library, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, typescript
+
+### Patch Changes
+
+- Updated dependencies [[`714229f`](https://github.com/Localitos/pluto/commit/714229f4f93da5ceceb0da642eeac5cfdb137eaf)]:
+  - @localyze-pluto/theme@23.0.0
+
+## 33.2.1
+
+### Patch Changes
+
+- [#1548](https://github.com/Localitos/pluto/pull/1548) [`08bde21`](https://github.com/Localitos/pluto/commit/08bde21b767e87a1199563e25272a499c9582ed2) Thanks [@rssilva](https://github.com/rssilva)! - Remove transition on Drawer tests to decrease errors
+
+## 33.2.0
+
+### Minor Changes
+
+- [#1526](https://github.com/Localitos/pluto/pull/1526) [`a9a806d`](https://github.com/Localitos/pluto/commit/a9a806d2b53c42db2b32912ab3bb38bd33f1f92f) Thanks [@helfer1991](https://github.com/helfer1991)! - add new Lucide Icon (FilePlus2)
+
+### Patch Changes
+
+- [#1525](https://github.com/Localitos/pluto/pull/1525) [`c768154`](https://github.com/Localitos/pluto/commit/c768154c67f202ad391e880f8e8efdead34e3cc3) Thanks [@sliminas](https://github.com/sliminas)! - The background of pagination buttons not being the current page is now transparent.
+
+- [#1514](https://github.com/Localitos/pluto/pull/1514) [`ec7ae19`](https://github.com/Localitos/pluto/commit/ec7ae1961a623ea901d102ff7700a0d264e504f4) Thanks [@apvale](https://github.com/apvale)! - [Drawer]:
+
+  - Show entire drawer content by adding full height to DrawerBody component.
+
+## 33.1.0
+
+### Minor Changes
+
+- [#1524](https://github.com/Localitos/pluto/pull/1524) [`897684f`](https://github.com/Localitos/pluto/commit/897684f4d081bce650e4e46e9aaf8c0fea2038e4) Thanks [@rssilva](https://github.com/rssilva)! - Add info, octagon-pause, triangle-alert, thumbs-up and hourglass icons
+
+- [#1519](https://github.com/Localitos/pluto/pull/1519) [`b4a298e`](https://github.com/Localitos/pluto/commit/b4a298e384519080bfb02a10c925bcba2dcace5d) Thanks [@helfer1991](https://github.com/helfer1991)! - adjust font size of the title
+
+## 33.0.0
+
+### Minor Changes
+
+- [#1521](https://github.com/Localitos/pluto/pull/1521) [`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a) Thanks [@rssilva](https://github.com/rssilva)! - storybook, @testing-library/react, @uppy/core, tar, @babel/preset-env, jest-fail-on-console, eslint-plugin-unicorn, eslint-plugin-jsdoc, eslint-plugin-jest, @typescript-eslint/parser, @typescript-eslint/eslint-plugin, typescript, @types/react
+
+### Patch Changes
+
+- Updated dependencies [[`3aed689`](https://github.com/Localitos/pluto/commit/3aed689c912fd0fbab65832f515cfb2c11556e9a)]:
+  - @localyze-pluto/theme@22.0.0
+
+## 32.3.1
+
+### Patch Changes
+
+- [#1515](https://github.com/Localitos/pluto/pull/1515) [`775916f`](https://github.com/Localitos/pluto/commit/775916f72ba57655c5bc53aec1b067c219481d47) Thanks [@rssilva](https://github.com/rssilva)! - Fix Drawer test
+
+## 32.3.0
+
+### Minor Changes
+
+- [#1492](https://github.com/Localitos/pluto/pull/1492) [`7013669`](https://github.com/Localitos/pluto/commit/70136694982548bb3ee005d2a5903c9615b61b8c) Thanks [@helfer1991](https://github.com/helfer1991)! - export UtilityCard to be used externally
+
+## 32.2.1
+
+### Patch Changes
+
+- [#1490](https://github.com/Localitos/pluto/pull/1490) [`7340bd4`](https://github.com/Localitos/pluto/commit/7340bd490e316608f7b3844a0122fd30cfb4527d) Thanks [@helfer1991](https://github.com/helfer1991)! - allow Drawer to receive padding as prop
+
+## 32.2.0
+
+### Minor Changes
+
+- [#1488](https://github.com/Localitos/pluto/pull/1488) [`fbcbdec`](https://github.com/Localitos/pluto/commit/fbcbdecff4f8c3cfa273feb58a6efee17625556f) Thanks [@apvale](https://github.com/apvale)! - [Drawer]: Add transition when opening and closing the drawer
+
+## 32.1.0
+
+### Minor Changes
+
+- [#1484](https://github.com/Localitos/pluto/pull/1484) [`8c5ff61`](https://github.com/Localitos/pluto/commit/8c5ff6112d0d34048cf53076d4fd10d833647743) Thanks [@apvale](https://github.com/apvale)! - [Drawer]:
+
+  - Adds backdrop to Drawer component
+  - Control with autoFocusOnShow prop whether the Drawer
+    should focus the first focusable element when shown
+
+## 32.0.0
+
+### Minor Changes
+
+- [#1485](https://github.com/Localitos/pluto/pull/1485) [`4bc71cb`](https://github.com/Localitos/pluto/commit/4bc71cb1045cc94ee0e4f15381f5ce90f272a1c7) Thanks [@rssilva](https://github.com/rssilva)! - Bump packages: storybook, @tanstack/react-table, turbo, chromatic, @types/react-dom, @types/react, eslint-config-turbo, eslint-plugin-sonarjs, eslint-plugin-jsdoc, @typescript-eslint/parser, @typescript-eslint/eslint-plugin
+
+### Patch Changes
+
+- Updated dependencies [[`4bc71cb`](https://github.com/Localitos/pluto/commit/4bc71cb1045cc94ee0e4f15381f5ce90f272a1c7)]:
+  - @localyze-pluto/theme@21.1.0
+
+## 31.0.0
+
+### Minor Changes
+
+- [#1462](https://github.com/Localitos/pluto/pull/1462) [`6405392`](https://github.com/Localitos/pluto/commit/64053922b4165bfb6a8012534ec39a73a01f1971) Thanks [@rssilva](https://github.com/rssilva)! - Update packages react-hook-form, @tanstack/react-table, express, @heroicons/react, @types/react, webpack-dev-middleware, cspell, turbo, eslint-config-turbo, eslint-plugin-jest-dom, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, typescript
+
+### Patch Changes
+
+- Updated dependencies [[`6405392`](https://github.com/Localitos/pluto/commit/64053922b4165bfb6a8012534ec39a73a01f1971)]:
+  - @localyze-pluto/theme@21.0.0
+
+## 30.1.0
+
+### Minor Changes
+
+- [#1413](https://github.com/Localitos/pluto/pull/1413) [`b4dae7a`](https://github.com/Localitos/pluto/commit/b4dae7a30013e43938eb2af2d162be94a0fe7d12) Thanks [@helfer1991](https://github.com/helfer1991)! - Creation of UtilityCard
+
+## 30.0.0
+
+### Minor Changes
+
+- [#1437](https://github.com/Localitos/pluto/pull/1437) [`1a360dc`](https://github.com/Localitos/pluto/commit/1a360dcb579b9baccbec95d5ed202de37b66a03a) Thanks [@rssilva](https://github.com/rssilva)! - Update dependencies: chromatic, react-hook-form, @tanstack/react-table, @testing-library/react, @types/react, @commitlint/cli, @babel/preset-env, turbo, eslint-config-turbo, eslint-plugin-react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser
+
+### Patch Changes
+
+- Updated dependencies [[`1a360dc`](https://github.com/Localitos/pluto/commit/1a360dcb579b9baccbec95d5ed202de37b66a03a)]:
+  - @localyze-pluto/theme@20.0.0
+
+## 29.0.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @localyze-pluto/theme@19.0.0
+
+## 28.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`a000e55`](https://github.com/Localitos/pluto/commit/a000e55de182a7c75f8d10e6a864232560fbe3e9)]:
+  - @localyze-pluto/theme@18.0.0
+
+## 27.0.0
+
+### Minor Changes
+
+- [#1408](https://github.com/Localitos/pluto/pull/1408) [`3e657f8`](https://github.com/Localitos/pluto/commit/3e657f855b5e60865158e246bdda260d77258490) Thanks [@rssilva](https://github.com/rssilva)! - Bumps dependencies: @commitlint/cli, yup, chromatic, react-router-dom, @commitlint/config-conventional, eslint-plugin-jsdoc, @typescript-eslint/eslint-plugin, @types/react-dom, @typescript-eslint/parser, typescript, @types/react
+
+### Patch Changes
+
+- Updated dependencies [[`3e657f8`](https://github.com/Localitos/pluto/commit/3e657f855b5e60865158e246bdda260d77258490)]:
+  - @localyze-pluto/theme@17.0.0
+
+## 26.0.0
+
+### Minor Changes
+
+- [#1385](https://github.com/Localitos/pluto/pull/1385) [`06e9985`](https://github.com/Localitos/pluto/commit/06e99857c5a048e3c22720b0a386d01ed7228dac) Thanks [@apvale](https://github.com/apvale)! - [Table]:
+
+  - Make striped tables working with hoverable rows by introducing a new prop `hasHover`
+  - Add back the old background tokens because we need to first introduce the specific tokens
+    like "bgHover" and then update in places like tables.
+
+- [#1378](https://github.com/Localitos/pluto/pull/1378) [`49e3609`](https://github.com/Localitos/pluto/commit/49e360984d5ad105826f965bff835e058102311b) Thanks [@sliminas](https://github.com/sliminas)! - Add `flexed` option to Tabs component
+
+### Patch Changes
+
+- Updated dependencies [[`125d404`](https://github.com/Localitos/pluto/commit/125d404f1f7100697ed5089ece496c5eb8db7168)]:
+  - @localyze-pluto/theme@16.0.0
+
+## 25.1.0
+
+### Minor Changes
+
+- [#1382](https://github.com/Localitos/pluto/pull/1382) [`f5f2d1d`](https://github.com/Localitos/pluto/commit/f5f2d1d247cb5b2d9c316b429dc0e3ed11e58e65) Thanks [@rssilva](https://github.com/rssilva)! - Add padding bottom, top, left and right prop option (space0 or space50) to td component
+
+## 25.0.0
+
+### Minor Changes
+
+- [#1380](https://github.com/Localitos/pluto/pull/1380) [`edf4039`](https://github.com/Localitos/pluto/commit/edf4039805d344ad499d930c23cd26b51aa07f43) Thanks [@rssilva](https://github.com/rssilva)! - bump dependencies: chromatic, @babel/preset-env, react-router-dom, react-hook-form, cspell, @tanstack/react-table, eslint-plugin-react, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @types/react, @types/react-dom
+
+### Patch Changes
+
+- Updated dependencies [[`edf4039`](https://github.com/Localitos/pluto/commit/edf4039805d344ad499d930c23cd26b51aa07f43)]:
+  - @localyze-pluto/theme@15.1.0
+
+## 24.1.3
+
+### Patch Changes
+
+- [#1364](https://github.com/Localitos/pluto/pull/1364) [`a291a86`](https://github.com/Localitos/pluto/commit/a291a867c17cd073f0f6e5e960ff840d5d632514) Thanks [@apvale](https://github.com/apvale)! - [ContentCard] Improve how image and content are split
+
+## 24.1.2
+
+### Patch Changes
+
+- [#1362](https://github.com/Localitos/pluto/pull/1362) [`c4ad3d6`](https://github.com/Localitos/pluto/commit/c4ad3d6635aa55ade641637a41b44f949c074588) Thanks [@apvale](https://github.com/apvale)! - [Table]: Fix hover when table row is not clickable
+
+## 24.1.1
+
+### Patch Changes
+
+- [#1360](https://github.com/Localitos/pluto/pull/1360) [`974dea6`](https://github.com/Localitos/pluto/commit/974dea61691f722f3480d530b81cb998d998e0a2) Thanks [@apvale](https://github.com/apvale)! - [Table]: Add overflow only when needed
+
+## 24.1.0
+
+### Minor Changes
+
+- [#1355](https://github.com/Localitos/pluto/pull/1355) [`79e9ae7`](https://github.com/Localitos/pluto/commit/79e9ae7c75cf9837ed8f74b9b7096439a9c9074e) Thanks [@padulafacundo](https://github.com/padulafacundo)! - Add red variant to the Badge component
+
+## 24.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`a713f45`](https://github.com/Localitos/pluto/commit/a713f45580359c807bb734b4ce4f72b26b3b9c10)]:
+  - @localyze-pluto/theme@15.0.0
+
+## 23.1.0
+
+### Minor Changes
+
+- [#1351](https://github.com/Localitos/pluto/pull/1351) [`849a6d6`](https://github.com/Localitos/pluto/commit/849a6d631a40beae2b93bd0f68cb085bf4d851a7) Thanks [@apvale](https://github.com/apvale)! - [Table]:
+
+  - Adds border and background color property with white color as default to the Table component
+
 ## 23.0.0
 
 ### Patch Changes

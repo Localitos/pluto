@@ -1,3 +1,23 @@
+const includes = require("lodash/includes");
+const map = require("lodash/map");
+const camelCase = require("lodash/camelCase");
+const StyleDictionary = require("style-dictionary");
+
+const colorTokensPath = "src/tokens/color.tokens.json";
+
+const handleLodashJavascript = (token) => {
+  const { attributes } = token;
+
+  return `export const ${camelCase(attributes.category)}${attributes.type} = "${token.value}" /** ${token.comment} */`;
+};
+
+StyleDictionary.registerFormat({
+  name: "jsPrefixFormatter",
+  formatter: function ({ dictionary }) {
+    return map(dictionary.allTokens, handleLodashJavascript).join("\n");
+  },
+});
+
 module.exports = {
   source: ["src/**/*.tokens.json"],
   platforms: {
@@ -87,8 +107,11 @@ module.exports = {
           format: "javascript/es6",
           filter: (token) => {
             return (
-              token.filePath === "src/tokens/color.tokens.json" &&
-              ["color", "bg"].includes(token.attributes.category)
+              token.filePath === colorTokensPath &&
+              includes(
+                ["color", "bg", "content", "border"],
+                token.attributes.category,
+              )
             );
           },
         },
@@ -97,8 +120,11 @@ module.exports = {
           format: "typescript/es6-declarations",
           filter: (token) => {
             return (
-              token.filePath === "src/tokens/color.tokens.json" &&
-              ["color", "bg"].includes(token.attributes.category)
+              token.filePath === colorTokensPath &&
+              includes(
+                ["color", "bg", "content", "border"],
+                token.attributes.category,
+              )
             );
           },
         },
@@ -123,19 +149,21 @@ module.exports = {
         {
           destination: "font-size.js",
           format: "javascript/es6",
-          filter: {
-            attributes: {
-              category: "font-size",
-            },
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/font-size.tokens.json" &&
+              includes(["font-size", "title"], token.attributes.category)
+            );
           },
         },
         {
           destination: "font-size.d.ts",
           format: "typescript/es6-declarations",
-          filter: {
-            attributes: {
-              category: "font-size",
-            },
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/font-size.tokens.json" &&
+              includes(["font-size", "title"], token.attributes.category)
+            );
           },
         },
         {
@@ -158,20 +186,22 @@ module.exports = {
         },
         {
           destination: "line-height.js",
-          format: "javascript/es6",
-          filter: {
-            attributes: {
-              category: "line-height",
-            },
+          format: "jsPrefixFormatter",
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/line-height.tokens.json" &&
+              includes(["line-height", "lh"], token.attributes.category)
+            );
           },
         },
         {
           destination: "line-height.d.ts",
           format: "typescript/es6-declarations",
-          filter: {
-            attributes: {
-              category: "line-height",
-            },
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/line-height.tokens.json" &&
+              includes(["line-height", "lh"], token.attributes.category)
+            );
           },
         },
         {

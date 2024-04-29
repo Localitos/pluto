@@ -6,3 +6,4 @@ export * from "./createFontSizePreview";
 export * from "./colorConverters";
 export * from "./buildTokensTableRows";
 export * from "./copyToClipboard";
+export * from "./getTokenNameFromTuple";
