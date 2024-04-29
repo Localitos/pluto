@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.17.0
+
+### Minor Changes
+
+- [#1574](https://github.com/Localitos/pluto/pull/1574) [`e2a9af6`](https://github.com/Localitos/pluto/commit/e2a9af669a6b6e085f7e44344578cb3979e6ff7c) Thanks [@rssilva](https://github.com/rssilva)! - Add new tokens to fontSize and fontHeight applying them to Heading component
+
 ## 1.16.0
 
 ### Minor Changes
