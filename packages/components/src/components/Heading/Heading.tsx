@@ -33,7 +33,8 @@ type HeadingFontColors =
   | "colorTextHeading"
   | "colorTextHeadingStrong"
   | "colorTextHeadingStronger"
-  | "colorTextInverse";
+  | "colorTextInverse"
+  | "colorTextStrongest";
 
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /** Sets the HTML element on render. */
