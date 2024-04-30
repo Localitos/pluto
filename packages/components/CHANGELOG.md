@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 38.1.0
+
+### Minor Changes
+
+- [#1579](https://github.com/Localitos/pluto/pull/1579) [`ea0f67b`](https://github.com/Localitos/pluto/commit/ea0f67b219bc9a71ef746629ef829f815b75ef2f) Thanks [@rssilva](https://github.com/rssilva)! - Add `colorTextStrongest` as option to Heading
+
 ## 38.0.0
 
 ### Minor Changes
