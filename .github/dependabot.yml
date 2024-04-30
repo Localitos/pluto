@@ -7,7 +7,7 @@ updates:
       day: "wednesday"
       time: "04:00"
       timezone: Europe/Berlin
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 5
     rebase-strategy: "disabled"
     labels:
       - "dependencies"
