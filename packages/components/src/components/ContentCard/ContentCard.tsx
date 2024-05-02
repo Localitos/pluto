@@ -116,7 +116,7 @@ export const ContentCard = ({
       as={isCardInteractive ? "a" : as}
       backgroundColor={backgroundColor[background]}
       border={0}
-      borderRadius={isRounded ? "borderRadius40" : ""}
+      borderRadius={isRounded ? "borderRadius40" : undefined}
       boxShadow={
         isCardInteractive && {
           _: "none",
@@ -209,7 +209,7 @@ export const ContentCard = ({
       </Box.div>
       <Box.div
         alignItems="center"
-        borderRadius={isRounded ? imageBorderRadius[imagePosition] : ""}
+        borderRadius={isRounded ? imageBorderRadius[imagePosition] : undefined}
         display="flex"
         maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
         overflow="hidden"
