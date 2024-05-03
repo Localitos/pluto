@@ -47,7 +47,7 @@ export type ContentCardProps = {
   ctaText?: string;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
-  /** Sets the pre-defined border radius to the card */
+  /** Sets the pre-defined border radius on the card */
   isRounded?: boolean;
 };
 
