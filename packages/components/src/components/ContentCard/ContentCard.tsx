@@ -47,6 +47,8 @@ export type ContentCardProps = {
   ctaText?: string;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
+  /** Sets the pre-defined border radius on the card */
+  isRounded?: boolean;
 };
 
 const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
@@ -71,6 +73,7 @@ export const ContentCard = ({
   background = "default",
   target,
   as = "div",
+  isRounded = true,
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
 
@@ -113,7 +116,7 @@ export const ContentCard = ({
       as={isCardInteractive ? "a" : as}
       backgroundColor={backgroundColor[background]}
       border={0}
-      borderRadius="borderRadius40"
+      borderRadius={isRounded ? "borderRadius40" : undefined}
       boxShadow={
         isCardInteractive && {
           _: "none",
@@ -206,7 +209,7 @@ export const ContentCard = ({
       </Box.div>
       <Box.div
         alignItems="center"
-        borderRadius={imageBorderRadius[imagePosition]}
+        borderRadius={isRounded ? imageBorderRadius[imagePosition] : undefined}
         display="flex"
         maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
         overflow="hidden"
