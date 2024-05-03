@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 38.2.0
+
+### Minor Changes
+
+- [#1587](https://github.com/Localitos/pluto/pull/1587) [`924857c`](https://github.com/Localitos/pluto/commit/924857c06a030b362e5d3398bb886b369ee8a4f2) Thanks [@rssilva](https://github.com/rssilva)! - Add isRounded property to Content Card
+
 ## 38.1.0
 
 ### Minor Changes
