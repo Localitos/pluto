@@ -90,7 +90,6 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
                     w="100%"
                   >
                     <Box.span
-                      backgroundColor="bgInfo"
                       color={disabled ? "colorText" : "colorTextStrongest"}
                       textAlign="left"
                       w="100%"
