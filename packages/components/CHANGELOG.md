@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 38.3.0
+
+### Minor Changes
+
+- [#1590](https://github.com/Localitos/pluto/pull/1590) [`ccc78a7`](https://github.com/Localitos/pluto/commit/ccc78a79ec22ed914a1a8b6b5d4656b05fe8a082) Thanks [@rssilva](https://github.com/rssilva)! - Fix menu buttons width by passing a styled button with 100% width to it
+
 ## 38.2.0
 
 ### Minor Changes
