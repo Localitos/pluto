@@ -32,6 +32,10 @@ const VerticalEllipsisButton = (
   />
 );
 
+const FullWidthButton = ({ ...props }) => (
+  <Button fullWidth variant="ghost" {...props} />
+);
+
 /** A menu is a button element that opens a menu with items. */
 const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
   ({ menuButton, items }, ref) => {
@@ -75,7 +79,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
                 >
                   <Box.button
                     alignItems="center"
-                    as={Button}
+                    as={FullWidthButton}
                     disabled={disabled}
                     justifyContent="flex-start"
                     onClick={onClick}
@@ -86,8 +90,10 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
                     w="100%"
                   >
                     <Box.span
+                      backgroundColor="bgInfo"
                       color={disabled ? "colorText" : "colorTextStrongest"}
                       textAlign="left"
+                      w="100%"
                     >
                       {label}
                     </Box.span>
