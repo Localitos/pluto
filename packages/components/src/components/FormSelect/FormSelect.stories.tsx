@@ -132,7 +132,7 @@ export const AsControlledFormSelect = (): JSX.Element => {
   const schema = yup.object().shape({
     flavor: yup.string().required("A flavor is required."),
     flavor1: yup.string(),
-    flavor2: yup.array(yup.string()),
+    flavor2: yup.array(),
   });
 
   interface FormInputs {
