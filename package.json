@@ -30,6 +30,7 @@
   ],
   "dependencies": {
     "@hookform/resolvers": "^3.4.2",
+    "@radix-ui/react-checkbox": "^1.0.4",
     "@tanstack/react-table": "^8.17.3",
     "formik": "^2.4.6",
     "react-dropzone": "^14.2.3",
