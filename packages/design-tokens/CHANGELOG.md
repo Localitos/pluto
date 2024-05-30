@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.18.0
+
+### Minor Changes
+
+- [#1606](https://github.com/Localitos/pluto/pull/1606) [`b65aa01`](https://github.com/Localitos/pluto/commit/b65aa01bbc3841af30a93bbbe0753ed9dcf92531) Thanks [@rssilva](https://github.com/rssilva)! - bump: react-hook-form, @radix-ui/react-radio-group, lucide-react, react-hook-form, @radix-ui/react-radio-group, lucide-react, react-hook-form, @testing-library/jest-dom, @testing-library/react, @types/jest, jest, @localyze-pluto/tsconfig, @testing-library/jest-dom, @testing-library/react, @types/jest, @types/react, @types/react-dom, jest, react, react-dom, styled-components, ts-jest
+
 ## 1.17.0
 
 ### Minor Changes
