@@ -28,7 +28,8 @@
     "formik",
     "nextjs",
     "lucide",
-    "yalc"
+    "yalc",
+    "loca"
   ],
   "flagWords": ["hte"],
   "allowCompoundWords": true,
