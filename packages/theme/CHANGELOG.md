@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 28.0.0
+
+### Minor Changes
+
+- [#1608](https://github.com/Localitos/pluto/pull/1608) [`84ab7cb`](https://github.com/Localitos/pluto/commit/84ab7cb683f9e95ae4b18d7fbbc48dc3985e8eda) Thanks [@rssilva](https://github.com/rssilva)! - Add primitive color tokens
+
+### Patch Changes
+
+- Updated dependencies [[`84ab7cb`](https://github.com/Localitos/pluto/commit/84ab7cb683f9e95ae4b18d7fbbc48dc3985e8eda)]:
+  - @localyze-pluto/design-tokens@1.19.0
+
 ## 27.0.0
 
 ### Minor Changes
