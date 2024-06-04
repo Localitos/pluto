@@ -18,6 +18,22 @@ StyleDictionary.registerFormat({
   },
 });
 
+const colorPrefixes = [
+  "loca-marine",
+  "yellow",
+  "red",
+  "green",
+  "cream",
+  "navy",
+  "light-blue",
+  "coral",
+  "gray",
+  "color",
+  "bg",
+  "content",
+  "border",
+];
+
 module.exports = {
   source: ["src/**/*.tokens.json"],
   platforms: {
@@ -108,10 +124,7 @@ module.exports = {
           filter: (token) => {
             return (
               token.filePath === colorTokensPath &&
-              includes(
-                ["color", "bg", "content", "border"],
-                token.attributes.category,
-              )
+              includes(colorPrefixes, token.attributes.category)
             );
           },
         },
@@ -121,10 +134,7 @@ module.exports = {
           filter: (token) => {
             return (
               token.filePath === colorTokensPath &&
-              includes(
-                ["color", "bg", "content", "border"],
-                token.attributes.category,
-              )
+              includes(colorPrefixes, token.attributes.category)
             );
           },
         },
