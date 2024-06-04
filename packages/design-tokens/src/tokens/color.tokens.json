@@ -227,7 +227,7 @@
       "value": "#FFFFFF"
     },
     "text-link": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "text-link-strong": {
       "value": "#0B1F9C"
@@ -239,7 +239,7 @@
       "value": "#041162"
     },
     "text-heading-strong": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "text-heading": {
       "value": "#334155"
@@ -251,7 +251,7 @@
       "value": "#F8FAFC"
     },
     "background-weaker": {
-      "value": "#F7F9FF"
+      "value": "{loca-marine.100}"
     },
     "background-weak": {
       "value": "#F1F5F9"
@@ -269,7 +269,7 @@
       "value": "#4A63FC"
     },
     "background-primary": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "background-primary-strong": {
       "value": "#0B1F9C"
@@ -281,7 +281,7 @@
       "value": "#FFF1DB"
     },
     "background-outline-hover": {
-      "value": "#EBEDFF"
+      "value": "{loca-marine.200}"
     },
     "background-decorative-strong": {
       "value": "#C8F0EF"
@@ -293,13 +293,13 @@
       "value": "#B91C1C"
     },
     "background-info": {
-      "value": "#EBEDFF"
+      "value": "{loca-marine.200}"
     },
     "background-success": {
       "value": "#ECFDF5"
     },
     "background-warning": {
-      "value": "#FFFBEB"
+      "value": "{yellow.100}"
     },
     "background-error": {
       "value": "#FEF2F2"
@@ -308,7 +308,7 @@
       "value": "#F5EEFA"
     },
     "background-body": {
-      "value": "#F7F9FF"
+      "value": "{loca-marine.100}"
     },
     "background-body-strong": {
       "value": "#1E293B"
@@ -335,7 +335,7 @@
       "value": "#059669"
     },
     "border-primary": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "icon-error": {
       "value": "#DC2626"
@@ -347,7 +347,7 @@
       "value": "#059669"
     },
     "icon-info": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "icon-weaker": {
       "value": "#94A3B8"
@@ -362,7 +362,7 @@
       "value": "#0F172A"
     },
     "primary": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "secondary": {
       "value": "#76FAC1"
@@ -392,13 +392,13 @@
       "value": "#FFFFFF"
     },
     "map-background-primary": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "map-background-secondary": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "footer-avatar-decoration": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "footer-text": {
       "value": "#041162"
@@ -413,19 +413,19 @@
       "value": "#FFFFFF"
     },
     "button-background-primary": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "button-background-primary-hover": {
       "value": "#041162"
     },
     "button-background-primary-outline-focus": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "progress-bar-background-primary": {
       "value": "#FFFFFF"
     },
     "progress-bar-indicator-primary": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "avatar-background-blue": {
       "value": "#B8C2FF"
@@ -434,10 +434,10 @@
       "value": "#8AFECC"
     },
     "avatar-background-orange": {
-      "value": "#FBBF24"
+      "value": "{yellow.400}"
     },
     "avatar-background-yellow": {
-      "value": "#FDE68A"
+      "value": "{yellow.300}"
     },
     "avatar-background-light-blue": {
       "value": "#A9EBE8"
@@ -472,16 +472,16 @@
       "value": "#F8FAFC"
     },
     "body-main": {
-      "value": "#F7F9FF"
+      "value": "{loca-marine.100}"
     },
     "info": {
-      "value": "#EBEDFF"
+      "value": "{loca-marine.200}"
     },
     "success": {
       "value": "#ECFDF5"
     },
     "warning": {
-      "value": "#FFFBEB"
+      "value": "{yellow.100}"
     },
     "error": {
       "value": "#FEF2F2"
@@ -504,13 +504,13 @@
       "value": "#6C7684"
     },
     "info": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "success": {
       "value": "#047857"
     },
     "warning": {
-      "value": "#B05C09"
+      "value": "{yellow.600}"
     },
     "error": {
       "value": "#B91C1C"
@@ -524,13 +524,13 @@
       "value": "#D2D7DF"
     },
     "info": {
-      "value": "#102EE9"
+      "value": "{loca-marine.600}"
     },
     "success": {
       "value": "#047857"
     },
     "warning": {
-      "value": "#B05C09"
+      "value": "{yellow.600}"
     },
     "error": {
       "value": "#B91C1C"
