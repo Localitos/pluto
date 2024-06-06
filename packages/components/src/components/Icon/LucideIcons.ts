@@ -32,6 +32,8 @@ import {
   Lightbulb,
   Settings2,
   Users,
+  MailPlus,
+  ListPlus,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
 
@@ -49,8 +51,10 @@ export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   hourglass: Hourglass,
   info: Info,
   lightbulb: Lightbulb,
+  "list-plus": ListPlus,
   luggage: Luggage,
   "mail-question": MailQuestion,
+  "mail-plus": MailPlus,
   "octagon-pause": PauseOctagon,
   palette: Palette,
   palmtree: Palmtree,
