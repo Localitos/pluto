@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 29.0.0
+
+### Minor Changes
+
+- [#1609](https://github.com/Localitos/pluto/pull/1609) [`c9bafd9`](https://github.com/Localitos/pluto/commit/c9bafd947229217701c4db2bb8db6f0fd3d3f041) Thanks [@rssilva](https://github.com/rssilva)! - Use token variables instead of repeating/duplicating
+
+### Patch Changes
+
+- Updated dependencies [[`c9bafd9`](https://github.com/Localitos/pluto/commit/c9bafd947229217701c4db2bb8db6f0fd3d3f041)]:
+  - @localyze-pluto/design-tokens@1.20.0
+
 ## 28.0.0
 
 ### Minor Changes

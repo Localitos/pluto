@@ -1,5 +1,19 @@
 # @localyze-pluto/components
 
+## 41.0.0
+
+### Minor Changes
+
+- [#1616](https://github.com/Localitos/pluto/pull/1616) [`ab773c0`](https://github.com/Localitos/pluto/commit/ab773c01a4f0cd4dde6db44756d9e4d4f1ba1380) Thanks [@apvale](https://github.com/apvale)! - Add new lucid icons:
+
+  - `MailPlus`
+  - `ListPlus`
+
+### Patch Changes
+
+- Updated dependencies [[`c9bafd9`](https://github.com/Localitos/pluto/commit/c9bafd947229217701c4db2bb8db6f0fd3d3f041)]:
+  - @localyze-pluto/theme@29.0.0
+
 ## 40.0.0
 
 ### Patch Changes
