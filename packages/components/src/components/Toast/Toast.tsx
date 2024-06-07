@@ -61,12 +61,21 @@ const Toast = React.forwardRef<HTMLLIElement, Omit<ToastProps, "ref">>(
           )}
         </Box.span>
 
-        <Box.button as={ToastPrimitive.Close} asChild cursor="pointer">
+        <Box.button
+          as={ToastPrimitive.Close}
+          asChild
+          backgroundColor="transparent"
+          borderColor="transparent"
+          borderWidth="borderWidth0"
+          cursor="pointer"
+        >
           <Icon
+            as="button"
             color="colorIconWeak"
             decorative={false}
             icon="XMarkIcon"
             size="sizeIcon30"
+            style={{ paddingLeft: 0 }}
             title="Close toast"
           />
         </Box.button>
