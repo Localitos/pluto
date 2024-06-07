@@ -86,19 +86,6 @@ PortraitImage.args = {
   imageSrc: "/images/beach-porto-rico.jpg",
 };
 
-export const SquareImage: Story = Template.bind({});
-SquareImage.args = {
-  ...defaultProps,
-  isRounded: false,
-};
-
-export const SquareImagePortrait: Story = Template.bind({});
-SquareImagePortrait.args = {
-  ...defaultProps,
-  imagePosition: "top",
-  isRounded: false,
-};
-
 export const InList = (): JSX.Element => {
   return (
     <Box.ul
