@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 41.1.0
+
+### Minor Changes
+
+- [#1594](https://github.com/Localitos/pluto/pull/1594) [`12c16f1`](https://github.com/Localitos/pluto/commit/12c16f1c962ebb58fc4eac8c583a712a6d3eeb74) Thanks [@rssilva](https://github.com/rssilva)! - Add close Icon as a button on Toast component
+
 ## 41.0.0
 
 ### Minor Changes
