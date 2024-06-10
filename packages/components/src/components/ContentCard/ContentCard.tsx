@@ -47,8 +47,8 @@ export type ContentCardProps = {
   ctaText?: string;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
-  /** Sets the pre-defined border radius on the card */
-  isRounded?: boolean;
+  /** Overwrites default maxWidth */
+  maxWidth?: BoxProps["maxW"];
 };
 
 const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
@@ -73,7 +73,7 @@ export const ContentCard = ({
   background = "default",
   target,
   as = "div",
-  isRounded = true,
+  maxWidth,
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
 
@@ -84,7 +84,7 @@ export const ContentCard = ({
     },
   };
 
-  const maxWidth = {
+  const maxWidthDefault = {
     top: 350,
     right: {
       _: 350,
@@ -116,7 +116,7 @@ export const ContentCard = ({
       as={isCardInteractive ? "a" : as}
       backgroundColor={backgroundColor[background]}
       border={0}
-      borderRadius={isRounded ? "borderRadius40" : undefined}
+      borderRadius={"borderRadius40"}
       boxShadow={
         isCardInteractive && {
           _: "none",
@@ -130,7 +130,7 @@ export const ContentCard = ({
       fontFamily="fontFamilyNotoSans"
       justifyContent="space-between"
       maxH={maxHeight[imagePosition]}
-      maxW={maxWidth[imagePosition]}
+      maxW={maxWidth || maxWidthDefault[imagePosition]}
       padding="space0"
       textDecoration="none"
       {...(isCardInteractive ? interactiveElementProps : {})}
@@ -190,7 +190,7 @@ export const ContentCard = ({
           gap="space50"
         >
           {InteractiveElementType.Button === interactiveElementType && (
-            <Box.div w={isImageOnTop ? "50%" : { _: "100%", md: "50%" }}>
+            <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
               <Button
                 as="a"
                 fullWidth
@@ -209,7 +209,7 @@ export const ContentCard = ({
       </Box.div>
       <Box.div
         alignItems="center"
-        borderRadius={isRounded ? imageBorderRadius[imagePosition] : undefined}
+        borderRadius={imageBorderRadius[imagePosition]}
         display="flex"
         maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
         overflow="hidden"
