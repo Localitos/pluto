@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 41.2.0
+
+### Minor Changes
+
+- [#1618](https://github.com/Localitos/pluto/pull/1618) [`98bf853`](https://github.com/Localitos/pluto/commit/98bf85361da3c7430953625fe84e72b9a6422629) Thanks [@rssilva](https://github.com/rssilva)! - Change ContentCard to handle max-width, fix button width, remove unused isRounded prop
+
 ## 41.1.0
 
 ### Minor Changes
