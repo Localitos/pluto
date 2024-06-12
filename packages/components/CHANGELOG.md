@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 41.3.0
+
+### Minor Changes
+
+- [#1621](https://github.com/Localitos/pluto/pull/1621) [`4610fec`](https://github.com/Localitos/pluto/commit/4610fece8a1b56815fe5071c878b096d93d124b6) Thanks [@rssilva](https://github.com/rssilva)! - Add several lucide icons to replace the use from hero icons in future
+
 ## 41.2.0
 
 ### Minor Changes
