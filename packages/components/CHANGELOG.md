@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 41.4.0
+
+### Minor Changes
+
+- [#1629](https://github.com/Localitos/pluto/pull/1629) [`fdc6ac2`](https://github.com/Localitos/pluto/commit/fdc6ac2c39e0b61e30c01a436b1af869624fda00) Thanks [@rssilva](https://github.com/rssilva)! - Add icons: arrow-right, chevron-up, chevrons-left, chevrons-right, cloud-download, shield-alert
+
 ## 41.3.0
 
 ### Minor Changes
