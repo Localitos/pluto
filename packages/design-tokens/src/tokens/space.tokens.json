@@ -1,4 +1,134 @@
 {
+  "d": {
+    "0": {
+      "value": "0",
+      "comment": "0"
+    },
+    "0_25": {
+      "value": "0.0625rem",
+      "comment": "1px"
+    },
+    "0_5": {
+      "value": "0.125rem",
+      "comment": "2px"
+    },
+    "0_75": {
+      "value": "0.1875rem",
+      "comment": "3px"
+    },
+    "1": {
+      "value": "0.25rem",
+      "comment": "4px"
+    },
+    "1_5": {
+      "value": "0.375rem",
+      "comment": "6px"
+    },
+    "2": {
+      "value": "0.5rem",
+      "comment": "8px"
+    },
+    "2_5": {
+      "value": "0.625rem",
+      "comment": "10px"
+    },
+    "3": {
+      "value": "0.75rem",
+      "comment": "12px"
+    },
+    "4": {
+      "value": "1rem",
+      "comment": "16px"
+    },
+    "5": {
+      "value": "1.25rem",
+      "comment": "20px"
+    },
+    "6": {
+      "value": "1.5rem",
+      "comment": "24px"
+    },
+    "7": {
+      "value": "1.75rem",
+      "comment": "28px"
+    },
+    "8": {
+      "value": "2rem",
+      "comment": "32px"
+    },
+    "9": {
+      "value": "2.25rem",
+      "comment": "36px"
+    },
+    "10": {
+      "value": "2.5rem",
+      "comment": "40px"
+    },
+    "11": {
+      "value": "2.75rem",
+      "comment": "44px"
+    },
+    "12": {
+      "value": "3rem",
+      "comment": "48px"
+    },
+    "13": {
+      "value": "3.25rem",
+      "comment": "52px"
+    },
+    "14": {
+      "value": "3.5rem",
+      "comment": "56px"
+    },
+    "15": {
+      "value": "3.75rem",
+      "comment": "60px"
+    },
+    "16": {
+      "value": "4rem",
+      "comment": "64px"
+    },
+    "17": {
+      "value": "4.25rem",
+      "comment": "68px"
+    },
+    "18": {
+      "value": "4.5rem",
+      "comment": "72px"
+    },
+    "19": {
+      "value": "4.75rem",
+      "comment": "76px"
+    },
+    "20": {
+      "value": "5rem",
+      "comment": "80px"
+    },
+    "21": {
+      "value": "5.25rem",
+      "comment": "84px"
+    },
+    "22": {
+      "value": "5.5rem",
+      "comment": "88px"
+    },
+    "23": {
+      "value": "5.75rem",
+      "comment": "92px"
+    },
+    "24": {
+      "value": "6rem",
+      "comment": "96px"
+    },
+    "25": {
+      "value": "6.25rem",
+      "comment": "100px"
+    },
+    "26": {
+      "value": "6.5rem",
+      "comment": "104px"
+    }
+  },
   "space": {
     "0": {
       "value": "0rem",
