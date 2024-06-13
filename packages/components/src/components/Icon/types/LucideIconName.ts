@@ -20,6 +20,7 @@ export type LucideIconName =
   | "chevron-down"
   | "chevron-left"
   | "chevron-right"
+  | "chevron-up"
   | "chevrons-left"
   | "chevrons-right"
   | "circle-alert"
