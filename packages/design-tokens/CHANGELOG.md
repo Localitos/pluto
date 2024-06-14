@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.21.0
+
+### Minor Changes
+
+- [#1631](https://github.com/Localitos/pluto/pull/1631) [`d28fde9`](https://github.com/Localitos/pluto/commit/d28fde980b47e2a389914fad35fa68abc8b2ed35) Thanks [@rssilva](https://github.com/rssilva)! - Add d for space tokens
+
 ## 1.20.0
 
 ### Minor Changes
