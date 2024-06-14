@@ -1,6 +1,8 @@
 const includes = require("lodash/includes");
 const map = require("lodash/map");
 const camelCase = require("lodash/camelCase");
+const upperFirst = require("lodash/upperFirst");
+const replace = require("lodash/replace");
 const StyleDictionary = require("style-dictionary");
 
 const colorTokensPath = "src/tokens/color.tokens.json";
@@ -8,13 +10,27 @@ const colorTokensPath = "src/tokens/color.tokens.json";
 const handleLodashJavascript = (token) => {
   const { attributes } = token;
 
-  return `export const ${camelCase(attributes.category)}${attributes.type} = "${token.value}" /** ${token.comment} */`;
+  return `export const ${camelCase(attributes.category)}${replace(upperFirst(attributes.type), "-", "")} = "${token.value}" /** ${token.comment} */`;
+};
+
+const handleLodashTypescript = (token) => {
+  const { attributes } = token;
+
+  return `/* ${token.value} */
+export const ${camelCase(attributes.category)}${replace(upperFirst(attributes.type), "-", "")}: string`;
 };
 
 StyleDictionary.registerFormat({
   name: "jsPrefixFormatter",
   formatter: function ({ dictionary }) {
     return map(dictionary.allTokens, handleLodashJavascript).join("\n");
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: "jsPrefixFormatterTypes",
+  formatter: function ({ dictionary }) {
+    return map(dictionary.allTokens, handleLodashTypescript).join("\n");
   },
 });
 
@@ -234,20 +250,22 @@ module.exports = {
         },
         {
           destination: "space.js",
-          format: "javascript/es6",
-          filter: {
-            attributes: {
-              category: "space",
-            },
+          format: "jsPrefixFormatter",
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/space.tokens.json" &&
+              includes(["space", "d"], token.attributes.category)
+            );
           },
         },
         {
           destination: "space.d.ts",
-          format: "typescript/es6-declarations",
-          filter: {
-            attributes: {
-              category: "space",
-            },
+          format: "jsPrefixFormatterTypes",
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/space.tokens.json" &&
+              includes(["space", "d"], token.attributes.category)
+            );
           },
         },
         {
