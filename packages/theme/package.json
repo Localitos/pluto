@@ -1,6 +1,6 @@
 {
   "name": "@localyze-pluto/theme",
-  "version": "29.0.0",
+  "version": "30.0.0",
   "description": "Pluto Design System Theme ",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -28,14 +28,14 @@
     "tsc": "tsc"
   },
   "peerDependencies": {
-    "@localyze-pluto/design-tokens": "^1.20.0",
+    "@localyze-pluto/design-tokens": "^1.21.0",
     "@xstyled/styled-components": "^3.8.0",
     "react": "^17.0.2 || ^18.2.0",
     "react-dom": "^17.0.2 || ^18.2.0",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {
-    "@localyze-pluto/design-tokens": "^1.20.0",
+    "@localyze-pluto/design-tokens": "^1.21.0",
     "@localyze-pluto/eslint-config": "^1.18.0",
     "@localyze-pluto/tsconfig": "^1.1.0",
     "@testing-library/jest-dom": "^6.4.5",
