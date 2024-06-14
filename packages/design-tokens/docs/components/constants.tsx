@@ -108,6 +108,45 @@ const FONT_SIZE = reduce(
   {},
 );
 
+const SPACE = reduce(
+  filter(keys(spaceTokens), (item) => item !== "default"),
+  (acc, prefix) => {
+    const columns = [
+      {
+        name: "Name",
+        transform: getTokenNameFromTuple(prefix),
+      },
+      { name: "Pixels", transform: getTokenComment },
+      { name: "Rems", transform: getTokenValue },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix,
+          attribute: "p",
+          children: (
+            <Box.div
+              backgroundColor="colorBackgroundPrimaryWeakest"
+              h="50px"
+              w="50px"
+            />
+          ),
+          componentProps: {
+            backgroundColor: "colorBackgroundPrimaryWeak",
+            display: "inline-flex",
+            justifyContent: "center",
+          },
+        }),
+      },
+    ];
+
+    return {
+      ...acc,
+      [prefix]: columns,
+    };
+  },
+  {},
+);
+
 export const TOKEN_COLUMNS: TokenColumnsProps = {
   [getTokenKey(borderRadiiTokens)]: [
     {
@@ -170,33 +209,7 @@ export const TOKEN_COLUMNS: TokenColumnsProps = {
       }),
     },
   ],
-  [getTokenKey(spaceTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(spaceTokens),
-    },
-    { name: "Pixels", transform: getTokenComment },
-    { name: "Rems", transform: getTokenValue },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(spaceTokens),
-        attribute: "p",
-        children: (
-          <Box.div
-            backgroundColor="colorBackgroundPrimaryWeakest"
-            h="50px"
-            w="50px"
-          />
-        ),
-        componentProps: {
-          backgroundColor: "colorBackgroundPrimaryWeak",
-          display: "inline-flex",
-          justifyContent: "center",
-        },
-      }),
-    },
-  ],
+
   [getTokenKey(iconSizeTokens)]: [
     {
       name: "Name",
@@ -240,6 +253,7 @@ export const TOKEN_COLUMNS: TokenColumnsProps = {
       }),
     },
   ],
+  ...SPACE,
   ...FONT_SIZE,
   ...COLORS,
 };

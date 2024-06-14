@@ -1,5 +1,6 @@
 import camelCase from "lodash/camelCase";
-import capitalize from "lodash/capitalize";
+import upperFirst from "lodash/upperFirst";
+import replace from "lodash/replace";
 import { TokenTuple } from "../types/TokenTuple";
 
 type TransformFn = (tuple: TokenTuple) => string;
@@ -7,5 +8,5 @@ type TransformFn = (tuple: TokenTuple) => string;
 export const getTokenNameFromTuple =
   (prefix: string): TransformFn =>
   ([tokenName]: TokenTuple) => {
-    return camelCase(`${prefix}${capitalize(tokenName)}`);
+    return `${camelCase(prefix)}${upperFirst(replace(tokenName, "-", ""))}`;
   };

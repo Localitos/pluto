@@ -29,7 +29,7 @@ export const createPreview =
   ([tokenName, token]: TokenTuple): JSX.Element => {
     const tokenProps = overrideProps[token.value];
     const normalizedSuffix = replace(
-      upperFirst(camelCase(tokenName)),
+      upperFirst(replace(tokenName, "-", "")),
       "Negative",
       "",
     );
