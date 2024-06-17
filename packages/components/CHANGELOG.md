@@ -1,5 +1,18 @@
 # @localyze-pluto/components
 
+## 43.0.0
+
+### Minor Changes
+
+- [#1635](https://github.com/Localitos/pluto/pull/1635) [`50c301d`](https://github.com/Localitos/pluto/commit/50c301d0bf5eee02db4c38078465657b6845bd13) Thanks [@rssilva](https://github.com/rssilva)! - Adding padding and margin tokens
+
+- [#1633](https://github.com/Localitos/pluto/pull/1633) [`45da19b`](https://github.com/Localitos/pluto/commit/45da19b859adcde471d7b9051e142c0b043f39c6) Thanks [@helfer1991](https://github.com/helfer1991)! - export send icon
+
+### Patch Changes
+
+- Updated dependencies [[`50c301d`](https://github.com/Localitos/pluto/commit/50c301d0bf5eee02db4c38078465657b6845bd13)]:
+  - @localyze-pluto/theme@31.0.0
+
 ## 42.0.0
 
 ### Patch Changes
