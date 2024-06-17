@@ -269,6 +269,46 @@ module.exports = {
           },
         },
         {
+          destination: "margin.js",
+          format: "jsPrefixFormatter",
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/margin.tokens.json" &&
+              includes(["m"], token.attributes.category)
+            );
+          },
+        },
+        {
+          destination: "margin.d.ts",
+          format: "jsPrefixFormatterTypes",
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/margin.tokens.json" &&
+              includes(["m"], token.attributes.category)
+            );
+          },
+        },
+        {
+          destination: "padding.js",
+          format: "jsPrefixFormatter",
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/padding.tokens.json" &&
+              includes(["p"], token.attributes.category)
+            );
+          },
+        },
+        {
+          destination: "padding.d.ts",
+          format: "jsPrefixFormatterTypes",
+          filter: (token) => {
+            return (
+              token.filePath === "src/tokens/padding.tokens.json" &&
+              includes(["p"], token.attributes.category)
+            );
+          },
+        },
+        {
           destination: "z-index.js",
           format: "javascript/es6",
           filter: {
