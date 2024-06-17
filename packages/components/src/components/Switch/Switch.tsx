@@ -98,7 +98,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             <Icon
               color="colorTextInverse"
               decorative
-              icon="CheckIcon"
+              icon="check"
               size="sizeIcon20"
             />
           </Box.span>
@@ -127,7 +127,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             <Icon
               color="colorTextInverse"
               decorative
-              icon="XMarkIcon"
+              icon="x"
               size="sizeIcon20"
             />
           </Box.span>

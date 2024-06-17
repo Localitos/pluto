@@ -46,7 +46,7 @@ describe("Button", () => {
 
       const renderWrapper = () => {
         return render(
-          <Button iconOnly leadingIcon="TrashIcon" variant="primary" />,
+          <Button iconOnly leadingIcon="trash-2" variant="primary" />,
         );
       };
 

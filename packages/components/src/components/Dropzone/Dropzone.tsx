@@ -80,18 +80,18 @@ const getIcon = (
   isDragAccept: boolean,
   isDragActive: boolean,
 ) => {
-  let icon: IconProps["icon"] = "CloudArrowUpIcon";
+  let icon: IconProps["icon"] = "cloud-upload";
   let iconColor: IconProps["color"] = "colorIconInfo";
   if (isLoading || isDragAccept) {
-    icon = "CloudArrowUpIcon";
+    icon = "cloud-upload";
     iconColor = "colorIconInfo";
   }
   if (successState && !isDragActive) {
-    icon = "CheckCircleIcon";
+    icon = "circle-check";
     iconColor = "colorIconSuccess";
   }
   if (errorState && !isDragActive) {
-    icon = "ExclamationTriangleIcon";
+    icon = "circle-alert";
     iconColor = "colorIconError";
   }
 

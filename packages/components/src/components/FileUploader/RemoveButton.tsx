@@ -23,7 +23,7 @@ export const RemoveButton = (props: Partial<ButtonProps>): ReactElement => {
       {...props}
       aria-label="Remove file"
       iconOnly
-      trailingIcon="TrashIcon"
+      trailingIcon="trash-2"
       type="button"
       variant="ghost"
     />

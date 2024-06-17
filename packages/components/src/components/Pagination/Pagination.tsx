@@ -64,7 +64,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
             aria-label="Previous page"
             disabled={currentPage === 1}
             iconOnly
-            leadingIcon="ChevronLeftIcon"
+            leadingIcon="chevron-left"
             onClick={prevPage}
             style={{ outlineColor: "colorBorderPrimary" }}
             variant="ghost"
@@ -106,7 +106,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
             aria-label="Next page"
             disabled={currentPage === pageCount}
             iconOnly
-            leadingIcon="ChevronRightIcon"
+            leadingIcon="chevron-right"
             onClick={nextPage}
             variant="ghost"
           />

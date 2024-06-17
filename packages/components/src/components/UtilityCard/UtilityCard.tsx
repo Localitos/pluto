@@ -111,7 +111,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
       </Box.div>
 
       <Box.div margin="space30">
-        <Icon decorative icon="ChevronRightIcon" size="sizeIcon20" />
+        <Icon decorative icon="chevron-right" size="sizeIcon20" />
       </Box.div>
     </Box.div>
   );

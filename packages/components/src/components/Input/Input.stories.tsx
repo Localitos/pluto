@@ -177,7 +177,7 @@ export const LeadingIcon = (): JSX.Element => {
       <Input
         aria-describedby={helpTextID}
         id={inputID}
-        leadingIcon="InformationCircleIcon"
+        leadingIcon="info"
         name="input"
         type="text"
         value="Text input"
@@ -197,7 +197,7 @@ export const TrailingIcon = (): JSX.Element => {
         aria-describedby={helpTextID}
         id={inputID}
         name="input"
-        trailingIcon="MagnifyingGlassIcon"
+        trailingIcon="search"
         type="text"
         value="Text input"
       />
@@ -215,9 +215,9 @@ export const LeadingIconAndTrailingIcon = (): JSX.Element => {
       <Input
         aria-describedby={helpTextID}
         id={inputID}
-        leadingIcon="InformationCircleIcon"
+        leadingIcon="info"
         name="input"
-        trailingIcon="MagnifyingGlassIcon"
+        trailingIcon="search"
         type="text"
         value="Text input"
       />
@@ -235,7 +235,7 @@ export const LargeLeadingIcon = (): JSX.Element => {
       <Input
         aria-describedby={helpTextID}
         id={inputID}
-        leadingIcon="InformationCircleIcon"
+        leadingIcon="info"
         name="input"
         size="large"
         type="text"
@@ -257,7 +257,7 @@ export const LargeTrailingIcon = (): JSX.Element => {
         id={inputID}
         name="input"
         size="large"
-        trailingIcon="MagnifyingGlassIcon"
+        trailingIcon="search"
         type="text"
         value="Text input"
       />
@@ -275,10 +275,10 @@ export const LargeLeadingIconAndTrailingIcon = (): JSX.Element => {
       <Input
         aria-describedby={helpTextID}
         id={inputID}
-        leadingIcon="InformationCircleIcon"
+        leadingIcon="info"
         name="input"
         size="large"
-        trailingIcon="MagnifyingGlassIcon"
+        trailingIcon="search"
         type="text"
         value="Text input"
       />

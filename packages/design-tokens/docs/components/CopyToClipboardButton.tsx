@@ -24,7 +24,7 @@ const CopyToClipboardButton = ({ textToCopy }: IconProps): JSX.Element => {
         ) : (
           <Icon
             decorative
-            icon="DocumentDuplicateIcon"
+            icon="copy"
             onClick={() => {
               setOnCopyClick(true);
               return copyToClipboard(textToCopy);

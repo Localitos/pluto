@@ -1,11 +1,8 @@
 import React from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Box } from "../../primitives/Box";
-import * as HeroOutlineIcons from "./HeroIcons";
 import { IconName } from "./types/IconName";
 import { LucideIcons } from "./LucideIcons";
-import { isHeroIcon } from "./utils/isHeroIcon";
-import { isLucideIcon } from "./utils/isLucideIcon";
 
 export interface IconProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
@@ -44,15 +41,6 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
       throw new Error(`${icon}: Missing a title for non-decorative icon.`);
     }
 
-    let RenderedIcon = undefined;
-
-    if (isHeroIcon(icon)) {
-      // eslint-disable-next-line import/namespace
-      RenderedIcon = HeroOutlineIcons[icon];
-    } else if (isLucideIcon(icon)) {
-      RenderedIcon = LucideIcons[icon];
-    }
-
     return (
       <Box.div
         as={as}
@@ -66,7 +54,7 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
         <Box.svg
           aria-hidden={decorative}
           aria-label={title}
-          as={RenderedIcon}
+          as={LucideIcons[icon]}
           display="block"
           h={size}
           verticalAlign="middle"

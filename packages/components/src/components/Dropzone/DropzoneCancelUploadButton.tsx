@@ -9,7 +9,7 @@ export const DropzoneCancelUploadButton = (
       {...props}
       aria-label="Cancel upload"
       iconOnly
-      trailingIcon="XMarkIcon"
+      trailingIcon="x"
       variant="ghost"
     />
   );

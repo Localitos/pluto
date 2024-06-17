@@ -38,6 +38,7 @@ export type LucideIconName =
   | "copy"
   | "credit-card"
   | "earth"
+  | "ellipsis-vertical"
   | "eye"
   | "file-bar-chart"
   | "file-plus-2"

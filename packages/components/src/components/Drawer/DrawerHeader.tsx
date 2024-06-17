@@ -30,7 +30,7 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, DrawerHeaderProps>(
               <Button
                 aria-label="Close drawer"
                 iconOnly
-                leadingIcon="XMarkIcon"
+                leadingIcon="x"
                 variant="ghost"
               />
             }

@@ -69,14 +69,14 @@ export const WithLeadingIcon = Template.bind({});
 WithLeadingIcon.args = {
   children: "Button with icon",
   size: "small",
-  leadingIcon: "ArrowTopRightOnSquareIcon",
+  leadingIcon: "square-arrow-out-up-right",
 };
 
 export const WithTrailingIcon = Template.bind({});
 WithTrailingIcon.args = {
   children: "Button with icon",
   size: "large",
-  trailingIcon: "ArrowTopRightOnSquareIcon",
+  trailingIcon: "square-arrow-out-up-right",
 };
 
 export const AsLink = Template.bind({});
@@ -124,7 +124,7 @@ export const FullWidth: React.FC = () => (
       return (
         <Button
           fullWidth
-          leadingIcon="ArrowTopRightOnSquareIcon"
+          leadingIcon="square-arrow-out-up-right"
           variant={variant}
         >
           Full width button
@@ -136,7 +136,7 @@ export const FullWidth: React.FC = () => (
 
 export const IconOnly = Template.bind({});
 IconOnly.args = {
-  leadingIcon: "TrashIcon",
+  leadingIcon: "trash-2",
   iconOnly: true,
   size: "large",
   "aria-label": "Delete",

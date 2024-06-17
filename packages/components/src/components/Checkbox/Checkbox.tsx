@@ -25,12 +25,7 @@ const StyledCheckboxIndicator = styled.span`
 export const CheckIndicator = (): React.ReactElement => {
   return (
     <StyledCheckboxIndicator as={RadixIndicator}>
-      <Icon
-        color="colorBackground"
-        decorative
-        icon="CheckIcon"
-        size="sizeIcon20"
-      />
+      <Icon color="colorBackground" decorative icon="check" size="sizeIcon20" />
     </StyledCheckboxIndicator>
   );
 };
@@ -38,12 +33,7 @@ export const CheckIndicator = (): React.ReactElement => {
 export const IndeterminateIndicator = (): React.ReactElement => {
   return (
     <StyledCheckboxIndicator as={RadixIndicator}>
-      <Icon
-        color="colorBackground"
-        decorative
-        icon="MinusSmallIcon"
-        size="sizeIcon20"
-      />
+      <Icon color="colorBackground" decorative icon="minus" size="sizeIcon20" />
     </StyledCheckboxIndicator>
   );
 };

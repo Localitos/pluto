@@ -72,25 +72,25 @@ const getIconVariantProps = (
     case "error": {
       return {
         color: "colorIconError",
-        icon: "XCircleIcon",
+        icon: "circle-x",
       };
     }
     case "warning": {
       return {
         color: "colorIconWarning",
-        icon: "ExclamationTriangleIcon",
+        icon: "circle-alert",
       };
     }
     case "success": {
       return {
         color: "colorIconSuccess",
-        icon: "CheckCircleIcon",
+        icon: "circle-check",
       };
     }
     default: {
       return {
         color: "colorIconInfo",
-        icon: "InformationCircleIcon",
+        icon: "info",
       };
     }
   }

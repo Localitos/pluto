@@ -17,7 +17,7 @@ Default.args = {
 export const DefaultBadgeWithIcon = Template.bind({});
 DefaultBadgeWithIcon.args = {
   children: "Blue badge",
-  icon: "EyeIcon",
+  icon: "eye",
 };
 
 export const Gray = Template.bind({});
@@ -60,13 +60,13 @@ export const LargeBadgeWithIcon = Template.bind({});
 LargeBadgeWithIcon.args = {
   children: "Large badge with Icon",
   size: "large",
-  icon: "CheckCircleIcon",
+  icon: "circle-check",
 };
 
 export const LargeYellowBadgeWithIcon = Template.bind({});
 LargeYellowBadgeWithIcon.args = {
   children: "Large badge with icon",
-  icon: "CheckCircleIcon",
+  icon: "circle-check",
   size: "large",
   color: "yellow",
 };
