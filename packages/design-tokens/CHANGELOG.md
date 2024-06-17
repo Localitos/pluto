@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.23.0
+
+### Minor Changes
+
+- [#1636](https://github.com/Localitos/pluto/pull/1636) [`84050ee`](https://github.com/Localitos/pluto/commit/84050ee1c5d59c5d1907e3f90a20905909f49bbf) Thanks [@rssilva](https://github.com/rssilva)! - Remove @heroicons/react as a dependency
+
 ## 1.22.0
 
 ### Minor Changes

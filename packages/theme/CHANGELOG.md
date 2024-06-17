@@ -1,5 +1,12 @@
 # @localyze-pluto/theme
 
+## 32.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`84050ee`](https://github.com/Localitos/pluto/commit/84050ee1c5d59c5d1907e3f90a20905909f49bbf)]:
+  - @localyze-pluto/design-tokens@1.23.0
+
 ## 31.0.0
 
 ### Minor Changes
