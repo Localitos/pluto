@@ -73,6 +73,7 @@ export type LucideIconName =
   | "rocket"
   | "save"
   | "search"
+  | "send"
   | "settings-2"
   | "shield-alert"
   | "slack"
