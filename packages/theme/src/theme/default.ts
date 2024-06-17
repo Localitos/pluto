@@ -13,6 +13,8 @@ import {
   LineHeightTokens,
   SizeTokens,
   SpaceTokens,
+  MarginTokens,
+  PaddingTokens,
   ZIndexTokens,
 } from "@localyze-pluto/design-tokens";
 
@@ -62,6 +64,13 @@ export const theme = {
   },
   space: {
     ...SpaceTokens,
+    ...MarginTokens,
+  },
+  margins: {
+    ...MarginTokens,
+  },
+  paddings: {
+    ...PaddingTokens,
   },
   states: {
     ...defaultTheme.states,

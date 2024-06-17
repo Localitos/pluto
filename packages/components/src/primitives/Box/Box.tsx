@@ -38,16 +38,35 @@ export interface BoxProps extends SystemProps {
   gridRowGap?: SystemProp<keyof Theme["space"], Theme>;
   gridColumnGap?: SystemProp<keyof Theme["space"], Theme>;
   lineHeight?: SystemProp<keyof Theme["lineHeights"], Theme> | "inherit";
-  margin?: SystemProp<keyof Theme["space"], Theme>;
-  marginTop?: SystemProp<keyof Theme["space"], Theme>;
-  marginRight?: SystemProp<keyof Theme["space"], Theme> | "auto";
-  marginBottom?: SystemProp<keyof Theme["space"], Theme>;
-  marginLeft?: SystemProp<keyof Theme["space"], Theme> | "auto";
-  padding?: SystemProp<keyof Theme["space"], Theme>;
-  paddingTop?: SystemProp<keyof Theme["space"], Theme>;
-  paddingRight?: SystemProp<keyof Theme["space"], Theme>;
-  paddingBottom?: SystemProp<keyof Theme["space"], Theme>;
-  paddingLeft?: SystemProp<keyof Theme["space"], Theme>;
+  margin?: SystemProp<keyof Theme["margins"] | keyof Theme["space"], Theme>;
+  marginTop?: SystemProp<keyof Theme["margins"] | keyof Theme["space"], Theme>;
+  marginRight?:
+    | SystemProp<keyof Theme["margins"] | keyof Theme["space"], Theme>
+    | "auto";
+  marginBottom?: SystemProp<
+    keyof Theme["margins"] | keyof Theme["space"],
+    Theme
+  >;
+  marginLeft?:
+    | SystemProp<keyof Theme["margins"] | keyof Theme["space"], Theme>
+    | "auto";
+  padding?: SystemProp<keyof Theme["paddings"] | keyof Theme["space"], Theme>;
+  paddingTop?: SystemProp<
+    keyof Theme["paddings"] | keyof Theme["space"],
+    Theme
+  >;
+  paddingRight?: SystemProp<
+    keyof Theme["paddings"] | keyof Theme["space"],
+    Theme
+  >;
+  paddingBottom?: SystemProp<
+    keyof Theme["paddings"] | keyof Theme["space"],
+    Theme
+  >;
+  paddingLeft?: SystemProp<
+    keyof Theme["paddings"] | keyof Theme["space"],
+    Theme
+  >;
   zIndex?: SystemProp<keyof Theme["zIndices"], Theme>;
 }
 

@@ -8,4 +8,6 @@ export * as FontWeightTokens from "../dist/js/font-weight";
 export * as LineHeightTokens from "../dist/js/line-height";
 export * as SizeTokens from "../dist/js/size";
 export * as SpaceTokens from "../dist/js/space";
+export * as MarginTokens from "../dist/js/margin";
+export * as PaddingTokens from "../dist/js/padding";
 export * as ZIndexTokens from "../dist/js/z-index";

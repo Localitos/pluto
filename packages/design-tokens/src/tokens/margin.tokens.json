@@ -1,0 +1,40 @@
+{
+  "m": {
+    "0": {
+      "value": "{d.0}",
+      "comment": "0"
+    },
+    "1": {
+      "value": "{d.1}",
+      "comment": "4px"
+    },
+    "1_5": {
+      "value": "{d.1_5}",
+      "comment": "6px"
+    },
+    "2": {
+      "value": "{d.2}",
+      "comment": "8px"
+    },
+    "3": {
+      "value": "{d.3}",
+      "comment": "12px"
+    },
+    "4": {
+      "value": "{d.4}",
+      "comment": "16px"
+    },
+    "6": {
+      "value": "{d.6}",
+      "comment": "24px"
+    },
+    "8": {
+      "value": "{d.8}",
+      "comment": "32px"
+    },
+    "12": {
+      "value": "{d.12}",
+      "comment": "48px"
+    }
+  }
+}
