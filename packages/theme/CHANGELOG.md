@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 31.0.0
+
+### Minor Changes
+
+- [#1635](https://github.com/Localitos/pluto/pull/1635) [`50c301d`](https://github.com/Localitos/pluto/commit/50c301d0bf5eee02db4c38078465657b6845bd13) Thanks [@rssilva](https://github.com/rssilva)! - Adding padding and margin tokens
+
+### Patch Changes
+
+- Updated dependencies [[`50c301d`](https://github.com/Localitos/pluto/commit/50c301d0bf5eee02db4c38078465657b6845bd13)]:
+  - @localyze-pluto/design-tokens@1.22.0
+
 ## 30.0.0
 
 ### Patch Changes
