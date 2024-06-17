@@ -3,11 +3,11 @@ import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import map from "lodash/map";
 import keys from "lodash/keys";
-import * as HeroOutlineIcons from "../Icon/HeroIcons";
 import { Box } from "../../primitives/Box";
 import { Paragraph } from "../../components/Paragraph";
 import { Icon } from "./Icon";
 import { LucideIcons } from "./LucideIcons";
+import { LucideIconName } from "./types/LucideIconName";
 
 export default {
   component: Icon,
@@ -18,7 +18,7 @@ const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  icon: "PaperClipIcon",
+  icon: "paperclip",
   title: "PaperClip Icon",
 };
 
@@ -30,16 +30,7 @@ WithLucideIcons.args = {
 };
 
 const getIconNamesArray = () => {
-  const heroIconsArray = [];
-  const lucideIconsNames = keys(LucideIcons);
-
-  for (const [key] of Object.entries(HeroOutlineIcons)) {
-    if (key !== "default") {
-      heroIconsArray.push(key);
-    }
-  }
-
-  return [...heroIconsArray, ...lucideIconsNames];
+  return keys(LucideIcons);
 };
 
 export const IconList: React.FC = () => {
@@ -52,7 +43,7 @@ export const IconList: React.FC = () => {
       gridTemplateColumns="repeat(4, 1fr);"
       maxWidth="680px"
     >
-      {map(iconNames, (value: keyof typeof HeroOutlineIcons) => {
+      {map(iconNames, (value: LucideIconName) => {
         return (
           <Box.div
             borderColor="colorBorder"

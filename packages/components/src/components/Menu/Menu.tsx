@@ -26,7 +26,7 @@ const VerticalEllipsisButton = (
   <Button
     aria-label="Open menu"
     iconOnly
-    leadingIcon="EllipsisVerticalIcon"
+    leadingIcon="ellipsis-vertical"
     type="button"
     variant="ghost"
   />

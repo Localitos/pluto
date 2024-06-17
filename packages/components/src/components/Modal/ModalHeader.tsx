@@ -31,7 +31,7 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
               <Button
                 aria-label="Close modal"
                 iconOnly
-                leadingIcon="XMarkIcon"
+                leadingIcon="x"
                 variant="ghost"
               />
             }

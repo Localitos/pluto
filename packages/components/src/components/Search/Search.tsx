@@ -42,7 +42,7 @@ const Search = React.forwardRef<HTMLInputElement, SearchProps>(
         </Box.span>
         <Input
           id={seachInputId}
-          leadingIcon="MagnifyingGlassIcon"
+          leadingIcon="search"
           ref={ref}
           type="search"
           {...props}

@@ -225,7 +225,7 @@ export const TOKEN_COLUMNS: TokenColumnsProps = {
         componentProps: {
           decorative: true,
           display: "flex",
-          icon: "BookOpenIcon",
+          icon: "book-open",
         },
         attribute: "size",
         children: (

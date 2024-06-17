@@ -33,7 +33,7 @@ const Toast = React.forwardRef<HTMLLIElement, Omit<ToastProps, "ref">>(
         <Icon
           color={variant === "error" ? "colorIconError" : "colorIconSuccess"}
           decorative
-          icon={variant === "error" ? "XCircleIcon" : "CheckCircleIcon"}
+          icon={variant === "error" ? "circle-x" : "circle-check"}
           size="sizeIcon30"
         />
 
@@ -73,7 +73,7 @@ const Toast = React.forwardRef<HTMLLIElement, Omit<ToastProps, "ref">>(
             as="button"
             color="colorIconWeak"
             decorative={false}
-            icon="XMarkIcon"
+            icon="x"
             size="sizeIcon30"
             style={{ paddingLeft: 0 }}
             title="Close toast"

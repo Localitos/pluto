@@ -30,7 +30,7 @@ const HelpText = React.forwardRef<HTMLSpanElement, HelpTextProps>(
           <Icon
             color="colorIconError"
             decorative
-            icon="XCircleIcon"
+            icon="circle-x"
             size="sizeIcon20"
           />
         )}

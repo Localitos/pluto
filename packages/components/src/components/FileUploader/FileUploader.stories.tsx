@@ -23,7 +23,7 @@ Default.args = {
   children: (
     <FileUploaderButton
       accept=".pdf,.docx"
-      trailingIcon="ArrowUpTrayIcon"
+      trailingIcon="arrow-up-from-line"
       variant="secondary"
     >
       Upload
@@ -41,7 +41,7 @@ Multiline.args = {
     "Certificate of valid health insurance (travel health insurance with minimum coverage of 30.000 € and valid during visa timeframe)",
   fileSize: "2MB",
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton trailingIcon="arrow-up-from-line" variant="secondary">
       Upload
     </FileUploaderButton>
   ),
@@ -57,7 +57,7 @@ Loading.args = {
   fileName: "file_to_upload_with_a_long_name_v2.pdf",
   progress: 50,
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton trailingIcon="arrow-up-from-line" variant="secondary">
       Upload
     </FileUploaderButton>
   ),
@@ -74,7 +74,7 @@ Success.args = {
   fileName: "my_passport_scap.pdf",
   fileUrl: FILE_URL,
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton trailingIcon="arrow-up-from-line" variant="secondary">
       Upload
     </FileUploaderButton>
   ),
@@ -89,7 +89,7 @@ SuccessWithoutFileInfo.args = {
   label: "Passport scan",
   fileUrl: FILE_URL,
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton trailingIcon="arrow-up-from-line" variant="secondary">
       Upload
     </FileUploaderButton>
   ),
@@ -106,7 +106,7 @@ WithError.args = {
   fileSize: "7MB",
   errorMessage: "File size is too large. You can upload files up to 5MB.",
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton trailingIcon="arrow-up-from-line" variant="secondary">
       Upload
     </FileUploaderButton>
   ),
@@ -122,7 +122,7 @@ DisabledWithoutFile.args = {
   maxFileSize: "3MB",
   disabled: true,
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton trailingIcon="arrow-up-from-line" variant="secondary">
       Upload
     </FileUploaderButton>
   ),
@@ -139,7 +139,7 @@ DisabledWithFile.args = {
   maxFileSize: "3MB",
   disabled: true,
   children: (
-    <FileUploaderButton trailingIcon="ArrowUpTrayIcon" variant="secondary">
+    <FileUploaderButton trailingIcon="arrow-up-from-line" variant="secondary">
       Upload
     </FileUploaderButton>
   ),

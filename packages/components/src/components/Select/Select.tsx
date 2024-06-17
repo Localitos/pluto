@@ -224,7 +224,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
               render={
                 <Icon
                   decorative
-                  icon="ChevronDownIcon"
+                  icon="chevron-down"
                   size={size === "large" ? "sizeIcon30" : "sizeIcon20"}
                 />
               }

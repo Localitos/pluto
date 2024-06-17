@@ -4,14 +4,14 @@ import { Icon } from "./Icon";
 
 describe("<Icon />", () => {
   it("renders correctly", () => {
-    render(<Icon data-testid="icon" decorative icon="CheckCircleIcon" />);
+    render(<Icon data-testid="icon" decorative icon="circle-check" />);
     const renderedIcon = screen.getByTestId("icon");
     expect(renderedIcon).toBeInTheDocument();
   });
 
   it("renders wrapper according 'as' property", () => {
     render(
-      <Icon as="span" data-testid="icon" decorative icon="CheckCircleIcon" />,
+      <Icon as="span" data-testid="icon" decorative icon="circle-check" />,
     );
 
     const renderedIcon = screen.getByTestId("icon");

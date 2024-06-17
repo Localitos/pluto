@@ -36,18 +36,18 @@ const getIconProps = (
   icon: IconName;
 } => {
   if (disabled && status !== "success") {
-    return { icon: "CloudArrowUpIcon", color: "colorTextStronger" };
+    return { icon: "cloud-upload", color: "colorTextStronger" };
   }
 
   switch (status) {
     case "success": {
-      return { icon: "PaperClipIcon", color: "colorTextSuccess" };
+      return { icon: "paperclip", color: "colorTextSuccess" };
     }
     case "error": {
-      return { icon: "XCircleIcon", color: "colorTextError" };
+      return { icon: "circle-x", color: "colorTextError" };
     }
     default: {
-      return { icon: "CloudArrowUpIcon", color: "colorTextLink" };
+      return { icon: "cloud-upload", color: "colorTextLink" };
     }
   }
 };
