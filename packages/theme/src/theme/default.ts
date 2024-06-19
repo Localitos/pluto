@@ -65,6 +65,7 @@ export const theme = {
   space: {
     ...SpaceTokens,
     ...MarginTokens,
+    ...PaddingTokens,
   },
   margins: {
     ...MarginTokens,
