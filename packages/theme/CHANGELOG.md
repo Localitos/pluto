@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 32.1.0
+
+### Minor Changes
+
+- [#1642](https://github.com/Localitos/pluto/pull/1642) [`8f43329`](https://github.com/Localitos/pluto/commit/8f43329c6222f5633b599477c7f8d3b0270c22e2) Thanks [@rssilva](https://github.com/rssilva)! - Export padding tokens as space tokens to be possible to apply than on the components
+
 ## 32.0.0
 
 ### Patch Changes
