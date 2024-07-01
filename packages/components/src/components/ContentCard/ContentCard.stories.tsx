@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
+import { Button } from "../Button";
 import { ContentCard, InteractiveElementType } from "./ContentCard";
 
 export default {
@@ -34,14 +35,14 @@ export const WithButton: Story = Template.bind({});
 WithButton.args = {
   ...defaultProps,
   interactiveElementType: InteractiveElementType.Button,
-  ctaText: "Go to Page",
+  callToAction: "Go to Page",
   href,
 };
 
 export const WithAnchor: Story = Template.bind({});
 WithAnchor.args = {
   ...defaultProps,
-  ctaText: "This is an Anchor",
+  callToAction: "This is an Anchor",
   interactiveElementType: InteractiveElementType.Anchor,
   href,
 };
@@ -58,7 +59,7 @@ WithTargetBlank.args = {
   ...defaultProps,
   interactiveElementType: InteractiveElementType.Anchor,
   href,
-  ctaText: "This is an Anchor",
+  callToAction: "This is an Anchor",
   target: "_blank",
 };
 
@@ -72,6 +73,18 @@ export const ImageOnTop: Story = Template.bind({});
 ImageOnTop.args = {
   ...defaultProps,
   imagePosition: "top",
+};
+
+export const CustomCta: Story = Template.bind({});
+CustomCta.args = {
+  ...defaultProps,
+  callToAction: (
+    <Button fullWidth loading variant="primary">
+      Custom CTA
+    </Button>
+  ),
+  imagePosition: "top",
+  interactiveElementType: InteractiveElementType.Custom,
 };
 
 export const WithIcon: Story = Template.bind({});

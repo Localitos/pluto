@@ -63,7 +63,7 @@ describe("<ContentCard>", () => {
   it('renders button as link when interactive element type is "button"', () => {
     render(
       <ContentCardMock
-        ctaText="Go to Page"
+        callToAction="Go to Page"
         href={HREF}
         interactiveElementType={InteractiveElementType.Button}
       />,
@@ -73,10 +73,30 @@ describe("<ContentCard>", () => {
     expect(cardButton).toHaveAttribute("href", HREF);
   });
 
+  it("renders custom call to action", async () => {
+    const user = userEvent.setup();
+    const onClickSpy = jest.fn();
+
+    render(
+      <ContentCardMock
+        callToAction={<button onClick={onClickSpy}>anything!</button>}
+        href={HREF}
+        interactiveElementType={InteractiveElementType.Custom}
+      />,
+    );
+
+    const cardButton = screen.getByRole("button", { name: "anything!" });
+    expect(cardButton).toBeVisible();
+
+    await user.click(cardButton);
+
+    expect(onClickSpy).toHaveBeenCalled();
+  });
+
   it('renders anchor as link when interactive element type is "anchor"', () => {
     render(
       <ContentCardMock
-        ctaText="This is an Anchor"
+        callToAction="This is an Anchor"
         href={HREF}
         interactiveElementType={InteractiveElementType.Anchor}
       />,
@@ -89,7 +109,7 @@ describe("<ContentCard>", () => {
   it("renders interactive element with target blank when target is passed", () => {
     render(
       <ContentCardMock
-        ctaText="This is an Anchor"
+        callToAction="This is an Anchor"
         href={HREF}
         interactiveElementType={InteractiveElementType.Anchor}
         target="_blank"
