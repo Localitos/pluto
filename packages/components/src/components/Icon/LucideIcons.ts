@@ -96,6 +96,7 @@ import {
   X,
   ShoppingBag,
   Ticket,
+  List,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
 
@@ -151,6 +152,7 @@ export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   info: Info,
   lightbulb: Lightbulb,
   link: Link,
+  list: List,
   "list-plus": ListPlus,
   "log-out": LogOut,
   luggage: Luggage,

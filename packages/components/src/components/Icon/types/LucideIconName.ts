@@ -51,6 +51,7 @@ export type LucideIconName =
   | "lightbulb"
   | "link"
   | "list-plus"
+  | "list"
   | "log-out"
   | "luggage"
   | "mail-plus"
