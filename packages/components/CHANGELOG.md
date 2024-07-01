@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 45.1.0
+
+### Minor Changes
+
+- [#1646](https://github.com/Localitos/pluto/pull/1646) [`8901b56`](https://github.com/Localitos/pluto/commit/8901b56f6802ef88f10cf3fb9711d1273da53d16) Thanks [@apvale](https://github.com/apvale)! - Add new "list" icon
+
 ## 45.0.0
 
 ### Patch Changes
