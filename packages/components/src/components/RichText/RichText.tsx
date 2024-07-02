@@ -1,6 +1,6 @@
 import * as React from "react";
 import parse, { HTMLReactParserOptions, domToReact } from "html-react-parser";
-import type { Element } from "html-react-parser";
+import type { DOMNode, Element } from "html-react-parser";
 import toUpper from "lodash/toUpper";
 import { Heading } from "../Heading";
 import { Paragraph } from "../Paragraph";
@@ -34,48 +34,50 @@ const RichText = ({
           case "A": {
             return (
               <Anchor href={attribs.href} isExternal={externalAnchors}>
-                {domToReact(children, options)}
+                {domToReact(children as DOMNode[], options)}
               </Anchor>
             );
           }
           case "CODE": {
-            return <code>{domToReact(children, options)}</code>;
+            return <code>{domToReact(children as DOMNode[], options)}</code>;
           }
           case "H1": {
             return (
               <Heading as="h1" size="heading10">
-                {domToReact(children, options)}
+                {domToReact(children as DOMNode[], options)}
               </Heading>
             );
           }
           case "H2": {
-            return <Heading>{domToReact(children, options)}</Heading>;
+            return (
+              <Heading>{domToReact(children as DOMNode[], options)}</Heading>
+            );
           }
           case "H3": {
             return (
               <Heading as="h3" size="heading30">
-                {domToReact(children, options)}
+                {domToReact(children as DOMNode[], options)}
               </Heading>
             );
           }
           case "H4": {
             return (
               <Heading as="h4" size="heading40">
-                {domToReact(children, options)}
+                {domToReact(children as DOMNode[], options)}
               </Heading>
             );
           }
           case "H5": {
             return (
               <Heading as="h5" size="heading50">
-                {domToReact(children, options)}
+                {domToReact(children as DOMNode[], options)}
               </Heading>
             );
           }
           case "H6": {
             return (
               <Heading as="h6" size="heading60">
-                {domToReact(children, options)}
+                {domToReact(children as DOMNode[], options)}
               </Heading>
             );
           }
@@ -83,27 +85,41 @@ const RichText = ({
             return <hr />;
           }
           case "P": {
-            return <Paragraph>{domToReact(children, options)}</Paragraph>;
+            return (
+              <Paragraph>
+                {domToReact(children as DOMNode[], options)}
+              </Paragraph>
+            );
           }
           case "OL": {
-            return <OrderedList>{domToReact(children, options)}</OrderedList>;
+            return (
+              <OrderedList>
+                {domToReact(children as DOMNode[], options)}
+              </OrderedList>
+            );
           }
           case "UL": {
             return (
-              <UnorderedList>{domToReact(children, options)}</UnorderedList>
+              <UnorderedList>
+                {domToReact(children as DOMNode[], options)}
+              </UnorderedList>
             );
           }
           case "LI": {
-            return <ListItem>{domToReact(children, options)}</ListItem>;
+            return (
+              <ListItem>{domToReact(children as DOMNode[], options)}</ListItem>
+            );
           }
           case "B": {
-            return <strong>{domToReact(children, options)}</strong>;
+            return (
+              <strong>{domToReact(children as DOMNode[], options)}</strong>
+            );
           }
           case "BR": {
             return <br />;
           }
           default: {
-            return <span>{domToReact(children, options)}</span>;
+            return <span>{domToReact(children as DOMNode[], options)}</span>;
           }
         }
       }
