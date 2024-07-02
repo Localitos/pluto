@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Theme matches the default theme 1`] = `
-Object {
-  "animations": Object {
+{
+  "animations": {
     "bounce": "x-bounce 1s infinite",
     "ping": "x-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
     "pulse": "x-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
     "spin": "x-spin 1s linear infinite",
   },
-  "borderStyles": Object {
+  "borderStyles": {
     "borderStyleDashed": "dashed",
     "borderStyleSolid": "solid",
     "none": "none",
   },
-  "borderWidths": Object {
+  "borderWidths": {
     "borderWidth0": "0px",
     "borderWidth10": "1px",
     "borderWidth20": "2px",
     "borderWidth30": "3px",
     "borderWidth60": "6px",
   },
-  "borders": Object {
+  "borders": {
     "default": "1px solid transparent",
   },
-  "colors": Object {
+  "colors": {
     "bgBodyMain": "#F7F9FF",
     "bgBodyTalent": "#27313F",
     "bgError": "#FEF2F2",
@@ -199,14 +199,14 @@ Object {
     "yellow500": "#D98C06",
     "yellow600": "#B05C09",
   },
-  "durations": Object {
+  "durations": {
     "fast-in": "250ms",
     "fast-out": "200ms",
     "instant": "100ms",
     "slow-in": "300ms",
     "slow-out": "250ms",
   },
-  "fontSizes": Object {
+  "fontSizes": {
     "fontSize10": "0.75rem",
     "fontSize20": "0.875rem",
     "fontSize30": "1rem",
@@ -223,16 +223,16 @@ Object {
     "titleSection": "1.5rem",
     "titleSubsection": "1.25rem",
   },
-  "fontWeights": Object {
+  "fontWeights": {
     "fontWeightBold": "700",
     "fontWeightLight": "300",
     "fontWeightMedium": "500",
     "fontWeightRegular": "400",
   },
-  "fonts": Object {
+  "fonts": {
     "fontFamilyNotoSans": "'Noto Sans', sans-serif",
   },
-  "gridTemplateColumns": Object {
+  "gridTemplateColumns": {
     "1": "repeat(1, minmax(0, 1fr))",
     "10": "repeat(10, minmax(0, 1fr))",
     "11": "repeat(11, minmax(0, 1fr))",
@@ -246,7 +246,7 @@ Object {
     "8": "repeat(8, minmax(0, 1fr))",
     "9": "repeat(9, minmax(0, 1fr))",
   },
-  "gridTemplateRows": Object {
+  "gridTemplateRows": {
     "1": "repeat(1, minmax(0, 1fr))",
     "2": "repeat(2, minmax(0, 1fr))",
     "3": "repeat(3, minmax(0, 1fr))",
@@ -254,7 +254,7 @@ Object {
     "5": "repeat(5, minmax(0, 1fr))",
     "6": "repeat(6, minmax(0, 1fr))",
   },
-  "letterSpacings": Object {
+  "letterSpacings": {
     "normal": "0em",
     "tight": "-0.025em",
     "tighter": "-0.05em",
@@ -262,7 +262,7 @@ Object {
     "wider": "0.05em",
     "widest": "0.1em",
   },
-  "lineHeights": Object {
+  "lineHeights": {
     "lh10": "2.5rem",
     "lh12": "3rem",
     "lh4": "1rem",
@@ -282,7 +282,7 @@ Object {
     "lineHeight80": "3rem",
     "lineHeight90": "3.375rem",
   },
-  "margins": Object {
+  "margins": {
     "m0": "0",
     "m1": "0.25rem",
     "m12": "3rem",
@@ -293,7 +293,7 @@ Object {
     "m6": "1.5rem",
     "m8": "2rem",
   },
-  "paddings": Object {
+  "paddings": {
     "p0": "0",
     "p0_5": "0.125rem",
     "p1": "0.25rem",
@@ -308,7 +308,7 @@ Object {
     "p6": "1.5rem",
     "p8": "2rem",
   },
-  "radii": Object {
+  "radii": {
     "borderRadius0": "0px",
     "borderRadius10": "4px",
     "borderRadius20": "6px",
@@ -319,10 +319,10 @@ Object {
     "borderRadiusCircle": "50%",
     "borderRadiusPill": "100px",
   },
-  "ringWidths": Object {
+  "ringWidths": {
     "default": 3,
   },
-  "screens": Object {
+  "screens": {
     "2xl": 1536,
     "_": 0,
     "lg": 1024,
@@ -331,13 +331,13 @@ Object {
     "xl": 1280,
     "xs": 0,
   },
-  "shadows": Object {
+  "shadows": {
     "none": "none",
     "shadow": "0px 3px 24px rgba(15, 23, 42, 0.05)",
     "shadowFocus": "0px 1px 2px rgba(0, 0, 0, 0.05), 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #102EE9",
     "shadowStrong": "0px 8px 24px rgba(15, 23, 42, 0.08)",
   },
-  "sizes": Object {
+  "sizes": {
     "sizeIcon10": "0.75rem",
     "sizeIcon100": "3rem",
     "sizeIcon110": "3.25rem",
@@ -355,7 +355,7 @@ Object {
     "sizeIcon80": "2.5rem",
     "sizeIcon90": "2.75rem",
   },
-  "space": Object {
+  "space": {
     "d0": "0",
     "d0_25": "0.0625rem",
     "d0_5": "0.125rem",
@@ -451,97 +451,97 @@ Object {
     "spaceNegative80": "-1.75rem",
     "spaceNegative90": "-2rem",
   },
-  "states": Object {
+  "states": {
     "_": null,
     "active": "&:active",
     "activeItem": "&[data-active-item]",
     "backdrop": "&[data-backdrop]",
-    "checked": "&:checked, &[aria-checked=\\"true\\"], &[data-state=\\"checked\\"]",
+    "checked": "&:checked, &[aria-checked="true"], &[data-state="checked"]",
     "disabled": "&:disabled, &[aria-disabled=true]",
     "even": "&:nth-child(even)",
     "first": "&:first-child",
     "focus": "&:focus",
     "focusVisible": "&:focus-visible",
     "focusWithin": "&:focus-within",
-    "hidden": "&[data-hidden=\\"true\\"]",
+    "hidden": "&[data-hidden="true"]",
     "hover": "&:hover",
     "last": "&:last-child",
-    "loading": "&[aria-busy=\\"true\\"]",
+    "loading": "&[aria-busy="true"]",
     "motionReduce": "@media (prefers-reduced-motion: reduce)",
     "motionSafe": "@media (prefers-reduced-motion: no-preference)",
     "odd": "&:nth-child(odd)",
     "placeholder": "&::placeholder",
-    "selected": "&[aria-selected=\\"true\\"]",
+    "selected": "&[aria-selected="true"]",
     "visited": "&:visited",
   },
-  "texts": Object {
-    "2xl": Object {
+  "texts": {
+    "2xl": {
       "fontSize": "2xl",
       "lineHeight": "2xl",
     },
-    "3xl": Object {
+    "3xl": {
       "fontSize": "3xl",
       "lineHeight": "3xl",
     },
-    "4xl": Object {
+    "4xl": {
       "fontSize": "4xl",
       "lineHeight": "4xl",
     },
-    "5xl": Object {
+    "5xl": {
       "fontSize": "5xl",
       "lineHeight": "5xl",
     },
-    "6xl": Object {
+    "6xl": {
       "fontSize": "6xl",
       "lineHeight": "6xl",
     },
-    "7xl": Object {
+    "7xl": {
       "fontSize": "7xl",
       "lineHeight": "7xl",
     },
-    "8xl": Object {
+    "8xl": {
       "fontSize": "8xl",
       "lineHeight": "8xl",
     },
-    "9xl": Object {
+    "9xl": {
       "fontSize": "9xl",
       "lineHeight": "9xl",
     },
-    "default": Object {
+    "default": {
       "fontSize": "default",
       "lineHeight": "default",
     },
-    "lg": Object {
+    "lg": {
       "fontSize": "lg",
       "lineHeight": "lg",
     },
-    "sm": Object {
+    "sm": {
       "fontSize": "sm",
       "lineHeight": "sm",
     },
-    "xl": Object {
+    "xl": {
       "fontSize": "xl",
       "lineHeight": "xl",
     },
-    "xs": Object {
+    "xs": {
       "fontSize": "xs",
       "lineHeight": "xs",
     },
   },
-  "timingFunctions": Object {
+  "timingFunctions": {
     "ease-in": "cubic-bezier(0.4, 0, 1, 1)",
     "ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
     "ease-out": "cubic-bezier(0, 0, 0.2, 1)",
   },
-  "transitionProperties": Object {
-    "colors": Array [
+  "transitionProperties": {
+    "colors": [
       "background-color",
       "border-color",
       "color",
       "fill",
       "stroke",
     ],
-    "default": Array [
+    "default": [
       "background-color",
       "border-color",
       "color",
@@ -551,27 +551,27 @@ Object {
       "box-shadow",
       "transform",
     ],
-    "opacity": Array [
+    "opacity": [
       "opacity",
     ],
-    "shadow": Array [
+    "shadow": [
       "box-shadow",
     ],
-    "transform": Array [
+    "transform": [
       "transform",
     ],
   },
-  "transitions": Object {
+  "transitions": {
     "colors": "background-color cubic-bezier(0.4, 0, 0.2, 1) 150ms,border-color cubic-bezier(0.4, 0, 0.2, 1) 150ms,color cubic-bezier(0.4, 0, 0.2, 1) 150ms,fill cubic-bezier(0.4, 0, 0.2, 1) 150ms,stroke cubic-bezier(0.4, 0, 0.2, 1) 150ms",
     "default": "background-color cubic-bezier(0.4, 0, 0.2, 1) 150ms,border-color cubic-bezier(0.4, 0, 0.2, 1) 150ms,color cubic-bezier(0.4, 0, 0.2, 1) 150ms,fill cubic-bezier(0.4, 0, 0.2, 1) 150ms,stroke cubic-bezier(0.4, 0, 0.2, 1) 150ms,opacity cubic-bezier(0.4, 0, 0.2, 1) 150ms,box-shadow cubic-bezier(0.4, 0, 0.2, 1) 150ms,transform cubic-bezier(0.4, 0, 0.2, 1) 150ms",
     "opacity": "opacity cubic-bezier(0.4, 0, 0.2, 1) 150ms",
     "shadow": "box-shadow cubic-bezier(0.4, 0, 0.2, 1) 150ms",
     "transform": "transform cubic-bezier(0.4, 0, 0.2, 1) 150ms",
   },
-  "xstyled": Object {
+  "xstyled": {
     "cache": true,
   },
-  "zIndices": Object {
+  "zIndices": {
     "zIndex0": 0,
     "zIndex10": 10,
     "zIndex20": 20,
