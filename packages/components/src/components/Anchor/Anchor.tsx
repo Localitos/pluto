@@ -5,7 +5,7 @@ export interface AnchorProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "color">,
     BoxProps {
   /** Sets the render element of the component. */
-  as?: React.ComponentProps<typeof Text.a>["as"];
+  as?: React.ComponentType<any> | string; // eslint-disable-line @typescript-eslint/no-explicit-any
   /** The contents of the anchor. Can be text or valid text related HTML, i.e. strong elements. */
   children: NonNullable<React.ReactNode>;
   /** Sets target to "_blank" and rel to "noreferrer noopener". */

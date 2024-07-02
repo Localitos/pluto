@@ -20,7 +20,7 @@ export interface IconProps
   /** Controls the aria-label of the icon rendered.  */
   title?: string;
   /** Sets the render element of the component. */
-  as?: React.ComponentProps<typeof Box.div>["as"];
+  as?: React.ComponentType<any> | string; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 /** Icons are small graphical representation of a program or a function. */

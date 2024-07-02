@@ -25,7 +25,7 @@ const StyledBackdrop = styled(Box.div)`
   }
 `;
 
-const CustomBackdrop = React.forwardRef(
+const CustomBackdrop = React.forwardRef<HTMLDivElement>(
   function CustomBackdrop(props, forwardedRef) {
     return <Box.div as={StyledBackdrop} ref={forwardedRef} {...props} />;
   },
