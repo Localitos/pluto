@@ -2,6 +2,9 @@ import React from "react";
 import keys from "lodash/keys";
 import filter from "lodash/filter";
 import reduce from "lodash/reduce";
+import get from "lodash/get";
+import replace from "lodash/replace";
+import startsWith from "lodash/startsWith";
 import fontSizeTokens from "../../src/tokens/font-size.tokens.json";
 import fontWeightTokens from "../../src/tokens/font-weight.tokens.json";
 import colorTokens from "../../src/tokens/color.tokens.json";
@@ -24,6 +27,7 @@ import {
 import { Box } from "../../../components/src/primitives/Box";
 import { Text } from "../../../components/src/primitives/Text";
 import { TokenColumn } from "../types/TokenColumn";
+import { Token } from "../types/Token";
 import { createPreview } from "./createPreview";
 
 const TEXT_PREVIEW = (
@@ -34,6 +38,10 @@ type TokenColumnsProps = {
   [key: string]: Array<TokenColumn>;
 };
 
+const getTokenFromVariable = (tokens: unknown, token: Token): string => {
+  return get(tokens, replace(token.value, /[{}]/g, "")).value as string;
+};
+
 const COLORS = reduce(
   filter(keys(colorTokens), (item) => item !== "default"),
   (acc, prefix) => {
@@ -42,14 +50,30 @@ const COLORS = reduce(
         name: "Name",
         transform: getTokenNameFromTuple(prefix),
       },
-      { name: "Hex", transform: getTokenValue },
+      {
+        name: "Raw",
+        transform: ([, token]: TokenTuple) => token.value,
+      },
+      {
+        name: "Hex",
+        transform: ([, token]: TokenTuple) =>
+          startsWith(token.value, "{")
+            ? getTokenFromVariable(colorTokens, token)
+            : token.value,
+      },
       {
         name: "RGB",
-        transform: ([, token]: TokenTuple): string => hexToRgb(token.value),
+        transform: ([, token]: TokenTuple): string =>
+          startsWith(token.value, "{")
+            ? hexToRgb(getTokenFromVariable(colorTokens, token))
+            : hexToRgb(token.value),
       },
       {
         name: "Hsla",
-        transform: ([, token]: TokenTuple): string => hexToHsla(token.value),
+        transform: ([, token]: TokenTuple): string =>
+          startsWith(token.value, "{")
+            ? hexToHsla(getTokenFromVariable(colorTokens, token))
+            : hexToHsla(token.value),
       },
       {
         name: "Preview",
