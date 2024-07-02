@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Box, BoxProps } from "../../primitives/Box";
 import { Heading } from "../Heading";
 import { Text } from "../../primitives/Text";
@@ -14,6 +14,7 @@ export enum InteractiveElementType {
   Anchor = "anchor",
   Button = "button",
   Card = "card",
+  Custom = "custom",
 }
 
 export type ContentCardProps = {
@@ -43,8 +44,8 @@ export type ContentCardProps = {
   target?: HTMLAnchorElement["target"];
   /** Callback to be used when the interactive element is clicked */
   onClick?: React.MouseEventHandler;
-  /** Sets the text to the interactive element when it's anchor or button */
-  ctaText?: string;
+  /** Sets the interactive element when it's anchor or button */
+  callToAction?: ReactNode;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
   /** Overwrites default maxWidth */
@@ -60,7 +61,7 @@ const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
 export const ContentCard = ({
   href,
   onClick,
-  ctaText,
+  callToAction,
   interactiveElementType,
   imageSrc,
   imageAlt,
@@ -197,13 +198,19 @@ export const ContentCard = ({
                 variant="secondary"
                 {...interactiveElementProps}
               >
-                {ctaText}
+                {callToAction}
               </Button>
             </Box.div>
           )}
 
           {InteractiveElementType.Anchor === interactiveElementType && (
-            <Anchor {...interactiveElementProps}>{ctaText || ""}</Anchor>
+            <Anchor {...interactiveElementProps}>{callToAction || ""}</Anchor>
+          )}
+
+          {InteractiveElementType.Custom === interactiveElementType && (
+            <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
+              {callToAction}
+            </Box.div>
           )}
         </Box.div>
       </Box.div>
