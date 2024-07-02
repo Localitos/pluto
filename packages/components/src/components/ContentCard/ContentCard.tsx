@@ -44,8 +44,8 @@ export type ContentCardProps = {
   target?: HTMLAnchorElement["target"];
   /** Callback to be used when the interactive element is clicked */
   onClick?: React.MouseEventHandler;
-  /** Sets the text to the interactive element when it's anchor or button */
-  callToAction?: ReactNode | string;
+  /** Sets the interactive element when it's anchor or button */
+  callToAction?: ReactNode;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
   /** Overwrites default maxWidth */
