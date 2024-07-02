@@ -20,7 +20,7 @@ export type UtilityCardProps = {
   /** Text describing the current status of the category as a badge */
   status?: string;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
-  as?: React.ComponentProps<typeof Box.div>["as"];
+  as?: React.ComponentType<any> | string; // eslint-disable-line @typescript-eslint/no-explicit-any
   /** Callback function to be used to invoke onClicks */
   onClick?: React.MouseEventHandler;
 };
