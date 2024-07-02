@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 46.0.0
+
+### Major Changes
+
+- [#1648](https://github.com/Localitos/pluto/pull/1648) [`a5ceb41`](https://github.com/Localitos/pluto/commit/a5ceb41bc225b7e39fa5292b5caf98af601f5882) Thanks [@rssilva](https://github.com/rssilva)! - Change ctaText property to callToAction allowing custom react nodes
+
 ## 45.1.0
 
 ### Minor Changes
