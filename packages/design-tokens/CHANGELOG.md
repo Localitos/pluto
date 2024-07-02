@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.24.0
+
+### Minor Changes
+
+- [#1650](https://github.com/Localitos/pluto/pull/1650) [`a6c45ce`](https://github.com/Localitos/pluto/commit/a6c45ce6c4c852d884ead78cebfe20d341dabac9) Thanks [@rssilva](https://github.com/rssilva)! - Bump typescript and eslint plugins and packages
+
 ## 1.23.0
 
 ### Minor Changes
