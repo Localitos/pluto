@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 48.0.0
+
+### Minor Changes
+
+- [#1653](https://github.com/Localitos/pluto/pull/1653) [`7fd516d`](https://github.com/Localitos/pluto/commit/7fd516d9cbba5a2ff469dba139a2e3e2a5e3c8ae) Thanks [@rssilva](https://github.com/rssilva)! - Update dependencies: @hookform/resolvers, @tanstack/react-table, @babel/preset-env, @changesets/cli, @types/jest, cspell, danger, jest, jest-fail-on-console, lint-staged, next, @radix-ui/react-checkbox, @radix-ui/react-progress, @radix-ui/react-radio-group, @radix-ui/react-switch, @radix-ui/react-toast, lucide-react, react-hook-form, @uppy/core, html-react-parser, prettier, ts-jest, tsup, @testing-library/jest-dom, @testing-library/react, @types/styled-components, tslib
+
+### Patch Changes
+
+- Updated dependencies [[`7fd516d`](https://github.com/Localitos/pluto/commit/7fd516d9cbba5a2ff469dba139a2e3e2a5e3c8ae)]:
+  - @localyze-pluto/theme@34.0.0
+
 ## 47.0.0
 
 ### Minor Changes
