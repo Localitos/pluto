@@ -14,13 +14,13 @@ export interface TdProps
   /** Used to control the alignment of text. */
   textAlign?: "center" | "left" | "right";
   /** Used to set the padding bottom */
-  paddingBottom?: "space0" | "space50";
+  paddingBottom?: "p0" | "p4" | "space0" | "space50";
   /** Used to set the padding left */
-  paddingLeft?: "space0" | "space50";
+  paddingLeft?: "p0" | "p4" | "space0" | "space50";
   /** Used to set the padding right */
-  paddingRight?: "space0" | "space50";
+  paddingRight?: "p0" | "p4" | "space0" | "space50";
   /** Used to set the padding top */
-  paddingTop?: "space0" | "space50";
+  paddingTop?: "p0" | "p4" | "space0" | "space50";
 }
 
 /** A standard cell in the table, use within a <Tr>. */

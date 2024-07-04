@@ -7,7 +7,7 @@ export interface DrawerHeaderProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
   /** The contents of the drawer header */
   children: NonNullable<React.ReactNode>;
-  padding?: "space0" | "space60";
+  padding?: "p0" | "p5" | "space0" | "space60";
 }
 
 /** The header content area of the drawer. */
