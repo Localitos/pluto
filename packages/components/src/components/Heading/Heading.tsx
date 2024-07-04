@@ -6,7 +6,7 @@ import forEach from "lodash/forEach";
 import { Text } from "../../primitives/Text";
 
 type HeadingLevelOptions = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-type HeadingMarginOptions = "space0" | "space70";
+type HeadingMarginOptions = "m0" | "m6" | "space0" | "space70";
 type HeadingSizeOptions =
   | "heading10"
   | "heading20"
