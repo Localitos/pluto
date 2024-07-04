@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 48.2.0
+
+### Minor Changes
+
+- [#1660](https://github.com/Localitos/pluto/pull/1660) [`ca566bb`](https://github.com/Localitos/pluto/commit/ca566bb893e2540f88d059f667125bba22524cdd) Thanks [@rssilva](https://github.com/rssilva)! - Add m0 and m6 tokens as possible margins to Paragraph component
+
 ## 48.1.0
 
 ### Minor Changes
