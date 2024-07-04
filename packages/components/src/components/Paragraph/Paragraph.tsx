@@ -2,7 +2,7 @@ import React from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import { Text } from "../../primitives/Text";
 
-type ParagraphMarginOptions = "space0" | "space70";
+type ParagraphMarginOptions = "m0" | "m6" | "space0" | "space70";
 type ParagraphSizeOptions = "large" | "medium" | "small";
 
 export interface ParagraphProps
