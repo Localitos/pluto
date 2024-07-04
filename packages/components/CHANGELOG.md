@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 48.1.0
+
+### Minor Changes
+
+- [#1658](https://github.com/Localitos/pluto/pull/1658) [`7c92208`](https://github.com/Localitos/pluto/commit/7c92208ca8d88a38cc0b03a547abcf1e6d72e791) Thanks [@rssilva](https://github.com/rssilva)! - add m0 and m6 margin tokens as options to heading component
+
 ## 48.0.0
 
 ### Minor Changes
