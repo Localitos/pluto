@@ -90,6 +90,7 @@ export type LucideIconName =
   | "ticket"
   | "trash-2"
   | "triangle-alert"
+  | "upload"
   | "user-plus"
   | "user"
   | "users"
