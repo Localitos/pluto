@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 48.3.0
+
+### Minor Changes
+
+- [#1664](https://github.com/Localitos/pluto/pull/1664) [`89f380c`](https://github.com/Localitos/pluto/commit/89f380ca8045fbb0dc0b0c33d1576bf13bdc73f1) Thanks [@helfer1991](https://github.com/helfer1991)! - enable export of upload lucid icon
+
 ## 48.2.0
 
 ### Minor Changes
