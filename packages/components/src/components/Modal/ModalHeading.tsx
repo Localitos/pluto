@@ -14,7 +14,7 @@ const ModalHeading = React.forwardRef<HTMLHeadingElement, ModalHeadingProps>(
       <Heading
         as="h2"
         color="colorTextHeadingStronger"
-        marginBottom="space0"
+        marginBottom="m0"
         ref={ref}
         size="heading60"
         {...props}

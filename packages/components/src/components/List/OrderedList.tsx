@@ -49,7 +49,7 @@ export const OrderedList = React.forwardRef<HTMLOListElement, OrderedListProps>(
         color={color}
         listStyleType="none"
         marginBottom={marginBottom}
-        marginTop="space0"
+        marginTop="m0"
         paddingLeft="space0"
         ref={ref}
         {...props}

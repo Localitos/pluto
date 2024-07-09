@@ -124,7 +124,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           fontWeight="fontWeightMedium"
           id={id}
           lineHeight="lineHeight30"
-          margin="space0"
+          margin="m0"
           name={name}
           outline="none"
           paddingBottom={size === "large" ? "space40" : "space30"}

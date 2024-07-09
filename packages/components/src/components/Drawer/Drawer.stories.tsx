@@ -36,7 +36,7 @@ export const Default = (): JSX.Element => {
             character text the to and for completely he explanation cheek, for
             or in the assets different took this treat. Is and the our.
           </Paragraph>
-          <Paragraph marginBottom="space0">
+          <Paragraph marginBottom="m0">
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
             character text the to and for completely he explanation cheek, for
@@ -70,7 +70,7 @@ export const NoPaddingOnBody = (): React.ReactNode => {
             character text the to and for completely he explanation cheek, for
             or in the assets different took this treat. Is and the our.
           </Paragraph>
-          <Paragraph marginBottom="space0">
+          <Paragraph marginBottom="m0">
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
             character text the to and for completely he explanation cheek, for
@@ -104,7 +104,7 @@ export const OverflowBodyContent = (): React.ReactNode => {
             character text the to and for completely he explanation cheek, for
             or in the assets different took this treat. Is and the our.
           </Paragraph>
-          <Paragraph marginBottom="space0">
+          <Paragraph marginBottom="m0">
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
             character text the to and for completely he explanation cheek, for
@@ -116,7 +116,7 @@ export const OverflowBodyContent = (): React.ReactNode => {
             character text the to and for completely he explanation cheek, for
             or in the assets different took this treat. Is and the our.
           </Paragraph>
-          <Paragraph marginBottom="space0">
+          <Paragraph marginBottom="m0">
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
             character text the to and for completely he explanation cheek, for
@@ -128,7 +128,7 @@ export const OverflowBodyContent = (): React.ReactNode => {
             character text the to and for completely he explanation cheek, for
             or in the assets different took this treat. Is and the our.
           </Paragraph>
-          <Paragraph marginBottom="space0">
+          <Paragraph marginBottom="m0">
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
             character text the to and for completely he explanation cheek, for
@@ -140,7 +140,7 @@ export const OverflowBodyContent = (): React.ReactNode => {
             character text the to and for completely he explanation cheek, for
             or in the assets different took this treat. Is and the our.
           </Paragraph>
-          <Paragraph marginBottom="space0">
+          <Paragraph marginBottom="m0">
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
             character text the to and for completely he explanation cheek, for
@@ -177,7 +177,7 @@ export const ReallyLongHeader = (): React.ReactNode => {
             character text the to and for completely he explanation cheek, for
             or in the assets different took this treat. Is and the our.
           </Paragraph>
-          <Paragraph marginBottom="space0">
+          <Paragraph marginBottom="m0">
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
             character text the to and for completely he explanation cheek, for

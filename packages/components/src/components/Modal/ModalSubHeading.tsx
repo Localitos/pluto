@@ -21,7 +21,7 @@ const ModalSubHeading = React.forwardRef<
         fontSize="fontSize20"
         fontWeight="fontWeightRegular"
         lineHeight="lineHeight20"
-        marginTop="space0"
+        marginTop="m0"
         ref={ref}
         {...props}
       >
