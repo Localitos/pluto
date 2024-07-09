@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 48.4.0
+
+### Minor Changes
+
+- [#1663](https://github.com/Localitos/pluto/pull/1663) [`c62697b`](https://github.com/Localitos/pluto/commit/c62697bd75850e4d320156ba88e6fbd1222d5db6) Thanks [@rssilva](https://github.com/rssilva)! - Allow new tokens (same result) to DrawerHeader, Label, OrderedList, ModalBody, UnorderedList
+
 ## 48.3.0
 
 ### Minor Changes
