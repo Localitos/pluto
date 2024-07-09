@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "../../primitives/Box";
 
-type LabelMarginBottom = "space0" | "space20";
+type LabelMarginBottom = "m0" | "m1" | "space0" | "space20";
 
 export interface LabelProps
   extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "color"> {

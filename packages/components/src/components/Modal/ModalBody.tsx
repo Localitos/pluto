@@ -6,7 +6,7 @@ export interface ModalBodyProps
   /** The contents of the modal body. */
   children: NonNullable<React.ReactNode>;
   /** Sets the padding of the modal body. */
-  padding?: "space0" | "space60";
+  padding?: "p0" | "p5" | "space0" | "space60";
   /** Disables the overflowY for situations where the modal includes a dropdown. */
   disableOverflow?: boolean;
 }

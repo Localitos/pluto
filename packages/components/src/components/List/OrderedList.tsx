@@ -3,7 +3,7 @@ import React from "react";
 import { Box } from "../../primitives/Box";
 
 type UnOrderedListColorOptions = "colorTextStrongest" | "currentcolor";
-type OrderedListMarginOptions = "space0" | "space70";
+type OrderedListMarginOptions = "m0" | "m6" | "space0" | "space70";
 
 export interface OrderedListProps
   extends Omit<React.HTMLAttributes<HTMLOListElement>, "color"> {
