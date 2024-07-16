@@ -21,7 +21,7 @@ Default.args = {
     <Box.div>
       <Text.span display="block">This is a default message.</Text.span>
       <Box.div color="colorTextLink">
-        <UnorderedList color="currentcolor" marginBottom="space0">
+        <UnorderedList color="currentcolor" marginBottom="m0">
           <ListItem>
             <Anchor href="https://www.localyze.com">localyze.com</Anchor>
           </ListItem>

@@ -31,6 +31,6 @@ Large.args = {
 export const NoMargin = Template.bind({});
 NoMargin.args = {
   children:
-    "Paragraphs have a default bottom margin. Use “space0” to override the bottom margin to zero.",
-  marginBottom: "space0",
+    "Paragraphs have a default bottom margin. Use m0 to override the bottom margin to zero.",
+  marginBottom: "m0",
 };

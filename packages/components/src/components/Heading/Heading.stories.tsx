@@ -54,7 +54,7 @@ Heading60.args = {
 export const WithBreakpoints = Template.bind({});
 WithBreakpoints.args = {
   children: "I'm a h2 element rendered with different sizes.",
-  marginBottom: "space0",
+  marginBottom: "m0",
   size: { _: "heading60", md: "heading10" },
 };
 
@@ -65,7 +65,7 @@ WithBreakpoints.parameters = {
 export const NoMargin = Template.bind({});
 NoMargin.args = {
   children: "I'm a h2 element with no bottom margin.",
-  marginBottom: "space0",
+  marginBottom: "m0",
 };
 
 export const WithColorTextInverse = (): React.ReactElement => (

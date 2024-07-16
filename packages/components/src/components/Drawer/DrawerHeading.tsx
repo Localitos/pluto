@@ -14,7 +14,7 @@ const DrawerHeading = React.forwardRef<HTMLHeadingElement, DrawerHeadingProps>(
       <Heading
         as="h2"
         color="colorTextHeadingStronger"
-        marginBottom="space0"
+        marginBottom="m0"
         ref={ref}
         size="heading50"
         {...props}

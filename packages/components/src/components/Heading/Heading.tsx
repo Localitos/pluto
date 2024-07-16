@@ -162,7 +162,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         fontWeight="fontWeightBold"
         letterSpacing="normal"
         marginBottom={marginBottom}
-        marginTop="space0"
+        marginTop="m0"
         ref={ref}
         textTransform="initial"
         {...getHeadingSizes(size)}

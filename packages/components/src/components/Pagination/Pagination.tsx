@@ -57,7 +57,7 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
           display="flex"
           gap="space30"
           listStyleType="none"
-          margin="space0"
+          margin="m0"
           padding="space0"
         >
           <Button

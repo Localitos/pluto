@@ -150,7 +150,7 @@ export const ContentCard = ({
         >
           {tag}
         </Text.div>
-        <Heading marginBottom="space0" size="heading60">
+        <Heading marginBottom="m0" size="heading60">
           {title}
         </Heading>
         <Text.p

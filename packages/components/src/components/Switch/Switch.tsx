@@ -74,7 +74,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
           disabled={disabled}
           h="1.5rem"
           id={switchId}
-          margin="space0"
+          margin="m0"
           onCheckedChange={onCheckedChange}
           outlineColor={{ focus: "colorBorderPrimary" }}
           outlineOffset={{ focus: "borderWidth20" }}
@@ -133,7 +133,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
           </Box.span>
         </Box.button>
         <Box.div marginTop="space20">
-          <Label disabled={disabled} htmlFor={switchId} marginBottom="space0">
+          <Label disabled={disabled} htmlFor={switchId} marginBottom="m0">
             {children}
           </Label>
           {helpText && <HelpText id={helpTextId}>{helpText}</HelpText>}

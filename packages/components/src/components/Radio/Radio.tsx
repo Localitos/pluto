@@ -60,7 +60,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
           disabled={disabled}
           h="1rem"
           id={radioID}
-          margin="space0"
+          margin="m0"
           outlineColor={{ focus: "colorBorderPrimary" }}
           outlineOffset={{ focus: "borderWidth20" }}
           outlineStyle={{ focus: "solid" }}
@@ -95,7 +95,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
           fontWeight="fontWeightRegular"
           htmlFor={radioID}
           lineHeight="lineHeight20"
-          margin="space0"
+          margin="m0"
         >
           {label}
         </Text.label>

@@ -52,7 +52,7 @@ const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
         fontFamily="fontFamilyNotoSans"
         fontWeight="fontWeightRegular"
         marginBottom={marginBottom}
-        marginTop="space0"
+        marginTop="m0"
         ref={ref}
         {...getParagraphStyles(size)}
         {...props}

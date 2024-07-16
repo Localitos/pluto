@@ -99,7 +99,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         <Text.h2
           fontSize="fontSize30"
           fontWeight="fontWeightBold"
-          margin="space0 space0 space40"
+          margin="m0 m0 space40"
         >
           {title}
         </Text.h2>

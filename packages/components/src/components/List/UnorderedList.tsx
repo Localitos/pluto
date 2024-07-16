@@ -52,7 +52,7 @@ export const UnorderedList = React.forwardRef<
         listStylePosition="inside"
         listStyleType="none"
         marginBottom={marginBottom}
-        marginTop="space0"
+        marginTop="m0"
         paddingLeft="space0"
         ref={ref}
         {...props}

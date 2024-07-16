@@ -59,7 +59,7 @@ export const IconList: React.FC = () => {
               icon={value}
               size="sizeIcon40"
             />
-            <Paragraph marginBottom="space0">{value}</Paragraph>
+            <Paragraph marginBottom="m0">{value}</Paragraph>
           </Box.div>
         );
       })}
