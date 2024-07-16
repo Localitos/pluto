@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 48.5.0
+
+### Minor Changes
+
+- [#1667](https://github.com/Localitos/pluto/pull/1667) [`6834cf0`](https://github.com/Localitos/pluto/commit/6834cf066c756febfb45f2856c741fefe129a2c0) Thanks [@rssilva](https://github.com/rssilva)! - Replace margins that has `space0` by `m0`
+
 ## 48.4.0
 
 ### Minor Changes
