@@ -41,7 +41,7 @@ export const OrderedList = React.forwardRef<HTMLOListElement, OrderedListProps>(
         {children}
       </InnerOrderedList>
     );
-  }
+  },
 );
 
 OrderedList.displayName = "OrderedList";

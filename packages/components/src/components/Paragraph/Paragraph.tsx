@@ -12,7 +12,7 @@ export interface ParagraphProps extends BoxProps {
 }
 
 const getParagraphStyles = (
-  size: ParagraphSizeOptions
+  size: ParagraphSizeOptions,
 ): {
   fontSize: SystemProp<keyof Theme["fontSizes"], Theme>;
   lineHeight: SystemProp<keyof Theme["lineHeights"], Theme>;
@@ -56,7 +56,7 @@ const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
         {children}
       </Box.p>
     );
-  }
+  },
 );
 
 Paragraph.displayName = "Paragraph";
