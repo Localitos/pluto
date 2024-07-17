@@ -3,10 +3,9 @@ import type { SystemProp, Theme } from "@xstyled/styled-components";
 import toPairs from "lodash/toPairs";
 import isObject from "lodash/isObject";
 import forEach from "lodash/forEach";
-import { Text } from "../../primitives/Text";
+import { Box, BoxProps } from "../../primitives/Box";
 
 type HeadingLevelOptions = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-type HeadingMarginOptions = "m0" | "m6" | "space0" | "space70";
 type HeadingSizeOptions =
   | "heading10"
   | "heading20"
@@ -29,25 +28,15 @@ type HeadingSizeBreakpoints = {
 
 type HeadingSizeOptionsProp = HeadingSizeBreakpoints | HeadingSizeOptions;
 
-type HeadingFontColors =
-  | "colorTextHeading"
-  | "colorTextHeadingStrong"
-  | "colorTextHeadingStronger"
-  | "colorTextInverse"
-  | "colorTextStrongest";
-
-export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
+export interface HeadingProps
+  extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "color">,
+    BoxProps {
   /** Sets the HTML element on render. */
   as?: HeadingLevelOptions;
   /** The contents of the heading. Can be text or valid text related HTML, i.e. anchor and strong elements. */
   children: NonNullable<React.ReactNode>;
-  /** Changes the bottom margin of the heading.  */
-  marginBottom?: HeadingMarginOptions;
   /** Changes the size of the heading. */
   size?: HeadingSizeOptionsProp;
-
-  /** Changes the font color of the heading */
-  color?: HeadingFontColors;
 }
 
 const isBreakpointObject = (
@@ -155,9 +144,9 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     ref,
   ) => {
     return (
-      <Text.h2
+      <Box.h2
         as={as}
-        color={color}
+        color={color as BoxProps["color"] as string}
         fontFamily="fontFamilyNotoSans"
         fontWeight="fontWeightBold"
         letterSpacing="normal"
@@ -169,7 +158,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         {...props}
       >
         {children}
-      </Text.h2>
+      </Box.h2>
     );
   },
 );

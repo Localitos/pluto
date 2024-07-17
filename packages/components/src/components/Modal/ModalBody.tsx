@@ -1,23 +1,20 @@
 import React from "react";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 
-export interface ModalBodyProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
+export interface ModalBodyProps extends BoxProps {
   /** The contents of the modal body. */
   children: NonNullable<React.ReactNode>;
-  /** Sets the padding of the modal body. */
-  padding?: "p0" | "p5" | "space0" | "space60";
   /** Disables the overflowY for situations where the modal includes a dropdown. */
   disableOverflow?: boolean;
 }
 
 /** The body content area of the modal. */
 const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>(
-  ({ children, disableOverflow, padding = "space60", ...props }, ref) => {
+  ({ children, disableOverflow, ...props }, ref) => {
     return (
       <Box.div
         overflowY={disableOverflow ? undefined : "auto"}
-        padding={padding}
+        padding="space60"
         ref={ref}
         {...props}
       >
