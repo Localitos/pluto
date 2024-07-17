@@ -19,8 +19,6 @@ export const Small = Template.bind({});
 Small.args = {
   children: "This is primarily for legal copy and error messages.",
   size: "small",
-  margin: "m8",
-  color: "red400",
 };
 
 export const Large = Template.bind({});
