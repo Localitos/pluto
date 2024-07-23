@@ -1,18 +1,10 @@
 import styled from "@xstyled/styled-components";
 import React from "react";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 
-type UnOrderedListColorOptions = "colorTextStrongest" | "currentcolor";
-type OrderedListMarginOptions = "m0" | "m6" | "space0" | "space70";
-
-export interface OrderedListProps
-  extends Omit<React.HTMLAttributes<HTMLOListElement>, "color"> {
+export interface OrderedListProps extends BoxProps {
   /** The list items */
   children: NonNullable<React.ReactNode>;
-  /** The color of the list items */
-  color?: UnOrderedListColorOptions;
-  /** Sets the bottom margin of the ordered list. */
-  marginBottom?: OrderedListMarginOptions;
 }
 
 /** A list of items with bullet points */
@@ -35,22 +27,14 @@ const InnerOrderedList = styled(Box.ol)`
 
 /** A list of numbered items */
 export const OrderedList = React.forwardRef<HTMLOListElement, OrderedListProps>(
-  (
-    {
-      children,
-      color = "colorTextStrongest",
-      marginBottom = "space70",
-      ...props
-    },
-    ref,
-  ) => {
+  ({ children, ...props }, ref) => {
     return (
       <InnerOrderedList
-        color={color}
+        color="colorTextStrongest"
         listStyleType="none"
-        marginBottom={marginBottom}
+        marginBottom="space70"
         marginTop="m0"
-        paddingLeft="space0"
+        paddingLeft="p0"
         ref={ref}
         {...props}
       >

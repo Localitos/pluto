@@ -1,16 +1,12 @@
 import React from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
-import { Text } from "../../primitives/Text";
+import { Box, BoxProps } from "../../primitives/Box";
 
-type ParagraphMarginOptions = "m0" | "m6" | "space0" | "space70";
 type ParagraphSizeOptions = "large" | "medium" | "small";
 
-export interface ParagraphProps
-  extends Omit<React.HTMLAttributes<HTMLParagraphElement>, "color"> {
+export interface ParagraphProps extends BoxProps {
   /** The contents of the paragraph. Can be text or valid text related HTML, i.e. anchor and strong elements. */
   children: NonNullable<React.ReactNode>;
-  /** Sets the bottom margin of the Paragraph. */
-  marginBottom?: ParagraphMarginOptions;
   /** Changes the font-size and line-height of the Paragraph. */
   size?: ParagraphSizeOptions;
 }
@@ -45,20 +41,20 @@ const getParagraphStyles = (
 
 /** A Paragraph is a block of text. */
 const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
-  ({ children, marginBottom = "space70", size = "medium", ...props }, ref) => {
+  ({ children, size = "medium", ...props }, ref) => {
     return (
-      <Text.p
+      <Box.p
         color="colorTextStrongest"
         fontFamily="fontFamilyNotoSans"
         fontWeight="fontWeightRegular"
-        marginBottom={marginBottom}
+        marginBottom="space70"
         marginTop="m0"
         ref={ref}
         {...getParagraphStyles(size)}
         {...props}
       >
         {children}
-      </Text.p>
+      </Box.p>
     );
   },
 );

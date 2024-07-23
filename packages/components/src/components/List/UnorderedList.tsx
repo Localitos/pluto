@@ -1,18 +1,10 @@
 import styled from "@xstyled/styled-components";
 import React from "react";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 
-type UnorderedListColorOptions = "colorTextStrongest" | "currentcolor";
-type UnorderedListMarginOptions = "m0" | "m6" | "space0" | "space70";
-
-export interface UnorderedListProps
-  extends Omit<React.HTMLAttributes<HTMLUListElement>, "color"> {
+export interface UnorderedListProps extends BoxProps {
   /** The list items */
   children: NonNullable<React.ReactNode>;
-  /** The color of the list items */
-  color?: UnorderedListColorOptions;
-  /** Sets the bottom margin of the unordered list. */
-  marginBottom?: UnorderedListMarginOptions;
 }
 
 /** A list of items with bullet points */
