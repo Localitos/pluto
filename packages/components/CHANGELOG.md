@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 48.6.0
+
+### Minor Changes
+
+- [#1675](https://github.com/Localitos/pluto/pull/1675) [`873f7a9`](https://github.com/Localitos/pluto/commit/873f7a91dc606843eb8db29d2a89a06afaeadd16) Thanks [@rssilva](https://github.com/rssilva)! - Remove token limitations from: DrawerHeader, Heading, Label, OrderedList, UnorderedList, ModalBody, Paragraph, Td
+
 ## 48.5.0
 
 ### Minor Changes
