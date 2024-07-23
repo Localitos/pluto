@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 48.6.1
+
+### Patch Changes
+
+- [#1677](https://github.com/Localitos/pluto/pull/1677) [`5a9570b`](https://github.com/Localitos/pluto/commit/5a9570b350de54ad02679e101c39de713418a10b) Thanks [@rssilva](https://github.com/rssilva)! - Fix interfaces to Label, OrderedList, UnorderedList, Paragraph, Td
+
 ## 48.6.0
 
 ### Minor Changes
