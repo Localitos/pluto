@@ -2,7 +2,9 @@ import styled from "@xstyled/styled-components";
 import React from "react";
 import { Box, BoxProps } from "../../primitives/Box";
 
-export interface UnorderedListProps extends BoxProps {
+export interface UnorderedListProps
+  extends Omit<React.HTMLAttributes<HTMLUListElement>, "color">,
+    BoxProps {
   /** The list items */
   children: NonNullable<React.ReactNode>;
 }

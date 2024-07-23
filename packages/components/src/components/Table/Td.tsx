@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import { Box, BoxProps } from "../../primitives/Box";
 import { TableContext } from "./TableContext";
 
-export interface TdProps extends BoxProps {
+export interface TdProps
+  extends Omit<React.HTMLAttributes<HTMLTableCellElement>, "color">,
+    BoxProps {
   /** The valid HTML contents of the table cell. */
   children?: React.ReactNode;
   /** Used to make a cell span over multiple columns. */

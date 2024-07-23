@@ -4,7 +4,9 @@ import { Box, BoxProps } from "../../primitives/Box";
 
 type ParagraphSizeOptions = "large" | "medium" | "small";
 
-export interface ParagraphProps extends BoxProps {
+export interface ParagraphProps
+  extends Omit<React.HTMLAttributes<HTMLParagraphElement>, "color">,
+    BoxProps {
   /** The contents of the paragraph. Can be text or valid text related HTML, i.e. anchor and strong elements. */
   children: NonNullable<React.ReactNode>;
   /** Changes the font-size and line-height of the Paragraph. */

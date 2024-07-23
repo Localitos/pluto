@@ -1,7 +1,9 @@
 import React from "react";
 import { Box, BoxProps } from "../../primitives/Box";
 
-export interface LabelProps extends BoxProps {
+export interface LabelProps
+  extends Omit<React.HTMLAttributes<HTMLLabelElement>, "color">,
+    BoxProps {
   /** Adjusts the cursor to be not-allowed. */
   disabled?: boolean;
   /** Use and `id` to tie a label directly to a specific form element. */
