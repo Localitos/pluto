@@ -21,7 +21,10 @@ export type AvatarSizeOptions =
   | "xlarge"
   | "xsmall";
 
-export type AvatarProps = {
+export type AvatarProps = Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  "color"
+> & {
   /** The color used for the avatar background. */
   color?: AvatarColorOptions;
   /** The name of the entity being represented. */

@@ -1,9 +1,10 @@
 import React from "react";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 import { Icon } from "../Icon";
 
 export interface HelpTextProps
-  extends Omit<React.HTMLAttributes<HTMLSpanElement>, "color"> {
+  extends Omit<React.HTMLAttributes<HTMLSpanElement>, "color">,
+    BoxProps {
   /** The text to be displayed. */
   children: React.ReactNode;
   /** Changes the help text to its error state. The color changes to the theme red color. */

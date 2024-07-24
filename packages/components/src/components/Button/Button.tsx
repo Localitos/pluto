@@ -1,6 +1,6 @@
 import React from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 import { Icon } from "../Icon";
 import { IconName } from "../Icon/types/IconName";
 
@@ -13,7 +13,8 @@ type ButtonVariantOptions =
   | "secondary";
 
 export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+    BoxProps {
   /** Sets the variant of the button. */
   variant: ButtonVariantOptions;
   /** Sets the render element of the component. */
