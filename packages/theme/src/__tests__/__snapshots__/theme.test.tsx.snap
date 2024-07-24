@@ -23,7 +23,7 @@ exports[`Theme matches the default theme 1`] = `
   "borders": {
     "default": "1px solid transparent",
   },
-  "colors": Object {
+  "colors": {
     "alertDialogBgDefault": "#FFFFFF",
     "alertDialogContentBody": "#4F5865",
     "alertDialogContentTitle": "#0F1A2A",
