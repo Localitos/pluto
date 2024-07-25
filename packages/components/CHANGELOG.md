@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 50.0.0
+
+### Minor Changes
+
+- [#1686](https://github.com/Localitos/pluto/pull/1686) [`dcf0ccc`](https://github.com/Localitos/pluto/commit/dcf0ccc87f983f5ae71b3f3931116dc4de97e7f0) Thanks [@rssilva](https://github.com/rssilva)! - Update eslint plugins and typescript versions
+
+### Patch Changes
+
+- Updated dependencies [[`dcf0ccc`](https://github.com/Localitos/pluto/commit/dcf0ccc87f983f5ae71b3f3931116dc4de97e7f0)]:
+  - @localyze-pluto/theme@36.0.0
+
 ## 49.1.0
 
 ### Minor Changes

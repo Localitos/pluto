@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.20.0
+
+### Minor Changes
+
+- [#1686](https://github.com/Localitos/pluto/pull/1686) [`dcf0ccc`](https://github.com/Localitos/pluto/commit/dcf0ccc87f983f5ae71b3f3931116dc4de97e7f0) Thanks [@rssilva](https://github.com/rssilva)! - Update eslint plugins and typescript versions
+
 ## 1.19.0
 
 ### Minor Changes
