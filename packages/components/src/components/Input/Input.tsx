@@ -1,6 +1,6 @@
 import React from "react";
 import { InputBox } from "../InputBox";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 import { Icon } from "../Icon";
 import { IconName } from "../Icon/types/IconName";
 
@@ -23,7 +23,8 @@ export interface InputTypeProps {
 }
 
 export interface InputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "color" | "size"> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "color" | "size">,
+    BoxProps {
   /** Sets the state of the input to disabled so a user can not interact with it. */
   disabled?: boolean;
   /** Sets the state of the input to an error state. */

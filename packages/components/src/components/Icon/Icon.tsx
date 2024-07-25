@@ -1,11 +1,12 @@
 import React from "react";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 import { IconName } from "./types/IconName";
 import { LucideIcons } from "./LucideIcons";
 
 export interface IconProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color">,
+    BoxProps {
   /** Changes the color of the icon. */
   color?: SystemProp<keyof Theme["colors"], Theme>;
   /** Specifies whether the icon is decorative or not. */
