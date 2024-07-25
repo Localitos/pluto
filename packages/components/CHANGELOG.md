@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 49.1.0
+
+### Minor Changes
+
+- [#1679](https://github.com/Localitos/pluto/pull/1679) [`f8b1943`](https://github.com/Localitos/pluto/commit/f8b1943a29476b0221a4b7f5440cf2ac3686a80c) Thanks [@rssilva](https://github.com/rssilva)! - Allow more props on components: Anchor, Avatar, Button, Checkbox, HelpText, Icon, Input
+
 ## 49.0.0
 
 ### Patch Changes
