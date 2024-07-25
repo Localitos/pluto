@@ -34,7 +34,7 @@
     "@radix-ui/react-radio-group": "^1.2.0",
     "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
-    "lucide-react": "^0.400.0",
+    "lucide-react": "^0.416.0",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.52.1"
   },
@@ -76,16 +76,16 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-watch-typeahead": "^2.2.2",
     "lodash": "^4.17.21",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "pretty-quick": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-uid": "^2.3.3",
     "styled-components": "^5.3.11",
-    "ts-jest": "^29.1.5",
+    "ts-jest": "^29.2.3",
     "tslib": "^2.6.3",
-    "tsup": "^8.1.0",
+    "tsup": "^8.2.3",
     "typescript": "^5.5.4"
   },
   "browserslist": [
