@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.28.0
+
+### Minor Changes
+
+- [#1688](https://github.com/Localitos/pluto/pull/1688) [`1795d15`](https://github.com/Localitos/pluto/commit/1795d15ef9bd48865279087e6bed7ef4d0ce709b) Thanks [@rssilva](https://github.com/rssilva)! - Update dependencies @hookform/resolvers, @tanstack/react-table, @babel/preset-env, cspell, husky, prettier, ts-jest, lucide-react, tsup
+
 ## 1.27.0
 
 ### Minor Changes
