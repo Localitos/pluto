@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.22.1
+
+### Patch Changes
+
+- [#1697](https://github.com/Localitos/pluto/pull/1697) [`3199bbb`](https://github.com/Localitos/pluto/commit/3199bbba3770694773af4031ed83d0a32597a7fc) Thanks [@rssilva](https://github.com/rssilva)! - Revert chore: Update packages: @typescript-eslint/eslint-plugin and @typescript-eslint/parser since it needs eslint^9
+
 ## 1.22.0
 
 ### Minor Changes
