@@ -9,14 +9,30 @@ const colorTokensPath = "src/tokens/color.tokens.json";
 
 const handleLodashJavascript = (token) => {
   const { attributes } = token;
+  let comment = `/** ${token.comment} */`;
 
-  return `export const ${camelCase(attributes.category)}${replace(upperFirst(attributes.type), "-", "")} = "${token.value}" /** ${token.comment} */`;
+  if (token.deprecated) {
+    comment = `/**
+ * @deprecated ${token.deprecated_comment}
+ */`;
+  }
+
+  return `${comment}
+export const ${camelCase(attributes.category)}${replace(upperFirst(attributes.type), "-", "")} = "${token.value}"`;
 };
 
 const handleLodashTypescript = (token) => {
   const { attributes } = token;
 
-  return `/* ${token.value} */
+  let comment = `/* ${token.value} */`;
+
+  if (token.deprecated) {
+    comment = `/**
+ * @deprecated ${token.deprecated_comment}
+ */`;
+  }
+
+  return `${comment}
 export const ${camelCase(attributes.category)}${replace(upperFirst(attributes.type), "-", "")}: string`;
 };
 
