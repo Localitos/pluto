@@ -37,6 +37,7 @@ export type LucideIconName =
   | "cog"
   | "copy"
   | "credit-card"
+  | "crown"
   | "earth"
   | "ellipsis-vertical"
   | "eye"
