@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 51.1.0
+
+### Minor Changes
+
+- [#1700](https://github.com/Localitos/pluto/pull/1700) [`ebb94d4`](https://github.com/Localitos/pluto/commit/ebb94d426db8c3d21d318f001ba9af6133343327) Thanks [@apvale](https://github.com/apvale)! - [Icon]: Add new crown icon
+
 ## 51.0.0
 
 ### Minor Changes
