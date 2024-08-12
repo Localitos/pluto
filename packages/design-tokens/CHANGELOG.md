@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 1.29.0
+
+### Minor Changes
+
+- [#1699](https://github.com/Localitos/pluto/pull/1699) [`a7d4a90`](https://github.com/Localitos/pluto/commit/a7d4a90e7e450fa901d18a856b9923e8722f51c4) Thanks [@rssilva](https://github.com/rssilva)! - Add space prefix tokens as deprecated, change config to add comment on the file
+
 ## 1.28.0
 
 ### Minor Changes
