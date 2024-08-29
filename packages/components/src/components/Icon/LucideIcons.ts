@@ -99,6 +99,7 @@ import {
   ShoppingBag,
   Ticket,
   List,
+  Globe,
 } from "lucide-react";
 import { LucideIconName } from "./types/LucideIconName";
 
@@ -149,6 +150,7 @@ export const LucideIcons: Record<LucideIconName, LucideIcon> = {
   "file-bar-chart": FileBarChart,
   flag: Flag,
   flame: Flame,
+  globe: Globe,
   "heart-handshake": HeartHandshake,
   home: Home,
   hourglass: Hourglass,

@@ -45,6 +45,7 @@ export type LucideIconName =
   | "file-plus-2"
   | "flag"
   | "flame"
+  | "globe"
   | "heart-handshake"
   | "home"
   | "hourglass"
