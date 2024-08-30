@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 52.1.0
+
+### Minor Changes
+
+- [#1708](https://github.com/Localitos/pluto/pull/1708) [`e5a9866`](https://github.com/Localitos/pluto/commit/e5a98663572577065dcff6407b48d344c24873e6) Thanks [@apvale](https://github.com/apvale)! - [Icon]: Add Globe Lucid Icon
+
 ## 52.0.0
 
 ### Patch Changes
