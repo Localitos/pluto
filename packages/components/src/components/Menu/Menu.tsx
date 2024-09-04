@@ -63,7 +63,7 @@ const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
             flexDirection="column"
             maxWidth="280px"
             minWidth="160px"
-            outlineColor="colorBorderPrimary"
+            outlineColor="colorBorderweaker"
             outlineStyle="borderStyleSolid"
             outlineWidth="borderWidth10"
           >
