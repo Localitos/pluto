@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 52.1.1
+
+### Patch Changes
+
+- [#1716](https://github.com/Localitos/pluto/pull/1716) [`7f5ec3d`](https://github.com/Localitos/pluto/commit/7f5ec3dfe56281008e81e07666333ba0e7ed09c2) Thanks [@sliminas](https://github.com/sliminas)! - Update menu outline color to gray
+
 ## 52.1.0
 
 ### Minor Changes
