@@ -18,7 +18,7 @@ export interface ButtonProps
   /** Sets the variant of the button. */
   variant: ButtonVariantOptions;
   /** Sets the render element of the component. */
-  as?: React.ComponentProps<typeof Box.button>["as"];
+  as?: React.ComponentType<any> | string; // eslint-disable-line @typescript-eslint/no-explicit-any
   /** Button content */
   children?: React.ReactNode;
   /** If used as an 'a', the href is url that the link point to. */
