@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 52.2.0
+
+### Minor Changes
+
+- [#1723](https://github.com/Localitos/pluto/pull/1723) [`1792f22`](https://github.com/Localitos/pluto/commit/1792f22864729c61dcf6b7e5a7656c2733331b8f) Thanks [@rssilva](https://github.com/rssilva)! - Allow box properties to be passed to menu
+
 ## 52.1.1
 
 ### Patch Changes
