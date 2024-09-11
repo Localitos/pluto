@@ -60,7 +60,7 @@ const CustomButtonMenu = (): JSX.Element => {
   const menuButton = <Button variant="primary">Open Menu</Button>;
 
   return (
-    <Box.div minHeight="100px" zIndex="zIndex10">
+    <Box.div minHeight="100px">
       <Menu items={items} menuButton={menuButton} />
     </Box.div>
   );

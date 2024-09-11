@@ -20,6 +20,8 @@ export type MenuProps = {
   menuButton?: JSX.Element;
   /** The list of menu items. */
   items: MenuItemProps[];
+  /** The expanded menu z-index. */
+  menuZIndex?: HTMLDivElement["style"]["zIndex"];
 };
 
 const VerticalEllipsisButton = (
@@ -38,7 +40,7 @@ const FullWidthButton = ({ ...props }) => (
 
 /** A menu is a button element that opens a menu with items. */
 const Menu = React.forwardRef<HTMLButtonElement, BoxProps & MenuProps>(
-  ({ menuButton, items, ...props }, ref) => {
+  ({ menuButton, items, menuZIndex = "auto", ...props }, ref) => {
     const store = useMenuStore();
 
     const button = menuButton || VerticalEllipsisButton;
@@ -55,7 +57,7 @@ const Menu = React.forwardRef<HTMLButtonElement, BoxProps & MenuProps>(
           store={store}
         />
 
-        <AriakitMenu store={store}>
+        <AriakitMenu store={store} style={{ zIndex: menuZIndex }}>
           <Box.div
             backgroundColor="colorBackground"
             borderRadius="borderRadius20"
