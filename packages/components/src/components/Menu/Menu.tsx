@@ -7,7 +7,7 @@ import {
 } from "@ariakit/react";
 import map from "lodash/map";
 import { Button } from "../Button";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 
 export type MenuItemProps = {
   label: ReactNode | string;
@@ -37,14 +37,14 @@ const FullWidthButton = ({ ...props }) => (
 );
 
 /** A menu is a button element that opens a menu with items. */
-const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
-  ({ menuButton, items }, ref) => {
+const Menu = React.forwardRef<HTMLButtonElement, BoxProps & MenuProps>(
+  ({ menuButton, items, ...props }, ref) => {
     const store = useMenuStore();
 
     const button = menuButton || VerticalEllipsisButton;
 
     return (
-      <Box.div>
+      <Box.div {...props}>
         <MenuButton
           render={(props) =>
             React.cloneElement(button, {
