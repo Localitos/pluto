@@ -9,6 +9,7 @@ import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
 import { Select } from "./Select";
 import type { SelectProps } from "./Select";
+import { TypedSelect } from "./TypedSelect";
 
 export default {
   component: Select,
@@ -32,7 +33,7 @@ const longSelectItems: SelectProps["items"] = Array.from(
   (_, i) => ({
     value: `option-${i}`,
     label: `Option ${i}`,
-  }),
+  })
 );
 
 const multiSelectItems: SelectProps["items"] = [
@@ -59,6 +60,30 @@ export const Default = (): JSX.Element => {
         id={selectID}
         items={selectItems}
         name="select"
+      />
+      <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
+    </Box.form>
+  );
+};
+
+const setValue = (ev: number[] | string[] | number | string): void => {
+  console.log({ ev });
+};
+
+export const Other = (): JSX.Element => {
+  const selectID = useUID();
+  const helpTextID = useUID();
+
+  return (
+    <Box.form>
+      <Label htmlFor={selectID}>Choose One</Label>
+      <TypedSelect
+        items={[
+          { value: "1", label: "Option uno" },
+          { value: "2", label: "Option dos" },
+          { value: "three", label: "Option tres" },
+        ]}
+        setValue={setValue}
       />
       <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
     </Box.form>
