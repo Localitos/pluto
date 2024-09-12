@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 52.2.1
+
+### Patch Changes
+
+- [#1726](https://github.com/Localitos/pluto/pull/1726) [`b8848ac`](https://github.com/Localitos/pluto/commit/b8848ace56d16b02159ac48045d1ad464910ac92) Thanks [@rssilva](https://github.com/rssilva)! - Add overflow hidden to Menu avoiding square corners to be visible
+
 ## 52.2.0
 
 ### Minor Changes
