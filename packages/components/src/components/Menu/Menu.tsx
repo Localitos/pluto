@@ -68,6 +68,7 @@ const Menu = React.forwardRef<HTMLButtonElement, BoxProps & MenuProps>(
             outlineColor="colorBorderWeaker"
             outlineStyle="borderStyleSolid"
             outlineWidth="borderWidth10"
+            overflow="hidden"
           >
             {map(items, ({ label, onClick, disabled }, i) => (
               <MenuItem key={i}>
