@@ -23,6 +23,7 @@ type HeadingSizeOptions =
 type ScreenSizes = keyof Theme["screens"];
 
 type HeadingSizeBreakpoints = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [key in ScreenSizes]?: HeadingSizeOptions;
 };
 
