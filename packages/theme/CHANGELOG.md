@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 39.0.0
+
+### Minor Changes
+
+- [#1728](https://github.com/Localitos/pluto/pull/1728) [`aedb494`](https://github.com/Localitos/pluto/commit/aedb494aed44867f2ed0bba46c3e609ad18eff88) Thanks [@rssilva](https://github.com/rssilva)! - Update typescript and eslint plugins
+
+### Patch Changes
+
+- Updated dependencies [[`aedb494`](https://github.com/Localitos/pluto/commit/aedb494aed44867f2ed0bba46c3e609ad18eff88)]:
+  - @localyze-pluto/design-tokens@1.30.0
+
 ## 38.0.0
 
 ### Patch Changes
