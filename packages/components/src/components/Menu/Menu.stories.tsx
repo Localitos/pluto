@@ -5,6 +5,7 @@ import noop from "lodash/noop";
 import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
+import { Input } from "../Input";
 import { Menu, MenuItemProps } from "./Menu";
 import { useMenuStore } from "./index";
 
@@ -61,9 +62,12 @@ const CustomButtonMenu = (): React.JSX.Element => {
   const menuButton = <Button variant="primary">Open Menu</Button>;
 
   return (
-    <Box.div minHeight="100px">
-      <Menu items={items} menuButton={menuButton} />
-    </Box.div>
+    <>
+      <Box.div minHeight="100px">
+        <Menu items={items} menuButton={menuButton} />
+        <Input type="text" />
+      </Box.div>
+    </>
   );
 };
 
