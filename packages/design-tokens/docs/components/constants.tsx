@@ -105,21 +105,14 @@ const FONT_SIZE = reduce(
         name: "Name",
         transform: getTokenNameFromTuple(prefix),
       },
-      { name: "Pixels", transform: getTokenComment },
+      { name: "Weight", transform: getTokenValue },
       { name: "Rems", transform: getTokenValue },
       {
         name: "Preview",
         transform: createPreview({
-          prefix,
-          attribute: "fontSize",
+          prefix: getTokenKey(fontWeightTokens),
+          attribute: "fontWeight",
           children: TEXT_PREVIEW,
-          componentProps: {
-            p: "space40",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            maxWidth: "600px",
-          },
         }),
       },
     ];
@@ -259,21 +252,6 @@ export const TOKEN_COLUMNS: TokenColumnsProps = {
             w="50px"
           />
         ),
-      }),
-    },
-  ],
-  [getTokenKey(fontWeightTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(fontWeightTokens),
-    },
-    { name: "Weight", transform: getTokenValue },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(fontWeightTokens),
-        attribute: "fontWeight",
-        children: TEXT_PREVIEW,
       }),
     },
   ],

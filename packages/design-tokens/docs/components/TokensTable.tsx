@@ -53,7 +53,7 @@ export const TokensTable = ({
             return (
               <Tr key={tokenName}>
                 {map(row, (cell, index) => {
-                  const column = columnGroups[0][index].name;
+                  const column = columnGroups[0][index]?.name;
                   return (
                     <Td key={`${tokenName}${column}`}>
                       {index === 0 ? (
