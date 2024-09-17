@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 53.1.0
+
+### Minor Changes
+
+- [#1731](https://github.com/Localitos/pluto/pull/1731) [`5e6410b`](https://github.com/Localitos/pluto/commit/5e6410b251d6218ed11f53b98bdab492b3745c4c) Thanks [@apvale](https://github.com/apvale)! - [Heading]: Change default color to contentPrimary
+
 ## 53.0.0
 
 ### Minor Changes
