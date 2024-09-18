@@ -107,7 +107,6 @@ const FONT_SIZE = reduce(
         name: "Name",
         transform: getTokenNameFromTuple(prefix),
       },
-      { name: "Weight", transform: getTokenValue },
       { name: "Rems", transform: getTokenValue },
       {
         name: "Preview",
