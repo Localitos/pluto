@@ -24,7 +24,7 @@ import {
   hexToRgb,
   hexToHsla,
 } from "../utils";
-import { Box } from "../../../components/src/primitives/Box";
+import { Box, BoxProps } from "../../../components/src/primitives/Box";
 import { Text } from "../../../components/src/primitives/Text";
 import { TokenColumn } from "../types/TokenColumn";
 import { Token } from "../types/Token";
@@ -35,7 +35,9 @@ const TEXT_PREVIEW = (
 );
 
 type TokenColumnsProps = {
-  [key: string]: Array<TokenColumn>;
+  [category: string]: {
+    [key: string]: Array<TokenColumn>;
+  };
 };
 
 const getTokenFromVariable = (tokens: unknown, token: Token): string => {
@@ -110,6 +112,37 @@ const FONT_SIZE = reduce(
       {
         name: "Preview",
         transform: createPreview({
+          prefix,
+          attribute: "fontSize",
+          children: TEXT_PREVIEW,
+          componentProps: {
+            lineHeight: "1" as BoxProps["lineHeight"],
+          },
+        }),
+      },
+    ];
+
+    return {
+      ...acc,
+      [prefix]: columns,
+    };
+  },
+  {},
+);
+
+const FONT_WEIGHT = reduce(
+  filter(keys(fontWeightTokens), (item) => item !== "default"),
+  (acc, prefix) => {
+    const columns = [
+      {
+        name: "Name",
+        transform: getTokenNameFromTuple(prefix),
+      },
+      { name: "Weight", transform: getTokenValue },
+      { name: "Rems", transform: getTokenValue },
+      {
+        name: "Preview",
+        transform: createPreview({
           prefix: getTokenKey(fontWeightTokens),
           attribute: "fontWeight",
           children: TEXT_PREVIEW,
@@ -165,97 +198,106 @@ const SPACE = reduce(
 );
 
 export const TOKEN_COLUMNS: TokenColumnsProps = {
-  [getTokenKey(borderRadiiTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(borderRadiiTokens),
-    },
-    { name: "Pixels", transform: getTokenValue },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(borderRadiiTokens),
-        attribute: "borderRadius",
-        componentProps: {
-          borderStyle: "borderStyleSolid",
-          w: "50px",
-          h: "50px",
-        },
-        overrideProps: {
-          pill: {
-            h: "30px",
+  borderRadius: {
+    [getTokenKey(borderRadiiTokens)]: [
+      {
+        name: "Name",
+        transform: getTokenName(borderRadiiTokens),
+      },
+      { name: "Pixels", transform: getTokenValue },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix: getTokenKey(borderRadiiTokens),
+          attribute: "borderRadius",
+          componentProps: {
+            borderStyle: "borderStyleSolid",
+            w: "50px",
+            h: "50px",
           },
-        },
-      }),
-    },
-  ],
-  [getTokenKey(borderWidthTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(borderWidthTokens),
-    },
-    { name: "Pixels", transform: getTokenValue },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(borderWidthTokens),
-        attribute: "borderWidth",
-        componentProps: {
-          borderStyle: "borderStyleSolid",
-          w: "50px",
-          h: "50px",
-        },
-      }),
-    },
-  ],
-  [getTokenKey(borderStyleTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(borderStyleTokens),
-    },
-    { name: "Style", transform: getTokenValue },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(borderStyleTokens),
-        attribute: "borderStyle",
-        componentProps: {
-          w: "50px",
-          h: "50px",
-        },
-      }),
-    },
-  ],
+          overrideProps: {
+            pill: {
+              h: "30px",
+            },
+          },
+        }),
+      },
+    ],
+  },
 
-  [getTokenKey(iconSizeTokens)]: [
-    {
-      name: "Name",
-      transform: getTokenName(iconSizeTokens),
-    },
-    { name: "Pixels", transform: getTokenComment },
-    { name: "Rems", transform: getTokenValue },
-    {
-      name: "Preview",
-      transform: createPreview({
-        prefix: getTokenKey(iconSizeTokens),
-        component: Icon,
-        componentProps: {
-          decorative: true,
-          display: "flex",
-          icon: "book-open",
-        },
-        attribute: "size",
-        children: (
-          <Box.div
-            backgroundColor="colorBackgroundPrimaryWeakest"
-            h="50px"
-            w="50px"
-          />
-        ),
-      }),
-    },
-  ],
-  ...SPACE,
-  ...FONT_SIZE,
-  ...COLORS,
+  borderWidth: {
+    [getTokenKey(borderWidthTokens)]: [
+      {
+        name: "Name",
+        transform: getTokenName(borderWidthTokens),
+      },
+      { name: "Pixels", transform: getTokenValue },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix: getTokenKey(borderWidthTokens),
+          attribute: "borderWidth",
+          componentProps: {
+            borderStyle: "borderStyleSolid",
+            w: "50px",
+            h: "50px",
+          },
+        }),
+      },
+    ],
+  },
+  borderStyle: {
+    [getTokenKey(borderStyleTokens)]: [
+      {
+        name: "Name",
+        transform: getTokenName(borderStyleTokens),
+      },
+      { name: "Style", transform: getTokenValue },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix: getTokenKey(borderStyleTokens),
+          attribute: "borderStyle",
+          componentProps: {
+            w: "50px",
+            h: "50px",
+          },
+        }),
+      },
+    ],
+  },
+  iconSize: {
+    [getTokenKey(iconSizeTokens)]: [
+      {
+        name: "Name",
+        transform: getTokenName(iconSizeTokens),
+      },
+      { name: "Pixels", transform: getTokenComment },
+      { name: "Rems", transform: getTokenValue },
+      {
+        name: "Preview",
+        transform: createPreview({
+          prefix: getTokenKey(iconSizeTokens),
+          component: Icon,
+          componentProps: {
+            decorative: true,
+            display: "flex",
+            icon: "book-open",
+          },
+          attribute: "size",
+          children: (
+            <Box.div
+              backgroundColor="colorBackgroundPrimaryWeakest"
+              h="50px"
+              w="50px"
+            />
+          ),
+        }),
+      },
+    ],
+  },
+  space: { ...SPACE },
+  fontSize: { ...FONT_SIZE },
+  fontWeight: { ...FONT_WEIGHT },
+  color: { ...COLORS },
 };

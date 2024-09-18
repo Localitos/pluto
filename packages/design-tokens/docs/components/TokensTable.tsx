@@ -18,15 +18,17 @@ import { TokenName } from "./TokenName";
 
 export const TokensTable = ({
   data,
+  name,
 }: {
   data: Record<string, Record<string, Token>>;
+  name: string;
 }): JSX.Element => {
   const tokenNames: Array<string> = filter(
     keys(data),
     (item) => item !== "default",
   );
   const columnGroups = map(tokenNames, (token) => {
-    return TOKEN_COLUMNS[token];
+    return TOKEN_COLUMNS[name][token];
   });
   const rowGroups: TokenRow[][] = map(columnGroups, (columns, index) => {
     const token = tokenNames[index];
