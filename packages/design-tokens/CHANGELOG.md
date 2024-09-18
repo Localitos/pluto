@@ -1,5 +1,13 @@
 # @localyze-pluto/design-tokens
 
+## 1.30.1
+
+### Patch Changes
+
+- [#1738](https://github.com/Localitos/pluto/pull/1738) [`911722c`](https://github.com/Localitos/pluto/commit/911722c9fb1537c92d0808d5f93ebb1f1395c075) Thanks [@rssilva](https://github.com/rssilva)! - Add right property category instead of name to TokensTable on docs pages
+
+- [#1736](https://github.com/Localitos/pluto/pull/1736) [`cc677ad`](https://github.com/Localitos/pluto/commit/cc677ad56d27f9f6395f2cbae58f58daf01cb00f) Thanks [@rssilva](https://github.com/rssilva)! - Fix storybook pages by avoiding wrong parsed token names and name conflict
+
 ## 1.30.0
 
 ### Minor Changes

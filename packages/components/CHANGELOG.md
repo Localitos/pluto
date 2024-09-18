@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 53.1.1
+
+### Patch Changes
+
+- [#1736](https://github.com/Localitos/pluto/pull/1736) [`cc677ad`](https://github.com/Localitos/pluto/commit/cc677ad56d27f9f6395f2cbae58f58daf01cb00f) Thanks [@rssilva](https://github.com/rssilva)! - Fix storybook pages by avoiding wrong parsed token names and name conflict
+
 ## 53.1.0
 
 ### Minor Changes
