@@ -65,6 +65,61 @@ export const Default = (): JSX.Element => {
   );
 };
 
+export const SameWidth = (): JSX.Element => {
+  const selectID = useUID();
+  const helpTextID = useUID();
+  return (
+    <Box.form w="250px">
+      <Label htmlFor={selectID}>Choose One</Label>
+      <Select
+        aria-describedby={helpTextID}
+        id={selectID}
+        items={selectItems}
+        name="select"
+        sameWidth
+      />
+      <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
+    </Box.form>
+  );
+};
+
+export const CustomWidth = (): JSX.Element => {
+  const selectID = useUID();
+  const helpTextID = useUID();
+  return (
+    <Box.form w="250px">
+      <Label htmlFor={selectID}>Choose One</Label>
+      <Select
+        aria-describedby={helpTextID}
+        id={selectID}
+        items={selectItems}
+        name="select"
+        popoverWidth="300px"
+      />
+      <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
+    </Box.form>
+  );
+};
+
+export const WithMaxWidth = (): JSX.Element => {
+  const selectID = useUID();
+  const helpTextID = useUID();
+  return (
+    <Box.form w="250px">
+      <Label htmlFor={selectID}>Choose One</Label>
+      <Select
+        aria-describedby={helpTextID}
+        id={selectID}
+        items={selectItems}
+        name="select"
+        popoverMaxWidth="400px"
+        popoverWidth="500px"
+      />
+      <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
+    </Box.form>
+  );
+};
+
 export const Large = (): JSX.Element => {
   const selectID = useUID();
   const helpTextID = useUID();
