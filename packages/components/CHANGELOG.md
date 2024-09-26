@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 53.2.0
+
+### Minor Changes
+
+- [#1741](https://github.com/Localitos/pluto/pull/1741) [`78510aa`](https://github.com/Localitos/pluto/commit/78510aaeb725ec50d9b57a766d86fa8cb52b9018) Thanks [@apvale](https://github.com/apvale)! - [Select] Add width properties so it's easier to set width for the SelectPopover:
+
+  - `sameWidth` to make the popover the same width as the select
+  - `popoverMaxWidth` to set a max width for the popover
+  - `popoverWidth` to set a fixed width for the popover
+
 ## 53.1.1
 
 ### Patch Changes
