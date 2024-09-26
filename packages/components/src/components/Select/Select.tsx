@@ -10,7 +10,7 @@ import {
 import type { SelectProps as SelectPrimitiveProps } from "@ariakit/react/select";
 import type { SystemProp, Theme } from "@xstyled/styled-components";
 import isArray from "lodash/isArray";
-import { Box } from "../../primitives/Box";
+import { Box, BoxProps } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 import { SelectItem } from "./SelectItem";
@@ -59,6 +59,12 @@ export interface SelectProps
   size?: "large" | "small";
   /** The selected option of the select. */
   value?: string[] | string;
+  /** The width of the select popover. */
+  popoverWidth?: BoxProps["w"];
+  /** The max width of the select popover. */
+  popoverMaxWidth?: BoxProps["maxW"];
+  /** Sets the select popover to be the same width as the select. */
+  sameWidth?: boolean;
 }
 
 const getSelectStyles = (
@@ -140,6 +146,9 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       setValue,
       size = "small",
       value,
+      sameWidth,
+      popoverWidth,
+      popoverMaxWidth,
       ...props
     },
     ref,
@@ -231,7 +240,14 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             />
           </Box.div>
         </Box.button>
-        <SelectPopover gutter={4} hideOnInteractOutside sameWidth store={store}>
+        <SelectPopover
+          gutter={4}
+          hideOnInteractOutside
+          maxW={popoverMaxWidth}
+          sameWidth={sameWidth}
+          store={store}
+          w={popoverWidth}
+        >
           {map(items, (item) => (
             <SelectItem
               disabled={item.disabled}
