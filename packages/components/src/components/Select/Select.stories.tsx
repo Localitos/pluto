@@ -65,7 +65,7 @@ export const Default = (): JSX.Element => {
   );
 };
 
-export const SameWidth = (): JSX.Element => {
+export const SameWidthAsFalse = (): JSX.Element => {
   const selectID = useUID();
   const helpTextID = useUID();
   return (
@@ -76,7 +76,8 @@ export const SameWidth = (): JSX.Element => {
         id={selectID}
         items={selectItems}
         name="select"
-        sameWidth
+        popoverWidth="150px"
+        sameWidth={false}
       />
       <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
     </Box.form>
