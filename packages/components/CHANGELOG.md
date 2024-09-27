@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 53.3.0
+
+### Minor Changes
+
+- [#1744](https://github.com/Localitos/pluto/pull/1744) [`d1aa748`](https://github.com/Localitos/pluto/commit/d1aa74829d564af9402112234c0c71b226ac7147) Thanks [@apvale](https://github.com/apvale)! - [Select]: Fix: set sameWidth prop as default as we used before
+
+- [#1743](https://github.com/Localitos/pluto/pull/1743) [`c83ca70`](https://github.com/Localitos/pluto/commit/c83ca70a20266d9513009e85b50cce5515349e90) Thanks [@franziiiini](https://github.com/franziiiini)! - [ModalHeading, DrawerHeading]: Change default color to contentPrimary
+
 ## 53.2.0
 
 ### Minor Changes
