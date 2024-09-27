@@ -146,7 +146,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       setValue,
       size = "small",
       value,
-      sameWidth,
+      sameWidth = true,
       popoverWidth,
       popoverMaxWidth,
       ...props
