@@ -11,14 +11,7 @@ export interface ModalHeadingProps
 const ModalHeading = React.forwardRef<HTMLHeadingElement, ModalHeadingProps>(
   ({ children, ...props }, ref) => {
     return (
-      <Heading
-        as="h2"
-        color="colorTextHeadingStronger"
-        marginBottom="m0"
-        ref={ref}
-        size="heading60"
-        {...props}
-      >
+      <Heading as="h2" marginBottom="m0" ref={ref} size="heading60" {...props}>
         {children}
       </Heading>
     );

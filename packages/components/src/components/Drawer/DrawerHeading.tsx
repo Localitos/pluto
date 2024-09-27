@@ -11,14 +11,7 @@ export interface DrawerHeadingProps
 const DrawerHeading = React.forwardRef<HTMLHeadingElement, DrawerHeadingProps>(
   ({ children, ...props }, ref) => {
     return (
-      <Heading
-        as="h2"
-        color="colorTextHeadingStronger"
-        marginBottom="m0"
-        ref={ref}
-        size="heading50"
-        {...props}
-      >
+      <Heading as="h2" marginBottom="m0" ref={ref} size="heading50" {...props}>
         {children}
       </Heading>
     );
