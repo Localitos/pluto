@@ -28,7 +28,7 @@ const Search = React.forwardRef<HTMLInputElement, SearchProps>(
           h="1px"
           margin="spaceNegative10"
           overflow="hidden"
-          padding="space0"
+          padding="d0"
           position="absolute"
           // Looks like xStyled didn't include a clip css property.
           style={{

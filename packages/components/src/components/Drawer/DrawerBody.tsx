@@ -12,7 +12,7 @@ export interface DrawerBodyProps
 
 /** The body content area of the drawer. */
 const DrawerBody = React.forwardRef<HTMLDivElement, DrawerBodyProps>(
-  ({ children, padding = "space60", ...props }, ref) => {
+  ({ children, padding = "d5", ...props }, ref) => {
     return (
       <Box.div
         h="100%"

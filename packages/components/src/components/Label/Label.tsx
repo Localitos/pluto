@@ -27,7 +27,7 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
         fontSize="fontSize10"
         fontWeight="fontWeightMedium"
         lineHeight="lineHeight10"
-        marginBottom="space20"
+        marginBottom="d1"
         ref={ref}
         {...props}
       >
@@ -36,7 +36,7 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
             backgroundColor="colorBackgroundDestructive"
             borderRadius="borderRadiusCircle"
             h="4px"
-            marginRight="space20"
+            marginRight="d1"
             w="4px"
           />
         )}

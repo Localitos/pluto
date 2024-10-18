@@ -243,7 +243,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     };
 
     return (
-      <Box.div alignItems="center" display="flex" gap="space30">
+      <Box.div alignItems="center" display="flex" gap="d2">
         <Box.div
           alignItems="center"
           borderRadius="borderRadiusCircle"

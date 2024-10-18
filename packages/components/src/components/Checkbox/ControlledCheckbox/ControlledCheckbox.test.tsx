@@ -26,7 +26,7 @@ const ReactHookFormExample = ({
         Checkbox
       </ControlledCheckbox>
 
-      <Box.div marginTop="space40">
+      <Box.div marginTop="d3">
         <Button type="submit" variant="primary">
           Submit
         </Button>

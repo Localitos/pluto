@@ -142,7 +142,7 @@ export const AsControlledCheckbox = (): JSX.Element => {
         Working example with React Hook Form
       </ControlledCheckbox>
 
-      <Box.div marginTop="space40">
+      <Box.div marginTop="d3">
         <Button type="submit" variant="primary">
           Submit
         </Button>

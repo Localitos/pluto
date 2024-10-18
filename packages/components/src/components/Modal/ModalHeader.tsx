@@ -18,9 +18,9 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
         borderBottomStyle="borderStyleSolid"
         borderBottomWidth="borderWidth10"
         display="flex"
-        gap="space30"
+        gap="d2"
         justifyContent="space-between"
-        padding="space60"
+        padding="d5"
         ref={ref}
         {...props}
       >

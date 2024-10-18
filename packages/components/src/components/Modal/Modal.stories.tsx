@@ -74,7 +74,7 @@ export const NoPaddingOnBody = (): React.ReactNode => {
           <ModalHeading>This is the heading</ModalHeading>
           <ModalSubHeading>This is the sub heading</ModalSubHeading>
         </ModalHeader>
-        <ModalBody padding="space0">
+        <ModalBody padding="d0">
           <Paragraph>
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,

@@ -69,7 +69,7 @@ NoMargin.args = {
 };
 
 export const WithColorTextInverse = (): React.ReactElement => (
-  <Box.div backgroundColor="colorBackgroundPrimaryStrong" padding="space30">
+  <Box.div backgroundColor="colorBackgroundPrimaryStrong" padding="d2">
     <Heading color="colorTextInverse">
       I&apos;m a h2 element in color white.
     </Heading>

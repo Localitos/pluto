@@ -21,9 +21,9 @@ const HelpText = React.forwardRef<HTMLSpanElement, HelpTextProps>(
         fontFamily="fontFamilyNotoSans"
         fontSize="fontSize10"
         fontWeight="fontWeightMedium"
-        gap="space20"
+        gap="d1"
         lineHeight="lineHeight10"
-        marginTop="space20"
+        marginTop="d1"
         ref={ref}
         {...props}
       >

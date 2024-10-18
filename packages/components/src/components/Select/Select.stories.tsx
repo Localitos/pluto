@@ -303,7 +303,7 @@ export const WithFormik = (): JSX.Element => {
         value={formik.values.select}
       />
       <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
-      <Box.div marginTop="space70">
+      <Box.div marginTop="d6">
         <Button type="submit" variant="primary">
           Submit
         </Button>
@@ -331,7 +331,7 @@ export const MultiSelectWithFormik = (): JSX.Element => {
   const helpTextIDThree = useUID();
   return (
     <Box.form onSubmit={formik.handleSubmit}>
-      <Box.div marginBottom="space70">
+      <Box.div marginBottom="d6">
         <Label htmlFor={selectID}>Choose One</Label>
         <Select
           aria-describedby={helpTextID}
@@ -343,7 +343,7 @@ export const MultiSelectWithFormik = (): JSX.Element => {
         />
         <HelpText id={helpTextID}>Please choose one of the values.</HelpText>
       </Box.div>
-      <Box.div marginBottom="space70">
+      <Box.div marginBottom="d6">
         <Label htmlFor={selectIDTwo}>Choose One</Label>
         <Select
           aria-describedby={helpTextIDTwo}
@@ -355,7 +355,7 @@ export const MultiSelectWithFormik = (): JSX.Element => {
         />
         <HelpText id={helpTextIDTwo}>Please choose one of the values.</HelpText>
       </Box.div>
-      <Box.div marginBottom="space70">
+      <Box.div marginBottom="d6">
         <Label htmlFor={selectIDThree}>Choose One</Label>
         <Select
           aria-describedby={helpTextIDThree}
@@ -369,7 +369,7 @@ export const MultiSelectWithFormik = (): JSX.Element => {
           Please choose one of the values.
         </HelpText>
       </Box.div>
-      <Box.div marginTop="space70">
+      <Box.div marginTop="d6">
         <Button type="submit" variant="primary">
           Submit
         </Button>
@@ -412,7 +412,7 @@ export const WithReactHookForm = (): JSX.Element => {
         )}
       />
       <HelpText id={helpTextID}>Please choose one of the flavors.</HelpText>
-      <Box.div marginTop="space70">
+      <Box.div marginTop="d6">
         <Button type="submit" variant="primary">
           Submit
         </Button>
@@ -448,7 +448,7 @@ export const MultiSelectWithReactHookForm = (): JSX.Element => {
   const helpTextIDThree = useUID();
   return (
     <Box.form onSubmit={handleSubmit(onSubmit)}>
-      <Box.div marginBottom="space70">
+      <Box.div marginBottom="d6">
         <Label htmlFor={selectID}>Choose a flavor</Label>
         <Controller
           control={control}
@@ -465,7 +465,7 @@ export const MultiSelectWithReactHookForm = (): JSX.Element => {
         />
         <HelpText id={helpTextID}>Please choose one of the flavors.</HelpText>
       </Box.div>
-      <Box.div marginBottom="space70">
+      <Box.div marginBottom="d6">
         <Label htmlFor={selectIDTwo}>Choose a flavor</Label>
         <Controller
           control={control}
@@ -484,7 +484,7 @@ export const MultiSelectWithReactHookForm = (): JSX.Element => {
           Please choose one of the flavors.
         </HelpText>
       </Box.div>
-      <Box.div marginBottom="space70">
+      <Box.div marginBottom="d6">
         <Label htmlFor={selectIDThree}>Choose a flavor</Label>
         <Controller
           control={control}
@@ -503,7 +503,7 @@ export const MultiSelectWithReactHookForm = (): JSX.Element => {
           Please choose one of the flavors.
         </HelpText>
       </Box.div>
-      <Box.div marginTop="space70">
+      <Box.div marginTop="d6">
         <Button type="submit" variant="primary">
           Submit
         </Button>

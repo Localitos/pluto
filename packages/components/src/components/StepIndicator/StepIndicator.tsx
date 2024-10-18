@@ -19,10 +19,10 @@ const StepIndicator = React.forwardRef<HTMLOListElement, StepIndicatorProps>(
         alignItems="center"
         aria-label="progress"
         display="flex"
-        gap="space30"
+        gap="d2"
         listStyleType="none"
         margin="m0"
-        padding="space0"
+        padding="d0"
         ref={ref}
       >
         {

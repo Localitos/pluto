@@ -132,7 +132,7 @@ export const ContentCard = ({
       justifyContent="space-between"
       maxH={maxHeight[imagePosition]}
       maxW={maxWidth || maxWidthDefault[imagePosition]}
-      padding="space0"
+      padding="d0"
       textDecoration="none"
       {...(isCardInteractive ? interactiveElementProps : {})}
     >
@@ -140,13 +140,13 @@ export const ContentCard = ({
         borderRadius="borderRadius40 borderRadius0 borderRadius0 borderRadius40"
         lineHeight="lineHeight30"
         maxWidth={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
-        padding="space70"
+        padding="d6"
       >
         <Text.div
           color="colorTextHeadingStronger"
           fontSize="fontSize10"
           lineHeight="lineHeight10"
-          marginBottom="space25"
+          marginBottom="d1_5"
         >
           {tag}
         </Text.div>
@@ -156,8 +156,8 @@ export const ContentCard = ({
         <Text.p
           color="colorTextStrongest"
           fontSize="fontSize20"
-          marginBottom="space70"
-          marginTop="space30"
+          marginBottom="d6"
+          marginTop="d2"
         >
           {text}
         </Text.p>
@@ -168,8 +168,8 @@ export const ContentCard = ({
             display="flex"
             fontSize="fontSize20"
             fontWeight="fontWeightMedium"
-            gap="space30"
-            marginBottom="space70"
+            gap="d2"
+            marginBottom="d6"
           >
             <Icon decorative icon="calendar" size="sizeIcon30" />
             <Text.span
@@ -188,7 +188,7 @@ export const ContentCard = ({
           display="flex"
           flexDirection={isImageOnTop ? "row" : { _: "column", md: "row" }}
           flexShrink={2}
-          gap="space50"
+          gap="d4"
         >
           {InteractiveElementType.Button === interactiveElementType && (
             <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
@@ -230,7 +230,7 @@ export const ContentCard = ({
             borderRadius="borderRadiusCircle"
             data-testid="service-content-card-icon"
             display="flex"
-            gap="space30"
+            gap="d2"
             h={56}
             justifyContent="center"
             left="16px"
