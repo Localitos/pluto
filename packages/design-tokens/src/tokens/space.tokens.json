@@ -130,6 +130,12 @@
     }
   },
   "space": {
+    "negative-10": {
+      "value": "-0.125rem",
+      "comment": "-2px",
+      "deprecated": true,
+      "deprecated_comment": "replace with the \"d\" token"
+    },
     "negative-50": {
       "value": "-1rem",
       "comment": "-16px",
