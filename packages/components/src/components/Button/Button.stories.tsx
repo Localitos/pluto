@@ -15,10 +15,10 @@ export default {
 const variants = ["primary", "secondary", "destructive", "ghost", "outline"];
 
 const Template: StoryFn<typeof Button> = (args) => (
-  <Box.div alignItems="center" display="flex" gap="space30">
+  <Box.div alignItems="center" display="flex" gap="d2">
     {map(dropRight(variants), (variant: ButtonProps["variant"]) => {
       return (
-        <Box.div padding="space60">
+        <Box.div padding="d5">
           <Button {...args} variant={variant} />
         </Box.div>
       );
@@ -37,8 +37,8 @@ export const Outline = (): ReactElement => (
     backgroundColor="colorBackgroundDecorativeStrong"
     display="flex"
     flexDirection="column"
-    gap="space30"
-    padding="space60"
+    gap="d2"
+    padding="d5"
   >
     <Button variant="outline">Default button</Button>
     <Button size="large" variant="outline">
@@ -114,12 +114,7 @@ WithNextJS.parameters = {
 };
 
 export const FullWidth: React.FC = () => (
-  <Box.div
-    alignItems="center"
-    display="flex"
-    flexDirection="column"
-    gap="space60"
-  >
+  <Box.div alignItems="center" display="flex" flexDirection="column" gap="d5">
     {map(dropRight(variants), (variant: ButtonProps["variant"]) => {
       return (
         <Button

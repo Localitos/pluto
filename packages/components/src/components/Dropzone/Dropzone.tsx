@@ -96,7 +96,7 @@ const getIcon = (
   }
 
   return (
-    <Box.div paddingBottom="space20">
+    <Box.div paddingBottom="d1">
       <Icon color={iconColor} decorative icon={icon} size={"sizeIcon40"} />
     </Box.div>
   );
@@ -222,7 +222,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
           flexDirection="column"
           justifyContent="center"
           minHeight="142.5px"
-          padding="space70"
+          padding="d6"
           {...getRootProps()}
           ref={ref}
         >

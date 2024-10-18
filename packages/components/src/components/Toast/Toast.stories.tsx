@@ -79,7 +79,7 @@ const SampleApp = (): JSX.Element => {
   };
 
   return (
-    <Box.div display="flex" gap="space70">
+    <Box.div display="flex" gap="d6">
       <Button
         onClick={() => toast("Toast message!", "success")}
         variant="primary"

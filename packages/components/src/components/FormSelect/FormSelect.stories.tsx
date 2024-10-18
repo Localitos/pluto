@@ -159,7 +159,7 @@ export const AsControlledFormSelect = (): JSX.Element => {
   const selectID = useUID();
   return (
     <Box.form onSubmit={handleSubmit(onSubmit)}>
-      <Box.div display="flex" flexDirection="column" gap="space50">
+      <Box.div display="flex" flexDirection="column" gap="d4">
         <ControlledFormSelect
           control={control}
           helpText={"Please select a flavor."}

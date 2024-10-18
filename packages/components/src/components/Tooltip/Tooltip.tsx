@@ -23,7 +23,7 @@ const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
         fontSize="fontSize20"
         lineHeight="lineHeight20"
         maxWidth="200px"
-        padding="space40"
+        padding="d3"
         ref={ref}
         {...props}
       >

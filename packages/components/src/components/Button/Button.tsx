@@ -179,7 +179,7 @@ const getButtonPadding = (
   const getDefaultPadding = (
     size: ButtonSizeOptions,
   ): SystemProp<keyof Theme["space"], Theme> =>
-    size === "large" ? "space40" : "space30";
+    size === "large" ? "d3" : "d2";
 
   if (iconOnly) {
     return {
@@ -194,8 +194,8 @@ const getButtonPadding = (
     return {
       paddingBottom: getDefaultPadding(size),
       paddingTop: getDefaultPadding(size),
-      paddingLeft: size === "large" ? "space50" : "space40",
-      paddingRight: size === "large" ? "space50" : "space40",
+      paddingLeft: size === "large" ? "d4" : "d3",
+      paddingRight: size === "large" ? "d4" : "d3",
     };
   }
 
@@ -204,14 +204,14 @@ const getButtonPadding = (
       paddingBottom: getDefaultPadding(size),
       paddingTop: getDefaultPadding(size),
       paddingLeft: getDefaultPadding(size),
-      paddingRight: size === "large" ? "space50" : "space40",
+      paddingRight: size === "large" ? "d4" : "d3",
     };
   }
 
   return {
     paddingBottom: getDefaultPadding(size),
     paddingTop: getDefaultPadding(size),
-    paddingLeft: size === "large" ? "space50" : "space40",
+    paddingLeft: size === "large" ? "d4" : "d3",
     paddingRight: getDefaultPadding(size),
   };
 };
@@ -264,7 +264,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           fontFamily="fontFamilyNotoSans"
           fontSize={size === "large" ? "fontSize30" : "fontSize20"}
           fontWeight="fontWeightMedium"
-          gap="space30"
+          gap="d2"
           justifyContent="center"
           lineHeight={size === "large" ? "lineHeight40" : "lineHeight30"}
           outlineOffset={{ focus: "borderWidth20" }}

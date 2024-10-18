@@ -15,7 +15,7 @@ const InnerOrderedList = styled(Box.ol)`
 
   li {
     position: relative;
-    padding-left: space60;
+    padding-left: d5;
     counter-increment: list-item;
 
     &::before {
@@ -34,7 +34,7 @@ export const OrderedList = React.forwardRef<HTMLOListElement, OrderedListProps>(
       <InnerOrderedList
         color="colorTextStrongest"
         listStyleType="none"
-        marginBottom="space70"
+        marginBottom="d6"
         marginTop="m0"
         paddingLeft="p0"
         ref={ref}

@@ -24,7 +24,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
   ({ disabled = false, hasError = false, label, value, ...props }, ref) => {
     const radioID = useUID();
     return (
-      <Box.div alignItems="center" display="flex" gap="space30">
+      <Box.div alignItems="center" display="flex" gap="d2">
         <Box.button
           appearance="none"
           aria-invalid={hasError}
@@ -65,7 +65,7 @@ const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
           outlineOffset={{ focus: "borderWidth20" }}
           outlineStyle={{ focus: "solid" }}
           outlineWidth={{ focus: "borderWidth20" }}
-          padding="space0"
+          padding="d0"
           ref={ref}
           value={value}
           w="1rem"

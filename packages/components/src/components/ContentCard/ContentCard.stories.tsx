@@ -103,7 +103,7 @@ export const InList = (): JSX.Element => {
   return (
     <Box.ul
       display="grid"
-      gap="space50"
+      gap="d4"
       gridTemplateColumns={{ _: "1fr", lg: "1fr 1fr" }}
       listStyleType="none"
     >

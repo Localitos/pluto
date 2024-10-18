@@ -119,7 +119,7 @@ export const AsControlledRadioGroup = (): JSX.Element => {
         <Radio label="Third Option" value="third option" />
       </ControlledRadioGroup>
 
-      <Box.div marginTop="space40">
+      <Box.div marginTop="d3">
         <Button type="submit" variant="primary">
           Submit
         </Button>

@@ -49,7 +49,7 @@ const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
         color="colorTextStrongest"
         fontFamily="fontFamilyNotoSans"
         fontWeight="fontWeightRegular"
-        marginBottom="space70"
+        marginBottom="d6"
         marginTop="m0"
         ref={ref}
         {...getParagraphStyles(size)}

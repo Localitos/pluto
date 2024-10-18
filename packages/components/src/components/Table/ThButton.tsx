@@ -27,7 +27,7 @@ const ThButton = React.forwardRef<HTMLButtonElement, ThButtonProps>(
         outlineOffset={{ focus: "borderWidth20" }}
         outlineStyle={{ focus: "borderStyleSolid" }}
         outlineWidth={{ active: "borderWidth0", focus: "borderWidth20" }}
-        padding="space0"
+        padding="d0"
         ref={ref}
         {...props}
       >

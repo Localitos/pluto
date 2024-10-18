@@ -77,7 +77,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
       (status === "error" && hasFile) || status === "success";
 
     return (
-      <Box.div display="flex" flexDirection="column" gap="space25">
+      <Box.div display="flex" flexDirection="column" gap="d1_5">
         <Box.div
           borderColor={
             status === "error" ? "colorBorderError" : "colorBorderWeaker"
@@ -87,15 +87,15 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
           borderWidth="borderWidth10"
           display="flex"
           flexDirection={{ _: "column", md: "row" }}
-          gap={isMobileUploading ? "space30" : "space70"}
-          padding="space50"
+          gap={isMobileUploading ? "d2" : "d6"}
+          padding="d4"
           ref={ref}
         >
           <Box.div
             display="flex"
             flexDirection="row"
             flexGrow={1}
-            gap="space40"
+            gap="d3"
             style={{ wordBreak: "break-word" }}
           >
             <FileUploaderIcon disabled={disabled} status={status} />
@@ -110,7 +110,7 @@ const FileUploader = React.forwardRef<HTMLDivElement, FileUploaderProps>(
                 alignItems={{ _: "left", md: "center" }}
                 display="flex"
                 flexDirection={{ _: "column-reverse", md: "row" }}
-                gap="space40"
+                gap="d3"
               >
                 {!isMobile && status === "loading" && (
                   <FileUploaderProgressBar progress={progress} />

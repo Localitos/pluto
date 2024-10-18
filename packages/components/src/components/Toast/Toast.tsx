@@ -24,9 +24,9 @@ const Toast = React.forwardRef<HTMLLIElement, Omit<ToastProps, "ref">>(
         borderWidth="borderWidth10"
         boxShadow="shadow"
         display="grid"
-        gap="space40"
+        gap="d3"
         gridTemplateColumns="20px 1fr 20px"
-        padding="space40"
+        padding="d3"
         ref={ref}
         {...props}
       >

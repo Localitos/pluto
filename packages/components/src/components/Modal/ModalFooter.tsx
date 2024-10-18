@@ -17,9 +17,9 @@ const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
         borderTopStyle="borderStyleSolid"
         borderTopWidth="borderWidth10"
         display="flex"
-        gap="space30"
+        gap="d2"
         justifyContent="flex-end"
-        padding="space60"
+        padding="d5"
         ref={ref}
         {...props}
       >

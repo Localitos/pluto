@@ -193,10 +193,10 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
           outlineColor={{ focus: "colorBorderPrimary" }}
           outlineStyle={{ focus: "solid" }}
           outlineWidth={{ focus: "borderWidth20" }}
-          paddingBottom={size === "large" ? "space40" : "space30"}
-          paddingLeft="space40"
-          paddingRight="space40"
-          paddingTop={size === "large" ? "space40" : "space30"}
+          paddingBottom={size === "large" ? "d3" : "d2"}
+          paddingLeft="d3"
+          paddingRight="d3"
+          paddingTop={size === "large" ? "d3" : "d2"}
           position="relative"
           ref={ref}
           required={required}

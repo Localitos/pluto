@@ -86,9 +86,9 @@ const Menu = React.forwardRef<HTMLButtonElement, BoxProps & MenuProps>(
                     disabled={disabled}
                     justifyContent="flex-start"
                     onClick={onClick}
-                    padding="space0"
-                    px="space50"
-                    py="space30"
+                    padding="d0"
+                    px="d4"
+                    py="d2"
                     variant="ghost"
                     w="100%"
                   >

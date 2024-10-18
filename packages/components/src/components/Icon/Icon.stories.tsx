@@ -39,7 +39,7 @@ export const IconList: React.FC = () => {
   return (
     <Box.div
       display="grid"
-      gap="space30"
+      gap="d2"
       gridTemplateColumns="repeat(4, 1fr);"
       maxWidth="680px"
     >
@@ -50,7 +50,7 @@ export const IconList: React.FC = () => {
             borderStyle="borderStyleSolid"
             borderWidth="borderWidth10"
             key={value}
-            padding="space60"
+            padding="d5"
             textAlign="center"
           >
             <Icon

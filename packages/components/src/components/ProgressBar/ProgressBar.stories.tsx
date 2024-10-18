@@ -9,19 +9,19 @@ export default {
 } as Meta<typeof ProgressBar>;
 
 export const Default = (): JSX.Element => (
-  <Box.div display="flex" flexDirection="column" gap="space40">
+  <Box.div display="flex" flexDirection="column" gap="d3">
     <ProgressBar value={60} />
   </Box.div>
 );
 
 export const Large = (): JSX.Element => (
-  <Box.div display="flex" flexDirection="column" gap="space40">
+  <Box.div display="flex" flexDirection="column" gap="d3">
     <ProgressBar size="large" value={90} />
   </Box.div>
 );
 
 export const WithCustomColors = (): JSX.Element => (
-  <Box.div display="flex" flexDirection="column" gap="space40">
+  <Box.div display="flex" flexDirection="column" gap="d3">
     <ProgressBar
       backgroundColor="colorAvatarBackgroundPink"
       indicatorColor="colorAvatarBackgroundGreen"
@@ -39,7 +39,7 @@ export const Animated = (): JSX.Element => {
   }, []);
 
   return (
-    <Box.div display="flex" flexDirection="column" gap="space40">
+    <Box.div display="flex" flexDirection="column" gap="d3">
       <ProgressBar value={progress} />
     </Box.div>
   );

@@ -54,10 +54,10 @@ export const PaginationButton = ({
         outlineOffset={{ focus: "borderWidth20" }}
         outlineStyle={{ focus: "borderStyleSolid" }}
         outlineWidth={{ active: "borderWidth0", focus: "borderWidth20" }}
-        paddingBottom="space30"
-        paddingLeft="space30"
-        paddingRight="space30"
-        paddingTop="space30"
+        paddingBottom="d2"
+        paddingLeft="d2"
+        paddingRight="d2"
+        paddingTop="d2"
         textDecoration={{ _: "none", hover: "none" }}
         w="36px"
       >

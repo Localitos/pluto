@@ -60,8 +60,8 @@ const getInputIcon = (
   return (
     <Box.div
       display="inline-flex"
-      marginLeft={isLeadingIcon ? "space40" : undefined}
-      marginRight={isTrailingIcon ? "space40" : undefined}
+      marginLeft={isLeadingIcon ? "d3" : undefined}
+      marginRight={isTrailingIcon ? "d3" : undefined}
     >
       <Icon
         color="colorIconStrong"
@@ -128,10 +128,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           margin="m0"
           name={name}
           outline="none"
-          paddingBottom={size === "large" ? "space40" : "space30"}
-          paddingLeft="space40"
-          paddingRight="space40"
-          paddingTop={size === "large" ? "space40" : "space30"}
+          paddingBottom={size === "large" ? "d3" : "d2"}
+          paddingLeft="d3"
+          paddingRight="d3"
+          paddingTop={size === "large" ? "d3" : "d2"}
           placeholder={placeholder}
           readOnly={readOnly}
           required={required}

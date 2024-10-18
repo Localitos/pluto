@@ -15,9 +15,9 @@ const DrawerHeader = React.forwardRef<HTMLDivElement, DrawerHeaderProps>(
       <Box.div
         alignItems="center"
         display="flex"
-        gap="space30"
+        gap="d2"
         justifyContent="space-between"
-        padding="space60"
+        padding="d5"
         ref={ref}
         {...props}
       >

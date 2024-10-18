@@ -67,7 +67,7 @@ export const WithMorePageNeighbors: Story = {
 
 export const WithContainerBackground: Story = {
   render: (): React.JSX.Element => (
-    <Box.div backgroundColor="colorBackgroundWeaker" padding="space40">
+    <Box.div backgroundColor="colorBackgroundWeaker" padding="d3">
       <PaginationWithLotsOfPages />
     </Box.div>
   ),
