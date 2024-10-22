@@ -2,6 +2,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
 import { Button } from "../Button";
+import { Badge } from "../Badge";
 import { ContentCard, InteractiveElementType } from "./ContentCard";
 
 export default {
@@ -87,16 +88,48 @@ CustomCta.args = {
   interactiveElementType: InteractiveElementType.Custom,
 };
 
-export const WithIcon: Story = Template.bind({});
-WithIcon.args = {
+export const WithTopLeftElement: Story = Template.bind({});
+WithTopLeftElement.args = {
   ...defaultProps,
-  iconUrl: "/images/house.png",
+  imagePosition: "top",
+  topLeftElement: (
+    <Box.img aria-hidden h="auto" src="/images/house.png" w="100%" />
+  ),
 };
 
 export const PortraitImage: Story = Template.bind({});
 PortraitImage.args = {
   ...defaultProps,
   imageSrc: "/images/beach-porto-rico.jpg",
+};
+
+export const WithTopRightElement: Story = Template.bind({});
+WithTopRightElement.args = {
+  ...defaultProps,
+  imagePosition: "top",
+  topLeftElement: (
+    <Box.img aria-hidden h="auto" src="/images/house.png" w="100%" />
+  ),
+  topRightElement: (
+    <Box.div position="absolute" right={24} top={24}>
+      <Badge icon="star">Preferred partner</Badge>
+    </Box.div>
+  ),
+};
+
+export const WithLowOpacity: Story = Template.bind({});
+WithLowOpacity.args = {
+  ...defaultProps,
+  imagePosition: "top",
+  topLeftElement: (
+    <Box.img aria-hidden h="auto" src="/images/house.png" w="100%" />
+  ),
+  hasLowOpacity: true,
+  topRightElement: (
+    <Box.div position="absolute" right={24} top={24}>
+      <Badge color="red">Disabled</Badge>
+    </Box.div>
+  ),
 };
 
 export const InList = (): JSX.Element => {
