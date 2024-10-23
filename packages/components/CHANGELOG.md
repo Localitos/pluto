@@ -1,5 +1,18 @@
 # @localyze-pluto/components
 
+## 54.0.0
+
+### Minor Changes
+
+- [#1750](https://github.com/Localitos/pluto/pull/1750) [`3df8810`](https://github.com/Localitos/pluto/commit/3df8810ada7a3ec50b2e8c23c3c9d154e81f8e26) Thanks [@rssilva](https://github.com/rssilva)! - Remove space tokens except negative 50
+
+- [#1751](https://github.com/Localitos/pluto/pull/1751) [`c9a16d2`](https://github.com/Localitos/pluto/commit/c9a16d24b22c0dc210028588b18a53535977d6b8) Thanks [@rssilva](https://github.com/rssilva)! - Replace occurrences of space token
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @localyze-pluto/theme@40.0.0
+
 ## 53.3.0
 
 ### Minor Changes
