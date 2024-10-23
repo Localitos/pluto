@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 2.0.0
+
+### Major Changes
+
+- [#1750](https://github.com/Localitos/pluto/pull/1750) [`3df8810`](https://github.com/Localitos/pluto/commit/3df8810ada7a3ec50b2e8c23c3c9d154e81f8e26) Thanks [@rssilva](https://github.com/rssilva)! - Remove space tokens except negative 50
+
 ## 1.30.1
 
 ### Patch Changes
