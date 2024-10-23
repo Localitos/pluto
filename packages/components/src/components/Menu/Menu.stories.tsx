@@ -189,7 +189,7 @@ export const WithIcons: Story = {
       {
         onClick: noop,
         label: (
-          <Box.div alignItems="center" display="flex" gap="space30">
+          <Box.div alignItems="center" display="flex" gap="d2">
             <Icon decorative icon="pin" size="sizeIcon20" />
             <Box.span>Pin to top</Box.span>
           </Box.div>
@@ -198,7 +198,7 @@ export const WithIcons: Story = {
       {
         onClick: noop,
         label: (
-          <Box.div alignItems="center" display="flex" gap="space30">
+          <Box.div alignItems="center" display="flex" gap="d2">
             <Icon decorative icon="trash-2" size="sizeIcon20" />
             <Box.span>Delete</Box.span>
           </Box.div>

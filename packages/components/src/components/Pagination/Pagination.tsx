@@ -55,10 +55,10 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
         <Box.ul
           alignItems="center"
           display="flex"
-          gap="space30"
+          gap="d2"
           listStyleType="none"
           margin="m0"
-          padding="space0"
+          padding="d0"
         >
           <Button
             aria-label="Previous page"
@@ -79,10 +79,10 @@ const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                   fontWeight="fontWeightMedium"
                   justifyContent="center"
                   key={`${page}-${index}`}
-                  paddingBottom="space30"
-                  paddingLeft="space30"
-                  paddingRight="space30"
-                  paddingTop="space30"
+                  paddingBottom="d2"
+                  paddingLeft="d2"
+                  paddingRight="d2"
+                  paddingTop="d2"
                   w="36px"
                 >
                   ...

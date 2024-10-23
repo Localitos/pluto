@@ -63,7 +63,7 @@ export const NoPaddingOnBody = (): React.ReactNode => {
         <DrawerHeader>
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
-        <DrawerBody padding="space0">
+        <DrawerBody padding="d0">
           <Paragraph>
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,
@@ -248,10 +248,10 @@ export const WithPadding = (args: {
         Open drawer
       </Button>
       <Drawer initialFocus={buttonRef} padding={padding} store={drawer}>
-        <DrawerHeader padding="space0">
+        <DrawerHeader padding="d0">
           <DrawerHeading>This is the heading</DrawerHeading>
         </DrawerHeader>
-        <DrawerBody padding="space0">
+        <DrawerBody padding="d0">
           <Paragraph>
             Times feedback the and his consider eating the through position. And
             leaving than into the her accounts picture they of see her leaders,

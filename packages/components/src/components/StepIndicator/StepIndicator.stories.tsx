@@ -25,7 +25,7 @@ export const WithButtons = (): JSX.Element => {
   const [currentStep, setCurrentStep] = React.useState(0);
 
   return (
-    <Box.div alignItems="center" display="flex" gap="space30">
+    <Box.div alignItems="center" display="flex" gap="d2">
       <Button
         disabled={currentStep === 0}
         onClick={() => setCurrentStep(currentStep - 1)}

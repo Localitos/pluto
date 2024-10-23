@@ -16,12 +16,12 @@ export const FileUploaderProgressBar = ({
 
   if (isMobile) {
     return (
-      <Box.div paddingBottom="space50">
+      <Box.div paddingBottom="d4">
         <Box.span
           color="colorTextHeading"
           display="block"
           fontSize="fontSize10"
-          paddingBottom="space30"
+          paddingBottom="d2"
         >
           {fileName}
         </Box.span>

@@ -132,7 +132,7 @@ export const AsControlledFormInput = (): JSX.Element => {
   const inputID = useUID();
   return (
     <Box.form onSubmit={handleSubmit(onSubmit)}>
-      <Box.div display="flex" flexDirection="column" gap="space50">
+      <Box.div display="flex" flexDirection="column" gap="d4">
         <ControlledFormInput
           control={control}
           data-testid="test"

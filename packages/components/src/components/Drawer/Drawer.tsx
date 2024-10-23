@@ -42,7 +42,7 @@ const StyledDrawer = styled(Box.div)<DrawerProps>`
   top: 0;
   bottom: 0;
   transition: right 0.4s;
-  padding: ${({ padding }) => padding ?? "space0"};
+  padding: ${({ padding }) => padding ?? "d0"};
   z-index: ${theme.zIndices.zIndex30};
 
   &[data-enter] {

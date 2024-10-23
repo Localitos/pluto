@@ -83,18 +83,18 @@ const getSizeProps = (
   if (size === "large") {
     return {
       fontSize: "fontSize30",
-      paddingBottom: "space30",
-      paddingLeft: "space50",
-      paddingRight: "space50",
-      paddingTop: "space25",
+      paddingBottom: "d2",
+      paddingLeft: "d4",
+      paddingRight: "d4",
+      paddingTop: "d1_5",
     };
   }
   return {
     fontSize: "fontSize10",
-    paddingBottom: "space20",
-    paddingLeft: "space40",
-    paddingRight: "space40",
-    paddingTop: "space10",
+    paddingBottom: "d1",
+    paddingLeft: "d3",
+    paddingRight: "d3",
+    paddingTop: "d0_5",
   };
 };
 
@@ -114,7 +114,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         borderRadius="borderRadiusPill"
         display="inline-flex"
         fontWeight="fontWeightBold"
-        gap="space20"
+        gap="d1"
         lineHeight="lineHeight30"
         ref={ref}
         {...getSizeProps(size)}

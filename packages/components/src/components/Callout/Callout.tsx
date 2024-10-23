@@ -32,7 +32,7 @@ const getVariantProps = (
     return {};
   }
 
-  const padding = "space50";
+  const padding = "d4";
 
   switch (variant) {
     case "error": {
@@ -143,12 +143,12 @@ const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(
       <Box.div
         borderRadius="borderRadius20"
         display="flex"
-        gap="space40"
+        gap="d3"
         ref={ref}
         {...getVariantProps(variant, withoutBackground)}
         {...props}
       >
-        <Box.span padding="space10">
+        <Box.span padding="d0_5">
           <Icon
             color={iconProps.color}
             decorative

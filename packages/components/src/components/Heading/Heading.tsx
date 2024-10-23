@@ -137,7 +137,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     {
       as,
       children,
-      marginBottom = "space70",
+      marginBottom = "d6",
       size = "heading20",
       color = "contentPrimary",
       ...props

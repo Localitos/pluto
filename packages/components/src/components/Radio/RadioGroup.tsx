@@ -51,7 +51,7 @@ const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
         dir={dir}
         display="flex"
         flexDirection={orientation === "vertical" ? "column" : "row"}
-        gap="space30"
+        gap="d2"
         name={name}
         onValueChange={onValueChange}
         ref={ref}

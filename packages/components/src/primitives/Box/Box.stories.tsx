@@ -15,7 +15,7 @@ export const Default = (): JSX.Element => (
     borderStyle="borderStyleSolid"
     borderWidth="borderWidth10"
     color="colorTextStronger"
-    padding="space40"
+    padding="d3"
   >
     I&apos;m some text in a box.
   </Box.div>
@@ -25,7 +25,7 @@ export const Responsive = (): JSX.Element => (
   <Box.div
     backgroundColor={{ _: "colorBackgroundWeak", md: "colorBackgroundInfo" }}
     fontSize={{ _: "fontSize30", md: "fontSize60" }}
-    padding="space60"
+    padding="d5"
   >
     The background color and text size will change on smaller screens.
   </Box.div>
@@ -47,7 +47,7 @@ export const ProcessesCard = (): JSX.Element => (
       display="flex"
       flexDirection="column"
       fontFamily="fontFamilyNotoSans"
-      padding="space70"
+      padding="d6"
     >
       <Box.div
         fontSize="fontSize80"

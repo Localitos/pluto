@@ -31,7 +31,7 @@ export const Default = (): React.JSX.Element => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab One
             </Heading>
@@ -42,7 +42,7 @@ export const Default = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Two
             </Heading>
@@ -53,7 +53,7 @@ export const Default = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Three
             </Heading>
@@ -79,7 +79,7 @@ export const InitialTab = (): React.JSX.Element => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab One
             </Heading>
@@ -90,7 +90,7 @@ export const InitialTab = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Two
             </Heading>
@@ -101,7 +101,7 @@ export const InitialTab = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Three
             </Heading>
@@ -126,7 +126,7 @@ export const Disabled = (): React.JSX.Element => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab One
             </Heading>
@@ -137,7 +137,7 @@ export const Disabled = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Two
             </Heading>
@@ -148,7 +148,7 @@ export const Disabled = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Three
             </Heading>
@@ -172,7 +172,7 @@ export const ReallyLongTab = (): React.JSX.Element => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab One
             </Heading>
@@ -183,7 +183,7 @@ export const ReallyLongTab = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Two
             </Heading>
@@ -207,7 +207,7 @@ export const Fitted = (): React.JSX.Element => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab One
             </Heading>
@@ -218,7 +218,7 @@ export const Fitted = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Two
             </Heading>
@@ -242,7 +242,7 @@ export const WithDivider = (): React.JSX.Element => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab One
             </Heading>
@@ -253,7 +253,7 @@ export const WithDivider = (): React.JSX.Element => {
           </Box.div>
         </TabPanel>
         <TabPanel>
-          <Box.div padding="space60">
+          <Box.div padding="d5">
             <Heading as="h2" marginBottom="m0" size="heading50">
               Tab Two
             </Heading>
@@ -283,7 +283,7 @@ const Tab1 = () => (
     borderStyle="borderStyleSolid"
     borderWidth="borderWidth10"
     h="100%"
-    padding="space60"
+    padding="d5"
     w="100%"
   >
     Tab1
@@ -295,7 +295,7 @@ const Tab2 = () => (
     borderColor="colorBorderWeaker"
     borderStyle="borderStyleSolid"
     borderWidth="borderWidth10"
-    padding="space60"
+    padding="d5"
   >
     Tab2
   </Box.div>

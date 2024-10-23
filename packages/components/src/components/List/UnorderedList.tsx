@@ -13,7 +13,7 @@ export interface UnorderedListProps
 const InnerUnorderedList = styled(Box.ul)`
   li {
     position: relative;
-    padding-left: space50;
+    padding-left: d4;
 
     &::before {
       content: "•";
@@ -32,12 +32,7 @@ export const UnorderedList = React.forwardRef<
   UnorderedListProps
 >(
   (
-    {
-      children,
-      color = "colorTextStrongest",
-      marginBottom = "space70",
-      ...props
-    },
+    { children, color = "colorTextStrongest", marginBottom = "d6", ...props },
     ref,
   ) => {
     return (
@@ -47,7 +42,7 @@ export const UnorderedList = React.forwardRef<
         listStyleType="none"
         marginBottom={marginBottom}
         marginTop="m0"
-        paddingLeft="space0"
+        paddingLeft="d0"
         ref={ref}
         {...props}
       >

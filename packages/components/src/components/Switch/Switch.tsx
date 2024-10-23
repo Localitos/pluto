@@ -43,7 +43,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
     const switchId = useUID();
     const helpTextId = useUID();
     return (
-      <Box.div display="flex" gap="space40">
+      <Box.div display="flex" gap="d3">
         <Box.button
           appearance="none"
           aria-describedby={helpTextId}
@@ -80,7 +80,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
           outlineOffset={{ focus: "borderWidth20" }}
           outlineStyle={{ focus: "borderStyleSolid" }}
           outlineWidth={{ focus: "borderWidth20" }}
-          padding="space0"
+          padding="d0"
           position="relative"
           ref={ref}
           w="2.75rem"
@@ -132,7 +132,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             />
           </Box.span>
         </Box.button>
-        <Box.div marginTop="space20">
+        <Box.div marginTop="d1">
           <Label disabled={disabled} htmlFor={switchId} marginBottom="m0">
             {children}
           </Label>

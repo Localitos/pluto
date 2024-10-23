@@ -61,7 +61,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
       display="flex"
       flexDirection={{ lg: "row" }}
       outlineColor={{ focus: "colorBorderPrimary" }}
-      padding="space50"
+      padding="d4"
       w="100%"
       {...(isCardInteractive ? interactiveElementProps : {})}
     >
@@ -72,9 +72,9 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         display="flex"
         h={{ _: "56px", md: "56px" }}
         justifyContent="center"
-        marginRight="space50"
+        marginRight="d4"
         minWidth={{ _: "24px", md: "24px" }}
-        padding={{ _: "space50", md: "space70" }}
+        padding={{ _: "d4", md: "d6" }}
         w={{ _: "56px", md: "56px" }}
       >
         <Box.img alt="" aria-hidden h="24px" src={imageSrc} w="24px" />
@@ -83,7 +83,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
       <Box.div
         display="flex"
         flexDirection="column"
-        marginRight="space50"
+        marginRight="d4"
         textAlign="left"
         w="100%"
       >
@@ -92,14 +92,14 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
           fontSize="fontSize10"
           fontWeight="fontWeightMedium"
           lineHeight="lineHeight10"
-          margin="0 0 space20"
+          margin="0 0 d1"
         >
           {categoryTag}
         </Text.p>
         <Text.h2
           fontSize="fontSize30"
           fontWeight="fontWeightBold"
-          margin="m0 m0 space40"
+          margin="m0 m0 d3"
         >
           {title}
         </Text.h2>
@@ -110,7 +110,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         )}
       </Box.div>
 
-      <Box.div margin="space30">
+      <Box.div margin="d2">
         <Icon decorative icon="chevron-right" size="sizeIcon20" />
       </Box.div>
     </Box.div>

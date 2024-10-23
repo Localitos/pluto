@@ -60,7 +60,7 @@ const getCheckboxStyles = (
   if (wrapped) {
     return {
       backgroundColor: "colorBackgroundWeak",
-      padding: "space50",
+      padding: "d4",
     };
   }
   return {};
@@ -71,7 +71,7 @@ const StyledCheckbox = styled.input`
   min-width: 16px;
   height: 16px;
   border-radius: 4px;
-  margin-right: ${theme.space.space30};
+  margin-right: ${theme.space.d2};
   padding: 0;
   margin-bottom: auto;
   margin-top: 1px;
