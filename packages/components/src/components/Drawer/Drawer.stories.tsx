@@ -274,7 +274,7 @@ export const WithPadding = (args: {
 };
 
 WithPadding.args = {
-  padding: "space140",
+  padding: "d14",
 };
 
 WithPadding.parameters = {
