@@ -32,8 +32,6 @@ export type ContentCardProps = {
   date?: string;
   /** Sets the image position on the card */
   imagePosition?: ImagePosition;
-  /** Sets an icon to be rendered over the image */
-  iconUrl?: string;
   /** Sets the background color according with the type */
   background?: Background;
   /** Sets the type of the clickable element */
@@ -50,6 +48,16 @@ export type ContentCardProps = {
   as?: React.ComponentProps<typeof Box.div>["as"];
   /** Overwrites default maxWidth */
   maxWidth?: BoxProps["maxW"];
+  /** Overwrites default h (height) */
+  h?: BoxProps["h"];
+  /** Overwrites default w (width) */
+  w?: BoxProps["w"];
+  /** Element to be rendered on the top left corner of the card */
+  topLeftElement?: ReactNode;
+  /** Element to be rendered on the top right corner of the card */
+  topRightElement?: ReactNode;
+  /** Applies reduced opacity to the card */
+  hasLowOpacity?: boolean;
 };
 
 const backgroundColor: Record<Background, BoxProps["backgroundColor"]> = {
@@ -69,12 +77,16 @@ export const ContentCard = ({
   text,
   tag,
   date,
-  iconUrl,
+  topLeftElement,
   imagePosition = "right",
   background = "default",
   target,
   as = "div",
   maxWidth,
+  h,
+  w,
+  topRightElement,
+  hasLowOpacity,
 }: ContentCardProps): JSX.Element => {
   const isImageOnTop = imagePosition === "top";
 
@@ -114,144 +126,168 @@ export const ContentCard = ({
 
   return (
     <Box.div
-      as={isCardInteractive ? "a" : as}
-      backgroundColor={backgroundColor[background]}
       border={0}
-      borderRadius={"borderRadius40"}
+      borderRadius="borderRadius40"
       boxShadow={
-        isCardInteractive && {
-          _: "none",
-          hover: "shadowStrong",
-        }
+        isCardInteractive
+          ? {
+              _: "none",
+              hover: "shadowStrong",
+            }
+          : "none"
       }
-      display="flex"
-      flexDirection={
-        isImageOnTop ? "column-reverse" : { _: "column-reverse", md: "unset" }
-      }
-      fontFamily="fontFamilyNotoSans"
-      justifyContent="space-between"
       maxH={maxHeight[imagePosition]}
       maxW={maxWidth || maxWidthDefault[imagePosition]}
-      padding="d0"
-      textDecoration="none"
-      {...(isCardInteractive ? interactiveElementProps : {})}
+      overflow="hidden"
+      position="relative"
     >
       <Box.div
-        borderRadius="borderRadius40 borderRadius0 borderRadius0 borderRadius40"
-        lineHeight="lineHeight30"
-        maxWidth={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
-        padding="d6"
+        as={isCardInteractive ? "a" : as}
+        backgroundColor={backgroundColor[background]}
+        display="flex"
+        flexDirection={
+          isImageOnTop ? "column-reverse" : { _: "column-reverse", md: "unset" }
+        }
+        fontFamily="fontFamilyNotoSans"
+        h={h}
+        justifyContent="start"
+        maxH={maxHeight[imagePosition]}
+        maxW={maxWidth || maxWidthDefault[imagePosition]}
+        opacity={hasLowOpacity ? 0.6 : 1}
+        textDecoration="none"
+        w={w}
+        {...(isCardInteractive ? interactiveElementProps : {})}
       >
-        <Text.div
-          color="colorTextHeadingStronger"
-          fontSize="fontSize10"
-          lineHeight="lineHeight10"
-          marginBottom="d1_5"
-        >
-          {tag}
-        </Text.div>
-        <Heading marginBottom="m0" size="heading60">
-          {title}
-        </Heading>
-        <Text.p
-          color="colorTextStrongest"
-          fontSize="fontSize20"
-          marginBottom="d6"
-          marginTop="d2"
-        >
-          {text}
-        </Text.p>
-        {date && (
-          <Box.div
-            alignItems="center"
-            color="colorTextLinkStrong"
-            display="flex"
-            fontSize="fontSize20"
-            fontWeight="fontWeightMedium"
-            gap="d2"
-            marginBottom="d6"
-          >
-            <Icon decorative icon="calendar" size="sizeIcon30" />
-            <Text.span
-              fontFamily="fontFamilyNotoSans"
-              fontSize="fontSize20"
-              lineHeight="lineHeight30"
-            >
-              {date}
-            </Text.span>
-          </Box.div>
-        )}
         <Box.div
-          alignItems={
-            isImageOnTop ? "center" : { _: "flex-start", md: "center" }
-          }
-          display="flex"
-          flexDirection={isImageOnTop ? "row" : { _: "column", md: "row" }}
-          flexShrink={2}
-          gap="d4"
+          borderRadius="borderRadius40 borderRadius0 borderRadius0 borderRadius40"
+          lineHeight="lineHeight30"
+          maxWidth={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
+          padding="d6"
         >
-          {InteractiveElementType.Button === interactiveElementType && (
-            <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
-              <Button
-                as="a"
-                fullWidth
-                variant="secondary"
-                {...interactiveElementProps}
+          {tag && (
+            <Text.div
+              color="colorTextHeadingStronger"
+              fontSize="fontSize10"
+              lineHeight="lineHeight10"
+              marginBottom="d2"
+            >
+              {tag}
+            </Text.div>
+          )}
+          <Heading
+            color="cardContentTitle"
+            marginBottom="m0"
+            size="title-group"
+          >
+            {title}
+          </Heading>
+          <Text.p
+            color="cardContentBody"
+            fontSize="fontSize20"
+            marginBottom="d6"
+            marginTop="d2"
+          >
+            {text}
+          </Text.p>
+          {date && (
+            <Box.div
+              alignItems="center"
+              color="colorTextLinkStrong"
+              display="flex"
+              fontSize="fontSize20"
+              fontWeight="fontWeightMedium"
+              gap="d2"
+              marginBottom="d6"
+            >
+              <Icon decorative icon="calendar" size="sizeIcon30" />
+              <Text.span
+                fontFamily="fontFamilyNotoSans"
+                fontSize="fontSize20"
+                lineHeight="lineHeight30"
               >
+                {date}
+              </Text.span>
+            </Box.div>
+          )}
+          <Box.div
+            alignItems={
+              isImageOnTop ? "center" : { _: "flex-start", md: "center" }
+            }
+            display="flex"
+            flexDirection={isImageOnTop ? "row" : { _: "column", md: "row" }}
+            flexShrink={2}
+            gap="d4"
+          >
+            {InteractiveElementType.Button === interactiveElementType && (
+              <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
+                <Button
+                  as="a"
+                  fullWidth
+                  variant="secondary"
+                  {...interactiveElementProps}
+                >
+                  {callToAction}
+                </Button>
+              </Box.div>
+            )}
+
+            {InteractiveElementType.Anchor === interactiveElementType && (
+              <Anchor {...interactiveElementProps}>{callToAction || ""}</Anchor>
+            )}
+
+            {InteractiveElementType.Custom === interactiveElementType && (
+              <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
                 {callToAction}
-              </Button>
+              </Box.div>
+            )}
+          </Box.div>
+        </Box.div>
+        <Box.div
+          alignItems="center"
+          borderRadius={imageBorderRadius[imagePosition]}
+          display="flex"
+          maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
+          overflow="hidden"
+          position="relative"
+          w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
+        >
+          {topLeftElement && (
+            <Box.div
+              alignItems="center"
+              backgroundColor="colorBackground"
+              borderRadius="borderRadius30"
+              data-testid="service-content-card-icon"
+              display="flex"
+              gap="d2"
+              h={56}
+              justifyContent="center"
+              left="24px"
+              padding="d2"
+              position="absolute"
+              top="24px"
+              w={56}
+            >
+              <Box.div
+                alignItems="center"
+                display="flex"
+                justifyContent="center"
+                position="relative"
+              >
+                {topLeftElement}
+              </Box.div>
             </Box.div>
           )}
 
-          {InteractiveElementType.Anchor === interactiveElementType && (
-            <Anchor {...interactiveElementProps}>{callToAction || ""}</Anchor>
-          )}
-
-          {InteractiveElementType.Custom === interactiveElementType && (
-            <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
-              {callToAction}
-            </Box.div>
-          )}
+          <Box.img
+            alt={imageAlt}
+            h="100%"
+            objectFit="cover"
+            src={imageSrc}
+            w="100%"
+          />
         </Box.div>
       </Box.div>
-      <Box.div
-        alignItems="center"
-        borderRadius={imageBorderRadius[imagePosition]}
-        display="flex"
-        maxH={isImageOnTop ? 180 : { _: 180, md: "unset" }}
-        overflow="hidden"
-        position="relative"
-        w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
-      >
-        {iconUrl && (
-          <Box.div
-            alignItems="center"
-            backgroundColor="colorBackground"
-            borderRadius="borderRadiusCircle"
-            data-testid="service-content-card-icon"
-            display="flex"
-            gap="d2"
-            h={56}
-            justifyContent="center"
-            left="16px"
-            position={"absolute"}
-            top={16}
-            w={56}
-          >
-            <Box.div h={24} position="relative" w={24}>
-              <Box.img aria-hidden h="auto" src={iconUrl} w="100%" />
-            </Box.div>
-          </Box.div>
-        )}
-
-        <Box.img
-          alt={imageAlt}
-          h="100%"
-          objectFit="cover"
-          src={imageSrc}
-          w="100%"
-        />
-      </Box.div>
+      {topRightElement}
     </Box.div>
   );
 };
