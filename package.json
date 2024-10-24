@@ -73,7 +73,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0",
     "storybook": "^8.1.0-alpha.7",
-    "ts-jest": "^28.0.3",
+    "ts-jest": "^29.2.5",
     "turbo": "latest"
   },
   "resolutions": {
