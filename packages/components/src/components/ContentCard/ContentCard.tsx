@@ -136,6 +136,7 @@ export const ContentCard = ({
             }
           : "none"
       }
+      h="100%"
       maxH={maxHeight[imagePosition]}
       maxW={maxWidth || maxWidthDefault[imagePosition]}
       overflow="hidden"
@@ -149,7 +150,7 @@ export const ContentCard = ({
           isImageOnTop ? "column-reverse" : { _: "column-reverse", md: "unset" }
         }
         fontFamily="fontFamilyNotoSans"
-        h={h}
+        h={h ?? "100%"}
         justifyContent="start"
         maxH={maxHeight[imagePosition]}
         maxW={maxWidth || maxWidthDefault[imagePosition]}
@@ -160,55 +161,59 @@ export const ContentCard = ({
       >
         <Box.div
           borderRadius="borderRadius40 borderRadius0 borderRadius0 borderRadius40"
-          lineHeight="lineHeight30"
+          display="flex"
+          flexDirection="column"
+          flexGrow={1}
           maxWidth={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}
           padding="d6"
         >
-          {tag && (
-            <Text.div
-              color="colorTextHeadingStronger"
-              fontSize="fontSize10"
-              lineHeight="lineHeight10"
-              marginBottom="d2"
-            >
-              {tag}
-            </Text.div>
-          )}
-          <Heading
-            color="cardContentTitle"
-            marginBottom="m0"
-            size="title-group"
-          >
-            {title}
-          </Heading>
-          <Text.p
-            color="cardContentBody"
-            fontSize="fontSize20"
-            marginBottom="d6"
-            marginTop="d2"
-          >
-            {text}
-          </Text.p>
-          {date && (
-            <Box.div
-              alignItems="center"
-              color="colorTextLinkStrong"
-              display="flex"
-              fontSize="fontSize20"
-              fontWeight="fontWeightMedium"
-              gap="d2"
-              marginBottom="d6"
-            >
-              <Icon decorative icon="calendar" size="sizeIcon30" />
-              <Text.span
-                fontFamily="fontFamilyNotoSans"
-                fontSize="fontSize20"
-                lineHeight="lineHeight30"
+          <Box.div lineHeight="lineHeight30">
+            {tag && (
+              <Text.div
+                color="colorTextHeadingStronger"
+                fontSize="fontSize10"
+                lineHeight="lineHeight10"
+                marginBottom="d2"
               >
-                {date}
-              </Text.span>
-            </Box.div>
-          )}
+                {tag}
+              </Text.div>
+            )}
+            <Heading
+              color="cardContentTitle"
+              marginBottom="m0"
+              size="title-group"
+            >
+              {title}
+            </Heading>
+            <Text.p
+              color="cardContentBody"
+              fontSize="fontSize20"
+              marginBottom="d6"
+              marginTop="d2"
+            >
+              {text}
+            </Text.p>
+            {date && (
+              <Box.div
+                alignItems="center"
+                color="colorTextLinkStrong"
+                display="flex"
+                fontSize="fontSize20"
+                fontWeight="fontWeightMedium"
+                gap="d2"
+                marginBottom="d6"
+              >
+                <Icon decorative icon="calendar" size="sizeIcon30" />
+                <Text.span
+                  fontFamily="fontFamilyNotoSans"
+                  fontSize="fontSize20"
+                  lineHeight="lineHeight30"
+                >
+                  {date}
+                </Text.span>
+              </Box.div>
+            )}
+          </Box.div>
           <Box.div
             alignItems={
               isImageOnTop ? "center" : { _: "flex-start", md: "center" }
@@ -217,6 +222,7 @@ export const ContentCard = ({
             flexDirection={isImageOnTop ? "row" : { _: "column", md: "row" }}
             flexShrink={2}
             gap="d4"
+            style={{ marginTop: "auto" }}
           >
             {InteractiveElementType.Button === interactiveElementType && (
               <Box.div w={isImageOnTop ? "100%" : { _: "100%", md: "50%" }}>
@@ -277,7 +283,6 @@ export const ContentCard = ({
               </Box.div>
             </Box.div>
           )}
-
           <Box.img
             alt={imageAlt}
             h="100%"
