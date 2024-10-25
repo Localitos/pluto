@@ -34,20 +34,20 @@ const getColorProps = (
   switch (color) {
     case "gray": {
       return {
-        backgroundColor: "colorBackgroundWeak",
-        color: "colorTextStronger",
+        backgroundColor: "badgeBgNeutral",
+        color: "badgeContentNeutral",
       };
     }
     case "green": {
       return {
-        backgroundColor: "colorBackgroundSuccess",
-        color: "colorTextSuccess",
+        backgroundColor: "badgeBgSuccess",
+        color: "badgeContentSuccess",
       };
     }
     case "yellow": {
       return {
-        backgroundColor: "colorBackgroundWarning",
-        color: "colorTextWarning",
+        backgroundColor: "badgeBgWarning",
+        color: "badgeContentWarning",
       };
     }
     case "purple": {
@@ -58,14 +58,14 @@ const getColorProps = (
     }
     case "red": {
       return {
-        backgroundColor: "bgError",
-        color: "colorTextError",
+        backgroundColor: "badgeBgError",
+        color: "badgeContentError",
       };
     }
     default: {
       return {
-        backgroundColor: "colorBackgroundInfo",
-        color: "colorTextInfo",
+        backgroundColor: "badgeBgInfo",
+        color: "badgeContentInfo",
       };
     }
   }
@@ -94,7 +94,7 @@ const getSizeProps = (
     paddingBottom: "d1",
     paddingLeft: "d3",
     paddingRight: "d3",
-    paddingTop: "d0_5",
+    paddingTop: "d1",
   };
 };
 
@@ -113,9 +113,9 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
         alignItems="center"
         borderRadius="borderRadiusPill"
         display="inline-flex"
-        fontWeight="fontWeightBold"
+        fontWeight="fontWeightMedium"
         gap="d1"
-        lineHeight="lineHeight30"
+        lineHeight="lineHeight10"
         ref={ref}
         {...getSizeProps(size)}
         {...getColorProps(color)}
