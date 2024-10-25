@@ -13,33 +13,37 @@ export interface TabListProps
   children: NonNullable<React.ReactNode>;
   /** Add a divider element on the bottom of the tabs list */
   withDivider?: boolean;
+  /** Extends the tab list to fill the available space. */
+  fullWith?: boolean;
 }
 
 const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
-  ({ children, withDivider, ...props }, ref) => {
+  ({ children, withDivider, fullWith, ...props }, ref) => {
     const tab = React.useContext(TabsContext);
 
     return (
-      <Box.div
-        as={TabListPrimitive}
-        display={tab.variant === "fitted" ? "flex" : "block"}
-        position="relative"
-        store={tab}
-        {...props}
-        ref={ref}
-      >
-        {children}
+      <>
+        <Box.div
+          alignSelf={fullWith ? undefined : "flex-start"}
+          as={TabListPrimitive}
+          display="flex"
+          gap="d6"
+          position="relative"
+          store={tab}
+          {...props}
+          ref={ref}
+        >
+          {children}
+        </Box.div>
         {withDivider && (
           <Box.div
             backgroundColor="colorBorderWeaker"
-            bottom="0"
             h="1px"
-            position="absolute"
             w="100%"
             zIndex="zIndex0"
           />
         )}
-      </Box.div>
+      </>
     );
   },
 );

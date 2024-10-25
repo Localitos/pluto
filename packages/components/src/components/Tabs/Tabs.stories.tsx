@@ -198,39 +198,59 @@ export const ReallyLongTab = (): React.JSX.Element => {
   );
 };
 
-export const Fitted = (): React.JSX.Element => {
+const Tab1 = () => (
+  <Box.div
+    borderColor="colorBorderWeaker"
+    borderStyle="borderStyleSolid"
+    borderWidth="borderWidth10"
+    h="100%"
+    padding="d5"
+    w="100%"
+  >
+    Tab1
+  </Box.div>
+);
+
+const Tab2 = () => (
+  <Box.div
+    borderColor="colorBorderWeaker"
+    borderStyle="borderStyleSolid"
+    borderWidth="borderWidth10"
+    padding="d5"
+  >
+    Tab2
+  </Box.div>
+);
+
+export const FullWidth = (): React.JSX.Element => {
+  const [selectedTab, setSelectedTab] = React.useState("tab1");
+
   return (
-    <Tabs variant="fitted">
-      <TabList aria-label="Page tabs">
-        <Tab>Tab One</Tab>
-        <Tab>Tab Two</Tab>
-      </TabList>
-      <TabPanels>
-        <TabPanel>
-          <Box.div padding="d5">
-            <Heading as="h2" marginBottom="m0" size="heading50">
-              Tab One
-            </Heading>
-            <Paragraph>
-              Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
-              sodales vel purus.
-            </Paragraph>
-          </Box.div>
-        </TabPanel>
-        <TabPanel>
-          <Box.div padding="d5">
-            <Heading as="h2" marginBottom="m0" size="heading50">
-              Tab Two
-            </Heading>
-            <Paragraph>
-              Lorem ipsum dolor sit, consectetur. Aliquam ac a. Ligula at et,
-              sodales vel purus.
-            </Paragraph>
-          </Box.div>
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+    <Box.div display="flex" h="200px">
+      <Tabs>
+        <TabList aria-label="Page tabs" fullWith withDivider>
+          <Tab id="tab1" onClick={() => setSelectedTab("tab1")}>
+            Tab1
+          </Tab>
+          <Tab id="tab2" onClick={() => setSelectedTab("tab2")}>
+            Tab2
+          </Tab>
+        </TabList>
+        <Box.div display="flex" flexDirection="column" flexGrow="1" w="100%">
+          {selectedTab === "tab1" ? <Tab1 /> : <Tab2 />}
+        </Box.div>
+      </Tabs>
+    </Box.div>
   );
+};
+
+FullWidth.parameters = {
+  docs: {
+    description: {
+      story:
+        "You can make the tabs take up the full width by adding the fullWidth property to the TabList component. This helps make the tabs look better on mobile screens, for example.",
+    },
+  },
 };
 
 export const WithDivider = (): React.JSX.Element => {
@@ -273,61 +293,6 @@ WithDivider.parameters = {
     description: {
       story:
         "You can display a divider between the tabs and the content by using the `withDivider` property on the `TabList` component.",
-    },
-  },
-};
-
-const Tab1 = () => (
-  <Box.div
-    borderColor="colorBorderWeaker"
-    borderStyle="borderStyleSolid"
-    borderWidth="borderWidth10"
-    h="100%"
-    padding="d5"
-    w="100%"
-  >
-    Tab1
-  </Box.div>
-);
-
-const Tab2 = () => (
-  <Box.div
-    borderColor="colorBorderWeaker"
-    borderStyle="borderStyleSolid"
-    borderWidth="borderWidth10"
-    padding="d5"
-  >
-    Tab2
-  </Box.div>
-);
-
-export const Flexed = (): React.JSX.Element => {
-  const [selectedTab, setSelectedTab] = React.useState("tab1");
-
-  return (
-    <Box.div display="flex" h="500px">
-      <Tabs flexed>
-        <TabList aria-label="Page tabs" withDivider>
-          <Tab id="tab1" onClick={() => setSelectedTab("tab1")}>
-            Tab1
-          </Tab>
-          <Tab id="tab2" onClick={() => setSelectedTab("tab2")}>
-            Tab2
-          </Tab>
-        </TabList>
-        <Box.div display="flex" flexDirection="column" flexGrow="1">
-          {selectedTab === "tab1" ? <Tab1 /> : <Tab2 />}
-        </Box.div>
-      </Tabs>
-    </Box.div>
-  );
-};
-
-Flexed.parameters = {
-  docs: {
-    description: {
-      story:
-        "This uses {display: flex; flex-direction: column; flex-grow: 1;} for the div wrapping the tabs, to be able to fill the whole remaining container height with one of the containing divs.",
     },
   },
 };
