@@ -132,7 +132,7 @@ WithLowOpacity.args = {
   ),
 };
 
-export const InList = (): JSX.Element => {
+export const InListWithImageOnTop = (): JSX.Element => {
   return (
     <Box.ul
       display="grid"
@@ -141,13 +141,23 @@ export const InList = (): JSX.Element => {
       listStyleType="none"
     >
       <Box.li>
-        <Template {...defaultProps} />
+        <Template
+          {...defaultProps}
+          callToAction="Click here"
+          imagePosition="top"
+          interactiveElementType={InteractiveElementType.Button}
+          text="Small text"
+        />
       </Box.li>
       <Box.li>
-        <Template {...defaultProps} />
+        <Template {...defaultProps} imagePosition="top" tag="" />
       </Box.li>
       <Box.li>
-        <Template {...defaultProps} imageSrc={"/images/beach-porto-rico.jpg"} />
+        <Template
+          {...defaultProps}
+          imagePosition="top"
+          imageSrc={"/images/beach-porto-rico.jpg"}
+        />
       </Box.li>
     </Box.ul>
   );
