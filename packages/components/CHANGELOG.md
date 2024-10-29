@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 55.0.1
+
+### Patch Changes
+
+- [#1758](https://github.com/Localitos/pluto/pull/1758) [`83ecbb8`](https://github.com/Localitos/pluto/commit/83ecbb8d8654121f7902b25e29455867eacdeee5) Thanks [@apvale](https://github.com/apvale)! - [ContentCard]:
+
+  - Fixed an issue where the component didn’t fill all available space, causing cards to look misaligned and out of line when used in a grid
+
 ## 55.0.0
 
 ### Major Changes
