@@ -24,18 +24,21 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>(
         borderBottomColor={{
           _: "transparent",
           disabled: "transparent",
-          hover: "colorBorderWeaker",
-          selected: "colorBorderPrimary",
+          hover: "tabBorderHover",
+          selected: "tabLabelActive",
         }}
         borderBottomStyle="borderStyleSolid"
         borderBottomWidth="borderWidth20"
+        boxShadow={{
+          focusVisible: "shadowFocus",
+        }}
         // There's a conflict with TabPrimitiveProps from Ariakit. We have to convert color to string here because Ariakit doesn't like our responsive/state-based colors.
         color={
           {
-            _: "colorTextStronger",
+            _: "tabLabelDefault",
             disabled: "colorText",
-            hover: "colorTextStrongest",
-            selected: "colorTextLink",
+            hover: "tabLabelHover",
+            selected: "tabBorderActive",
           } as unknown as string
         }
         cursor={{
@@ -46,18 +49,14 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>(
         disabled={disabled}
         flexGrow={1}
         fontFamily="fontFamilyNotoSans"
-        fontSize="fontSize30"
+        fontSize="fontSize20"
         fontWeight="fontWeightMedium"
         lineHeight="lineHeight30"
-        outlineColor={{ focus: "colorBorderPrimary" }}
-        outlineOffset={{ focus: "borderWidth20" }}
-        outlineStyle={{ focus: "borderStyleSolid" }}
-        outlineWidth={{ focus: "borderWidth20" }}
-        paddingBottom="d1"
-        paddingLeft="d3"
-        paddingRight="d3"
-        paddingTop="d1"
+        outline={{ focus: "none" }}
+        paddingBottom="d2"
+        paddingTop="d0"
         position="relative"
+        px="d1"
         textDecoration="none"
         zIndex="zIndex10"
         {...props}
