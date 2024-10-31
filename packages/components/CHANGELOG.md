@@ -1,5 +1,25 @@
 # @localyze-pluto/components
 
+## 56.0.0
+
+### Major Changes
+
+- [#1760](https://github.com/Localitos/pluto/pull/1760) [`99dad05`](https://github.com/Localitos/pluto/commit/99dad0583beb5429e902b3360539872c54d2e05f) Thanks [@apvale](https://github.com/apvale)! - [Tabs]:
+
+  > Breaking changes:
+  >
+  > - Removed the `flexed` prop from the Tabs component, as it is now the default behavior.
+  > - Removed the `variant` prop from the Tabs component since it wasn't used in the component.
+
+  - Minor changes:
+    - The `TabsList` component now accepts a `fullWidth` prop allowing the tabs list to expand to the full width.
+    - Fixed a bug with the focus indicator, switching from focus to focus-visible for better accessibility.
+    - Fixed styles of the Tabs to be more consistent with Figma
+
+### Minor Changes
+
+- [#1759](https://github.com/Localitos/pluto/pull/1759) [`78fbf04`](https://github.com/Localitos/pluto/commit/78fbf04f8e8b7d11b96167ab640a4c40df4a8344) Thanks [@apvale](https://github.com/apvale)! - [Badge]: Improve badge styles to be consistent to last changes from Pluto components in Figma
+
 ## 55.0.1
 
 ### Patch Changes
