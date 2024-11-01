@@ -9,8 +9,8 @@ export enum InteractiveElementTypeUtilityCard {
 }
 
 export type UtilityCardProps = {
-  /** Sets the card image source */
-  imageSrc: string;
+  /** Sets the category emoji */
+  emoji: string;
   /** Sets the title to be rendered as h2 */
   title: string;
   /** Sets the type of the clickable element */
@@ -37,7 +37,7 @@ const interactiveBg = {
 
 export const UtilityCard: React.FC<UtilityCardProps> = ({
   as = "div",
-  imageSrc,
+  emoji,
   interactiveElementType,
   title,
   categoryTag,
@@ -77,7 +77,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         padding={{ _: "d4", md: "d6" }}
         w={{ _: "56px", md: "56px" }}
       >
-        <Box.img alt="" aria-hidden h="24px" src={imageSrc} w="24px" />
+        <Text.p>{emoji}</Text.p>
       </Box.div>
 
       <Box.div
