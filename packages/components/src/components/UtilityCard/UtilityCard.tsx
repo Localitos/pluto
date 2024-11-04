@@ -9,7 +9,7 @@ export enum InteractiveElementTypeUtilityCard {
 }
 
 export type UtilityCardProps = {
-  /** Sets the category emoji */
+  /** Sets the an emoji for the card */
   emoji: string;
   /** Sets the title to be rendered as h2 */
   title: string;
@@ -77,7 +77,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         padding={{ _: "d4", md: "d6" }}
         w={{ _: "56px", md: "56px" }}
       >
-        <Text.p>{emoji}</Text.p>
+        {emoji}
       </Box.div>
 
       <Box.div
