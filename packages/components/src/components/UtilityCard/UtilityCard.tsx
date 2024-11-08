@@ -77,7 +77,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         padding={{ _: "d4", md: "d6" }}
         w={{ _: "56px", md: "56px" }}
       >
-        <Box.div aria-hidden="true">{emoji}</Box.div>
+        <Box.span aria-hidden="true">{emoji}</Box.span>
       </Box.div>
 
       <Box.div
