@@ -18,8 +18,7 @@ const onClick = (): void =>
   alert("This is what happens when you click on the card");
 
 const defaultProps = {
-  imageAlt: "a beach",
-  imageSrc: "/images/beach-seal-rocks.jpg",
+  emoji: "❤️",
   title: "The card title",
   categoryTag: "The category tag",
   serviceTag: "Concierge Services",
@@ -58,7 +57,7 @@ export const InList = (): JSX.Element => {
         <Template {...defaultProps} />
       </Box.li>
       <Box.li>
-        <Template {...defaultProps} imageSrc={"/images/beach-porto-rico.jpg"} />
+        <Template {...defaultProps} emoji={"🙈"} />
       </Box.li>
     </Box.ul>
   );

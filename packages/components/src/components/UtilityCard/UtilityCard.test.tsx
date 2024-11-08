@@ -10,7 +10,7 @@ import {
 const onClick = jest.fn();
 
 const defaultMockProps = {
-  imageSrc: "path-to-image.jpg",
+  emoji: "📦",
   categoryTag: "a service tag",
   title: "Good title!",
 };
@@ -56,13 +56,10 @@ describe("<UtilityCard>", () => {
       expect(screen.queryByText("In progress")).not.toBeInTheDocument();
     });
 
-    it("renders an image", () => {
+    it("renders an emoji", () => {
       renderDefaultCard();
 
-      expect(screen.getByAltText("")).toHaveAttribute(
-        "src",
-        "path-to-image.jpg",
-      );
+      expect(screen.getByText("📦")).toBeVisible();
     });
   });
 
