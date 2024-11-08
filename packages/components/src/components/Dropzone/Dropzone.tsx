@@ -20,7 +20,7 @@ export type DropzoneProps = {
   /** This is the function that gets triggered when a file is dropped */
   onDrop: (files: FileWithPath[]) => void;
   /** This is the function that gets triggered when the cancel button is clicked */
-  onCancel: (files: FileWithPath[]) => void;
+  onCancel: (files: FileWithPath[] | readonly FileWithPath[]) => void;
   /** This is an error if there is one. string */
   error?: string;
   /** The file types allowed. In the format of an object.{ "application/pdf": [".pdf"] } */
