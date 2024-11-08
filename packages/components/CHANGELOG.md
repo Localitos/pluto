@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 57.0.0
+
+### Major Changes
+
+- [#1765](https://github.com/Localitos/pluto/pull/1765) [`97db015`](https://github.com/Localitos/pluto/commit/97db015ab50e5cce5c863ca3fc65e27f6f01f2aa) Thanks [@franziiiini](https://github.com/franziiiini)! - Update UtilityCard to display string-emoji instead of image
+
 ## 56.0.0
 
 ### Major Changes
