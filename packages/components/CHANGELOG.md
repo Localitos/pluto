@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 57.1.0
+
+### Minor Changes
+
+- [#1770](https://github.com/Localitos/pluto/pull/1770) [`55474ce`](https://github.com/Localitos/pluto/commit/55474ce2d101d0ce12f1e786d8f3f5b863383b5e) Thanks [@rssilva](https://github.com/rssilva)! - Update dependencies: lucide-react, react-dropzone, react-hook-form, react-dropzone, @localyze-pluto/eslint-config, @testing-library/jest-dom, @testing-library/react, @types/jest, @types/react, @types/react-dom, @uppy/core, chromatic, html-react-parser, react, react-dom, ts-jest, tslib, tsup, typescript
+
 ## 57.0.0
 
 ### Major Changes
