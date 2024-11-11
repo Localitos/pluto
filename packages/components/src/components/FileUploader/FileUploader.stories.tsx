@@ -177,7 +177,10 @@ export const WithUppy = (): React.ReactElement => {
   };
 
   uppy.on("file-added", (file) => {
-    setFileInformation({ fileName: file.name, fileSize: `${file.size} bytes` });
+    setFileInformation({
+      fileName: String(file.name),
+      fileSize: `${file.size} bytes`,
+    });
     // Start single upload
   });
 
@@ -186,12 +189,15 @@ export const WithUppy = (): React.ReactElement => {
   });
 
   uppy.on("complete", (result) => {
-    const file = result.successful[0];
-    setFileInformation({
-      fileName: file.name,
-      fileSize: `${file.size} bytes`,
-      fileUrl: file.uploadURL,
-    });
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (result.successful) {
+      const file = result.successful[0];
+      setFileInformation({
+        fileName: String(file.name),
+        fileSize: `${file.size} bytes`,
+        fileUrl: file.uploadURL,
+      });
+    }
   });
 
   return (
