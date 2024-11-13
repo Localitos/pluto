@@ -51,6 +51,7 @@ WithAnchor.args = {
 export const ClickableCard: Story = Template.bind({});
 ClickableCard.args = {
   ...defaultProps,
+  as: "a",
   interactiveElementType: InteractiveElementType.Card,
   href,
 };

@@ -51,6 +51,7 @@ describe("<ContentCard>", () => {
   it('renders card as link when interactive element type is "card"', () => {
     render(
       <ContentCardMock
+        as="a"
         href={HREF}
         interactiveElementType={InteractiveElementType.Card}
       />,
@@ -142,6 +143,7 @@ describe("<ContentCard>", () => {
 
     render(
       <ContentCardMock
+        as="a"
         href={HREF}
         interactiveElementType={InteractiveElementType.Card}
         onClick={onClick}
