@@ -1,5 +1,13 @@
 # @localyze-pluto/components
 
+## 57.2.0
+
+### Minor Changes
+
+- [#1772](https://github.com/Localitos/pluto/pull/1772) [`3f33a6c`](https://github.com/Localitos/pluto/commit/3f33a6cb5baa2c894e68cbfdbdc58cfa3551cec4) Thanks [@apvale](https://github.com/apvale)! - [ContentCard]
+
+  - Removed the default link wrapper tag when the component is set to `InteractiveElementType.Card`
+
 ## 57.1.0
 
 ### Minor Changes
