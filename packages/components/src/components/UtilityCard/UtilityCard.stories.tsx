@@ -1,7 +1,9 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
-import { UtilityCard, InteractiveElementTypeUtilityCard } from "./UtilityCard";
+import { Badge } from "../Badge";
+import { Paragraph } from "../Paragraph";
+import { UtilityCard } from "./UtilityCard";
 
 export default {
   component: UtilityCard,
@@ -17,11 +19,10 @@ const Template = (args: React.ComponentProps<typeof UtilityCard>) => {
 const onClick = (): void =>
   alert("This is what happens when you click on the card");
 
-const defaultProps = {
-  emoji: "❤️",
-  title: "The card title",
-  categoryTag: "The category tag",
-  serviceTag: "Concierge Services",
+const defaultProps: React.ComponentProps<typeof UtilityCard> = {
+  emoji: "🧳️",
+  title: "My Service",
+  subTitle: "Housing",
 };
 
 export const Default: Story = Template.bind({});
@@ -29,17 +30,68 @@ Default.args = {
   ...defaultProps,
 };
 
-export const CardWithBadge: Story = Template.bind({});
-CardWithBadge.args = {
+export const WithLargeEmojiWrapper: Story = Template.bind({});
+WithLargeEmojiWrapper.args = {
   ...defaultProps,
-  status: "In progress",
+  emoji: "🏠️",
+  emojiWrapperSize: "large",
+  content: (
+    <Paragraph marginBottom="d0">
+      Step-by-step guide, document lists & articles and support via chat and
+      phone, incl.
+    </Paragraph>
+  ),
 };
 
-export const ClickableCard: Story = Template.bind({});
-ClickableCard.args = {
+export const WithContent: Story = Template.bind({});
+WithContent.args = {
   ...defaultProps,
-  interactiveElementType: InteractiveElementTypeUtilityCard.Card,
+  content: (
+    <Paragraph marginBottom="d0">
+      This is the content of the card. It can be a paragraph, a list, or any
+      other component.
+    </Paragraph>
+  ),
+};
+
+export const WithIndicator: Story = Template.bind({});
+WithIndicator.args = {
+  ...defaultProps,
+  emojiWrapperSize: "large",
+  indicator: (
+    <Badge color="green" icon="circle-check">
+      Included in your support
+    </Badge>
+  ),
+  content: (
+    <Paragraph marginBottom="d0" size="small">
+      When using My Service, you get access to a lot of cool features and be
+      able to do a lot of cool things.
+    </Paragraph>
+  ),
+};
+
+export const WithBadge: Story = Template.bind({});
+WithBadge.args = {
+  ...defaultProps,
+  content: (
+    <Box.div marginTop="d3">
+      <Badge>In progress</Badge>
+    </Box.div>
+  ),
+};
+
+export const Clickable: Story = Template.bind({});
+Clickable.args = {
+  ...defaultProps,
+  clickable: true,
   onClick,
+};
+
+export const Hoverable: Story = Template.bind({});
+Hoverable.args = {
+  ...defaultProps,
+  hoverable: true,
 };
 
 export const InList = (): JSX.Element => {
@@ -54,10 +106,10 @@ export const InList = (): JSX.Element => {
         <Template {...defaultProps} />
       </Box.li>
       <Box.li>
-        <Template {...defaultProps} />
+        <Template {...defaultProps} emoji="👨‍👩‍👦" title="Another service" />
       </Box.li>
       <Box.li>
-        <Template {...defaultProps} emoji={"🙈"} />
+        <Template {...defaultProps} emoji="🙈" title="One more service" />
       </Box.li>
     </Box.ul>
   );

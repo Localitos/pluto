@@ -1,59 +1,57 @@
 import React from "react";
 import { render, screen, RenderResult } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
-import {
-  UtilityCard,
-  UtilityCardProps,
-  InteractiveElementTypeUtilityCard,
-} from "./UtilityCard";
+import { UtilityCard, UtilityCardProps } from "./UtilityCard";
 
-const onClick = jest.fn();
+const onClickMock = jest.fn();
 
 const defaultMockProps = {
   emoji: "📦",
-  categoryTag: "a service tag",
+  subTitle: "a service tag",
   title: "Good title!",
 };
 
-const UtilityCardMock = (props: Partial<UtilityCardProps>) => {
+const UtilityCardMock = (
+  props?: Partial<UtilityCardProps>,
+): React.JSX.Element => {
+  const { clickable, onClick = onClickMock, ...restProps } = props || {};
+
   const defaultProps: UtilityCardProps = {
     as: "div",
     ...defaultMockProps,
+    ...(clickable ? { clickable, onClick } : { clickable: false }),
   };
 
-  return <UtilityCard {...defaultProps} {...props} />;
+  return <UtilityCard {...defaultProps} {...restProps} />;
 };
 
 const renderDefaultCard = (): RenderResult => {
   return render(<UtilityCardMock />);
 };
 
-const renderCardWithBadge = (): RenderResult => {
-  return render(<UtilityCardMock status="In progress" />);
-};
-
-const renderClickableCard = (): RenderResult => {
+const renderCardWithContent = (): RenderResult => {
   return render(
     <UtilityCardMock
-      interactiveElementType={InteractiveElementTypeUtilityCard.Card}
-      onClick={onClick}
+      content={<div>Extra content added to the card as details</div>}
     />,
   );
 };
 
+const renderClickableCard = (): RenderResult => {
+  return render(<UtilityCardMock clickable onClick={onClickMock} />);
+};
+
 describe("<UtilityCard>", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe("Default card", () => {
     it("renders text props", () => {
       renderDefaultCard();
 
       expect(screen.getByText("Good title!")).toBeVisible();
       expect(screen.getByText("a service tag")).toBeVisible();
-    });
-
-    it("does not render a badge", () => {
-      renderDefaultCard();
-
-      expect(screen.queryByText("In progress")).not.toBeInTheDocument();
     });
 
     it("renders an emoji", () => {
@@ -63,11 +61,13 @@ describe("<UtilityCard>", () => {
     });
   });
 
-  describe("Card with badge", () => {
-    it("renders a badge", () => {
-      renderCardWithBadge();
+  describe("Card with content", () => {
+    it("renders content when provided", () => {
+      renderCardWithContent();
 
-      expect(screen.getByText("In progress")).toBeInTheDocument();
+      expect(
+        screen.getByText("Extra content added to the card as details"),
+      ).toBeInTheDocument();
     });
   });
 
@@ -89,7 +89,7 @@ describe("<UtilityCard>", () => {
       card.addEventListener("click", (event) => event.preventDefault(), false);
 
       await user.click(card);
-      expect(onClick).toHaveBeenCalled();
+      expect(onClickMock).toHaveBeenCalled();
     });
   });
 
