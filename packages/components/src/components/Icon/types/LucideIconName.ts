@@ -87,6 +87,7 @@ export type LucideIconName =
   | "sliders-vertical"
   | "square-arrow-out-up-right"
   | "square-pen"
+  | "star-off"
   | "star"
   | "thumbs-up"
   | "ticket"
