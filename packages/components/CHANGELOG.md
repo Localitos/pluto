@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 57.3.0
+
+### Minor Changes
+
+- [#1781](https://github.com/Localitos/pluto/pull/1781) [`1147ecc`](https://github.com/Localitos/pluto/commit/1147ecca0706ef0b69b6ebb9855bb9c0d160dc5c) Thanks [@rssilva](https://github.com/rssilva)! - Add star-off icon
+
 ## 57.2.0
 
 ### Minor Changes
