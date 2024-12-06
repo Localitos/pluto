@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Box } from "../../primitives/Box";
+import { Badge } from "../Badge";
 import { UtilityCard, InteractiveElementTypeUtilityCard } from "./UtilityCard";
 
 export default {
@@ -32,7 +33,11 @@ Default.args = {
 export const CardWithBadge: Story = Template.bind({});
 CardWithBadge.args = {
   ...defaultProps,
-  status: "In progress",
+  content: (
+    <Box.div>
+      <Badge>In progress</Badge>
+    </Box.div>
+  ),
 };
 
 export const ClickableCard: Story = Template.bind({});

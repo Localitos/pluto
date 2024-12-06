@@ -28,8 +28,12 @@ const renderDefaultCard = (): RenderResult => {
   return render(<UtilityCardMock />);
 };
 
-const renderCardWithBadge = (): RenderResult => {
-  return render(<UtilityCardMock status="In progress" />);
+const renderCardWithContent = (): RenderResult => {
+  return render(
+    <UtilityCardMock
+      content={<div>Extra content added to the card as details</div>}
+    />,
+  );
 };
 
 const renderClickableCard = (): RenderResult => {
@@ -50,12 +54,6 @@ describe("<UtilityCard>", () => {
       expect(screen.getByText("a service tag")).toBeVisible();
     });
 
-    it("does not render a badge", () => {
-      renderDefaultCard();
-
-      expect(screen.queryByText("In progress")).not.toBeInTheDocument();
-    });
-
     it("renders an emoji", () => {
       renderDefaultCard();
 
@@ -63,11 +61,13 @@ describe("<UtilityCard>", () => {
     });
   });
 
-  describe("Card with badge", () => {
-    it("renders a badge", () => {
-      renderCardWithBadge();
+  describe("Card with content", () => {
+    it("renders content when provided", () => {
+      renderCardWithContent();
 
-      expect(screen.getByText("In progress")).toBeInTheDocument();
+      expect(
+        screen.getByText("Extra content added to the card as details"),
+      ).toBeInTheDocument();
     });
   });
 

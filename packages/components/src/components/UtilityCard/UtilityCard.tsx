@@ -1,6 +1,5 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Box } from "../../primitives/Box";
-import { Badge } from "../Badge";
 import { Icon } from "../Icon";
 import { Text } from "../../primitives/Text";
 
@@ -9,7 +8,7 @@ export enum InteractiveElementTypeUtilityCard {
 }
 
 export type UtilityCardProps = {
-  /** Sets the an emoji for the card */
+  /** Sets an emoji for the card */
   emoji: string;
   /** Sets the title to be rendered as h2 */
   title: string;
@@ -17,8 +16,8 @@ export type UtilityCardProps = {
   interactiveElementType?: InteractiveElementTypeUtilityCard;
   /** Text describing the kind of category provided */
   categoryTag: string;
-  /** Text describing the current status of the category as a badge */
-  status?: string;
+  /** Optional content to display in the card, allowing to set additional details. */
+  content?: ReactElement;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
   as?: React.ComponentProps<typeof Box.div>["as"];
   /** Callback function to be used to invoke onClicks */
@@ -41,7 +40,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
   interactiveElementType,
   title,
   categoryTag,
-  status,
+  content,
   onClick,
 }) => {
   const isCardInteractive =
@@ -103,16 +102,14 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
         >
           {title}
         </Text.h2>
-        {status && (
-          <Box.div>
-            <Badge>{status}</Badge>
-          </Box.div>
-        )}
+        {content}
       </Box.div>
 
-      <Box.div margin="d2">
-        <Icon decorative icon="chevron-right" size="sizeIcon20" />
-      </Box.div>
+      {isCardInteractive && (
+        <Box.div margin="d2">
+          <Icon decorative icon="chevron-right" size="sizeIcon20" />
+        </Box.div>
+      )}
     </Box.div>
   );
 };
