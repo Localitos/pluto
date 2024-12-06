@@ -6,6 +6,7 @@ import { Button } from "../Button";
 import { Box } from "../../primitives/Box";
 import { Icon } from "../Icon";
 import { Menu, MenuItemProps } from "./Menu";
+import { useMenuStore } from "./index";
 
 const meta: Meta<typeof Menu> = {
   title: "Components/Menu",
@@ -15,7 +16,7 @@ const meta: Meta<typeof Menu> = {
 export default meta;
 type Story = StoryObj<typeof Menu>;
 
-const DefaultMenu = (): JSX.Element => {
+const DefaultMenu = (): React.JSX.Element => {
   const items: MenuItemProps[] = [
     {
       onClick: noop,
@@ -35,7 +36,7 @@ const DefaultMenu = (): JSX.Element => {
 };
 
 export const Default: Story = {
-  render: (): JSX.Element => <DefaultMenu />,
+  render: (): React.JSX.Element => <DefaultMenu />,
 };
 
 Default.parameters = {
@@ -45,7 +46,7 @@ Default.parameters = {
   },
 };
 
-const CustomButtonMenu = (): JSX.Element => {
+const CustomButtonMenu = (): React.JSX.Element => {
   const items: MenuItemProps[] = [
     {
       onClick: noop,
@@ -67,7 +68,38 @@ const CustomButtonMenu = (): JSX.Element => {
 };
 
 export const WithCustomMenuButton: Story = {
-  render: (): JSX.Element => <CustomButtonMenu />,
+  render: (): React.JSX.Element => <CustomButtonMenu />,
+};
+
+export const WithCustomStoreAndMenuButtonProps: Story = {
+  render: (): React.JSX.Element => {
+    const store = useMenuStore({
+      placement: "right-start",
+    });
+
+    const items: MenuItemProps[] = [
+      {
+        onClick: noop,
+        label: "Option 1",
+      },
+      {
+        onClick: noop,
+        label: "Option 2",
+      },
+    ];
+
+    return (
+      <Box.div minHeight="100px">
+        <Menu
+          customStore={store}
+          items={items}
+          menuButtonProps={{
+            marginLeft: "d10",
+          }}
+        />
+      </Box.div>
+    );
+  },
 };
 
 const ManyItemsMenu = (): JSX.Element => {
@@ -122,10 +154,10 @@ const ManyItemsMenu = (): JSX.Element => {
 };
 
 export const WithManyItems: Story = {
-  render: (): JSX.Element => <ManyItemsMenu />,
+  render: (): React.JSX.Element => <ManyItemsMenu />,
 };
 
-const DisabledButtonsMenu = (): JSX.Element => {
+const DisabledButtonsMenu = (): React.JSX.Element => {
   const items: MenuItemProps[] = [
     {
       onClick: noop,
@@ -148,18 +180,18 @@ const DisabledButtonsMenu = (): JSX.Element => {
   ];
 
   return (
-    <Box.div minHeight="400px">
+    <Box.div minHeight="200px">
       <Menu items={items} />
     </Box.div>
   );
 };
 
 export const WithDisabledButtons: Story = {
-  render: (): JSX.Element => <DisabledButtonsMenu />,
+  render: (): React.JSX.Element => <DisabledButtonsMenu />,
 };
 
 export const WithLongMenuItems: Story = {
-  render: (): JSX.Element => {
+  render: (): React.JSX.Element => {
     const items: MenuItemProps[] = [
       {
         onClick: noop,
@@ -176,7 +208,7 @@ export const WithLongMenuItems: Story = {
     ];
 
     return (
-      <Box.div minHeight="100px">
+      <Box.div minHeight="200px">
         <Menu items={items} />
       </Box.div>
     );
@@ -184,7 +216,7 @@ export const WithLongMenuItems: Story = {
 };
 
 export const WithIcons: Story = {
-  render: (): JSX.Element => {
+  render: (): React.JSX.Element => {
     const items: MenuItemProps[] = [
       {
         onClick: noop,

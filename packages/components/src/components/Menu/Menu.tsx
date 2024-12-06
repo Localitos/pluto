@@ -4,6 +4,7 @@ import {
   MenuButton,
   MenuItem,
   useMenuStore,
+  MenuProps as AriakitMenuProps,
 } from "@ariakit/react";
 import map from "lodash/map";
 import { Button } from "../Button";
@@ -15,13 +16,17 @@ export type MenuItemProps = {
   disabled?: boolean;
 };
 
-export type MenuProps = {
+export type MenuProps = Omit<AriakitMenuProps, "store"> & {
   /** The button element to open the menu and display the list of menu items. */
-  menuButton?: JSX.Element;
+  menuButton?: React.JSX.Element;
   /** The list of menu items. */
   items: MenuItemProps[];
   /** The expanded menu z-index. */
   menuZIndex?: HTMLDivElement["style"]["zIndex"];
+  /** Custom store for the menu. */
+  customStore?: ReturnType<typeof useMenuStore>;
+  /** Props for the default menu button. */
+  menuButtonProps?: BoxProps;
 };
 
 const VerticalEllipsisButton = (
@@ -40,24 +45,42 @@ const FullWidthButton = ({ ...props }) => (
 
 /** A menu is a button element that opens a menu with items. */
 const Menu = React.forwardRef<HTMLButtonElement, BoxProps & MenuProps>(
-  ({ menuButton, items, menuZIndex = "auto", ...props }, ref) => {
-    const store = useMenuStore();
+  (
+    {
+      menuButton,
+      items,
+      menuZIndex = "auto",
+      customStore,
+      menuButtonProps,
+      ...props
+    },
+    ref,
+  ) => {
+    const store = useMenuStore({
+      store: customStore,
+    });
 
     const button = menuButton || VerticalEllipsisButton;
 
     return (
-      <Box.div {...props}>
+      <>
         <MenuButton
           render={(props) =>
             React.cloneElement(button, {
               ...props,
+              ...menuButtonProps,
               ref,
             })
           }
           store={store}
         />
 
-        <AriakitMenu store={store} style={{ zIndex: menuZIndex }}>
+        <AriakitMenu
+          gutter={3}
+          store={store}
+          style={{ zIndex: menuZIndex }}
+          {...props}
+        >
           <Box.div
             backgroundColor="colorBackground"
             borderRadius="borderRadius20"
@@ -71,41 +94,48 @@ const Menu = React.forwardRef<HTMLButtonElement, BoxProps & MenuProps>(
             overflow="hidden"
           >
             {map(items, ({ label, onClick, disabled }, i) => (
-              <MenuItem key={i}>
-                <Box.div
-                  backgroundColor={{
-                    _: "colorBackground",
-                    hover: disabled
-                      ? "colorBackground"
-                      : "colorBackgroundWeakest",
-                  }}
-                >
-                  <Box.button
-                    alignItems="center"
-                    as={FullWidthButton}
-                    disabled={disabled}
-                    justifyContent="flex-start"
-                    onClick={onClick}
-                    padding="d0"
-                    px="d4"
-                    py="d2"
-                    variant="ghost"
-                    w="100%"
+              <MenuItem
+                key={i}
+                render={
+                  <Box.div
+                    backgroundColor={{
+                      _: "colorBackground",
+                      focusVisible: "colorBackgroundWeakest",
+                      hover: disabled
+                        ? "colorBackground"
+                        : "colorBackgroundWeakest",
+                    }}
+                    outline={{
+                      focusVisible: "none",
+                    }}
                   >
-                    <Box.span
-                      color={disabled ? "colorText" : "colorTextStrongest"}
-                      textAlign="left"
+                    <Box.button
+                      alignItems="center"
+                      as={FullWidthButton}
+                      disabled={disabled}
+                      justifyContent="flex-start"
+                      onClick={onClick}
+                      padding="d0"
+                      px="d4"
+                      py="d2"
+                      variant="ghost"
                       w="100%"
                     >
-                      {label}
-                    </Box.span>
-                  </Box.button>
-                </Box.div>
-              </MenuItem>
+                      <Box.span
+                        color={disabled ? "colorText" : "colorTextStrongest"}
+                        textAlign="left"
+                        w="100%"
+                      >
+                        {label}
+                      </Box.span>
+                    </Box.button>
+                  </Box.div>
+                }
+              />
             ))}
           </Box.div>
         </AriakitMenu>
-      </Box.div>
+      </>
     );
   },
 );
