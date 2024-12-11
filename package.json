@@ -33,7 +33,7 @@
     "@tanstack/react-table": "^8.19.3",
     "formik": "^2.4.6",
     "react-dropzone": "^14.3.5",
-    "react-hook-form": "^7.52.1",
+    "react-hook-form": "^7.54.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
