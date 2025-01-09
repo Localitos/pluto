@@ -35,7 +35,7 @@ const Controlled = ({
 
 describe("<ControlledRadioGroup />", () => {
   it("should work properly using controlled state", async () => {
-    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    globalThis.ResizeObserver = jest.fn().mockImplementation(() => ({
       observe: jest.fn(),
       unobserve: jest.fn(),
       disconnect: jest.fn(),
