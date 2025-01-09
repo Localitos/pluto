@@ -36,8 +36,8 @@ export const usePagination = (
       const rightBound = currentPage + pageNeighbors;
       const beforeLastPage = pageCount - 1;
 
-      const startPage = leftBound > 2 ? leftBound : 2;
-      const endPage = rightBound < beforeLastPage ? rightBound : beforeLastPage;
+      const startPage = Math.max(leftBound, 2);
+      const endPage = Math.min(rightBound, beforeLastPage);
 
       pages = range(startPage, endPage + LODASH_OFFSET);
 

@@ -37,7 +37,7 @@ const ReactHookFormExample = ({
 
 describe("<ControlledCheckbox />", () => {
   it("should render and work with React Hook Form", async () => {
-    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    globalThis.ResizeObserver = jest.fn().mockImplementation(() => ({
       observe: jest.fn(),
       unobserve: jest.fn(),
       disconnect: jest.fn(),
