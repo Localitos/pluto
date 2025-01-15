@@ -1,5 +1,15 @@
 # @localyze-pluto/components
 
+## 58.1.0
+
+### Minor Changes
+
+- [#1788](https://github.com/Localitos/pluto/pull/1788) [`0a91ecb`](https://github.com/Localitos/pluto/commit/0a91ecb0d9a6fa32d244273e74a09777a98cdce6) Thanks [@apvale](https://github.com/apvale)! - New Combobox component:
+
+  - Combines a text input and a popover to allow users to filter from long lists of options
+  - Can be used as a standalone component or composed with other components such as `ComboboxInput`, `ComboboxPopover`, `ComboboxItem`, and `ComboboxProvider`
+  - Supports generic type for the options list
+
 ## 58.0.0
 
 ### Major Changes
