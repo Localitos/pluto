@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 59.0.0
+
+### Minor Changes
+
+- [#1793](https://github.com/Localitos/pluto/pull/1793) [`be0f530`](https://github.com/Localitos/pluto/commit/be0f53093b4ca06412111e8b4cecf6536404f54c) Thanks [@rssilva](https://github.com/rssilva)! - Update: @testing-library/jest-dom, @testing-library/react and @testing-library/user-event
+
+### Patch Changes
+
+- Updated dependencies [[`be0f530`](https://github.com/Localitos/pluto/commit/be0f53093b4ca06412111e8b4cecf6536404f54c)]:
+  - @localyze-pluto/theme@41.0.0
+
 ## 58.1.0
 
 ### Minor Changes
