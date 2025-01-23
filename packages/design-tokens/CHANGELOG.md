@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 2.1.0
+
+### Minor Changes
+
+- [#1793](https://github.com/Localitos/pluto/pull/1793) [`be0f530`](https://github.com/Localitos/pluto/commit/be0f53093b4ca06412111e8b4cecf6536404f54c) Thanks [@rssilva](https://github.com/rssilva)! - Update: @testing-library/jest-dom, @testing-library/react and @testing-library/user-event
+
 ## 2.0.0
 
 ### Major Changes
