@@ -57,8 +57,8 @@
     "react-dom": "^18.3.1",
     "styled-components": "^6.1.12",
     "ts-jest": "^29.2.3",
-    "tslib": "^2.6.3",
-    "tsup": "^8.2.3",
-    "typescript": "^5.6.2"
+    "tslib": "^2.8.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
   }
 }
