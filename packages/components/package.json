@@ -86,7 +86,7 @@
     "ts-jest": "^29.2.5",
     "tslib": "^2.8.1",
     "tsup": "^8.3.5",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.3"
   },
   "browserslist": [
     "extends @localyze-pluto/browserslist-config"
