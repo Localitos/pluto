@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 43.0.0
+
+### Minor Changes
+
+- [#1799](https://github.com/Localitos/pluto/pull/1799) [`ea86770`](https://github.com/Localitos/pluto/commit/ea867704e139b4d1b590957172ad4c93ae47ec57) Thanks [@rssilva](https://github.com/rssilva)! - Update: @commitlint/cli, @commitlint/config-conventional, cspell, husky, prettier
+
+### Patch Changes
+
+- Updated dependencies [[`ea86770`](https://github.com/Localitos/pluto/commit/ea867704e139b4d1b590957172ad4c93ae47ec57)]:
+  - @localyze-pluto/design-tokens@2.3.0
+
 ## 42.0.0
 
 ### Minor Changes
