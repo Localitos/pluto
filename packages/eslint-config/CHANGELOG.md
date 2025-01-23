@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.27.0
+
+### Minor Changes
+
+- [#1797](https://github.com/Localitos/pluto/pull/1797) [`fda1785`](https://github.com/Localitos/pluto/commit/fda17857c40fe515b344680378fd5481e447d2c1) Thanks [@rssilva](https://github.com/rssilva)! - Update typescript, tslib and tsup
+
 ## 1.26.0
 
 ### Minor Changes

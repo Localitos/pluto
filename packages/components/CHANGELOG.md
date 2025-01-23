@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 60.0.0
+
+### Minor Changes
+
+- [#1797](https://github.com/Localitos/pluto/pull/1797) [`fda1785`](https://github.com/Localitos/pluto/commit/fda17857c40fe515b344680378fd5481e447d2c1) Thanks [@rssilva](https://github.com/rssilva)! - Update typescript, tslib and tsup
+
+### Patch Changes
+
+- Updated dependencies [[`fda1785`](https://github.com/Localitos/pluto/commit/fda17857c40fe515b344680378fd5481e447d2c1)]:
+  - @localyze-pluto/theme@42.0.0
+
 ## 59.0.0
 
 ### Minor Changes
