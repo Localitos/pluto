@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 61.2.0
+
+### Minor Changes
+
+- [#1805](https://github.com/Localitos/pluto/pull/1805) [`c30e5d8`](https://github.com/Localitos/pluto/commit/c30e5d8df369b5b89fe0f3a7e2ea88513101cb3a) Thanks [@rssilva](https://github.com/rssilva)! - Add @types/lodash dependency to update storybook
+
 ## 61.1.0
 
 ### Minor Changes
