@@ -1,5 +1,16 @@
 # @localyze-pluto/theme
 
+## 44.0.0
+
+### Minor Changes
+
+- [#1807](https://github.com/Localitos/pluto/pull/1807) [`cdd5f3a`](https://github.com/Localitos/pluto/commit/cdd5f3acff376cadd0e930e797ecc8d6d86c57ff) Thanks [@rssilva](https://github.com/rssilva)! - Update: @types/jest, ts-jest, jest-fail-on-console
+
+### Patch Changes
+
+- Updated dependencies [[`cdd5f3a`](https://github.com/Localitos/pluto/commit/cdd5f3acff376cadd0e930e797ecc8d6d86c57ff)]:
+  - @localyze-pluto/design-tokens@2.4.0
+
 ## 43.0.0
 
 ### Minor Changes
