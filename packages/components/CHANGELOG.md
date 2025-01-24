@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 61.1.0
+
+### Minor Changes
+
+- [#1803](https://github.com/Localitos/pluto/pull/1803) [`a8e9793`](https://github.com/Localitos/pluto/commit/a8e9793b3abbf6c795061d228785aa2d1baf4d28) Thanks [@rssilva](https://github.com/rssilva)! - Update @radix-ui: react-checkbox, react-progress, react-radio-group, react-switch, react-toast
+
 ## 61.0.0
 
 ### Minor Changes
