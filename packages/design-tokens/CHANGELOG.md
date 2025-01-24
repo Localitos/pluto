@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 2.4.0
+
+### Minor Changes
+
+- [#1807](https://github.com/Localitos/pluto/pull/1807) [`cdd5f3a`](https://github.com/Localitos/pluto/commit/cdd5f3acff376cadd0e930e797ecc8d6d86c57ff) Thanks [@rssilva](https://github.com/rssilva)! - Update: @types/jest, ts-jest, jest-fail-on-console
+
 ## 2.3.0
 
 ### Minor Changes
