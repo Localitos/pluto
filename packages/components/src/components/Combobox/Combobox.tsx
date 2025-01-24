@@ -47,25 +47,39 @@ export type ComboboxProps<T extends ComboboxItemProps = ComboboxItemProps> =
       customStore?: AriakitComboboxProps["store"];
     };
 
+type FilterFunction<T> = (inputValue: string, item: T) => boolean;
+
+/**
+ *
+ * @param filter
+ */
+function isFilterFunction<T>(
+  filter: FilterFunction<T> | boolean | undefined,
+): filter is FilterFunction<T> {
+  return isFunction(filter);
+}
+
 const matchSorter = (
   list: ComboboxItemProps[],
   value: string,
 ): ComboboxItemProps[] => {
-  return filter(list, (item) => includes(toLower(item.label), toLower(value)));
+  return filter(list, (item: ComboboxItemProps) =>
+    includes(toLower(item.label), toLower(value)),
+  );
 };
 
 const getFilteredItems = <T extends ComboboxItemProps>(
   items: T[],
   searchValue: string,
-  filterItem?: boolean | ((inputValue: string, item: T) => boolean),
+  filterItem?: FilterFunction<T> | boolean,
 ): T[] => {
   if (isBoolean(filterItem)) {
     return filterItem
       ? (matchSorter(items as ComboboxItemProps[], searchValue) as T[])
       : items;
   }
-  if (isFunction(filterItem)) {
-    return filter(items, (item) => filterItem(searchValue, item));
+  if (isFilterFunction(filterItem)) {
+    return filter(items, (item: T) => filterItem(searchValue, item));
   }
   return items;
 };
@@ -135,7 +149,7 @@ const ComboboxInner = <T extends ComboboxItemProps>(
         {filteredItems.length === 0 ? (
           <ComboboxItem>{noResultsMessage}</ComboboxItem>
         ) : (
-          map(filteredItems, (item) => (
+          map(filteredItems, (item: ComboboxItemProps) => (
             <ComboboxItem
               aria-selected={selectedValue === item.value}
               data-value={item.value}
