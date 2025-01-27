@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { UserEvent, userEvent } from "@testing-library/user-event";
 import React from "react";
 import { Default } from "./Modal.stories";
@@ -25,7 +25,9 @@ describe("<Modal />", () => {
     expect(renderedCloseButton).toBeInTheDocument();
 
     await user.click(renderedCloseButton);
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
   });
 
   it("should open and close a modal using the primary button", async () => {
@@ -41,7 +43,9 @@ describe("<Modal />", () => {
     expect(renderedPrimaryButton).toBeInTheDocument();
 
     await user.click(renderedPrimaryButton);
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
   });
 
   it("should open and close a modal using the secondary button", async () => {
@@ -57,6 +61,8 @@ describe("<Modal />", () => {
     expect(renderedSecondaryButton).toBeInTheDocument();
 
     await user.click(renderedSecondaryButton);
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
   });
 });

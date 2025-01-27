@@ -35,7 +35,7 @@ describe("<Tabs />", () => {
     expect(tabs[1]).toHaveAttribute("aria-selected", "true");
     expect(tabs[2]).toHaveAttribute("aria-selected", "false");
 
-    expect(tabPanels[0]).not.toBeVisible();
+    await waitFor(() => expect(tabPanels[0]).not.toBeVisible());
     expect(tabPanels[1]).toBeVisible();
     expect(tabPanels[2]).not.toBeVisible();
 
@@ -45,8 +45,8 @@ describe("<Tabs />", () => {
     expect(tabs[1]).toHaveAttribute("aria-selected", "false");
     expect(tabs[2]).toHaveAttribute("aria-selected", "true");
 
-    expect(tabPanels[0]).not.toBeVisible();
-    expect(tabPanels[1]).not.toBeVisible();
+    await waitFor(() => expect(tabPanels[0]).not.toBeVisible());
+    await waitFor(() => expect(tabPanels[1]).not.toBeVisible());
     expect(tabPanels[2]).toBeVisible();
   });
 
