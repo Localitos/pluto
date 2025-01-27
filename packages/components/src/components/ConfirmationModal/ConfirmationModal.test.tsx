@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import React from "react";
 import { useModalStore } from "../Modal/index";
@@ -63,7 +63,9 @@ describe("<ConfirmationModal />", () => {
     expect(cancelButton).toBeInTheDocument();
     await userEvent.click(cancelButton);
 
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
 
     await userEvent.click(openButton);
 
@@ -101,7 +103,9 @@ describe("<ConfirmationModal />", () => {
     const confirmButton = screen.getByRole("button", { name: "Delete" });
     await userEvent.click(confirmButton);
 
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
     expect(onConfirm).toHaveBeenCalled();
   });
 });

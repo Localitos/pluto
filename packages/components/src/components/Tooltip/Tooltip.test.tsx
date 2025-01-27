@@ -1,4 +1,4 @@
-import { TooltipAnchor, useTooltipStore } from "@ariakit/react";
+import { TooltipAnchor, useStoreState, useTooltipStore } from "@ariakit/react";
 import { render, screen, waitFor } from "@testing-library/react";
 import { UserEvent, userEvent } from "@testing-library/user-event";
 import React from "react";
@@ -11,6 +11,7 @@ const MockComponent = (): JSX.Element => {
   const tooltip = useTooltipStore({
     defaultOpen: false,
   });
+  const mounted = useStoreState(tooltip, "mounted");
 
   return (
     <>
@@ -18,7 +19,9 @@ const MockComponent = (): JSX.Element => {
         Hover or focus on me
       </TooltipAnchor>
       <Button variant="secondary">Another button</Button>
-      <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
+      {mounted && (
+        <Tooltip store={tooltip}>This is the content of the tooltip.</Tooltip>
+      )}
     </>
   );
 };
@@ -36,10 +39,16 @@ describe("<Tooltip />", () => {
     expect(renderedOpenButton).toBeInTheDocument();
 
     await user.hover(renderedOpenButton);
-    expect(await screen.findByRole("tooltip")).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByRole("tooltip")).toBeInTheDocument();
+    });
 
     await user.unhover(renderedOpenButton);
-    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+    });
   });
 
   it("should open and close a tooltip on focus", async () => {
