@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 62.1.0
+
+### Minor Changes
+
+- [#1809](https://github.com/Localitos/pluto/pull/1809) [`5a7f6bd`](https://github.com/Localitos/pluto/commit/5a7f6bdc7066343b564b2692183648e947f13a81) Thanks [@apvale](https://github.com/apvale)! - Update @ariakit/react to v0.4.15
+
 ## 62.0.0
 
 ### Patch Changes
