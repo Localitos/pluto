@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { userEvent, UserEvent } from "@testing-library/user-event";
 import React from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Default } from "./Drawer.stories";
 
 const OPEN_DRAWER_TEXT = "Open drawer";

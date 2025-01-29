@@ -45,7 +45,7 @@ export type ContentCardProps = {
   /** Sets the interactive element when it's anchor or button */
   callToAction?: ReactNode;
   /** Used by StyledComponents to render the component as a specific tag. If href is passed it'll be rendered as "a" */
-  as?: React.ComponentProps<typeof Box.div>["as"];
+  as?: React.ComponentType<any> | string; // eslint-disable-line @typescript-eslint/no-explicit-any
   /** Overwrites default maxWidth */
   maxWidth?: BoxProps["maxW"];
   /** Overwrites default h (height) */

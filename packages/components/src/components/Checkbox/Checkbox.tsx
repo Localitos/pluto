@@ -10,7 +10,7 @@ import { Box } from "../../primitives/Box";
 import { Text } from "../../primitives/Text";
 import { Icon } from "../Icon";
 
-const StyledCheckboxIndicator = styled.span`
+const StyledCheckboxIndicator = styled.spanBox`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +66,7 @@ const getCheckboxStyles = (
   return {};
 };
 
-const StyledCheckbox = styled.input`
+const StyledCheckbox = styled.inputBox<{ error: string }>`
   width: 16px;
   min-width: 16px;
   height: 16px;
@@ -85,7 +85,7 @@ const StyledCheckbox = styled.input`
 
   &[data-state=unchecked] {
     background-color: ${theme.colors.colorBackground};
-    border: 1px solid ${(props: { error: string }) =>
+    border: 1px solid ${(props) =>
       props.error === "true"
         ? theme.colors.colorBackgroundDestructive
         : theme.colors.colorBorder};
