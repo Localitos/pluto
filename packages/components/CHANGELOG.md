@@ -1,5 +1,27 @@
 # @localyze-pluto/components
 
+## 63.0.0
+
+### Major Changes
+
+- [#1777](https://github.com/Localitos/pluto/pull/1777) [`2ada712`](https://github.com/Localitos/pluto/commit/2ada712d9b907d73e8c93f49b44f1b1e8171262a) Thanks [@apvale](https://github.com/apvale)! - UtilityCard:
+
+  Breaking Change:
+
+  - Removed the `interactiveElementType` prop in order to add two new states properties `hoverable` and `clickable`
+  - Renamed `categoryTag` to `subTitle` to make it more generic
+  - `onClick` prop is only required when using `clickable` as true
+
+  Minor:
+
+  - Added `hoverable` and `clickable` to have more control of state of the card
+  - Added `emojiWrapperSize` prop with options `small` and `large` so it's adaptable to different use cases
+  - Added `indicator` to add a helper element to the top right of the card
+
+- [#1777](https://github.com/Localitos/pluto/pull/1777) [`2ada712`](https://github.com/Localitos/pluto/commit/2ada712d9b907d73e8c93f49b44f1b1e8171262a) Thanks [@apvale](https://github.com/apvale)! - [UtilityCard]:
+
+  - Replaced the `status` prop with a new `content` prop to make the UtilityCard component more generic and flexible. The content prop allows rendering any kind of detail, such as a badge or text.
+
 ## 62.1.0
 
 ### Minor Changes
