@@ -36,7 +36,7 @@
     "@radix-ui/react-toast": "^1.2.5",
     "lucide-react": "^0.456.0",
     "react-dropzone": "^14.3.5",
-    "react-hook-form": "^7.53.1"
+    "react-hook-form": "^7.54.2"
   },
   "peerDependencies": {
     "@localyze-pluto/theme": "^45.0.0",
