@@ -71,7 +71,7 @@
     "prettier": "^3.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.0",
+    "react-router-dom": "^7.1.5",
     "storybook": "^8.5.1",
     "ts-jest": "^29.2.5",
     "turbo": "latest"
