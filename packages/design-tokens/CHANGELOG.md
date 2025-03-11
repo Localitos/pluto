@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 4.0.0
+
+### Major Changes
+
+- [#1827](https://github.com/Localitos/pluto/pull/1827) [`2c2b74a`](https://github.com/Localitos/pluto/commit/2c2b74a33fc67bccc454e4b0e8ce074dedca5778) Thanks [@rssilva](https://github.com/rssilva)! - Add color tokens in a more global scope to remove component tokens later
+
 ## 3.0.0
 
 ### Major Changes

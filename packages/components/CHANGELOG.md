@@ -1,5 +1,12 @@
 # @localyze-pluto/components
 
+## 65.0.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @localyze-pluto/theme@46.0.0
+
 ## 64.0.0
 
 ### Major Changes
