@@ -338,13 +338,13 @@
       "value": "{loca-marine.600}"
     },
     "icon-error": {
-      "value": "#DC2626"
+      "value": "{red.600}"
     },
     "icon-warning": {
-      "value": "#D97706"
+      "value": "{yellow.600}"
     },
     "icon-success": {
-      "value": "#059669"
+      "value": "{gray.600}"
     },
     "icon-info": {
       "value": "{loca-marine.600}"
@@ -360,6 +360,27 @@
     },
     "icon-stronger": {
       "value": "#0F172A"
+    },
+    "icon-neutral": {
+      "value": "{gray.800}"
+    },
+    "icon-branded": {
+      "value": "{loca-marine.600}"
+    },
+    "icon-branded-hover": {
+      "value": "{loca-marine.700}"
+    },
+    "icon-branded-active": {
+      "value": "{loca-marine.700}"
+    },
+    "icon-branded-focus": {
+      "value": "{loca-marine.600}"
+    },
+    "icon-branded-visited": {
+      "value": "{navy.400}"
+    },
+    "icon-accent-primary": {
+      "value": "{loca-marine.700}"
     },
     "primary": {
       "value": "{loca-marine.600}"
@@ -466,9 +487,6 @@
   },
   "bg": {
     "primary": {
-      "value": "#FFFFFF"
-    },
-    "primary-default": {
       "value": "{gray.50}"
     },
     "primary-hover": {
@@ -481,9 +499,6 @@
       "value": "{gray.50}"
     },
     "secondary": {
-      "value": "#F8FAFC"
-    },
-    "secondary-default": {
       "value": "{gray.100}"
     },
     "secondary-hover": {
@@ -495,7 +510,70 @@
     "secondary-focus": {
       "value": "{gray.100}"
     },
+    "neutral": {
+      "value": "{gray.200}"
+    },
+    "tertiary": {
+      "value": "{gray.800}"
+    },
+    "branded": {
+      "value": "{loca-marine.600}"
+    },
+    "branded-hover": {
+      "value": "{loca-marine.700}"
+    },
+    "branded-active": {
+      "value": "{loca-marine.700}"
+    },
+    "branded-focus": {
+      "value": "{loca-marine.600}"
+    },
+    "branded-inactive": {
+      "value": "{gray.500}"
+    },
+    "destructive": {
+      "value": "{red.600}"
+    },
+    "destructive-hover": {
+      "value": "{red.700}"
+    },
+    "destructive-active": {
+      "value": "{red.700}"
+    },
+    "destructive-focus": {
+      "value": "{red.600}"
+    },
+    "destructive-inactive": {
+      "value": "{gray.500}"
+    },
+    "deselect": {
+      "value": "{gray.600}"
+    },
+    "deselect-hover": {
+      "value": "{gray.700}"
+    },
+    "deselect-active": {
+      "value": "{gray.700}"
+    },
+    "deselect-focus": {
+      "value": "{gray.600}"
+    },
+    "deselect-inactive": {
+      "value": "{gray.500}"
+    },
+    "accent-primary": {
+      "value": "{loca-marine.700}"
+    },
+    "accent-secondary": {
+      "value": "{loca-marine.300}"
+    },
+    "accent-tertiary": {
+      "value": "{light-blue.300}"
+    },
     "body-main": {
+      "value": "{loca-marine.100}"
+    },
+    "body-classic": {
       "value": "{loca-marine.100}"
     },
     "info": {
@@ -516,19 +594,22 @@
   },
   "content": {
     "inverse": {
-      "value": "#FFFFFF"
+      "value": "{gray.50}"
     },
     "primary": {
-      "value": "#0F1A2A"
+      "value": "{gray.900}"
     },
     "secondary": {
-      "value": "#4F5865"
+      "value": "{gray.700}"
     },
     "tertiary": {
-      "value": "#6C7684"
+      "value": "{gray.600}"
     },
     "info": {
       "value": "{loca-marine.600}"
+    },
+    "neutral": {
+      "value": "{gray.800}"
     },
     "success": {
       "value": "#047857"
@@ -537,30 +618,81 @@
       "value": "{yellow.600}"
     },
     "error": {
-      "value": "#B91C1C"
+      "value": "{red.600}"
     },
-    "branded-primary-default": {
-      "value": "#{loca-marine.700}"
+    "branded": {
+      "value": "{loca-marine.600}"
+    },
+    "branded-hover": {
+      "value": "{loca-marine.700}"
+    },
+    "branded-active": {
+      "value": "{loca-marine.700}"
+    },
+    "branded-focus": {
+      "value": "{loca-marine.600}"
+    },
+    "branded-visited": {
+      "value": "{navy.400}"
+    },
+    "accent-primary": {
+      "value": "{loca-marine.700}"
     }
   },
   "border": {
     "primary": {
-      "value": "#6C7684"
+      "value": "{gray.600}"
     },
     "secondary": {
-      "value": "#D2D7DF"
+      "value": "{gray.300}"
     },
     "info": {
       "value": "{loca-marine.600}"
     },
+    "neutral": {
+      "value": "{gray.800}"
+    },
     "success": {
-      "value": "#047857"
+      "value": "{gray.600}"
     },
     "warning": {
       "value": "{yellow.600}"
     },
     "error": {
-      "value": "#B91C1C"
+      "value": "{red.600}"
+    },
+    "inverse": {
+      "value": "{gray.50}"
+    },
+    "branded": {
+      "value": "{loca-marine.600}"
+    },
+    "branded-hover": {
+      "value": "{loca-marine.700}"
+    },
+    "branded-active": {
+      "value": "{loca-marine.700}"
+    },
+    "branded-focus": {
+      "value": "{loca-marine.600}"
+    },
+    "branded-inactive": {
+      "value": "{gray.50}"
+    },
+    "destructive": {
+      "value": "{red.600}"
+    },
+    "destructive-hover": {
+      "value": "{red.700}"
+    },
+    "destructive-active": {
+      "value": "{red.700}"
+    },
+    "destructive-focus": {
+      "value": "{red.600}"
+    },
+    "destructive-inactive": {
+      "value": "{gray.500}"
     }
   },
   "checkbox": {
