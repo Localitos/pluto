@@ -1,5 +1,11 @@
 # @localyze-pluto/design-tokens
 
+## 5.0.0
+
+### Major Changes
+
+- [#1830](https://github.com/Localitos/pluto/pull/1830) [`2f2b796`](https://github.com/Localitos/pluto/commit/2f2b796f0780f3a7334be6804e1ce6b777eb7b27) Thanks [@rssilva](https://github.com/rssilva)! - Remove unused component specific tokens
+
 ## 4.0.0
 
 ### Major Changes
