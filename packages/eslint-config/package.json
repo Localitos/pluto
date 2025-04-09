@@ -24,7 +24,7 @@
     "eslint-plugin-sonarjs": "^0.25.1",
     "eslint-plugin-storybook": "^0.12.0",
     "eslint-plugin-testing-library": "^7.1.1",
-    "eslint-plugin-unicorn": "^58.0.0"
+    "eslint-plugin-unicorn": "^56.0.1"
   },
   "publishConfig": {
     "access": "public"
