@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 66.1.0
+
+### Minor Changes
+
+- [#1844](https://github.com/Localitos/pluto/pull/1844) [`0461522`](https://github.com/Localitos/pluto/commit/046152296e9c40292c8f801b3c861db45028192c) Thanks [@rssilva](https://github.com/rssilva)! - Update packages: @ariakit/react, @radix-ui/react-checkbox, @radix-ui/react-progress, @radix-ui/react-radio-group, @radix-ui/react-switch, @radix-ui/react-toast, lucide-react, react-dropzone, @testing-library/react, @types/lodash, html-react-parser
+
 ## 66.0.0
 
 ### Patch Changes
