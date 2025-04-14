@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.28.0
+
+### Minor Changes
+
+- [#1843](https://github.com/Localitos/pluto/pull/1843) [`223ec31`](https://github.com/Localitos/pluto/commit/223ec31742994bad1562c0f7c120a864d74e37e4) Thanks [@rssilva](https://github.com/rssilva)! - Update packages: @typescript-eslint/eslint-plugin, @typescript-eslint/parser, eslint-config-prettier, eslint-plugin-cypress, eslint-plugin-jsdoc, eslint-plugin-prettier, eslint-plugin-react, eslint-plugin-react-hooks, eslint-plugin-storybook,
+
 ## 1.27.0
 
 ### Minor Changes
