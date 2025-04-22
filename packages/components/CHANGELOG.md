@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 66.2.0
+
+### Minor Changes
+
+- [#1849](https://github.com/Localitos/pluto/pull/1849) [`a1d0215`](https://github.com/Localitos/pluto/commit/a1d02154cb33f724c9438d63a27c7f3aea071efb) Thanks [@rssilva](https://github.com/rssilva)! - Update react-hook-form package
+
 ## 66.1.0
 
 ### Minor Changes
