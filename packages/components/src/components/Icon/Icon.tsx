@@ -44,7 +44,7 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>(
 
     return (
       <Box.div
-        as={as}
+        as={as as unknown}
         color={color}
         display={display}
         h={size}
