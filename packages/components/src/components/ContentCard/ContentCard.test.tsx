@@ -127,7 +127,7 @@ describe("<ContentCard>", () => {
         as="li"
         date=""
         imageAlt=""
-        imageSrc=""
+        imageSrc="http://localhost"
         text=""
         title=""
       />,
