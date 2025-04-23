@@ -143,7 +143,7 @@ export const ContentCard = ({
       position="relative"
     >
       <Box.div
-        as={as}
+        as={as as unknown}
         backgroundColor={backgroundColor[background]}
         display="flex"
         flexDirection={
