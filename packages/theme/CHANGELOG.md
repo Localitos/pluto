@@ -1,5 +1,11 @@
 # @localyze-pluto/theme
 
+## 47.1.0
+
+### Minor Changes
+
+- [#1851](https://github.com/Localitos/pluto/pull/1851) [`19fc621`](https://github.com/Localitos/pluto/commit/19fc621fd28637a04ffb66d7972819c17971a44f) Thanks [@rssilva](https://github.com/rssilva)! - Update react to version 19
+
 ## 47.0.0
 
 ### Major Changes
