@@ -56,9 +56,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "styled-components": "^6.1.12",
-    "ts-jest": "^29.2.5",
+    "ts-jest": "^29.3.2",
     "tslib": "^2.8.1",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.3"
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   }
 }
