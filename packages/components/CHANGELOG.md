@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 68.1.0
+
+### Minor Changes
+
+- [#1861](https://github.com/Localitos/pluto/pull/1861) [`4290c7e`](https://github.com/Localitos/pluto/commit/4290c7e619ec0d278eb864065399ea8f64622f40) Thanks [@rssilva](https://github.com/rssilva)! - Bump radix packages
+
 ## 68.0.0
 
 ### Minor Changes
