@@ -1,5 +1,16 @@
 # @localyze-pluto/components
 
+## 68.0.0
+
+### Minor Changes
+
+- [#1858](https://github.com/Localitos/pluto/pull/1858) [`213794e`](https://github.com/Localitos/pluto/commit/213794e6c8457bebfc3fcf9bf9669ee6de556fe8) Thanks [@rssilva](https://github.com/rssilva)! - Bump typescript, ts-jest, tsup
+
+### Patch Changes
+
+- Updated dependencies [[`213794e`](https://github.com/Localitos/pluto/commit/213794e6c8457bebfc3fcf9bf9669ee6de556fe8)]:
+  - @localyze-pluto/theme@48.0.0
+
 ## 67.0.0
 
 ### Minor Changes
