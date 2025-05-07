@@ -79,7 +79,7 @@ export const UtilityCard: React.FC<UtilityCardProps> = ({
   return (
     <Box.div
       alignItems="flex-start"
-      as={clickable ? "button" : as}
+      as={clickable ? "button" : (as as unknown)}
       backgroundColor={{
         _: "colorBackgroundWeakest",
         active: "colorBackgroundWeak",

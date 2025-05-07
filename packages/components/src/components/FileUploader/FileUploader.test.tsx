@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import React from "react";
+import { theme, ThemeProvider } from "@localyze-pluto/theme";
 import { FileUploader, FileUploaderProps } from "./FileUploader";
 import { FileUploaderButton } from "./FileUploaderButton";
 
@@ -11,11 +12,13 @@ const renderFileUploader = ({
   ...props
 }: Partial<FileUploaderProps>) =>
   render(
-    <FileUploader label={label} {...props}>
-      <FileUploaderButton onChange={jest.fn()} variant="secondary">
-        Upload
-      </FileUploaderButton>
-    </FileUploader>,
+    <ThemeProvider theme={theme}>
+      <FileUploader label={label} {...props}>
+        <FileUploaderButton onChange={jest.fn()} variant="secondary">
+          Upload
+        </FileUploaderButton>
+      </FileUploader>
+    </ThemeProvider>,
   );
 
 describe("<FileUploader />", () => {
@@ -130,20 +133,22 @@ describe("<FileUploader />", () => {
       const mockOnSubmit = jest.fn();
 
       render(
-        <form onSubmit={mockOnSubmit}>
-          <FileUploader
-            fileSize={"1MB"}
-            fileUrl={FILE_URL}
-            label={"passport"}
-            maxFileSize={"2MB"}
-            onRemove={jest.fn()}
-            progress={100}
-          >
-            <FileUploaderButton onChange={jest.fn()} variant="secondary">
-              Upload
-            </FileUploaderButton>
-          </FileUploader>
-        </form>,
+        <ThemeProvider theme={theme}>
+          <form onSubmit={mockOnSubmit}>
+            <FileUploader
+              fileSize={"1MB"}
+              fileUrl={FILE_URL}
+              label={"passport"}
+              maxFileSize={"2MB"}
+              onRemove={jest.fn()}
+              progress={100}
+            >
+              <FileUploaderButton onChange={jest.fn()} variant="secondary">
+                Upload
+              </FileUploaderButton>
+            </FileUploader>
+          </form>
+        </ThemeProvider>,
       );
 
       const removeButton = await screen.findByRole("button", {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ForwardedRef } from "react";
 import { Dialog } from "@ariakit/react/dialog";
 import type { DialogProps } from "@ariakit/react";
 import { styled, theme } from "@localyze-pluto/theme";
@@ -25,11 +25,12 @@ const StyledBackdrop = styled(Box.div)`
   }
 `;
 
-const CustomBackdrop = React.forwardRef(
-  function CustomBackdrop(props, forwardedRef) {
-    return <Box.div as={StyledBackdrop} ref={forwardedRef} {...props} />;
-  },
-);
+const CustomBackdrop = React.forwardRef(function CustomBackdrop(
+  props,
+  forwardedRef: ForwardedRef<HTMLDivElement>,
+) {
+  return <Box.div as={StyledBackdrop} ref={forwardedRef} {...props} />;
+});
 
 const StyledDrawer = styled(Box.div)<DrawerProps>`
   background-color: ${theme.colors.colorBackground};

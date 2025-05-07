@@ -6,6 +6,8 @@ import type {
 } from "@xstyled/styled-components";
 
 export interface BoxProps extends SystemProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  as?: any;
   backgroundColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderColor?: SystemProp<keyof Theme["colors"], Theme>;
   borderTopColor?: SystemProp<keyof Theme["colors"], Theme>;
