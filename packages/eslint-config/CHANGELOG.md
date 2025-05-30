@@ -1,5 +1,11 @@
 # @localyze-pluto/eslint-config
 
+## 1.30.0
+
+### Minor Changes
+
+- [#1865](https://github.com/Localitos/pluto/pull/1865) [`1ad8218`](https://github.com/Localitos/pluto/commit/1ad8218e89acd18bf4be53e3c8b8d39eeb458978) Thanks [@rssilva](https://github.com/rssilva)! - packages: @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-plugin-cypress eslint-plugin-jest eslint-plugin-jsdoc eslint-plugin-prettier eslint-plugin-storybook eslint-plugin-testing-library"
+
 ## 1.29.0
 
 ### Minor Changes
