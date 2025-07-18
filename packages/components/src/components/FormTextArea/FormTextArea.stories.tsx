@@ -83,7 +83,15 @@ export const Controlled = (): JSX.Element => {
 };
 
 export const AsControlledFormTextArea = (): JSX.Element => {
-  const schema = yup.object().shape({
+  interface FormInputs {
+    flavor?: string;
+    flavor1: string;
+    flavor2?: string;
+    flavor3?: string;
+    flavor4?: string;
+  }
+
+  const schema: yup.ObjectSchema<FormInputs> = yup.object().shape({
     flavor: yup.string(),
     flavor1: yup
       .string()
@@ -93,14 +101,6 @@ export const AsControlledFormTextArea = (): JSX.Element => {
     flavor3: yup.string(),
     flavor4: yup.string(),
   });
-
-  interface FormInputs {
-    flavor?: string;
-    flavor1: string;
-    flavor2?: string;
-    flavor3?: string;
-    flavor4?: string;
-  }
 
   const { control, handleSubmit, trigger } = useForm<FormInputs>({
     defaultValues: {
