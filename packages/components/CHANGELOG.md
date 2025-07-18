@@ -1,5 +1,11 @@
 # @localyze-pluto/components
 
+## 68.2.0
+
+### Minor Changes
+
+- [#1869](https://github.com/Localitos/pluto/pull/1869) [`e036125`](https://github.com/Localitos/pluto/commit/e03612542ecd907f6c26a8a14c47ad2d208066c3) Thanks [@rssilva](https://github.com/rssilva)! - Update @hookform/resolvers
+
 ## 68.1.0
 
 ### Minor Changes
